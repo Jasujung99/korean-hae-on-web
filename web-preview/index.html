@@ -61,38 +61,153 @@
 
       <section id="start" class="section start-section" aria-labelledby="start-title">
         <div class="section-inner start-layout">
-          <div class="section-copy">
+          <div class="start-intro">
+            <div class="start-progress" aria-hidden="true">
+              <span class="is-current"></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <p class="eyebrow">WHERE WILL YOU BEGIN?</p>
             <h2 id="start-title" class="section-title">
               오늘의 한국어,<br />
-              어디서 <span class="calm-blue">시작</span>할까요?
+              <span class="start-question">어디서 <span class="calm-blue">시작</span>할까요?</span>
             </h2>
-            <p class="body-lead">목적에 맞는 입구를 고르면 바로 이어집니다.</p>
+            <p class="body-lead">
+              지금 필요한 배움을 고르면,<br />
+              나에게 맞는 다음 단계가 이어집니다.
+            </p>
           </div>
 
-          <div class="start-grid">
-            <article class="start-card start-card-main ds-card water-panel">
-              <span class="card-index">01</span>
-              <h3 class="ds-card-title">무료 발음 코칭</h3>
-              <p>내 발음을 짧게 진단하고, 바로 쓸 수 있는 피드백을 받아보세요.</p>
-              <a class="ds-button ds-button-outline" href="#classes">
-                신청하기 <span class="ds-arrow" aria-hidden="true">→</span>
+          <div class="start-options">
+            <article class="start-primary">
+              <div class="choice-icon choice-icon-ear" aria-hidden="true">
+                <svg class="choice-glyph" viewBox="0 0 24 24" role="img">
+                  <path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0" />
+                  <path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4" />
+                </svg>
+                <svg class="choice-smile" viewBox="0 0 72 24">
+                  <defs>
+                    <linearGradient id="choice-smile-ear" x1="4" y1="0" x2="68" y2="0" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#2477e8" />
+                      <stop offset="1" stop-color="#52c8d0" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M4 5C21 21 51 21 68 5" stroke="url(#choice-smile-ear)" />
+                </svg>
+              </div>
+              <div class="primary-copy">
+                <h3>무료 발음 체크</h3>
+                <span class="choice-rule" aria-hidden="true"></span>
+                <p>
+                  내 발음을 가볍게 점검하고,<br />
+                  1:1 맞춤 피드백을 받아보세요.
+                </p>
+              </div>
+              <a class="choice-button" href="#classes">
+                <span>신청하기</span>
+                <span class="ds-arrow" aria-hidden="true">→</span>
               </a>
             </article>
-            <article id="kits" class="start-card ds-card-flat">
-              <span class="card-index">02</span>
-              <h3>PDF + 영상 묶음</h3>
-              <p>핵심 문법과 표현을 자료와 영상으로 함께 학습합니다.</p>
-            </article>
-            <article id="classes" class="start-card ds-card-flat">
-              <span class="card-index">03</span>
-              <h3>온라인 수업 상담</h3>
-              <p>1:1, 소그룹, KIIP 준비까지 목적에 맞게 안내합니다.</p>
-            </article>
-            <article id="apps" class="start-card ds-card-flat">
-              <span class="card-index">04</span>
-              <h3>학습 앱 바로가기</h3>
-              <p>발음, 모음, 받아쓰기 루틴을 짧게 반복합니다.</p>
-            </article>
+
+            <svg class="choice-connector" viewBox="0 0 96 660" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M0 330H22V125Q22 103 44 103H96" />
+              <path d="M22 330H96" />
+              <path d="M22 330V535Q22 557 44 557H96" />
+              <circle cx="96" cy="103" r="5" />
+              <circle cx="96" cy="330" r="5" />
+              <circle cx="96" cy="557" r="5" />
+            </svg>
+
+            <div class="start-secondary">
+              <article id="kits" class="start-choice-card">
+                <div class="choice-icon choice-icon-file" aria-hidden="true">
+                  <svg class="choice-glyph" viewBox="0 0 48 48" role="img">
+                    <path d="M13 7h14l8 8v14" />
+                    <path d="M27 7v9h8" />
+                    <path d="M30 40H13a3 3 0 0 1-3-3V10a3 3 0 0 1 3-3" />
+                    <circle cx="34" cy="32" r="9" />
+                    <path class="icon-fill" d="m32 28 6 4-6 4Z" />
+                  </svg>
+                  <svg class="choice-smile" viewBox="0 0 72 24">
+                    <defs>
+                      <linearGradient id="choice-smile-file" x1="4" y1="0" x2="68" y2="0" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#2477e8" />
+                        <stop offset="1" stop-color="#52c8d0" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M4 5C21 21 51 21 68 5" stroke="url(#choice-smile-file)" />
+                  </svg>
+                </div>
+                <div class="choice-card-copy">
+                  <h3>PDF · 영상 학습</h3>
+                  <span class="choice-rule" aria-hidden="true"></span>
+                  <p>핵심 문법과 표현을<br />한 번에 익혀보세요.</p>
+                  <a class="choice-link" href="#kits">
+                    <span>자료 보기</span>
+                    <span class="ds-arrow" aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </article>
+
+              <article id="classes" class="start-choice-card">
+                <div class="choice-icon choice-icon-class" aria-hidden="true">
+                  <svg class="choice-glyph" viewBox="0 0 48 48" role="img">
+                    <rect x="8" y="10" width="29" height="28" rx="3" />
+                    <circle cx="22" cy="21" r="4" />
+                    <path d="M15 33c.7-4 3.1-6 7-6s6.3 2 7 6" />
+                    <path class="icon-chat" d="M31 7h10v9h-4l-3 3v-3h-3z" />
+                  </svg>
+                  <svg class="choice-smile" viewBox="0 0 72 24">
+                    <defs>
+                      <linearGradient id="choice-smile-class" x1="4" y1="0" x2="68" y2="0" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#2477e8" />
+                        <stop offset="1" stop-color="#52c8d0" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M4 5C21 21 51 21 68 5" stroke="url(#choice-smile-class)" />
+                  </svg>
+                </div>
+                <div class="choice-card-copy">
+                  <h3>나에게 맞는 수업</h3>
+                  <span class="choice-rule" aria-hidden="true"></span>
+                  <p>목표와 일정에 맞는 수업을<br />함께 찾아보세요.</p>
+                  <a class="choice-link" href="#classes">
+                    <span>상담 신청</span>
+                    <span class="ds-arrow" aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </article>
+
+              <article id="apps" class="start-choice-card">
+                <div class="choice-icon choice-icon-app" aria-hidden="true">
+                  <svg class="choice-glyph" viewBox="0 0 48 48" role="img">
+                    <rect x="8" y="8" width="13" height="13" rx="2" />
+                    <rect x="27" y="8" width="13" height="13" rx="2" />
+                    <rect x="8" y="27" width="13" height="13" rx="2" />
+                    <rect class="icon-fill" x="27" y="27" width="13" height="13" rx="2" />
+                  </svg>
+                  <svg class="choice-smile" viewBox="0 0 72 24">
+                    <defs>
+                      <linearGradient id="choice-smile-app" x1="4" y1="0" x2="68" y2="0" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#2477e8" />
+                        <stop offset="1" stop-color="#52c8d0" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M4 5C21 21 51 21 68 5" stroke="url(#choice-smile-app)" />
+                  </svg>
+                </div>
+                <div class="choice-card-copy">
+                  <h3>매일 5분 학습</h3>
+                  <span class="choice-rule" aria-hidden="true"></span>
+                  <p>이동 중에도 한국어를<br />꾸준한 습관으로 만드세요.</p>
+                  <a class="choice-link" href="#apps">
+                    <span>앱 열기</span>
+                    <span class="ds-arrow" aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </section>
