@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Noto+Serif+KR:wght@400;500;600&display=swap");
+
 @font-face {
   font-family: "MaruBuri";
   src: url("../fonts/MaruBuri-Regular.woff2") format("woff2");
@@ -51,7 +53,7 @@
 }
 
 :root {
-  --font-display: "MaruBuri", "Haeon Display", "Gowun Batang", "Noto Serif KR", "Nanum Myeongjo", serif;
+  --font-display: "Noto Serif KR", "MaruBuri", "Haeon Display", "Gowun Batang", "Nanum Myeongjo", serif;
   --font-sans: "Pretendard Variable", Pretendard, "Haeon Sans", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
   --font-latin: "Pretendard Variable", Pretendard, Inter, Satoshi, Montserrat, ui-sans-serif, system-ui, sans-serif;
 }
