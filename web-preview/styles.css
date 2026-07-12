@@ -837,100 +837,428 @@
 }
 
 .tutor-section {
-  background: var(--haeon-mist-50);
+  --tutor-background-image: url("../assets/start/section-background-desktop.png");
+
+  min-height: 100dvh;
+  scroll-margin-top: 0;
+  padding-top: clamp(6.5rem, 7.5vw, 8rem);
+  padding-bottom: clamp(6.5rem, 7.5vw, 8rem);
+  background: #f7fbff;
+}
+
+.tutor-section.water-field::before {
+  inset: 0;
+  background-color: #f7fbff;
+  background-image:
+    linear-gradient(180deg, rgb(236 247 255 / 0.62), rgb(255 255 255 / 0.42) 18%, rgb(247 251 255 / 0.3)),
+    var(--tutor-background-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(1.035) saturate(0.9) contrast(0.98);
+}
+
+.tutor-section.water-field::after {
+  inset: 0;
+  z-index: -1;
+  height: auto;
+  opacity: 1;
+  background:
+    linear-gradient(180deg, rgb(209 235 255 / 0.5), transparent 8rem),
+    linear-gradient(0deg, rgb(234 246 255 / 0.34), transparent 10rem);
+  mask-image: none;
 }
 
 .tutor-layout {
+  position: relative;
+  z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(22rem, 0.95fr);
-  gap: clamp(3rem, 7vw, 7rem);
+  width: min(100%, 98rem);
+  grid-template-columns: minmax(0, 1.18fr) minmax(22rem, 0.82fr);
+  grid-template-rows: auto auto;
+  column-gap: clamp(3.5rem, 5vw, 5rem);
+  row-gap: clamp(2rem, 2.8vw, 2.8rem);
   align-items: center;
+}
+
+.tutor-heading {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+  transform: translateY(-1.35rem);
+}
+
+.tutor-heading .eyebrow {
+  color: #1168ff;
+  font-family: "Montserrat", "Avenir Next", "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(0.76rem, 0.84vw, 0.88rem);
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  line-height: 1.2;
+}
+
+.tutor-heading .eyebrow::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 2px;
+  margin-top: 1.25rem;
+  background: #1a72f7;
+}
+
+.tutor-heading .section-title {
+  margin-top: clamp(2.6rem, 3.5vw, 3.5rem);
+  font-size: clamp(2.75rem, 3.25vw, 3.55rem);
+  line-height: 1.5;
+}
+
+.tutor-heading .body-lead {
+  margin-top: clamp(1.4rem, 2vw, 1.85rem);
+  font-size: clamp(1.02rem, 1.16vw, 1.2rem);
+  line-height: 1.8;
 }
 
 .tutor-media {
   position: relative;
-  min-height: 43rem;
+  min-width: 0;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  padding-bottom: 0;
 }
 
-.photo-frame {
-  position: absolute;
-  inset: 0 6% 8% 0;
+.tutor-photo-frame {
+  position: relative;
+  aspect-ratio: 1.17;
+  margin: 0 3.5% 0 0;
   overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 0.94);
+  border-radius: var(--radius-lg);
+  background: #edf5fb;
+  box-shadow:
+    0 1.8rem 4.6rem rgb(16 43 78 / 0.13),
+    0 1px 0 rgb(255 255 255 / 0.96) inset;
 }
 
-.photo-frame::before {
+.tutor-photo-frame::after {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(90deg, rgb(16 43 78 / 0.1), transparent 44%),
-    radial-gradient(circle at 28% 34%, rgb(115 210 203 / 0.18), transparent 32%),
-    linear-gradient(135deg, #f8fbfd, #e8f4f9);
+  z-index: 1;
+  background: linear-gradient(90deg, transparent 42%, rgb(247 251 255 / 0.04) 58%, rgb(247 251 255 / 0.12));
+  pointer-events: none;
 }
 
-.photo-light {
+.tutor-photo-frame > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% center;
+}
+
+.lesson-board {
   position: absolute;
-  inset: 8% 9% 9% 9%;
-  border: 1px solid rgb(255 255 255 / 0.92);
-  border-radius: var(--radius-lg);
-  background:
-    linear-gradient(90deg, rgb(255 255 255 / 0.88) 0 42%, rgb(255 255 255 / 0.26) 42% 100%),
-    repeating-linear-gradient(90deg, transparent 0 64px, rgb(16 43 78 / 0.045) 65px 66px);
+  top: 5.5%;
+  right: 4.5%;
+  z-index: 2;
+  display: grid;
+  width: 36%;
+  gap: clamp(1rem, 1.55vw, 1.5rem);
+  color: #153557;
+  text-shadow: 0 1px 0 rgb(255 255 255 / 0.78);
 }
 
-.mini-note {
+.lesson-note h3 {
+  display: inline-block;
+  border-bottom: 2px solid #42bec7;
+  padding-bottom: 0.22rem;
+  font-family: var(--font-sans);
+  font-size: clamp(0.86rem, 1vw, 1.05rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.lesson-note ul {
+  display: grid;
+  gap: 0.18rem;
+  margin: 0.55rem 0 0;
+  padding-left: 1.15rem;
+  font-size: clamp(0.76rem, 0.86vw, 0.91rem);
+  line-height: 1.65;
+}
+
+.study-cards {
   position: absolute;
-  left: 28%;
-  bottom: 2%;
-  width: min(13.75rem, 38%);
-  padding: 1.35rem;
-  box-shadow: var(--shadow-soft);
+  right: -1.25rem;
+  bottom: -0.75rem;
+  z-index: 3;
+  display: grid;
+  width: 66%;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  gap: 0.72rem;
 }
 
-.mini-note-alt {
-  left: auto;
+.study-card {
+  position: relative;
+  min-width: 0;
+  min-height: clamp(10.1rem, 11.8vw, 11.4rem);
+  overflow: hidden;
+  border: 1px solid rgb(179 199 220 / 0.52);
+  border-radius: var(--radius-md);
+  background: rgb(255 255 255 / 0.96);
+  box-shadow:
+    0 1.25rem 2.8rem rgb(16 43 78 / 0.14),
+    0 1px 0 rgb(255 255 255 / 0.94) inset;
+}
+
+.pronunciation-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(4rem, 0.96fr);
+  gap: 0.45rem;
+  padding: clamp(0.9rem, 1.1vw, 1.15rem);
+}
+
+.study-card h3 {
+  color: #1a3557;
+  font-size: clamp(0.72rem, 0.78vw, 0.82rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.study-card-copy h3::after,
+.practice-card > h3::after {
+  content: "";
+  display: block;
+  width: 1.85rem;
+  height: 2px;
+  margin-top: 0.52rem;
+  background: #2176ee;
+}
+
+.study-card-copy ul {
+  display: grid;
+  gap: 0.42rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  color: #4d6078;
+  font-size: clamp(0.54rem, 0.62vw, 0.65rem);
+  line-height: 1.4;
+  list-style: none;
+  word-break: keep-all;
+}
+
+.study-card-copy li::before {
+  content: "·";
+  margin-right: 0.22rem;
+  color: #1a5fbf;
+}
+
+.mouth-map {
+  position: relative;
+  min-width: 0;
+  height: 100%;
+  min-height: 7.8rem;
+}
+
+.mouth-arc,
+.mouth-tongue {
+  position: absolute;
+  border-style: solid;
+  background: transparent;
+}
+
+.mouth-arc {
+  border-color: #85a1cc;
+  border-width: 1.5px;
+  border-radius: 52% 48% 56% 44%;
+  transform: rotate(-13deg);
+}
+
+.mouth-arc-outer {
+  top: 10%;
+  left: 9%;
+  width: 68%;
+  height: 72%;
+}
+
+.mouth-arc-inner {
+  top: 24%;
+  left: 20%;
+  width: 48%;
+  height: 48%;
+  border-color: #b0bfda;
+}
+
+.mouth-tongue {
+  right: 8%;
+  bottom: 18%;
+  width: 48%;
+  height: 26%;
+  border-color: #ff726b;
+  border-width: 1.5px 0 0;
+  border-radius: 50% 50% 0 0;
+  transform: rotate(-18deg);
+}
+
+.mouth-label {
+  position: absolute;
+  color: #395c91;
+  font-size: clamp(0.42rem, 0.48vw, 0.5rem);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.mouth-label-top {
+  top: 11%;
   right: 0;
-  bottom: 2%;
 }
 
-.mini-note h3 {
-  margin: 0 0 var(--space-3);
-  color: var(--color-text-strong);
-  font-size: 1rem;
-  font-weight: var(--weight-emphasis);
+.mouth-label-mid {
+  right: 1%;
+  top: 48%;
 }
 
-.mini-note ul {
+.mouth-label-low {
+  right: 8%;
+  bottom: 11%;
+}
+
+.practice-card {
+  padding: clamp(0.9rem, 1.1vw, 1.15rem);
+  background-color: rgb(255 255 255 / 0.96);
+  background-image: repeating-linear-gradient(180deg, transparent 0 2.22rem, rgb(38 85 144 / 0.085) 2.24rem 2.3rem);
+}
+
+.practice-lines {
+  position: relative;
+  z-index: 1;
   display: grid;
-  gap: 0.35rem;
-  margin: 0;
-  padding-left: 1.1rem;
-  color: var(--color-text-secondary);
+  gap: clamp(0.58rem, 0.7vw, 0.78rem);
+  margin: 0.82rem 0 0;
+  padding: 0;
+  color: #2a69c7;
+  font-family: "Haeon Sans", var(--font-sans);
+  font-size: clamp(0.66rem, 0.78vw, 0.82rem);
+  line-height: 1.4;
+  list-style: none;
 }
 
-.mini-note p {
-  color: var(--color-text-secondary);
+.practice-lines li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
 
-.tutor-copy {
-  display: grid;
-  gap: var(--space-8);
+.practice-lines i {
+  width: 0.86rem;
+  height: 0.86rem;
+  flex: 0 0 auto;
+  border: 1.5px solid #2d77df;
+  border-radius: 50%;
+}
+
+.practice-pen {
+  position: absolute;
+  right: -0.65rem;
+  bottom: 0.25rem;
+  z-index: 2;
+  width: 5.4rem;
+  height: 0.72rem;
+  border-radius: 0.4rem;
+  background: linear-gradient(90deg, #0d46ab, #176be0 76%, #d5e4f3 77%);
+  box-shadow: 0 0.25rem 0.5rem rgb(16 43 78 / 0.18);
+  transform: rotate(-13deg);
+}
+
+.practice-pen::after {
+  content: "";
+  position: absolute;
+  left: -0.7rem;
+  top: 0;
+  border-top: 0.36rem solid transparent;
+  border-right: 0.75rem solid #9caab7;
+  border-bottom: 0.36rem solid transparent;
+}
+
+.tutor-principles {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  transform: translateY(-1.35rem);
 }
 
 .quote-list {
   display: grid;
-  gap: var(--space-4);
-  margin-top: var(--space-2);
+  gap: 0.95rem;
 }
 
-blockquote {
+.tutor-section blockquote {
+  position: relative;
+  display: grid;
+  min-height: 5.05rem;
+  align-items: center;
   margin: 0;
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-md);
-  padding: 1.2rem 1.35rem;
-  color: var(--color-text-primary);
-  background: rgb(255 255 255 / 0.7);
-  font-weight: var(--weight-emphasis);
+  border: 1px solid rgb(145 177 216 / 0.35);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem 1.35rem 1.05rem 4rem;
+  color: #163b70;
+  background: rgb(255 255 255 / 0.74);
+  box-shadow: 0 0.45rem 1.35rem rgb(16 43 78 / 0.035);
+}
+
+.tutor-section blockquote::before {
+  content: "“";
+  position: absolute;
+  left: 1.35rem;
+  top: 0.45rem;
+  color: #a9c8fa;
+  font-family: Georgia, serif;
+  font-size: 3.4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tutor-section blockquote p {
+  font-size: clamp(0.95rem, 1.08vw, 1.12rem);
+  font-weight: 600;
+  line-height: 1.55;
+  word-break: keep-all;
+}
+
+.tutor-link {
+  display: inline-flex;
+  min-width: 13rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: clamp(2.2rem, 3vw, 3rem);
+  border-bottom: 2px solid #1b68df;
+  padding: 0 0.35rem 0.58rem;
+  color: #0d4fae;
+  font-size: clamp(1rem, 1.15vw, 1.18rem);
+  font-weight: 700;
+  line-height: 1.2;
+  transition:
+    color var(--duration-base) var(--ease-standard),
+    border-color var(--duration-base) var(--ease-standard);
+}
+
+.tutor-link .ds-arrow {
+  font-size: 1.55em;
+  font-weight: 400;
+  line-height: 0.7;
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+
+.tutor-link:hover,
+.tutor-link:focus-visible {
+  color: #083e8e;
+  border-color: #083e8e;
+}
+
+.tutor-link:hover .ds-arrow,
+.tutor-link:focus-visible .ds-arrow {
+  transform: translateX(0.32rem);
 }
 
 .final-cta {
@@ -973,6 +1301,11 @@ blockquote {
     width: min(100%, 58rem);
     height: 40rem;
     justify-self: center;
+  }
+
+  .study-cards {
+    right: -0.85rem;
+    width: 70%;
   }
 }
 
@@ -1129,8 +1462,7 @@ blockquote {
     margin-top: 0;
   }
 
-  .start-layout,
-  .tutor-layout {
+  .start-layout {
     grid-template-columns: 1fr;
   }
 
@@ -1144,7 +1476,38 @@ blockquote {
   }
 
   .tutor-media {
-    min-height: 32rem;
+    grid-area: media;
+    width: min(100%, 46rem);
+    min-height: auto;
+    justify-self: center;
+  }
+
+  .tutor-section {
+    padding-top: 6.5rem;
+    padding-bottom: 7rem;
+  }
+
+  .tutor-layout {
+    width: min(100%, 48rem);
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "heading"
+      "media"
+      "principles";
+    gap: 3.5rem;
+  }
+
+  .tutor-heading {
+    grid-area: heading;
+    width: min(100%, 42rem);
+    transform: none;
+  }
+
+  .tutor-principles {
+    grid-area: principles;
+    width: min(100%, 42rem);
+    transform: none;
   }
 }
 
@@ -1251,28 +1614,150 @@ blockquote {
     border-left-width: 0.31rem;
   }
 
-  .photo-frame {
-    position: relative;
-    inset: auto;
-    height: 24rem;
+  .tutor-section {
+    --tutor-background-image: url("../assets/start/section-background-mobile.png");
+
+    padding: 5.75rem 1.1rem 6.25rem;
+  }
+
+  .tutor-section.water-field::before {
+    background-position: center top;
+  }
+
+  .tutor-layout {
+    gap: 3rem;
+  }
+
+  .tutor-heading .eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.27em;
+  }
+
+  .tutor-heading .eyebrow::after {
+    width: 2.65rem;
+    margin-top: 1.05rem;
+  }
+
+  .tutor-heading .section-title {
+    margin-top: 2.35rem;
+    font-size: clamp(2rem, 8.8vw, 2.65rem);
+    line-height: 1.48;
+  }
+
+  .tutor-heading .body-lead {
+    margin-top: 1.35rem;
+    font-size: 0.98rem;
+    line-height: 1.8;
   }
 
   .tutor-media {
-    display: grid;
-    gap: var(--space-4);
-    min-height: auto;
+    display: block;
+    padding-bottom: 0;
   }
 
-  .mini-note {
+  .tutor-photo-frame {
+    display: grid;
+    aspect-ratio: auto;
+    margin: 0;
+    overflow: visible;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .tutor-photo-frame::after {
+    display: none;
+  }
+
+  .tutor-photo-frame > img {
+    aspect-ratio: 1.06;
+    border: 1px solid rgb(255 255 255 / 0.94);
+    border-radius: var(--radius-lg);
+    object-position: 42% center;
+    box-shadow: 0 1.4rem 3.4rem rgb(16 43 78 / 0.12);
+  }
+
+  .lesson-board {
     position: relative;
-    left: auto;
+    top: auto;
+    right: auto;
+    display: grid;
+    width: auto;
+    grid-template-columns: repeat(3, minmax(9rem, 46%));
+    gap: 0.72rem;
+    margin-top: 0.85rem;
+    overflow-x: auto;
+    padding: 0.15rem 0.05rem 0.7rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-color: rgb(83 126 184 / 0.45) transparent;
+    scrollbar-width: thin;
+    text-shadow: none;
+  }
+
+  .lesson-note {
+    min-height: 8.8rem;
+    border: 1px solid rgb(145 177 216 / 0.32);
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+    background: rgb(255 255 255 / 0.78);
+    scroll-snap-align: start;
+  }
+
+  .lesson-note h3 {
+    font-size: 0.86rem;
+  }
+
+  .lesson-note ul {
+    font-size: 0.76rem;
+  }
+
+  .study-cards {
+    position: relative;
     right: auto;
     bottom: auto;
     width: 100%;
+    margin-top: 0.85rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .mini-note-alt {
-    right: auto;
+  .study-card {
+    min-height: 10rem;
+  }
+
+  .pronunciation-card {
+    grid-template-columns: minmax(0, 1.02fr) minmax(3.8rem, 0.98fr);
+  }
+
+  .study-card h3 {
+    font-size: 0.76rem;
+  }
+
+  .study-card-copy ul {
+    font-size: 0.58rem;
+  }
+
+  .practice-lines {
+    font-size: 0.7rem;
+  }
+
+  .tutor-section blockquote {
+    min-height: 5.2rem;
+    padding-right: 1rem;
+    padding-left: 3.65rem;
+  }
+
+  .tutor-section blockquote::before {
+    left: 1.15rem;
+  }
+
+  .tutor-section blockquote p {
+    font-size: 0.94rem;
+  }
+
+  .tutor-link {
+    min-width: 12.5rem;
+    margin-top: 2.2rem;
+    font-size: 1rem;
   }
 
   .start-section {
@@ -1294,6 +1779,32 @@ blockquote {
     bottom: 0.34rem;
     width: 3rem;
     height: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .study-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .study-card {
+    min-height: 10.5rem;
+  }
+
+  .study-card h3 {
+    font-size: 0.82rem;
+  }
+
+  .study-card-copy ul {
+    font-size: 0.65rem;
+  }
+
+  .mouth-label {
+    font-size: 0.5rem;
+  }
+
+  .practice-lines {
+    font-size: 0.78rem;
   }
 }
 
