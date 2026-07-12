@@ -600,6 +600,7 @@
   background-repeat: no-repeat;
   background-size: 100% 100%, 125% 100%;
   backdrop-filter: blur(6px);
+  transition: transform var(--duration-base) var(--ease-standard);
 }
 
 .choice-icon {
@@ -617,6 +618,7 @@
   box-shadow:
     0 0.8rem 1.8rem rgb(16 43 78 / 0.12),
     0 1px 0 rgb(255 255 255 / 0.96) inset;
+  transition: transform var(--duration-base) var(--ease-standard);
 }
 
 .start-primary > .choice-icon {
@@ -696,6 +698,8 @@
   height: 2px;
   margin-block: 1.15rem 1.45rem;
   background: #1670ef;
+  transform-origin: left center;
+  transition: transform var(--duration-base) var(--ease-standard);
 }
 
 .primary-copy p,
@@ -745,6 +749,10 @@
   transform: translateY(0);
 }
 
+.choice-button .ds-arrow {
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+
 .choice-connector {
   width: 100%;
   height: 100%;
@@ -759,10 +767,78 @@
   stroke-linejoin: round;
   stroke-width: 1.25;
   vector-effect: non-scaling-stroke;
+  opacity: 0.52;
+  transition:
+    opacity var(--duration-base) var(--ease-standard),
+    transform var(--duration-base) var(--ease-standard);
 }
 
 .choice-connector circle {
   fill: #1874ed;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    opacity var(--duration-base) var(--ease-standard),
+    transform var(--duration-base) var(--ease-standard);
+}
+
+.start-options.has-active-choice .choice-connector path,
+.start-options.has-active-choice .choice-connector circle {
+  opacity: 0.18;
+}
+
+.start-options[data-active-choice="coaching"] .start-primary,
+.start-options[data-active-choice="kits"] [data-choice="kits"],
+.start-options[data-active-choice="classes"] [data-choice="classes"],
+.start-options[data-active-choice="apps"] [data-choice="apps"] {
+  border-color: rgb(93 157 232 / 0.44);
+  box-shadow:
+    0 1.55rem 3.9rem rgb(16 43 78 / 0.16),
+    0 1px 0 rgb(255 255 255 / 0.96) inset;
+  transform: translate3d(0, -0.24rem, 0);
+}
+
+.start-options[data-active-choice="coaching"] .choice-connector path,
+.start-options[data-active-choice="coaching"] .choice-connector circle {
+  opacity: 0.94;
+}
+
+.start-options[data-active-choice="coaching"] .choice-connector circle,
+.start-options[data-active-choice="kits"] [data-choice-point="kits"],
+.start-options[data-active-choice="classes"] [data-choice-point="classes"],
+.start-options[data-active-choice="apps"] [data-choice-point="apps"] {
+  opacity: 1;
+  transform: scale(1.28);
+}
+
+.start-options[data-active-choice="kits"] [data-choice-path="kits"],
+.start-options[data-active-choice="classes"] [data-choice-path="classes"],
+.start-options[data-active-choice="apps"] [data-choice-path="apps"] {
+  opacity: 1;
+  transform: scaleX(1.04);
+  transform-box: fill-box;
+  transform-origin: left center;
+}
+
+.start-options[data-active-choice="coaching"] .start-primary .choice-icon,
+.start-options[data-active-choice="kits"] [data-choice="kits"] .choice-icon,
+.start-options[data-active-choice="classes"] [data-choice="classes"] .choice-icon,
+.start-options[data-active-choice="apps"] [data-choice="apps"] .choice-icon {
+  transform: translate3d(0, -0.22rem, 0) scale(1.025);
+}
+
+.start-options[data-active-choice="coaching"] .start-primary .choice-rule,
+.start-options[data-active-choice="kits"] [data-choice="kits"] .choice-rule,
+.start-options[data-active-choice="classes"] [data-choice="classes"] .choice-rule,
+.start-options[data-active-choice="apps"] [data-choice="apps"] .choice-rule {
+  transform: scaleX(1.16);
+}
+
+.start-options[data-active-choice="coaching"] .choice-button .ds-arrow,
+.start-options[data-active-choice="kits"] [data-choice="kits"] .choice-link .ds-arrow,
+.start-options[data-active-choice="classes"] [data-choice="classes"] .choice-link .ds-arrow,
+.start-options[data-active-choice="apps"] [data-choice="apps"] .choice-link .ds-arrow {
+  transform: translate3d(0.3rem, 0, 0);
 }
 
 .start-secondary {
