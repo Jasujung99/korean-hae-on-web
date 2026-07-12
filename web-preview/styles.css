@@ -440,7 +440,7 @@
   isolation: isolate;
   padding-top: clamp(7rem, 8vw, 8.5rem);
   padding-bottom: clamp(7rem, 8vw, 8.5rem);
-  background-color: #f5f9ff;
+  background-color: #e3f1f9;
 }
 
 .start-section::before {
@@ -456,6 +456,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   filter: brightness(1.02) saturate(0.94) contrast(0.99);
+  -webkit-mask-image: linear-gradient(180deg, black 0, black calc(100% - 11rem), transparent 100%);
+  mask-image: linear-gradient(180deg, black 0, black calc(100% - 11rem), transparent 100%);
   pointer-events: none;
 }
 
@@ -841,21 +843,22 @@
 
   min-height: 100dvh;
   scroll-margin-top: 0;
+  margin-top: -1px;
   padding-top: clamp(6.5rem, 7.5vw, 8rem);
   padding-bottom: clamp(6.5rem, 7.5vw, 8rem);
-  background: #f7fbff;
+  background: linear-gradient(180deg, #e3f1f9 0, #e7f5fd 5.5rem, #f2f8fb 13rem, #f7fbff 20rem);
 }
 
 .tutor-section.water-field::before {
   inset: 0;
-  background-color: #f7fbff;
-  background-image:
-    linear-gradient(180deg, rgb(236 247 255 / 0.62), rgb(255 255 255 / 0.42) 18%, rgb(247 251 255 / 0.3)),
-    var(--tutor-background-image);
+  background-color: transparent;
+  background-image: var(--tutor-background-image);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   filter: brightness(1.035) saturate(0.9) contrast(0.98);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, transparent 4rem, black 13rem);
+  mask-image: linear-gradient(180deg, transparent 0, transparent 4rem, black 13rem);
 }
 
 .tutor-section.water-field::after {
@@ -863,9 +866,7 @@
   z-index: -1;
   height: auto;
   opacity: 1;
-  background:
-    linear-gradient(180deg, rgb(209 235 255 / 0.5), transparent 8rem),
-    linear-gradient(0deg, rgb(234 246 255 / 0.34), transparent 10rem);
+  background: linear-gradient(0deg, rgb(234 246 255 / 0.34), transparent 10rem);
   mask-image: none;
 }
 
@@ -1011,10 +1012,21 @@
 }
 
 .pronunciation-card {
-  display: grid;
-  grid-template-columns: minmax(0, 1.04fr) minmax(4rem, 0.96fr);
-  gap: 0.45rem;
+  display: block;
   padding: clamp(0.9rem, 1.1vw, 1.15rem);
+  background-color: rgb(255 255 255 / 0.98);
+  background-image:
+    linear-gradient(90deg, rgb(255 255 255 / 1) 0 42%, rgb(255 255 255 / 0.92) 54%, rgb(255 255 255 / 0.18) 73%, transparent 100%),
+    url("../assets/story/g-pronunciation-organs.jpg");
+  background-position: center, right center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%, auto 92%;
+}
+
+.pronunciation-card .study-card-copy {
+  position: relative;
+  z-index: 1;
+  width: 60%;
 }
 
 .study-card h3 {
@@ -1050,76 +1062,6 @@
   content: "·";
   margin-right: 0.22rem;
   color: #1a5fbf;
-}
-
-.mouth-map {
-  position: relative;
-  min-width: 0;
-  height: 100%;
-  min-height: 7.8rem;
-}
-
-.mouth-arc,
-.mouth-tongue {
-  position: absolute;
-  border-style: solid;
-  background: transparent;
-}
-
-.mouth-arc {
-  border-color: #85a1cc;
-  border-width: 1.5px;
-  border-radius: 52% 48% 56% 44%;
-  transform: rotate(-13deg);
-}
-
-.mouth-arc-outer {
-  top: 10%;
-  left: 9%;
-  width: 68%;
-  height: 72%;
-}
-
-.mouth-arc-inner {
-  top: 24%;
-  left: 20%;
-  width: 48%;
-  height: 48%;
-  border-color: #b0bfda;
-}
-
-.mouth-tongue {
-  right: 8%;
-  bottom: 18%;
-  width: 48%;
-  height: 26%;
-  border-color: #ff726b;
-  border-width: 1.5px 0 0;
-  border-radius: 50% 50% 0 0;
-  transform: rotate(-18deg);
-}
-
-.mouth-label {
-  position: absolute;
-  color: #395c91;
-  font-size: clamp(0.42rem, 0.48vw, 0.5rem);
-  line-height: 1;
-  white-space: nowrap;
-}
-
-.mouth-label-top {
-  top: 11%;
-  right: 0;
-}
-
-.mouth-label-mid {
-  right: 1%;
-  top: 48%;
-}
-
-.mouth-label-low {
-  right: 8%;
-  bottom: 11%;
 }
 
 .practice-card {
@@ -1725,7 +1667,7 @@
   }
 
   .pronunciation-card {
-    grid-template-columns: minmax(0, 1.02fr) minmax(3.8rem, 0.98fr);
+    background-size: 100% 100%, auto 90%;
   }
 
   .study-card h3 {
@@ -1799,8 +1741,8 @@
     font-size: 0.65rem;
   }
 
-  .mouth-label {
-    font-size: 0.5rem;
+  .pronunciation-card .study-card-copy {
+    width: 58%;
   }
 
   .practice-lines {
