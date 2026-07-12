@@ -1271,43 +1271,38 @@
 }
 
 .final-actions .ds-button-primary {
+  --final-glass-duration: 260ms;
+
   position: relative;
   isolation: isolate;
   min-width: clamp(10rem, 14vw, 13.5rem);
   height: 3.5rem;
-  overflow: hidden;
-  border-color: rgb(255 255 255 / 0.14);
+  overflow: visible;
   font-size: 1.1rem;
   box-shadow: 0 1.1rem 2.4rem rgb(16 43 78 / 0.18);
   transform: scale(1);
-  transition:
-    transform 320ms var(--ease-standard),
-    border-color 320ms var(--ease-standard);
+  transition: transform var(--final-glass-duration) var(--ease-standard);
 }
 
 .final-actions .ds-button-primary::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: -1.5px;
   z-index: 0;
   border-radius: inherit;
-  border: 1px solid rgb(255 255 255 / 0.48);
-  background:
-    linear-gradient(135deg, rgb(255 255 255 / 0.64), rgb(255 255 255 / 0.18)),
-    rgb(225 240 255 / 0.14);
+  background: linear-gradient(135deg, rgb(255 255 255 / 0.18), rgb(225 240 255 / 0.04));
   box-shadow:
-    0 1px 0 rgb(255 255 255 / 0.48) inset,
-    0 0.65rem 1.65rem rgb(42 102 166 / 0.08),
-    0 0 1.5rem rgb(126 194 255 / 0.055);
+    0 1.5px 0 rgb(255 255 255 / 0) inset,
+    1px 0 0 rgb(5 27 51 / 0) inset,
+    -1px 0 0 rgb(5 27 51 / 0) inset,
+    0 -1px 0 rgb(5 27 51 / 0) inset;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(0.64rem) scale(0.95, 0.38);
-  transform-origin: 50% 100%;
   backdrop-filter: blur(10px) saturate(1.12);
   -webkit-backdrop-filter: blur(10px) saturate(1.12);
   transition:
-    opacity 180ms ease-out,
-    transform 360ms var(--ease-standard);
+    opacity var(--final-glass-duration) var(--ease-standard),
+    box-shadow var(--final-glass-duration) var(--ease-standard);
 }
 
 .final-actions .ds-button-primary .button-label {
@@ -1320,23 +1315,22 @@
 
 .final-actions .ds-button-primary:hover,
 .final-actions .ds-button-primary:focus-visible {
-  border-color: rgb(255 255 255 / 0.56);
   transform: scale(1.02);
 }
 
 .final-actions .ds-button-primary:hover::before,
-.final-actions .ds-button-primary:focus-visible::before {
+.final-actions .ds-button-primary:focus-visible::before,
+.final-actions .ds-button-primary:active::before {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  box-shadow:
+    0 1.5px 0 rgb(255 255 255 / 0.72) inset,
+    1px 0 0 rgb(5 27 51 / 0.16) inset,
+    -1px 0 0 rgb(5 27 51 / 0.16) inset,
+    0 -1px 0 rgb(5 27 51 / 0.22) inset;
 }
 
 .final-actions .ds-button-primary:active {
   transform: scale(1.008);
-}
-
-.final-actions .ds-button-primary:active::before {
-  opacity: 0.76;
-  transform: translateY(0.1rem) scale(0.985);
 }
 
 .final-actions .ds-text-link {
@@ -1391,24 +1385,32 @@
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  color: var(--color-text-primary);
-  font-size: 1rem;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  font-weight: var(--weight-emphasis);
+  letter-spacing: 0.025em;
 }
 
 .footer-nav a {
-  transition: color 0.2s ease;
+  position: relative;
+  padding: 0.35rem 0.15rem 0.62rem;
+  transform: scale(1);
+  transition:
+    color 280ms var(--ease-standard),
+    transform 320ms var(--ease-standard);
 }
 
 .footer-nav a:hover,
 .footer-nav a:focus-visible {
-  color: var(--color-highlight-calm);
+  color: #0d4fae;
+  transform: scale(1.045);
 }
 
 .footer-nav .sep {
   display: inline;
-  color: rgb(16 43 78 / 0.42);
-  font-size: 0.88rem;
-  opacity: 0.9;
+  color: #8aa0b9;
+  font-size: 0.85rem;
+  opacity: 0.82;
 }
 
 .footer-bottom {
