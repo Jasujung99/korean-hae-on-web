@@ -10,12 +10,13 @@
     <title>HAEON Web Preview</title>
     <link rel="icon" href="./resources/haeon-logo-pdf.png" />
     <link rel="stylesheet" href="./web-preview/styles.css" />
+    <script src="./web-preview/interactions.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#content">본문으로 이동</a>
 
     <header class="site-header" aria-label="주요 메뉴">
-      <a class="brand" href="/" aria-label="해온 HAEON 홈">
+      <a class="brand" href="./" aria-label="해온 HAEON 홈">
         <span class="brand-mark"><img src="./assets/brand/haeon-wordmark.png" alt="" /></span>
         <span class="brand-word">HAEON</span>
       </a>
@@ -80,7 +81,7 @@
           </div>
 
           <div class="start-options">
-            <article class="start-primary">
+            <article class="start-primary" data-choice="coaching">
               <div class="choice-icon choice-icon-ear" aria-hidden="true">
                 <svg class="choice-glyph" viewBox="0 0 24 24" role="img">
                   <path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0" />
@@ -111,16 +112,16 @@
             </article>
 
             <svg class="choice-connector" viewBox="0 0 96 660" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M0 330H22V125Q22 103 44 103H96" />
-              <path d="M22 330H96" />
-              <path d="M22 330V535Q22 557 44 557H96" />
-              <circle cx="96" cy="103" r="5" />
-              <circle cx="96" cy="330" r="5" />
-              <circle cx="96" cy="557" r="5" />
+              <path data-choice-path="kits" d="M0 330H22V125Q22 103 44 103H96" />
+              <path data-choice-path="classes" d="M22 330H96" />
+              <path data-choice-path="apps" d="M22 330V535Q22 557 44 557H96" />
+              <circle data-choice-point="kits" cx="96" cy="103" r="5" />
+              <circle data-choice-point="classes" cx="96" cy="330" r="5" />
+              <circle data-choice-point="apps" cx="96" cy="557" r="5" />
             </svg>
 
             <div class="start-secondary">
-              <article id="kits" class="start-choice-card">
+              <article id="kits" class="start-choice-card" data-choice="kits">
                 <div class="choice-icon choice-icon-file" aria-hidden="true">
                   <svg class="choice-glyph" viewBox="0 0 48 48" role="img">
                     <path d="M13 7h14l8 8v14" />
@@ -150,7 +151,7 @@
                 </div>
               </article>
 
-              <article id="classes" class="start-choice-card">
+              <article id="classes" class="start-choice-card" data-choice="classes">
                 <div class="choice-icon choice-icon-class" aria-hidden="true">
                   <svg class="choice-glyph" viewBox="0 0 48 48" role="img">
                     <rect x="8" y="10" width="29" height="28" rx="3" />
@@ -179,7 +180,7 @@
                 </div>
               </article>
 
-              <article id="apps" class="start-choice-card">
+              <article id="apps" class="start-choice-card" data-choice="apps">
                 <div class="choice-icon choice-icon-app" aria-hidden="true">
                   <svg class="choice-glyph" viewBox="0 0 48 48" role="img">
                     <rect x="8" y="8" width="13" height="13" rx="2" />
