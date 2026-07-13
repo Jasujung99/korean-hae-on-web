@@ -384,11 +384,7 @@
   width: clamp(1.8rem, 2.15vw, 2.15rem);
   height: 0.42rem;
   flex: 0 0 auto;
-  animation: hero-flow-pulse 2.2s ease-in-out infinite;
-}
-
-.hero-flow > i:nth-child(4) {
-  animation-delay: 0.32s;
+  animation: hero-flow-pulse 1.6s ease-in-out infinite;
 }
 
 .hero-flow i::before,
@@ -447,11 +443,15 @@
 
 @keyframes hero-flow-pulse {
   0%,
-  18% {
+  25% {
     opacity: 0;
   }
 
-  68% {
+  62% {
+    opacity: 1;
+  }
+
+  75% {
     opacity: 1;
   }
 
