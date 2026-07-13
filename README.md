@@ -1,129 +1,74 @@
-# korean-hae-on-web
+# 해온 HAEON 웹사이트
 
-해온(HAEON) 한국어 교육 콘텐츠를 웹과 PDF로 확장하기 위한 작업 저장소입니다.
+해온의 한국어 발음 체크, 수업, 학습 키트를 소개하는 Astro 기반 정적 웹사이트입니다. 메인 디자인을 유지하면서 MVP 전환 흐름과 운영 준비 상태를 구현했습니다.
 
-현재 저장소의 `index.html` 계열 파일은 실제 서비스용 홈페이지가 아니라, 한글 학습지 PDF 레이아웃을 확인하고 출력하기 위해 만든 임시 미리보기 문서입니다. 앞으로의 목표는 워드프레스에 맞춘 PHP 테마 구조가 아니라, 익숙한 IDE에서 개발할 수 있는 현대적인 정적 웹사이트로 전환하면서 검색 노출과 방문자 분석까지 함께 갖추는 것입니다.
-
-## 목표
-
-- 해온 브랜드에 맞는 빠르고 가벼운 정적 웹사이트 구축
-- 구글과 네이버 검색 로봇이 바로 읽을 수 있는 HTML 구조 제공
-- 한국어 수업, KIIP, 한글 학습지, PDF 자료 등 핵심 콘텐츠의 SEO 최적화
-- 구글 서치 콘솔, 구글 애널리틱스, 네이버 서치어드바이저, 네이버 애널리틱스 연동
-- PDF 자료 미리보기와 판매 또는 외부 결제 링크 연결
-- 워드프레스 플러그인 의존 없이 배포 가능한 구조 유지
-
-## 권장 방향
-
-최종 웹사이트는 React 단독 CSR 앱이 아니라, 빌드 시점에 HTML을 미리 생성하는 정적 사이트 생성 방식으로 만드는 것을 권장합니다.
-
-후보 프레임워크:
-
-- `Next.js`: React 컴포넌트 재사용이 쉽고, 정적 생성과 SEO 메타데이터 관리가 안정적입니다.
-- `Astro`: 정적 콘텐츠 중심 사이트에 가볍고 빠르며, 필요한 부분에만 React를 붙이기 좋습니다.
-
-이 저장소에 이미 있는 디자인 자산, 로고, 물결 그래픽, PDF 레이아웃 아이디어는 이후 Next.js 또는 Astro 프로젝트의 컴포넌트와 에셋으로 옮겨 사용할 수 있습니다.
-
-## 현재 구조
-
-```text
-.
-├─ generate_pdf.py                 # ReportLab 기반 한글 학습지 PDF 생성 스크립트
-├─ worksheet-preview/              # 브라우저에서 A4 학습지 레이아웃을 확인하는 임시 HTML 미리보기
-│  ├─ index.html
-│  ├─ styles.css
-│  ├─ preview-server.js
-│  └─ export-pdf.ps1
-├─ resources/                      # 로고, 하단 물결 등 PDF/웹 공통 이미지 리소스
-├─ assets/                         # 생성 이미지와 시각 자료
-├─ fonts/                          # 폰트 압축 파일 및 폰트 관련 자료
-├─ output/pdf/                     # 생성된 PDF 결과물
-└─ tmp/                            # PDF 렌더링 확인용 임시 파일
-```
-
-## 현재 작업 실행
-
-PDF를 직접 생성하려면:
+## 실행
 
 ```powershell
-python .\generate_pdf.py
+npm install
+Copy-Item .env.example .env
+npm run dev
 ```
 
-브라우저에서 학습지 미리보기를 확인하려면:
+- 개발 서버: `http://localhost:4321`
+- 정적 빌드 및 검증: `npm run build`
+- 빌드 결과: `dist/`
 
-```powershell
-node .\worksheet-preview\preview-server.js
+## MVP 라우트
+
+| 경로 | 역할 | 검색 노출 |
+| --- | --- | --- |
+| `/` | 브랜드 홈과 핵심 CTA | 허용 |
+| `/start/` | 방문 목적에 따른 시작점 선택 | 제외 |
+| `/events/free-pronunciation-coaching/` | 무료 발음 체크 안내·신청 | 허용 |
+| `/classes/` | 온라인 수업·KIIP 보조 학습 안내 | 허용 |
+| `/study-kits/` | 학습 키트 미리보기 | 허용 |
+| `/contact/` | 수업·자료·협업 문의 | 허용 |
+| `/thanks/coaching/` | 발음 체크 신청 결과 | 제외 |
+| `/thanks/inquiry/` | 문의 결과 | 제외 |
+| `/privacy/`, `/terms/`, `/refund/` | 운영 정책 | 제외 |
+
+페이지 구조와 CTA 전략 프레젠테이션은 `output/presentations/haeon-mvp-page-plan.pptx`에 있습니다.
+
+## 운영 설정
+
+`.env.example`을 `.env`로 복사한 뒤 실제 값만 입력합니다.
+
+```dotenv
+SITE_URL=https://your-domain.example
+PUBLIC_CONTACT_EMAIL=
+PUBLIC_BUSINESS_NAME=해온 HAEON
+PUBLIC_REPRESENTATIVE_NAME=
+PUBLIC_BUSINESS_NUMBER=
+PUBLIC_ECOMMERCE_NUMBER=
+PUBLIC_BUSINESS_ADDRESS=
+PUBLIC_COACHING_FORM_ENDPOINT=
+PUBLIC_INQUIRY_FORM_ENDPOINT=
+PUBLIC_STUDY_KIT_CHECKOUT_URL=
+PUBLIC_STUDY_KIT_PRICE=19000
+PUBLIC_GA_MEASUREMENT_ID=
 ```
 
-접속 주소:
+- 폼 엔드포인트가 비어 있으면 입력 내용은 외부로 전송·저장되지 않는 데모 모드로 동작합니다.
+- 결제 URL이 비어 있으면 학습 키트는 미리보기만 노출되고 구매 버튼은 비활성화됩니다.
+- 실제 유료 상품 파일은 `public/`에 두지 않습니다. 현재 공개되는 것은 소개용 미리보기 이미지 2장뿐입니다.
+- `SITE_URL`을 입력해야 canonical URL과 sitemap이 실제 도메인으로 생성됩니다.
 
-```text
-http://localhost:5173/
-```
+## 출시 전 확인
 
-미리보기 화면에서 인쇄 기능을 사용하거나 다음 스크립트로 PDF를 내보낼 수 있습니다.
+1. 실제 도메인과 공개 이메일을 확정합니다.
+2. 무료 발음 체크·일반 문의를 받을 폼 서비스의 엔드포인트를 준비합니다.
+3. 대표자명, 사업자 정보, 주소를 입력하고 개인정보 처리방침·이용약관·환불 안내를 운영 방식에 맞게 검토합니다.
+4. 학습 키트의 실제 페이지 수, 영상 수, 가격, 제공 방식과 환불 기준을 확정한 뒤에만 결제 URL을 설정합니다.
+5. GA4 측정 ID를 입력하고 실제 배포 환경에서 CTA·폼 이벤트를 확인합니다.
+6. `npm run build`를 실행한 뒤 `dist/`를 정적 호스팅에 배포합니다.
 
-```powershell
-.\worksheet-preview\export-pdf.ps1
-```
+법률 페이지는 출시 준비를 돕는 초안이며 법률 자문을 대체하지 않습니다. 사업 정보와 실제 판매·환불 절차가 정해진 뒤 전문가 검토를 권장합니다.
 
-## SEO 사이트 전환 계획
+## 구현 원칙
 
-1. Next.js 또는 Astro 프로젝트를 새로 구성합니다.
-2. 현재 `worksheet-preview`에 있는 임시 HTML은 서비스 첫 화면으로 쓰지 않고, 필요한 디자인 요소만 컴포넌트로 재구성합니다.
-3. 주요 페이지를 정적 HTML로 생성합니다.
-   - 홈
-   - 한국어 수업 안내
-   - KIIP 또는 사회통합프로그램 안내
-   - 한글 학습지/PDF 자료 소개
-   - 결제 또는 외부 구매 링크 페이지
-   - 문의/위치/지역 수업 안내
-4. 각 페이지에 고유한 SEO 메타데이터를 넣습니다.
-   - `title`
-   - `description`
-   - canonical URL
-   - Open Graph 이미지
-   - 구조화 데이터(JSON-LD)
-5. 검색 엔진 등록을 위한 파일과 설정을 추가합니다.
-   - `sitemap.xml`
-   - `robots.txt`
-   - Google Search Console 인증 태그 또는 DNS 인증
-   - Naver Search Advisor 인증 태그
-6. 방문자 분석 코드를 공통 레이아웃에 추가합니다.
-   - Google Analytics 4
-   - Naver Analytics
-7. 정적 빌드 결과물을 호스팅어의 빈 HTML 웹사이트 또는 정적 호스팅 환경에 배포합니다.
-
-## 검색/분석 연동 메모
-
-정적 웹사이트에서도 워드프레스 플러그인 없이 다음 도구를 사용할 수 있습니다.
-
-- Google Search Console: 구글 검색 노출, 검색어, 색인 상태 확인
-- Google Analytics 4: 방문자 수, 유입 경로, 페이지 행동 분석
-- Naver Search Advisor: 네이버 검색 수집과 노출 상태 확인
-- Naver Analytics: 네이버 중심 방문자 행동 분석
-- Naver Place: 충청권 로컬 검색 유입을 위한 기관/장소 등록
-
-인증 태그와 분석 스크립트는 최종 프레임워크의 공통 레이아웃 파일에 한 번만 넣는 방식으로 관리합니다.
-
-## 결제와 PDF 판매 방향
-
-정적 사이트는 우커머스 같은 서버형 쇼핑몰 기능을 직접 포함하지 않습니다. 대신 다음 방식 중 하나를 연결합니다.
-
-- PayPal Smart Payment Buttons
-- Gumroad 같은 디지털 상품 판매 플랫폼
-- 크몽, 탈잉, 클래스 플랫폼, 별도 결제 페이지 링크
-- 수동 입금 안내와 문의 폼 조합
-
-초기에는 외부 결제 링크를 버튼으로 연결하는 방식이 가장 단순하고 유지보수 부담이 적습니다.
-
-## 주의할 점
-
-- 현재 `worksheet-preview/index.html`은 PDF 미리보기용 임시 문서이므로 SEO용 메인 페이지로 사용하지 않습니다.
-- React만으로 만든 CSR 사이트는 검색 노출에 불리할 수 있으므로, 최종 사이트는 SSG 또는 SSR 기반으로 구성합니다.
-- 이미지 파일명에 공백과 한글이 섞여 있으므로, 배포용 에셋은 나중에 영문 kebab-case 이름으로 정리하는 것이 좋습니다.
-- PDF 생성물과 임시 렌더링 파일은 실제 웹 배포 대상과 분리해서 관리합니다.
-
-## 다음 단계
-
-이 저장소의 다음 큰 작업은 Next.js 또는 Astro 기반의 실제 정적 사이트 뼈대를 만드는 것입니다. 그 후 현재 PDF/브랜드 자산을 옮기고, 검색 엔진이 읽기 좋은 페이지 구조와 메타데이터를 먼저 완성합니다.
+- 무료 발음 체크는 즉시 예약이 아니라 신청 후 이메일로 일정 조율하는 흐름입니다.
+- 수업은 온라인을 우선하고 충청권 대면 가능성을 보조 정보로 안내합니다.
+- KIIP 수업은 공식 운영 과정이 아닌 개인 보조 학습 서비스임을 명시합니다.
+- 분석 이벤트에는 이름, 이메일, 문의 내용 같은 개인정보를 넣지 않습니다.
+- `scripts/check-build.mjs`가 필수 라우트, 메타데이터, 내부 링크, robots, sitemap을 빌드마다 검사합니다.

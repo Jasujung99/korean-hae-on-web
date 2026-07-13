@@ -1,0 +1,227 @@
+---
+import tutorPhoto from "../assets/story/tutor-story-photo.jpg";
+import FaqList from "../components/FaqList.astro";
+import LeadForm from "../components/LeadForm.astro";
+import PageHero from "../components/PageHero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { absoluteUrl, siteConfig } from "../lib/site";
+
+const title = "온라인 한국어 수업·KIIP 보조 학습 | 해온";
+const description = "발음, 문장, 실제 대화를 연결하는 해온의 1:1·소그룹·KIIP 보조 한국어 수업을 알아보세요.";
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": absoluteUrl("/classes/") + "#service",
+    name: "해온 맞춤 한국어 수업",
+    description,
+    provider: { "@id": absoluteUrl("/") + "#organization" },
+    areaServed: ["Online", "충청권"],
+    serviceType: ["1:1 한국어 수업", "소그룹 한국어 수업", "KIIP 보조 학습"],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "홈", item: absoluteUrl("/") },
+      { "@type": "ListItem", position: 2, name: "한국어 수업", item: absoluteUrl("/classes/") },
+    ],
+  },
+];
+
+const faqs = [
+  {
+    question: "수업 가격과 일정은 어떻게 정해지나요?",
+    answer: "학습 목표, 수업 형태, 횟수와 일정을 상담한 뒤 수업료와 결제·취소 기준을 먼저 안내합니다. 상담 신청만으로 비용이 발생하지 않습니다.",
+  },
+  {
+    question: "온라인 수업은 어떻게 진행하나요?",
+    answer: "영상 통화와 화면 공유가 가능한 도구를 사용합니다. 확정된 도구와 접속 방법은 첫 수업 전에 이메일로 안내합니다.",
+  },
+  {
+    question: "KIIP 공식 수업인가요?",
+    answer: "아닙니다. 해온의 KIIP 보조 수업은 법무부 사회통합프로그램 공식 운영 과정이 아닌 개인 보조 학습 서비스입니다.",
+  },
+  {
+    question: "한국어를 처음 배우는 사람도 가능한가요?",
+    answer: "가능합니다. 상담에서 현재 읽기·듣기 수준과 사용할 수 있는 안내 언어를 확인한 뒤 시작 범위를 정합니다.",
+  },
+];
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <PageHero
+    kicker="KOREAN CLASSES"
+    title="내 목표와 속도에 맞는 한국어 수업"
+    lead="발음, 문장, 실제 대화를 연결해 이해한 한국어를 내 말로 이어갑니다."
+    facts={[
+      { label: "기본 방식", value: "온라인 중심" },
+      { label: "수업 형태", value: "1:1 · 소그룹" },
+      { label: "수업료", value: "상담 후 안내" },
+    ]}
+    primary={{ href: "#inquiry", label: "수업 상담 신청", analyticsId: "classes-hero-inquiry" }}
+    secondary={{ href: "/events/free-pronunciation-coaching/", label: "무료 발음 체크 먼저", analyticsId: "classes-hero-free-check", variant: "secondary" }}
+    analyticsLocation="classes-hero"
+  />
+
+  <section class="content-section">
+    <div class="page-shell">
+      <div class="section-heading">
+        <p class="page-kicker">CLASS OPTIONS</p>
+        <h2>필요한 방식으로 깊이를 조절해요</h2>
+        <p>정해진 패키지를 바로 결제하는 대신, 목표와 가능한 시간을 먼저 확인하고 맞는 수업을 제안합니다.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card class-card">
+          <span class="route-number">01 · PERSONAL</span>
+          <h3>1:1 맞춤 수업</h3>
+          <p>목표·수준·일정에 맞춰 필요한 표현과 발음을 집중해서 배웁니다.</p>
+          <ul><li>개인별 학습 순서</li><li>수업 중 즉시 피드백</li><li>다음 연습 제안</li></ul>
+        </article>
+        <article class="service-card class-card">
+          <span class="route-number">02 · TOGETHER</span>
+          <h3>소그룹 수업</h3>
+          <p>비슷한 수준의 학습자와 듣고 말하며 표현을 실제로 사용합니다.</p>
+          <ul><li>대화 중심 연습</li><li>서로 다른 말투 듣기</li><li>모집 시 일정 안내</li></ul>
+        </article>
+        <article class="service-card class-card">
+          <span class="route-number">03 · SUPPORT</span>
+          <h3>KIIP 보조 수업</h3>
+          <p>교재의 어휘와 문법을 다시 이해하고 문제와 생활 표현으로 연결합니다.</p>
+          <ul><li>교재 내용 복습</li><li>어려운 문법 재설명</li><li>생활 장면 연결</li></ul>
+        </article>
+      </div>
+      <p class="policy-inline">
+        <strong>KIIP 안내:</strong> 해온 수업은 법무부 사회통합프로그램 공식 운영 과정이 아닌 개인 보조 학습 서비스입니다.
+      </p>
+    </div>
+  </section>
+
+  <section class="content-section soft-section">
+    <div class="page-shell split-section">
+      <div>
+        <div class="section-heading">
+          <p class="page-kicker">LESSON METHOD</p>
+          <h2>소리를 이해하고, 문장으로 연결해요</h2>
+          <p>외운 표현이 실제 대화에서 나오려면 귀로 들은 소리, 입의 움직임, 문장 속 의미가 함께 연결되어야 합니다.</p>
+        </div>
+        <div class="feature-grid method-grid">
+          <article class="feature-item"><span class="route-number">LISTEN</span><h3>듣기</h3><p>차이를 듣고 의미가 갈리는 지점을 찾습니다.</p></article>
+          <article class="feature-item"><span class="route-number">SOUND</span><h3>발음</h3><p>입 모양과 공기의 흐름을 이해합니다.</p></article>
+          <article class="feature-item"><span class="route-number">SENTENCE</span><h3>문장</h3><p>단어를 내가 쓸 수 있는 문장으로 확장합니다.</p></article>
+          <article class="feature-item"><span class="route-number">CONTEXT</span><h3>문화</h3><p>상황과 관계에 맞는 말투까지 함께 살핍니다.</p></article>
+        </div>
+      </div>
+      <figure class="media-frame tutor-frame">
+        <img
+          src={tutorPhoto.src}
+          width={tutorPhoto.width}
+          height={tutorPhoto.height}
+          alt="교실에서 수업 자료를 준비하는 해온 한국어 튜터"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="page-shell split-section">
+      <div class="section-heading">
+        <p class="page-kicker">PROCESS</p>
+        <h2>첫 상담에서 수업까지</h2>
+        <p>상담 신청은 결제가 아닙니다. 수업 제안과 비용, 일정, 취소 기준을 확인한 뒤 시작 여부를 결정합니다.</p>
+      </div>
+      <ol class="step-list">
+        <li><strong>상담 신청</strong><span>현재 수준, 학습 목표와 가능한 시간을 알려주세요.</span></li>
+        <li><strong>학습 방향 제안</strong><span>{siteConfig.responseTime}에 적합한 형태와 예상 일정을 안내합니다.</span></li>
+        <li><strong>조건 확인</strong><span>수업료, 결제 방식과 취소 기준을 확인하고 일정을 확정합니다.</span></li>
+        <li><strong>수업과 피드백</strong><span>수업에서 확인한 내용을 다음 연습으로 이어갑니다.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="inquiry" class="content-section form-section" aria-labelledby="class-form-title">
+    <div class="page-shell form-layout">
+      <div class="section-heading">
+        <p class="page-kicker">CLASS INQUIRY</p>
+        <h2 id="class-form-title">목표와 가능한 시간을 알려주세요</h2>
+        <p>내용을 확인한 뒤 {siteConfig.responseTime}에 이메일로 수업 방향과 다음 단계를 안내합니다.</p>
+        <div class="application-note">
+          <strong>온라인 우선 운영</strong>
+          <p>대면 수업은 충청권에서 일정과 장소가 맞는 경우에 한해 별도로 조율합니다.</p>
+        </div>
+      </div>
+      <LeadForm
+        variant="class"
+        endpoint={siteConfig.inquiryFormEndpoint}
+        successPath="/thanks/inquiry/?type=class"
+      />
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-shell">
+      <div class="section-heading">
+        <p class="page-kicker">FAQ</p>
+        <h2>수업 전 자주 묻는 질문</h2>
+      </div>
+      <FaqList items={faqs} />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .class-card ul {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 1.4rem;
+    padding-left: 1.1rem;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .policy-inline,
+  .application-note {
+    margin-top: 2rem;
+    border-left: 3px solid var(--color-accent-mint);
+    padding: 1rem 1.2rem;
+    color: var(--color-text-secondary);
+    background: rgb(255 255 255 / 0.7);
+    line-height: 1.7;
+  }
+
+  .policy-inline strong,
+  .application-note strong {
+    color: var(--color-text-primary);
+  }
+
+  .soft-section,
+  .form-section {
+    background: rgb(234 246 250 / 0.42);
+  }
+
+  .method-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .method-grid .feature-item {
+    min-height: 13rem;
+  }
+
+  .tutor-frame {
+    align-self: stretch;
+    min-height: 38rem;
+  }
+
+  @media (max-width: 640px) {
+    .method-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tutor-frame {
+      min-height: 24rem;
+    }
+  }
+</style>

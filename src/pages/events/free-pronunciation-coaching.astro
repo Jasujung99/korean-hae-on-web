@@ -1,0 +1,202 @@
+---
+import pronunciationImage from "../../assets/story/g-pronunciation-organs.jpg";
+import FaqList from "../../components/FaqList.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import PageHero from "../../components/PageHero.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { absoluteUrl, siteConfig } from "../../lib/site";
+
+const title = "무료 한국어 발음 체크 | 해온";
+const description = "20분 온라인 1:1 대화와 발음 연습으로 지금 잘하고 있는 소리와 다음에 연습할 한 가지를 찾아보세요.";
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": absoluteUrl("/events/free-pronunciation-coaching/") + "#service",
+    name: "해온 무료 한국어 발음 체크",
+    description,
+    provider: { "@id": absoluteUrl("/") + "#organization" },
+    areaServed: "Online",
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: absoluteUrl("/events/free-pronunciation-coaching/"),
+      serviceLocation: { "@type": "VirtualLocation", url: absoluteUrl("/events/free-pronunciation-coaching/") },
+    },
+    offers: { "@type": "Offer", price: 0, priceCurrency: "KRW", availability: "https://schema.org/InStock" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "홈", item: absoluteUrl("/") },
+      { "@type": "ListItem", position: 2, name: "무료 발음 체크", item: absoluteUrl("/events/free-pronunciation-coaching/") },
+    ],
+  },
+];
+
+const faqs = [
+  {
+    question: "한국어를 거의 못해도 신청할 수 있나요?",
+    answer: "네. 읽기나 말하기가 아직 익숙하지 않아도 괜찮습니다. 신청서에 현재 수준과 편한 안내 언어를 적어 주세요.",
+  },
+  {
+    question: "발음을 평가하거나 점수를 매기나요?",
+    answer: "점수나 등급을 매기지 않습니다. 지금 잘 들리는 소리와 먼저 연습하면 좋은 한 가지를 함께 찾습니다.",
+  },
+  {
+    question: "신청하면 바로 예약되나요?",
+    answer: "아니요. 신청 내용을 확인한 뒤 이메일로 가능한 일정을 조율하고, 양쪽이 일정을 확인하면 예약이 확정됩니다.",
+  },
+  {
+    question: "어떤 준비가 필요한가요?",
+    answer: "평소 어렵게 느꼈던 단어나 문장 1~2개와 안정적인 온라인 통화 환경을 준비해 주세요.",
+  },
+];
+---
+
+<BaseLayout title={title} description={description} schema={schema}>
+  <PageHero
+    kicker="FREE PRONUNCIATION CHECK"
+    title="내 발음이 막히는 지점, 함께 찾아봐요"
+    lead="짧은 온라인 대화와 발음 연습으로 지금 잘하고 있는 소리와 다음에 연습할 한 가지를 알려드립니다."
+    facts={[
+      { label: "비용", value: siteConfig.coaching.price },
+      { label: "방식", value: siteConfig.coaching.channel },
+      { label: "예상 시간", value: siteConfig.coaching.duration },
+    ]}
+    primary={{ href: "#apply", label: "무료 발음 체크 신청", analyticsId: "coaching-hero-apply" }}
+    secondary={{ href: "/classes/", label: "정규 수업 먼저 보기", analyticsId: "coaching-hero-classes", variant: "secondary" }}
+    analyticsLocation="coaching-hero"
+  />
+
+  <section class="content-section">
+    <div class="page-shell">
+      <div class="section-heading">
+        <p class="page-kicker">WHAT YOU GET</p>
+        <h2>체크가 끝나면 알게 되는 것</h2>
+        <p>많은 내용을 한 번에 고치기보다, 다음 연습을 스스로 이어갈 수 있도록 가장 중요한 한 가지를 남깁니다.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-item">
+          <span class="route-number">01 · NOTICE</span>
+          <h3>지금 잘 들리는 소리</h3>
+          <p>이미 안정적으로 내고 있는 소리를 확인해 말하기의 기준점을 만듭니다.</p>
+        </article>
+        <article class="feature-item">
+          <span class="route-number">02 · FOCUS</span>
+          <h3>먼저 다듬을 발음</h3>
+          <p>의미 전달에 가장 큰 영향을 주는 소리 하나를 골라 원리부터 살펴봅니다.</p>
+        </article>
+        <article class="feature-item">
+          <span class="route-number">03 · PRACTICE</span>
+          <h3>혼자 반복할 방법</h3>
+          <p>입 모양과 소리의 흐름을 기억할 수 있는 짧은 연습을 제안합니다.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="page-shell split-section">
+      <div>
+        <div class="section-heading">
+          <p class="page-kicker">HOW IT WORKS</p>
+          <h2>신청부터 피드백까지</h2>
+          <p>일정은 신청서 접수 후 이메일로 조율합니다. 신청만으로 예약이 확정되지는 않습니다.</p>
+        </div>
+        <ol class="step-list">
+          <li><strong>신청서 작성</strong><span>현재 수준과 어려운 발음, 가능한 시간을 알려주세요.</span></li>
+          <li><strong>일정 안내</strong><span>{siteConfig.responseTime}에 가능한 온라인 일정을 이메일로 제안합니다.</span></li>
+          <li><strong>20분 발음 체크</strong><span>짧게 대화하고 준비한 단어나 문장의 소리를 함께 살펴봅니다.</span></li>
+          <li><strong>연습 한 가지 제안</strong><span>혼자서 바로 반복할 수 있는 다음 연습을 정리합니다.</span></li>
+        </ol>
+      </div>
+      <div>
+        <figure class="media-frame pronunciation-figure">
+          <img
+            src={pronunciationImage.src}
+            width={pronunciationImage.width}
+            height={pronunciationImage.height}
+            alt="발음할 때 사용하는 입과 혀의 위치를 표시한 해온 수업 자료"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+        <blockquote class="quote-panel coaching-quote">
+          <p>틀린 발음을 평가하는 시간이 아닙니다. 지금 이어갈 수 있는 소리부터 차분히 찾습니다.</p>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section soft-section">
+    <div class="page-shell">
+      <div class="section-heading">
+        <p class="page-kicker">GOOD FIT</p>
+        <h2>이런 분께 잘 맞아요</h2>
+      </div>
+      <div class="service-grid">
+        <article class="service-card"><h3>읽을 수 있지만 말하기가 조심스러운 분</h3><p>아는 문장도 소리가 맞는지 걱정되어 입 밖으로 내기 어려울 때 시작점이 됩니다.</p></article>
+        <article class="service-card"><h3>따라 해도 다르게 들리는 분</h3><p>귀로 들은 소리와 내 입의 움직임 사이에서 놓친 연결을 함께 확인합니다.</p></article>
+        <article class="service-card"><h3>수업 전에 짧게 경험하고 싶은 분</h3><p>정규 수업을 정하기 전에 해온의 설명 방식과 피드백 흐름을 경험할 수 있습니다.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="apply" class="content-section" aria-labelledby="apply-title">
+    <div class="page-shell form-layout">
+      <div class="section-heading">
+        <p class="page-kicker">APPLY</p>
+        <h2 id="apply-title">가능한 시간을 알려주세요</h2>
+        <p>신청 내용을 확인한 뒤 {siteConfig.responseTime}에 이메일로 다음 일정을 안내합니다.</p>
+        <div class="application-note">
+          <strong>신청 전 확인</strong>
+          <p>온라인 1:1로 진행하며, 신청서 제출만으로 예약이 확정되지는 않습니다.</p>
+        </div>
+      </div>
+      <LeadForm
+        variant="coaching"
+        endpoint={siteConfig.coaching.formEndpoint}
+        successPath="/thanks/coaching/"
+      />
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-shell">
+      <div class="section-heading">
+        <p class="page-kicker">FAQ</p>
+        <h2>신청 전 자주 묻는 질문</h2>
+      </div>
+      <FaqList items={faqs} />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .soft-section {
+    background: rgb(234 246 250 / 0.45);
+  }
+
+  .pronunciation-figure {
+    aspect-ratio: 4 / 3;
+  }
+
+  .coaching-quote {
+    margin-top: 2rem;
+  }
+
+  .application-note {
+    margin-top: 2rem;
+    border-top: 1px solid var(--color-line-strong);
+    padding-top: 1.2rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+
+  .application-note strong {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--color-text-primary);
+  }
+</style>

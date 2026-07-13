@@ -1,0 +1,358 @@
+---
+import samplePageOne from "../assets/kits/hangeul-vowels-page-1.png";
+import samplePageTwo from "../assets/kits/hangeul-vowels-page-2.png";
+import ButtonLink from "../components/ButtonLink.astro";
+import FaqList from "../components/FaqList.astro";
+import PageHero from "../components/PageHero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { absoluteUrl, formatKrw, siteConfig } from "../lib/site";
+
+const title = "한글 모음 발음 PDF·영상 학습 키트 | 해온";
+const description = "하늘·땅·사람에서 시작되는 한글 모음의 원리와 기본 모음 쓰기를 연결하는 해온 학습 키트를 살펴보세요.";
+const isForSale = Boolean(siteConfig.kit.checkoutUrl);
+let checkoutDomain = "";
+
+if (isForSale) {
+  try {
+    checkoutDomain = new URL(siteConfig.kit.checkoutUrl).hostname;
+  } catch {
+    checkoutDomain = "external-checkout";
+  }
+}
+
+const schemas: Record<string, unknown>[] = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "홈", item: absoluteUrl("/") },
+      { "@type": "ListItem", position: 2, name: "학습 키트", item: absoluteUrl("/study-kits/") },
+    ],
+  },
+];
+
+if (isForSale) {
+  schemas.unshift({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": absoluteUrl("/study-kits/") + "#hangeul-vowels-kit",
+    name: siteConfig.kit.name,
+    description,
+    image: [absoluteUrl(samplePageOne.src), absoluteUrl(samplePageTwo.src)],
+    brand: { "@type": "Brand", name: siteConfig.shortName },
+    category: "한국어 디지털 학습 자료",
+    offers: {
+      "@type": "Offer",
+      url: siteConfig.kit.checkoutUrl,
+      price: siteConfig.kit.price,
+      priceCurrency: siteConfig.kit.currency,
+      availability: "https://schema.org/InStock",
+    },
+  });
+}
+
+const faqs = [
+  {
+    question: "지금 바로 구매할 수 있나요?",
+    answer: isForSale
+      ? "네. 구매 버튼을 누르면 외부 결제 페이지가 새 창에서 열립니다. 결제 전에 상품 구성과 환불 안내를 다시 확인해 주세요."
+      : "아직은 샘플 2쪽만 공개된 제작 단계입니다. 완성본, 전달 방식과 결제 페이지가 준비된 뒤 구매를 열 예정입니다.",
+  },
+  {
+    question: "어떤 학습자에게 맞나요?",
+    answer: "한글을 처음 배우거나 모음 모양과 소리를 외우기만 해서 자주 헷갈리는 초급 학습자에게 맞습니다.",
+  },
+  {
+    question: "파일을 다른 사람과 공유해도 되나요?",
+    answer: "구매자 개인 학습용으로만 사용할 수 있습니다. 파일의 재판매·재배포·상업적 사용은 허용되지 않습니다.",
+  },
+  {
+    question: "환불 기준은 어디에서 확인하나요?",
+    answer: "결제 전 환불 안내 페이지에서 디지털 콘텐츠 제공 시작 전후의 기준과 요청 방법을 확인할 수 있습니다.",
+  },
+];
+---
+
+<BaseLayout title={title} description={description} schema={schemas}>
+  <PageHero
+    kicker="STUDY KIT · 01"
+    title="한글 모음, 외우기 전에 원리부터"
+    lead="하늘·땅·사람에서 시작되는 모음의 원리와 여섯 개 기본 모음 쓰기를 한 흐름으로 익혀보세요."
+    facts={isForSale
+      ? [
+          { label: "구성", value: "A4 " + siteConfig.kit.pageCount + "쪽 PDF" },
+          { label: "발음 영상", value: siteConfig.kit.videoCount + "개" },
+          { label: "가격", value: formatKrw(siteConfig.kit.price) },
+        ]
+      : [
+          { label: "현재 공개", value: "샘플 2쪽" },
+          { label: "완성본", value: "제작 중" },
+          { label: "판매", value: "준비 중" },
+        ]}
+    primary={{
+      href: isForSale ? "#buy" : "#preview",
+      label: isForSale ? "구성 확인하고 구매하기" : "샘플 2쪽 미리보기",
+      analyticsId: "kits-hero-primary",
+    }}
+    secondary={{
+      href: "/events/free-pronunciation-coaching/",
+      label: "발음 피드백 먼저 받기",
+      analyticsId: "kits-hero-free-check",
+      variant: "secondary",
+    }}
+    analyticsLocation="kits-hero"
+  />
+
+  {!isForSale && (
+    <div class="page-shell">
+      <p class="launch-notice" role="note">
+        <strong>현재는 미리보기 단계입니다.</strong>
+        공개된 샘플 2쪽은 실제 제작 방향을 보여주며, 완성본과 영상·결제·전달 흐름을 검수한 뒤 판매를 시작합니다.
+      </p>
+    </div>
+  )}
+
+  <section id="preview" class="content-section" aria-labelledby="preview-title">
+    <div class="page-shell">
+      <div class="section-heading">
+        <p class="page-kicker">REAL SAMPLE</p>
+        <h2 id="preview-title">실제 샘플 2쪽을 먼저 확인하세요</h2>
+        <p>유료 원본은 공개 경로에 두지 않습니다. 아래 이미지는 구성과 설명 방식을 확인하기 위한 미리보기입니다.</p>
+      </div>
+      <div class="sample-grid">
+        <figure class="kit-sample">
+          <img src={samplePageOne.src} width={samplePageOne.width} height={samplePageOne.height} alt="한글 모음 원리를 하늘, 땅, 사람의 모양으로 설명하는 학습 키트 샘플 첫 쪽" loading="lazy" decoding="async" />
+          <figcaption><span>01</span> 모음이 만들어진 원리</figcaption>
+        </figure>
+        <figure class="kit-sample">
+          <img src={samplePageTwo.src} width={samplePageTwo.width} height={samplePageTwo.height} alt="기본 한글 모음을 따라 쓰는 학습 키트 샘플 둘째 쪽" loading="lazy" decoding="async" />
+          <figcaption><span>02</span> 기본 모음 따라 쓰기</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section soft-section">
+    <div class="page-shell">
+      <div class="section-heading">
+        <p class="page-kicker">LEARNING OUTCOME</p>
+        <h2>모양과 소리를 한 흐름으로 연결해요</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-item"><span class="route-number">ORIGIN</span><h3>모음 모양의 원리</h3><p>점과 선이 어떤 생각에서 시작되었는지 그림과 함께 이해합니다.</p></article>
+        <article class="feature-item"><span class="route-number">SOUND</span><h3>글자와 소리의 연결</h3><p>글자 모양만 외우지 않고 입의 움직임과 실제 소리를 함께 익힙니다.</p></article>
+        <article class="feature-item"><span class="route-number">WRITING</span><h3>기본 모음 6개 쓰기</h3><p>선을 따라 쓰고 소리 내어 읽으며 눈·손·귀의 기억을 연결합니다.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="page-shell split-section">
+      <div class="section-heading">
+        <p class="page-kicker">STUDY FLOW</p>
+        <h2>한 번에 오래보다, 짧게 네 번</h2>
+        <p>각 단계에서 글자를 눈으로 보고, 소리를 듣고, 손으로 쓰고, 입으로 확인합니다.</p>
+      </div>
+      <ol class="step-list">
+        <li><strong>원리 읽기</strong><span>모양이 만들어진 배경을 그림과 함께 살펴봅니다.</span></li>
+        <li><strong>소리 듣기</strong><span>영상이 포함된 판매본에서는 기본 모음의 소리를 확인합니다.</span></li>
+        <li><strong>따라 쓰기</strong><span>획의 방향을 따라 천천히 써 봅니다.</span></li>
+        <li><strong>소리 내어 읽기</strong><span>쓴 글자를 보며 짧게 여러 번 말합니다.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="buy" class="content-section purchase-section" aria-labelledby="buy-title">
+    <div class="page-shell purchase-panel">
+      <div>
+        <p class="page-kicker">{isForSale ? "DIGITAL DOWNLOAD" : "COMING SOON"}</p>
+        <h2 id="buy-title">{isForSale ? siteConfig.kit.name : "완성본 판매를 준비하고 있어요"}</h2>
+        {isForSale ? (
+          <>
+            <p>A4 {siteConfig.kit.pageCount}쪽 PDF와 발음 영상 {siteConfig.kit.videoCount}개를 제공합니다. 결제 완료 후 결제 이메일로 다운로드 안내를 보냅니다.</p>
+            <p class="purchase-license">구매자 개인 학습용 · 재판매·재배포·상업적 사용 불가</p>
+          </>
+        ) : (
+          <p>전체 PDF와 영상, 결제 후 전달 절차를 확인한 뒤 구매 버튼을 열겠습니다. 지금은 가격을 받거나 파일을 전달하지 않습니다.</p>
+        )}
+      </div>
+      <div class="purchase-action">
+        {isForSale ? (
+          <>
+            <strong>{formatKrw(siteConfig.kit.price)}</strong>
+            <ButtonLink
+              href={siteConfig.kit.checkoutUrl}
+              label="외부 결제 페이지 열기"
+              analyticsId="kits-checkout"
+              analyticsLocation="kits-purchase"
+              analyticsEvent="begin_checkout"
+              itemId={siteConfig.kit.id}
+              itemName={siteConfig.kit.name}
+              itemCategory="study_kit"
+              currency={siteConfig.kit.currency}
+              value={siteConfig.kit.price}
+              outboundDomain={checkoutDomain}
+              external
+            />
+          </>
+        ) : (
+          <>
+            <ButtonLink href="#" label="판매 준비 중" analyticsId="kits-checkout-disabled" analyticsLocation="kits-purchase" disabled />
+            <ButtonLink href="/contact/?topic=study_kit" label="학습 키트 문의" analyticsId="kits-contact" analyticsLocation="kits-purchase" variant="secondary" />
+          </>
+        )}
+        <a class="refund-link" href="/refund/">결제 전 환불 기준 확인</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-shell">
+      <div class="section-heading">
+        <p class="page-kicker">FAQ</p>
+        <h2>학습 키트 안내</h2>
+      </div>
+      <FaqList items={faqs} />
+    </div>
+  </section>
+
+  {isForSale && (
+    <script
+      is:inline
+      define:vars={{
+        itemId: siteConfig.kit.id,
+        itemName: siteConfig.kit.name,
+        currency: siteConfig.kit.currency,
+        value: siteConfig.kit.price,
+      }}
+    >
+      document.addEventListener("DOMContentLoaded", function () {
+        window.dispatchEvent(new CustomEvent("haeon:track", {
+          detail: {
+            event: "view_item",
+            currency: currency,
+            value: value,
+            items: [{
+              item_id: itemId,
+              item_name: itemName,
+              item_category: "study_kit",
+              price: value,
+              quantity: 1
+            }]
+          }
+        }));
+      }, { once: true });
+    </script>
+  )}
+</BaseLayout>
+
+<style>
+  .launch-notice {
+    margin-top: 2rem;
+    border: 1px solid rgb(93 157 232 / 0.32);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.2rem;
+    color: var(--color-text-secondary);
+    background: rgb(234 246 250 / 0.75);
+    line-height: 1.65;
+  }
+
+  .launch-notice strong {
+    color: var(--color-text-primary);
+  }
+
+  .sample-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1rem, 3vw, 2.5rem);
+  }
+
+  .kit-sample {
+    overflow: hidden;
+    border: var(--surface-border);
+    border-radius: var(--radius-xl);
+    background: var(--haeon-white);
+    box-shadow: 0 25px 70px rgb(16 43 78 / 0.1);
+  }
+
+  .kit-sample img {
+    width: 100%;
+    background: #fff;
+  }
+
+  .kit-sample figcaption {
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid var(--color-line);
+    padding: 1.2rem 1.4rem;
+    color: var(--color-text-secondary);
+  }
+
+  .kit-sample figcaption span {
+    color: var(--color-highlight-calm);
+    font-weight: 750;
+  }
+
+  .soft-section {
+    background: rgb(234 246 250 / 0.42);
+  }
+
+  .purchase-section {
+    color: var(--haeon-white);
+    background: var(--color-action-primary);
+  }
+
+  .purchase-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+    align-items: end;
+    gap: clamp(2.5rem, 8vw, 8rem);
+  }
+
+  .purchase-panel h2 {
+    color: inherit;
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 4vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  .purchase-panel p {
+    max-width: 42rem;
+    margin-top: 1.2rem;
+    color: rgb(255 255 255 / 0.72);
+    line-height: 1.75;
+  }
+
+  .purchase-license {
+    font-size: 0.85rem;
+  }
+
+  .purchase-action {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .purchase-action > strong {
+    margin-bottom: 0.6rem;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  .refund-link {
+    min-height: 2.75rem;
+    padding-top: 0.7rem;
+    color: rgb(255 255 255 / 0.76);
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+  }
+
+  @media (max-width: 760px) {
+    .sample-grid,
+    .purchase-panel {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

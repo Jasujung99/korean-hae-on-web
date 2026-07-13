@@ -1,0 +1,23 @@
+.ds-card {
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(145deg, rgb(255 255 255 / 0.92), rgb(234 246 250 / 0.56)),
+    var(--color-bg-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.ds-card-flat {
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: rgb(255 255 255 / 0.72);
+}
+
+.ds-card-title {
+  color: var(--color-text-strong);
+  font-family: var(--font-sans);
+  font-size: var(--type-card-title);
+  font-weight: var(--weight-emphasis);
+  line-height: 1.35;
+  letter-spacing: 0;
+}

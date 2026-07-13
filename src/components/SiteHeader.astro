@@ -1,0 +1,102 @@
+---
+import wordmark from "../assets/brand/haeon-wordmark.png";
+
+const currentPath = Astro.url.pathname;
+const navItems = [
+  { href: "/#method", label: "해온의 방식", match: "/" },
+  { href: "/classes/", label: "수업", match: "/classes/" },
+  { href: "/study-kits/", label: "자료실", match: "/study-kits/" },
+  { href: "/#story", label: "이야기", match: "/#story" },
+  { href: "/contact/", label: "문의", match: "/contact/" },
+];
+---
+
+<header class="global-header" data-global-header>
+  <div class="global-header-inner">
+    <a class="global-brand" href="/" aria-label="해온 HAEON 홈">
+      <img src={wordmark.src} width="789" height="399" alt="" />
+      <span>HAEON</span>
+    </a>
+
+    <nav class="global-nav" aria-label="주요 메뉴">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          aria-current={item.match !== "/#story" && currentPath === item.match ? "page" : undefined}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <a
+      class="header-cta"
+      href="/events/free-pronunciation-coaching/"
+      data-analytics-event="cta_click"
+      data-analytics-id="global-header-free-check"
+      data-analytics-location="global-header"
+      data-destination-path="/events/free-pronunciation-coaching/"
+    >
+      무료 발음 체크
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      data-menu-toggle
+    >
+      <span>메뉴</span>
+      <span class="menu-toggle-lines" aria-hidden="true"><span></span><span></span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" data-mobile-menu data-open="false">
+    <nav class="mobile-menu-inner" aria-label="모바일 메뉴">
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+      <a
+        class="site-button"
+        href="/events/free-pronunciation-coaching/"
+        data-analytics-event="cta_click"
+        data-analytics-id="mobile-menu-free-check"
+        data-analytics-location="mobile-menu"
+        data-destination-path="/events/free-pronunciation-coaching/"
+      >무료 발음 체크</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
+  const menu = document.querySelector<HTMLElement>("[data-mobile-menu]");
+
+  function closeMenu({ restoreFocus = false } = {}) {
+    if (!toggle || !menu) return;
+    toggle.setAttribute("aria-expanded", "false");
+    menu.dataset.open = "false";
+    document.body.classList.remove("menu-open");
+    if (restoreFocus) toggle.focus();
+  }
+
+  toggle?.addEventListener("click", () => {
+    if (!menu) return;
+    const willOpen = toggle.getAttribute("aria-expanded") !== "true";
+    toggle.setAttribute("aria-expanded", String(willOpen));
+    menu.dataset.open = String(willOpen);
+    document.body.classList.toggle("menu-open", willOpen);
+    if (willOpen) menu.querySelector<HTMLAnchorElement>("a")?.focus();
+  });
+
+  menu?.addEventListener("click", (event) => {
+    if (event.target instanceof HTMLAnchorElement) closeMenu();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menu?.dataset.open === "true") closeMenu({ restoreFocus: true });
+  });
+
+  window.matchMedia("(min-width: 981px)").addEventListener("change", (event) => {
+    if (event.matches) closeMenu();
+  });
+</script>
