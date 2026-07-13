@@ -4,6 +4,7 @@ import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import { absoluteUrl, siteConfig } from "../lib/site";
 import "../styles/global.css";
+import "../styles/interior.css";
 
 interface Props {
   title: string;
@@ -29,6 +30,9 @@ const canonical = absoluteUrl(canonicalPath);
 const absoluteOg = absoluteUrl(ogImage);
 const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
 const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID || "";
+const resolvedBodyClass = [Astro.url.pathname === "/" ? "" : "interior-page", bodyClass]
+  .filter(Boolean)
+  .join(" ");
 ---
 
 <!doctype html>
@@ -61,7 +65,7 @@ const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID || "";
       </script>
     )}
   </head>
-  <body class={bodyClass}>
+  <body class={resolvedBodyClass}>
     <a class="skip-link" href="#main-content">본문으로 이동</a>
     <SiteHeader />
     <main id="main-content" class="page-main">

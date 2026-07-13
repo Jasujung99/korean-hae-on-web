@@ -118,6 +118,17 @@ const schema = [
     align-items: stretch;
   }
 
+  @media (min-width: 981px) {
+    .contact-routes .route-card:last-child {
+      grid-column: 1 / -1;
+      min-height: 13rem;
+    }
+
+    .contact-routes .route-card:last-child > div {
+      max-width: 48rem;
+    }
+  }
+
   .form-section {
     background: rgb(234 246 250 / 0.42);
   }
