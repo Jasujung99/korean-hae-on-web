@@ -24,6 +24,8 @@ const expectedPublicFiles = [
   "robots.txt",
   "sitemap-index.xml",
   "share/daily-life-and-time.pptx",
+  "share/experience-and-preferences.pptx",
+  "share/thoughts-and-reasons.pptx",
   "share/.htaccess",
 ];
 
