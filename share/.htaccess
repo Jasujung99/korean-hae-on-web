@@ -4,3 +4,17 @@
     Header set Content-Disposition "attachment; filename=HAEON-PRN-STU-DAILY-TIME-01.pptx"
   </IfModule>
 </Files>
+
+<Files "experience-and-preferences.pptx">
+  ForceType application/octet-stream
+  <IfModule mod_headers.c>
+    Header set Content-Disposition "attachment; filename=HAEON-PRN-STU-EXP-PREF-01.pptx"
+  </IfModule>
+</Files>
+
+<Files "thoughts-and-reasons.pptx">
+  ForceType application/octet-stream
+  <IfModule mod_headers.c>
+    Header set Content-Disposition "attachment; filename=HAEON-PRN-STU-THOUGHT-REASON-01.pptx"
+  </IfModule>
+</Files>
