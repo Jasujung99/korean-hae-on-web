@@ -1,0 +1,6 @@
+<Files "daily-life-and-time.pptx">
+  ForceType application/octet-stream
+  <IfModule mod_headers.c>
+    Header set Content-Disposition "attachment; filename=HAEON-PRN-STU-DAILY-TIME-01.pptx"
+  </IfModule>
+</Files>

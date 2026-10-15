@@ -20,7 +20,12 @@ const expectedHtmlRoutes = [
   ["404.astro", "404.html"],
 ];
 
-const expectedPublicFiles = ["robots.txt", "sitemap-index.xml"];
+const expectedPublicFiles = [
+  "robots.txt",
+  "sitemap-index.xml",
+  "share/daily-life-and-time.pptx",
+  "share/.htaccess",
+];
 
 function toPosixPath(value) {
   return value.split(sep).join("/");
