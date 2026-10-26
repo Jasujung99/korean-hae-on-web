@@ -3,6 +3,7 @@ const env = import.meta.env;
 export const site = {
   name: "해온",
   nameLatin: "haeon",
+  copyrightName: "haeonkorean",
   url: env.SITE_URL || "http://localhost:4321",
   locale: "ko_KR",
   tagline: "Your voice, in Korean.",
@@ -12,8 +13,8 @@ export const site = {
   },
   links: {
     // Threads account URL. The coming-soon page hides the Threads link while this is empty.
-    threads: "",
-    letters: "https://haeumkorean.me",
+    threads: "https://www.threads.com/@haeumkorean",
+    letters: "https://haeum.haeonkorean.com/",
   },
 };
 

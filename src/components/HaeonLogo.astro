@@ -8,19 +8,23 @@ function pathOf(id: string) {
 }
 
 const mark = pathOf("mark");
-const name = pathOf("name-ko");
+const nameKo = pathOf("name-ko");
+const nameEn = pathOf("name-en");
 ---
 
 <a class="logo" href="/" aria-label="해온 haeon 첫 화면">
   <svg class="mark" viewBox="0 -1 241 180" aria-hidden="true" focusable="false"><path d={mark}></path></svg>
-  <svg class="name" viewBox="14 203 186 96" aria-hidden="true" focusable="false"><path d={name}></path></svg>
+  <svg class="name" viewBox="12 201 190 142" aria-hidden="true" focusable="false">
+    <path d={nameKo}></path>
+    <path d={nameEn}></path>
+  </svg>
 </a>
 
 <style>
   .logo {
     display: inline-flex;
     align-items: flex-end;
-    gap: 8px;
+    gap: 10px;
     color: var(--olive);
   }
 
@@ -31,22 +35,20 @@ const name = pathOf("name-ko");
   }
 
   .mark {
-    width: 60px;
+    width: 64px;
   }
 
   .name {
-    width: 52px;
-    margin-bottom: 6px;
+    width: 56px;
   }
 
   @media (max-width: 720px) {
     .mark {
-      width: 46px;
+      width: 50px;
     }
 
     .name {
-      width: 40px;
-      margin-bottom: 5px;
+      width: 44px;
     }
   }
 </style>
