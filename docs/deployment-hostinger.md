@@ -42,8 +42,8 @@ npm run build
 
 배포 후 다음을 확인합니다.
 
-- `https://haeonkorean.com/`의 푸터 로고가 세로로 찌그러지지 않고 가로형으로 보입니다.
-- 페이지 소스에 `/_astro/`로 시작하는 CSS 파일이 포함됩니다.
+- `https://haeonkorean.com/`에서 ‘11월 20일에 만나요’ 자모 조각이 날아와 모이고, 왼쪽 위에 새싹 표식과 해온 로고가 보입니다.
+- `https://haeonkorean.com/classes/`처럼 옛 주소로 들어가면 첫 화면으로 넘어갑니다.
 - `https://haeonkorean.com/sitemap-index.xml`이 열립니다.
 - 캐시 때문에 이전 화면이 보이면 Hostinger 캐시와 브라우저 캐시를 비운 뒤 다시 확인합니다.
 

@@ -1,40 +1,18 @@
-# HAEON Design System
+# 해온 디자인 시스템 (웹)
 
-이 폴더는 HAEON 웹사이트와 PDF 학습지를 같은 브랜드 기준으로 묶기 위한 소형 디자인 시스템입니다.
+새 디자인 시스템 저장소 `claude-haeon-new-designsystem`(비공개)을 누리집에서 쓰는 꼴로 옮긴 것이다. 말투, 색, 글자, 짜임 규칙은 그 저장소의 README를 따른다.
 
-## Current Direction
+- `tokens.css` — `tokens.json`의 색, 간격, 모서리, 글꼴, 글자 묶음을 CSS 변수로 옮긴 것.
+- `base.css` — 바탕(`paper`), 글자색(`ink`), 링크와 초점 표시, 움직임 줄이기 설정.
+- `logos/` — 그 저장소의 로고 원본(SVG). `logo-olive.svg` 안의 `mark`(새싹 표식)와 `name-ko`(해온)를 따로 떼어 머리글에 쓴다.
+- `jamo.ts` — 나말온 자모 조각. 01 첫 화면 시안의 ‘나·말·온’에서 그대로 가져온 종이 조각 열한 장과, 그 조각으로 다시 짠 글자들.
 
-- Palette: `Deep Navy #102B4E`, `Clear Blue #5D9DE8`, `Water Mint #73D2CB`, `Mist #EAF6FA`, `White #FFFFFF`, `Coral Signal #FF7868`
-- Type: 큰 한글 제목은 `Haeon Display`, 본문과 UI는 `Haeon Sans`
-- Shape: 버튼은 pill, 카드와 미디어 컨테이너는 soft radius
-- Density: 시안 8번을 기준으로 제목과 요소 크기를 줄이고 여백을 넓힘
+## 나말온 자모 조각
 
-## Structure
+- 자음은 한 덩어리 조각이다: ㄴ, ㅁ, ㄹ, ㅇ, 받침 ㄴ.
+- 모음은 ㅣ, ㅡ, 아래아(작은 세모)로 나누고, 아래아는 막대에 겹쳐 붙인다. ㅓ·ㅔ처럼 왼쪽을 볼 때는 180도 돌려 붙인다.
+- 숫자도 조각 하나로 만든다: 1은 ㅣ, 2는 ㄹ, 0은 ㅇ.
+- 색은 자리마다 하나: 첫소리 `olive`(불투명), 모음 연보라(반투명), 받침 연초록(반투명). 숫자는 `numeral`처럼 `olive`.
+- 글자는 줄을 맞춰 놓되 조금씩 기울이고, 잎 결 곡선은 글자 위아래를 가리지 않고 사이로 지나가게 둔다.
 
-```text
-design-system/
-├─ fonts/
-├─ tokens/
-│  ├─ primitives.css
-│  ├─ semantic.web.css
-│  └─ semantic.print.css
-├─ foundations/
-│  ├─ fonts.css
-│  └─ base.css
-├─ components/
-│  ├─ button.css
-│  └─ card.css
-└─ patterns/
-   └─ water.css
-```
-
-## Token Rule
-
-Primitive tokens describe raw values. Semantic tokens describe roles.
-
-```css
---haeon-blue-500: #5d9de8;
---color-highlight: var(--haeon-blue-500);
-```
-
-Component CSS should use semantic tokens first. Primitive tokens are reserved for defining the system.
+옛 디자인 시스템은 저장소 루트의 `old-design-system/`에 그대로 남겨 두었다.

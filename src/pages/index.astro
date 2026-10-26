@@ -1,203 +1,127 @@
 ---
-import stackedLogo from "../assets/brand/logos/haeon-primary-stacked.png";
-import tutorPhoto from "../assets/story/tutor-story-photo.jpg";
+import JamoHeadline from "../components/JamoHeadline.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { absoluteUrl, siteConfig } from "../lib/site";
-import "../styles/home.css";
+import { site } from "../lib/site";
 
-const title = "외국인을 위한 한국어 발음·수업·학습 자료 | 해온";
-const description = "듣고, 연결하고, 내 말로 이어가는 한국어. 무료 발음 체크, 맞춤 수업, 한글 학습 키트를 해온에서 시작하세요.";
-const schema = [
-  {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "@id": `${absoluteUrl("/")}#organization`,
-    name: siteConfig.name,
-    url: absoluteUrl("/"),
-    description,
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": `${absoluteUrl("/")}#website`,
-    name: siteConfig.name,
-    url: absoluteUrl("/"),
-    inLanguage: "ko",
-    publisher: { "@id": `${absoluteUrl("/")}#organization` },
-  },
-];
+const title = "해온 haeon · 11월 20일에 만나요";
+const description = "한국어를 나답게 말하도록 돕는 해온이 2026년 11월 20일에 문을 열어요. Your voice, in Korean.";
+const { threads, letters } = site.links;
 ---
 
-<BaseLayout title={title} description={description} bodyClass="home-page" schema={schema}>
-  <section id="method" class="hero section water-field" aria-labelledby="hero-title">
-    <div class="hero-inner section-inner">
-      <div class="hero-copy">
-        <p class="eyebrow">UNDERSTANDING, ON.</p>
-        <h1 id="hero-title" class="display-title">
-          한국어가 <span class="calm-blue">이해되는 순간</span>,<br />
-          세계가 조금 더 가까워집니다
-        </h1>
-        <p class="body-lead">듣고, 연결하고, 내 말로 이어가는 한국어</p>
-        <div class="hero-actions">
-          <a
-            class="ds-button ds-button-primary"
-            href="/events/free-pronunciation-coaching/"
-            data-analytics-event="cta_click"
-            data-analytics-id="home-hero-free-check"
-            data-analytics-location="home-hero"
-            data-destination-path="/events/free-pronunciation-coaching/"
-          >
-            <span class="button-label">무료 발음 체크 <span class="ds-arrow" aria-hidden="true">→</span></span>
-          </a>
-          <a
-            class="ds-text-link"
-            href="/study-kits/"
-            data-analytics-event="cta_click"
-            data-analytics-id="home-hero-study-kit"
-            data-analytics-location="home-hero"
-            data-destination-path="/study-kits/"
-          >
-            <span class="button-label">학습 키트 보기 <span class="ds-arrow" aria-hidden="true">→</span></span>
-          </a>
-        </div>
-      </div>
-
-      <aside class="hero-flow" aria-label="해온 학습 흐름">
-        <span>듣기</span><i aria-hidden="true"></i><span>연결</span><i aria-hidden="true"></i><span>말하기</span>
-      </aside>
+<BaseLayout title={title} description={description}>
+  <div class="opening">
+    <JamoHeadline label="11월 20일에 만나요" />
+    <div class="details">
+      <span class="rule" aria-hidden="true"></span>
+      <p class="tagline" lang="en">{site.tagline}</p>
+      <p class="date" lang="en">Opening <time datetime={site.opening.date}>{site.opening.label}</time></p>
+      <ul class="links" lang="en">
+        {
+          threads && (
+            <li>
+              <a class="underline-link" href={threads}>
+                Meet us on Threads
+              </a>
+            </li>
+          )
+        }
+        {threads && <li class="separator" aria-hidden="true">/</li>}
+        <li><a class="underline-link" href={letters}>Get our letters</a></li>
+      </ul>
     </div>
-  </section>
-
-  <section id="start" class="section start-section" aria-labelledby="start-title">
-    <div class="section-inner start-layout">
-      <div class="start-intro">
-        <div class="start-progress" aria-hidden="true"><span class="is-current"></span><span></span><span></span><span></span></div>
-        <p class="eyebrow">WHERE WILL YOU BEGIN?</p>
-        <h2 id="start-title" class="section-title">
-          오늘의 한국어,<br />
-          <span class="start-question">어디서 <span class="calm-blue">시작</span>할까요?</span>
-        </h2>
-        <p class="body-lead">지금 필요한 배움을 고르면,<br />나에게 맞는 다음 단계가 이어집니다.</p>
-      </div>
-
-      <div class="start-options">
-        <article class="start-primary" data-choice="coaching">
-          <div class="choice-icon choice-icon-ear" aria-hidden="true">
-            <svg class="choice-glyph" viewBox="0 0 24 24">
-              <path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0" />
-              <path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4" />
-            </svg>
-            <svg class="choice-smile" viewBox="0 0 72 24">
-              <defs><linearGradient id="choice-smile-ear" x1="4" y1="0" x2="68" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#2477e8" /><stop offset="1" stop-color="#52c8d0" /></linearGradient></defs>
-              <path d="M4 5C21 21 51 21 68 5" stroke="url(#choice-smile-ear)" />
-            </svg>
-          </div>
-          <div class="primary-copy">
-            <h3>무료 발음 체크</h3><span class="choice-rule" aria-hidden="true"></span>
-            <p>내 발음을 가볍게 점검하고,<br />1:1 맞춤 피드백을 받아보세요.</p>
-          </div>
-          <a
-            class="choice-button"
-            href="/events/free-pronunciation-coaching/"
-            data-analytics-event="select_learning_path"
-            data-analytics-id="home-path-coaching"
-            data-analytics-location="home-start-options"
-            data-destination-path="/events/free-pronunciation-coaching/"
-            data-learning-path="coaching"
-          ><span>신청하기</span><span class="ds-arrow" aria-hidden="true">→</span></a>
-        </article>
-
-        <svg class="choice-connector" viewBox="0 0 96 660" preserveAspectRatio="none" aria-hidden="true">
-          <path data-choice-path="kits" d="M0 330H22V125Q22 103 44 103H96" />
-          <path data-choice-path="classes" d="M22 330H96" />
-          <path data-choice-path="apps" d="M22 330V535Q22 557 44 557H96" />
-          <circle data-choice-point="kits" cx="96" cy="103" r="5" />
-          <circle data-choice-point="classes" cx="96" cy="330" r="5" />
-          <circle data-choice-point="apps" cx="96" cy="557" r="5" />
-        </svg>
-
-        <div class="start-secondary">
-          <article class="start-choice-card" data-choice="kits">
-            <div class="choice-icon choice-icon-file" aria-hidden="true">
-              <svg class="choice-glyph" viewBox="0 0 48 48"><path d="M13 7h14l8 8v14" /><path d="M27 7v9h8" /><path d="M30 40H13a3 3 0 0 1-3-3V10a3 3 0 0 1 3-3" /><circle cx="34" cy="32" r="9" /><path class="icon-fill" d="m32 28 6 4-6 4Z" /></svg>
-              <svg class="choice-smile" viewBox="0 0 72 24"><defs><linearGradient id="choice-smile-file" x1="4" y1="0" x2="68" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#2477e8" /><stop offset="1" stop-color="#52c8d0" /></linearGradient></defs><path d="M4 5C21 21 51 21 68 5" stroke="url(#choice-smile-file)" /></svg>
-            </div>
-            <div class="choice-card-copy">
-              <h3>PDF · 영상 학습</h3><span class="choice-rule" aria-hidden="true"></span>
-              <p>원리와 연습을<br />한 흐름으로 익혀보세요.</p>
-              <a class="choice-link" href="/study-kits/" data-analytics-event="select_learning_path" data-analytics-id="home-path-study-kit" data-analytics-location="home-start-options" data-destination-path="/study-kits/" data-learning-path="study_kit"><span>자료 보기</span><span class="ds-arrow" aria-hidden="true">→</span></a>
-            </div>
-          </article>
-
-          <article class="start-choice-card" data-choice="classes">
-            <div class="choice-icon choice-icon-class" aria-hidden="true">
-              <svg class="choice-glyph" viewBox="0 0 48 48"><rect x="8" y="10" width="29" height="28" rx="3" /><circle cx="22" cy="21" r="4" /><path d="M15 33c.7-4 3.1-6 7-6s6.3 2 7 6" /><path class="icon-chat" d="M31 7h10v9h-4l-3 3v-3h-3z" /></svg>
-              <svg class="choice-smile" viewBox="0 0 72 24"><defs><linearGradient id="choice-smile-class" x1="4" y1="0" x2="68" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#2477e8" /><stop offset="1" stop-color="#52c8d0" /></linearGradient></defs><path d="M4 5C21 21 51 21 68 5" stroke="url(#choice-smile-class)" /></svg>
-            </div>
-            <div class="choice-card-copy">
-              <h3>나에게 맞는 수업</h3><span class="choice-rule" aria-hidden="true"></span>
-              <p>목표와 일정에 맞는 수업을<br />함께 찾아보세요.</p>
-              <a class="choice-link" href="/classes/" data-analytics-event="select_learning_path" data-analytics-id="home-path-classes" data-analytics-location="home-start-options" data-destination-path="/classes/" data-learning-path="classes"><span>수업 보기</span><span class="ds-arrow" aria-hidden="true">→</span></a>
-            </div>
-          </article>
-
-          <article class="start-choice-card" data-choice="apps">
-            <div class="choice-icon choice-icon-app" aria-hidden="true">
-              <svg class="choice-glyph" viewBox="0 0 48 48"><rect x="8" y="8" width="13" height="13" rx="2" /><rect x="27" y="8" width="13" height="13" rx="2" /><rect x="8" y="27" width="13" height="13" rx="2" /><rect class="icon-fill" x="27" y="27" width="13" height="13" rx="2" /></svg>
-              <svg class="choice-smile" viewBox="0 0 72 24"><defs><linearGradient id="choice-smile-app" x1="4" y1="0" x2="68" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#2477e8" /><stop offset="1" stop-color="#52c8d0" /></linearGradient></defs><path d="M4 5C21 21 51 21 68 5" stroke="url(#choice-smile-app)" /></svg>
-            </div>
-            <div class="choice-card-copy">
-              <h3>어디서 시작할지 모르겠어요</h3><span class="choice-rule" aria-hidden="true"></span>
-              <p>현재 고민을 알려주면<br />가장 가벼운 길을 안내할게요.</p>
-              <a class="choice-link" href="/contact/" data-analytics-event="select_learning_path" data-analytics-id="home-path-contact" data-analytics-location="home-start-options" data-destination-path="/contact/" data-learning-path="contact"><span>가볍게 문의</span><span class="ds-arrow" aria-hidden="true">→</span></a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="story" class="section tutor-section water-field" aria-labelledby="story-title">
-    <div class="section-inner tutor-layout">
-      <div class="tutor-heading">
-        <p class="eyebrow">TUTOR STORY</p>
-        <h2 id="story-title" class="section-title">차분하게 깊고,<br />오래 남게 설명합니다</h2>
-        <p class="body-lead">발음과 문장, 문화까지 학습자의 속도에 맞춰 이어갑니다.</p>
-      </div>
-      <div class="tutor-media">
-        <figure class="tutor-photo-frame">
-          <img src={tutorPhoto.src} alt="밝은 교실에서 노트에 메모하며 수업을 준비하는 해온 한국어 튜터" width="1536" height="1024" loading="lazy" decoding="async" />
-          <div class="lesson-board" role="region" aria-label="튜터 수업 구성" tabindex="0">
-            <div class="lesson-note"><h3>발음 연습</h3><ul><li>자음의 위치</li><li>모음의 길이</li><li>억양과 리듬</li></ul></div>
-            <div class="lesson-note"><h3>오늘의 표현</h3><ul><li>어떻게 지내요?</li><li>잘 부탁드립니다.</li></ul></div>
-            <div class="lesson-note"><h3>문화 포인트</h3><ul><li>인사 문화</li><li>존댓말과 반말</li></ul></div>
-          </div>
-        </figure>
-        <div class="study-cards" role="group" aria-label="수업 자료 예시">
-          <article class="study-card pronunciation-card"><div class="study-card-copy"><h3>입 모양과 소리</h3><ul><li>소리가 만들어지는 위치</li><li>혀와 입술의 움직임</li><li>공기의 흐름 느끼기</li></ul></div></article>
-          <article class="study-card practice-card"><h3>문장 연습</h3><ul class="practice-lines"><li><span>어떻게 지내요?</span><i aria-hidden="true"></i></li><li><span>잘 부탁드립니다.</span><i aria-hidden="true"></i></li><li><span>한국어를 공부해요.</span><i aria-hidden="true"></i></li></ul><span class="practice-pen" aria-hidden="true"></span></article>
-        </div>
-      </div>
-      <div class="tutor-principles">
-        <div class="quote-list" aria-label="해온 수업 원칙"><blockquote><p>소리가 먼저 이해되면 말하기가 쉬워집니다.</p></blockquote><blockquote><p>틀린 부분보다 이어질 수 있는 부분을 봅니다.</p></blockquote></div>
-        <a class="tutor-link" href="/classes/"><span>수업 방식 보기</span><span class="ds-arrow" aria-hidden="true">→</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section final-section water-field" aria-labelledby="final-title">
-    <div class="section-inner final-content">
-      <div class="final-brand"><img src={stackedLogo.src} alt="해온 HAEON" class="final-logo-img" width="889" height="633" loading="lazy" decoding="async" /></div>
-      <h2 id="final-title" class="display-title">지금,<br />내 한국어가 <span class="calm-blue">이어질 차례</span></h2>
-      <p class="body-lead">무료 발음 체크로 가장 가볍게 시작하세요.</p>
-      <div class="final-actions">
-        <a class="ds-button ds-button-primary" href="/events/free-pronunciation-coaching/" data-analytics-event="cta_click" data-analytics-id="home-final-free-check" data-analytics-location="home-final" data-destination-path="/events/free-pronunciation-coaching/"><span class="button-label">무료 발음 체크 <span class="ds-arrow" aria-hidden="true">→</span></span></a>
-        <a class="ds-text-link" href="/study-kits/" data-analytics-event="cta_click" data-analytics-id="home-final-study-kit" data-analytics-location="home-final" data-destination-path="/study-kits/"><span>학습 키트 먼저 보기</span><span class="ds-arrow" aria-hidden="true">→</span></a>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    import "../scripts/start-options";
-  </script>
+  </div>
 </BaseLayout>
+
+<style>
+  .opening {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: min(100%, 1240px);
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .details > * {
+    animation: rise 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .rule {
+    width: 20px;
+    height: 1px;
+    margin-bottom: 20px;
+    background: var(--line-strong);
+    animation-delay: 2.2s;
+  }
+
+  .tagline {
+    margin: 0;
+    color: var(--ink-muted);
+    font: 400 18px/26px var(--font-latin);
+    letter-spacing: 0.02em;
+    animation-delay: 2.4s;
+  }
+
+  .date {
+    margin: 6px 0 0;
+    color: var(--olive);
+    font: 500 34px/42px var(--font-latin);
+    letter-spacing: 0.04em;
+    animation-delay: 2.6s;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin: 26px 0 0;
+    padding: 0;
+    list-style: none;
+    font: 400 19px/26px var(--font-latin);
+    animation-delay: 2.9s;
+  }
+
+  .separator {
+    color: var(--line-strong);
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .opening {
+      gap: 12px;
+    }
+
+    .tagline {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .date {
+      font-size: 26px;
+      line-height: 34px;
+    }
+
+    .links {
+      margin-top: 18px;
+      font-size: 17px;
+    }
+  }
+</style>

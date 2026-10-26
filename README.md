@@ -1,12 +1,11 @@
-# 해온 HAEON 웹사이트
+# 해온 haeon 웹사이트
 
-해온의 한국어 발음 체크, 수업, 학습 키트를 소개하는 Astro 기반 정적 웹사이트입니다.
+해온 누리집의 Astro 정적 사이트입니다. 지금은 2026년 11월 20일 정식 오픈 전까지 보여 줄 오픈 예정 화면 한 장만 있습니다. 화면과 글은 새 디자인 시스템([src/design-system/](src/design-system/README.md))을 따릅니다.
 
 ## 실행
 
 ```powershell
 npm install
-Copy-Item .env.example .env
 npm run dev
 ```
 
@@ -16,72 +15,33 @@ npm run dev
 
 ## 배포
 
-이 프로젝트의 실제 배포 산출물은 저장소 루트가 아니라 `dist/`입니다.
+`main`에 푸시하면 GitHub Actions(`.github/workflows/hostinger-deploy.yml`)가 사이트를 빌드해 `dist/`를 `deploy` 브랜치에 올립니다. Hostinger Git 배포는 이 `deploy` 브랜치를 바라보게 설정합니다. 실제 배포 산출물은 저장소 루트가 아니라 `dist/`입니다.
 
-Hostinger에서 Git 배포를 사용할 때는 다음 중 하나로 설정해야 합니다.
-
-1. Hostinger가 Node 빌드를 지원하는 경우
-   - Install command: `npm install`
-   - Build command: `npm run build`
-   - Publish directory: `dist`
-2. Hostinger가 정적 파일 업로드만 지원하는 경우
-   - 로컬에서 `npm run build` 실행
-   - `dist/` 폴더 안의 파일 전체를 Hostinger의 `public_html`에 업로드
-
-주의: 루트의 `index.html`은 오래된 정적 미리보기 파일입니다. `haeonkorean.com` 배포 확인용 파일이 아니며, Hostinger 문서 루트가 저장소 루트로 잡혀 있으면 최신 Astro 수정사항이 보이지 않습니다.
+주의: 루트의 `index.html`은 오래된 정적 미리보기 파일입니다. `haeonkorean.com` 배포 확인용 파일이 아닙니다.
 
 배포 후 확인:
 
-- `https://haeonkorean.com/`에서 푸터 로고가 가로형으로 정상 표시되는지 확인합니다.
-- 페이지 소스에 `/_astro/` CSS와 이미지 경로가 포함되어 있는지 확인합니다.
+- `https://haeonkorean.com/`에서 ‘11월 20일에 만나요’ 자모 조각이 날아와 모이는지 확인합니다.
+- 옛 주소(예: `https://haeonkorean.com/classes/`)가 첫 화면으로 넘어가는지 확인합니다.
 - `https://haeonkorean.com/sitemap-index.xml`이 열리는지 확인합니다.
 - 브라우저 캐시 또는 Hostinger 캐시가 남아 있으면 캐시를 비우고 다시 확인합니다.
 
 자세한 절차는 [docs/deployment-hostinger.md](docs/deployment-hostinger.md)를 참고하세요.
 
-## MVP 라우트
+## 주소
 
 | 경로 | 역할 | 검색 노출 |
 | --- | --- | --- |
-| `/` | 브랜드 홈과 핵심 CTA | 허용 |
-| `/start/` | 방문 목적에 따른 시작점 선택 | 제외 |
-| `/events/free-pronunciation-coaching/` | 무료 발음 체크 안내 및 신청 | 허용 |
-| `/classes/` | 온라인 수업 및 KIIP 보조 학습 안내 | 허용 |
-| `/study-kits/` | 학습 키트 미리보기 | 허용 |
-| `/contact/` | 수업, 자료, 협업 문의 | 허용 |
-| `/thanks/coaching/` | 발음 체크 신청 결과 | 제외 |
-| `/thanks/inquiry/` | 문의 결과 | 제외 |
-| `/privacy/`, `/terms/`, `/refund/` | 운영 정책 | 제외 |
+| `/` | 오픈 예정 화면 | 허용 |
+| `/start/`, `/classes/`, `/study-kits/`, `/contact/`, `/events/free-pronunciation-coaching/`, `/thanks/coaching/`, `/thanks/inquiry/`, `/privacy/`, `/terms/`, `/refund/` | 옛 주소. 정식 오픈 전까지 `/`로 넘긴다 ([scripts/redirects.mjs](scripts/redirects.mjs)) | 제외 |
+| `/share/…` | 수업 자료 공유 파일 | 그대로 |
 
-## 운영 설정
+## 설정
 
-`.env.example`을 `.env`로 복사한 뒤 실제 값만 입력합니다.
+- `SITE_URL`: 실제 도메인. canonical URL, sitemap, 미리보기 이미지 주소가 이 값으로 만들어집니다. 배포 워크플로가 `https://haeonkorean.com`으로 넣습니다.
+- 링크: [src/lib/site.ts](src/lib/site.ts)의 `links`에 Threads 주소(`threads`)와 편지 받기 주소(`letters`)를 넣습니다. Threads 주소가 비어 있으면 첫 화면에서 그 링크를 감춥니다.
+- 미리보기 이미지: `public/og.png`는 오픈 예정 화면을 1200×630으로 찍은 것입니다. 화면을 바꾸면 다시 찍어 넣습니다.
 
-```dotenv
-SITE_URL=https://haeonkorean.com
-PUBLIC_CONTACT_EMAIL=
-PUBLIC_BUSINESS_NAME=해온 HAEON
-PUBLIC_REPRESENTATIVE_NAME=
-PUBLIC_BUSINESS_NUMBER=
-PUBLIC_ECOMMERCE_NUMBER=
-PUBLIC_BUSINESS_ADDRESS=
-PUBLIC_COACHING_FORM_ENDPOINT=
-PUBLIC_INQUIRY_FORM_ENDPOINT=
-PUBLIC_STUDY_KIT_CHECKOUT_URL=
-PUBLIC_STUDY_KIT_PRICE=19000
-PUBLIC_GA_MEASUREMENT_ID=
-```
+## 옛 사이트
 
-- `SITE_URL`을 실제 도메인으로 설정해야 canonical URL과 sitemap이 올바르게 생성됩니다.
-- 폼 엔드포인트가 비어 있으면 입력 내용은 외부로 전송되지 않는 데모 모드로 동작합니다.
-- 결제 URL이 비어 있으면 학습 키트는 미리보기만 노출되고 구매 버튼은 비활성화됩니다.
-- 법률 페이지는 운영 준비를 돕는 초안이며, 실제 사업 정보와 환불 정책이 확정된 뒤 검토가 필요합니다.
-
-## 출시 전 확인
-
-1. 실제 도메인과 공개 이메일을 확정합니다.
-2. 무료 발음 체크 및 일반 문의를 받을 폼 서비스의 엔드포인트를 준비합니다.
-3. 사업자명, 사업자 번호, 주소, 통신판매 정보가 확정되면 정책 페이지에 반영합니다.
-4. 학습 키트 판매 방식과 결제 URL을 확정합니다.
-5. GA4 측정 ID를 입력하고 실제 배포 환경에서 CTA 이벤트를 확인합니다.
-6. `npm run build`를 실행해 필수 라우트, 메타데이터, 이미지 링크, robots, sitemap 검증을 통과시킵니다.
+옛 디자인 시스템은 [old-design-system/](old-design-system/)에 남겨 두었습니다. 옛 페이지와 컴포넌트는 git 기록에서 볼 수 있습니다.

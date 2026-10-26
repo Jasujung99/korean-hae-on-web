@@ -1,10 +1,8 @@
 ---
-import defaultOg from "../assets/hero/hero-background-desktop.png";
-import SiteFooter from "../components/SiteFooter.astro";
-import SiteHeader from "../components/SiteHeader.astro";
-import { absoluteUrl, siteConfig } from "../lib/site";
-import "../styles/global.css";
-import "../styles/interior.css";
+import HaeonLogo from "../components/HaeonLogo.astro";
+import "../design-system/tokens.css";
+import "../design-system/base.css";
+import { absoluteUrl, site } from "../lib/site";
 
 interface Props {
   title: string;
@@ -12,27 +10,12 @@ interface Props {
   canonicalPath?: string;
   noindex?: boolean;
   ogImage?: string;
-  bodyClass?: string;
-  schema?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const {
-  title,
-  description,
-  canonicalPath = Astro.url.pathname,
-  noindex = false,
-  ogImage = defaultOg.src,
-  bodyClass = "",
-  schema,
-} = Astro.props;
+const { title, description, canonicalPath = Astro.url.pathname, noindex = false, ogImage = "/og.png" } = Astro.props;
 
 const canonical = absoluteUrl(canonicalPath);
-const absoluteOg = absoluteUrl(ogImage);
-const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
-const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID || "";
-const resolvedBodyClass = [Astro.url.pathname === "/" ? "" : "interior-page", bodyClass]
-  .filter(Boolean)
-  .join(" ");
+const year = new Date().getFullYear();
 ---
 
 <!doctype html>
@@ -40,40 +23,91 @@ const resolvedBodyClass = [Astro.url.pathname === "/" ? "" : "interior-page", bo
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content={noindex ? "noindex,follow" : "index,follow"} />
     <link rel="canonical" href={canonical} />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="icon" href="/favicon.png" />
+    <link rel="icon" href="/favicon.png" sizes="64x64" type="image/png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#fefcf3" />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content={siteConfig.locale} />
-    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:locale" content={site.locale} />
+    <meta property="og:site_name" content={`${site.name} ${site.nameLatin}`} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={absoluteOg} />
+    <meta property="og:image" content={absoluteUrl(ogImage)} />
     <meta name="twitter:card" content="summary_large_image" />
-    <title>{title}</title>
-    {schemas.map((item) => <script is:inline type="application/ld+json" set:html={JSON.stringify(item)} />)}
-    {gaId && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>}
-    {gaId && (
-      <script is:inline define:vars={{ gaId }}>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', gaId, { anonymize_ip: true });
-      </script>
-    )}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap" />
   </head>
-  <body class={resolvedBodyClass}>
-    <a class="skip-link" href="#main-content">본문으로 이동</a>
-    <SiteHeader />
-    <main id="main-content" class="page-main">
-      <slot />
-    </main>
-    <SiteFooter />
-    <script>
-      import "../scripts/analytics";
-    </script>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <HaeonLogo />
+      </header>
+      <main class="site-main">
+        <slot />
+      </main>
+      <footer class="site-footer">
+        <p lang="en">At ease. As yourself.</p>
+        <p>© {year} {site.name} <span lang="en">{site.nameLatin}</span></p>
+      </footer>
+    </div>
   </body>
 </html>
+
+<style>
+  .page {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow-x: clip;
+  }
+
+  .site-header {
+    padding: 42px 84px 0;
+  }
+
+  .site-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 84px 56px;
+  }
+
+  .site-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px 24px;
+    padding: 0 84px 36px;
+    color: var(--ink-muted);
+    font: 400 15px/22px var(--font-latin);
+  }
+
+  .site-footer p {
+    margin: 0;
+  }
+
+  @media (max-width: 720px) {
+    .site-header {
+      padding: 20px 16px 0;
+    }
+
+    .site-main {
+      padding: 24px 16px 40px;
+    }
+
+    .site-footer {
+      padding: 0 16px 24px;
+      font-size: 13px;
+      line-height: 20px;
+    }
+  }
+</style>

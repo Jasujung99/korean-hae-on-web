@@ -1,0 +1,52 @@
+---
+import logoSource from "../design-system/logos/logo-olive.svg?raw";
+
+function pathOf(id: string) {
+  const match = logoSource.match(new RegExp(`id="${id}" d="([^"]+)"`));
+  if (!match) throw new Error(`logo-olive.svg has no #${id} path`);
+  return match[1];
+}
+
+const mark = pathOf("mark");
+const name = pathOf("name-ko");
+---
+
+<a class="logo" href="/" aria-label="해온 haeon 첫 화면">
+  <svg class="mark" viewBox="0 -1 241 180" aria-hidden="true" focusable="false"><path d={mark}></path></svg>
+  <svg class="name" viewBox="14 203 186 96" aria-hidden="true" focusable="false"><path d={name}></path></svg>
+</a>
+
+<style>
+  .logo {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 8px;
+    color: var(--olive);
+  }
+
+  svg {
+    display: block;
+    height: auto;
+    fill: currentColor;
+  }
+
+  .mark {
+    width: 60px;
+  }
+
+  .name {
+    width: 52px;
+    margin-bottom: 6px;
+  }
+
+  @media (max-width: 720px) {
+    .mark {
+      width: 46px;
+    }
+
+    .name {
+      width: 40px;
+      margin-bottom: 5px;
+    }
+  }
+</style>

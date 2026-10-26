@@ -1,28 +1,23 @@
 import { readFile, readdir, stat } from "node:fs/promises";
 import { dirname, extname, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
+import { comingSoonRedirects } from "./redirects.mjs";
 
 const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const distDir = resolve(rootDir, "dist");
 
 const expectedHtmlRoutes = [
   ["/", "index.html"],
-  ["/start/", "start/index.html"],
-  ["/events/free-pronunciation-coaching/", "events/free-pronunciation-coaching/index.html"],
-  ["/classes/", "classes/index.html"],
-  ["/study-kits/", "study-kits/index.html"],
-  ["/contact/", "contact/index.html"],
-  ["/thanks/coaching/", "thanks/coaching/index.html"],
-  ["/thanks/inquiry/", "thanks/inquiry/index.html"],
-  ["/privacy/", "privacy/index.html"],
-  ["/terms/", "terms/index.html"],
-  ["/refund/", "refund/index.html"],
   ["404.astro", "404.html"],
 ];
 
 const expectedPublicFiles = [
   "robots.txt",
   "sitemap-index.xml",
+  "favicon.svg",
+  "favicon.png",
+  "apple-touch-icon.png",
+  "og.png",
   "share/daily-life-and-time.pptx",
   "share/experience-and-preferences.pptx",
   "share/thoughts-and-reasons.pptx",
@@ -141,14 +136,26 @@ function sourceLine(html, offset) {
   return html.slice(0, offset).split("\n").length;
 }
 
+function findRefreshTarget(html) {
+  for (const match of html.matchAll(/<meta\b[^>]*>/gi)) {
+    const attributes = parseAttributes(match[0]);
+    if (attributes.get("http-equiv")?.toLowerCase() === "refresh") {
+      return attributes.get("content")?.match(/url=(.+)$/i)?.[1]?.trim() ?? "";
+    }
+  }
+
+  return null;
+}
+
 function validateMetadata(file, html, errors) {
   const title = findTitle(html);
   const description = findMetaContent(html, "description");
   const canonical = findCanonical(html);
   const robots = findMetaContent(html, "robots");
+  const isRedirect = findRefreshTarget(html) !== null;
 
   if (!title) errors.push(`${file}: missing or empty <title>`);
-  if (!description) errors.push(`${file}: missing or empty meta description`);
+  if (!description && !isRedirect) errors.push(`${file}: missing or empty meta description`);
 
   if (!canonical) {
     errors.push(`${file}: missing or empty canonical link`);
@@ -233,6 +240,21 @@ async function validateInternalLinks(htmlFiles, distFiles, htmlCache, errors) {
   }
 }
 
+function validateRedirects(distFiles, htmlCache, errors) {
+  for (const pathname of comingSoonRedirects) {
+    const file = `${pathname.replace(/^\/+/, "")}/index.html`;
+    if (!distFiles.has(file)) {
+      errors.push(`missing redirect ${pathname}/: expected dist/${file}`);
+      continue;
+    }
+
+    const target = findRefreshTarget(htmlCache.get(file) ?? "");
+    if (target !== "/") {
+      errors.push(`${file}: should redirect to / (found ${JSON.stringify(target)})`);
+    }
+  }
+}
+
 async function validateRobots(distFiles, errors) {
   if (!distFiles.has("robots.txt")) return;
 
@@ -291,6 +313,7 @@ async function main() {
     validateMetadata(file, html, errors);
   }
 
+  validateRedirects(distFiles, htmlCache, errors);
   await validateInternalLinks(htmlFiles, distFiles, htmlCache, errors);
   await validateRobots(distFiles, errors);
 
@@ -301,7 +324,7 @@ async function main() {
   }
 
   console.log(
-    `Build verification passed: ${expectedHtmlRoutes.length} routes, ` +
+    `Build verification passed: ${expectedHtmlRoutes.length} routes, ${comingSoonRedirects.length} redirects, ` +
       `${htmlFiles.length} HTML files, and ${files.length} total files checked.`,
   );
 }

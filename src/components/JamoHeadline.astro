@@ -1,0 +1,342 @@
+---
+import { GLYPHS, PIECES } from "../design-system/jamo";
+
+interface Props {
+  label: string;
+}
+
+const { label } = Astro.props;
+
+const WIND_STOPS = [
+  [0, "#a69e6e", 0],
+  [0.04, "#a69e6e", 0.3],
+  [0.17, "#8e996b", 0.5],
+  [0.3, "#9a84b3", 0.42],
+  [0.39, "#a69e6e", 0.12],
+  [0.5, "#8e996b", 0.36],
+  [0.59, "#8e996b", 0.14],
+  [0.68, "#9a84b3", 0.44],
+  [0.8, "#8e996b", 0.46],
+  [0.9, "#a69e6e", 0.34],
+  [1, "#a69e6e", 0.34],
+] as const;
+
+// The syllables, in glyph units. `gap` is the space after a glyph, `dy` nudges it off the
+// row and `tilt` (deg) leans it, so the row reads as pasted paper rather than type.
+const PHRASE = [
+  { char: "1", gap: 8, dy: -8, tilt: -4 },
+  { char: "1", gap: 19, dy: 6, tilt: 3 },
+  { char: "월", gap: 89, dy: 0, tilt: -2 },
+  { char: "2", gap: 8, dy: 11, tilt: 3 },
+  { char: "0", gap: 22, dy: -6, tilt: -3 },
+  { char: "일", gap: 17, dy: 3, tilt: 2 },
+  { char: "에", gap: 89, dy: -11, tilt: -2.5 },
+  { char: "만", gap: 17, dy: 8, tilt: 2 },
+  { char: "나", gap: 14, dy: 25, tilt: -1.5 },
+  { char: "요", gap: 0, dy: 36, tilt: 2.5 },
+];
+
+type Align = "start" | "center" | "end";
+
+interface Layout {
+  id: string;
+  scale: number;
+  frame: { left: number; right: number };
+  rows: { from: number; to: number; align: Align; centerY: number }[];
+  wind: string;
+  windWidth: number;
+  // Whether the wind's own extent counts toward the viewBox, or may spill past it.
+  fitWind: boolean;
+}
+
+const LAYOUTS: Layout[] = [
+  {
+    // One row through the wind curve of the 01 첫 화면 mockup (1440×960 artboard).
+    id: "row",
+    scale: 0.72,
+    frame: { left: 173, right: 1251 },
+    rows: [{ from: 0, to: 9, align: "center", centerY: 458 }],
+    wind: "M173.4 445.1 C183.6 448.9 213.3 461.2 234.4 467.8 C255.5 474.4 276.6 479.8 300.0 484.8 C323.4 489.8 351.6 495.0 375.0 497.7 C398.4 500.4 421.9 501.3 440.6 501.1 C459.4 500.9 467.2 500.8 487.5 496.5 C507.8 492.2 537.5 483.3 562.5 475.0 C587.5 466.7 612.5 454.1 637.5 446.6 C662.5 439.1 689.1 433.9 712.5 429.9 C735.9 426.0 756.2 422.7 778.1 422.7 C800.0 422.7 823.4 424.8 843.8 430.0 C864.1 435.2 878.1 442.7 900.0 454.0 C921.9 465.3 953.1 486.3 975.0 497.8 C996.9 509.4 1012.5 516.0 1031.2 523.3 C1050.0 530.6 1071.9 537.3 1087.5 541.8 C1103.1 546.3 1110.9 547.8 1125.0 550.2 C1139.1 552.6 1157.8 555.0 1171.9 556.0 C1185.9 557.1 1197.7 556.6 1209.4 556.5 C1221.1 556.4 1236.6 555.8 1242.0 555.6",
+    windWidth: 1.2,
+    fitWind: true,
+  },
+  {
+    // Three stacked rows for narrow screens, with the wind sweeping down through them.
+    id: "stack",
+    scale: 1,
+    frame: { left: 24, right: 536 },
+    rows: [
+      { from: 0, to: 2, align: "start", centerY: 112 },
+      { from: 3, to: 6, align: "center", centerY: 337 },
+      { from: 7, to: 9, align: "end", centerY: 562 },
+    ],
+    wind: "M-40 70 C60 110 150 170 240 290 C330 410 420 560 600 690",
+    windWidth: 2,
+    fitWind: false,
+  },
+];
+
+let seed = 11;
+const random = () => {
+  seed = (seed * 9301 + 49297) % 233280;
+  return seed / 233280;
+};
+const sign = () => (random() < 0.5 ? -1 : 1);
+const round = (value: number) => Math.round(value * 10) / 10;
+
+const glyphOf = (char: string) => {
+  const glyph = GLYPHS[char];
+  if (!glyph) throw new Error(`No jamo glyph for "${char}"`);
+  return glyph;
+};
+
+const scaleOf = (scale: number | readonly [number, number] | undefined) =>
+  typeof scale === "number" ? [scale, scale] : (scale ?? [1, 1]);
+
+// Each piece blows in from the left like the 나말온 pieces. Distances are in glyph units,
+// drawn once so both layouts move the same way.
+const flights = PHRASE.map(({ char }) =>
+  glyphOf(char).pieces.map(() => ({
+    x: -(180 + random() * 350),
+    y: sign() * (85 + random() * 150),
+    turn: sign() * (22 + random() * 38),
+  })),
+);
+
+function windBounds(path: string) {
+  const values = path.match(/-?\d*\.?\d+/g)?.map(Number) ?? [];
+  const xs = values.filter((_, index) => index % 2 === 0);
+  const ys = values.filter((_, index) => index % 2 === 1);
+  return { left: Math.min(...xs), right: Math.max(...xs), top: Math.min(...ys), bottom: Math.max(...ys) };
+}
+
+function build(layout: Layout) {
+  let order = 0;
+
+  const glyphs = layout.rows.flatMap((row) => {
+    const items = PHRASE.slice(row.from, row.to + 1);
+    const rowWidth = items.reduce(
+      (sum, item, index) => sum + (glyphOf(item.char).width + (index < items.length - 1 ? item.gap : 0)) * layout.scale,
+      0,
+    );
+    let cursor =
+      row.align === "start"
+        ? layout.frame.left
+        : row.align === "end"
+          ? layout.frame.right - rowWidth
+          : (layout.frame.left + layout.frame.right - rowWidth) / 2;
+
+    return items.map((item, offset) => {
+      const index = row.from + offset;
+      const glyph = glyphOf(item.char);
+      const width = glyph.width * layout.scale;
+      const height = glyph.height * layout.scale;
+      const left = cursor;
+      const top = row.centerY - height / 2 + item.dy * layout.scale;
+      cursor += width + item.gap * layout.scale;
+
+      const pieces = glyph.pieces.map((placement, pieceIndex) => {
+        const piece = PIECES[placement.piece];
+        const [sx, sy] = scaleOf(placement.scale);
+        const flight = flights[index][pieceIndex];
+        const delay = 0.2 + order++ * 0.045;
+
+        return {
+          d: piece.d,
+          tone: placement.tone ?? piece.tone,
+          transform: `translate(${placement.x} ${placement.y}) scale(${sx} ${sy})`,
+          flip: placement.flip ? `rotate(180 ${piece.width / 2} ${piece.height / 2})` : undefined,
+          style: [
+            `--from-x:${round(flight.x / sx)}px`,
+            `--from-y:${round(flight.y / sy)}px`,
+            `--from-turn:${round(flight.turn)}deg`,
+            `--delay:${delay.toFixed(2)}s`,
+          ].join(";"),
+        };
+      });
+
+      return {
+        pieces,
+        box: { left, top, width, height },
+        transform: `translate(${round(left)} ${round(top)}) rotate(${item.tilt} ${round(width / 2)} ${round(height / 2)}) scale(${layout.scale})`,
+        drift: [7.2, 8, 7.6, 6.8, 8.4][index % 5],
+      };
+    });
+  });
+
+  const wind = windBounds(layout.wind);
+  const boxes = glyphs.map(({ box }) => ({ left: box.left, right: box.left + box.width, top: box.top, bottom: box.top + box.height }));
+  if (layout.fitWind) boxes.push(wind);
+
+  const pad = 24 * layout.scale;
+  const minX = Math.min(...boxes.map((box) => box.left)) - pad;
+  const maxX = Math.max(...boxes.map((box) => box.right)) + pad;
+  const minY = Math.min(...boxes.map((box) => box.top)) - pad;
+  const maxY = Math.max(...boxes.map((box) => box.bottom)) + pad;
+
+  return {
+    ...layout,
+    glyphs,
+    gradient: { id: `haeon-wind-${layout.id}`, x1: wind.left, x2: wind.right },
+    viewBox: [minX, minY, maxX - minX, maxY - minY].map(round).join(" "),
+  };
+}
+
+const stages = LAYOUTS.map(build);
+---
+
+<h1 class="headline">
+  <span class="visually-hidden">{label}</span>
+  {
+    stages.map((stage) => (
+      <svg class={`stage stage--${stage.id}`} viewBox={stage.viewBox} aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id={stage.gradient.id} gradientUnits="userSpaceOnUse" x1={stage.gradient.x1} y1="0" x2={stage.gradient.x2} y2="0">
+            {WIND_STOPS.map(([offset, color, opacity]) => (
+              <stop offset={offset} stop-color={color} stop-opacity={opacity} />
+            ))}
+          </linearGradient>
+        </defs>
+        <path
+          class="wind"
+          d={stage.wind}
+          pathLength="1"
+          stroke={`url(#${stage.gradient.id})`}
+          style={`--wind-width:${stage.windWidth}`}
+        />
+        {stage.glyphs.map((glyph) => (
+          <g class="syllable" style={`--drift:${glyph.drift}s`}>
+            <g transform={glyph.transform}>
+              {glyph.pieces.map((piece) => (
+                <g transform={piece.transform}>
+                  <g class="fly" style={piece.style}>
+                    <g class="lift">
+                      <path class={`tone-${piece.tone}`} d={piece.d} transform={piece.flip} fill-rule="evenodd" />
+                    </g>
+                  </g>
+                </g>
+              ))}
+            </g>
+          </g>
+        ))}
+      </svg>
+    ))
+  }
+</h1>
+
+<style>
+  .headline {
+    width: 100%;
+    margin: 0;
+  }
+
+  .stage {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  .stage--stack {
+    display: none;
+  }
+
+  .wind {
+    fill: none;
+    stroke-width: var(--wind-width);
+    stroke-linecap: round;
+    stroke-dasharray: 1;
+    animation: jamo-wind 2.2s cubic-bezier(0.45, 0.05, 0.25, 1) 0.1s both;
+  }
+
+  .syllable {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: jamo-drift var(--drift) ease-in-out infinite;
+  }
+
+  .fly {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation:
+      jamo-fly 1.8s cubic-bezier(0.3, 0.6, 0.3, 1) var(--delay) both,
+      jamo-fade 0.5s ease-out var(--delay) both;
+  }
+
+  .lift {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .lift:hover {
+    transform: translate(5px, -14px) rotate(-5deg);
+  }
+
+  .tone-initial {
+    fill: var(--jamo-initial);
+  }
+
+  .tone-vowel {
+    fill: var(--jamo-vowel);
+    fill-opacity: 0.86;
+  }
+
+  .tone-final {
+    fill: var(--jamo-final);
+    fill-opacity: 0.92;
+  }
+
+  @keyframes jamo-wind {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes jamo-fly {
+    from {
+      transform: translate(var(--from-x), var(--from-y)) rotate(var(--from-turn));
+    }
+    to {
+      transform: none;
+    }
+  }
+
+  @keyframes jamo-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes jamo-drift {
+    0%,
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate(3px, -5px) rotate(-0.8deg);
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .stage--row .wind {
+      stroke-width: 1.8;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .stage--row {
+      display: none;
+    }
+
+    .stage--stack {
+      display: block;
+    }
+  }
+</style>

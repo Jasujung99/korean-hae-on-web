@@ -1,74 +1,47 @@
 ---
-import ButtonLink from "../components/ButtonLink.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const title = "페이지를 찾을 수 없습니다 | 해온";
-const description = "요청한 페이지를 찾을 수 없습니다. 해온 홈이나 학습 시작 페이지에서 다시 찾아보세요.";
 ---
 
-<BaseLayout title={title} description={description} canonicalPath="/404/" noindex bodyClass="not-found-page">
-  <section class="content-section not-found-section" aria-labelledby="not-found-title">
-    <div class="page-shell not-found-layout">
-      <div class="not-found-code" aria-hidden="true">404</div>
-      <div class="not-found-copy">
-        <p class="page-kicker">PAGE NOT FOUND</p>
-        <h1 id="not-found-title" class="page-title">길을 잠시 놓쳤어요</h1>
-        <p class="page-lead">주소가 바뀌었거나 페이지가 아직 준비되지 않았습니다. 지금 필요한 한국어 학습 경로를 다시 찾아보세요.</p>
-        <div class="section-actions">
-          <ButtonLink href="/start/" label="학습 시작점 찾기" analyticsId="404-start" analyticsLocation="404" />
-          <ButtonLink href="/" label="홈으로 돌아가기" variant="secondary" analyticsId="404-home" analyticsLocation="404" />
-          <ButtonLink href="/contact/" label="문의하기" variant="quiet" analyticsId="404-contact" analyticsLocation="404" />
-        </div>
-      </div>
-    </div>
-  </section>
+<BaseLayout
+  title="찾는 쪽이 없어요 · 해온 haeon"
+  description="찾는 쪽이 없어요. 해온 첫 화면에서 다시 시작해 보세요."
+  canonicalPath="/404/"
+  noindex
+>
+  <div class="missing">
+    <p class="code" lang="en">404</p>
+    <h1>찾는 쪽이 없어요.</h1>
+    <p>주소를 다시 확인해 보세요.</p>
+    <a class="underline-link" href="/">첫 화면으로</a>
+  </div>
 </BaseLayout>
 
 <style>
-  .not-found-section {
-    display: grid;
-    min-height: min(50rem, calc(100dvh - var(--header-height)));
-    place-items: center;
-    overflow: hidden;
-    background:
-      radial-gradient(circle at 82% 72%, rgb(115 210 203 / 0.18), transparent 25rem),
-      radial-gradient(circle at 16% 18%, rgb(93 157 232 / 0.17), transparent 26rem),
-      var(--color-bg-page);
-  }
-
-  .not-found-layout {
-    display: grid;
-    grid-template-columns: minmax(13rem, 0.65fr) minmax(0, 1.35fr);
-    gap: clamp(2rem, 8vw, 8rem);
+  .missing {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
-  .not-found-code {
-    color: transparent;
-    font-family: var(--font-latin);
-    font-size: clamp(8rem, 22vw, 20rem);
-    font-weight: 700;
-    letter-spacing: -0.09em;
-    line-height: 0.75;
-    -webkit-text-stroke: 1px rgb(53 107 174 / 0.42);
+  .code {
+    margin: 0;
+    color: var(--olive);
+    font: var(--text-numeral);
   }
 
-  .not-found-copy {
-    max-width: 46rem;
+  h1 {
+    margin: 12px 0 0;
+    font: var(--text-doc-title);
   }
 
-  .not-found-copy .page-title {
-    max-width: none;
+  p {
+    margin: 8px 0 0;
+    font: var(--text-doc-body);
   }
 
-  @media (max-width: 780px) {
-    .not-found-layout {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
-
-    .not-found-code {
-      font-size: clamp(7rem, 38vw, 12rem);
-    }
+  .underline-link {
+    margin-top: 24px;
+    font: var(--text-doc-body);
   }
 </style>
