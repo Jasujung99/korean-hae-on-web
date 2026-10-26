@@ -44,4 +44,4 @@ npm run dev
 
 ## 옛 사이트
 
-옛 디자인 시스템은 [old-design-system/](old-design-system/)에 남겨 두었습니다. 옛 페이지와 컴포넌트는 git 기록에서 볼 수 있습니다.
+옛 디자인 시스템은 [old-design-system/](old-design-system/)에, 오픈 예정 화면으로 바꾸기 전의 사이트 파일(페이지, 컴포넌트, 스타일, 이미지, 설정, 빌드 검사, 문서)은 [old-site/](old-site/)에 그대로 남겨 두었습니다. 둘 다 빌드에는 들어가지 않습니다.

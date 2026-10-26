@@ -37,7 +37,7 @@ const { threads, letters } = site.links;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 64px;
     width: min(100%, 1240px);
   }
 
@@ -48,32 +48,33 @@ const { threads, letters } = site.links;
     text-align: center;
   }
 
+  /* Rises softly from well below once the jamo pieces have settled (about 3.5s). */
   .details > * {
-    animation: rise 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    animation: rise 2.4s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   .rule {
-    width: 20px;
+    width: 24px;
     height: 1px;
-    margin-bottom: 20px;
+    margin-bottom: 32px;
     background: var(--line-strong);
-    animation-delay: 2.2s;
+    animation-delay: 3.3s;
   }
 
   .tagline {
     margin: 0;
     color: var(--ink-muted);
-    font: 400 18px/26px var(--font-latin);
+    font: 400 18px/28px var(--font-latin);
     letter-spacing: 0.02em;
-    animation-delay: 2.4s;
+    animation-delay: 3.55s;
   }
 
   .date {
-    margin: 6px 0 0;
+    margin: 14px 0 0;
     color: var(--olive);
-    font: 500 34px/42px var(--font-latin);
+    font: 500 34px/44px var(--font-latin);
     letter-spacing: 0.04em;
-    animation-delay: 2.6s;
+    animation-delay: 3.8s;
   }
 
   .links {
@@ -81,12 +82,12 @@ const { threads, letters } = site.links;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 4px;
-    margin: 26px 0 0;
+    gap: 12px;
+    margin: 52px 0 0;
     padding: 0;
     list-style: none;
     font: 400 19px/26px var(--font-latin);
-    animation-delay: 2.9s;
+    animation-delay: 4.2s;
   }
 
   .separator {
@@ -96,17 +97,23 @@ const { threads, letters } = site.links;
   @keyframes rise {
     from {
       opacity: 0;
-      transform: translateY(14px);
+      filter: blur(4px);
+      transform: translateY(48px);
     }
     to {
       opacity: 1;
+      filter: none;
       transform: none;
     }
   }
 
   @media (max-width: 720px) {
     .opening {
-      gap: 12px;
+      gap: 44px;
+    }
+
+    .rule {
+      margin-bottom: 26px;
     }
 
     .tagline {
@@ -115,12 +122,14 @@ const { threads, letters } = site.links;
     }
 
     .date {
+      margin-top: 10px;
       font-size: 26px;
       line-height: 34px;
     }
 
     .links {
-      margin-top: 18px;
+      gap: 4px;
+      margin-top: 40px;
       font-size: 17px;
     }
   }

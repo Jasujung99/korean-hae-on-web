@@ -1,0 +1,13 @@
+:root {
+  --print-sheet-bg: var(--haeon-white);
+  --print-page-bg: #eaf0f6;
+  --print-text-primary: var(--haeon-navy-900);
+  --print-text-secondary: #657891;
+  --print-line: rgb(16 43 78 / 0.16);
+  --print-line-soft: rgb(93 157 232 / 0.14);
+  --print-action: var(--haeon-blue-500);
+  --print-success: var(--haeon-mint-500);
+  --print-signal: var(--haeon-coral-500);
+  --print-card-radius: 8px;
+  --print-paper-shadow: 0 18px 60px rgb(16 43 78 / 0.1);
+}

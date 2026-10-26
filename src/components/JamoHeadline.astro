@@ -93,13 +93,13 @@ const glyphOf = (char: string) => {
 const scaleOf = (scale: number | readonly [number, number] | undefined) =>
   typeof scale === "number" ? [scale, scale] : (scale ?? [1, 1]);
 
-// Each piece blows in from the left like the 나말온 pieces. Distances are in glyph units,
-// drawn once so both layouts move the same way.
+// Every piece blows in from beyond the left edge of the screen. `lead` (glyph units) is how
+// far past the edge it starts; values are drawn once so both layouts move the same way.
 const flights = PHRASE.map(({ char }) =>
   glyphOf(char).pieces.map(() => ({
-    x: -(180 + random() * 350),
-    y: sign() * (85 + random() * 150),
-    turn: sign() * (22 + random() * 38),
+    lead: 220 + random() * 420,
+    y: sign() * (40 + random() * 140),
+    turn: sign() * (18 + random() * 34),
   })),
 );
 
@@ -139,7 +139,11 @@ function build(layout: Layout) {
         const piece = PIECES[placement.piece];
         const [sx, sy] = scaleOf(placement.scale);
         const flight = flights[index][pieceIndex];
-        const delay = 0.2 + order++ * 0.045;
+        const delay = 0.2 + order++ * 0.035;
+        // Start with the piece's right edge `lead` past the frame's left edge.
+        const pieceLeft = left + placement.x * layout.scale;
+        const startLeft = layout.frame.left - (piece.width * sx + flight.lead) * layout.scale;
+        const fromX = (startLeft - pieceLeft) / layout.scale;
 
         return {
           d: piece.d,
@@ -147,7 +151,7 @@ function build(layout: Layout) {
           transform: `translate(${placement.x} ${placement.y}) scale(${sx} ${sy})`,
           flip: placement.flip ? `rotate(180 ${piece.width / 2} ${piece.height / 2})` : undefined,
           style: [
-            `--from-x:${round(flight.x / sx)}px`,
+            `--from-x:${round(fromX / sx)}px`,
             `--from-y:${round(flight.y / sy)}px`,
             `--from-turn:${round(flight.turn)}deg`,
             `--delay:${delay.toFixed(2)}s`,
@@ -259,8 +263,8 @@ const stages = LAYOUTS.map(build);
     transform-box: fill-box;
     transform-origin: center;
     animation:
-      jamo-fly 1.8s cubic-bezier(0.3, 0.6, 0.3, 1) var(--delay) both,
-      jamo-fade 0.5s ease-out var(--delay) both;
+      jamo-fly 2.2s cubic-bezier(0.22, 0.68, 0.25, 1) var(--delay) both,
+      jamo-fade 0.6s ease-out var(--delay) both;
   }
 
   .lift {

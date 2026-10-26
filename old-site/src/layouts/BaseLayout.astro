@@ -1,0 +1,79 @@
+---
+import defaultOg from "../assets/hero/hero-background-desktop.png";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import { absoluteUrl, siteConfig } from "../lib/site";
+import "../styles/global.css";
+import "../styles/interior.css";
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  noindex?: boolean;
+  ogImage?: string;
+  bodyClass?: string;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  title,
+  description,
+  canonicalPath = Astro.url.pathname,
+  noindex = false,
+  ogImage = defaultOg.src,
+  bodyClass = "",
+  schema,
+} = Astro.props;
+
+const canonical = absoluteUrl(canonicalPath);
+const absoluteOg = absoluteUrl(ogImage);
+const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID || "";
+const resolvedBodyClass = [Astro.url.pathname === "/" ? "" : "interior-page", bodyClass]
+  .filter(Boolean)
+  .join(" ");
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? "noindex,follow" : "index,follow"} />
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" href="/favicon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={siteConfig.locale} />
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={absoluteOg} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{title}</title>
+    {schemas.map((item) => <script is:inline type="application/ld+json" set:html={JSON.stringify(item)} />)}
+    {gaId && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>}
+    {gaId && (
+      <script is:inline define:vars={{ gaId }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', gaId, { anonymize_ip: true });
+      </script>
+    )}
+  </head>
+  <body class={resolvedBodyClass}>
+    <a class="skip-link" href="#main-content">본문으로 이동</a>
+    <SiteHeader />
+    <main id="main-content" class="page-main">
+      <slot />
+    </main>
+    <SiteFooter />
+    <script>
+      import "../scripts/analytics";
+    </script>
+  </body>
+</html>

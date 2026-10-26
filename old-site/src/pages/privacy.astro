@@ -1,0 +1,149 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import { siteConfig } from "../lib/site";
+
+const title = "개인정보 처리방침 | 해온 HAEON";
+const description = "해온 HAEON의 개인정보 수집, 이용, 보관, 파기 및 정보주체의 권리에 관한 안내입니다.";
+const effectiveDate = "2026년 7월 14일";
+
+const requiredBusinessFields = [
+  ["상호", import.meta.env.PUBLIC_BUSINESS_NAME],
+  ["대표자명", siteConfig.business.representative],
+  ["사업자등록번호", siteConfig.business.businessNumber],
+  ["통신판매업 신고번호", siteConfig.business.ecommerceNumber],
+  ["사업장 주소", siteConfig.business.address],
+  ["문의 이메일", siteConfig.contactEmail],
+] as const;
+
+const missingBusinessFields = requiredBusinessFields
+  .filter(([, value]) => !value?.trim())
+  .map(([label]) => label);
+
+const hasExternalIntegration = Boolean(
+  siteConfig.coaching.formEndpoint
+  || siteConfig.inquiryFormEndpoint
+  || siteConfig.kit.checkoutUrl
+  || import.meta.env.PUBLIC_GA_MEASUREMENT_ID,
+);
+---
+
+<BaseLayout title={title} description={description} noindex bodyClass="legal-page">
+  <PageHero
+    kicker="PRIVACY"
+    title="개인정보 처리방침"
+    lead="해온은 서비스 제공에 필요한 정보만 수집하고, 정해진 목적과 기간 안에서 안전하게 처리합니다."
+    facts={[
+      { label: "적용 대상", value: "웹사이트·상담·구매" },
+      { label: "시행일", value: effectiveDate },
+    ]}
+    analyticsLocation="privacy-hero"
+  />
+
+  <section class="content-section">
+    <div class="page-shell legal-layout">
+      <nav class="legal-nav" aria-label="개인정보 처리방침 목차">
+        <a href="#purpose">처리 목적과 항목</a>
+        <a href="#retention">보유 기간</a>
+        <a href="#sharing">제공과 위탁</a>
+        <a href="#destruction">파기</a>
+        <a href="#rights">정보주체의 권리</a>
+        <a href="#cookies">쿠키와 분석</a>
+        <a href="#safety">안전성 확보</a>
+        <a href="#contact">보호업무 연락처</a>
+        <a href="#remedy">권익침해 구제</a>
+        <a href="#changes">방침 변경</a>
+      </nav>
+
+      <article class="legal-copy">
+        {missingBusinessFields.length > 0 && (
+          <p class="policy-notice" role="alert">
+            <strong>게시 전 준비가 필요합니다.</strong><br />
+            실제 운영 정보 중 {missingBusinessFields.join(", ")} 항목이 비어 있습니다. 배포 전에 환경변수와 아래 연락처를 실제 정보로 채우고 내용 전체를 다시 검토해 주세요.
+          </p>
+        )}
+
+        <section id="purpose">
+          <h2>1. 개인정보의 처리 목적과 항목</h2>
+          <p>{siteConfig.business.name}(이하 “해온”)은 다음 목적에 필요한 최소한의 개인정보를 처리합니다.</p>
+          <ul>
+            <li><strong>무료 발음 체크:</strong> 이름, 이메일, 안내 언어, 시간대, 가능한 시간, 선택 입력한 한국어 수준과 발음 고민을 신청 확인과 일정 안내에 이용합니다.</li>
+            <li><strong>수업 상담과 일반 문의:</strong> 이름, 이메일, 관심 수업, 학습 목표, 문의 유형과 문의 내용을 상담 및 답변에 이용합니다.</li>
+            <li><strong>환불 요청:</strong> 주문 이메일, 주문번호, 상품명과 요청 내용을 주문 확인 및 환불 처리에 이용합니다.</li>
+            <li><strong>유료 콘텐츠 거래:</strong> 외부 결제 서비스가 주문, 결제 및 콘텐츠 전달에 필요한 정보를 처리할 수 있습니다. 실제 처리 항목은 결제 단계에서 별도로 안내합니다.</li>
+            <li><strong>서비스 이용 과정:</strong> 호스팅 또는 분석 도구 사용 시 접속 일시, 방문 페이지, 유입 경로, 브라우저·기기 정보와 쿠키 식별자 등이 자동으로 생성될 수 있습니다.</li>
+          </ul>
+          <p>온라인 발음 체크는 별도의 명시적 동의 없이 녹화하거나 녹음하지 않습니다.</p>
+        </section>
+
+        <section id="retention">
+          <h2>2. 처리 및 보유 기간</h2>
+          <p>해온은 개인정보의 처리 목적이 달성되면 지체 없이 파기합니다. 다만 관계 법령에 따라 보존할 필요가 있는 기록은 해당 기간 동안 별도로 보관합니다.</p>
+          <ul>
+            <li>무료 발음 체크, 수업 상담 및 일반 문의 기록: 처리 완료 후 1년</li>
+            <li>표시·광고에 관한 기록: 6개월</li>
+            <li>계약 또는 청약철회, 대금결제 및 재화·서비스 공급에 관한 기록: 5년</li>
+            <li>소비자 불만 또는 분쟁 처리에 관한 기록: 3년</li>
+          </ul>
+        </section>
+
+        <section id="sharing">
+          <h2>3. 제3자 제공과 처리위탁</h2>
+          <p>해온은 정보주체의 동의가 있거나 법령에 근거가 있는 경우를 제외하고 개인정보를 제3자에게 제공하지 않습니다.</p>
+          <p>문의 접수, 일정 관리, 결제, 파일 전달, 웹 호스팅 또는 방문 분석을 위해 외부 서비스를 이용하는 경우에는 실제 제공자의 명칭, 위탁 업무, 보유 기간과 국외 이전 여부를 확인해 이 방침에 공개합니다.</p>
+          {hasExternalIntegration && (
+            <p class="policy-notice" role="note">
+              외부 폼·결제·분석 설정이 감지되었습니다. 게시 전에 각 제공자의 정식 명칭, 처리 항목, 이전 국가·시점·방법, 보유 기간과 거부 방법을 확인해 이 조항에 추가해야 합니다.
+            </p>
+          )}
+        </section>
+
+        <section id="destruction">
+          <h2>4. 개인정보의 파기</h2>
+          <p>보유 기간이 끝나거나 처리 목적이 달성된 개인정보는 복구 또는 재생되지 않도록 삭제합니다. 법령상 보존 의무가 있는 정보는 다른 정보와 분리해 보관한 뒤 보존 기간이 끝나면 파기합니다.</p>
+        </section>
+
+        <section id="rights">
+          <h2>5. 정보주체의 권리와 행사 방법</h2>
+          <p>정보주체는 자신의 개인정보에 대해 열람, 정정·삭제, 처리정지 및 동의 철회를 요구할 수 있습니다. 아래 개인정보 보호업무 연락처로 요청하면 본인 확인 후 관계 법령이 정한 절차에 따라 처리합니다.</p>
+          <p>필수 정보의 수집·이용에 동의하지 않을 수 있으나, 이 경우 신청이나 문의 처리가 어려울 수 있습니다.</p>
+        </section>
+
+        <section id="cookies">
+          <h2>6. 쿠키와 방문 분석</h2>
+          <p>해온은 서비스 개선과 방문 흐름 파악을 위해 쿠키 기반 분석 도구를 사용할 수 있습니다. 이용자는 브라우저 설정에서 쿠키 저장을 제한하거나 삭제할 수 있으며, 쿠키를 제한해도 상담과 구매에 꼭 필요한 기능을 제외한 웹사이트 이용은 가능합니다.</p>
+        </section>
+
+        <section id="safety">
+          <h2>7. 개인정보의 안전성 확보 조치</h2>
+          <p>해온은 개인정보에 대한 접근 권한을 필요한 범위로 제한하고, 전송 구간 보호, 접근 기록 관리, 정기적인 점검 등 합리적인 관리적·기술적 조치를 적용합니다.</p>
+        </section>
+
+        <section id="contact">
+          <h2>8. 개인정보 보호업무 연락처</h2>
+          <ul>
+            <li>운영자: {siteConfig.business.name}</li>
+            <li>대표자 또는 개인정보 보호업무 담당자: {siteConfig.business.representative || "게시 전 입력 필요"}</li>
+            <li>이메일: {siteConfig.contactEmail || "게시 전 입력 필요"}</li>
+            <li>주소: {siteConfig.business.address || "게시 전 입력 필요"}</li>
+          </ul>
+        </section>
+
+        <section id="remedy">
+          <h2>9. 권익침해 구제 방법</h2>
+          <p>개인정보 침해에 관한 상담이나 분쟁 조정이 필요한 경우 개인정보침해 신고센터 또는 개인정보분쟁조정위원회 등 관계 기관에 도움을 요청할 수 있습니다.</p>
+          <ul>
+            <li><a href="https://privacy.kisa.or.kr/" target="_blank" rel="noreferrer">개인정보침해 신고센터</a></li>
+            <li><a href="https://www.kopico.go.kr/" target="_blank" rel="noreferrer">개인정보분쟁조정위원회</a></li>
+          </ul>
+        </section>
+
+        <section id="changes">
+          <h2>10. 개인정보 처리방침의 변경</h2>
+          <p>이 방침의 내용이 변경되면 변경 사항과 시행일을 웹사이트에서 알립니다.</p>
+          <p>시행일: {effectiveDate}</p>
+        </section>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
