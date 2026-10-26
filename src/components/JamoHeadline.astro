@@ -93,13 +93,13 @@ const glyphOf = (char: string) => {
 const scaleOf = (scale: number | readonly [number, number] | undefined) =>
   typeof scale === "number" ? [scale, scale] : (scale ?? [1, 1]);
 
-// Every piece blows in from beyond the left edge of the screen. `lead` (glyph units) is how
-// far past the edge it starts; values are drawn once so both layouts move the same way.
+// Each piece is carried in by a breeze from a little way to its left, like the 나말온 pieces.
+// Distances are in glyph units, drawn once so both layouts move the same way.
 const flights = PHRASE.map(({ char }) =>
   glyphOf(char).pieces.map(() => ({
-    lead: 220 + random() * 420,
-    y: sign() * (40 + random() * 140),
-    turn: sign() * (18 + random() * 34),
+    x: -(180 + random() * 350),
+    y: sign() * (30 + random() * 110),
+    turn: sign() * (25 + random() * 45),
   })),
 );
 
@@ -139,11 +139,8 @@ function build(layout: Layout) {
         const piece = PIECES[placement.piece];
         const [sx, sy] = scaleOf(placement.scale);
         const flight = flights[index][pieceIndex];
-        const delay = 0.2 + order++ * 0.035;
-        // Start with the piece's right edge `lead` past the frame's left edge.
-        const pieceLeft = left + placement.x * layout.scale;
-        const startLeft = layout.frame.left - (piece.width * sx + flight.lead) * layout.scale;
-        const fromX = (startLeft - pieceLeft) / layout.scale;
+        // Pieces leave in order, left to right; the last one settles at about 4.75s.
+        const delay = 0.2 + order++ * 0.05;
 
         return {
           d: piece.d,
@@ -151,7 +148,7 @@ function build(layout: Layout) {
           transform: `translate(${placement.x} ${placement.y}) scale(${sx} ${sy})`,
           flip: placement.flip ? `rotate(180 ${piece.width / 2} ${piece.height / 2})` : undefined,
           style: [
-            `--from-x:${round(fromX / sx)}px`,
+            `--from-x:${round(flight.x / sx)}px`,
             `--from-y:${round(flight.y / sy)}px`,
             `--from-turn:${round(flight.turn)}deg`,
             `--delay:${delay.toFixed(2)}s`,
@@ -250,7 +247,7 @@ const stages = LAYOUTS.map(build);
     stroke-width: var(--wind-width);
     stroke-linecap: round;
     stroke-dasharray: 1;
-    animation: jamo-wind 2.2s cubic-bezier(0.45, 0.05, 0.25, 1) 0.1s both;
+    animation: jamo-wind 3s cubic-bezier(0.45, 0.05, 0.25, 1) 0.1s both;
   }
 
   .syllable {
@@ -263,8 +260,8 @@ const stages = LAYOUTS.map(build);
     transform-box: fill-box;
     transform-origin: center;
     animation:
-      jamo-fly 2.2s cubic-bezier(0.22, 0.68, 0.25, 1) var(--delay) both,
-      jamo-fade 0.6s ease-out var(--delay) both;
+      jamo-breeze 3s var(--delay) both,
+      jamo-fade 1.4s ease-out var(--delay) both;
   }
 
   .lift {
@@ -300,11 +297,23 @@ const stages = LAYOUTS.map(build);
     }
   }
 
-  @keyframes jamo-fly {
-    from {
+  /* Drifts most of the way in, lifts and hovers a moment, then settles with a small sway. */
+  @keyframes jamo-breeze {
+    0% {
       transform: translate(var(--from-x), var(--from-y)) rotate(var(--from-turn));
+      animation-timing-function: cubic-bezier(0.25, 0.4, 0.45, 1);
     }
-    to {
+    45% {
+      transform: translate(calc(var(--from-x) * 0.3), calc(var(--from-y) * 0.2 - 14px))
+        rotate(calc(var(--from-turn) * -0.3));
+      animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+    }
+    75% {
+      transform: translate(calc(var(--from-x) * 0.06), calc(var(--from-y) * 0.03 + 4px))
+        rotate(calc(var(--from-turn) * 0.1));
+      animation-timing-function: cubic-bezier(0.3, 0, 0.3, 1);
+    }
+    100% {
       transform: none;
     }
   }

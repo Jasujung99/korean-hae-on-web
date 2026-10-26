@@ -48,9 +48,14 @@ const { threads, letters } = site.links;
     text-align: center;
   }
 
-  /* Rises softly from well below once the jamo pieces have settled (about 3.5s). */
-  .details > * {
-    animation: rise 2.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  /*
+   * Once the jamo pieces have settled (about 4.75s, see JamoHeadline), the block scrolls up
+   * from below while it clears, very slowly, from a faint blur.
+   */
+  .details {
+    animation:
+      details-rise 3.2s cubic-bezier(0.22, 0.61, 0.36, 1) 4.6s both,
+      details-clear 5.5s cubic-bezier(0.4, 0, 0.3, 1) 4.6s both;
   }
 
   .rule {
@@ -58,7 +63,6 @@ const { threads, letters } = site.links;
     height: 1px;
     margin-bottom: 32px;
     background: var(--line-strong);
-    animation-delay: 3.3s;
   }
 
   .tagline {
@@ -66,7 +70,6 @@ const { threads, letters } = site.links;
     color: var(--ink-muted);
     font: 400 18px/28px var(--font-latin);
     letter-spacing: 0.02em;
-    animation-delay: 3.55s;
   }
 
   .date {
@@ -74,7 +77,6 @@ const { threads, letters } = site.links;
     color: var(--olive);
     font: 500 34px/44px var(--font-latin);
     letter-spacing: 0.04em;
-    animation-delay: 3.8s;
   }
 
   .links {
@@ -87,23 +89,33 @@ const { threads, letters } = site.links;
     padding: 0;
     list-style: none;
     font: 400 19px/26px var(--font-latin);
-    animation-delay: 4.2s;
   }
 
   .separator {
     color: var(--line-strong);
   }
 
-  @keyframes rise {
+  @keyframes details-rise {
     from {
-      opacity: 0;
-      filter: blur(4px);
-      transform: translateY(48px);
+      transform: translateY(80px);
     }
     to {
-      opacity: 1;
-      filter: none;
       transform: none;
+    }
+  }
+
+  @keyframes details-clear {
+    0% {
+      opacity: 0;
+      filter: blur(14px);
+    }
+    25% {
+      opacity: 0.3;
+      filter: blur(9px);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0);
     }
   }
 
