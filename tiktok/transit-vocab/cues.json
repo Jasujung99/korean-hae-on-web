@@ -1,0 +1,31 @@
+{
+  "fps": 30,
+  "duration": 66.4,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    { "id": "hook", "start": 0.0, "end": 3.5, "label": "Mix-up" },
+    { "id": "title", "start": 3.5, "end": 7.0, "label": "Six words" },
+    { "id": "place", "start": 7.0, "end": 12.5, "label": "01  Place" },
+    { "id": "quizSubway", "start": 12.5, "end": 15.8, "label": "01  Place" },
+    { "id": "quizBus", "start": 15.8, "end": 19.2, "label": "01  Place" },
+    { "id": "quizAir", "start": 19.2, "end": 22.6, "label": "01  Place" },
+    { "id": "move", "start": 22.6, "end": 27.3, "label": "02  On the way" },
+    { "id": "stopEx", "start": 27.3, "end": 31.8, "label": "02  On the way" },
+    { "id": "viaEx", "start": 31.8, "end": 36.2, "label": "02  On the way" },
+    { "id": "stops", "start": 36.2, "end": 41.0, "label": "03  The stop" },
+    { "id": "busStop", "start": 41.0, "end": 45.2, "label": "03  The stop" },
+    { "id": "count", "start": 45.2, "end": 49.8, "label": "03  The stop" },
+    { "id": "recall", "start": 49.8, "end": 58.6, "label": "Recall" },
+    { "id": "end", "start": 58.6, "end": 66.4, "label": "haeon" }
+  ],
+  "tts": [
+    { "id": "teomineol", "text": "터미널.", "scene": "place", "at": 0.32 },
+    { "id": "jongjeom", "text": "종점.", "scene": "place", "at": 1.45 },
+    { "id": "jeongcha", "text": "정차.", "scene": "move", "at": 0.38 },
+    { "id": "gyeongyu", "text": "경유.", "scene": "move", "at": 1.55 },
+    { "id": "jeongryujang", "text": "정류장.", "scene": "stops", "at": 0.32 },
+    { "id": "jeonggeojang", "text": "정거장.", "scene": "stops", "at": 1.5 },
+    { "id": "sejeonggeo", "text": "세 정거장만 더.", "scene": "count", "at": 0.85 }
+  ]
+}
