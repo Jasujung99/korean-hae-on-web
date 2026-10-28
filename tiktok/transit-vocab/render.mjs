@@ -165,6 +165,8 @@ for (const t of stillTimes) {
     video,
     "-frames:v",
     "1",
+    "-update",
+    "1",
     path.join(stillDir, name),
   ]);
 }
