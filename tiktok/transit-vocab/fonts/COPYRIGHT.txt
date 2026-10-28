@@ -1,0 +1,19 @@
+These files are subsets of SIL Open Font License 1.1 fonts.
+Only the glyphs used in the transit-vocabulary video are kept.
+The license text is OFL.txt. Do not sell the font files by themselves.
+
+Noto Serif KR
+(c) 2017-2024 Adobe (http://www.adobe.com/).
+https://openfontlicense.org
+
+Noto Sans KR
+(c) 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.
+http://scripts.sil.org/OFL
+
+EB Garamond
+Copyright 2017 The EB Garamond Project Authors (https://github.com/octaviopardo/EBGaramond12)
+https://openfontlicense.org
+
+Nanum Pen Script
+Copyright (c) 2010 NHN Corporation. All rights reserved. Font designed by Sandoll Communications Inc.
+http://scripts.sil.org/OFL
