@@ -61,6 +61,19 @@ describe("stage 1 shells", () => {
     expect(screen.queryByText(/정답|41분|\d+\s*\/\s*\d+/)).not.toBeInTheDocument();
   });
 
+  it("shows the draft first-twelve words only in the dev preview", () => {
+    renderAt("/practice", true);
+    expect(screen.getByRole("heading", { level: 3, name: "초안 후보" })).toBeInTheDocument();
+    expect(screen.getByText("초안 · 미검수")).toBeInTheDocument();
+    expect(screen.getByText("모자")).toBeInTheDocument();
+    expect(screen.getByText("바지")).toBeInTheDocument();
+    expect(screen.getByText("여쭈다")).toBeInTheDocument();
+    expect(screen.getByText(/연결 확인 필요/)).toBeInTheDocument();
+    expect(screen.queryByText("감자")).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "선택 확인" })).toBeDisabled();
+    expect(screen.queryByText(/정답/)).not.toBeInTheDocument();
+  });
+
   it("opens the comparison, finish, and dictionary placeholders", () => {
     renderAt("/compare", false);
     expect(screen.getByRole("heading", { level: 2, name: "X는 어느 쪽과 같나요?" })).toBeInTheDocument();

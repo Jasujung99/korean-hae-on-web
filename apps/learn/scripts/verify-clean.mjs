@@ -48,6 +48,7 @@ async function main() {
     ["ci"],
     ["run", "build"],
     ["test"],
+    ["run", "validate:content"],
     ["run", "test:smoke"],
   ];
   try {

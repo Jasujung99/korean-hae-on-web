@@ -25,11 +25,12 @@ npm run dev
 ```sh
 npm run build
 npm start
+npm run validate:content
 npm run test:smoke
 npm run verify:clean
 ```
 
-`npm start`는 `HOST`(기본 `127.0.0.1`)와 `PORT`(기본 `4174`)에 빌드된 화면과 API를 함께 제공합니다. `npm run test:smoke`는 프로덕션 서버를 실제로 띄워 경로, `noindex`, `robots.txt`, Origin 403, JSON이 아닌 본문 415, 쿠키 없음을 확인합니다. `npm run verify:clean`은 루트 `node_modules` 없이 임시 복사본에서 `npm ci`, `build`, `test`, `test:smoke`를 실행합니다.
+`npm start`는 `HOST`(기본 `127.0.0.1`)와 `PORT`(기본 `4174`)에 빌드된 화면과 API를 함께 제공합니다. `npm run validate:content`는 콘텐츠 참조, 출현이 여러 개인 문항의 목표 위치, 미승인 자료의 공개 릴리스 편입을 검사합니다. `npm run test:smoke`는 프로덕션 서버를 실제로 띄워 경로, `noindex`, `robots.txt`, Origin 403, JSON이 아닌 본문 415, 쿠키 없음을 확인합니다. `npm run verify:clean`은 루트 `node_modules` 없이 임시 복사본에서 `npm ci`, `build`, `test`, `validate:content`, `test:smoke`를 실행합니다.
 
 `npm run preview`는 빌드 결과만 Vite로 보여 줍니다. `npm start`와 `npm run preview`에서는 역할 전환이 꺼져 있습니다. 레이아웃만 다시 보려면 `LEARN_SCREEN_PREVIEW=1`을 붙입니다. 그래도 교사 권한은 생기지 않습니다.
 
@@ -50,7 +51,8 @@ npm run verify:clean
 
 - `GET /`: 기기가 연결되기 전 공통 주소. 개인 링크로 시작하라는 안내만 있습니다.
 - `GET /join`: 주소 조각의 초대 토큰을 읽고 주소창에서 바로 지웁니다. 토큰은 메모리에만 두고, ‘이 기기에서 시작하기’는 서버를 호출하지 않는 비활성 버튼입니다.
-- `GET /practice`, `/compare`, `/finish`, `/dictionary`: 학습 껍데기. 퀴즈 선택과 확인은 저장하지 않습니다.
+- `GET /practice`: 개발 미리보기에서는 첫 12개 초안 단어를 보여 줍니다. 표기는 초안·미검수이고, 음원과 점수 저장은 없습니다. 미리보기가 아니면 빈 퀴즈 껍데기만 있습니다. 개발 서버(`npm run dev`)는 미리보기가 켜져 `http://127.0.0.1:4174/practice`에서 단어를 봅니다.
+- `GET /compare`, `/finish`, `/dictionary`: 비교·마무리·사전 껍데기. 뜻과 예문은 검수 전이라 비어 있습니다.
 - `GET /api/health`: 저장소와 세션이 없다는 상태.
 - `GET /api/config`: 주입된 origin과 미리보기 여부. 쿠키를 발급하지 않습니다.
 - `GET /robots.txt`: `Disallow: /`.

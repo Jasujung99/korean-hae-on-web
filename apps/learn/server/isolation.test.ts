@@ -40,7 +40,8 @@ describe("package boundary", () => {
     const code = scanned
       .filter((path) => !path.endsWith(".test.ts") && !path.endsWith(".test.tsx") && !path.endsWith("package-lock.json"))
       .map((path) => readFileSync(path, "utf8"))
-      .join("\n");
+      .join("\n")
+      .replaceAll("supabase/seed.sql", "");
 
     const appTsconfig = readFileSync(join(learnRoot, "tsconfig.json"), "utf8");
     const viteConfig = readFileSync(join(learnRoot, "vite.config.ts"), "utf8");

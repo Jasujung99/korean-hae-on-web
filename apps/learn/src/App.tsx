@@ -26,7 +26,7 @@ export function LearnRoutes({ preview }: { preview: boolean }) {
     <Routes>
       <Route path="/" element={<EntryScreen />} />
       <Route path="/join" element={<JoinScreen />} />
-      <Route path="/practice" element={<QuizScreen />} />
+      <Route path="/practice" element={<QuizScreen preview={preview} />} />
       <Route path="/compare" element={<CompareScreen />} />
       <Route path="/finish" element={<FinishScreen />} />
       <Route path="/dictionary" element={<DictionaryScreen />} />
