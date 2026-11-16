@@ -1,0 +1,191 @@
+---
+/**
+ * 듣기 퀴즈 껍데기 (듣고 자음 고르기).
+ * 승인된 문항·음원이 없으므로 재생·선택·확인은 모두 비활성이다.
+ * 점수·정답·예시 기록을 만들지 않고, 아무 응답도 저장하지 않는다.
+ */
+import LearnLayout from "../../layouts/LearnLayout.astro";
+import ModeNav from "../../components/ModeNav.astro";
+import ProgressTrack from "../../components/ProgressTrack.astro";
+
+const choices = ["ㅈ", "ㅊ", "ㅉ"];
+---
+
+<LearnLayout title="듣기 퀴즈" role="learner" nav="quiz" rail>
+  <section class="panel">
+    <div class="lesson-top">
+      <span class="pill">모음 사이 · ㅈ ㅊ ㅉ</span>
+      <ProgressTrack />
+    </div>
+
+    <div class="quiz-title">
+      <p class="eyebrow">듣고 자음 고르기</p>
+      <h1 class="title">가운데 소리에<br />귀를 기울여요.</h1>
+      <p class="muted">소리를 듣고 하나를 골라 주세요.</p>
+    </div>
+
+    <ModeNav current="quiz" />
+
+    <div class="listen">
+      <div class="audio-line">
+        <p class="muted">어떤 소리로 들렸나요?</p>
+        <button class="btn listen-btn" type="button" disabled>소리 듣기</button>
+      </div>
+      <div class="jamo-motif" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <p class="small" role="status">아직 준비 중이에요 · 승인된 음원이 연결되면 들을 수 있어요.</p>
+    </div>
+
+    <fieldset class="choices" disabled aria-describedby="choice-note">
+      <legend class="visually-hidden">소리 선택</legend>
+      {
+        choices.map((c) => (
+          <button class="choice" type="button" disabled>
+            <strong>{c}</strong>
+            <span class="small">보기 자리</span>
+          </button>
+        ))
+      }
+    </fieldset>
+    <p class="small" id="choice-note">보기 글자와 소리는 승인된 문항이 연결된 뒤에 채워져요.</p>
+
+    <button class="btn primary block" type="button" disabled>선택 확인</button>
+
+    <p class="resume-note small"><span aria-hidden="true">↳</span> 비교 도움을 보고 돌아와도 풀던 문제는 그대로예요.</p>
+    <p class="small flow-note">개발 1단계 화면 · 응답은 저장하지 않아요. 점수는 표시하지 않아요.</p>
+  </section>
+</LearnLayout>
+
+<style>
+  .panel {
+    display: grid;
+    gap: 0;
+    min-width: 0;
+  }
+
+  .lesson-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 0;
+    margin-bottom: 28px;
+    border-top: 1px solid var(--learn-line);
+    border-bottom: 1px solid var(--learn-line);
+  }
+
+  .quiz-title {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .listen {
+    display: grid;
+    gap: 16px;
+    margin: 28px 0;
+    padding: 24px;
+    border-radius: var(--learn-radius-panel);
+    background: var(--learn-wash);
+  }
+
+  .audio-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 18px;
+  }
+
+  .listen-btn {
+    border-color: var(--learn-accent);
+    background: var(--learn-surface);
+    color: var(--learn-accent);
+  }
+
+  .jamo-motif {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    height: 24px;
+  }
+
+  .jamo-motif span {
+    display: block;
+    width: 10px;
+    height: 18px;
+    border-radius: 2px;
+    background: var(--jamo-final);
+    opacity: 0.85;
+  }
+
+  .jamo-motif span:nth-child(2) {
+    height: 8px;
+    width: 14px;
+    background: var(--jamo-vowel);
+  }
+
+  .jamo-motif span:nth-child(3) {
+    transform: rotate(-6deg);
+  }
+
+  .jamo-motif span:nth-child(4) {
+    height: 22px;
+    background: var(--jamo-vowel);
+    transform: rotate(8deg);
+  }
+
+  .choices {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin: 0 0 8px;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+  }
+
+  .choice {
+    display: grid;
+    justify-items: center;
+    gap: 2px;
+    min-height: 72px;
+    padding: 12px 6px;
+    border: 1px solid var(--learn-line);
+    border-radius: var(--learn-radius);
+    background: var(--learn-surface);
+    color: var(--learn-text);
+    cursor: not-allowed;
+  }
+
+  .choice strong {
+    font: 500 24px/1.4 var(--learn-font-body);
+  }
+
+  #choice-note {
+    margin-bottom: 20px;
+  }
+
+  .resume-note {
+    margin-top: 18px;
+  }
+
+  .flow-note {
+    margin-top: 10px;
+  }
+
+  @media (max-width: 720px) {
+    .lesson-top {
+      margin-bottom: 20px;
+    }
+
+    .listen {
+      margin: 20px 0;
+      padding: 18px;
+    }
+
+    .audio-line .btn {
+      width: 100%;
+    }
+  }
+</style>

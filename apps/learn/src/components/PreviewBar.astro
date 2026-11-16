@@ -1,0 +1,83 @@
+---
+/**
+ * 검토용 미리보기 막대. `astro dev` 또는 LEARN_PREVIEW=1 에서만 그린다.
+ * 화면 사이를 오가는 링크일 뿐이며 교사 인증·권한을 대신하지 않는다.
+ * 상태를 브라우저 저장소·쿠키에 저장하지 않는다.
+ */
+import { screens } from "../lib/screens";
+
+interface Props {
+  role: "learner" | "teacher";
+}
+const { role } = Astro.props;
+const current = Astro.url.pathname.replace(/\/$/, "") || "/";
+const list = screens.filter((s) => s.role === role);
+---
+
+<aside class="preview-bar" aria-label="검토용 미리보기 (실제 인증 아님)" data-preview-bar>
+  <p class="preview-label"><strong>검토용 미리보기</strong> · 실제 교사 인증이 아니에요 · 음원·DB 미연결</p>
+  <div class="preview-roles" role="group" aria-label="검토할 화면 묶음">
+    <a href="/practice" aria-current={role === "learner" ? "true" : undefined}>학습자 화면</a>
+    <a href="/teacher" aria-current={role === "teacher" ? "true" : undefined}>교사 관찰 화면</a>
+  </div>
+  <nav class="preview-screens" aria-label="화면 바로가기">
+    {
+      list.map((s) => (
+        <a href={s.href} aria-current={current === s.href ? "page" : undefined}>
+          {s.label}
+        </a>
+      ))
+    }
+  </nav>
+</aside>
+
+<style>
+  .preview-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 16px;
+    padding: 10px var(--learn-gutter);
+    border-bottom: 1px dashed var(--learn-line-strong);
+    background: var(--learn-wash-future);
+    color: var(--learn-on-wash-future);
+    font: 400 12px/1.6 var(--learn-font-ui);
+  }
+
+  .preview-label strong {
+    font-weight: 500;
+  }
+
+  .preview-roles,
+  .preview-screens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 6px;
+    min-width: 0;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 2px 10px;
+    border: 1px solid transparent;
+    border-radius: var(--learn-radius);
+    color: var(--learn-on-wash-future);
+  }
+
+  .preview-roles a {
+    border-color: var(--learn-lavender);
+  }
+
+  a[aria-current] {
+    background: var(--learn-surface);
+    border-color: var(--learn-on-wash-future);
+  }
+
+  @media (max-width: 720px) {
+    .preview-bar {
+      padding: 8px var(--learn-gutter-mobile);
+    }
+  }
+</style>

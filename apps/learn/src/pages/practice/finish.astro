@@ -1,0 +1,43 @@
+---
+/** 연습 마무리 껍데기. 결과·점수 없이 빈 상태만 보여준다. */
+import LearnLayout from "../../layouts/LearnLayout.astro";
+---
+
+<LearnLayout title="연습 마무리" role="learner" nav="quiz" rail>
+  <section class="stack">
+    <div class="stack head">
+      <div class="complete" aria-hidden="true">✓</div>
+      <p class="eyebrow">오늘의 짧은 연습</p>
+      <h1 class="title">소리의 차이를<br />하나씩 알아가요.</h1>
+    </div>
+    <p class="muted">연습을 마치면 이번에 만난 소리와 위치를 여기서 정리해 보여줘요.</p>
+    <div class="notice" role="status">아직 마친 연습이 없어요 · 이 화면에는 점수나 예시 결과를 표시하지 않아요.</div>
+    <a class="btn primary block" href="/practice">듣기 퀴즈로 가기</a>
+
+    <div class="rule-top stack">
+      <div class="row">
+        <h2>이 소리, 단어에서는?</h2>
+        <span class="pill future">확장</span>
+      </div>
+      <p class="muted">검수된 생활 단어와 예문이 준비되면 여기에서 이어져요.</p>
+      <p class="small">승인된 단어가 아직 없어요.</p>
+    </div>
+  </section>
+</LearnLayout>
+
+<style>
+  .head {
+    gap: 8px;
+  }
+
+  .complete {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--learn-accent);
+    border-radius: 50%;
+    color: var(--learn-accent);
+    font: 400 18px/1 var(--learn-font-ui);
+  }
+</style>

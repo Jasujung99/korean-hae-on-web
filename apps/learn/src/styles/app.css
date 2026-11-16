@@ -1,0 +1,151 @@
+/* 학습 앱 공통 짜임. 색·글꼴 값은 haeon-adapter.css 의 변수만 쓴다. */
+body {
+  font: 400 16px/1.75 var(--learn-font-body);
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+h1, .title {
+  font: 500 30px/1.55 var(--learn-font-body);
+  letter-spacing: -0.7px;
+}
+
+h2 {
+  font: 600 17px/1.6 var(--learn-font-body);
+}
+
+.eyebrow {
+  color: var(--learn-accent);
+  font: 400 12px/1.7 var(--learn-font-ui);
+  letter-spacing: 0.4px;
+}
+
+.muted {
+  color: var(--learn-text-muted);
+  font: 400 15px/1.75 var(--learn-font-body);
+}
+
+.small {
+  color: var(--learn-text-muted);
+  font: 400 12px/1.7 var(--learn-font-ui);
+}
+
+.pill {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: var(--learn-radius);
+  background: var(--learn-wash);
+  color: var(--learn-accent);
+  font: 400 12px/1.6 var(--learn-font-ui);
+}
+
+.pill.future {
+  background: var(--learn-wash-future);
+  color: var(--learn-on-wash-future);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 10px 16px;
+  border: 1px solid var(--learn-line);
+  border-radius: var(--learn-radius);
+  background: transparent;
+  color: var(--learn-text);
+  font: 400 13px/1.6 var(--learn-font-ui);
+  text-align: center;
+  cursor: pointer;
+}
+
+a.btn:hover {
+  color: var(--learn-accent);
+  border-color: var(--learn-accent);
+}
+
+.btn.primary {
+  background: var(--learn-accent);
+  border-color: var(--learn-accent);
+  color: var(--learn-on-accent);
+}
+
+a.btn.primary:hover {
+  color: var(--learn-on-accent);
+}
+
+.btn.ghost {
+  border-color: transparent;
+  color: var(--learn-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 7px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.52;
+  cursor: not-allowed;
+}
+
+.btn.block {
+  display: flex;
+  width: 100%;
+}
+
+.btn:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--learn-focus);
+  outline-offset: 3px;
+}
+
+select {
+  min-height: 44px;
+  max-width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--learn-line);
+  border-radius: var(--learn-radius);
+  background: var(--learn-surface);
+  color: var(--learn-text);
+  font: 400 13px/1.6 var(--learn-font-ui);
+}
+
+.notice {
+  padding: 14px 16px;
+  border-radius: var(--learn-radius-panel);
+  background: var(--learn-state-pending-bg);
+  color: var(--learn-text);
+  font: 400 13px/1.7 var(--learn-font-ui);
+}
+
+.notice.future {
+  background: var(--learn-state-future-bg);
+  color: var(--learn-on-wash-future);
+}
+
+.stack {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.rule-top {
+  border-top: 1px solid var(--learn-line);
+  padding-top: 18px;
+}

@@ -1,0 +1,51 @@
+---
+/**
+ * 비교 도움(ABX) 껍데기. 자음 식별 첫 제출과 별도 과제로 기록할 예정이다.
+ * 승인된 서로 다른 토큰이 없으므로 재생·응답은 비활성이다.
+ */
+import LearnLayout from "../../layouts/LearnLayout.astro";
+import ModeNav from "../../components/ModeNav.astro";
+---
+
+<LearnLayout title="비교 도움" role="learner" nav="quiz" rail>
+  <section class="stack">
+    <ModeNav current="compare" />
+    <span class="pill">보조 연습 · 두 소리 비교</span>
+    <h1 class="title">X는 어느 쪽과 같나요?</h1>
+    <p class="muted">A, B를 듣고 마지막 X를 비교해요.</p>
+
+    <div class="pair">
+      <button class="btn" type="button" disabled>A 듣기</button>
+      <button class="btn" type="button" disabled>B 듣기</button>
+    </div>
+    <button class="btn block" type="button" disabled>X 듣기 · 음원 준비 중</button>
+
+    <div class="answers">
+      <button class="btn block" type="button" disabled>A와 같아요</button>
+      <button class="btn block" type="button" disabled>B와 같아요</button>
+    </div>
+
+    <p class="notice" role="status">아직 준비 중이에요 · 서로 다른 승인 음원이 준비되면 열려요.</p>
+    <p class="small">이 활동은 듣고 세 소리 중 고르는 기록과 따로 남아요.</p>
+    <a class="btn primary block" href="/practice">듣기 퀴즈로 돌아가기</a>
+  </section>
+</LearnLayout>
+
+<style>
+  .stack .pill {
+    justify-self: start;
+  }
+
+  .pair,
+  .answers {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  @media (max-width: 380px) {
+    .answers {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>

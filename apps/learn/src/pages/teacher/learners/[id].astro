@@ -1,0 +1,60 @@
+---
+/**
+ * 학습자 개인 상세. 개발 1단계에는 학습자 데이터가 없으므로 어떤 id 든 빈 상세 껍데기만 보여준다.
+ * 개발 6단계에서 교사 인증 + 담당 배정 검사 후 실제 관찰 기록으로 바꾼다.
+ */
+import LearnLayout from "../../../layouts/LearnLayout.astro";
+import LearnerList from "../../../components/LearnerList.astro";
+import TeacherDetail from "../../../components/TeacherDetail.astro";
+import TeacherGate from "../../../components/TeacherGate.astro";
+
+const preview = Astro.locals.preview;
+---
+
+<LearnLayout title="학습자 상세" role="teacher">
+  {
+    preview ? (
+      <div class="teacher-layout">
+        <div class="list-col">
+          <LearnerList />
+        </div>
+        <div class="detail-col">
+          <TeacherDetail showBack />
+        </div>
+      </div>
+    ) : (
+      <TeacherGate />
+    )
+  }
+</LearnLayout>
+
+<style>
+  .teacher-layout {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+  }
+
+  .list-col,
+  .detail-col {
+    min-width: 0;
+  }
+
+  @media (max-width: 860px) {
+    .teacher-layout {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* 모바일 상세에서는 목록을 숨기고 '← 학습자 목록'으로 돌아간다. */
+    .list-col {
+      display: none;
+    }
+  }
+
+  @media (min-width: 861px) {
+    .detail-col :global(.back) {
+      display: none;
+    }
+  }
+</style>

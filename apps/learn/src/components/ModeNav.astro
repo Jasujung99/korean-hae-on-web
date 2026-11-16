@@ -1,0 +1,33 @@
+---
+interface Props {
+  current: "quiz" | "compare";
+}
+const { current } = Astro.props;
+---
+
+<nav class="mode-nav" aria-label="연습 방식">
+  <a href="/practice" aria-current={current === "quiz" ? "page" : undefined}>듣기 퀴즈</a>
+  <a href="/practice/compare" aria-current={current === "compare" ? "page" : undefined}>비교 도움</a>
+</nav>
+
+<style>
+  .mode-nav {
+    display: flex;
+    gap: 14px;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 6px 0;
+    border-bottom: 1px solid transparent;
+    color: var(--learn-text-muted);
+    font: 400 12px/1.6 var(--learn-font-ui);
+  }
+
+  a[aria-current] {
+    color: var(--learn-accent);
+    border-bottom-color: var(--learn-accent);
+  }
+</style>
