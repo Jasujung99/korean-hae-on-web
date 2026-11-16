@@ -7,6 +7,7 @@ const repoRoot = fileURLToPath(new URL("../..", import.meta.url));
 const designSystem = fileURLToPath(new URL("../../src/design-system", import.meta.url));
 
 export default defineConfig({
+  tsconfig: "./tsconfig.json",
   plugins: [react(), learnApiPlugin()],
   resolve: {
     alias: {
@@ -17,6 +18,7 @@ export default defineConfig({
     host: "127.0.0.1",
     port: 4174,
     strictPort: true,
+    cors: false,
     fs: {
       allow: [repoRoot],
     },
@@ -25,6 +27,7 @@ export default defineConfig({
     host: "127.0.0.1",
     port: 4174,
     strictPort: true,
+    cors: false,
   },
   build: {
     outDir: "dist/client",

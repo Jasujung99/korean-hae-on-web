@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router";
 import { LearnerFrame, Pill, ScreenTitle } from "../ui";
 
@@ -9,9 +8,6 @@ const choices = [
 ] as const;
 
 export function QuizScreen() {
-  const [choice, setChoice] = useState<number | null>(null);
-  const [confirmed, setConfirmed] = useState(false);
-
   return (
     <LearnerFrame>
       <ScreenTitle title="듣기 퀴즈" />
@@ -37,7 +33,7 @@ export function QuizScreen() {
           <p className="muted">소리를 듣고 하나를 고르는 자리입니다. 지금은 소리가 없습니다.</p>
         </div>
         <div className="mode-nav">
-          <Link to="/" aria-current="page">
+          <Link to="/practice" aria-current="page">
             듣기 퀴즈
           </Link>
           <Link to="/compare">비교 도움</Link>
@@ -59,26 +55,19 @@ export function QuizScreen() {
           </div>
           <p className="audio-label">승인된 음원이 없습니다. 무음을 재생하거나 성적으로 저장하지 않습니다.</p>
         </div>
-        <div className="choices" role="group" aria-label="소리 선택. 점수로 저장되지 않습니다.">
-          {choices.map((item, index) => (
-            <button
-              key={item.syllable}
-              type="button"
-              aria-pressed={choice === index}
-              onClick={() => setChoice(index)}
-            >
+        <div className="choices" role="group" aria-label="소리 보기. 이 단계에서는 저장하지 않습니다.">
+          {choices.map((item) => (
+            <button key={item.syllable} type="button" disabled>
               {item.syllable}
               <small>{item.label}</small>
             </button>
           ))}
         </div>
-        {confirmed ? (
-          <p className="notice" role="status">
-            이 기기의 화면에만 남습니다. 맞았는지는 알려 주지 않고, 서버에도 저장하지 않습니다.
-          </p>
-        ) : null}
+        <p className="notice" role="status">
+          이 단계에서는 고른 답을 저장하지 않습니다. 맞았는지도 알려 주지 않습니다.
+        </p>
         <div className="actions">
-          <button type="button" className="primary" disabled={choice === null} onClick={() => setConfirmed(true)}>
+          <button type="button" className="primary" disabled>
             선택 확인
           </button>
           <Link className="text-link" to="/finish">

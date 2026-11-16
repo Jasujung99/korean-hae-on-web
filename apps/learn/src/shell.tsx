@@ -26,11 +26,11 @@ function LearnerNav({ place }: { place: "head" | "bottom" }) {
   const location = useLocation();
   const dictionary = location.pathname.startsWith("/dictionary");
   const quiz =
-    location.pathname === "/" || location.pathname === "/compare" || location.pathname === "/finish";
+    location.pathname === "/practice" || location.pathname === "/compare" || location.pathname === "/finish";
 
   return (
     <nav className={place === "bottom" ? "bottom-nav" : undefined} aria-label={place === "head" ? "학습 메뉴" : "학습 메뉴 아래"}>
-      <Link to="/" aria-current={quiz ? "page" : undefined}>
+      <Link to="/practice" aria-current={quiz ? "page" : undefined}>
         듣기 퀴즈
       </Link>
       <Link to="/dictionary" aria-current={dictionary ? "page" : undefined}>

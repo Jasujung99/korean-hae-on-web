@@ -20,13 +20,19 @@ describe("design token adapter", () => {
     expect(base).toContain("background: var(--paper)");
     expect(base).toContain("font-family: var(--font-serif)");
 
-    const appCss = readFileSync(new URL("./styles/app.css", import.meta.url), "utf8");
-    expect(appCss).toContain("var(--paper)");
-    expect(appCss).toContain("var(--olive)");
-    expect(appCss).toContain("var(--wash-sage)");
-    expect(appCss).toContain("var(--wash-lavender)");
-    expect(appCss).toContain("var(--font-serif)");
-    expect(appCss).toContain("@media (max-width: 360px)");
-    expect(appCss).not.toMatch(/#[0-9a-fA-F]{3,8}\b/);
+    const styles = ["shared.css", "practice.css", "teacher.css", "responsive.css"]
+      .map((name) => readFileSync(new URL(`./styles/${name}`, import.meta.url), "utf8"))
+      .join("\n");
+    expect(styles).toContain("var(--paper)");
+    expect(styles).toContain("var(--olive)");
+    expect(styles).toContain("var(--wash-sage)");
+    expect(styles).toContain("var(--wash-lavender)");
+    expect(styles).toContain("var(--font-serif)");
+    expect(styles).toContain("@media (max-width: 360px)");
+    expect(styles).not.toMatch(/#[0-9a-fA-F]{3,8}\b/);
+    const minWidths = [...styles.matchAll(/min-width:\s*(\d+)px/g)].map((match) => Number(match[1]));
+    expect(minWidths.every((width) => width <= 180)).toBe(true);
+    expect(styles).toContain("minmax(0, 1fr)");
+    expect(styles).toContain("overflow-wrap: anywhere");
   });
 });

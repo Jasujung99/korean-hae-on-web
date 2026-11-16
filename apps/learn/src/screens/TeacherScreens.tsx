@@ -12,6 +12,14 @@ const positions = [
   { value: "initial", label: "단어 첫머리" },
 ] as const;
 
+const vowels = [
+  { value: "any", label: "모음 맥락 전체" },
+  { value: "i-u", label: "ㅣ·ㅜ 맥락" },
+  { value: "a-eo-o", label: "ㅏ·ㅓ·ㅗ 맥락" },
+] as const;
+
+const consonants = ["ㅈ", "ㅊ", "ㅉ"] as const;
+
 export function TeacherLockedScreen() {
   return (
     <section className="panel stack" aria-labelledby="teacher-lock-title">
@@ -25,7 +33,7 @@ export function TeacherLockedScreen() {
         주소만으로 기록이 열리지는 않습니다. 인증은 이후 단계에서 서버가 확인합니다. 역할 전환 버튼은 권한이 아닙니다.
       </p>
       <Link className="button primary" to="/">
-        학습 화면으로
+        처음 화면으로
       </Link>
     </section>
   );
@@ -34,8 +42,10 @@ export function TeacherLockedScreen() {
 export function TeacherLayout({ mode }: { mode: "list" | "detail" }) {
   const [task, setTask] = useState<(typeof tasks)[number]["value"]>("identify");
   const [position, setPosition] = useState<(typeof positions)[number]["value"]>("medial");
+  const [vowel, setVowel] = useState<(typeof vowels)[number]["value"]>("any");
   const taskLabel = tasks.find((item) => item.value === task)?.label ?? tasks[0].label;
   const positionLabel = positions.find((item) => item.value === position)?.label ?? positions[0].label;
+  const vowelLabel = vowels.find((item) => item.value === vowel)?.label ?? vowels[0].label;
 
   return (
     <div className={mode === "detail" ? "teacher-layout on-detail" : "teacher-layout"}>
@@ -95,6 +105,16 @@ export function TeacherLayout({ mode }: { mode: "list" | "detail" }) {
               ))}
             </select>
           </label>
+          <label>
+            모음 맥락
+            <select value={vowel} onChange={(event) => setVowel(event.target.value as typeof vowel)}>
+              {vowels.map((item) => (
+                <option key={item.value} value={item.value}>
+                  {item.label}
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
         <div className="t-grid">
           <section className="panel stack">
@@ -105,20 +125,27 @@ export function TeacherLayout({ mode }: { mode: "list" | "detail" }) {
               </p>
             </div>
             {task === "identify" ? (
-              <table>
-                <caption>제시한 소리와 고른 소리의 자리. 기록이 없습니다.</caption>
+              <table aria-label="소리 혼동 자리">
+                <caption>
+                  {taskLabel} · {positionLabel} · {vowelLabel}. 기록이 없습니다.
+                </caption>
                 <thead>
                   <tr>
                     <th>제시 / 선택</th>
-                    <th>ㅈ</th>
-                    <th>ㅊ</th>
-                    <th>ㅉ</th>
+                    {consonants.map((consonant) => (
+                      <th key={consonant}>{consonant}</th>
+                    ))}
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td colSpan={4}>기록 없음</td>
-                  </tr>
+                  {consonants.map((presented) => (
+                    <tr key={presented}>
+                      <th scope="row">{presented}</th>
+                      {consonants.map((chosen) => (
+                        <td key={chosen}>없음</td>
+                      ))}
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             ) : (
@@ -130,19 +157,19 @@ export function TeacherLayout({ mode }: { mode: "list" | "detail" }) {
             <dl className="time-parts">
               <div>
                 <dt>활동 시간</dt>
-                <dd>기록 없음</dd>
+                <dd>기록 없음. 화면이 보이고 조작이 있거나 음원이 재생된 구간입니다.</dd>
               </div>
               <div>
                 <dt>전체 경과</dt>
-                <dd>기록 없음</dd>
+                <dd>기록 없음. 문항이나 회기가 실제로 흐른 시간입니다.</dd>
               </div>
               <div>
                 <dt>음원 재생</dt>
-                <dd>기록 없음</dd>
+                <dd>기록 없음. 실제로 재생된 구간의 합이며, 활동 시간과 겹칠 수 있습니다.</dd>
               </div>
               <div>
                 <dt>화면 이탈·무응답</dt>
-                <dd>기록 없음</dd>
+                <dd>기록 없음. 숨김과 긴 무응답이며, 총시간에서 두 번 빼지 않습니다.</dd>
               </div>
             </dl>
             <p className="small">서로 겹칠 수 있어 더해서 총시간으로 보이지 않습니다. 긴 체류를 집중이나 어려움으로 판정하지 않습니다.</p>

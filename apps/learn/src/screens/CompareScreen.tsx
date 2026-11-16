@@ -37,7 +37,7 @@ export function CompareScreen() {
         </div>
         {choice !== null ? (
           <p className="notice" role="status">
-            고른 위치만 이 화면에 표시합니다. 비교 결과는 없고, 자음 식별 기록과도 합치지 않습니다.
+            고른 위치만 이 화면에 표시합니다. 서버에 저장하지 않고, 자음 식별 기록과도 합치지 않습니다.
           </p>
         ) : null}
         <p className="small">이 활동은 듣고 자음을 고르는 과제와 따로 기록할 예정입니다.</p>

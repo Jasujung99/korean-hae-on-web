@@ -13,4 +13,5 @@ await esbuild.build({
   format: "esm",
   packages: "external",
   target: "node22",
+  tsconfig: "tsconfig.json",
 });

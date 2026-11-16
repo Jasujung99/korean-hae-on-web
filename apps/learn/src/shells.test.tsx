@@ -4,10 +4,15 @@ import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import { MemoryRouter } from "react-router";
 import { LearnRoutes } from "./App";
+import { peekInviteToken, resetInviteTokenMemory } from "./join-token";
 import type { LearnRuntime } from "./runtime";
 import { Shell } from "./shell";
 
-afterEach(() => cleanup());
+afterEach(() => {
+  cleanup();
+  resetInviteTokenMemory();
+  window.history.replaceState(null, "", "/");
+});
 
 function renderAt(path: string, preview: boolean) {
   const runtime: LearnRuntime = {
@@ -27,16 +32,33 @@ function renderAt(path: string, preview: boolean) {
 }
 
 describe("stage 1 shells", () => {
-  it("shows the listening shell without a score or a role switch", () => {
+  it("shows the unconnected common address instead of the quiz", () => {
     renderAt("/", false);
+    expect(screen.getByRole("heading", { level: 2, name: "연결된 연습이 없습니다." })).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: /귀를 기울여요/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole("group", { name: "개발 미리보기 역할" })).not.toBeInTheDocument();
+  });
+
+  it("keeps an invite token in memory and removes it from the address", () => {
+    window.history.replaceState(null, "", "/join?from=letter#token=secret-token-value");
+    renderAt("/join", false);
+    expect(window.location.pathname).toBe("/join");
+    expect(window.location.search).toBe("?from=letter");
+    expect(window.location.hash).toBe("");
+    expect(document.body.textContent).not.toContain("secret-token-value");
+    expect(peekInviteToken()).toBe("secret-token-value");
+    expect(screen.getByRole("button", { name: "이 기기에서 시작하기" })).toBeDisabled();
+    expect(screen.getByRole("status").textContent).toContain("초대를 소비하지 않습니다");
+  });
+
+  it("shows a disabled listening shell that does not record a choice", () => {
+    renderAt("/practice", false);
     expect(screen.getByRole("heading", { level: 2, name: /귀를 기울여요/ })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "소리 듣기 · 준비 중" })).toBeDisabled();
-    expect(screen.queryByRole("group", { name: "개발 미리보기 역할" })).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /아자/ })).toBeDisabled();
+    expect(screen.getByRole("button", { name: "선택 확인" })).toBeDisabled();
+    expect(screen.getByRole("status").textContent).toContain("저장하지 않습니다");
     expect(screen.queryByText(/정답|41분|\d+\s*\/\s*\d+/)).not.toBeInTheDocument();
-
-    fireEvent.click(screen.getByRole("button", { name: /아자/ }));
-    fireEvent.click(screen.getByRole("button", { name: "선택 확인" }));
-    expect(screen.getByRole("status").textContent).toContain("서버에도 저장하지 않습니다");
   });
 
   it("opens the comparison, finish, and dictionary placeholders", () => {
@@ -58,21 +80,21 @@ describe("stage 1 shells", () => {
     expect(screen.getByRole("button", { name: "내 단어에 담기 · 준비 중" })).toBeDisabled();
   });
 
-  it("keeps teacher observation behind the preview gate and shows no scores", () => {
+  it("keeps teacher observation behind the preview gate and shows an empty confusion table", () => {
     renderAt("/teach", false);
     expect(screen.getByRole("heading", { level: 2, name: "교사 인증 전" })).toBeInTheDocument();
     expect(screen.queryByText("배정된 학습자가 없습니다.")).not.toBeInTheDocument();
     expect(screen.queryByRole("group", { name: "개발 미리보기 역할" })).not.toBeInTheDocument();
 
     cleanup();
-    renderAt("/teach", true);
+    renderAt("/teach/detail", true);
     expect(screen.getByRole("group", { name: "개발 미리보기 역할" })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { level: 2, name: "이번 학습 기록" })).toBeInTheDocument();
-    expect(screen.getByText("배정된 학습자가 없습니다.")).toBeInTheDocument();
-    expect(screen.getAllByText("없음").length).toBeGreaterThan(0);
+    expect(screen.getByRole("combobox", { name: "모음 맥락" })).toBeInTheDocument();
+    expect(screen.getAllByRole("cell")).toHaveLength(9);
+    expect(screen.getByText(/더해서 총시간으로 보이지 않습니다/)).toBeInTheDocument();
     expect(screen.queryByText(/정답|\d+분/)).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: "학습자" }));
-    expect(screen.getByRole("heading", { level: 2, name: /귀를 기울여요/ })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 2, name: "연결된 연습이 없습니다." })).toBeInTheDocument();
   });
 });

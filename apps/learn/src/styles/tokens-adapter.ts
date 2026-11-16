@@ -10,4 +10,7 @@
  */
 import "@design/tokens.css";
 import "@design/base.css";
-import "./app.css";
+import "./shared.css";
+import "./practice.css";
+import "./teacher.css";
+import "./responsive.css";

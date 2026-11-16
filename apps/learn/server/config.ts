@@ -1,6 +1,7 @@
 export type LearnConfig = {
   origin: string | null;
   screenPreview: boolean;
+  host: string;
   port: number;
 };
 
@@ -12,6 +13,15 @@ export type PublicConfig = {
   screenPreview: boolean;
   session: "not-issued";
 };
+
+function readHost(value: string | undefined): string {
+  const host = value?.trim() ?? "";
+  if (!host) return "127.0.0.1";
+  if (host.includes("://") || host.includes("/") || /\s/.test(host)) {
+    throw new Error("HOST must be a hostname or IP address");
+  }
+  return host;
+}
 
 function readPort(value: string | undefined): number {
   if (value === undefined || value.trim() === "") return 4174;
@@ -54,6 +64,7 @@ export function readLearnConfig(env: NodeJS.ProcessEnv): LearnConfig {
   return {
     origin: readOrigin(env.LEARN_APP_ORIGIN),
     screenPreview,
+    host: readHost(env.HOST),
     port: readPort(env.PORT),
   };
 }

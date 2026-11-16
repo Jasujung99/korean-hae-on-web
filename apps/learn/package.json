@@ -9,11 +9,13 @@
   },
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 4174 --strictPort",
-    "build": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.server.json --noEmit && vite build && node scripts/bundle-server.mjs",
+    "build": "tsc -p tsconfig.json --noEmit && vite build && node scripts/bundle-server.mjs",
     "start": "node dist/server/index.js",
     "preview": "vite preview --host 127.0.0.1 --port 4174 --strictPort",
-    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.server.json --noEmit",
-    "test": "vitest run"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:smoke": "node scripts/smoke.mjs",
+    "verify:clean": "node scripts/verify-clean.mjs"
   },
   "dependencies": {
     "@hono/node-server": "^2.1.8",

@@ -48,7 +48,10 @@ describe("readLearnConfig", () => {
 
   it("rejects a bad port without a default fallback", () => {
     expect(readLearnConfig({}).port).toBe(4174);
+    expect(readLearnConfig({}).host).toBe("127.0.0.1");
+    expect(readLearnConfig({ HOST: "0.0.0.0" }).host).toBe("0.0.0.0");
     expect(() => readLearnConfig({ PORT: "0" })).toThrow(/PORT/);
     expect(() => readLearnConfig({ PORT: "nope" })).toThrow(/PORT/);
+    expect(() => readLearnConfig({ HOST: "http://127.0.0.1" })).toThrow(/HOST/);
   });
 });

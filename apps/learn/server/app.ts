@@ -1,14 +1,42 @@
 import { Hono } from "hono";
 import { toPublicConfig, type LearnConfig } from "./config.ts";
 
+const SAFE_METHODS = new Set(["GET", "HEAD", "OPTIONS"]);
+
+function applyDocumentHeaders(c: { header: (name: string, value: string) => void }) {
+  c.header("X-Robots-Tag", "noindex, nofollow");
+  c.header("X-Frame-Options", "DENY");
+  c.header("X-Content-Type-Options", "nosniff");
+}
+
+function isJsonContentType(value: string | undefined): boolean {
+  const mediaType = value?.split(";", 1)[0]?.trim().toLowerCase() ?? "";
+  return mediaType === "application/json";
+}
+
 export function createLearnApp(config: LearnConfig) {
   const app = new Hono();
 
-  app.use("/api/*", async (c, next) => {
+  app.use("*", async (c, next) => {
     await next();
-    c.header("X-Content-Type-Options", "nosniff");
+    applyDocumentHeaders(c);
+  });
+
+  app.use("/api/*", async (c, next) => {
+    if (!SAFE_METHODS.has(c.req.method)) {
+      const origin = c.req.header("origin");
+      if (!config.origin || origin !== config.origin) {
+        return c.json({ error: "forbidden" }, 403);
+      }
+      if (!isJsonContentType(c.req.header("content-type"))) {
+        return c.json({ error: "unsupported_media_type" }, 415);
+      }
+    }
+    await next();
     c.header("Cache-Control", "no-store");
   });
+
+  app.get("/robots.txt", (c) => c.text("User-agent: *\nDisallow: /\n"));
 
   app.get("/api/health", (c) =>
     c.json({
@@ -29,6 +57,7 @@ export function createLearnApp(config: LearnConfig) {
     if (process.env.NODE_ENV !== "production" && error instanceof Error) {
       console.error(error.name);
     }
+    applyDocumentHeaders(c);
     return c.json({ error: "internal" }, 500);
   });
 

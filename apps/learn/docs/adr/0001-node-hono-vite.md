@@ -19,12 +19,14 @@
 
 화면은 Vite와 React다. 서버는 Hono를 Node에서 실행한다.
 
-- 개발: `npm run dev`는 Vite 개발 서버(127.0.0.1:4174)이고, `/api/*`는 같은 프로세스의 미들웨어가 응답한다.
-- 빌드: `npm run build`는 클라이언트를 `apps/learn/dist/client`에 만들고 서버 엔트리를 `apps/learn/dist/server/index.js`로 묶는다.
-- 실행: `npm start`는 `node dist/server/index.js`다. 이 프로세스가 정적 파일과 `/api/*`를 함께 제공한다.
-- 검사: `npm test`, `npm run typecheck`.
+- 개발: `npm run dev`는 Vite 개발 서버(127.0.0.1:4174)이고, `/api/*`와 `/robots.txt`는 `@hono/node-server`의 `getRequestListener`가 응답한다. 개발과 프로덕션이 POST 본문과 `Set-Cookie`를 같이 다룬다.
+- 빌드: `npm run build`는 앱의 `tsconfig.json`만 검사한 뒤 클라이언트를 `apps/learn/dist/client`에 만들고, esbuild도 그 tsconfig로 서버 엔트리를 `apps/learn/dist/server/index.js`에 묶는다.
+- 실행: `npm start`는 `node dist/server/index.js`다. `HOST`와 `PORT`로 묶고, 정적 파일과 `/api/*`를 함께 제공한다.
+- 검사: `npm test`, `npm run typecheck`, `npm run test:smoke`, `npm run verify:clean`.
 
-같은 origin이므로 이 단계에서는 CORS를 열지 않는다. 세션 쿠키는 아직 발급하지 않는다. 개발 4단계의 기기 세션은 이 서버에서 `HttpOnly; SameSite=Lax; Path=/`로 발급한다. 운영 HTTPS에서는 `Secure`와 `__Host-` 접두사를 쓸 수 있다. 로컬 HTTP에서는 `Secure`를 켜지 않는다. 그 구분은 세션을 구현할 때 서버 설정으로 나눈다.
+Vite와 Vitest에는 `tsconfig: "./tsconfig.json"`을 고정했다. 서버 테스트가 루트 Astro `tsconfig.json`(`astro/tsconfigs/strict`)을 읽지 않게 하기 위해서다. 루트 `node_modules`가 없어도 이 패키지의 `npm ci`로 검사할 수 있다.
+
+같은 origin이므로 이 단계에서는 CORS 헤더를 보내지 않는다. `GET`/`HEAD`/`OPTIONS`가 아닌 `/api/*`는 `Origin`이 `LEARN_APP_ORIGIN`과 같을 때만 통과하고, 본문은 `application/json`만 받는다. 세션 쿠키는 아직 발급하지 않는다. 개발 4단계의 기기 세션은 이 서버에서 `HttpOnly; SameSite=Lax; Path=/`로 발급한다. 운영 HTTPS에서는 `Secure`와 `__Host-` 접두사를 쓸 수 있다. 로컬 HTTP에서는 `Secure`를 켜지 않는다. 그 구분은 세션을 구현할 때 서버 설정으로 나눈다.
 
 `LEARN_APP_ORIGIN`은 화면에 보여주는 설정값이다. 값이 있어도 활성화·DNS 변경으로 보고하지 않는다. `learn.haeonkorean.com`은 제안 이름일 뿐이라 코드와 기본 환경 값에 넣지 않는다.
 
@@ -51,6 +53,8 @@ npm run typecheck
 npm run build
 npm run dev
 npm start
+npm run test:smoke
+npm run verify:clean
 ```
 
 루트 사이트 확인은 저장소 루트에서 `npm ci && npm run build`다. 그 명령은 이 패키지를 빌드하지 않는다.

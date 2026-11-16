@@ -41,8 +41,8 @@ async function main() {
     process.exit(1);
   }
 
-  serve({ fetch: app.fetch, hostname: "127.0.0.1", port: config.port }, (info) => {
-    console.log(`learn app http://127.0.0.1:${info.port}`);
+  serve({ fetch: app.fetch, hostname: config.host, port: config.port }, (info) => {
+    console.log(`learn app http://${config.host}:${info.port}`);
     console.log(config.origin ? "LEARN_APP_ORIGIN is set" : "LEARN_APP_ORIGIN is unset");
     console.log(config.screenPreview ? "screen preview is on" : "screen preview is off");
   });

@@ -6,6 +6,7 @@ const repoRoot = fileURLToPath(new URL("../..", import.meta.url));
 const designSystem = fileURLToPath(new URL("../../src/design-system", import.meta.url));
 
 export default defineConfig({
+  tsconfig: "./tsconfig.json",
   plugins: [react()],
   resolve: {
     alias: {
