@@ -1,18 +1,22 @@
 import { spawnSync } from "node:child_process";
+import { existsSync } from "node:fs";
 import { mkdir, readFile, rename, rm, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   FLASH_TTS_MODEL,
   NOT_CONFIGURED_MESSAGE,
+  TTS_MAX_ATTEMPTS,
   authHeaders,
   buildGenerateContentBody,
   decodeBase64,
   modelEndpoint,
+  parseDelayMs,
   parseGenerateContentAudio,
   readApiKey,
   retryDelayMs,
   sha256Hex,
+  ttsFailureMessage,
 } from "../content/tts/pipeline.ts";
 import {
   FFMPEG_MISSING_MESSAGE,
@@ -21,8 +25,10 @@ import {
   applyRawResult,
   emptyVoiceFile,
   ffmpegAtempoArgs,
+  ffmpegFailureReason,
   isVoiceKey,
   rawRelativePath,
+  selectGenerationJobs,
   voiceFileId,
   type VoiceFileRecord,
   type VoiceKey,
@@ -34,6 +40,7 @@ const manifestPath = fileURLToPath(new URL("../content/tts/j-ch-jj-draft-manifes
 type ManifestUnit = {
   id: string;
   text: string;
+  stage?: string;
   voices?: Record<VoiceKey, VoiceFileRecord>;
   core60Approved?: boolean;
   reviewStatus?: string;
@@ -65,6 +72,16 @@ function plainId(): string {
   return id;
 }
 
+function requestDelayMs(): number {
+  const delay = parseDelayMs(argValue("--delay-ms"));
+  if (delay === null) fail("--delay-ms expects a whole number of milliseconds up to 600000.");
+  return delay;
+}
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 function ffmpegOnPath(): boolean {
   const result = spawnSync("ffmpeg", ["-version"], { shell: false, stdio: "ignore" });
   return result.status === 0;
@@ -75,20 +92,22 @@ async function generateOne(text: string, voice: VoiceKey, unitId: string, apiKey
   const presetName = emptyVoiceFile(unitId, voice).prebuiltVoice;
   let response: Response | null = null;
   try {
-    for (let attempt = 0; attempt < 3; attempt += 1) {
+    for (let attempt = 0; attempt < TTS_MAX_ATTEMPTS; attempt += 1) {
       response = await fetch(endpoint, {
         method: "POST",
         headers: authHeaders(apiKey),
         body: JSON.stringify(buildGenerateContentBody(text, presetName)),
       });
       if (response.status !== 429) break;
+      if (attempt === TTS_MAX_ATTEMPTS - 1) break;
       const delay = retryDelayMs(attempt, response.headers.get("retry-after"));
-      await new Promise((resolve) => setTimeout(resolve, delay));
+      console.error(`${ttsFailureMessage(response.status)} Waiting ${delay} ms.`);
+      await sleep(delay);
     }
   } catch {
-    fail("TTS request failed.");
+    fail(ttsFailureMessage(null));
   }
-  if (!response || !response.ok) fail("TTS request failed.");
+  if (!response || !response.ok) fail(ttsFailureMessage(response?.status ?? null));
   const parsed = parseGenerateContentAudio(await response.json());
   if (!parsed) fail("TTS response did not include audio.");
   const bytes = decodeBase64(parsed.base64);
@@ -146,11 +165,15 @@ async function processOne(unitId: string, voice: VoiceKey): Promise<void> {
   const outputPath = join(appRoot, outputRelative);
   const partialPath = `${outputPath}.partial`;
   await mkdir(join(appRoot, "audio", "dist"), { recursive: true });
-  const result = spawnSync("ffmpeg", ffmpegAtempoArgs(inputPath, partialPath, voice), { shell: false, stdio: "ignore" });
+  const result = spawnSync("ffmpeg", ffmpegAtempoArgs(inputPath, partialPath, voice), {
+    shell: false,
+    encoding: "utf8",
+    stdio: ["ignore", "ignore", "pipe"],
+  });
   if (result.error && (result.error as NodeJS.ErrnoException).code === "ENOENT") fail(FFMPEG_MISSING_MESSAGE);
   if (result.status !== 0) {
     await rm(partialPath, { force: true });
-    fail("ffmpeg tempo processing failed. Raw audio was not changed.");
+    fail(ffmpegFailureReason(typeof result.stderr === "string" ? result.stderr : ""));
   }
   const processed = new Uint8Array(await readFile(partialPath));
   await rename(partialPath, outputPath);
@@ -173,18 +196,43 @@ async function main() {
     const apiKey = readApiKey(process.env);
     if (!apiKey) fail(NOT_CONFIGURED_MESSAGE, 2);
     const voices = selectedVoices();
+    const delayMs = requestDelayMs();
     if (command === "audition") {
       const text = argValue("--text") ?? "아자. 아침에 기차를 타요.";
-      for (const voice of voices) await generateOne(text, voice, "audition", apiKey);
+      for (let index = 0; index < voices.length; index += 1) {
+        const voice = voices[index];
+        if (!voice) continue;
+        if (index > 0 && delayMs > 0) {
+          console.error(`waiting ${delayMs} ms before the next TTS request`);
+          await sleep(delayMs);
+        }
+        await generateOne(text, voice, "audition", apiKey);
+      }
       return;
     }
-    const id = plainId();
+    const id = argValue("--id");
+    const stage = argValue("--stage");
+    if (Boolean(id) === Boolean(stage)) fail("generate requires either --id or --stage.");
     const manifest = JSON.parse(await readFile(manifestPath, "utf8")) as Manifest;
-    const unit = manifest.units.find((item) => item.id === id);
-    if (!unit) fail("manifest id was not found.");
-    for (const voice of voices) {
-      const file = await generateOne(unit.text, voice, unit.id, apiKey);
-      await patchManifest(unit.id, voice, file);
+    if (id && (id.includes("/") || id.includes("\\") || id.includes(".."))) fail("A plain --id is required.");
+    if (id && !manifest.units.some((unit) => unit.id === id)) fail("manifest id was not found.");
+    const jobs = selectGenerationJobs(manifest.units, { stage, id, voices }, (unitId, voice) =>
+      existsSync(join(appRoot, rawRelativePath(unitId, voice))),
+    );
+    if (jobs.length === 0) fail("no manifest units matched that stage.");
+    let sent = 0;
+    for (const job of jobs) {
+      if (job.skip) {
+        console.log(`raw audio exists, skipped: ${rawRelativePath(job.id, job.voice)}`);
+        continue;
+      }
+      if (sent > 0 && delayMs > 0) {
+        console.error(`waiting ${delayMs} ms before the next TTS request`);
+        await sleep(delayMs);
+      }
+      const file = await generateOne(job.text, job.voice, job.id, apiKey);
+      await patchManifest(job.id, job.voice, file);
+      sent += 1;
     }
     return;
   }

@@ -62,7 +62,7 @@ npm run tts:audition -- --all-voices --text "아자. 아침에 기차를 타요.
 npm run tts:process -- --all-voices --id audition
 ```
 
-키가 없으면 `GEMINI_API_KEY is not configured. Live TTS generation is incomplete.`만 출력하고 끝납니다. ffmpeg가 없으면 후처리만 `ffmpeg was not found. Tempo post-processing is incomplete. Raw audio was not changed.`로 끝납니다. 원본 WAV는 `audio/raw/`, 속도 적용본은 `audio/dist/`에 목소리별로 씁니다. 초안 한 건은 `npm run tts:generate -- --id pw-아자 --all-voices` 뒤에 `npm run tts:process -- --id pw-아자 --all-voices`입니다.
+키가 없으면 `GEMINI_API_KEY is not configured. Live TTS generation is incomplete.`만 출력하고 끝납니다. ffmpeg가 없으면 후처리만 `ffmpeg was not found. Tempo post-processing is incomplete. Raw audio was not changed.`로 끝납니다. 후처리 명령은 형식을 `-f wav`로 지정하고, 실패하면 짧은 이유만 보여 줍니다. 원본 WAV는 `audio/raw/`, 속도 적용본은 `audio/dist/`에 목소리별로 씁니다. 초안 한 건은 `npm run tts:generate -- --id pw-아자 --all-voices` 뒤에 `npm run tts:process -- --id pw-아자 --all-voices`입니다. 같은 단계 전체를 이어서 만들 때는 `npm run tts:generate -- --stage "Stage 1" --all-voices`입니다. 이미 있는 원본은 건너뛰고, 요청 사이 기본 대기는 4000ms이며 `--delay-ms`로 바꿉니다. 429는 상태 코드만 출력하고 Retry-After를 60초까지 따릅니다.
 - `GET /compare`, `/finish`, `/dictionary`: 비교·마무리·사전 껍데기. 뜻과 예문은 검수 전이라 비어 있습니다.
 - `GET /api/health`: 저장소와 세션이 없다는 상태.
 - `GET /api/config`: 주입된 origin과 미리보기 여부. 쿠키를 발급하지 않습니다.

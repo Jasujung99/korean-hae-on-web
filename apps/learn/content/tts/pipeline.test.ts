@@ -13,10 +13,12 @@ import {
   modelEndpoint,
   parseGenerateContentAudio,
   readApiKey,
+  parseDelayMs,
   retryDelayMs,
   sha256Hex,
   shouldStoreAsScore,
   startsWithRiff,
+  ttsFailureMessage,
 } from "./pipeline.ts";
 import {
   FFMPEG_MISSING_MESSAGE,
@@ -27,7 +29,9 @@ import {
   emptyVoiceFile,
   emptyVoiceSet,
   ffmpegAtempoArgs,
+  ffmpegFailureReason,
   requireFfmpeg,
+  selectGenerationJobs,
 } from "./voices.ts";
 
 const manifest = JSON.parse(
@@ -132,7 +136,16 @@ describe("tts pipeline", () => {
       expect(shouldStoreAsScore(kind)).toBe(false);
     }
     expect(retryDelayMs(0, "1")).toBe(1000);
-    expect(retryDelayMs(3, null)).toBe(1600);
+    expect(retryDelayMs(0, "90")).toBe(60000);
+    expect(retryDelayMs(0, null)).toBe(4000);
+    expect(retryDelayMs(1, null)).toBe(8000);
+    expect(retryDelayMs(4, null)).toBe(60000);
+    expect(parseDelayMs(null)).toBe(4000);
+    expect(parseDelayMs("2500")).toBe(2500);
+    expect(parseDelayMs("nope")).toBeNull();
+    expect(ttsFailureMessage(429)).toBe("TTS request failed. HTTP 429.");
+    expect(ttsFailureMessage(null)).toBe("TTS request failed.");
+    expect(ttsFailureMessage(429)).not.toMatch(/AIza|https?:|generativelanguage/);
   });
 
   it("keeps a missing chosen voice from playing the other voice", () => {
@@ -161,18 +174,39 @@ describe("tts pipeline", () => {
     expect(file.listeningApproved).toBe(false);
     expect(file.rawRelativePath).toBe("audio/raw/fixture--female.wav");
     expect(file.distributionRelativePath).toBe("audio/dist/fixture--female.wav");
-    expect(ffmpegAtempoArgs("in.wav", "out.wav", "female")).toEqual([
+    const femaleArgs = ffmpegAtempoArgs("in.wav", "out.wav.partial", "female");
+    expect(femaleArgs).toEqual([
       "-y",
       "-i",
       "in.wav",
       "-filter:a",
       "atempo=0.87",
       "-vn",
+      "-ac",
+      "1",
+      "-ar",
+      "24000",
       "-c:a",
       "pcm_s16le",
-      "out.wav",
+      "-f",
+      "wav",
+      "out.wav.partial",
     ]);
+    expect(femaleArgs.join(" ")).toContain("-f wav");
     expect(ffmpegAtempoArgs("in.wav", "out.wav", "male")).toContain("atempo=1.0");
+    expect(ffmpegFailureReason("AIzaSyDUMMYKEY1234567890 https://example.test/secret")).not.toMatch(/AIza|https?:/);
+    const jobs = selectGenerationJobs(
+      [
+        { id: "pw-아자", stage: "Stage 1", text: "아자" },
+        { id: "other", stage: "Stage 2", text: "다른" },
+      ],
+      { stage: "Stage 1", id: null, voices: ["male", "female"] },
+      (unitId, voice) => unitId === "pw-아자" && voice === "male",
+    );
+    expect(jobs).toEqual([
+      { id: "pw-아자", text: "아자", voice: "male", skip: true },
+      { id: "pw-아자", text: "아자", voice: "female", skip: false },
+    ]);
     expect(ffmpegAtempoArgs("in.wav", "out.wav", "female").join(" ")).not.toMatch(/asetrate|rubberband/);
     expect(requireFfmpeg(() => false)).toEqual({ ok: false, message: FFMPEG_MISSING_MESSAGE });
     expect(FFMPEG_MISSING_MESSAGE).not.toMatch(/AIza/);

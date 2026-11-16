@@ -170,7 +170,51 @@ export function applyProcessedResult(
 }
 
 export function ffmpegAtempoArgs(inputPath: string, outputPath: string, voice: VoiceKey): string[] {
-  return ["-y", "-i", inputPath, "-filter:a", `atempo=${VOICE_SET[voice].atempo}`, "-vn", "-c:a", "pcm_s16le", outputPath];
+  return [
+    "-y",
+    "-i",
+    inputPath,
+    "-filter:a",
+    `atempo=${VOICE_SET[voice].atempo}`,
+    "-vn",
+    "-ac",
+    "1",
+    "-ar",
+    "24000",
+    "-c:a",
+    "pcm_s16le",
+    "-f",
+    "wav",
+    outputPath,
+  ];
+}
+
+export function ffmpegFailureReason(stderr: string): string {
+  const cleaned = stderr
+    .replace(/AIza[0-9A-Za-z_-]+/g, "[redacted]")
+    .replace(/https?:\/\/\S+/g, "[url]")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 240);
+  const lead = "ffmpeg tempo processing failed. Raw audio was not changed.";
+  return cleaned ? `${lead} ${cleaned}` : lead;
+}
+
+export type GenerationJob = { id: string; text: string; voice: VoiceKey; skip: boolean };
+
+export function selectGenerationJobs(
+  units: Array<{ id: string; stage?: string; text: string }>,
+  options: { stage: string | null; id: string | null; voices: readonly VoiceKey[] },
+  rawExists: (unitId: string, voice: VoiceKey) => boolean,
+): GenerationJob[] {
+  const chosen = options.id ? units.filter((unit) => unit.id === options.id) : units.filter((unit) => unit.stage === options.stage);
+  const jobs: GenerationJob[] = [];
+  for (const unit of chosen) {
+    for (const voice of options.voices) {
+      jobs.push({ id: unit.id, text: unit.text, voice, skip: rawExists(unit.id, voice) });
+    }
+  }
+  return jobs;
 }
 
 export function requireFfmpeg(probe: () => boolean): { ok: true } | { ok: false; message: string } {

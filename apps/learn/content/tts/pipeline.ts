@@ -137,12 +137,29 @@ export function shouldStoreAsScore(kind: PlaybackClass): boolean {
   }
 }
 
+export const TTS_MAX_ATTEMPTS = 6;
+export const DEFAULT_REQUEST_DELAY_MS = 4000;
+const MAX_RETRY_DELAY_MS = 60_000;
+
 export function retryDelayMs(attempt: number, retryAfterHeader: string | null): number {
   const headerSeconds = retryAfterHeader ? Number(retryAfterHeader) : Number.NaN;
   if (Number.isFinite(headerSeconds) && headerSeconds >= 0) {
-    return Math.min(headerSeconds * 1000, 8000);
+    return Math.min(Math.round(headerSeconds * 1000), MAX_RETRY_DELAY_MS);
   }
-  return Math.min(200 * 2 ** Math.max(0, attempt), 8000);
+  return Math.min(DEFAULT_REQUEST_DELAY_MS * 2 ** Math.max(0, attempt), MAX_RETRY_DELAY_MS);
+}
+
+export function parseDelayMs(value: string | null): number | null {
+  if (value === null) return DEFAULT_REQUEST_DELAY_MS;
+  if (!/^\d+$/.test(value)) return null;
+  const parsed = Number(value);
+  if (parsed > 600_000) return null;
+  return parsed;
+}
+
+export function ttsFailureMessage(status: number | null): string {
+  if (status === null) return "TTS request failed.";
+  return `TTS request failed. HTTP ${status}.`;
 }
 
 function wavIsSilent(bytes: Uint8Array): boolean {
