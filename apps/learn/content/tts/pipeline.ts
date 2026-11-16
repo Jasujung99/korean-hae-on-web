@@ -105,6 +105,63 @@ export function startsWithRiff(bytes: Uint8Array): boolean {
   return bytes.length >= 4 && bytes[0] === 0x52 && bytes[1] === 0x49 && bytes[2] === 0x46 && bytes[3] === 0x46;
 }
 
+/**
+ * 응답 MIME이 PCM이라고 밝힌 경우에만 rate·channel을 읽는다.
+ * 예: "audio/L16;codec=pcm;rate=24000", "audio/pcm;rate=24000".
+ * RIFF가 아니라는 이유만으로 PCM이라고 가정하지 않는다.
+ */
+export function parsePcmMime(mime: string): { sampleRate: number; channels: number } | null {
+  const parts = mime
+    .toLowerCase()
+    .split(";")
+    .map((part) => part.trim());
+  const type = parts[0] ?? "";
+  const isPcm = type === "audio/l16" || type === "audio/pcm" || parts.includes("codec=pcm");
+  if (!isPcm) return null;
+  const rate = Number(parts.find((part) => part.startsWith("rate="))?.slice(5));
+  const channels = Number(parts.find((part) => part.startsWith("channels="))?.slice(9) ?? "1");
+  if (!Number.isInteger(rate) || rate <= 0) return null;
+  return { sampleRate: rate, channels: Number.isInteger(channels) && channels > 0 ? channels : 1 };
+}
+
+/** 16비트 little-endian PCM에 WAV 머리말을 붙인다. */
+export function pcmToWav(pcm: Uint8Array, sampleRate: number, channels = 1): Uint8Array {
+  const bitsPerSample = 16;
+  const blockAlign = (channels * bitsPerSample) / 8;
+  const header = new ArrayBuffer(44);
+  const view = new DataView(header);
+  const ascii = (offset: number, text: string) => {
+    for (let index = 0; index < text.length; index += 1) view.setUint8(offset + index, text.charCodeAt(index));
+  };
+  ascii(0, "RIFF");
+  view.setUint32(4, 36 + pcm.length, true);
+  ascii(8, "WAVE");
+  ascii(12, "fmt ");
+  view.setUint32(16, 16, true);
+  view.setUint16(20, 1, true);
+  view.setUint16(22, channels, true);
+  view.setUint32(24, sampleRate, true);
+  view.setUint32(28, sampleRate * blockAlign, true);
+  view.setUint16(32, blockAlign, true);
+  view.setUint16(34, bitsPerSample, true);
+  ascii(36, "data");
+  view.setUint32(40, pcm.length, true);
+  const out = new Uint8Array(44 + pcm.length);
+  out.set(new Uint8Array(header), 0);
+  out.set(pcm, 44);
+  return out;
+}
+
+export type NormalizedAudio = { bytes: Uint8Array; mime: "audio/wav"; wrappedFromPcm: boolean };
+
+/** 저장할 수 있는 WAV로 맞춘다. 형식을 알 수 없으면 null을 돌려 저장하지 않게 한다. */
+export function normalizeToWav(bytes: Uint8Array, sourceMime: string): NormalizedAudio | null {
+  if (startsWithRiff(bytes)) return { bytes, mime: "audio/wav", wrappedFromPcm: false };
+  const pcm = parsePcmMime(sourceMime);
+  if (!pcm) return null;
+  return { bytes: pcmToWav(bytes, pcm.sampleRate, pcm.channels), mime: "audio/wav", wrappedFromPcm: true };
+}
+
 export async function sha256Hex(bytes: Uint8Array): Promise<string> {
   const digest = await crypto.subtle.digest("SHA-256", bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength) as ArrayBuffer);
   return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, "0")).join("");

@@ -1,26 +1,33 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { dirname, join } from "node:path";
+// 대표 목소리 표본과 초안 음원을 만드는 로컬 제작 도구.
+// 키는 GEMINI_API_KEY 환경 변수에서만 읽고, 화면·로그·파일에 쓰지 않는다.
+// 결과는 audio/raw/ 에만 쓴다(.gitignore). 검수 상태는 늘 draft로 남긴다.
+import { access, mkdir, readFile, writeFile } from "node:fs/promises";
+import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   FLASH_TTS_MODEL,
   NOT_CONFIGURED_MESSAGE,
   VOICE_CANDIDATE,
-  applyRawResult,
   authHeaders,
   buildGenerateContentBody,
   decodeBase64,
   modelEndpoint,
+  normalizeToWav,
   parseGenerateContentAudio,
   readApiKey,
   retryDelayMs,
   sha256Hex,
   type TtsUnit,
 } from "../content/tts/pipeline.ts";
+import { AUDITION_TEXT, AUDITION_VOICES, auditionAudioId } from "../content/voices.ts";
 
 const appRoot = fileURLToPath(new URL("..", import.meta.url));
+const rawDir = join(appRoot, "audio", "raw");
 const manifestPath = fileURLToPath(new URL("../content/tts/j-ch-jj-draft-manifest.json", import.meta.url));
 
-type Manifest = { units: TtsUnit[] };
+type Manifest = { units: Array<TtsUnit & { stage?: string; word?: string }> };
+
+type Outcome = "written" | "skipped" | "quota" | "failed";
 
 function argValue(flag: string): string | null {
   const index = process.argv.indexOf(flag);
@@ -33,76 +40,179 @@ function fail(message: string, code = 1): never {
   process.exit(code);
 }
 
-async function generateOne(text: string, voice: string, id: string, apiKey: string): Promise<void> {
-  const endpoint = modelEndpoint();
+function plainId(id: string): boolean {
+  return id.length > 0 && !id.includes("/") && !id.includes("\\") && !id.includes("..");
+}
+
+async function exists(path: string): Promise<boolean> {
+  try {
+    await access(path);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function generateOne(input: {
+  id: string;
+  kind: string;
+  text: string;
+  voice: string;
+  apiKey: string;
+  skipExisting: boolean;
+}): Promise<Outcome> {
+  const { id, kind, text, voice, apiKey } = input;
+  const wavPath = join(rawDir, `${id}.wav`);
+  if (input.skipExisting && (await exists(wavPath))) {
+    console.log(`skip (already generated): ${id}`);
+    return "skipped";
+  }
+
   let response: Response | null = null;
   try {
-    for (let attempt = 0; attempt < 3; attempt += 1) {
-      response = await fetch(endpoint, {
+    for (let attempt = 0; attempt < 4; attempt += 1) {
+      response = await fetch(modelEndpoint(), {
         method: "POST",
         headers: authHeaders(apiKey),
         body: JSON.stringify(buildGenerateContentBody(text, voice)),
       });
-      if (response.status !== 429) break;
-      const delay = retryDelayMs(attempt, response.headers.get("retry-after"));
+      if (response.status !== 429 && response.status < 500) break;
+      const delay = Math.max(retryDelayMs(attempt, response.headers.get("retry-after")), 2000 * (attempt + 1));
       await new Promise((resolve) => setTimeout(resolve, delay));
     }
   } catch {
-    fail("TTS request failed.");
+    console.error(`request failed: ${id}`);
+    return "failed";
   }
-  if (!response || !response.ok) fail("TTS request failed.");
+  if (!response) return "failed";
+  if (response.status === 429) {
+    console.error(`quota or rate limit reached at ${id}. Stopping without writing.`);
+    return "quota";
+  }
+  if (!response.ok) {
+    let reason = "";
+    try {
+      const body = (await response.json()) as { error?: { status?: string } };
+      reason = body.error?.status ?? "";
+    } catch {
+      reason = "";
+    }
+    console.error(`request failed (${response.status}${reason ? ` ${reason}` : ""}): ${id}`);
+    return "failed";
+  }
+
   const parsed = parseGenerateContentAudio(await response.json());
-  if (!parsed) fail("TTS response did not include audio.");
-  const bytes = decodeBase64(parsed.base64);
-  const digest = await sha256Hex(bytes);
-  const rawDir = join(appRoot, "audio", "raw");
+  if (!parsed) {
+    console.error(`response had no audio: ${id}`);
+    return "failed";
+  }
+  const sourceBytes = decodeBase64(parsed.base64);
+  const normalized = normalizeToWav(sourceBytes, parsed.mime);
+  if (!normalized) {
+    console.error(`unknown audio format (${parsed.mime || "no mime"}): ${id}. Not written.`);
+    return "failed";
+  }
+  const digest = await sha256Hex(normalized.bytes);
   await mkdir(rawDir, { recursive: true });
-  const wavPath = join(rawDir, `${id}.wav`);
-  await writeFile(wavPath, bytes);
-  const meta = applyRawResult(
-    {
-      id,
-      kind: "pseudoword",
-      text,
-      reviewStatus: "draft",
-      audioStatus: "missing",
-      sourceMime: "",
-      sha256: "",
-      byteLength: 0,
-      rawRelativePath: `audio/raw/${id}.wav`,
-      distributionRelativePath: "",
-      voiceCandidate: voice,
-      voiceFixed: false,
-      core60Approved: false,
-    },
-    bytes,
-    parsed.mime,
-    digest,
+  await writeFile(wavPath, normalized.bytes);
+  const meta = {
+    id,
+    kind,
+    text,
+    model: FLASH_TTS_MODEL,
+    voice,
+    voiceFixed: false,
+    settings: { requestStyle: "generateContent", temperature: null, stylePrompt: null },
+    sourceMime: parsed.mime,
+    storedMime: normalized.mime,
+    wrappedFromPcm: normalized.wrappedFromPcm,
+    sha256: digest,
+    byteLength: normalized.bytes.length,
+    generatedAt: new Date().toISOString(),
+    reviewStatus: "draft",
+    audioStatus: "draft_raw",
+    core60Approved: false,
+  };
+  await writeFile(join(rawDir, `${id}.meta.json`), `${JSON.stringify(meta, null, 2)}\n`);
+  console.log(`written: audio/raw/${id}.wav (${normalized.bytes.length} bytes, ${voice})`);
+  return "written";
+}
+
+async function runAll(
+  jobs: Array<{ id: string; kind: string; text: string; voice: string }>,
+  apiKey: string,
+  skipExisting: boolean,
+) {
+  const delayMs = Number(argValue("--delay") ?? "1500");
+  const tally: Record<Outcome, number> = { written: 0, skipped: 0, quota: 0, failed: 0 };
+  for (const job of jobs) {
+    const outcome = await generateOne({ ...job, apiKey, skipExisting });
+    tally[outcome] += 1;
+    if (outcome === "quota") break;
+    if (outcome === "written") await new Promise((resolve) => setTimeout(resolve, delayMs));
+  }
+  console.log(
+    `done. written ${tally.written}, skipped ${tally.skipped}, failed ${tally.failed}${tally.quota ? ", stopped at quota" : ""}. review status stays draft.`,
   );
-  await writeFile(join(rawDir, `${id}.meta.json`), `${JSON.stringify({ ...meta, model: FLASH_TTS_MODEL }, null, 2)}\n`);
-  console.log(`raw audio written: audio/raw/${id}.wav`);
-  console.log("review status remains draft. voice is not fixed. distribution file was not written.");
+  if (tally.failed > 0 || tally.quota > 0) process.exitCode = 3;
 }
 
 async function main() {
   const command = process.argv[2];
-  if (command !== "audition" && command !== "generate") {
-    fail("Use audition or generate.");
+  if (!["audition", "auditions", "generate", "batch"].includes(command ?? "")) {
+    fail("Use audition, auditions, generate, or batch.");
   }
   const apiKey = readApiKey(process.env);
   if (!apiKey) fail(NOT_CONFIGURED_MESSAGE, 2);
   const voice = argValue("--voice") ?? VOICE_CANDIDATE;
+  const skipExisting = !process.argv.includes("--force");
+
   if (command === "audition") {
-    const text = argValue("--text") ?? "아자";
-    await generateOne(text, voice, `audition-${voice.toLowerCase()}`, apiKey);
+    const text = argValue("--text") ?? AUDITION_TEXT;
+    await runAll([{ id: auditionAudioId(voice), kind: "audition", text, voice }], apiKey, false);
     return;
   }
-  const id = argValue("--id");
-  if (!id || id.includes("/") || id.includes("\\") || id.includes("..")) fail("generate requires a plain --id.");
+
+  if (command === "auditions") {
+    const voices = (argValue("--voices") ?? AUDITION_VOICES.map((item) => item.voice).join(","))
+      .split(",")
+      .map((item) => item.trim())
+      .filter(Boolean);
+    await runAll(
+      voices.map((name) => ({ id: auditionAudioId(name), kind: "audition", text: AUDITION_TEXT, voice: name })),
+      apiKey,
+      skipExisting,
+    );
+    return;
+  }
+
   const manifest = JSON.parse(await readFile(manifestPath, "utf8")) as Manifest;
-  const unit = manifest.units.find((item) => item.id === id);
-  if (!unit) fail("manifest id was not found.");
-  await generateOne(unit.text, voice, unit.id, apiKey);
+
+  if (command === "generate") {
+    const id = argValue("--id");
+    if (!id || !plainId(id)) fail("generate requires a plain --id.");
+    const unit = manifest.units.find((item) => item.id === id);
+    if (!unit) fail("manifest id was not found.");
+    await runAll([{ id: unit.id, kind: unit.kind, text: unit.text, voice }], apiKey, skipExisting);
+    return;
+  }
+
+  const ids = (argValue("--ids") ?? "")
+    .split(",")
+    .map((item) => item.trim())
+    .filter(Boolean);
+  if (ids.length === 0) fail("batch requires --ids a,b,c");
+  const units = ids.map((id) => {
+    if (!plainId(id)) fail(`not a plain id: ${id}`);
+    const unit = manifest.units.find((item) => item.id === id);
+    if (!unit) fail(`manifest id was not found: ${id}`);
+    return unit;
+  });
+  await runAll(
+    units.map((unit) => ({ id: unit.id, kind: unit.kind, text: unit.text, voice })),
+    apiKey,
+    skipExisting,
+  );
 }
 
 void main();
