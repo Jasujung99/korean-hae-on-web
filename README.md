@@ -49,3 +49,5 @@ npm run dev
 ## 성인 소리 학습 앱 개발
 
 개인 초대·기기 이어하기·듣기 퀴즈·교사 관찰의 개발 지시서와 검토용 PC·모바일 시안은 [docs/adult-phoneme-app/README.md](docs/adult-phoneme-app/README.md)에 있습니다. 개발 1~6단계의 범위와 완료 조건, 콘텐츠 승인·TTS·공동 Supabase 계약을 함께 제공합니다. 이 문서 묶음은 현재 본사이트 배포에 포함되지 않습니다.
+
+개발 1단계의 화면 껍데기는 별도 패키지 [apps/learn/](apps/learn/README.md)에 있습니다. 루트 `npm ci`와 `npm run build`는 이 패키지를 설치하거나 `dist/`에 넣지 않습니다.
