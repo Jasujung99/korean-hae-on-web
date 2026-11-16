@@ -1,0 +1,252 @@
+---
+// 원본 해온 디자인 시스템을 먼저 불러오고, 학습 앱 어댑터와 짜임을 그 위에 얹는다.
+import "../../../../src/design-system/tokens.css";
+import "../../../../src/design-system/base.css";
+import "../styles/haeon-adapter.css";
+import "../styles/app.css";
+import HaeonLogo from "../components/HaeonLogo.astro";
+import LearnerRail from "../components/LearnerRail.astro";
+import PreviewBar from "../components/PreviewBar.astro";
+
+interface Props {
+  title: string;
+  role: "learner" | "teacher";
+  /** 학습자 화면의 현재 탭. 없으면 탭을 그리지 않는다(첫 연결 화면). */
+  nav?: "quiz" | "words";
+  /** PC 오른쪽 안내 열 표시 */
+  rail?: boolean;
+}
+
+const { title, role, nav, rail = false } = Astro.props;
+const preview = Astro.locals.preview;
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="same-origin" />
+    <meta name="theme-color" content="#fefcf3" />
+    <title>{title} · 해온 소리 학습</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Noto+Sans+KR:wght@400;500&family=Noto+Serif+KR:wght@400;500;600&display=swap"
+    />
+  </head>
+  <body data-role={role} data-preview={preview ? "on" : "off"}>
+    {preview && <PreviewBar role={role} />}
+    <div class="frame">
+      <header class="app-head">
+        <div class="wordmark">
+          <HaeonLogo href={role === "teacher" ? "/teacher" : "/"} />
+          <span class="brand-sub">{role === "teacher" ? "교사 관찰" : "소리에서 단어까지"}</span>
+        </div>
+        {
+          nav && (
+            <nav class="tabs" aria-label="학습 메뉴">
+              <a href="/practice" aria-current={nav === "quiz" ? "page" : undefined}>
+                듣기 퀴즈
+              </a>
+              <a href="/words" aria-current={nav === "words" ? "page" : undefined}>
+                사전·예문 <span class="pill future">확장</span>
+              </a>
+            </nav>
+          )
+        }
+        <span class="who" aria-label="연결 상태">
+          {role === "teacher" ? "교사 인증 전" : "기기 연결 전"}
+        </span>
+      </header>
+
+      <main class:list={["app-main", { "has-rail": rail }]} id="main">
+        <div class="stage"><slot /></div>
+        {rail && <LearnerRail />}
+      </main>
+
+      {
+        nav && (
+          <nav class="bottom-tabs" aria-label="학습 메뉴 (모바일)">
+            <a href="/practice" aria-current={nav === "quiz" ? "page" : undefined}>
+              듣기 퀴즈
+            </a>
+            <a href="/words" aria-current={nav === "words" ? "page" : undefined}>
+              사전·예문 · 확장
+            </a>
+          </nav>
+        )
+      }
+
+      <footer class="app-foot">
+        <p lang="en">At ease. As yourself.</p>
+        <p><span lang="en">haeon · Your voice, in Korean.</span> <span class="year">© {year}</span></p>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style>
+  .frame {
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    max-width: var(--learn-max);
+    margin: 0 auto;
+    overflow-x: clip;
+  }
+
+  .app-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 28px var(--learn-gutter) 24px;
+  }
+
+  .wordmark {
+    display: flex;
+    align-items: flex-end;
+    gap: 22px;
+    min-width: 0;
+  }
+
+  .brand-sub {
+    padding: 5px 0 5px 20px;
+    border-left: 1px solid var(--learn-line);
+    color: var(--learn-text-muted);
+    font: 400 12px/1.75 var(--learn-font-ui);
+  }
+
+  .tabs {
+    display: flex;
+    gap: 14px;
+  }
+
+  .tabs a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 44px;
+    padding: 8px 4px;
+    font: 400 13px/1.6 var(--learn-font-ui);
+  }
+
+  .tabs a::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    bottom: 3px;
+    width: 0;
+    height: 1px;
+    background: var(--learn-accent);
+    transition: width 0.4s ease;
+  }
+
+  .tabs a[aria-current]::after,
+  .tabs a:hover::after {
+    width: calc(100% - 8px);
+  }
+
+  .who {
+    color: var(--learn-text-muted);
+    font: 400 12px/1.6 var(--learn-font-ui);
+  }
+
+  .app-main {
+    padding: 30px var(--learn-gutter) var(--learn-gutter);
+    min-width: 0;
+  }
+
+  .app-main.has-rail {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .stage {
+    min-width: 0;
+  }
+
+  .bottom-tabs {
+    display: none;
+  }
+
+  .app-foot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px 24px;
+    padding: 24px var(--learn-gutter) 32px;
+    border-top: 1px solid var(--learn-line);
+    color: var(--learn-text-muted);
+    font: 400 14px/22px var(--learn-font-latin);
+  }
+
+  .app-foot p {
+    margin: 0;
+  }
+
+  @media (max-width: 960px) {
+    .app-main.has-rail {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  @media (max-width: 720px) {
+    .app-head {
+      padding: 20px var(--learn-gutter-mobile) 12px;
+    }
+
+    .brand-sub,
+    .tabs {
+      display: none;
+    }
+
+    .app-main {
+      padding: 12px var(--learn-gutter-mobile) 40px;
+    }
+
+    .app-main.has-rail :global(.rail) {
+      display: none;
+    }
+
+    .bottom-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--learn-line);
+    }
+
+    .bottom-tabs a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 60px;
+      padding: 8px;
+      font: 400 13px/1.6 var(--learn-font-ui);
+      text-align: center;
+    }
+
+    .bottom-tabs a[aria-current] {
+      color: var(--learn-accent);
+      text-decoration: underline;
+      text-underline-offset: 8px;
+    }
+
+    .app-foot {
+      padding: 18px var(--learn-gutter-mobile) 24px;
+      font-size: 13px;
+    }
+
+    .app-foot .year {
+      display: none;
+    }
+  }
+</style>

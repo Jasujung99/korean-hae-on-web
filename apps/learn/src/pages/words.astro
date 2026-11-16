@@ -1,0 +1,63 @@
+---
+/**
+ * 사전·예문 확장 껍데기. 승인된 뜻·예문이 없으므로 빈 상태만 보여준다.
+ * 시안의 단어·뜻 문안은 설계용 초안이라 옮기지 않는다.
+ */
+import LearnLayout from "../layouts/LearnLayout.astro";
+---
+
+<LearnLayout title="사전·예문" role="learner" nav="words" rail>
+  <section class="stack">
+    <div class="row">
+      <a class="btn ghost" href="/practice">← 듣기 퀴즈</a>
+      <span class="pill future">사전·예문 확장</span>
+    </div>
+    <div>
+      <p class="small">생활 어휘 · ㅈ ㅊ ㅉ</p>
+      <h1 class="title">소리가 단어로 이어져요</h1>
+    </div>
+    <div class="empty">
+      <p class="eyebrow">아직 준비 중</p>
+      <p class="muted">검수를 마친 뜻·예문·음원이 생기면 여기에 단어 카드가 보여요. 지금은 승인된 단어가 없어요.</p>
+    </div>
+    <div class="slots" aria-hidden="true">
+      <div class="slot"><span class="small">뜻</span><span class="line"></span></div>
+      <div class="slot"><span class="small">예문</span><span class="line"></span><span class="line short"></span></div>
+    </div>
+    <button class="btn block" type="button" disabled>내 단어에 담기 · 확장 기능</button>
+    <p class="small">내 단어 담기는 승인된 콘텐츠가 연결된 뒤 별도 기능으로 열려요.</p>
+  </section>
+</LearnLayout>
+
+<style>
+  .empty {
+    display: grid;
+    gap: 8px;
+    padding: 24px;
+    border-radius: var(--learn-radius-panel);
+    background: var(--learn-wash-future);
+  }
+
+  .slots {
+    display: grid;
+    gap: 14px;
+  }
+
+  .slot {
+    display: grid;
+    gap: 8px;
+    padding: 16px 0;
+    border-top: 1px solid var(--learn-line);
+  }
+
+  .line {
+    display: block;
+    height: 10px;
+    border-radius: 2px;
+    background: var(--learn-wash);
+  }
+
+  .line.short {
+    width: 60%;
+  }
+</style>

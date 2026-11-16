@@ -1,0 +1,68 @@
+---
+/**
+ * 개인 초대 첫 방문 화면 (/join#token=...).
+ * - 이 페이지의 GET 은 초대를 소비하지 않는다(메신저 미리보기 봇 대비).
+ * - 개발 1단계에서는 토큰을 읽거나 저장하지 않는다. 주소 조각만 즉시 지워 기록에 남지 않게 한다.
+ * - inspect(읽기)·claim(명시적 POST)은 개발 4단계에서 연결한다.
+ */
+import LearnLayout from "../layouts/LearnLayout.astro";
+---
+
+<LearnLayout title="개인 초대로 시작하기" role="learner">
+  <section class="entry stack">
+    <p class="eyebrow">개인 초대</p>
+    <h1 class="title">
+      <span class="alias" data-alias-placeholder>학습자</span> 님의<br />연습입니다.
+    </h1>
+    <p class="muted">이 기기에서 시작하면 다음부터는 공통 학습 주소에서 바로 이어서 연습할 수 있어요.</p>
+
+    <div class="notice">
+      초대 확인 전이에요. 이름이 본인과 다르면 시작하지 말고 선생님께 알려 주세요.
+    </div>
+
+    <div class="actions">
+      <button class="btn primary block" type="button" disabled aria-describedby="join-note">이 기기에서 시작하기</button>
+      <p class="small" id="join-note">시작 버튼을 눌러야만 연결돼요. 링크를 열거나 미리보기만으로는 연결되지 않아요.</p>
+    </div>
+
+    <ul class="hints small">
+      <li>계속 사용할 브라우저에서 열어 주세요. 다른 브라우저로 옮기려면 시작하기 전에 옮겨요.</li>
+      <li>개인 링크는 한 번만 쓸 수 있어요. 시작한 뒤에는 이 링크를 즐겨찾기하지 말고 공통 주소를 써 주세요.</li>
+    </ul>
+    <p class="small status">개발 1단계 화면 · 초대 확인과 연결은 개발 4단계에서 서버와 연결됩니다.</p>
+  </section>
+</LearnLayout>
+
+<script is:inline>
+  // 초대 토큰이 주소 조각(#token=...)에 있으면 화면 기록에서 바로 지운다.
+  // 개발 1단계에서는 값을 읽거나 보관하지 않는다.
+  if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+</script>
+
+<style>
+  .entry {
+    max-width: 560px;
+    padding: 24px 0 40px;
+  }
+
+  .alias {
+    color: var(--learn-text-muted);
+  }
+
+  .actions {
+    display: grid;
+    gap: 10px;
+  }
+
+  .hints {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  .status {
+    padding-top: 16px;
+    border-top: 1px solid var(--learn-line);
+  }
+</style>

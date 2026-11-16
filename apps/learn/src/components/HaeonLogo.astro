@@ -1,0 +1,50 @@
+---
+import { logoPaths } from "../lib/logo";
+
+interface Props {
+  href?: string;
+}
+const { href = "/" } = Astro.props;
+---
+
+<a class="logo" href={href} aria-label="해온 haeon 소리 학습 첫 화면">
+  <svg class="mark" viewBox="0 -1 241 180" aria-hidden="true" focusable="false"><path d={logoPaths.mark}></path></svg>
+  <svg class="name" viewBox="12 201 190 142" aria-hidden="true" focusable="false">
+    <path d={logoPaths.nameKo}></path>
+    <path d={logoPaths.nameEn}></path>
+  </svg>
+</a>
+
+<style>
+  .logo {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 8px;
+    color: var(--learn-accent);
+    flex: none;
+  }
+
+  svg {
+    display: block;
+    height: auto;
+    fill: currentColor;
+  }
+
+  .mark {
+    width: 46px;
+  }
+
+  .name {
+    width: 40px;
+  }
+
+  @media (max-width: 720px) {
+    .mark {
+      width: 38px;
+    }
+
+    .name {
+      width: 34px;
+    }
+  }
+</style>

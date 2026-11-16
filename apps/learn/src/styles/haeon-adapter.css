@@ -1,0 +1,48 @@
+/*
+ * 해온 디자인 토큰 어댑터 (학습 앱 전용 의미 이름).
+ *
+ * 원본: 저장소 루트 src/design-system/tokens.css, base.css
+ *       (claude-haeon-new-designsystem tokens.json 을 옮긴 것, 기준 커밋 d293820).
+ * 원본 값은 여기서 다시 정의하지 않는다. LearnLayout 이 원본 두 파일을 먼저 불러오고,
+ * 이 파일은 학습 앱 화면에서 쓰는 이름만 원본 변수에 연결한다.
+ * 학습 앱 상태색은 별도 브랜드를 만들지 않고 olive/ink 와 wash 계열로 해석한다.
+ */
+:root {
+  /* 바탕과 글자 */
+  --learn-bg: var(--paper);
+  --learn-surface: var(--paper);
+  --learn-text: var(--ink);
+  --learn-text-muted: var(--ink-muted);
+  --learn-line: var(--line);
+  --learn-line-strong: var(--line-strong);
+
+  /* 강조 (올리브) */
+  --learn-accent: var(--olive);
+  --learn-on-accent: var(--on-olive);
+
+  /* 면 (세이지·라벤더 wash) */
+  --learn-wash: var(--wash-sage);
+  --learn-wash-future: var(--wash-lavender);
+  --learn-on-wash-future: var(--lavender-ink);
+  --learn-sage: var(--sage);
+  --learn-lavender: var(--lavender);
+
+  /* 상태: 별도 색을 만들지 않는다 */
+  --learn-state-ready: var(--olive);
+  --learn-state-pending: var(--ink-muted);
+  --learn-state-pending-bg: var(--wash-sage);
+  --learn-state-future-bg: var(--wash-lavender);
+  --learn-focus: var(--olive);
+
+  /* 글꼴: 본문·제목은 명조, 조작 문구는 고딕, 라틴 문구는 Garamond */
+  --learn-font-body: var(--font-serif);
+  --learn-font-ui: var(--font-sans);
+  --learn-font-latin: var(--font-latin);
+
+  /* 여백 */
+  --learn-gutter: var(--space-7);
+  --learn-gutter-mobile: var(--space-5);
+  --learn-radius: var(--radius-sm);
+  --learn-radius-panel: var(--radius-md);
+  --learn-max: 1180px;
+}

@@ -1,0 +1,73 @@
+---
+/**
+ * 교사 관찰: 담당 학습자 목록 (+PC 에서는 상세 자리).
+ * 미리보기가 꺼져 있으면 인증 필요 상태만 보여준다. 미리보기는 인증을 대신하지 않는다.
+ */
+import LearnLayout from "../../layouts/LearnLayout.astro";
+import LearnerList from "../../components/LearnerList.astro";
+import TeacherDetail from "../../components/TeacherDetail.astro";
+import TeacherGate from "../../components/TeacherGate.astro";
+
+const preview = Astro.locals.preview;
+---
+
+<LearnLayout title="교사 관찰" role="teacher">
+  {
+    preview ? (
+      <div class="teacher-layout">
+        <div class="list-col">
+          <div class="mobile-head">
+            <p class="eyebrow">교사 관찰</p>
+            <h1 class="title">이번 학습 기록</h1>
+            <p class="small">검토용 빈 화면 · 실제 기록 없음</p>
+          </div>
+          <LearnerList />
+        </div>
+        <div class="detail-col">
+          <TeacherDetail />
+        </div>
+      </div>
+    ) : (
+      <TeacherGate />
+    )
+  }
+</LearnLayout>
+
+<style>
+  .teacher-layout {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+  }
+
+  .list-col {
+    display: grid;
+    gap: 20px;
+    min-width: 0;
+  }
+
+  .mobile-head {
+    display: none;
+  }
+
+  .detail-col {
+    min-width: 0;
+  }
+
+  @media (max-width: 860px) {
+    .teacher-layout {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .mobile-head {
+      display: grid;
+      gap: 6px;
+    }
+
+    /* 모바일은 목록 → 상세로 들어간다. */
+    .detail-col {
+      display: none;
+    }
+  }
+</style>

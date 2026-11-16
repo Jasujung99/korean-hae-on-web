@@ -1,0 +1,68 @@
+---
+/** PC 학습 화면 오른쪽 안내 열. 시안의 rail 배치를 따른다. */
+---
+
+<aside class="rail" aria-label="연습 안내">
+  <div class="rail-block">
+    <p class="eyebrow">작은 연습, 한 묶음씩</p>
+    <h2>오늘은 ㅈ · ㅊ · ㅉ</h2>
+    <ol>
+      <li><span>01</span> 듣고 하나 고르기</li>
+      <li><span>02</span> 답을 확인하고 비교하기</li>
+      <li><span>03</span> 헷갈린 소리 다시 만나기</li>
+    </ol>
+  </div>
+  <div class="rail-block">
+    <h2>필요할 때 비교해요</h2>
+    <p class="muted">글자보다 소리로 비교하고 싶다면 A · B · X를 들어봐요.</p>
+    <a class="btn block" href="/practice/compare">두 소리 비교 열기</a>
+  </div>
+  <div class="rail-block last">
+    <span class="pill future">다음 확장</span>
+    <h2>소리가 단어로 이어져요</h2>
+    <p class="muted">뜻을 찾고, 생활 속 예문으로 쓰임을 확인해요.</p>
+    <a class="btn block" href="/words">사전·예문 살펴보기</a>
+  </div>
+</aside>
+
+<style>
+  .rail {
+    display: grid;
+    gap: 0;
+    min-width: 0;
+  }
+
+  .rail-block {
+    display: grid;
+    gap: 12px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--learn-line);
+  }
+
+  .rail-block:first-child {
+    padding-top: 0;
+  }
+
+  .rail-block.last {
+    border-bottom: 0;
+  }
+
+  .rail-block .pill {
+    justify-self: start;
+  }
+
+  ol {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font: 400 15px/1.6 var(--learn-font-body);
+  }
+
+  ol span {
+    margin-right: 6px;
+    color: var(--learn-text-muted);
+    font: 400 12px/1.6 var(--learn-font-latin);
+  }
+</style>

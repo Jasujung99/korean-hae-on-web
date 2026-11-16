@@ -1,0 +1,58 @@
+---
+/** 문항 진행 점. 개발 1단계에는 문항이 없으므로 total=0 이면 빈 상태를 표시한다. */
+interface Props {
+  done?: number;
+  total?: number;
+}
+const { done = 0, total = 0 } = Astro.props;
+const dots = Math.max(total, 3);
+---
+
+<div class="lesson-track">
+  <div class="track" aria-hidden="true">
+    {Array.from({ length: dots }, (_, i) => <span class:list={{ done: total > 0 && i < done }} />)}
+  </div>
+  <span>{total > 0 ? `${done} / ${total}` : "문항 없음"}</span>
+</div>
+
+<style>
+  .lesson-track {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    color: var(--learn-text-muted);
+    font: 400 12px/1.6 var(--learn-font-ui);
+  }
+
+  .track {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 62px;
+    height: 14px;
+  }
+
+  .track::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 3px;
+    right: 3px;
+    height: 1px;
+    background: var(--learn-line);
+  }
+
+  .track span {
+    z-index: 1;
+    width: 8px;
+    height: 8px;
+    border: 1px solid var(--learn-accent);
+    border-radius: 50%;
+    background: var(--learn-surface);
+  }
+
+  .track span.done {
+    background: var(--learn-accent);
+  }
+</style>

@@ -1,0 +1,249 @@
+---
+/**
+ * 학습자 개인 상세 껍데기. 수치 자리에는 '—'만 둔다.
+ * 시간 정의는 04 데이터 계약을 따르며, 겹치는 시간을 더하지 않는다는 점을 화면에 둔다.
+ */
+interface Props {
+  showBack?: boolean;
+}
+const { showBack = false } = Astro.props;
+const sounds = ["ㅈ", "ㅊ", "ㅉ"];
+---
+
+<section class="teacher-detail stack">
+  {showBack && <a class="btn ghost back" href="/teacher">← 학습자 목록</a>}
+  <div class="row">
+    <div>
+      <p class="eyebrow">교사 관찰 · 학습 기록</p>
+      <h1 class="title">학습자를 골라 주세요</h1>
+    </div>
+    <span class="small">기간 · 기록 없음</span>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><span class="small">활동 시간</span><strong>—</strong></div>
+    <div class="stat"><span class="small">학습한 날</span><strong>—</strong></div>
+    <div class="stat"><span class="small">최근 학습</span><strong>—</strong></div>
+  </div>
+
+  <div class="filters">
+    <label class="small">활동
+      <select disabled>
+        <option>듣고 세 소리 고르기</option>
+        <option>두 소리 비교 · ABX</option>
+        <option>뜻 확인</option>
+      </select>
+    </label>
+    <label class="small">소리 위치
+      <select disabled>
+        <option>모음 사이</option>
+        <option>비음 뒤</option>
+        <option>단어 첫머리</option>
+      </select>
+    </label>
+    <label class="small">모음 맥락
+      <select disabled>
+        <option>전체</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="t-grid">
+    <section class="stack block">
+      <div>
+        <h2>소리별 첫 응답</h2>
+        <p class="small">첫 제출 기준 · 재시도 제외 · 과제별로 따로 봐요</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption class="small">행: 제시 / 열: 학습자 선택</caption>
+          <thead>
+            <tr><th scope="col">제시 / 선택</th>{sounds.map((s) => <th scope="col">{s}</th>)}</tr>
+          </thead>
+          <tbody>
+            {
+              sounds.map((r) => (
+                <tr>
+                  <th scope="row">{r}</th>
+                  {sounds.map(() => (
+                    <td>—</td>
+                  ))}
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+      <p class="notice">기록 없음 · 표본이 적을 때는 문항 수를 함께 보여주고, 유형을 자동으로 판정하지 않아요.</p>
+    </section>
+
+    <section class="stack block">
+      <div>
+        <h2>최근 회기 살펴보기</h2>
+        <p class="small">회기 기록 없음</p>
+      </div>
+      <dl class="defs">
+        <div><dt>활동 시간</dt><dd>—</dd></div>
+        <div><dt>전체 경과</dt><dd>—</dd></div>
+        <div><dt>음원 재생</dt><dd>—</dd></div>
+        <div><dt>화면 이탈 · 무응답</dt><dd>—</dd></div>
+        <div><dt>재청취 · 중단/재개</dt><dd>—</dd></div>
+      </dl>
+      <details>
+        <summary>시간은 이렇게 정의해요</summary>
+        <ul class="small">
+          <li><b>전체 경과</b>: 문항·회기를 연 실제 경과 시간.</li>
+          <li><b>활동 시간</b>: 화면이 보이고 최근 조작이 있거나 음원이 재생 중인 구간.</li>
+          <li><b>음원 재생</b>: 실제 재생 구간의 합(버퍼링 제외). 활동 시간과 겹칠 수 있어 더하지 않아요.</li>
+          <li><b>화면 이탈 · 무응답</b>: 숨김·긴 무응답 구간. 겹친 구간을 두 번 빼지 않아요.</li>
+        </ul>
+      </details>
+    </section>
+  </div>
+
+  <p class="small foot">체류 시간은 관찰 자료예요. 집중도나 어려움으로 자동 판정하지 않아요. 채점·코멘트 작성은 이 화면의 기능이 아니에요.</p>
+</section>
+
+<style>
+  .teacher-detail {
+    min-width: 0;
+  }
+
+  .back {
+    justify-self: start;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .stat {
+    display: grid;
+    gap: 6px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--learn-line);
+  }
+
+  .stat strong {
+    font: 500 24px/1.4 var(--learn-font-body);
+    color: var(--learn-text-muted);
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .filters label {
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .t-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  .block {
+    align-content: start;
+    padding-top: 18px;
+    border-top: 1px solid var(--learn-line);
+  }
+
+  .table-wrap {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font: 400 13px/1.6 var(--learn-font-ui);
+    text-align: center;
+  }
+
+  caption {
+    text-align: left;
+    padding-bottom: 8px;
+  }
+
+  th, td {
+    padding: 10px 6px;
+    border-bottom: 1px solid var(--learn-line);
+    font-weight: 400;
+  }
+
+  td {
+    color: var(--learn-text-muted);
+  }
+
+  .defs {
+    display: grid;
+    margin: 0;
+  }
+
+  .defs div {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--learn-line);
+    font: 400 14px/1.6 var(--learn-font-body);
+  }
+
+  .defs dd {
+    margin: 0;
+    color: var(--learn-text-muted);
+  }
+
+  details {
+    padding: 12px 16px;
+    border-radius: var(--learn-radius-panel);
+    background: var(--learn-wash);
+  }
+
+  summary {
+    min-height: 32px;
+    cursor: pointer;
+    font: 400 13px/1.8 var(--learn-font-ui);
+  }
+
+  details ul {
+    display: grid;
+    gap: 6px;
+    margin: 8px 0 0;
+    padding-left: 18px;
+  }
+
+  details b {
+    font-weight: 500;
+  }
+
+  .foot {
+    padding-top: 12px;
+    border-top: 1px solid var(--learn-line);
+  }
+
+  @media (max-width: 860px) {
+    .t-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  @media (max-width: 420px) {
+    .stats {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 8px;
+    }
+
+    .stat {
+      grid-template-columns: 1fr auto;
+      align-items: baseline;
+    }
+  }
+</style>

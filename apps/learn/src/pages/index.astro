@@ -1,0 +1,44 @@
+---
+/**
+ * 공통 학습 주소.
+ * 개발 1단계에는 기기 세션이 없으므로 항상 '연결 없음' 상태를 보여준다.
+ * 개발 4단계에서 서버가 HttpOnly 기기 쿠키를 검증해 '이어서 연습해요'로 바꾼다.
+ * 별칭만으로 본인 연결을 하지 않는다.
+ */
+import LearnLayout from "../layouts/LearnLayout.astro";
+---
+
+<LearnLayout title="이어서 연습하기" role="learner">
+  <section class="entry stack">
+    <p class="eyebrow">해온 소리 학습</p>
+    <h1 class="title">이 브라우저는 아직<br />연결되지 않았어요.</h1>
+    <p class="muted">처음에는 선생님이 보내 준 <strong>개인 링크</strong>로 시작해요. 한 번 연결하면 다음부터는 이 주소에서 바로 이어서 연습할 수 있어요.</p>
+    <div class="notice">
+      링크를 잃어버렸거나 새 기기에서 시작한다면 선생님께 새 링크를 요청해 주세요. 같은 학습 기록에 이어집니다.
+    </div>
+    <ul class="hints small">
+      <li>계속 사용할 브라우저에서 링크를 열어 주세요. 메신저 안 브라우저와 Chrome·Safari는 연결이 따로 저장될 수 있어요.</li>
+      <li>이름만 입력해서 연결하는 방법은 없어요.</li>
+    </ul>
+    <p class="small status" data-stage-note>개발 1단계 화면 · 기기 연결 확인은 개발 4단계에서 서버와 연결됩니다.</p>
+  </section>
+</LearnLayout>
+
+<style>
+  .entry {
+    max-width: 560px;
+    padding: 24px 0 40px;
+  }
+
+  .hints {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  .status {
+    padding-top: 16px;
+    border-top: 1px solid var(--learn-line);
+  }
+</style>
