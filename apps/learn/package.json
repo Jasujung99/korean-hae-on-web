@@ -18,6 +18,7 @@
     "test:smoke": "node scripts/smoke.mjs",
     "tts:audition": "node --experimental-strip-types scripts/tts.ts audition",
     "tts:generate": "node --experimental-strip-types scripts/tts.ts generate",
+    "tts:process": "node --experimental-strip-types scripts/tts.ts process",
     "verify:clean": "node scripts/verify-clean.mjs"
   },
   "dependencies": {

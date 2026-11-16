@@ -1,5 +1,4 @@
 export const FLASH_TTS_MODEL = "gemini-3.8-flash-tts";
-export const VOICE_CANDIDATE = "Iapetus";
 export const VOICE_FIXED = false;
 
 export const NOT_CONFIGURED_MESSAGE =
@@ -10,14 +9,6 @@ export type TtsUnit = {
   kind: "pseudoword" | "word" | "sentence";
   text: string;
   reviewStatus: string;
-  audioStatus: string;
-  sourceMime: string;
-  sha256: string;
-  byteLength: number;
-  rawRelativePath: string;
-  distributionRelativePath: string;
-  voiceCandidate: string;
-  voiceFixed: boolean;
   core60Approved: boolean;
 };
 
@@ -46,7 +37,7 @@ export function modelEndpoint(model = FLASH_TTS_MODEL): string {
   return `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
 }
 
-export function buildGenerateContentBody(text: string, voice = VOICE_CANDIDATE): GenerateContentBody {
+export function buildGenerateContentBody(text: string, voice: string): GenerateContentBody {
   return {
     contents: [{ role: "user", parts: [{ text }] }],
     generationConfig: {
@@ -108,25 +99,6 @@ export function startsWithRiff(bytes: Uint8Array): boolean {
 export async function sha256Hex(bytes: Uint8Array): Promise<string> {
   const digest = await crypto.subtle.digest("SHA-256", bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength) as ArrayBuffer);
   return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
-}
-
-export function applyRawResult(
-  unit: TtsUnit,
-  bytes: Uint8Array,
-  mime: string,
-  sha256: string,
-): TtsUnit {
-  return {
-    ...unit,
-    sourceMime: mime,
-    sha256,
-    byteLength: bytes.length,
-    audioStatus: "draft_raw",
-    reviewStatus: "draft",
-    voiceFixed: false,
-    core60Approved: false,
-    distributionRelativePath: "",
-  };
 }
 
 export type PlaybackClass =

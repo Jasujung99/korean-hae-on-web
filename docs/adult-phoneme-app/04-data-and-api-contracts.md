@@ -15,11 +15,11 @@
 | `phoneme_source_entries` | 원본 커밋·해시·inventory/entry/lexeme 키와 읽기 전용 원본 스냅샷 |
 | `phoneme_lexeme_versions` | 의미 ID, 성인용 뜻·예문, 출처·이용 조건, 수정 사유, 검수 상태·이력 |
 | `phoneme_occurrences` | 단어 판, 표기·실제 자음, 문자/음절 위치, 앞 소리, 후행 모음, 변동 규칙·근거 |
-| `phoneme_audio_assets` | 모델·목소리·입력문·설정·생성일, 해시·MIME·길이·저장 경로, QA 상태 |
+| `phoneme_audio_assets` | 모델·학습자 목소리 키·사전 정의 목소리·입력문·속도 후처리·생성일, 원본과 배포본 각각의 해시·MIME·길이·저장 경로, 파일별 QA 상태 |
 | `phoneme_item_versions` | 과제, 목표 출현, 자극/기준 음원, 보기·정답, 힌트, 평가/훈련 구분 |
 | `phoneme_releases` | 승인된 문항·어휘·음원 판의 고정 묶음. 게시 후 원본 판을 덮어쓰지 않음 |
 | `phoneme_sessions` | learner ID, 릴리스·선택 정책 판, 현재 위치·시작/종료·진행 상태 |
-| `phoneme_attempt_events` | 서버가 확인한 learner/session/item 판, 이벤트 ID·순번·시각, 첫/재시도·재생·선택·시간·오류 |
+| `phoneme_attempt_events` | 서버가 확인한 learner/session/item 판, 이벤트 ID·순번·시각, 첫/재시도·재생한 목소리 키·선택·시간·오류. 재생 실패와 없는 음원은 성적과 구분 |
 
 콘텐츠 원본의 운영 `vocabulary.id`를 선택적으로 참조할 수 있으나 seed rank와 같다고 가정하지 않는다. 원본 FK 삭제가 응답·콘텐츠 이력의 연쇄 삭제를 일으키지 않게 한다. 신규 마이그레이션으로 기존 테이블·정책·함수 권한을 넓히지 않는다.
 

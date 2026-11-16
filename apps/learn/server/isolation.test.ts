@@ -37,13 +37,18 @@ describe("package boundary", () => {
 
   it("does not hard-code a live learning host or hidden client storage in the app code", () => {
     const scanned = walk(learnRoot).filter((path) => /\.(ts|tsx|css|mjs|html|json|example)$/.test(path));
+    const preferencePath = join(learnRoot, "src", "voice-preference.ts");
     const code = scanned
       .filter((path) => !path.endsWith(".test.ts") && !path.endsWith(".test.tsx") && !path.endsWith("package-lock.json"))
+      .filter((path) => path !== preferencePath)
       .map((path) => readFileSync(path, "utf8"))
       .join("\n")
       .replaceAll("supabase/seed.sql", "")
       .replaceAll("gemini-3.8-flash-tts", "")
       .replaceAll("GEMINI_API_KEY", "");
+    const preference = readFileSync(preferencePath, "utf8");
+    expect(preference).toContain("haeon.learn.voice");
+    expect(preference).not.toMatch(/sessionStorage|indexedDB|supabase|GEMINI_API_KEY|generativelanguage/i);
 
     const clientCode = scanned
       .filter((path) => path.includes(`${sep}src${sep}`) && !path.endsWith(".test.ts") && !path.endsWith(".test.tsx"))

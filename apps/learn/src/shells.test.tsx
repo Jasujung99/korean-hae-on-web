@@ -5,12 +5,16 @@ import { afterEach, describe, expect, it } from "vitest";
 import { MemoryRouter } from "react-router";
 import { LearnRoutes } from "./App";
 import { peekInviteToken, resetInviteTokenMemory } from "./join-token";
+import { playbackAttempts, resetPlaybackLog } from "./playback-log";
+import { resetVoicePreference } from "./voice-preference";
 import type { LearnRuntime } from "./runtime";
 import { Shell } from "./shell";
 
 afterEach(() => {
   cleanup();
   resetInviteTokenMemory();
+  resetPlaybackLog();
+  resetVoicePreference(window.localStorage);
   window.history.replaceState(null, "", "/");
 });
 
@@ -54,7 +58,14 @@ describe("stage 1 shells", () => {
   it("shows a disabled listening shell that does not record a choice", () => {
     renderAt("/practice", false);
     expect(screen.getByRole("heading", { level: 2, name: /귀를 기울여요/ })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "아직 준비 중" })).toBeDisabled();
+    expect(screen.getByRole("button", { name: "남성 목소리" })).toHaveAttribute("aria-pressed", "true");
+    fireEvent.click(screen.getByRole("button", { name: "여성 목소리" }));
+    expect(screen.getByRole("button", { name: "여성 목소리" })).toHaveAttribute("aria-pressed", "true");
+    fireEvent.click(screen.getByRole("button", { name: "아직 준비 중" }));
+    expect(screen.getByText(/여성 목소리\. 아직 준비 중/)).toBeInTheDocument();
+    expect(playbackAttempts()).toEqual([
+      expect.objectContaining({ voiceKey: "female", prebuiltVoice: "Kore", playback: "missing", storedAsScore: false }),
+    ]);
     expect(screen.getByRole("button", { name: /아자/ })).toBeDisabled();
     expect(screen.getByRole("button", { name: "선택 확인" })).toBeDisabled();
     expect(screen.getByRole("status").textContent).toContain("저장하지 않습니다");

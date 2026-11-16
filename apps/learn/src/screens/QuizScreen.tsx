@@ -1,6 +1,17 @@
+import { useState } from "react";
 import { Link } from "react-router";
 import { draftPracticePreview } from "../../content/preview.ts";
+import {
+  VOICE_KEYS,
+  VOICE_SET,
+  attemptForMissingVoice,
+  distributionPathForChoice,
+  emptyVoiceSet,
+  type VoiceKey,
+} from "../../content/tts/voices.ts";
+import { notePlayback } from "../playback-log";
 import { LearnerFrame, Pill, ScreenTitle } from "../ui";
+import { readStoredVoice, storeVoice } from "../voice-preference";
 
 const choices = [
   { syllable: "아자", label: "ㅈ" },
@@ -10,6 +21,21 @@ const choices = [
 
 export function QuizScreen({ preview = false }: { preview?: boolean }) {
   const draft = preview ? draftPracticePreview() : null;
+  const [voice, setVoice] = useState<VoiceKey>(() => readStoredVoice());
+  const [playbackNote, setPlaybackNote] = useState("");
+
+  function chooseVoice(next: VoiceKey) {
+    setVoice(next);
+    storeVoice(next);
+  }
+
+  function playChosenVoice() {
+    const path = distributionPathForChoice(emptyVoiceSet("practice-shell"), voice);
+    if (path) return;
+    const attempt = attemptForMissingVoice("practice-shell", voice);
+    notePlayback(attempt);
+    setPlaybackNote(`${VOICE_SET[voice].label}. 아직 준비 중. 다른 목소리로 바꾸지 않았고 성적으로 저장하지 않습니다.`);
+  }
 
   return (
     <LearnerFrame>
@@ -41,6 +67,14 @@ export function QuizScreen({ preview = false }: { preview?: boolean }) {
           </Link>
           <Link to="/compare">비교 도움</Link>
         </div>
+        <div className="voice-choice" role="group" aria-label="목소리">
+          {VOICE_KEYS.map((key) => (
+            <button key={key} type="button" aria-pressed={voice === key} onClick={() => chooseVoice(key)}>
+              {VOICE_SET[key].label}
+            </button>
+          ))}
+        </div>
+        <p className="audio-label">목소리 선택은 이 기기에만 남습니다. 기기 세션에는 다음 단계에서 연결합니다.</p>
         <div className="listen">
           <div className="audio-line">
             <div>
@@ -52,11 +86,14 @@ export function QuizScreen({ preview = false }: { preview?: boolean }) {
                 <span />
               </div>
             </div>
-            <button type="button" disabled>
+            <button type="button" onClick={playChosenVoice}>
               아직 준비 중
             </button>
           </div>
-          <p className="audio-label">아직 준비 중. 없는 음원, 무음, 잘림, 재생 실패, 재생 중 응답은 점수로 저장하지 않습니다.</p>
+          <p className="audio-label">
+            {playbackNote ||
+              `${VOICE_SET[voice].label}. 아직 준비 중. 없는 음원, 무음, 잘림, 재생 실패, 재생 중 응답은 점수로 저장하지 않습니다.`}
+          </p>
         </div>
         <div className="choices" role="group" aria-label="소리 보기. 이 단계에서는 저장하지 않습니다.">
           {choices.map((item) => (

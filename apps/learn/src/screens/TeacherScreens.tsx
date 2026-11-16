@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
+import { VOICE_SET } from "../../content/tts/voices.ts";
+import { playbackAttempts } from "../playback-log";
 import { ScreenTitle } from "../ui";
 
 const tasks = [
@@ -173,6 +175,20 @@ export function TeacherLayout({ mode }: { mode: "list" | "detail" }) {
               </div>
             </dl>
             <p className="small">서로 겹칠 수 있어 더해서 총시간으로 보이지 않습니다. 긴 체류를 집중이나 어려움으로 판정하지 않습니다.</p>
+          </section>
+          <section className="panel stack" aria-labelledby="played-voice-title">
+            <h3 id="played-voice-title">재생한 목소리</h3>
+            {playbackAttempts().length === 0 ? (
+              <p className="notice">재생 기록이 없습니다. 성적이 아닙니다.</p>
+            ) : (
+              <ul className="played-voices">
+                {playbackAttempts().map((attempt, index) => (
+                  <li key={`${attempt.itemId}-${attempt.voiceKey}-${index}`}>
+                    {VOICE_SET[attempt.voiceKey].label} · {attempt.prebuiltVoice} · 아직 준비 중 · 성적 아님
+                  </li>
+                ))}
+              </ul>
+            )}
           </section>
         </div>
       </section>

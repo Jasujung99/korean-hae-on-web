@@ -101,9 +101,13 @@ describe("learn API", () => {
     expect(missing.status).toBe(404);
     expect(await missing.json()).toEqual({ error: "audio_not_ready", display: "아직 준비 중" });
 
-    const ready = await createLearnApp(config, {
-      readDistribution: (id) => (id === "fixture-tone" ? new Uint8Array([1, 2, 3, 4]) : null),
-    }).request("/api/audio/fixture-tone");
+    const app = createLearnApp(config, {
+      readDistribution: (id) => (id === "fixture-tone--male" ? new Uint8Array([1, 2, 3, 4]) : null),
+    });
+    const otherVoice = await app.request("/api/audio/fixture-tone--female");
+    expect(otherVoice.status).toBe(404);
+    expect(await otherVoice.json()).toEqual({ error: "audio_not_ready", display: "아직 준비 중" });
+    const ready = await app.request("/api/audio/fixture-tone--male");
     expect(ready.status).toBe(200);
     expect(ready.headers.get("content-type")).toContain("audio/wav");
     expect(ready.headers.get("set-cookie")).toBeNull();
