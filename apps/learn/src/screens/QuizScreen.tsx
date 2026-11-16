@@ -53,10 +53,10 @@ export function QuizScreen({ preview = false }: { preview?: boolean }) {
               </div>
             </div>
             <button type="button" disabled>
-              소리 듣기 · 준비 중
+              아직 준비 중
             </button>
           </div>
-          <p className="audio-label">승인된 음원이 없습니다. 무음을 재생하거나 성적으로 저장하지 않습니다.</p>
+          <p className="audio-label">아직 준비 중. 없는 음원, 무음, 잘림, 재생 실패, 재생 중 응답은 점수로 저장하지 않습니다.</p>
         </div>
         <div className="choices" role="group" aria-label="소리 보기. 이 단계에서는 저장하지 않습니다.">
           {choices.map((item) => (
@@ -67,7 +67,7 @@ export function QuizScreen({ preview = false }: { preview?: boolean }) {
           ))}
         </div>
         <p className="notice" role="status">
-          이 단계에서는 고른 답을 저장하지 않습니다. 맞았는지도 알려 주지 않습니다.
+          이 단계에서는 고른 답을 저장하지 않습니다. 재생 실패, 무음, 잘림, 재생 중 응답은 정상 정오답과 구분하며 성적이 아닙니다.
         </p>
         <div className="actions">
           <button type="button" className="primary" disabled>

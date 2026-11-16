@@ -54,10 +54,11 @@ describe("stage 1 shells", () => {
   it("shows a disabled listening shell that does not record a choice", () => {
     renderAt("/practice", false);
     expect(screen.getByRole("heading", { level: 2, name: /귀를 기울여요/ })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "소리 듣기 · 준비 중" })).toBeDisabled();
+    expect(screen.getByRole("button", { name: "아직 준비 중" })).toBeDisabled();
     expect(screen.getByRole("button", { name: /아자/ })).toBeDisabled();
     expect(screen.getByRole("button", { name: "선택 확인" })).toBeDisabled();
     expect(screen.getByRole("status").textContent).toContain("저장하지 않습니다");
+    expect(screen.getByText(/재생 실패, 무음, 잘림, 재생 중 응답/)).toBeInTheDocument();
     expect(screen.queryByText(/정답|41분|\d+\s*\/\s*\d+/)).not.toBeInTheDocument();
   });
 

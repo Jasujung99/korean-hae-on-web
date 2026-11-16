@@ -51,7 +51,22 @@ npm run verify:clean
 
 - `GET /`: 기기가 연결되기 전 공통 주소. 개인 링크로 시작하라는 안내만 있습니다.
 - `GET /join`: 주소 조각의 초대 토큰을 읽고 주소창에서 바로 지웁니다. 토큰은 메모리에만 두고, ‘이 기기에서 시작하기’는 서버를 호출하지 않는 비활성 버튼입니다.
-- `GET /practice`: 개발 미리보기에서는 첫 12개 초안 단어를 보여 줍니다. 표기는 초안·미검수이고, 음원과 점수 저장은 없습니다. 미리보기가 아니면 빈 퀴즈 껍데기만 있습니다. 개발 서버(`npm run dev`)는 미리보기가 켜져 `http://127.0.0.1:4174/practice`에서 단어를 봅니다.
+- `GET /practice`: 개발 미리보기에서는 첫 12개 초안 단어를 보여 줍니다. 표기는 초안·미검수이고, 음원과 점수 저장은 없습니다. 미리보기가 아니면 빈 퀴즈 껍데기만 있습니다. 개발 서버(`npm run dev`)의 `http://127.0.0.1:4174/practice`에서 첫 12개 초안 단어를 봅니다. 음원 버튼은 `아직 준비 중`입니다.
+
+청취 표본은 키가 있을 때만, 이 디렉터리에서 명시적으로 실행합니다. 키는 환경 변수로만 읽고 로그나 파일에 적지 않습니다. 목소리가 고정된 것은 아닙니다. 초기 후보는 Iapetus입니다.
+
+```sh
+npm run tts:audition
+```
+
+Windows PowerShell:
+
+```powershell
+$env:GEMINI_API_KEY = "발급받은 키"
+npm run tts:audition
+```
+
+키가 없으면 `GEMINI_API_KEY is not configured. Live TTS generation is incomplete.`만 출력하고 끝납니다. 특정 초안 한 건만 만들 때는 `npm run tts:generate -- --id pw-아자`입니다. 원본 WAV는 `audio/raw/`에만 쓰고, 배포본과 승인 상태는 바꾸지 않습니다.
 - `GET /compare`, `/finish`, `/dictionary`: 비교·마무리·사전 껍데기. 뜻과 예문은 검수 전이라 비어 있습니다.
 - `GET /api/health`: 저장소와 세션이 없다는 상태.
 - `GET /api/config`: 주입된 origin과 미리보기 여부. 쿠키를 발급하지 않습니다.

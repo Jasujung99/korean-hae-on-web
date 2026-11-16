@@ -14,7 +14,10 @@ function isJsonContentType(value: string | undefined): boolean {
   return mediaType === "application/json";
 }
 
-export function createLearnApp(config: LearnConfig) {
+export function createLearnApp(
+  config: LearnConfig,
+  audio: { readDistribution?: (id: string) => Uint8Array | null } = {},
+) {
   const app = new Hono();
 
   app.use("*", async (c, next) => {
@@ -49,6 +52,14 @@ export function createLearnApp(config: LearnConfig) {
   );
 
   app.get("/api/config", (c) => c.json(toPublicConfig(config)));
+
+  app.get("/api/audio/:id", (c) => {
+    const bytes = audio.readDistribution?.(c.req.param("id")) ?? null;
+    if (!bytes || bytes.length === 0) {
+      return c.json({ error: "audio_not_ready", display: "아직 준비 중" }, 404);
+    }
+    return c.body(bytes.slice().buffer, 200, { "content-type": "audio/wav" });
+  });
 
   app.all("/api/*", (c) => c.json({ error: "not_found" }, 404));
 

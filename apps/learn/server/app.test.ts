@@ -95,4 +95,17 @@ describe("learn API", () => {
     expect(options.status).not.toBe(403);
     expect(options.status).not.toBe(415);
   });
+
+  it("says audio is not ready instead of serving a missing file", async () => {
+    const missing = await createLearnApp(config).request("/api/audio/not-recorded");
+    expect(missing.status).toBe(404);
+    expect(await missing.json()).toEqual({ error: "audio_not_ready", display: "아직 준비 중" });
+
+    const ready = await createLearnApp(config, {
+      readDistribution: (id) => (id === "fixture-tone" ? new Uint8Array([1, 2, 3, 4]) : null),
+    }).request("/api/audio/fixture-tone");
+    expect(ready.status).toBe(200);
+    expect(ready.headers.get("content-type")).toContain("audio/wav");
+    expect(ready.headers.get("set-cookie")).toBeNull();
+  });
 });

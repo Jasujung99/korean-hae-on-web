@@ -1,7 +1,10 @@
-import type { IncomingMessage, ServerResponse } from "node:http";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { getRequestListener } from "@hono/node-server";
 import type { Connect, Plugin } from "vite";
+import type { IncomingMessage, ServerResponse } from "node:http";
 import { createLearnApp } from "./app.ts";
+import { readApprovedDistribution } from "./audio-files.ts";
 import { readLearnConfig } from "./config.ts";
 
 const securityHeaders = {
@@ -17,7 +20,10 @@ function handledByApp(url: string): boolean {
 
 function mount(middlewares: Connect.Server) {
   const config = readLearnConfig(process.env);
-  const app = createLearnApp(config);
+  const appRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+  const app = createLearnApp(config, {
+    readDistribution: (id) => readApprovedDistribution(appRoot, id),
+  });
   const listener = getRequestListener(app.fetch, { hostname: config.host });
 
   middlewares.use((req, res, next) => {

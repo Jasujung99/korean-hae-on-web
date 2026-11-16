@@ -41,7 +41,15 @@ describe("package boundary", () => {
       .filter((path) => !path.endsWith(".test.ts") && !path.endsWith(".test.tsx") && !path.endsWith("package-lock.json"))
       .map((path) => readFileSync(path, "utf8"))
       .join("\n")
-      .replaceAll("supabase/seed.sql", "");
+      .replaceAll("supabase/seed.sql", "")
+      .replaceAll("gemini-3.8-flash-tts", "")
+      .replaceAll("GEMINI_API_KEY", "");
+
+    const clientCode = scanned
+      .filter((path) => path.includes(`${sep}src${sep}`) && !path.endsWith(".test.ts") && !path.endsWith(".test.tsx"))
+      .map((path) => readFileSync(path, "utf8"))
+      .join("\n");
+    expect(clientCode).not.toMatch(/GEMINI_API_KEY|generativelanguage|gemini/i);
 
     const appTsconfig = readFileSync(join(learnRoot, "tsconfig.json"), "utf8");
     const viteConfig = readFileSync(join(learnRoot, "vite.config.ts"), "utf8");
@@ -53,7 +61,9 @@ describe("package boundary", () => {
     expect(bundleScript).toContain('tsconfig: "tsconfig.json"');
 
     expect(code).not.toMatch(/learn\.haeonkorean\.com/i);
-    expect(code).not.toMatch(/localStorage|sessionStorage|indexedDB|supabase|gemini|service_role/i);
+    expect(code).not.toMatch(/localStorage|sessionStorage|indexedDB|supabase|service_role/i);
+    expect(code).not.toMatch(/gemini/i);
+    expect(code).not.toMatch(/AIza[0-9A-Za-z_-]{10,}/);
     expect(relative(repoRoot, join(learnRoot, "package.json")).split(sep).join("/")).toBe("apps/learn/package.json");
   });
 });

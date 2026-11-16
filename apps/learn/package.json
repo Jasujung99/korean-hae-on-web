@@ -16,6 +16,8 @@
     "test": "vitest run",
     "validate:content": "node --experimental-strip-types scripts/validate-content.ts",
     "test:smoke": "node scripts/smoke.mjs",
+    "tts:audition": "node --experimental-strip-types scripts/tts.ts audition",
+    "tts:generate": "node --experimental-strip-types scripts/tts.ts generate",
     "verify:clean": "node scripts/verify-clean.mjs"
   },
   "dependencies": {
