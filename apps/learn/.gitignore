@@ -1,0 +1,9 @@
+audio/raw/*
+audio/dist/*
+!audio/raw/.gitkeep
+!audio/dist/.gitkeep
+node_modules/
+dist/
+.env
+.env.*
+!.env.example

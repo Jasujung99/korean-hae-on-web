@@ -1,0 +1,147 @@
+.teacher-layout {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.learner-list {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.person {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: var(--space-4) var(--space-3);
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+  text-align: left;
+}
+
+.person strong {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.person small {
+  display: block;
+  margin-top: var(--space-2);
+  color: var(--ink-muted);
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+  margin: var(--space-6) 0;
+}
+
+.stat {
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--line);
+}
+
+.stat strong {
+  display: block;
+  margin-top: var(--space-2);
+  color: var(--olive);
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.filters label {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+  color: var(--ink-muted);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+select {
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.t-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.t-grid .panel {
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--line);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.6;
+  table-layout: fixed;
+}
+
+caption {
+  margin-bottom: var(--space-3);
+  color: var(--ink-muted);
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 11px var(--space-1);
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+  font-weight: 400;
+}
+
+.time-parts {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-4);
+}
+
+.time-parts div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+dt,
+dd {
+  margin: 0;
+}
+
+dd {
+  color: var(--olive);
+}
+
+.teacher-back {
+  display: none;
+}

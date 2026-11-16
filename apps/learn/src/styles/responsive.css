@@ -1,0 +1,146 @@
+@media (max-width: 800px) {
+  .page {
+    padding: 0;
+  }
+
+  .preview {
+    margin: 0;
+    padding: var(--space-4);
+  }
+
+  .window {
+    border-right: 0;
+    border-left: 0;
+  }
+
+  .app-head,
+  main,
+  .app-footer {
+    padding-right: var(--space-5);
+    padding-left: var(--space-5);
+  }
+
+  .app-head {
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-4);
+  }
+
+  .brand-sub,
+  .app-head nav {
+    display: none;
+  }
+
+  .logo .mark {
+    width: 50px;
+  }
+
+  .logo .name {
+    width: 44px;
+  }
+
+  .workspace,
+  .teacher-layout,
+  .t-grid {
+    display: block;
+  }
+
+  .rail {
+    display: none;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  .audio-line {
+    align-items: stretch;
+  }
+
+  .audio-line button,
+  .actions,
+  .actions .primary,
+  a.button.primary {
+    width: 100%;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .window:not(.is-teacher) .bottom-nav {
+    display: flex;
+    padding: var(--space-2) var(--space-3);
+    border-top: 1px solid var(--line);
+  }
+
+  .bottom-nav a {
+    flex: 1 1 0;
+    justify-content: center;
+  }
+
+  .has-detail .learner-list,
+  .teacher-layout.on-detail .learner-list {
+    display: none;
+  }
+
+  .teacher-layout:not(.on-detail) .teacher-detail {
+    display: none;
+  }
+
+  .teacher-back {
+    display: inline-flex;
+  }
+
+  .stats {
+    gap: var(--space-3);
+  }
+}
+
+@media (max-width: 360px) {
+  .app-head,
+  main,
+  .app-footer,
+  .preview {
+    padding-right: var(--space-3);
+    padding-left: var(--space-3);
+  }
+
+  .choices {
+    gap: 6px;
+  }
+
+  .compare-choices,
+  .choices.compare-choices {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+  }
+
+  .choices button {
+    min-height: 72px;
+    padding: var(--space-2) 2px;
+    font-size: 20px;
+  }
+
+  .filters label {
+    flex-basis: 100%;
+  }
+
+  .listen,
+  .definition,
+  .example {
+    padding: var(--space-4);
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    font-size: 23px;
+  }
+
+  .dict-word {
+    font-size: 28px;
+  }
+}
