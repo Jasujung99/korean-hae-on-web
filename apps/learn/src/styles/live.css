@@ -1,0 +1,611 @@
+/*
+ * 미리보기에서 실제로 동작하는 화면의 조각.
+ * 인계 시안(docs/adult-phoneme-app/prototypes)의 규칙을 해온 토큰으로만 옮겼다. 새 색을 만들지 않는다.
+ */
+
+.track span.done {
+  background: var(--olive);
+}
+
+.track span.current {
+  box-shadow: 0 0 0 2px var(--wash-sage);
+  border-width: 2px;
+}
+
+.listen-button {
+  min-width: 132px;
+  border-color: var(--olive);
+  color: var(--olive);
+  background: var(--paper);
+}
+
+.jamo-motif.is-playing span {
+  animation: jamo-listen 0.9s ease-in-out infinite alternate;
+}
+
+.jamo-motif.is-playing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.jamo-motif.is-playing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.jamo-motif.is-playing span:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+@keyframes jamo-listen {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: 0 -4px;
+  }
+}
+
+.choices button.selected {
+  border-color: var(--olive);
+  background: var(--wash-sage);
+  color: var(--olive);
+}
+
+.choices button.key,
+.choices button.key:disabled {
+  border-color: var(--olive);
+  background: var(--wash-sage);
+  color: var(--olive);
+  opacity: 1;
+}
+
+.choices button.selected small,
+.choices button.key small {
+  color: var(--olive);
+}
+
+.feedback {
+  margin-top: var(--space-5);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  background: var(--wash-sage);
+  animation: haeon-reveal 0.32s ease-out;
+}
+
+.feedback strong {
+  color: var(--olive);
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.feedback p {
+  margin: 7px 0 0;
+  color: var(--ink-muted);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.pair button {
+  background: var(--paper);
+}
+
+@keyframes haeon-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.complete {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: var(--space-5);
+  border-bottom: 1px solid var(--olive);
+  color: var(--olive);
+  font-size: 26px;
+}
+
+.result-block {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.result-block h3 {
+  margin: 0;
+}
+
+.score {
+  margin: 0;
+  color: var(--ink-muted);
+  font-family: var(--font-latin);
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.score strong {
+  color: var(--olive);
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.score-rows {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.score-rows li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 36px;
+  font-size: 14px;
+}
+
+.score-jamo {
+  width: 24px;
+  color: var(--olive);
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.score-label {
+  flex: 1;
+}
+
+.dots {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.dots i {
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+  border: 2px solid var(--olive);
+  border-radius: var(--radius-pill);
+}
+
+.dots i.on {
+  background: var(--olive);
+}
+
+.score-num {
+  min-width: 40px;
+  font-family: var(--font-latin);
+  font-size: 16px;
+  text-align: right;
+}
+
+.divider-block {
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.word-list {
+  display: grid;
+  margin-top: var(--space-3);
+}
+
+.word-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56px;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.word-list strong {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.word-list small {
+  color: var(--ink-muted);
+  font-family: var(--font-sans);
+  font-size: 12px;
+}
+
+.library-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.library-links button[aria-pressed="true"] {
+  border-color: var(--olive);
+  background: var(--wash-sage);
+  color: var(--olive);
+}
+
+/* 사전 자리: 아직 연결하지 않은 빈 상자 */
+.dict-slot {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--ink-muted);
+}
+
+.dict-slot-tag {
+  margin: 0;
+  color: var(--lavender-ink);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+
+.dict-slot h4 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.dict-slot p {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.dict-slot-where {
+  color: var(--ink-muted);
+  font-size: 12px !important;
+}
+
+.dict-slot-demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  color: var(--ink);
+}
+
+.dict-slot-demo span {
+  border-bottom: 1px dashed var(--line-strong);
+}
+
+.dict-slot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.dict-slot-links span {
+  padding: 6px var(--space-3);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 12px;
+}
+
+.dict-slot.in-rail {
+  margin-bottom: var(--space-5);
+}
+
+.dict-slot.in-flow {
+  display: none;
+}
+
+/* 학습 순서 */
+.course-mini {
+  margin-top: var(--space-3) !important;
+}
+
+.course-mini li {
+  align-items: baseline;
+}
+
+.course-mini li small {
+  margin-left: auto;
+  color: var(--ink-muted);
+  font-family: var(--font-sans);
+  font-size: 11px;
+}
+
+.course-mini li.is-now small {
+  color: var(--olive);
+}
+
+.course-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line-strong);
+}
+
+.course-list > li {
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.course-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-4);
+}
+
+.course-head > div {
+  flex: 1 1 160px;
+}
+
+.course-head h3 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+}
+
+.course-num {
+  color: var(--olive);
+  font-family: var(--font-latin);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.course-list > li:not(.is-now) .course-num {
+  color: var(--ink-muted);
+}
+
+a.button.course-go {
+  width: auto;
+}
+
+.course-pseudo {
+  margin: var(--space-3) 0 0;
+  font-size: 15px;
+}
+
+.course-pseudo .small {
+  margin-right: var(--space-2);
+}
+
+.course-stages {
+  display: grid;
+  gap: var(--space-2);
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.course-stages li {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 2px var(--space-3);
+  font-size: 14px;
+}
+
+.course-stages strong {
+  color: var(--olive);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.course-stages small {
+  grid-column: 2;
+  color: var(--ink-muted);
+  font-family: var(--font-sans);
+  font-size: 12px;
+}
+
+details {
+  margin-top: var(--space-3);
+}
+
+summary {
+  min-height: 44px;
+  padding: 10px 0;
+  color: var(--olive);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.8;
+  cursor: pointer;
+}
+
+details p {
+  margin: var(--space-2) 0 0;
+}
+
+/* 목소리 고르기 */
+.voice-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line-strong);
+}
+
+.voice-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.voice-list li.is-chosen {
+  background: var(--wash-sage);
+  padding-right: var(--space-3);
+  padding-left: var(--space-3);
+}
+
+.voice-list strong {
+  display: block;
+  font-family: var(--font-latin);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.voice-list small {
+  color: var(--ink-muted);
+  font-family: var(--font-sans);
+  font-size: 12px;
+}
+
+.voice-actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* 교사 관찰 */
+.person[aria-current="true"] {
+  background: var(--wash-sage);
+}
+
+.person .pill {
+  margin-left: var(--space-1);
+  vertical-align: 2px;
+}
+
+.title-pill {
+  margin-left: var(--space-3);
+  vertical-align: 6px;
+}
+
+.big-num {
+  color: var(--olive);
+  font-family: var(--font-latin);
+  font-size: 27px;
+  font-weight: 500;
+}
+
+td.hit {
+  background: var(--wash-sage);
+  color: var(--olive);
+  font-weight: 500;
+}
+
+.log-row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.log-row strong {
+  font-weight: 500;
+  text-align: right;
+}
+
+.teacher-detail .time-parts {
+  margin-top: var(--space-3);
+}
+
+.teacher-key {
+  margin: var(--space-4) 0 0;
+  color: var(--ink-muted);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.plain-list {
+  margin: 0;
+  padding-left: var(--space-5);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.time-defs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3) var(--space-5);
+  margin: var(--space-6) 0 0;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--line);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.time-defs dt {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.time-defs dd {
+  color: var(--ink-muted);
+}
+
+.ghost-danger {
+  margin-top: var(--space-4);
+  color: var(--ink-muted);
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--olive);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+}
+
+.app-footer {
+  align-items: center;
+}
+
+@media (max-width: 800px) {
+  .dict-slot.in-flow {
+    display: grid;
+  }
+
+  .time-defs {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .voice-actions {
+    width: 100%;
+  }
+
+  .voice-actions button {
+    flex: 1 1 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jamo-motif.is-playing span,
+  .feedback {
+    animation: none;
+  }
+}

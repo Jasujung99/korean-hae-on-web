@@ -12,7 +12,13 @@ function LearnApp() {
   return (
     <BrowserRouter>
       <Shell runtime={runtime}>
-        <LearnRoutes preview={runtime.screenPreview} />
+        {runtime.ready ? (
+          <LearnRoutes preview={runtime.screenPreview} />
+        ) : (
+          <section className="panel stack">
+            <p className="muted">화면을 준비하고 있어요…</p>
+          </section>
+        )}
       </Shell>
     </BrowserRouter>
   );

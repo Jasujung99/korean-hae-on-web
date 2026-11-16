@@ -401,6 +401,7 @@ a.button.primary {
   font-size: 12px;
   line-height: 1.7;
   overflow-wrap: anywhere;
+}
 
 button:focus-visible,
 select:focus-visible,

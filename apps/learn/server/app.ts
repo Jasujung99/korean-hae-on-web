@@ -1,5 +1,10 @@
 import { Hono } from "hono";
 import { toPublicConfig, type LearnConfig } from "./config.ts";
+import type { PreviewAudio } from "./preview/audio.ts";
+import { createPreviewRoutes } from "./preview/routes.ts";
+import type { PreviewStore } from "./preview/store.ts";
+
+export type PreviewDeps = { store: PreviewStore; audio: PreviewAudio };
 
 const SAFE_METHODS = new Set(["GET", "HEAD", "OPTIONS"]);
 
@@ -17,7 +22,9 @@ function isJsonContentType(value: string | undefined): boolean {
 export function createLearnApp(
   config: LearnConfig,
   audio: { readDistribution?: (id: string) => Uint8Array | null } = {},
+  preview: PreviewDeps | null = null,
 ) {
+  const previewEnabled = config.screenPreview && preview !== null;
   const app = new Hono();
 
   app.use("*", async (c, next) => {
@@ -28,7 +35,8 @@ export function createLearnApp(
   app.use("/api/*", async (c, next) => {
     if (!SAFE_METHODS.has(c.req.method)) {
       const origin = c.req.header("origin");
-      if (!config.origin || origin !== config.origin) {
+      const allowed = config.origin ? [config.origin, ...(config.devOrigins ?? [])] : [];
+      if (!origin || !allowed.includes(origin)) {
         return c.json({ error: "forbidden" }, 403);
       }
       if (!isJsonContentType(c.req.header("content-type"))) {
@@ -46,10 +54,14 @@ export function createLearnApp(
       ok: true,
       service: "learn",
       stage: 1,
-      persistence: "none",
+      persistence: previewEnabled ? "preview-local" : "none",
       session: "not-issued",
     }),
   );
+
+  if (previewEnabled && preview) {
+    app.route("/api/preview", createPreviewRoutes(preview));
+  }
 
   app.get("/api/config", (c) => c.json(toPublicConfig(config)));
 

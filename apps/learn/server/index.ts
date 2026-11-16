@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 import { createLearnApp } from "./app.ts";
 import { readApprovedDistribution } from "./audio-files.ts";
 import { readLearnConfig } from "./config.ts";
+import { previewDeps } from "./preview/setup.ts";
 
 // Dev uses Vite. This entry is the production server, so an unset NODE_ENV stays production.
 if (!process.env.NODE_ENV) process.env.NODE_ENV = "production";
@@ -23,9 +24,13 @@ try {
   process.exit(1);
 }
 
-const app = createLearnApp(config, {
-  readDistribution: (id) => readApprovedDistribution(appRoot, id),
-});
+const app = createLearnApp(
+  config,
+  {
+    readDistribution: (id) => readApprovedDistribution(appRoot, id),
+  },
+  config.screenPreview ? previewDeps(appRoot) : null,
+);
 
 app.use("*", serveStatic({ root: clientDir }));
 

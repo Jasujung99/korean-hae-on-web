@@ -4,6 +4,7 @@ audio/dist/*
 !audio/dist/.gitkeep
 node_modules/
 dist/
+.preview-data/
 .env
 .env.*
 !.env.example

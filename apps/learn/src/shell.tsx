@@ -22,9 +22,10 @@ function PreviewSwitch({ teacherRoute }: { teacherRoute: boolean }) {
   );
 }
 
-function LearnerNav({ place }: { place: "head" | "bottom" }) {
+function LearnerNav({ place, preview }: { place: "head" | "bottom"; preview: boolean }) {
   const location = useLocation();
   const dictionary = location.pathname.startsWith("/dictionary");
+  const course = location.pathname.startsWith("/course") || location.pathname.startsWith("/voices");
   const quiz =
     location.pathname === "/practice" || location.pathname === "/compare" || location.pathname === "/finish";
 
@@ -36,6 +37,11 @@ function LearnerNav({ place }: { place: "head" | "bottom" }) {
       <Link to="/dictionary" aria-current={dictionary ? "page" : undefined}>
         사전·예문 <span className="pill future">확장</span>
       </Link>
+      {preview ? (
+        <Link to="/course" aria-current={course ? "page" : undefined}>
+          학습 순서
+        </Link>
+      ) : null}
     </nav>
   );
 }
@@ -44,6 +50,9 @@ export function Shell({ runtime, children }: { runtime: LearnRuntime; children: 
   const location = useLocation();
   const teacherRoute = location.pathname.startsWith("/teach");
   const teacherPreview = teacherRoute && runtime.screenPreview;
+  let avatar = "연결 전";
+  if (teacherPreview) avatar = "관찰 미리보기";
+  else if (runtime.screenPreview) avatar = "미리보기 학습자";
 
   return (
     <div
@@ -62,13 +71,18 @@ export function Shell({ runtime, children }: { runtime: LearnRuntime; children: 
             <BrandMark />
             <p className="brand-sub">소리에서 단어까지</p>
           </div>
-          <LearnerNav place="head" />
-          <p className="avatar">{teacherPreview ? "관찰 미리보기" : "연결 전"}</p>
+          <LearnerNav place="head" preview={runtime.screenPreview} />
+          <p className="avatar">{avatar}</p>
         </header>
         <main id="content">{children}</main>
-        <LearnerNav place="bottom" />
+        <LearnerNav place="bottom" preview={runtime.screenPreview} />
         <footer className="app-footer">
           <span lang="en">At ease. As yourself.</span>
+          {runtime.screenPreview ? (
+            <Link className="footer-link" to="/voices">
+              목소리 표본 듣기
+            </Link>
+          ) : null}
           <span lang="en">haeon · Your voice, in Korean.</span>
           <p className="origin-line">{originStatus(runtime)}</p>
         </footer>

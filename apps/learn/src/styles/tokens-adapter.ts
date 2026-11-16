@@ -13,4 +13,5 @@ import "@design/base.css";
 import "./shared.css";
 import "./practice.css";
 import "./teacher.css";
+import "./live.css";
 import "./responsive.css";

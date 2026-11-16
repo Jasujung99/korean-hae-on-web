@@ -1,5 +1,6 @@
 import { useEffect, type ReactNode } from "react";
 import { Link } from "react-router";
+import { COURSE_ORDER, GROUP_LABELS, PRACTICE_READY_GROUPS } from "../content/course-order.ts";
 
 export function ScreenTitle({ title }: { title: string }) {
   useEffect(() => {
@@ -12,7 +13,35 @@ export function Pill({ children, tone = "now" }: { children: ReactNode; tone?: "
   return <span className={tone === "future" ? "pill future" : "pill"}>{children}</span>;
 }
 
-export function LearnerFrame({ children }: { children: ReactNode }) {
+function CourseMini() {
+  return (
+    <div className="rail-block">
+      <h3>학습 순서</h3>
+      <ol className="course-mini">
+        {COURSE_ORDER.map((id, index) => (
+          <li key={id} className={PRACTICE_READY_GROUPS.includes(id) ? "is-now" : undefined}>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            {GROUP_LABELS[id]}
+            <small>{PRACTICE_READY_GROUPS.includes(id) ? "지금" : "준비 전"}</small>
+          </li>
+        ))}
+      </ol>
+      <Link className="rail-link" to="/course">
+        전체 순서 보기
+      </Link>
+    </div>
+  );
+}
+
+export function LearnerFrame({
+  children,
+  preview = false,
+  railExtra = null,
+}: {
+  children: ReactNode;
+  preview?: boolean;
+  railExtra?: ReactNode;
+}) {
   return (
     <div className="workspace">
       <div className="stage">{children}</div>
@@ -34,17 +63,23 @@ export function LearnerFrame({ children }: { children: ReactNode }) {
         </div>
         <div className="rail-block">
           <h3>필요할 때 비교해요</h3>
-          <p>글자보다 소리로 비교하고 싶다면 A · B · X를 들어 볼 자리입니다. 음원은 아직 없습니다.</p>
+          <p>
+            {preview
+              ? "글자보다 소리로 비교하고 싶다면 A · B · X를 들어 봐요."
+              : "글자보다 소리로 비교하고 싶다면 A · B · X를 들어 볼 자리입니다. 음원은 아직 없습니다."}
+          </p>
           <Link className="rail-link" to="/compare">
             두 소리 비교 열기
           </Link>
         </div>
+        {preview ? <CourseMini /> : null}
+        {railExtra}
         <div>
           <Pill tone="future">다음 확장</Pill>
           <h3>소리가 단어로 이어져요</h3>
-          <p>뜻과 예문은 승인 전에 보여 주지 않습니다.</p>
+          <p>{preview ? "뜻을 찾고, 생활 속 예문으로 쓰임을 확인해요." : "뜻과 예문은 승인 전에 보여 주지 않습니다."}</p>
           <Link className="rail-link" to="/dictionary">
-            사전·예문 자리
+            {preview ? "사전·예문 보기" : "사전·예문 자리"}
           </Link>
         </div>
       </aside>

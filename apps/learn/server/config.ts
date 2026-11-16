@@ -3,6 +3,8 @@ export type LearnConfig = {
   screenPreview: boolean;
   host: string;
   port: number;
+  /** 개발 서버만: 같은 서버를 가리키는 다른 로컬 이름(예: localhost). 환경 변수로는 받지 않는다. */
+  devOrigins?: string[];
 };
 
 export type PublicConfig = {

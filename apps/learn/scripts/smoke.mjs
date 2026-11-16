@@ -125,6 +125,18 @@ async function main() {
     });
     assert(notJson.status === 415, `non-JSON returned ${notJson.status}`);
 
+    // 운영형 서버(미리보기 꺼짐)에서는 미리보기 기록·음원 API가 열리지 않는다.
+    for (const path of ["/api/preview/course", "/api/preview/sessions/current", "/api/preview/teacher/learners"]) {
+      const closed = await fetch(`${origin}${path}`);
+      assert(closed.status === 404, `${path} answered ${closed.status} without the screen preview`);
+    }
+    const closedPost = await fetch(`${origin}/api/preview/sessions`, {
+      method: "POST",
+      headers: { origin, "content-type": "application/json" },
+      body: "{}",
+    });
+    assert(closedPost.status === 404, `preview session POST answered ${closedPost.status} without the screen preview`);
+
     for (const route of ["/teach", "/teach/detail"]) {
       await run(process.execPath, [fileURLToPath(import.meta.url)], {
         env: {
