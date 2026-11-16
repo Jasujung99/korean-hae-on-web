@@ -42,6 +42,7 @@
 - `apps/learn`은 **자체 `package.json`과 `package-lock.json`**을 가진다. 루트 `package.json`에 `workspaces`를 추가하지 않는다.
 - 루트에 workspaces를 넣으면 루트 lockfile이 바뀌고, 운영 배포 workflow의 루트 `npm ci`가 학습 앱 의존성(astro 7.4·node 어댑터 등)까지 설치·호이스팅하게 된다. `@astrojs/node`는 `astro ^7.2.1`을 요구하지만 본사이트 lock은 7.0.8이라 버전 충돌·본사이트 동작 변경 위험이 있다.
 - 루트 `tsconfig.json`은 `src/**`만 포함하고, 루트 `astro check`는 같은 12개 파일만 검사한다(전·후 동일). 루트 `dist/`도 전·후 sha256이 같다.
+- 학습 앱은 루트 `node_modules` 없이 혼자 설치·빌드된다. Vite 8(rolldown)의 tsconfig 자동 탐색이 루트 `tsconfig.json`(`astro/tsconfigs/strict` 상속)에 닿으면 루트 의존성 없이는 빌드가 실패하므로, `astro.config.mjs`의 `vite.tsconfig`를 앱 `tsconfig.json`으로 고정했다. `npm run verify:clean`이 HEAD를 임시 폴더에 풀어 이 조건을 다시 확인한다.
 - 디자인 시스템만 상대 경로(`../../src/design-system`)로 읽는다. 이를 위해 Vite `server.fs.allow`에 그 폴더만 추가했다. 학습 앱을 배포할 때는 저장소 전체(최소 `src/design-system/` 포함)를 빌드 컨텍스트로 쓴다.
 
 ## 검토한 대안
@@ -73,6 +74,7 @@ npm run check              # astro check (타입·.astro 검사)
 npm test                   # vitest 단위 시험 (키·DB·네트워크 불필요)
 npm run build              # astro check && astro build → dist/server/entry.mjs
 npm run test:smoke         # 빌드된 서버를 실제로 띄워 경로·헤더·Origin 검사 확인
+npm run verify:clean       # 루트 node_modules 없는 임시 복사본에서 ci·build·test·smoke
 npm start                  # 운영형 실행: HOST/PORT/LEARN_APP_ORIGIN 환경 변수 사용
 LEARN_PREVIEW=1 npm start  # 빌드 서버에서 검토용 미리보기 켜기 (운영에서는 쓰지 않음)
 ```

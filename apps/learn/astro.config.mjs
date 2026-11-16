@@ -17,6 +17,9 @@ export default defineConfig({
   server: { host: "0.0.0.0", port: 4400 },
   devToolbar: { enabled: false },
   vite: {
+    // 루트 tsconfig.json(astro/tsconfigs/strict 상속, 루트 node_modules 필요)을 자동 탐색하지 않고
+    // 이 앱의 tsconfig 하나로 고정한다. 루트 node_modules 없이도 빌드되게 하는 설정.
+    tsconfig: fileURLToPath(new URL("./tsconfig.json", import.meta.url)),
     server: {
       fs: { allow: [appRoot, designSystemDir] },
     },

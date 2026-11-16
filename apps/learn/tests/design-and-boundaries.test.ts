@@ -81,6 +81,12 @@ describe("경계", () => {
     }
   });
 
+  it("Vite 가 루트 tsconfig.json 을 자동 탐색하지 않도록 앱 tsconfig 로 고정한다", () => {
+    // 루트 tsconfig 는 astro/tsconfigs/strict 를 상속해 루트 node_modules 가 있어야만 풀린다.
+    const config = read(join(appRoot, "astro.config.mjs"));
+    expect(config).toMatch(/tsconfig:\s*fileURLToPath\(new URL\("\.\/tsconfig\.json", import\.meta\.url\)\)/);
+  });
+
   it("루트 package.json 은 학습 앱을 workspace·스크립트로 끌어들이지 않는다", () => {
     const pkg = JSON.parse(read(join(repoRoot, "package.json")));
     expect(pkg.workspaces).toBeUndefined();

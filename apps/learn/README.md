@@ -24,7 +24,10 @@ npm test             # 단위 시험
 npm run build        # dist/server/entry.mjs
 npm run test:smoke   # 빌드 서버를 띄워 경로·헤더·Origin 검사
 npm start            # HOST, PORT, LEARN_APP_ORIGIN 사용
+npm run verify:clean # HEAD 를 임시 폴더에 풀어 루트 node_modules 없이 ci·build·test·smoke (CI와 같은 조건)
 ```
+
+학습 앱은 루트 `npm ci` 없이 혼자 빌드돼야 한다. 루트 `tsconfig.json`은 `astro/tsconfigs/strict`를 상속해 루트 `node_modules`가 있어야만 풀리므로, `astro.config.mjs`에서 Vite의 `tsconfig`를 이 앱의 `tsconfig.json`으로 고정했다. 변경 후에는 `npm run verify:clean`으로 확인한다.
 
 화면 스크린샷과 320px 가로 넘침 검사(선택, Python playwright 필요):
 
