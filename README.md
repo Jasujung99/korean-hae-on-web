@@ -45,3 +45,7 @@ npm run dev
 ## 옛 사이트
 
 옛 디자인 시스템은 [old-design-system/](old-design-system/)에, 오픈 예정 화면으로 바꾸기 전의 사이트 파일(페이지, 컴포넌트, 스타일, 이미지, 설정, 빌드 검사, 문서)은 [old-site/](old-site/)에 그대로 남겨 두었습니다. 둘 다 빌드에는 들어가지 않습니다.
+
+## 성인 소리 학습 앱 개발
+
+개인 초대·기기 이어하기·듣기 퀴즈·교사 관찰의 개발 지시서와 검토용 PC·모바일 시안은 [docs/adult-phoneme-app/README.md](docs/adult-phoneme-app/README.md)에 있습니다. 개발 1~6단계의 범위와 완료 조건, 콘텐츠 승인·TTS·공동 Supabase 계약을 함께 제공합니다. 이 문서 묶음은 현재 본사이트 배포에 포함되지 않습니다.
