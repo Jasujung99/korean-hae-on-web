@@ -220,6 +220,39 @@ describe("preview API", () => {
     expect((await app.request("/api/preview/teacher/learners/someone-else")).status).toBe(404);
   });
 
+  it("keeps the stimulus text on the server unless browser speech is chosen", async () => {
+    const { app } = setup();
+    const fixed = await newSession(app);
+    expect(fixed.sound).toBe("file");
+    expect(fixed.items.every((item) => item.speechText === null)).toBe(true);
+
+    const ignored = (await (await post(app, "/api/preview/settings", { sound: "radio" })).json()) as { sound: string };
+    expect(ignored.sound).toBe("file");
+    const saved = await post(app, "/api/preview/settings", { style: "canvas", sound: "browser" });
+    expect(saved.status).toBe(200);
+    const current = (await (await app.request("/api/preview/sessions/current")).json()) as { session: SessionView };
+    expect(current.session.sound).toBe("browser");
+    for (const item of current.session.items) {
+      expect(item.speechText).toBe(practiceItem(item.itemId)?.stimulus);
+    }
+
+    await post(app, "/api/preview/reset", {});
+    const settings = (await (await app.request("/api/preview/settings")).json()) as { style: string; sound: string };
+    expect(settings).toMatchObject({ style: "canvas", sound: "browser" });
+  });
+
+  it("lists the three sounds for each lead vowel for free listening", async () => {
+    const { app } = setup();
+    const listen = (await (await app.request("/api/preview/listen")).json()) as {
+      frames: Array<{ lead: string; sounds: Array<{ key: string; text: string; audioRef: string | null }> }>;
+    };
+    expect(listen.frames.map((frame) => frame.lead)).toEqual(["아", "이", "오"]);
+    for (const frame of listen.frames) {
+      expect(frame.sounds.map((sound) => sound.key)).toEqual(["ㅈ", "ㅊ", "ㅉ"]);
+      expect(frame.sounds.every((sound) => sound.text.startsWith(frame.lead))).toBe(true);
+    }
+  });
+
   it("serves only known audio refs", async () => {
     const { app } = setup();
     const session = await newSession(app);

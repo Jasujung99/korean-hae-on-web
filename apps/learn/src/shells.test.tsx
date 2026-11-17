@@ -31,6 +31,7 @@ const previewSession: SessionView = {
         { key: "ㅉ", text: "아짜" },
       ],
       audioRef: "ref-a",
+      speechText: null,
       positionLabel: "모음 사이",
       stage: "Stage 1",
       slotKind: "common",
@@ -40,6 +41,7 @@ const previewSession: SessionView = {
   skipped: [],
   finished: false,
   voice: "Iapetus",
+  sound: "file",
 };
 
 const previewWord: WordView = {

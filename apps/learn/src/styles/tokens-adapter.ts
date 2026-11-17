@@ -14,4 +14,5 @@ import "./shared.css";
 import "./practice.css";
 import "./teacher.css";
 import "./live.css";
+import "./canvas.css";
 import "./responsive.css";

@@ -9,6 +9,8 @@ import type {
   CourseView,
   LearnerDetail,
   LearnerSummary,
+  ListenView,
+  PreviewSettings,
   SessionView,
   VoicesView,
   WordView,
@@ -54,6 +56,9 @@ export const previewApi = {
   learners: () => getJson<{ learners: LearnerSummary[] }>("/api/preview/teacher/learners"),
   learner: (id: string) => getJson<{ detail: LearnerDetail }>(`/api/preview/teacher/learners/${encodeURIComponent(id)}`),
   reset: () => postJson<{ ok: boolean }>("/api/preview/reset", {}),
+  settings: () => getJson<PreviewSettings>("/api/preview/settings"),
+  saveSettings: (next: Partial<PreviewSettings>) => postJson<PreviewSettings>("/api/preview/settings", next),
+  listen: () => getJson<ListenView>("/api/preview/listen"),
 };
 
 export function audioUrl(ref: string): string {

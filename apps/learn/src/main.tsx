@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 import { LearnRoutes } from "./App";
+import { PreviewSettingsProvider } from "./preview/settings";
 import { useLearnRuntime } from "./runtime";
 import { Shell } from "./shell";
 import "./styles/tokens-adapter";
@@ -11,6 +12,7 @@ function LearnApp() {
 
   return (
     <BrowserRouter>
+      <PreviewSettingsProvider enabled={runtime.ready && runtime.screenPreview}>
       <Shell runtime={runtime}>
         {runtime.ready ? (
           <LearnRoutes preview={runtime.screenPreview} />
@@ -20,6 +22,7 @@ function LearnApp() {
           </section>
         )}
       </Shell>
+      </PreviewSettingsProvider>
     </BrowserRouter>
   );
 }

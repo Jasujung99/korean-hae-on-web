@@ -1,5 +1,10 @@
 import { Link, Navigate, Route, Routes } from "react-router";
 import { PracticeProvider } from "./preview/PracticeContext";
+import { usePreviewSettings } from "./preview/settings";
+import { CanvasFinish } from "./screens/canvas/CanvasFinish";
+import { CanvasHome } from "./screens/canvas/CanvasHome";
+import { CanvasListen } from "./screens/canvas/CanvasListen";
+import { CanvasQuiz } from "./screens/canvas/CanvasQuiz";
 import { EntryScreen } from "./screens/EntryScreen";
 import { JoinScreen } from "./screens/JoinScreen";
 import { CompareScreen } from "./screens/CompareScreen";
@@ -35,14 +40,18 @@ function MissingScreen() {
  * 미리보기가 꺼진 서버에서는 개발 1단계의 껍데기와 인증 전 안내만 보인다.
  */
 function PreviewRoutes() {
+  const { style, loaded } = usePreviewSettings();
+  const canvas = style === "canvas";
+  if (!loaded) return null;
   return (
     <PracticeProvider>
       <Routes>
-        <Route path="/" element={<Navigate to="/practice" replace />} />
+        <Route path="/" element={canvas ? <CanvasHome /> : <Navigate to="/practice" replace />} />
         <Route path="/join" element={<JoinScreen />} />
-        <Route path="/practice" element={<QuizLive />} />
+        <Route path="/practice" element={canvas ? <CanvasQuiz /> : <QuizLive />} />
+        <Route path="/listen" element={<CanvasListen />} />
         <Route path="/compare" element={<CompareLive />} />
-        <Route path="/finish" element={<FinishLive />} />
+        <Route path="/finish" element={canvas ? <CanvasFinish /> : <FinishLive />} />
         <Route path="/dictionary" element={<WordsLive />} />
         <Route path="/course" element={<CourseScreen />} />
         <Route path="/voices" element={<VoicesScreen />} />

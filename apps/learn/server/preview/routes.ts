@@ -29,6 +29,8 @@ import {
   type ItemView,
   type LearnerSummary,
   type SessionView,
+  type ListenView,
+  type PreviewSettings,
   type VoicesView,
   type WordView,
 } from "./contract.ts";
@@ -97,6 +99,10 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
   const plans = () => learnerEvents().filter((event) => event.type === "session_planned");
   const planFor = (sessionId: string) => plans().find((event) => event.sessionId === sessionId);
   const practiceVoice = () => audio.meta(PRACTICE_ITEMS[0]?.audioId ?? "")?.voice || VOICE_CANDIDATE;
+  const settings = (): PreviewSettings => ({
+    style: store.getSetting("style") === "canvas" ? "canvas" : "proto",
+    sound: store.getSetting("sound") === "browser" ? "browser" : "file",
+  });
 
   const serverEvent = (
     type: string,
@@ -162,6 +168,7 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
           itemId,
           choices: item.choices,
           audioRef: audio.refFor(item.audioId),
+          speechText: settings().sound === "browser" ? item.stimulus : null,
           positionLabel: item.positionLabel,
           stage: item.stage,
           slotKind: kinds[index] ?? "common",
@@ -178,6 +185,7 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
       skipped,
       finished: ended || answers.length + skipped.length >= items.length,
       voice: practiceVoice(),
+      sound: settings().sound,
     };
   };
 
@@ -274,6 +282,8 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
         previousVowel: item.previousVowel,
         audioId: item.audioId,
         voice: audio.meta(item.audioId)?.voice ?? null,
+        audioSource: body.audioSource === "browser" ? "browser" : "file",
+        style: body.style === "canvas" ? "canvas" : "proto",
         policyVersion: plan.payload.policyVersion,
       },
       {
@@ -305,6 +315,14 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
         trialId: trial.trialId,
         itemId,
         refs: { a: audio.refFor(trial.audio.a), b: audio.refFor(trial.audio.b), x: audio.refFor(trial.audio.x) },
+        texts:
+          settings().sound === "browser"
+            ? {
+                a: abxSyllable(trial.lead, trial.a),
+                b: abxSyllable(trial.lead, trial.b),
+                x: abxSyllable(trial.lead, trial.x === "A" ? trial.a : trial.b),
+              }
+            : null,
       },
     });
   });
@@ -382,6 +400,31 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
     return c.json(store.append(accepted));
   });
 
+  app.get("/settings", (c) => c.json(settings()));
+
+  app.post("/settings", async (c) => {
+    const body = await readJson(c);
+    if (!body) return c.json({ error: "invalid_body" }, 400);
+    if (body.style === "proto" || body.style === "canvas") store.setSetting("style", body.style);
+    if (body.sound === "file" || body.sound === "browser") store.setSetting("sound", body.sound);
+    return c.json(settings());
+  });
+
+  // 소리 익히기: 점수를 매기지 않는 자유 비교 듣기. 글자와 소리를 함께 보여 준다.
+  app.get("/listen", (c) => {
+    const leads = [...new Set(PRACTICE_ITEMS.map((item) => item.stimulus.slice(0, 1)))];
+    const view: ListenView = {
+      frames: leads.map((lead) => ({
+        lead,
+        sounds: CONSONANTS.map((key) => {
+          const text = abxSyllable(lead, key);
+          return { key, text, audioRef: audio.refFor(choiceAudioId(text)) };
+        }),
+      })),
+    };
+    return c.json(view);
+  });
+
   app.get("/words", (c) => {
     const words: WordView[] = practiceWords().map((word) => ({
       id: word.id,
@@ -441,7 +484,10 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
   });
 
   app.post("/reset", (c) => {
+    const keep = settings();
     store.clear();
+    store.setSetting("style", keep.style);
+    store.setSetting("sound", keep.sound);
     return c.json({ ok: true });
   });
 

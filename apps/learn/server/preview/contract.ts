@@ -9,6 +9,8 @@ export type ItemView = {
   itemId: string;
   choices: ChoiceView[];
   audioRef: string | null;
+  /** 소리 방식이 '브라우저 음성'일 때만 준다. 브라우저가 읽을 글자라 정답이 화면 코드에 드러난다. */
+  speechText: string | null;
   positionLabel: string;
   stage: string;
   slotKind: string;
@@ -36,6 +38,7 @@ export type SessionView = {
   skipped: string[];
   finished: boolean;
   voice: string;
+  sound: SoundSource;
 };
 
 export type AnswerRequest = {
@@ -49,12 +52,16 @@ export type AnswerRequest = {
   msFromStimulusEnd: number | null;
   answeredDuringPlayback: boolean;
   audioState: "ok" | "error";
+  audioSource?: SoundSource;
+  style?: PreviewStyle;
 };
 
 export type AbxTrialView = {
   trialId: string;
   itemId: string;
   refs: { a: string | null; b: string | null; x: string | null };
+  /** 브라우저 음성일 때만 */
+  texts: { a: string; b: string; x: string } | null;
 };
 
 export type AbxAnswerRequest = {
@@ -188,4 +195,12 @@ export type LearnerDetail = {
   } | null;
   sessions: number;
   isExample: boolean;
+};
+
+export type PreviewStyle = "proto" | "canvas";
+export type SoundSource = "file" | "browser";
+export type PreviewSettings = { style: PreviewStyle; sound: SoundSource };
+
+export type ListenView = {
+  frames: Array<{ lead: string; sounds: Array<{ key: string; text: string; audioRef: string | null }> }>;
 };

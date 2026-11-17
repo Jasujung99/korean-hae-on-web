@@ -1,10 +1,12 @@
 import type { ReactNode } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { BrandMark } from "./brand";
+import { usePreviewSettings } from "./preview/settings";
 import { originStatus, type LearnRuntime } from "./runtime";
 
 function PreviewSwitch({ teacherRoute }: { teacherRoute: boolean }) {
   const navigate = useNavigate();
+  const settings = usePreviewSettings();
 
   return (
     <div className="preview">
@@ -17,6 +19,22 @@ function PreviewSwitch({ teacherRoute }: { teacherRoute: boolean }) {
           교사 관찰
         </button>
       </div>
+      <div className="roles" role="group" aria-label="화면 스타일">
+        <button type="button" aria-pressed={settings.style === "proto"} onClick={() => settings.change({ style: "proto" })}>
+          시안 스타일
+        </button>
+        <button type="button" aria-pressed={settings.style === "canvas"} onClick={() => settings.change({ style: "canvas" })}>
+          캔버스 스타일
+        </button>
+      </div>
+      <div className="roles" role="group" aria-label="의사단어 소리 방식">
+        <button type="button" aria-pressed={settings.sound === "file"} onClick={() => settings.change({ sound: "file" })}>
+          고정 음원
+        </button>
+        <button type="button" aria-pressed={settings.sound === "browser"} onClick={() => settings.change({ sound: "browser" })}>
+          브라우저 음성
+        </button>
+      </div>
       <small>역할 전환은 교사 인증이 아닙니다.</small>
     </div>
   );
@@ -24,6 +42,23 @@ function PreviewSwitch({ teacherRoute }: { teacherRoute: boolean }) {
 
 function LearnerNav({ place, preview }: { place: "head" | "bottom"; preview: boolean }) {
   const location = useLocation();
+  const { style } = usePreviewSettings();
+  if (preview && style === "canvas") {
+    const tabs = [
+      { to: "/dictionary", label: "내 말" },
+      { to: "/listen", label: "다시" },
+      { to: "/course", label: "발견" },
+    ];
+    return (
+      <nav className={place === "bottom" ? "bottom-nav index-tabs" : "index-tabs"} aria-label={place === "head" ? "내 공책" : "내 공책 아래"}>
+        {tabs.map((tab) => (
+          <Link key={tab.to} to={tab.to} aria-current={location.pathname.startsWith(tab.to) ? "page" : undefined}>
+            {tab.label}
+          </Link>
+        ))}
+      </nav>
+    );
+  }
   const dictionary = location.pathname.startsWith("/dictionary");
   const course = location.pathname.startsWith("/course") || location.pathname.startsWith("/voices");
   const quiz =
@@ -50,6 +85,8 @@ export function Shell({ runtime, children }: { runtime: LearnRuntime; children: 
   const location = useLocation();
   const teacherRoute = location.pathname.startsWith("/teach");
   const teacherPreview = teacherRoute && runtime.screenPreview;
+  const { style } = usePreviewSettings();
+  const canvas = runtime.screenPreview && style === "canvas" && !teacherRoute;
   let avatar = "연결 전";
   if (teacherPreview) avatar = "관찰 미리보기";
   else if (runtime.screenPreview) avatar = "미리보기 학습자";
@@ -64,7 +101,7 @@ export function Shell({ runtime, children }: { runtime: LearnRuntime; children: 
         본문으로
       </a>
       {runtime.screenPreview ? <PreviewSwitch teacherRoute={teacherRoute} /> : null}
-      <div className={teacherPreview ? "window is-teacher" : "window"}>
+      <div className={teacherPreview ? "window is-teacher" : canvas ? "window style-canvas" : "window"}>
         <h1 className="visually-hidden">해온 소리 연습</h1>
         <header className="app-head">
           <div className="wordmark">
