@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router";
 import type { VoicesView } from "../../../server/preview/contract.ts";
 import { teacherApi } from "../../preview/api";
 import { usePractice } from "../../preview/PracticeContext";
 import { Pill, ScreenTitle } from "../../ui";
+import { AudioDashboard } from "./AudioDashboard";
 
 const LISTEN_FOR = [
   "아자·아차·아짜 세 소리의 길이와 높낮이가 비슷한가요? 다르면 소리 말고 길이로 답을 알 수 있어요.",
@@ -17,6 +19,8 @@ export function VoicesScreen() {
   const [failed, setFailed] = useState(false);
   const [saving, setSaving] = useState(false);
   const [showAll, setShowAll] = useState(false);
+  const [params, setParams] = useSearchParams();
+  const tab = params.get("view") === "audio" ? "audio" : "voices";
 
   useEffect(() => {
     teacherApi
@@ -39,9 +43,47 @@ export function VoicesScreen() {
   const readingCount = view?.voices.filter((voice) => voice.reading).length ?? 0;
   const shown = view ? view.voices.filter((voice) => showAll || voice.reading || view.chosen === voice.voice) : [];
 
+  const tabs = (
+    <div className="tc-toggle voices-tabs" role="group" aria-label="목소리 화면">
+      {(
+        [
+          ["voices", "목소리 고르기"],
+          ["audio", "만든 음원"],
+        ] as const
+      ).map(([value, label]) => (
+        <button
+          key={value}
+          type="button"
+          aria-pressed={tab === value}
+          onClick={() => setParams(value === "audio" ? { view: "audio" } : {}, { replace: true })}
+        >
+          <span>{label}</span>
+          {tab === value ? (
+            <svg className="tc-blade" viewBox="0 0 40 10" aria-hidden="true">
+              <path d="M0 10C12 3 28 0 40 0C30 6 14 11 0 10Z" />
+            </svg>
+          ) : (
+            <span className="tc-blade-gap" />
+          )}
+        </button>
+      ))}
+    </div>
+  );
+
+  if (tab === "audio") {
+    return (
+      <>
+        <ScreenTitle title="만든 음원" />
+        {tabs}
+        <AudioDashboard practiceVoiceKey={view?.practiceVoiceKey ?? null} />
+      </>
+    );
+  }
+
   return (
     <div className="tc-page">
       <ScreenTitle title="목소리 표본" />
+      {tabs}
       <section className="panel stack" aria-labelledby="voices-title">
         <div>
           <p className="eyebrow">대표 목소리 · 교사 화면</p>

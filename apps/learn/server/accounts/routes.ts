@@ -22,6 +22,7 @@ import type {
   VoicesView,
 } from "../preview/contract.ts";
 import { exampleDetail, EXAMPLE_LEARNER } from "../preview/example.ts";
+import { buildInventory } from "../preview/inventory.ts";
 import { detail, summarize } from "../preview/observe.ts";
 import { createAttemptLimiter, deviceTokenFor, makeHasher, randomToken, type TeacherAuth } from "./auth.ts";
 import { createEventCache } from "./events.ts";
@@ -413,6 +414,9 @@ export function createAccountRoutes(deps: AccountsDeps) {
   };
 
   teacher.get("/voices", async (c) => c.json(await voicesView()));
+
+  // 만든 음원 목록(목소리 화면의 대시보드). 생성은 부르지 않는다.
+  teacher.get("/audio-inventory", (c) => c.json(buildInventory(audio)));
 
   teacher.post("/voice-choice", async (c) => {
     const body = await readJson(c);

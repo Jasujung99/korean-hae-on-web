@@ -1,6 +1,7 @@
 // 학습 API 호출. 같은 origin의 /api/* 만 부른다. 키나 외부 주소를 쓰지 않는다.
 // 학습자·교사 구분은 서버가 HttpOnly 쿠키로 한다. 화면은 쿠키를 읽거나 저장하지 않는다.
 import type {
+  AudioInventoryView,
   AbxAnswerRequest,
   AbxAnswerResult,
   AbxTrialView,
@@ -112,6 +113,7 @@ export const teacherApi = {
     postJson<{ revoked: number }>(`/api/teacher/learners/${encodeURIComponent(id)}/devices/revoke`, {}),
   voices: () => getJson<VoicesView>("/api/teacher/voices"),
   chooseVoice: (voice: string) => postJson<VoicesView>("/api/teacher/voice-choice", { voice }),
+  audioInventory: () => getJson<AudioInventoryView>("/api/teacher/audio-inventory"),
 };
 
 export function audioUrl(ref: string): string {

@@ -199,6 +199,8 @@
 
 /* 표 */
 .tc-table-wrap {
+  position: relative;
+  max-width: 100%;
   overflow-x: auto;
 }
 
@@ -280,7 +282,8 @@
   gap: var(--space-1) var(--space-4);
 }
 
-.tc-page .tc-toggle button {
+.tc-page .tc-toggle button,
+.voices-tabs button {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -296,7 +299,8 @@
   cursor: pointer;
 }
 
-.tc-page .tc-toggle button[aria-pressed="true"] {
+.tc-page .tc-toggle button[aria-pressed="true"],
+.voices-tabs button[aria-pressed="true"] {
   color: var(--ink);
   font-weight: 400;
 }
@@ -638,5 +642,225 @@
   .tc-ul::after,
   .tc-people tbody tr {
     transition: none;
+  }
+}
+
+/* ---- 만든 음원 대시보드 ---- */
+.voices-tabs {
+  margin-bottom: var(--space-4);
+}
+
+.audio-dash code {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 12px;
+}
+
+.audio-dash .tc-head .tc-ul {
+  min-height: 32px;
+}
+
+.ad-matrix th.is-current,
+.ad-matrix td.is-current {
+  background: var(--wash-sage);
+}
+
+.ad-matrix tbody th small,
+.ad-matrix thead small {
+  color: var(--ink-muted);
+  font: var(--text-doc-label);
+}
+
+.tc-page .ad-cell {
+  display: grid;
+  gap: var(--space-1);
+  width: 100%;
+  min-width: 96px;
+  min-height: 44px;
+  padding: var(--space-1) 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  justify-content: stretch;
+  justify-items: stretch;
+  cursor: pointer;
+}
+
+.tc-page .ad-cell:hover .ad-count,
+.tc-page .ad-cell:focus-visible .ad-count {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ad-count {
+  font: 400 15px/20px var(--font-latin);
+}
+
+.ad-count.is-full {
+  color: var(--olive);
+  font-weight: 700;
+}
+
+.ad-count.is-empty {
+  color: var(--ink-muted);
+}
+
+.ad-bar,
+.ad-len-bar {
+  display: block;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--wash-lavender);
+  overflow: hidden;
+}
+
+.ad-bar i,
+.ad-len-bar i {
+  display: block;
+  height: 100%;
+  background: var(--olive);
+}
+
+.ad-len-list {
+  display: grid;
+  gap: var(--space-1);
+  min-width: 260px;
+}
+
+.ad-len {
+  display: grid;
+  grid-template-columns: 72px minmax(80px, 1fr) 64px;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.ad-len b {
+  font-weight: 500;
+}
+
+.ad-len em {
+  font: 400 14px/20px var(--font-latin);
+  font-style: normal;
+  text-align: right;
+}
+
+.ad-lengths tr.is-warn th,
+.ad-lengths tr.is-warn td {
+  background: var(--wash-lavender);
+}
+
+.ad-lengths tr.is-warn .ad-len-bar i {
+  background: var(--lavender-ink);
+}
+
+.ad-flag {
+  display: block;
+  color: var(--lavender-ink);
+  font: var(--text-doc-label);
+}
+
+.ad-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-3) var(--space-5);
+}
+
+.ad-filters label {
+  display: grid;
+  gap: var(--space-1);
+  color: var(--ink-muted);
+  font: var(--text-doc-label);
+}
+
+.ad-filters select,
+.ad-filters input {
+  min-height: 40px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 14px;
+}
+
+.ad-search input {
+  width: 180px;
+}
+
+.ad-list tbody th {
+  white-space: nowrap;
+}
+
+.ad-id {
+  display: block;
+  color: var(--ink-muted);
+  font: 400 11px/16px ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+
+.ad-list tr.is-missing th,
+.ad-list tr.is-missing td {
+  color: var(--ink-muted);
+}
+
+.ad-missing {
+  color: var(--lavender-ink);
+}
+
+.tc-page .ad-play {
+  min-height: 36px;
+  padding: 0 var(--space-4);
+  border: 1px solid var(--olive);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  color: var(--olive);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.tc-page .ad-play:disabled {
+  border-color: var(--line);
+  color: var(--ink-muted);
+  cursor: default;
+}
+
+.ad-commands {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ad-commands li {
+  display: grid;
+  grid-template-columns: minmax(0, 220px) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-3);
+  font: var(--text-doc-meta);
+}
+
+.ad-commands code {
+  overflow-x: auto;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--wash-sage);
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .ad-commands li {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .ad-commands li span {
+    grid-column: 1 / -1;
+  }
+
+  .ad-search input {
+    width: 100%;
   }
 }
