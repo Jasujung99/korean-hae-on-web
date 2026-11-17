@@ -125,7 +125,40 @@ function formatClock(ms: number): string {
   return `${p.month}/${p.day} ${p.hour}:${p.minute}`;
 }
 
-export function summarize(learner: Omit<LearnerSummary, "lastActive" | "days" | "note">, events: StoredEvent[]): LearnerSummary {
+type LearnerBase = Pick<LearnerSummary, "id" | "name" | "languages" | "kind">;
+type Cell = { from: string; to: string; count: number };
+
+function worstCell(matrix: Matrix): Cell | null {
+  const cells: Cell[] = [];
+  matrix.rows.forEach((row, presented) =>
+    row.forEach((count, chosen) => {
+      if (presented !== chosen && count > 0) {
+        cells.push({ from: CONSONANTS[presented] ?? "", to: CONSONANTS[chosen] ?? "", count });
+      }
+    }),
+  );
+  cells.sort((a, b) => b.count - a.count);
+  return cells[0] ?? null;
+}
+
+function koreanDate(key: string): string {
+  const [, month, day] = key.split("-");
+  return `${Number(month)}월 ${Number(day)}일`;
+}
+
+/** 오늘이 든 주의 일요일에서 끝나는, 월요일부터 시작하는 4주. */
+export function calendarKeys(now: number): Array<{ date: string; future: boolean }> {
+  const today = dateKey(now);
+  const base = Date.parse(`${today}T00:00:00Z`);
+  const weekday = (new Date(base).getUTCDay() + 6) % 7;
+  const monday = base - (weekday + 21) * 86_400_000;
+  return Array.from({ length: 28 }, (_, index) => {
+    const date = new Date(monday + index * 86_400_000).toISOString().slice(0, 10);
+    return { date, future: date > today };
+  });
+}
+
+export function summarize(learner: LearnerBase, events: StoredEvent[]): LearnerSummary {
   const sorted = sortEvents(events);
   const last = sorted.at(-1);
   const answers = firstAnswers(events);
@@ -134,24 +167,27 @@ export function summarize(learner: Omit<LearnerSummary, "lastActive" | "days" | 
   ).size;
   const matrix = emptyMatrix();
   for (const event of answers) addToMatrix(matrix, event);
+  const initial = emptyMatrix();
+  const medial = emptyMatrix();
+  for (const event of answers) {
+    if (String(event.payload.position) === "initial") addToMatrix(initial, event);
+    else addToMatrix(medial, event);
+  }
   let note = "아직 기록이 없어요";
   if (matrix.total > 0) {
-    let worst: { from: string; to: string; count: number } | null = null;
-    matrix.rows.forEach((row, presented) =>
-      row.forEach((count, chosen) => {
-        if (presented !== chosen && count > 0 && (!worst || count > worst.count)) {
-          worst = { from: CONSONANTS[presented] ?? "", to: CONSONANTS[chosen] ?? "", count };
-        }
-      }),
-    );
-    const pick = worst as { from: string; to: string; count: number } | null;
-    note = pick ? `${pick.from} → ${pick.to} 선택 ${pick.count}회` : `첫 응답 ${matrix.correct}/${matrix.total}`;
+    const pick = worstCell(matrix);
+    note = pick ? `${pick.from}을 ${pick.to}으로 ${pick.count}번 골랐어요` : "없음";
   }
+  const audioErrors = answers.filter((event) => event.payload.excludedReason === "audio_error").length;
   return {
     ...learner,
     lastActive: last ? last.clientTime : null,
     days,
     note,
+    activeMs: measure(events).activeMs,
+    medial: { correct: medial.correct, total: medial.total },
+    initial: { correct: initial.correct, total: initial.total },
+    audioErrors,
   };
 }
 
@@ -236,15 +272,16 @@ export function detail(learner: LearnerSummary, events: StoredEvent[]): LearnerD
         const before = span.visits[index];
         if (!before) return;
         const answeredBefore = sessionAnswers.filter((event) => at(event) <= before.end).length;
+        if (answeredBefore >= itemIds.length) return;
         interruptions.push(
-          `${formatClock(before.end)} ${answeredBefore}/${itemIds.length}에서 멈춤 → ${formatClock(visit.start)} 다음 문항부터 이어 함`,
+          `${formatClock(before.end)}에 듣고 고르기 ${answeredBefore}/${itemIds.length}에서 멈췄어요. ${formatClock(visit.start)}에 다음 문항부터 이어 했어요.`,
         );
       });
     }
     const ended = sessionEvents.some((event) => event.type === "session_end");
     const lastEvent = sessionEvents.at(-1);
     if (!ended && lastEvent && Date.now() - at(lastEvent) > VISIT_GAP_MS && sessionAnswers.length < itemIds.length) {
-      interruptions.push(`${formatClock(at(lastEvent))} ${sessionAnswers.length}/${itemIds.length}에서 멈춘 채로 남아 있어요`);
+      interruptions.push(`${formatClock(at(lastEvent))}에 듣고 고르기 ${sessionAnswers.length}/${itemIds.length}에서 멈춘 채로 남아 있어요.`);
     }
 
     recent = {
@@ -259,12 +296,104 @@ export function detail(learner: LearnerSummary, events: StoredEvent[]): LearnerD
     };
   }
 
+  const byDay = new Map<string, StoredEvent[]>();
+  for (const event of sorted) {
+    const key = dateKey(at(event));
+    byDay.set(key, [...(byDay.get(key) ?? []), event]);
+  }
+  const calendar = calendarKeys(Date.now()).map((day) => ({
+    ...day,
+    activeMs: byDay.has(day.date) ? measure(byDay.get(day.date) as StoredEvent[]).activeMs : 0,
+  }));
+
+  const trend = planned
+    .map((plan) => {
+      const tally = emptyMatrix();
+      for (const event of answers) if (event.sessionId === plan.sessionId) addToMatrix(tally, event);
+      return { label: formatClock(at(plan)), correct: tally.correct, total: tally.total };
+    })
+    .filter((row) => row.total > 0)
+    .slice(-6);
+
+  const byItem = new Map<string, { label: string; wrong: number; total: number; chosen: Map<string, number> }>();
+  for (const event of answers) {
+    if (!event.payload.countsAsScore) continue;
+    const id = String(event.payload.itemId);
+    const row = byItem.get(id) ?? {
+      label: `모음 사이 ${String(event.payload.target)} · ${String(event.payload.stimulusLabel ?? "")}`,
+      wrong: 0,
+      total: 0,
+      chosen: new Map<string, number>(),
+    };
+    row.total += 1;
+    if (event.payload.target !== event.payload.choice) {
+      row.wrong += 1;
+      const choice = String(event.payload.choice);
+      row.chosen.set(choice, (row.chosen.get(choice) ?? 0) + 1);
+    }
+    byItem.set(id, row);
+  }
+  const hardItems = [...byItem.values()]
+    .filter((row) => row.wrong > 0)
+    .sort((x, y) => y.wrong - x.wrong || y.wrong / y.total - x.wrong / x.total)
+    .slice(0, 4)
+    .map((row) => ({
+      label: row.label,
+      wrong: row.wrong,
+      total: row.total,
+      chosen: [...row.chosen.entries()].sort((x, y) => y[1] - x[1])[0]?.[0] ?? "",
+    }));
+
+  const stops: string[] = [];
+  for (const plan of planned) {
+    if (plan === lastPlan) continue;
+    const sessionEvents = sorted.filter((event) => event.sessionId === plan.sessionId);
+    const total = ((plan.payload.itemIds as string[] | undefined) ?? []).length;
+    const answered = answers.filter((event) => event.sessionId === plan.sessionId).length;
+    const ended = sessionEvents.some((event) => event.type === "session_end");
+    const lastEvent = sessionEvents.at(-1);
+    if (!ended && lastEvent && answered < total) {
+      const p = parts(at(lastEvent));
+      stops.push(`${p.month}월 ${p.day}일 ${p.hour}:${p.minute}에 듣고 고르기 ${answered}/${total}에서 멈추고 새로 시작했어요.`);
+    }
+  }
+  if (recent) stops.push(...recent.interruptions);
+  const lastActiveDay = calendar.filter((day) => day.activeMs > 0).at(-1);
+  const today = dateKey(Date.now());
+  if (lastActiveDay && lastActiveDay.date < today) {
+    const gap = Math.round((Date.parse(today) - Date.parse(lastActiveDay.date)) / 86_400_000);
+    if (gap >= 3) stops.push(`${koreanDate(lastActiveDay.date)} 뒤로 ${gap}일 동안 학습이 없어요.`);
+  }
+
+  const worst = worstCell(medial);
+  const insight =
+    medial.total === 0
+      ? "아직 듣고 고르기 기록이 없어요."
+      : worst
+        ? `모음 사이에서 ${worst.from}을 ${worst.to}으로 고른 일이 가장 잦았어요(${worst.count}번). 이 수만으로 까닭을 판단하지는 않아요.`
+        : "모음 사이 첫 응답에서 헷갈린 짝이 없었어요.";
+  const finished = planned.filter((plan) =>
+    sorted.some((event) => event.type === "session_end" && event.sessionId === plan.sessionId),
+  ).length;
+
   const first = sorted[0];
   const last = sorted.at(-1);
   return {
     learner,
+    insight,
+    calendar,
+    trend,
+    hardItems,
+    stops: stops.slice(-4),
     period: first && last ? `${shortDate(at(first))}–${shortDate(at(last))} · 미리보기 기록` : "기록 없음",
-    stats: { activeMs: overall.activeMs, days: learner.days, lastActive: learner.lastActive },
+    stats: {
+      activeMs: overall.activeMs,
+      openMs: overall.openMs,
+      days: learner.days,
+      lastActive: learner.lastActive,
+      started: planned.length,
+      finished,
+    },
     identify: { medial, initial, byVowel },
     abx: {
       trials: abxTrials,

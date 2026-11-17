@@ -93,6 +93,7 @@ export const CLIENT_EVENT_TYPES = [
   "session_end",
   "item_skipped",
   "word_viewed",
+  "dictionary_opened",
   "word_saved",
   "word_unsaved",
 ] as const;
@@ -183,7 +184,13 @@ export type LearnerSummary = {
   lastActive: string | null;
   days: number;
   note: string;
+  activeMs: number;
+  medial: Tally;
+  initial: Tally;
+  audioErrors: number;
 };
+
+export type Tally = { correct: number; total: number };
 
 export type Matrix = { consonants: string[]; rows: number[][]; correct: number; total: number; excluded: number };
 
@@ -199,7 +206,15 @@ export type DwellRow = {
 export type LearnerDetail = {
   learner: LearnerSummary;
   period: string;
-  stats: { activeMs: number; days: number; lastActive: string | null };
+  stats: { activeMs: number; openMs: number; days: number; lastActive: string | null; started: number; finished: number };
+  /** 살펴볼 점: 가장 잦은 혼동을 문장으로. 까닭은 판단하지 않는다. */
+  insight: string;
+  /** 월요일부터 시작하는 4주, 날마다의 활동 시간. */
+  calendar: Array<{ date: string; activeMs: number; future: boolean }>;
+  /** 회기별 첫 응답(모음 사이). 오래된 것부터. */
+  trend: Array<{ label: string; correct: number; total: number }>;
+  hardItems: Array<{ label: string; wrong: number; total: number; chosen: string }>;
+  stops: string[];
   identify: { medial: Matrix; initial: Matrix; byVowel: Record<string, Matrix> };
   abx: { trials: number; correct: number; pairs: Array<{ pair: string; trials: number; correct: number }> };
   replays: Array<{ consonant: string; average: number; max: number; items: number }>;

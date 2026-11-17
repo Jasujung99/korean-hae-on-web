@@ -15,4 +15,5 @@ import "./practice.css";
 import "./teacher.css";
 import "./live.css";
 import "./canvas.css";
+import "./observe.css";
 import "./responsive.css";

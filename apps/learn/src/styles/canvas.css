@@ -762,3 +762,192 @@ b.p3 {
     gap: var(--space-2);
   }
 }
+
+/* 사전 방식 A: 카드 안에서 펼치기 (두 스타일이 함께 쓴다) */
+.dict-inline {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.dict-inline .dict-inline-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--olive);
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.dict-inline-state {
+  color: var(--ink-muted);
+  font: var(--text-doc-label);
+}
+
+.dict-inline-panel {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-2) 0 var(--space-4);
+  animation: dict-open 320ms ease-out both;
+}
+
+.dict-inline-row {
+  display: grid;
+  gap: var(--space-2);
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--sage);
+}
+
+.dict-inline-row:nth-child(2) {
+  border-left-color: var(--lavender);
+}
+
+.dict-inline p {
+  margin: 0;
+}
+
+.dict-inline-source {
+  color: var(--ink);
+  font: var(--text-doc-heading);
+  font-size: 14px;
+}
+
+.dict-inline-source small {
+  margin-left: var(--space-2);
+  color: var(--ink-muted);
+  font: var(--text-doc-label);
+}
+
+.dict-inline-empty {
+  padding: var(--space-3);
+  border: 1px dashed var(--line-strong);
+  color: var(--ink-muted);
+  font: var(--text-doc-meta);
+}
+
+.dict-inline-langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.dict-inline .dict-inline-langs button {
+  min-height: 36px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: none;
+  color: var(--ink-muted);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.dict-inline .dict-inline-langs button[aria-pressed="true"] {
+  border-color: var(--lavender-ink);
+  background: var(--wash-lavender);
+  color: var(--lavender-ink);
+}
+
+.dict-inline-note {
+  color: var(--ink-muted);
+  font: var(--text-doc-label);
+}
+
+@keyframes dict-open {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 03 새 단어 */
+.c-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+}
+
+.c-page .c-words button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-height: 44px;
+  color: var(--ink-muted);
+  font-family: var(--font-serif);
+  font-size: 16px;
+}
+
+.c-page .c-words button[aria-pressed="true"] {
+  color: var(--olive);
+  font-weight: 700;
+}
+
+.c-card {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  background: var(--wash-sage);
+}
+
+.c-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.c-page .c-word {
+  color: var(--olive);
+  font: 700 44px/56px var(--font-serif);
+}
+
+.c-page .c-round.sm {
+  flex: none;
+  width: 64px;
+  height: 64px;
+  background: var(--paper);
+}
+
+.c-example {
+  display: grid;
+  gap: var(--space-2);
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--lavender);
+}
+
+.c-example .c-link {
+  justify-self: start;
+}
+
+.c-page .c-keep {
+  min-height: 48px;
+  border: 1px solid var(--olive);
+  color: var(--olive);
+  font-family: var(--font-serif);
+  font-size: 15px;
+}
+
+.c-page .c-keep[aria-pressed="true"] {
+  background: var(--wash-lavender);
+  border-color: var(--lavender-ink);
+  color: var(--lavender-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dict-inline-panel {
+    animation: none;
+  }
+}

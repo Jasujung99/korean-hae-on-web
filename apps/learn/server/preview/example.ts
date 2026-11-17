@@ -1,6 +1,7 @@
 // 교사 화면이 기록으로 채워졌을 때의 모습을 보이기 위한 예시 학습자.
 // 실제 기록이 아니며 화면에 '예시'로 표시한다. 수치는 인계 시안(prototypes)의 예시와 같다.
 import type { LearnerDetail, LearnerSummary, Matrix } from "./contract.ts";
+import { calendarKeys } from "./observe.ts";
 
 const CONSONANTS = ["ㅈ", "ㅊ", "ㅉ"];
 
@@ -17,8 +18,16 @@ export const EXAMPLE_LEARNER: LearnerSummary = {
   kind: "example",
   lastActive: null,
   days: 4,
-  note: "ㅉ → ㅈ 선택 4회 · 예시",
+  note: "ㅉ을 ㅈ으로 4번 골랐어요",
+  activeMs: 33 * 60_000,
+  medial: { correct: 40, total: 48 },
+  initial: { correct: 18, total: 24 },
+  audioErrors: 1,
 };
+
+// 시안의 4주 달력 예시(0 없음, 1 1~5분, 2 6~10분, 3 10분 넘음).
+const LEVELS = [0, 3, 2, 0, 2, 1, 0, 2, 0, 3, 2, 0, 0, 1, 2, 2, 0, 3, 2, 0, 0, 0, 0, 1, 0, 2, 2, 3];
+const LEVEL_MS = [0, 4 * 60_000, 8 * 60_000, 13 * 60_000];
 
 export function exampleDetail(): LearnerDetail {
   const medial = matrix([
@@ -29,7 +38,29 @@ export function exampleDetail(): LearnerDetail {
   return {
     learner: EXAMPLE_LEARNER,
     period: "11/9–11/15 · 예시 기록",
-    stats: { activeMs: 33 * 60_000, days: 4, lastActive: null },
+    stats: { activeMs: 33 * 60_000, openMs: 51 * 60_000, days: 4, lastActive: null, started: 5, finished: 4 },
+    insight:
+      "모음 사이에서는 ㅉ을 ㅈ으로, 첫머리에서는 ㅈ을 ㅊ으로 고른 일이 가장 잦았어요. 이 수만으로 까닭을 판단하지는 않아요.",
+    calendar: calendarKeys(Date.now()).map((day, index) => ({
+      ...day,
+      activeMs: day.future ? 0 : (LEVEL_MS[LEVELS[index] ?? 0] ?? 0),
+    })),
+    trend: [
+      { label: "첫째 주", correct: 20, total: 32 },
+      { label: "둘째 주", correct: 30, total: 40 },
+      { label: "셋째 주", correct: 34, total: 44 },
+      { label: "넷째 주", correct: 40, total: 48 },
+    ],
+    hardItems: [
+      { label: "첫머리 ㅈ · 자다", wrong: 3, total: 4, chosen: "ㅊ" },
+      { label: "모음 사이 ㅉ · 아짜", wrong: 3, total: 5, chosen: "ㅈ" },
+      { label: "첫머리 ㅈ · 지다", wrong: 2, total: 3, chosen: "ㅊ" },
+    ],
+    stops: [
+      "듣고 고르기 6/9에서 멈췄어요. 이튿날 아침에 다음 문항부터 이어 했어요.",
+      "연습을 열고 1분 만에 닫았어요.",
+      "나흘 동안 학습이 없었어요.",
+    ],
     identify: {
       medial,
       initial: matrix([
@@ -55,7 +86,7 @@ export function exampleDetail(): LearnerDetail {
       dwell: [
         { label: "7번 · 오짜", dwellMs: 48_000, replays: 3, waitMs: 8_000, hiddenMs: 0, outcome: "제시 ㅉ → 첫 선택 ㅈ" },
       ],
-      interruptions: ["11/14 21:14 6/9에서 멈춤 → 11/15 08:02 다음 문항부터 이어 함"],
+      interruptions: [],
     },
     sessions: 5,
     isExample: true,

@@ -15,7 +15,7 @@ export function usePreviewSettings(): SettingsValue {
 }
 
 export function PreviewSettingsProvider({ enabled, children }: { enabled: boolean; children: ReactNode }) {
-  const [settings, setSettings] = useState<PreviewSettings>({ style: "proto", sound: "file" });
+  const [settings, setSettings] = useState<PreviewSettings>({ style: "canvas", sound: "file" });
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {

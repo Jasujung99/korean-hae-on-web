@@ -68,7 +68,11 @@ const previewDetail: LearnerDetail = {
     kind: "preview",
     lastActive: "2026-11-17T01:00:00.000Z",
     days: 1,
-    note: "ㅊ → ㅉ 선택 2회",
+    note: "ㅊ을 ㅉ으로 2번 골랐어요",
+    activeMs: 120_000,
+    medial: { correct: 5, total: 9 },
+    initial: { correct: 0, total: 0 },
+    audioErrors: 0,
   },
   isExample: false,
 };
@@ -154,10 +158,12 @@ describe("stage 1 shells", () => {
     stubPreviewApi({ "GET /api/preview/words": { words: [previewWord] } });
     renderAt("/dictionary", true);
     expect(await screen.findByRole("heading", { level: 2, name: "모자" })).toBeInTheDocument();
-    for (const option of ["A", "C", "D"]) {
-      expect(screen.getByRole("region", { name: new RegExp(`사전 자리 ${option}\\.`) })).toBeInTheDocument();
-    }
-    expect(screen.getAllByText(/아직 연결하지 않음/).length).toBeGreaterThanOrEqual(4);
+    const toggle = screen.getByRole("button", { name: /사전 풀이/ });
+    expect(toggle).toHaveAttribute("aria-expanded", "false");
+    fireEvent.click(toggle);
+    expect(toggle).toHaveAttribute("aria-expanded", "true");
+    expect(screen.getByText(/한국어기초사전 뜻풀이가 들어올 자리/)).toBeInTheDocument();
+    expect(screen.getByText(/아직 사전을 연결하지 않았어요/)).toBeInTheDocument();
     expect(screen.queryByRole("link", { name: /krdict|stdict|naver/i })).not.toBeInTheDocument();
   });
 
@@ -194,10 +200,10 @@ describe("stage 1 shells", () => {
     renderAt("/teach/detail?learner=preview-learner", true);
     expect(await screen.findByRole("heading", { level: 2, name: "미리보기 학습자" })).toBeInTheDocument();
     expect(screen.getByRole("group", { name: "개발 미리보기 역할" })).toBeInTheDocument();
-    expect(screen.getByRole("combobox", { name: "모음 맥락" })).toBeInTheDocument();
+    expect(screen.getByRole("group", { name: "모음 맥락" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 3, name: "살펴볼 점" })).toBeInTheDocument();
     const table = screen.getByRole("table", { name: /듣고 세 소리 고르기 · 모음 사이/ });
     expect(table.querySelectorAll("td")).toHaveLength(9);
-    expect(screen.getByText("예시")).toBeInTheDocument();
     expect(screen.getByText(/총시간에서 두 번 빼지 않아요/)).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: "학습자" }));

@@ -16,9 +16,10 @@ import { CompareLive } from "./screens/live/CompareLive";
 import { CourseScreen } from "./screens/live/CourseScreen";
 import { FinishLive } from "./screens/live/FinishLive";
 import { QuizLive } from "./screens/live/QuizLive";
-import { TeacherLive } from "./screens/live/TeacherLive";
+import { TeacherLive } from "./screens/live/TeacherObserve";
 import { VoicesScreen } from "./screens/live/VoicesScreen";
 import { WordsLive } from "./screens/live/WordsLive";
+import { CanvasWords } from "./screens/canvas/CanvasWords";
 import { ScreenTitle } from "./ui";
 
 function MissingScreen() {
@@ -52,7 +53,7 @@ function PreviewRoutes() {
         <Route path="/listen" element={<CanvasListen />} />
         <Route path="/compare" element={<CompareLive />} />
         <Route path="/finish" element={canvas ? <CanvasFinish /> : <FinishLive />} />
-        <Route path="/dictionary" element={<WordsLive />} />
+        <Route path="/dictionary" element={canvas ? <CanvasWords /> : <WordsLive />} />
         <Route path="/course" element={<CourseScreen />} />
         <Route path="/voices" element={<VoicesScreen />} />
         <Route path="/teach" element={<TeacherLive mode="list" />} />

@@ -5,7 +5,7 @@ import { previewApi } from "../../preview/api";
 import { usePractice } from "../../preview/PracticeContext";
 import { track } from "../../preview/telemetry";
 import { LearnerFrame, Pill, ScreenTitle } from "../../ui";
-import { DictSlot } from "./DictSlot";
+import { DictInline } from "./DictInline";
 
 export function WordsLive() {
   const practice = usePractice();
@@ -27,7 +27,6 @@ export function WordsLive() {
     if (word) track("word_viewed", { wordId: word.id });
   }, [word]);
 
-  const railSlot = <DictSlot option="B" className="in-rail" />;
 
   if (failed || (words && words.length === 0)) {
     return (
@@ -56,7 +55,7 @@ export function WordsLive() {
   const busy = practice.playing !== null;
 
   return (
-    <LearnerFrame preview railExtra={railSlot}>
+    <LearnerFrame preview>
       <ScreenTitle title={`${word.word} · 사전·예문`} />
       <section className="panel stack" aria-labelledby="dictionary-title">
         <div className="row">
@@ -91,7 +90,7 @@ export function WordsLive() {
           <p className="small">뜻 · 학습용 초안, 검수 전</p>
           <p>{word.gloss || "아직 뜻 초안이 없어요."}</p>
         </div>
-        <DictSlot option="A" />
+        <DictInline word={word.word} wordId={word.id} pos={word.pos} />
         <button
           type="button"
           onClick={() => void practice.playRole(word.wordAudioRef, "word", word.word)}
@@ -105,13 +104,6 @@ export function WordsLive() {
               <span className="small">예문 · {word.scene}</span>
               <p>{word.example}</p>
             </div>
-            <DictSlot option="C">
-              <p className="dict-slot-demo" aria-hidden="true">
-                {word.example.split(" ").map((token, position) => (
-                  <span key={`${token}-${position}`}>{token}</span>
-                ))}
-              </p>
-            </DictSlot>
             <button
               type="button"
               onClick={() => void practice.playRole(word.exampleAudioRef, "example", word.example)}
@@ -132,17 +124,9 @@ export function WordsLive() {
         <button type="button" className={saved ? undefined : "primary"} onClick={() => practice.toggleWord(word.id)}>
           {saved ? "✓ 내 단어에 담았어요" : "내 단어에 담기"}
         </button>
-        <DictSlot option="B" className="in-flow" />
-        <DictSlot option="D">
-          <div className="dict-slot-links" aria-hidden="true">
-            <span>한국어기초사전</span>
-            <span>표준국어대사전</span>
-            <span>네이버 국어사전</span>
-          </div>
-        </DictSlot>
         <p className="small">
           뜻·예문은 PR #5 로드맵의 설계용 초안이며, 공개 전 검수가 필요해요. 단어 담기는 이 미리보기 안에서만 유지돼요.
-          사전 내용은 아직 넣지 않았고, 점선 상자는 넣을 수 있는 자리와 방식이에요.
+          사전은 '사전 풀이'를 펼치는 방식으로 자리만 잡았고, 내용은 아직 연결하지 않았어요.
         </p>
       </section>
     </LearnerFrame>

@@ -48,7 +48,7 @@ import type { PreviewStore, StoredEvent } from "./store.ts";
 
 export const PREVIEW_LEARNER_ID = "preview-learner";
 
-const PREVIEW_LEARNER: Omit<LearnerSummary, "lastActive" | "days" | "note"> = {
+const PREVIEW_LEARNER: Pick<LearnerSummary, "id" | "name" | "languages" | "kind"> = {
   id: PREVIEW_LEARNER_ID,
   name: "미리보기 학습자",
   languages: "언어 정보 없음",
@@ -133,7 +133,7 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
   };
   const practiceVoice = () => audio.meta(pick(PRACTICE_ITEMS[0]?.audioId ?? ""))?.voice || VOICE_CANDIDATE;
   const settings = (): PreviewSettings => ({
-    style: store.getSetting("style") === "canvas" ? "canvas" : "proto",
+    style: store.getSetting("style") === "proto" ? "proto" : "canvas",
     sound: store.getSetting("sound") === "browser" ? "browser" : "file",
   });
 
