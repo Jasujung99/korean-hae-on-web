@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { COURSE_ORDER, GROUP_LABELS } from "./course-order.ts";
+import { COURSE_ORDER, GROUP_CHOICES, GROUP_LABELS, MIX_GROUPS } from "./course-order.ts";
 import { courseGroups, roadmapPriority } from "./course.ts";
 import { PRACTICE_ITEMS, makeAbxTrial, planPracticeSession, practiceItem, practiceWords } from "./practice.ts";
 
@@ -64,3 +64,15 @@ describe("j-ch-jj preview practice", () => {
     for (const item of PRACTICE_ITEMS) expect(ids.has(item.audioId)).toBe(true);
   });
 });
+
+describe("groups are not mixed", () => {
+  it("keeps every practice choice and item inside one group", () => {
+    expect(MIX_GROUPS).toBe(false);
+    const allowed = GROUP_CHOICES.j_ch_jj;
+    for (const item of PRACTICE_ITEMS) {
+      for (const choice of item.choices) expect(allowed).toContain(choice.key);
+    }
+    expect(courseGroups().find((group) => group.id === "j_ch_jj")?.stages.find((row) => row.stage === "Stage 5")?.title).not.toMatch(/교차/);
+  });
+});
+

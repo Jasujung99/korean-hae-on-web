@@ -74,8 +74,13 @@ export type CourseGroup = {
   status: "practice" | "planned";
 };
 
+// 묶음끼리 섞지 않기로 해서(MIX_GROUPS = false) Stage 5 제목에서 치찰음 교차를 뺀다.
+const STAGE_TITLE_OVERRIDES: Record<string, string> = {
+  "Stage 5": "받침·음운 변동(경음화·격음화)과 새 목소리",
+};
+
 function stageTitle(stage: string): string {
-  return roadmap.stage_definitions.find((row) => row.stage === stage)?.title ?? stage;
+  return STAGE_TITLE_OVERRIDES[stage] ?? roadmap.stage_definitions.find((row) => row.stage === stage)?.title ?? stage;
 }
 
 export function courseGroups(): CourseGroup[] {
