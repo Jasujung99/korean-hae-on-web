@@ -66,6 +66,15 @@ export function buildGenerateContentBody(text: string, voice = VOICE_CANDIDATE):
  */
 export const FLAT_READING_STYLE = "neutral, monotone and flat, read aloud slowly and clearly";
 
+/**
+ * 음원 종류별 톤 지시(2026-11-17 사용자 결정).
+ * - 의사단어·단어: 평평한 낭독. 소리 차이 말고 억양이 단서가 되지 않게 한다.
+ * - 예문: 지시 없음. 문장 뜻에 어울리게 모델이 자연스럽게 읽는다.
+ */
+export function styleForKind(kind: string): string | null {
+  return kind === "pseudoword" || kind === "word" ? FLAT_READING_STYLE : null;
+}
+
 export function interactionsEndpoint(): string {
   return "https://generativelanguage.googleapis.com/v1beta/interactions";
 }

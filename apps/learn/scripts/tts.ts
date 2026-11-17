@@ -15,6 +15,7 @@ import {
   decodeBase64,
   interactionsEndpoint,
   parseInteractionAudio,
+  styleForKind,
   modelEndpoint,
   normalizeToWav,
   parseGenerateContentAudio,
@@ -173,6 +174,8 @@ async function main() {
   const apiKey = readApiKey(process.env);
   if (!apiKey) fail(NOT_CONFIGURED_MESSAGE, 2);
   const voice = argValue("--voice") ?? VOICE_CANDIDATE;
+  // 의사단어·단어는 평평한 낭독, 예문은 지시 없이 자연스럽게. --no-style이면 모두 지시 없이 만든다.
+  const unitStyle = (kind: string) => (process.argv.includes("--no-style") ? null : styleForKind(kind));
   const skipExisting = !process.argv.includes("--force");
 
   if (command === "audition") {
@@ -209,7 +212,7 @@ async function main() {
     if (!id || !plainId(id)) fail("generate requires a plain --id.");
     const unit = manifest.units.find((item) => item.id === id);
     if (!unit) fail("manifest id was not found.");
-    await runAll([{ id: unit.id, kind: unit.kind, text: unit.text, voice }], apiKey, skipExisting);
+    await runAll([{ id: unit.id, kind: unit.kind, text: unit.text, voice, style: unitStyle(unit.kind) }], apiKey, skipExisting);
     return;
   }
 
@@ -225,7 +228,7 @@ async function main() {
     return unit;
   });
   await runAll(
-    units.map((unit) => ({ id: unit.id, kind: unit.kind, text: unit.text, voice })),
+    units.map((unit) => ({ id: unit.id, kind: unit.kind, text: unit.text, voice, style: unitStyle(unit.kind) })),
     apiKey,
     skipExisting,
   );

@@ -14,6 +14,7 @@ import {
   buildInteractionBody,
   interactionsEndpoint,
   parseInteractionAudio,
+  styleForKind,
   classifyPlayback,
   decodeBase64,
   modelEndpoint,
@@ -188,6 +189,12 @@ describe("flat reading style", () => {
     expect(body.generation_config.speech_config).toEqual([{ voice: "Charon" }]);
     expect(JSON.stringify(body)).not.toMatch(/AIza|api[_-]?key/i);
     expect(buildInteractionBody("아자", "Kore", null).input[0]?.content[0]?.annotations).toBeUndefined();
+  });
+
+  it("reads words flat and leaves example sentences natural", () => {
+    expect(styleForKind("pseudoword")).toBe(FLAT_READING_STYLE);
+    expect(styleForKind("word")).toBe(FLAT_READING_STYLE);
+    expect(styleForKind("sentence")).toBeNull();
   });
 
   it("reads the last audio block from model output steps", () => {

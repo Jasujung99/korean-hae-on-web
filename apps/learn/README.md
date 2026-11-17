@@ -43,7 +43,7 @@ npm run dev
 
 ### 평평한 낭독 톤 지시
 
-짧은 의사단어를 글자만 보내면 모델이 감탄사처럼 억양을 붙이는 일이 있습니다. 그래서 표본에 톤 지시 `neutral, monotone and flat, read aloud slowly and clearly`를 붙여 비교합니다. 지시는 문서 권고대로 읽을 글자와 따로(`speech_metadata.style`) 보내야 소리로 읽히지 않으므로, 지시가 있는 요청만 Interactions 엔드포인트(`/v1beta/interactions`)를 씁니다. 지시가 없는 요청은 기존 `generateContent`를 그대로 씁니다. 메타 파일(`*.meta.json`)의 `settings.stylePrompt`에 어떤 지시로 만들었는지 남습니다.
+짧은 의사단어를 글자만 보내면 모델이 감탄사처럼 억양을 붙이는 일이 있습니다. 그래서 표본에 톤 지시 `neutral, monotone and flat, read aloud slowly and clearly`를 붙여 비교합니다. 지시는 문서 권고대로 읽을 글자와 따로(`speech_metadata.style`) 보내야 소리로 읽히지 않으므로, 지시가 있는 요청만 Interactions 엔드포인트(`/v1beta/interactions`)를 씁니다. 지시가 없는 요청은 기존 `generateContent`를 그대로 씁니다. 연습 음원(`tts:generate`, `tts:batch`)은 종류별로 나눕니다. 의사단어·단어는 평평한 낭독 지시를 붙이고, 예문은 지시 없이 문장에 어울리게 읽힙니다(`--no-style`이면 모두 지시 없이). 메타 파일(`*.meta.json`)의 `settings.stylePrompt`에 어떤 지시로 만들었는지 남습니다.
 
 ### 실제가 아닌 것
 
