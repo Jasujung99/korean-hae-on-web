@@ -18,6 +18,7 @@ import {
   practiceWords,
   type Consonant,
 } from "../../content/practice.ts";
+import { STEP_LABELS } from "../../content/contrast.ts";
 import { FLASH_TTS_MODEL, FLAT_READING_STYLE, VOICE_CANDIDATE } from "../../content/tts/pipeline.ts";
 import {
   DEFAULT_PRACTICE_VOICE,
@@ -313,6 +314,8 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
         excludedReason,
         position: item.position,
         previousVowel: item.previousVowel,
+        pairGroupId: item.pairGroupId,
+        contrastTier: item.contrastTier,
         audioId: pick(item.audioId),
         voice: audio.meta(pick(item.audioId))?.voice ?? null,
         audioSource: body.audioSource === "browser" ? "browser" : "file",
@@ -459,7 +462,8 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
   });
 
   app.get("/words", (c) => {
-    const words: WordView[] = practiceWords().map((word) => ({
+    const cards = practiceWords();
+    const words: WordView[] = cards.map((word) => ({
       id: word.id,
       word: word.word,
       pos: word.pos,
@@ -472,6 +476,14 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
       related: word.related,
       wordAudioRef: refOf(word.wordAudioId, word.legacyWordAudioId),
       exampleAudioRef: word.exampleAudioId ? refOf(word.exampleAudioId, word.legacyExampleAudioId) : null,
+      step: word.step,
+      stepLabel: STEP_LABELS[word.step],
+      pairGroupId: word.contrast?.pairGroupId ?? null,
+      contrastTier: word.contrast?.tier ?? null,
+      partners: (word.contrast?.partners ?? []).map((partner) => {
+        const card = cards.find((row) => row.word === partner.word && row.consonant === partner.consonant);
+        return { ...partner, audioRef: card ? refOf(card.wordAudioId, card.legacyWordAudioId) : null };
+      }),
     }));
     return c.json({ words });
   });

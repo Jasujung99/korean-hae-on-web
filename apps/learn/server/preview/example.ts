@@ -56,6 +56,11 @@ export function exampleDetail(): LearnerDetail {
       { label: "모음 사이 ㅉ · 아짜", wrong: 3, total: 5, chosen: "ㅈ" },
       { label: "첫머리 ㅈ · 지다", wrong: 2, total: 3, chosen: "ㅊ" },
     ],
+    tiers: [
+      { band: "tier12", correct: 30, total: 34 },
+      { band: "tier34", correct: 18, total: 28 },
+      { band: "unpaired", correct: 10, total: 10 },
+    ],
     stops: [
       "듣고 고르기 6/9에서 멈췄어요. 이튿날 아침에 다음 문항부터 이어 했어요.",
       "연습을 열고 1분 만에 닫았어요.",

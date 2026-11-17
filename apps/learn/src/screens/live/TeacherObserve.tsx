@@ -17,6 +17,11 @@ type VowelFilter = (typeof vowels)[number]["value"];
 const DEFAULT_LEARNER = "preview-learner";
 const FEW_ITEMS = 10;
 const WEEKDAYS = ["월", "화", "수", "목", "금", "토", "일"];
+const TIER_BANDS = {
+  tier12: { label: "Tier 1·2 완전·어미 최소대립", note: "주변 소리가 같을 때 소리 자체를 가려 듣는지" },
+  tier34: { label: "Tier 3·4 받침·한 자모 차이", note: "주변 음절이 달라져도 가려 듣는지" },
+  unpaired: { label: "짝 없음", note: "의사단어와 대립쌍 밖 낱말" },
+} as const;
 const LEVEL_NAMES = ["학습 없음", "1~5분", "6~10분", "10분 넘음"];
 
 function Blade() {
@@ -374,6 +379,29 @@ function DetailView({ detail, onReset, resetting }: { detail: LearnerDetail; onR
         {medial.excluded > 0 ? (
           <p className="tc-label">재생 오류·재생 중 응답 {medial.excluded}개는 정오답에서 뺐어요.</p>
         ) : null}
+        <table className="tc-table tc-tiers">
+          <caption className="visually-hidden">대립 정밀도별 첫 응답</caption>
+          <thead>
+            <tr>
+              <th scope="col">대립 정밀도</th>
+              <th scope="col">무엇을 보나</th>
+              <th scope="col" className="num">
+                맞힘/들려줌
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {detail.tiers.map((row) => (
+              <tr key={row.band}>
+                <th scope="row">{TIER_BANDS[row.band].label}</th>
+                <td>{TIER_BANDS[row.band].note}</td>
+                <td className="num">
+                  <Score tally={row} />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
         <p className="tc-label">
           두 소리 비교(ABX) {detail.abx.trials}번 가운데 {detail.abx.correct}번 같은 소리를 찾았어요
           {detail.abx.pairs.length > 0

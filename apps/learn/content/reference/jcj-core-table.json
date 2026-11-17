@@ -2,7 +2,7 @@
   "source": {
     "path": "docs/adult-phoneme-app/08-obstruent-curriculum-and-l1-tuning.md#3.1.2",
     "branch": "codex/obstruent-curriculum-and-l1-tuning",
-    "commit": "2ad6f3d46646655aa3a553b0bf3b58bb1829d6c9",
+    "commit": "d59e569",
     "status": "draft"
   },
   "note": "Core 60 기준 단계별 어휘 배치표(후보 95개). 뜻·예문은 같은 커밋의 consonant-groups-roadmap.json에 있는 것만 옮겼고, 없는 단어는 비워 둔다(새로 만들지 않음). 승인 목록이 아니다.",
@@ -216,6 +216,62 @@
       "scene": "길을 안내할 때",
       "example": "회의실 입구는 이쪽입니다.",
       "related": "이쪽으로 오세요"
+    },
+    {
+      "id": "jcj-23",
+      "word": "가지",
+      "entryId": 23,
+      "stage": "Stage 1",
+      "substage": "1-A",
+      "consonant": "ㅈ",
+      "note": "대립쌍 통합(d59e569)",
+      "pos": "명",
+      "gloss": "보라색 열매가 열리는 채소, 또는 나무의 원줄기에서 갈라져 나간 줄기.",
+      "scene": "장보기와 요리할 때",
+      "example": "시장에서 신선한 가지를 사 와서 나물로 무쳤어요.",
+      "related": "가지를 볶다"
+    },
+    {
+      "id": "jcj-804",
+      "word": "기자",
+      "entryId": 804,
+      "stage": "Stage 1",
+      "substage": "1-A",
+      "consonant": "ㅈ",
+      "note": "대립쌍 통합(d59e569)",
+      "pos": "명",
+      "gloss": "신문·방송·잡지 등에 실을 기사를 취재하여 쓰는 사람.",
+      "scene": "뉴스나 취재를 말할 때",
+      "example": "현장에 나온 기자가 사고 경위를 자세히 질문했어요.",
+      "related": "신문 기자"
+    },
+    {
+      "id": "jcj-62",
+      "word": "가장",
+      "entryId": 62,
+      "stage": "Stage 1",
+      "substage": "1-A",
+      "consonant": "ㅈ",
+      "note": "대립쌍 통합(d59e569)",
+      "pos": "부",
+      "gloss": "여럿 가운데서 다른 것보다 제일.",
+      "scene": "선호나 우선순위를 말할 때",
+      "example": "일주일 중 금요일 저녁이 가장 여유로워요.",
+      "related": "가장 좋아하다"
+    },
+    {
+      "id": "jcj-68",
+      "word": "가치",
+      "entryId": 68,
+      "stage": "Stage 1",
+      "substage": "1-A",
+      "consonant": "ㅊ",
+      "note": "대립쌍 통합(d59e569)",
+      "pos": "명",
+      "gloss": "사물이나 일이 지니고 있는 쓸모나 중요성.",
+      "scene": "일이나 선택의 의미를 말할 때",
+      "example": "이번 경험은 앞으로의 경력에 충분한 가치가 있어요.",
+      "related": "가치가 높다"
     },
     {
       "id": "jcj-3123",
@@ -960,6 +1016,34 @@
       "related": "쭉 가다"
     },
     {
+      "id": "jcj-4882",
+      "word": "지다",
+      "entryId": 4882,
+      "stage": "Stage 3",
+      "substage": null,
+      "consonant": "ㅈ",
+      "note": "대립쌍 통합(d59e569)",
+      "pos": "동",
+      "gloss": "해나 달이 서쪽 지평선 아래로 넘어가다, 또는 승부에서 패하다.",
+      "scene": "일몰이나 경기 결과를 말할 때",
+      "example": "해가 지기 전에 산책로를 한 바퀴 돌았어요.",
+      "related": "해가 지다"
+    },
+    {
+      "id": "jcj-5264",
+      "word": "치다",
+      "entryId": 5264,
+      "stage": "Stage 3",
+      "substage": null,
+      "consonant": "ㅊ",
+      "note": "대립쌍 통합(d59e569)",
+      "pos": "동",
+      "gloss": "손이나 도구로 두드리거나 피아노·테니스 같은 악기·운동을 하다.",
+      "scene": "운동이나 취미를 말할 때",
+      "example": "주말마다 동네 코트에서 배드민턴을 쳐요.",
+      "related": "박수를 치다"
+    },
+    {
       "id": "jcj-4319",
       "word": "자다",
       "entryId": 4319,
@@ -1392,6 +1476,34 @@
       "scene": "회식이나 저녁 모임에서",
       "example": "금요일 저녁에 동료들과 시원한 맥주 한 잔을 마셨어요.",
       "related": "맥주 한 잔"
+    },
+    {
+      "id": "jcj-2549",
+      "word": "빚",
+      "entryId": 2549,
+      "stage": "Stage 5",
+      "substage": null,
+      "consonant": "ㅈ",
+      "note": "대립쌍 통합(d59e569)",
+      "pos": "명",
+      "gloss": "남에게 빌려 써서 갚아야 할 돈. (단독 [빋̚] / 조사 결합 '빚이[비지]')",
+      "scene": "대출이나 상환을 말할 때",
+      "example": "이번 달에 남은 학자금 빚을 모두 갚았어요.",
+      "related": "빚을 갚다"
+    },
+    {
+      "id": "jcj-2550",
+      "word": "빛",
+      "entryId": 2550,
+      "stage": "Stage 5",
+      "substage": null,
+      "consonant": "ㅊ",
+      "note": "대립쌍 통합(d59e569)",
+      "pos": "명",
+      "gloss": "해나 전등 따위에서 나와 사물을 밝게 비추는 기운. (단독 [빋̚] / 연음 '빛이[비치]')",
+      "scene": "채광이나 조명을 말할 때",
+      "example": "창문으로 따뜻한 햇빛이 환하게 들어와요.",
+      "related": "빛이 밝다"
     }
   ]
 }

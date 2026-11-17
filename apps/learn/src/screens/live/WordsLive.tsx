@@ -90,6 +90,27 @@ export function WordsLive() {
           <p className="small">뜻 · 학습용 초안, 검수 전</p>
           <p>{word.gloss || "아직 뜻 초안이 없어요."}</p>
         </div>
+        {word.partners.length > 0 ? (
+          <div className="pair-row">
+            <p className="pair-label">
+              비교해 들을 말 · {word.stepLabel}
+              {word.pairGroupId ? ` · ${word.pairGroupId}` : ""}
+            </p>
+            <div className="pair-words" role="group" aria-label={`${word.word}와 비교해 들을 말`}>
+              {word.partners.map((partner) => (
+                <button
+                  key={`${partner.consonant}-${partner.word}`}
+                  type="button"
+                  disabled={busy || !partner.audioRef}
+                  onClick={() => void practice.playRole(partner.audioRef, "word", partner.word)}
+                >
+                  <b>{partner.consonant}</b> {partner.word}
+                  {partner.audioRef ? "" : " · 음원 준비 중"}
+                </button>
+              ))}
+            </div>
+          </div>
+        ) : null}
         <DictInline word={word.word} wordId={word.id} pos={word.pos} />
         <button
           type="button"

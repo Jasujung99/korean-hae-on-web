@@ -122,6 +122,13 @@ export type WordView = {
   related: string;
   wordAudioRef: string | null;
   exampleAudioRef: string | null;
+  /** Stage 안 출제 순서(1 기준점 잡기 · 2 음절 틀 넓히기 · 3 실전 어휘 일반화) */
+  step: 1 | 2 | 3;
+  stepLabel: string;
+  pairGroupId: string | null;
+  contrastTier: number | null;
+  /** 같은 대립쌍 묶음의 상대 낱말. 음원이 있으면 바로 비교해 들을 수 있다. */
+  partners: Array<{ consonant: string; word: string; audioRef: string | null }>;
 };
 
 export type CourseGroupView = {
@@ -214,6 +221,8 @@ export type LearnerDetail = {
   /** 회기별 첫 응답(모음 사이). 오래된 것부터. */
   trend: Array<{ label: string; correct: number; total: number }>;
   hardItems: Array<{ label: string; wrong: number; total: number; chosen: string }>;
+  /** 대립 정밀도별 첫 응답. tier12 순수 음향 변별 / tier34 어휘 맥락 전이 / unpaired 의사단어·짝 없는 낱말 */
+  tiers: Array<{ band: "tier12" | "tier34" | "unpaired"; correct: number; total: number }>;
   stops: string[];
   identify: { medial: Matrix; initial: Matrix; byVowel: Record<string, Matrix> };
   abx: { trials: number; correct: number; pairs: Array<{ pair: string; trials: number; correct: number }> };

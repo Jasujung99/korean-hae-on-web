@@ -57,6 +57,11 @@ const previewWord: WordView = {
   related: "모자를 쓰다",
   wordAudioRef: "ref-w",
   exampleAudioRef: "ref-s",
+  step: 3,
+  stepLabel: "실전 어휘 일반화",
+  pairGroupId: null,
+  contrastTier: null,
+  partners: [],
 };
 
 const previewDetail: LearnerDetail = {

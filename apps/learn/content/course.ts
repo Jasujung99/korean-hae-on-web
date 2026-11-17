@@ -5,13 +5,14 @@
 import { COURSE_ORDER, PRACTICE_READY_GROUPS, type GroupId } from "./course-order.ts";
 import roadmapJson from "./reference/consonant-groups-roadmap.json" with { type: "json" };
 import { stageZeroCells, wordsInStage, type CoreStageKey } from "./core-table.ts";
+import { contrastOf, orderInStage } from "./contrast.ts";
 
 export { COURSE_ORDER, COURSE_ORDER_NOTE, PRACTICE_READY_GROUPS, type GroupId } from "./course-order.ts";
 
 export const COURSE_SOURCE = {
   path: "docs/adult-phoneme-app/content/consonant-groups-roadmap.json",
   branch: "codex/obstruent-curriculum-and-l1-tuning",
-  commit: "2ad6f3d46646655aa3a553b0bf3b58bb1829d6c9",
+  commit: "d59e569",
   status: "draft",
 } as const;
 
@@ -84,7 +85,7 @@ const STAGE_TITLE_OVERRIDES: Record<string, string> = {
 
 const CORE_STAGE_KEYS: CoreStageKey[] = ["Stage 1-A", "Stage 1-B", "Stage 2", "Stage 3", "Stage 4", "Stage 5"];
 
-/** ㅈ·ㅊ·ㅉ는 Core 60 배치표(후보 95개)를 쓴다. */
+/** ㅈ·ㅊ·ㅉ는 Core 60 배치표(후보 103개)를 쓴다. */
 function coreStages(): CourseStage[] {
   const zero = stageZeroCells();
   return [
@@ -95,7 +96,7 @@ function coreStages(): CourseStage[] {
       samples: zero.slice(0, 4).map((cell) => (cell.word ? `${cell.stimulus}/${cell.word}` : cell.stimulus)),
     },
     ...CORE_STAGE_KEYS.map((key) => {
-      const words = wordsInStage(key);
+      const words = orderInStage(wordsInStage(key), (word) => contrastOf("j_ch_jj", word.word, word.consonant, word.stage)?.tier ?? null);
       return { stage: key, title: stageTitle(key), count: words.length, samples: words.slice(0, 4).map((word) => word.word) };
     }),
   ];

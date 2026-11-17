@@ -6,6 +6,7 @@
 // - 음원 재생: 실제로 재생된 길이의 합. 활동 시간과 겹칠 수 있어 더하지 않는다.
 import type { DwellRow, LearnerDetail, LearnerSummary, Matrix } from "./contract.ts";
 import type { StoredEvent } from "./store.ts";
+import { tierBand, type TierBand } from "../../content/contrast.ts";
 
 export const IDLE_MS = 30_000;
 export const VISIT_GAP_MS = 30 * 60_000;
@@ -365,6 +366,14 @@ export function detail(learner: LearnerSummary, events: StoredEvent[]): LearnerD
     if (gap >= 3) stops.push(`${koreanDate(lastActiveDay.date)} 뒤로 ${gap}일 동안 학습이 없어요.`);
   }
 
+  const bands: TierBand[] = ["tier12", "tier34", "unpaired"];
+  const tiers = bands.map((band) => {
+    const rows = answers.filter(
+      (event) => event.payload.countsAsScore && tierBand(event.payload.contrastTier as number | null | undefined) === band,
+    );
+    return { band, total: rows.length, correct: rows.filter((event) => event.payload.target === event.payload.choice).length };
+  });
+
   const worst = worstCell(medial);
   const insight =
     medial.total === 0
@@ -384,6 +393,7 @@ export function detail(learner: LearnerSummary, events: StoredEvent[]): LearnerD
     calendar,
     trend,
     hardItems,
+    tiers,
     stops: stops.slice(-4),
     period: first && last ? `${shortDate(at(first))}–${shortDate(at(last))} · 미리보기 기록` : "기록 없음",
     stats: {

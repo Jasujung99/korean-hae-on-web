@@ -1,4 +1,4 @@
-// ㅈ·ㅊ·ㅉ Core 60 기준 단계별 어휘 배치표(후보 95개, Stage 1은 1-A/1-B로 나뉨).
+// ㅈ·ㅊ·ㅉ Core 60 기준 단계별 어휘 배치표(후보 103개, Stage 1은 1-A/1-B로 나뉨).
 // 원천: PR #5 `08-obstruent-curriculum-and-l1-tuning.md` 3.1.2 표. 2026-11-17 사용자 결정으로 이 표를 기준으로 삼는다.
 // 뜻·예문은 같은 커밋의 로드맵 JSON에 있는 것만 옮겼다. 없으면 비워 두고 새로 만들지 않는다.
 import tableJson from "./reference/jcj-core-table.json" with { type: "json" };

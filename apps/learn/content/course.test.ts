@@ -63,16 +63,18 @@ describe("j-ch-jj preview practice", () => {
     ) as { units: Array<{ id: string }> };
     const ids = new Set(manifest.units.map((unit) => unit.id));
     const words = practiceWords();
-    expect(words).toHaveLength(22);
-    expect(words.filter((word) => word.substage === "1-A").map((word) => word.word)).toEqual([
-      "모자", "바지", "어제", "의자", "가족", "사장", "사진", "기차", "아침", "가짜", "이쪽",
-    ]);
+    expect(words).toHaveLength(26);
+    // 1-A는 대립쌍 통합으로 가지·기자·가장·가치가 더해졌고, Step 1 → 2 → 3 순으로 선다.
+    expect(words.filter((word) => word.substage === "1-A").map((word) => word.word).sort()).toEqual(
+      ["모자", "바지", "어제", "의자", "가족", "사장", "사진", "기차", "아침", "가짜", "이쪽", "가지", "기자", "가장", "가치"].sort(),
+    );
     expect(words.filter((word) => word.substage === "1-B")).toHaveLength(11);
     for (const word of words) {
       expect(word.wordAudioId).toBe(`word-${word.sourceEntryId}-${word.word}`);
       if (word.example) {
         expect(word.exampleAudioId).toBe(`sentence-${word.sourceEntryId}-${word.word}`);
-        expect(ids.has(word.legacyExampleAudioId)).toBe(true);
+        // 대립쌍 통합으로 더한 낱말은 예전(Iapetus) 초안 목록에 없다.
+        if (!["가지", "기자", "가장", "가치"].includes(word.word)) expect(ids.has(word.legacyExampleAudioId)).toBe(true);
       } else {
         expect(word.exampleAudioId).toBe("");
       }
@@ -97,15 +99,15 @@ describe("groups are not mixed", () => {
 
 
 describe("core 60 table", () => {
-  it("has 95 candidate words in seven stage blocks", async () => {
+  it("has 103 candidate words in seven stage blocks", async () => {
     const { coreWords, coreStageKey, stageZeroCells } = await import("./core-table.ts");
     const words = coreWords();
-    expect(words).toHaveLength(95);
+    expect(words).toHaveLength(103);
     const count = (key: string) => words.filter((word) => coreStageKey(word) === key).length;
     expect([count("Stage 1-A"), count("Stage 1-B"), count("Stage 2"), count("Stage 3"), count("Stage 4"), count("Stage 5")]).toEqual([
-      11, 11, 21, 21, 19, 12,
+      15, 11, 21, 23, 19, 14,
     ]);
     expect(stageZeroCells()).toHaveLength(9);
-    expect(new Set(words.map((word) => word.id)).size).toBe(95);
+    expect(new Set(words.map((word) => word.id)).size).toBe(103);
   });
 });

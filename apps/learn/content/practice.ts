@@ -2,7 +2,8 @@
 // Stage 1(모음 사이) 의사단어 9개로 '듣고 자음 고르기'를 만들고, 같은 음원으로 두 소리 비교(ABX)를 만든다.
 // 문항과 음원은 초안이며 Core 60 승인이나 청취 검수를 뜻하지 않는다.
 import { selectPracticeSet, SELECTION_POLICY_VERSION } from "./selection.ts";
-import { coreWords, sentenceAudioBase, wordAudioBase } from "./core-table.ts";
+import { coreWords, sentenceAudioBase, wordAudioBase, type CoreWord } from "./core-table.ts";
+import { contrastOf, fortisFirst, inStageStep, orderInStage, type Contrast, type InStageStep } from "./contrast.ts";
 
 export const PRACTICE_GROUP_ID = "j_ch_jj" as const;
 export const CONSONANTS = ["ㅈ", "ㅊ", "ㅉ"] as const;
@@ -23,6 +24,9 @@ export type PracticeItem = {
   positionLabel: string;
   previousVowel: string;
   followingVowel: string;
+  /** 의사단어는 대립쌍 카탈로그(P-xxx) 밖이다. 낱말 문항이 생기면 묶음 번호와 Tier를 채운다. */
+  pairGroupId: string | null;
+  contrastTier: 1 | 2 | 3 | 4 | null;
 };
 
 const FRAMES = [
@@ -49,6 +53,8 @@ export const PRACTICE_ITEMS: PracticeItem[] = FRAMES.flatMap((frame) =>
       positionLabel: "모음 사이",
       previousVowel: frame.vowel,
       followingVowel: "ㅏ",
+      pairGroupId: null,
+      contrastTier: null,
     };
   }),
 );
@@ -121,7 +127,9 @@ export type AbxDefinition = {
 /** 풀던 문항의 소리와, 고른 소리(틀렸다면) 또는 헷갈리기 쉬운 소리를 짝지어 A·B·X를 만든다. */
 export function makeAbxTrial(item: PracticeItem, partner: Consonant | null, seed: string): AbxDefinition {
   const other = partner && partner !== item.target ? partner : DEFAULT_PARTNER[item.target];
-  const [first, second] = seededShuffle([item.target, other], `${seed}:order`) as [Consonant, Consonant];
+  // 평음–경음(ㅈ–ㅉ)은 경음을 기준음 A로 먼저 들려준다. 그 밖의 짝은 순서를 섞는다.
+  const [first, second] = (fortisFirst(PRACTICE_GROUP_ID, item.target, other) ??
+    seededShuffle([item.target, other], `${seed}:order`)) as [Consonant, Consonant];
   const x: "A" | "B" = seededShuffle(["A", "B"] as const, `${seed}:x`)[0] ?? "A";
   const lead = item.stimulus.slice(0, 1);
   const audioOf = (key: Consonant) => `pw-${lead}${SECOND_SYLLABLE[key]}`;
@@ -157,6 +165,9 @@ export type WordCard = {
   legacyWordAudioId: string;
   legacyExampleAudioId: string;
   sourceEntryId: number;
+  /** Stage 안 출제 순서: 1 기준점 잡기, 2 음절 틀 넓히기, 3 실전 어휘 일반화 */
+  step: InStageStep;
+  contrast: Contrast | null;
 };
 
 /**
@@ -164,24 +175,43 @@ export type WordCard = {
  * 뜻·예문은 PR #5 초안이며 검수 전이다. 예문이 없는 단어는 비워 둔다.
  * 음원 id는 목소리 접미사가 없는 기본 id다. 서버가 고른 목소리 파일로 바꾼다.
  */
+function toCard(word: CoreWord): WordCard {
+  const contrast = contrastOf(PRACTICE_GROUP_ID, word.word, word.consonant, word.stage);
+  return {
+    id: `w-${word.entryId}`,
+    word: word.word,
+    pos: word.pos,
+    consonant: word.consonant,
+    substage: word.substage ?? "",
+    positionLabel: word.stage === "Stage 1" ? "모음 사이" : word.stage,
+    gloss: word.gloss,
+    scene: word.scene,
+    example: word.example,
+    related: word.related,
+    wordAudioId: wordAudioBase(word),
+    exampleAudioId: word.example ? sentenceAudioBase(word) : "",
+    legacyWordAudioId: `word-Stage1-${word.entryId}-${word.word}`,
+    legacyExampleAudioId: word.example ? `sentence-Stage1-${word.entryId}-${word.word}` : "",
+    sourceEntryId: word.entryId,
+    step: inStageStep(contrast?.tier ?? null),
+    contrast,
+  };
+}
+
+/** 한 Stage의 낱말을 Step 1 → 2 → 3 순으로 세운다(1-A, 1-B는 각각 따로). */
+export function stageWordPlan(stage: CoreWord["stage"]): WordCard[] {
+  const cards = coreWords()
+    .filter((word) => word.stage === stage)
+    .map(toCard);
+  const blocks = [...new Set(cards.map((card) => card.substage))];
+  return blocks.flatMap((block) =>
+    orderInStage(
+      cards.filter((card) => card.substage === block),
+      (card) => card.contrast?.tier ?? null,
+    ),
+  );
+}
+
 export function practiceWords(): WordCard[] {
-  return coreWords()
-    .filter((word) => word.stage === "Stage 1")
-    .map((word) => ({
-      id: `w-${word.entryId}`,
-      word: word.word,
-      pos: word.pos,
-      consonant: word.consonant,
-      substage: word.substage ?? "",
-      positionLabel: "모음 사이",
-      gloss: word.gloss,
-      scene: word.scene,
-      example: word.example,
-      related: word.related,
-      wordAudioId: wordAudioBase(word),
-      exampleAudioId: word.example ? sentenceAudioBase(word) : "",
-      legacyWordAudioId: `word-Stage1-${word.entryId}-${word.word}`,
-      legacyExampleAudioId: word.example ? `sentence-Stage1-${word.entryId}-${word.word}` : "",
-      sourceEntryId: word.entryId,
-    }));
+  return stageWordPlan("Stage 1");
 }

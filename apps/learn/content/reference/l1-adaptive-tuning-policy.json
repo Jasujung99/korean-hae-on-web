@@ -1,6 +1,6 @@
 {
-  "selection_policy_version": "v1.1-obstruent-14",
-  "updated_at": "2026-11-16",
+  "selection_policy_version": "v1.2-obstruent-14-pair-tiers",
+  "updated_at": "2026-11-17",
   "core_principles": {
     "single_unified_curriculum": true,
     "primary_personalization_driver": "observed_confusion_cell (target_phoneme -> chosen_phoneme x word_position x following_vowel x task)",
@@ -230,5 +230,59 @@
         "tuning_action": "Stage 1-A/1-B의 ABX 비교 도움(두 소리 짝지어 듣기)을 우선 추천하고, Stage 2(공장·공책·공짜)와 Stage 3(고모음 어두 완충 단계)를 충분히 거친 뒤 Stage 4로 진입."
       }
     ]
+  },
+  "contrast_tier_progression_and_abx_matching": {
+    "catalog_ref": "content/minimal-pair-groups.json",
+    "in_stage_micro_progression": [
+      {
+        "step": "Step 1",
+        "label": "기준점 잡기 (1_완전최소대립 및 2_준최소_어미(-다)차이)",
+        "tiers": [
+          1,
+          2
+        ],
+        "selection_rule": "각 Stage(1~5) 진입 첫 3~4문항 및 ABX 비교 도움·오답 직후 나란히 듣기에서 최우선 배정. 목표 자음 외 모든 음절 조건이 같아 기식·폐쇄 길이·시작 음높이(F0) 차이를 선명하게 각인함."
+      },
+      {
+        "step": "Step 2",
+        "label": "음절 틀 넓히기 (3_준최소_받침차이)",
+        "tiers": [
+          3
+        ],
+        "selection_rule": "Step 1 기준 문항 이후 주력 출제 구간. 초성과 중성(모음)이 같아 시작 음높이(F0)와 VOT 조건은 동일하게 유지하면서 받침이 다른 성인 생활 어휘(예: 가장/가짜, 공장/공짜, 지구/친구, 출발/출판)로 범위를 넓힘."
+      },
+      {
+        "step": "Step 3",
+        "label": "실전 어휘 일반화 (4_준최소_1자모차이 및 맥락 확장 어휘)",
+        "tiers": [
+          4
+        ],
+        "selection_rule": "Stage 후반 확인 문항 및 마무리 단어 연결에 배치. 비목표 음절의 자모가 1개 달라져도(예: 기차/가짜, 치과/찌개, 소파/오빠, 아프다/바쁘다, 낚시/날씨) 주변 소리에 흔들리지 않고 목표 자음을 가려내는지 점검."
+      }
+    ],
+    "abx_and_feedback_partner_resolution": {
+      "priority_order": [
+        "1순위: 동일 pair_group_id 내 1_완전최소대립 파트너 단어 (예: 자다 오답 ㅊ 선택 시 → 차다 재생)",
+        "2순위: 동일 pair_group_id 내 2_준최소_어미(-다)차이 파트너 단어 (예: 갈다/칼/깔다, 받다/밭)",
+        "3순위: 동일 pair_group_id 내 3_준최소_받침차이 파트너 단어 (예: 공장 오답 ㅉ 선택 시 → 공짜 재생)",
+        "4순위: 동일 pair_group_id 내 4_준최소_1자모차이 파트너 단어 (예: 기차 오답 ㅉ 선택 시 → 가짜 재생)",
+        "5순위(Fallback): 동일 Stage·모음 맥락의 대표 기준 대립쌍 또는 Stage 1 승인 의사단어(아자/아차/아짜 등)"
+      ],
+      "preserve_fortis_first_standard": true,
+      "tier2_ending_difference_guardrail": "2_준최소_어미(-다)차이 묶음(갈다/칼/깔다, 그/크다/끄다, 다/타다/따다, 뒤/튀다/뛰다, 벼/펴다/뼈, 작다/짝 등)은 단어 글자 보기가 아니라 자음 범주(ㄱ/ㅋ/ㄲ 등) 선택지로 출제하여 음절 수(-다 유무)로 정답을 추측하지 못하게 하고, 응답 직후 첫 음절 비교 듣기 및 ABX 기준음으로 활용한다."
+    },
+    "teacher_observation_tier_matrix": {
+      "description": "교사 관찰 상세 화면에서 동일 Stage 내 정오답을 대립 정밀도(Tier 1·2 vs Tier 3·4)로 교차 표시하여 병목 원인을 구분한다.",
+      "patterns": [
+        {
+          "observation": "Tier 1·2(완전·어미 최소대립)부터 오답 집중",
+          "interpretation_note": "주변 소리가 완전히 통제된 상태에서도 목표 자음의 음향 단서(기식·폐쇄 길이·시작 음높이) 자체를 아직 변별하지 못하는 상태 → ABX 비교 도움 및 Stage 1·3 기준 쌍 복습 권장"
+        },
+        {
+          "observation": "Tier 1·2는 정답이나 Tier 3·4(받침·1자모 차이)에서 오답 증가",
+          "interpretation_note": "단순 대립에서는 소리를 구별하나 주변 받침이나 비목표 음절이 달라질 때 주의가 분산되는 어휘 맥락 전이 병목 → Step 2·3 실생활 어휘 반복 노출 권장"
+        }
+      ]
+    }
   }
 }
