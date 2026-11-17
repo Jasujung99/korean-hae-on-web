@@ -13,6 +13,10 @@ README.md
 03-implementation-stages.md
 04-data-and-api-contracts.md
 05-acceptance-and-release.md
+08-obstruent-curriculum-and-l1-tuning.md
+content/consonant-groups-roadmap.json
+content/minimal-pair-groups.json
+content/l1-adaptive-tuning-policy.json
 prototypes/README.md와 PC/모바일 시안
 
 개발 1~6단계와 학습 Stage 0~5는 다른 개념이야.

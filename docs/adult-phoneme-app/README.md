@@ -16,7 +16,7 @@
 6. [다른 모델에 전달할 프롬프트](06-model-handoff-prompt.md): 작업 시작용 지시문과 완료 보고 형식.
 7. [최종 PC·모바일 시안](prototypes/README.md): 독립 실행 HTML과 편집용 원본.
 8. [인계 묶음 검증과 현재 상태](07-validation-and-status.md): 이번 문서·시안 검증과 실제 구현 전 상태.
-9. [전 장애음(14자음) 단계별 어휘 배치 로드맵과 언어권별 조율 명세](08-obstruent-curriculum-and-l1-tuning.md): `ㅈ·ㅊ·ㅉ`, `ㅂ·ㅍ·ㅃ`, `ㄱ·ㅋ·ㄲ`, `ㄷ·ㅌ·ㄸ`, `ㅅ·ㅆ` Stage 0~5 어휘 배치, 시드 오류 감사, 언어권·오류유형별 출제 조율 규칙 및 구조화 JSON([어휘 로드맵](content/consonant-groups-roadmap.json), [조율 정책](content/l1-adaptive-tuning-policy.json)).
+9. [전 장애음(14자음) 단계별 어휘 배치 로드맵과 언어권별 조율 명세](08-obstruent-curriculum-and-l1-tuning.md): `ㅈ·ㅊ·ㅉ`, `ㅂ·ㅍ·ㅃ`, `ㄱ·ㅋ·ㄲ`, `ㄷ·ㅌ·ㄸ`, `ㅅ·ㅆ` Stage 0~5 어휘 배치, 340개 최소·준최소대립쌍(`P-001`~`P-340`) 4단계 대립 정밀도(Step 1~3) 통합, 시드 오류 감사, 언어권·오류유형별 출제 조율 규칙 및 구조화 JSON([어휘 로드맵](content/consonant-groups-roadmap.json), [340 대립쌍 카탈로그](content/minimal-pair-groups.json), [조율 정책](content/l1-adaptive-tuning-policy.json)).
 
 ## 확정된 방향
 

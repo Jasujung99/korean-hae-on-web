@@ -137,7 +137,7 @@ Core 60은 공통 목표 집합이다. 표제어만 60개 나열하는 대신 **
 
 이후 감자·편지·산책·근처·진짜·공짜 등 Stage 2 후보를 검수해 초기 집합을 18개 안팎으로 넓히고, Stage 3~5 후보를 더해 Core 60을 완성한다. 적합한 ㅉ 어휘가 부족하면 승인된 의사단어로 소리 연습량을 확보한다. 의사단어를 사전 표제어로 등록하지 않는다.
 
-`ㅈ·ㅊ·ㅉ`를 포함한 전체 5개 장애음 묶음(`ㅈ·ㅊ·ㅉ`, `ㅂ·ㅍ·ㅃ`, `ㄱ·ㅋ·ㄲ`, `ㄷ·ㅌ·ㄸ`, `ㅅ·ㅆ`)의 Stage 0~5 어휘 배치 로드맵, 신규 시드 엑셀의 동음이의어 오연결(`가수`, `청소`, `시계`, `사진`, `감기`, `통장`, `부부`, `부산`, `분` 등) 검수 결과, 그리고 기존 UX 위에서 작동하는 언어권·오류유형별 출제 조율 명세는 [전 장애음(14자음) 단계별 어휘 배치 로드맵과 언어권별 조율 명세](08-obstruent-curriculum-and-l1-tuning.md) 및 구조화 데이터([content/consonant-groups-roadmap.json](content/consonant-groups-roadmap.json), [content/l1-adaptive-tuning-policy.json](content/l1-adaptive-tuning-policy.json))에 정리되어 있다.
+`ㅈ·ㅊ·ㅉ`를 포함한 전체 5개 장애음 묶음(`ㅈ·ㅊ·ㅉ`, `ㅂ·ㅍ·ㅃ`, `ㄱ·ㅋ·ㄲ`, `ㄷ·ㅌ·ㄸ`, `ㅅ·ㅆ`)의 Stage 0~5 어휘 배치 로드맵, 최소·준최소대립쌍 340묶음(`P-001`~`P-340`)의 차이 정도 4단계(`1_완전최소대립` · `2_준최소_어미(-다)차이` · `3_준최소_받침차이` · `4_준최소_1자모차이`) Stage 내부 3단 사다리(Step 1~3) 통합, 신규 시드 엑셀의 동음이의어 오연결(`가수`, `청소`, `시계`, `사진`, `감기`, `통장`, `부부`, `부산`, `분` 등) 검수 결과, 그리고 기존 UX 위에서 작동하는 언어권·오류유형별 출제 조율 명세는 [전 장애음(14자음) 단계별 어휘 배치 로드맵과 언어권별 조율 명세](08-obstruent-curriculum-and-l1-tuning.md) 및 구조화 데이터([content/consonant-groups-roadmap.json](content/consonant-groups-roadmap.json), [content/minimal-pair-groups.json](content/minimal-pair-groups.json), [content/l1-adaptive-tuning-policy.json](content/l1-adaptive-tuning-policy.json))에 정리되어 있다.
 
 PR의 예시 목록도 다음을 정리한 뒤 가져온다.
 
