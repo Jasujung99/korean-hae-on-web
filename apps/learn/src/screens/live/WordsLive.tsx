@@ -79,7 +79,9 @@ export function WordsLive() {
         </div>
         <div>
           <p className="small">
-            생활 어휘 · {word.positionLabel} {word.consonant} · {word.pos}
+            생활 어휘 · {word.positionLabel} {word.consonant}
+            {word.substage ? ` · ${word.substage}` : ""}
+            {word.pos ? ` · ${word.pos}` : ""}
           </p>
           <h2 id="dictionary-title" className="dict-word">
             {word.word}
@@ -87,7 +89,7 @@ export function WordsLive() {
         </div>
         <div className="definition">
           <p className="small">뜻 · 학습용 초안, 검수 전</p>
-          <p>{word.gloss}</p>
+          <p>{word.gloss || "아직 뜻 초안이 없어요."}</p>
         </div>
         <DictSlot option="A" />
         <button
@@ -97,28 +99,36 @@ export function WordsLive() {
         >
           {practice.playing === "word" ? "단어 듣는 중…" : word.wordAudioRef ? "단어 듣기" : "단어 듣기 · 음원 준비 중"}
         </button>
-        <div className="example">
-          <span className="small">예문 · {word.scene}</span>
-          <p>{word.example}</p>
-        </div>
-        <DictSlot option="C">
-          <p className="dict-slot-demo" aria-hidden="true">
-            {word.example.split(" ").map((token, position) => (
-              <span key={`${token}-${position}`}>{token}</span>
-            ))}
-          </p>
-        </DictSlot>
-        <button
-          type="button"
-          onClick={() => void practice.playRole(word.exampleAudioRef, "example", word.example)}
-          disabled={busy || !word.exampleAudioRef}
-        >
-          {practice.playing === "example" ? "예문 듣는 중…" : word.exampleAudioRef ? "예문 듣기" : "예문 듣기 · 음원 준비 중"}
-        </button>
-        <div>
-          <h3>함께 쓰는 표현</h3>
-          <p className="muted">{word.related}</p>
-        </div>
+        {word.example ? (
+          <>
+            <div className="example">
+              <span className="small">예문 · {word.scene}</span>
+              <p>{word.example}</p>
+            </div>
+            <DictSlot option="C">
+              <p className="dict-slot-demo" aria-hidden="true">
+                {word.example.split(" ").map((token, position) => (
+                  <span key={`${token}-${position}`}>{token}</span>
+                ))}
+              </p>
+            </DictSlot>
+            <button
+              type="button"
+              onClick={() => void practice.playRole(word.exampleAudioRef, "example", word.example)}
+              disabled={busy || !word.exampleAudioRef}
+            >
+              {practice.playing === "example" ? "예문 듣는 중…" : word.exampleAudioRef ? "예문 듣기" : "예문 듣기 · 음원 준비 중"}
+            </button>
+          </>
+        ) : (
+          <p className="notice">주어진 예문이 아직 없는 단어예요. 예문은 검수된 자료가 들어오면 붙여요.</p>
+        )}
+        {word.related ? (
+          <div>
+            <h3>함께 쓰는 표현</h3>
+            <p className="muted">{word.related}</p>
+          </div>
+        ) : null}
         <button type="button" className={saved ? undefined : "primary"} onClick={() => practice.toggleWord(word.id)}>
           {saved ? "✓ 내 단어에 담았어요" : "내 단어에 담기"}
         </button>

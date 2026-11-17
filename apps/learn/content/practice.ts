@@ -2,7 +2,7 @@
 // Stage 1(모음 사이) 의사단어 9개로 '듣고 자음 고르기'를 만들고, 같은 음원으로 두 소리 비교(ABX)를 만든다.
 // 문항과 음원은 초안이며 Core 60 승인이나 청취 검수를 뜻하지 않는다.
 import { selectPracticeSet, SELECTION_POLICY_VERSION } from "./selection.ts";
-import { stageWords } from "./course.ts";
+import { coreWords, sentenceAudioBase, wordAudioBase } from "./core-table.ts";
 
 export const PRACTICE_GROUP_ID = "j_ch_jj" as const;
 export const CONSONANTS = ["ㅈ", "ㅊ", "ㅉ"] as const;
@@ -153,33 +153,35 @@ export type WordCard = {
   related: string;
   wordAudioId: string;
   exampleAudioId: string;
+  /** 목소리별 음원이 없을 때 쓰는 예전(Iapetus) 파일 id */
+  legacyWordAudioId: string;
+  legacyExampleAudioId: string;
   sourceEntryId: number;
 };
 
-const WORD_PICKS = ["모자", "바지", "기차", "아침", "가짜", "이쪽"] as const;
-
-/** 마무리·사전·예문 화면의 Stage 1 생활 어휘 6개. 뜻·예문은 PR #5의 초안이며 검수 전이다. */
+/**
+ * 사전·예문 화면의 Stage 1 생활 어휘(Core 60 배치표의 1-A 11개 + 1-B 11개).
+ * 뜻·예문은 PR #5 초안이며 검수 전이다. 예문이 없는 단어는 비워 둔다.
+ * 음원 id는 목소리 접미사가 없는 기본 id다. 서버가 고른 목소리 파일로 바꾼다.
+ */
 export function practiceWords(): WordCard[] {
-  const rows = stageWords(PRACTICE_GROUP_ID, "Stage 1");
-  return WORD_PICKS.flatMap((word) => {
-    const row = rows.find((candidate) => candidate.word === word);
-    if (!row || row.source_entry_id === undefined || !isConsonant(row.surface_phoneme)) return [];
-    return [
-      {
-        id: `w-${row.source_entry_id}`,
-        word,
-        pos: row.pos ?? "",
-        consonant: row.surface_phoneme,
-        substage: row.substage ?? "",
-        positionLabel: "모음 사이",
-        gloss: row.gloss ?? "",
-        scene: row.scene ?? "",
-        example: row.example ?? "",
-        related: row.related ?? "",
-        wordAudioId: `word-Stage1-${row.source_entry_id}-${word}`,
-        exampleAudioId: `sentence-Stage1-${row.source_entry_id}-${word}`,
-        sourceEntryId: row.source_entry_id,
-      },
-    ];
-  });
+  return coreWords()
+    .filter((word) => word.stage === "Stage 1")
+    .map((word) => ({
+      id: `w-${word.entryId}`,
+      word: word.word,
+      pos: word.pos,
+      consonant: word.consonant,
+      substage: word.substage ?? "",
+      positionLabel: "모음 사이",
+      gloss: word.gloss,
+      scene: word.scene,
+      example: word.example,
+      related: word.related,
+      wordAudioId: wordAudioBase(word),
+      exampleAudioId: word.example ? sentenceAudioBase(word) : "",
+      legacyWordAudioId: `word-Stage1-${word.entryId}-${word.word}`,
+      legacyExampleAudioId: word.example ? `sentence-Stage1-${word.entryId}-${word.word}` : "",
+      sourceEntryId: word.entryId,
+    }));
 }

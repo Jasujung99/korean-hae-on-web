@@ -13,7 +13,15 @@ describe("course order", () => {
     expect(groups.map((group) => group.label)).toEqual(COURSE_ORDER.map((id) => GROUP_LABELS[id]));
     expect(groups.map((group) => group.status)).toEqual(["practice", "planned", "planned", "planned", "planned"]);
     expect(groups[1]?.choices).toEqual(["ㅅ", "ㅆ"]);
-    expect(groups[0]?.stages.map((stage) => stage.stage)).toContain("Stage 1");
+    expect(groups[0]?.stages.map((stage) => stage.stage)).toEqual([
+      "Stage 0",
+      "Stage 1-A",
+      "Stage 1-B",
+      "Stage 2",
+      "Stage 3",
+      "Stage 4",
+      "Stage 5",
+    ]);
   });
 });
 
@@ -49,20 +57,31 @@ describe("j-ch-jj preview practice", () => {
     expect(new Set([fallback.a, fallback.b])).toEqual(new Set(["ㅉ", "ㅈ"]));
   });
 
-  it("takes six Stage 1 words whose audio ids exist in the draft TTS manifest", () => {
+  it("uses the 22 Stage 1 words of the Core 60 table and keeps legacy audio ids", () => {
     const manifest = JSON.parse(
       readFileSync(fileURLToPath(new URL("./tts/j-ch-jj-draft-manifest.json", import.meta.url)), "utf8"),
     ) as { units: Array<{ id: string }> };
     const ids = new Set(manifest.units.map((unit) => unit.id));
     const words = practiceWords();
-    expect(words.map((word) => word.word)).toEqual(["모자", "바지", "기차", "아침", "가짜", "이쪽"]);
+    expect(words).toHaveLength(22);
+    expect(words.filter((word) => word.substage === "1-A").map((word) => word.word)).toEqual([
+      "모자", "바지", "어제", "의자", "가족", "사장", "사진", "기차", "아침", "가짜", "이쪽",
+    ]);
+    expect(words.filter((word) => word.substage === "1-B")).toHaveLength(11);
     for (const word of words) {
-      expect(ids.has(word.wordAudioId)).toBe(true);
-      expect(ids.has(word.exampleAudioId)).toBe(true);
-      expect(word.gloss).not.toBe("");
+      expect(word.wordAudioId).toBe(`word-${word.sourceEntryId}-${word.word}`);
+      if (word.example) {
+        expect(word.exampleAudioId).toBe(`sentence-${word.sourceEntryId}-${word.word}`);
+        expect(ids.has(word.legacyExampleAudioId)).toBe(true);
+      } else {
+        expect(word.exampleAudioId).toBe("");
+      }
     }
+    // 예문이 없는 단어는 새로 만들지 않고 비워 둔다.
+    expect(words.filter((word) => !word.example).map((word) => word.word).sort()).toEqual(["부치다", "시장", "어쩌다", "저쪽"].sort());
     for (const item of PRACTICE_ITEMS) expect(ids.has(item.audioId)).toBe(true);
   });
+
 });
 
 describe("groups are not mixed", () => {
@@ -76,3 +95,17 @@ describe("groups are not mixed", () => {
   });
 });
 
+
+describe("core 60 table", () => {
+  it("has 95 candidate words in seven stage blocks", async () => {
+    const { coreWords, coreStageKey, stageZeroCells } = await import("./core-table.ts");
+    const words = coreWords();
+    expect(words).toHaveLength(95);
+    const count = (key: string) => words.filter((word) => coreStageKey(word) === key).length;
+    expect([count("Stage 1-A"), count("Stage 1-B"), count("Stage 2"), count("Stage 3"), count("Stage 4"), count("Stage 5")]).toEqual([
+      11, 11, 21, 21, 19, 12,
+    ]);
+    expect(stageZeroCells()).toHaveLength(9);
+    expect(new Set(words.map((word) => word.id)).size).toBe(95);
+  });
+});

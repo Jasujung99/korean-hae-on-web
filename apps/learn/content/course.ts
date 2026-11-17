@@ -4,6 +4,7 @@
 // 2026-11-17 사용자 결정으로 아래 COURSE_ORDER를 따른다.
 import { COURSE_ORDER, PRACTICE_READY_GROUPS, type GroupId } from "./course-order.ts";
 import roadmapJson from "./reference/consonant-groups-roadmap.json" with { type: "json" };
+import { stageZeroCells, wordsInStage, type CoreStageKey } from "./core-table.ts";
 
 export { COURSE_ORDER, COURSE_ORDER_NOTE, PRACTICE_READY_GROUPS, type GroupId } from "./course-order.ts";
 
@@ -77,7 +78,28 @@ export type CourseGroup = {
 // 묶음끼리 섞지 않기로 해서(MIX_GROUPS = false) Stage 5 제목에서 치찰음 교차를 뺀다.
 const STAGE_TITLE_OVERRIDES: Record<string, string> = {
   "Stage 5": "받침·음운 변동(경음화·격음화)과 새 목소리",
+  "Stage 1-A": "모음 사이 — 울리는 ㅈ을 ㅊ·ㅉ와 떼어 듣기",
+  "Stage 1-B": "모음 사이 — ㅊ(긴 바람)과 ㅉ(긴 멈춤) 집중 비교",
 };
+
+const CORE_STAGE_KEYS: CoreStageKey[] = ["Stage 1-A", "Stage 1-B", "Stage 2", "Stage 3", "Stage 4", "Stage 5"];
+
+/** ㅈ·ㅊ·ㅉ는 Core 60 배치표(후보 95개)를 쓴다. */
+function coreStages(): CourseStage[] {
+  const zero = stageZeroCells();
+  return [
+    {
+      stage: "Stage 0",
+      title: stageTitle("Stage 0"),
+      count: zero.length,
+      samples: zero.slice(0, 4).map((cell) => (cell.word ? `${cell.stimulus}/${cell.word}` : cell.stimulus)),
+    },
+    ...CORE_STAGE_KEYS.map((key) => {
+      const words = wordsInStage(key);
+      return { stage: key, title: stageTitle(key), count: words.length, samples: words.slice(0, 4).map((word) => word.word) };
+    }),
+  ];
+}
 
 function stageTitle(stage: string): string {
   return STAGE_TITLE_OVERRIDES[stage] ?? roadmap.stage_definitions.find((row) => row.stage === stage)?.title ?? stage;
@@ -88,7 +110,7 @@ export function courseGroups(): CourseGroup[] {
     const macro = roadmap.macro_sequence.find((row) => row.group_id === id);
     const group = roadmap.consonant_groups[id];
     if (!macro || !group) throw new Error(`roadmap has no group ${id}`);
-    const stages = Object.entries(group.stages).map(([stage, rows]) => ({
+    const stages = id === "j_ch_jj" ? coreStages() : Object.entries(group.stages).map(([stage, rows]) => ({
       stage,
       title: stageTitle(stage),
       count: rows.length,

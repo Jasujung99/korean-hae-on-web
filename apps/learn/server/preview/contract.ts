@@ -152,12 +152,25 @@ export type VoiceView = {
   flatAudioRef: string | null;
 };
 
+export type PracticeVoiceView = {
+  key: string;
+  voice: string;
+  label: string;
+  note: string;
+  ready: number;
+  total: number;
+  sampleRef: string | null;
+};
+
 export type VoicesView = {
   sampleText: string;
   /** 표본에 붙인 톤 지시(영어 원문). 본문과 따로 보내 소리로 읽히지 않는다. */
   flatStyle: string;
   model: string;
   practiceVoice: string;
+  /** 학습자가 고른 연습 목소리(charon·erinome·sulafat) */
+  practiceVoiceKey: string;
+  practiceVoices: PracticeVoiceView[];
   chosen: string | null;
   voices: VoiceView[];
 };

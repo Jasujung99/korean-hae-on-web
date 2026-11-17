@@ -52,6 +52,7 @@ export const previewApi = {
     postJson<{ accepted: number; duplicates: number }>("/api/preview/events", { events }, keepalive),
   words: () => getJson<{ words: WordView[] }>("/api/preview/words"),
   voices: () => getJson<VoicesView>("/api/preview/voices"),
+  choosePracticeVoice: (key: string) => postJson<VoicesView>("/api/preview/practice-voice", { key }),
   chooseVoice: (voice: string) => postJson<VoicesView>("/api/preview/voice-choice", { voice }),
   learners: () => getJson<{ learners: LearnerSummary[] }>("/api/preview/teacher/learners"),
   learner: (id: string) => getJson<{ detail: LearnerDetail }>(`/api/preview/teacher/learners/${encodeURIComponent(id)}`),

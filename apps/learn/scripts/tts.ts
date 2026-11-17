@@ -25,6 +25,9 @@ import {
   type TtsUnit,
 } from "../content/tts/pipeline.ts";
 import { AUDITION_TEXT, AUDITION_VOICES, auditionAudioId, flatAuditionAudioId } from "../content/voices.ts";
+import { coreWords, sentenceAudioBase, stageZeroCells, syllableAudioBase, wordAudioBase } from "../content/core-table.ts";
+import { PRACTICE_ITEMS } from "../content/practice.ts";
+import { PRACTICE_VOICES, voicedAudioId } from "../content/practice-voices.ts";
 
 const appRoot = fileURLToPath(new URL("..", import.meta.url));
 const rawDir = join(appRoot, "audio", "raw");
@@ -168,8 +171,8 @@ async function runAll(
 
 async function main() {
   const command = process.argv[2];
-  if (!["audition", "auditions", "generate", "batch"].includes(command ?? "")) {
-    fail("Use audition, auditions, generate, or batch.");
+  if (!["audition", "auditions", "generate", "batch", "practice"].includes(command ?? "")) {
+    fail("Use audition, auditions, generate, batch, or practice.");
   }
   const apiKey = readApiKey(process.env);
   if (!apiKey) fail(NOT_CONFIGURED_MESSAGE, 2);
@@ -202,6 +205,61 @@ async function main() {
       apiKey,
       skipExisting,
     );
+    return;
+  }
+
+  if (command === "practice") {
+    // Core 60 배치표의 단계별 연습 음원을 목소리 3가지로 만든다. 예) --stages 0,1
+    const stages = (argValue("--stages") ?? "0,1").split(",").map((item) => item.trim());
+    const keys = (argValue("--voices") ?? PRACTICE_VOICES.map((row) => row.key).join(","))
+      .split(",")
+      .map((item) => item.trim().toLowerCase());
+    const voices = PRACTICE_VOICES.filter((row) => keys.includes(row.key));
+    if (voices.length === 0) fail("practice --voices accepts charon, erinome, sulafat.");
+    type Unit = { base: string; kind: "pseudoword" | "word" | "sentence"; text: string };
+    const syllables: Unit[] = [];
+    const words: Unit[] = [];
+    const sentences: Unit[] = [];
+    const seen = new Set<string>();
+    const add = (list: Unit[], unit: Unit) => {
+      if (seen.has(unit.base)) return;
+      seen.add(unit.base);
+      list.push(unit);
+    };
+    if (stages.includes("1")) {
+      for (const item of PRACTICE_ITEMS) add(syllables, { base: item.audioId, kind: "pseudoword", text: item.stimulus });
+    }
+    if (stages.includes("0")) {
+      for (const cell of stageZeroCells()) {
+        add(syllables, { base: syllableAudioBase(cell.stimulus), kind: "pseudoword", text: cell.stimulus });
+        if (cell.word) {
+          const entry = coreWords().find((word) => word.word === cell.word);
+          const base = entry ? wordAudioBase(entry) : `word-0-${cell.word}`;
+          add(words, { base, kind: "word", text: cell.word });
+        }
+      }
+    }
+    for (const word of coreWords()) {
+      if (!stages.includes(word.stage.replace("Stage ", ""))) continue;
+      add(words, { base: wordAudioBase(word), kind: "word", text: word.word });
+      // 예문은 주어진 것만 쓴다. 없으면 만들지 않는다.
+      if (word.example) add(sentences, { base: sentenceAudioBase(word), kind: "sentence", text: word.example });
+    }
+    // 할당량에 걸려도 쓸 수 있게: 의사단어 → 단어 → 예문 순서로, 각 묶음 안에서 목소리를 번갈아 만든다.
+    const jobs = [syllables, words, sentences].flatMap((list) =>
+      list.flatMap((unit) =>
+        voices.map((row) => ({
+          id: voicedAudioId(unit.base, row.key),
+          kind: unit.kind,
+          text: unit.text,
+          voice: row.voice,
+          style: unitStyle(unit.kind),
+        })),
+      ),
+    );
+    console.log(`practice audio: ${syllables.length} syllables, ${words.length} words, ${sentences.length} sentences × ${voices.length} voices = ${jobs.length}`);
+    if (process.argv.includes("--dry-run")) return;
+    await runAll(jobs, apiKey, skipExisting);
     return;
   }
 

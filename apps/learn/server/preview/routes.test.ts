@@ -253,6 +253,29 @@ describe("preview API", () => {
     }
   });
 
+  it("plays the chosen practice voice and falls back to the draft file when it is missing", async () => {
+    const store = createMemoryStore();
+    const files: Record<string, Uint8Array> = Object.fromEntries(PRACTICE_ITEMS.map((item) => [item.audioId, wav]));
+    files["pw-아자--erinome"] = wav;
+    const audio = createFixtureAudio(files);
+    const app = createLearnApp(config, {}, { store, audio });
+    const before = await newSession(app);
+    const legacyRef = before.items.find((item) => item.itemId === "jcj-s1-아자")?.audioRef;
+    expect(legacyRef).toBe(audio.refFor("pw-아자"));
+
+    expect((await post(app, "/api/preview/practice-voice", { key: "kore" })).status).toBe(400);
+    const chosen = (await (await post(app, "/api/preview/practice-voice", { key: "erinome" })).json()) as {
+      practiceVoiceKey: string;
+      practiceVoices: Array<{ key: string; ready: number; total: number }>;
+    };
+    expect(chosen.practiceVoiceKey).toBe("erinome");
+    expect(chosen.practiceVoices.find((row) => row.key === "erinome")).toMatchObject({ ready: 1, total: 9 });
+
+    const after = ((await (await app.request("/api/preview/sessions/current")).json()) as { session: SessionView }).session;
+    expect(after.items.find((item) => item.itemId === "jcj-s1-아자")?.audioRef).toBe(audio.refFor("pw-아자--erinome"));
+    expect(after.items.find((item) => item.itemId === "jcj-s1-아차")?.audioRef).toBe(audio.refFor("pw-아차"));
+  });
+
   it("serves only known audio refs", async () => {
     const { app } = setup();
     const session = await newSession(app);

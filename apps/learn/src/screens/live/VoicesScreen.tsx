@@ -25,6 +25,18 @@ export function VoicesScreen() {
       .catch(() => setFailed(true));
   }, []);
 
+  const choosePractice = async (key: string) => {
+    setSaving(true);
+    try {
+      setView(await previewApi.choosePracticeVoice(key));
+      await practice.refreshSession();
+    } catch {
+      setFailed(true);
+    } finally {
+      setSaving(false);
+    }
+  };
+
   const choose = async (voice: string) => {
     setSaving(true);
     try {
@@ -51,6 +63,42 @@ export function VoicesScreen() {
             표본과 지시 없는 표본을 나란히 들어 보세요.
           </p>
         </div>
+        {view ? (
+          <section className="practice-voices" aria-labelledby="practice-voice-title">
+            <h3 id="practice-voice-title">연습에서 들을 목소리</h3>
+            <p className="muted">듣고 고르기와 단어·예문을 이 목소리로 들려줘요. 언제든 바꿀 수 있어요.</p>
+            <div className="practice-voice-list" role="radiogroup" aria-label="연습 목소리">
+              {view.practiceVoices.map((row) => {
+                const on = view.practiceVoiceKey === row.key;
+                return (
+                  <div key={row.key} className={on ? "practice-voice is-on" : "practice-voice"}>
+                    <button type="button" role="radio" aria-checked={on} disabled={saving} onClick={() => void choosePractice(row.key)}>
+                      <span>{row.label}</span>
+                      <strong lang="en">{row.voice}</strong>
+                      <small>
+                        {row.note}
+                        {row.ready < row.total ? ` · 음원 ${row.ready}/${row.total} 준비` : ""}
+                      </small>
+                    </button>
+                    <button
+                      type="button"
+                      className="text-link"
+                      disabled={!row.sampleRef || practice.playing !== null}
+                      onClick={() => void practice.playRole(row.sampleRef, "voice", row.voice)}
+                    >
+                      {row.sampleRef ? "아자 들어 보기" : "음원 준비 중"}
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
+            <p className="small">
+              고른 목소리 음원이 아직 없는 소리는 예전 초안 음원(Iapetus)으로 들려줘요. 지금 연습에서 들리는 목소리: {view.practiceVoice}
+            </p>
+          </section>
+        ) : null}
+
+        <h3>다른 목소리 표본</h3>
         {view ? (
           <div className="definition">
             <p className="small">표본 문장</p>
@@ -132,7 +180,7 @@ export function VoicesScreen() {
           <p className="small">
             성격 표시는 Google 문서의 영어 한 단어를 옮긴 것이라 한국어로 들으면 다를 수 있어요. 고른 목소리는 미리보기 기록으로만
             남고 운영용으로 확정하지 않아요. 정하면 연습 음원을 그 목소리와 평평한 낭독 지시로 다시 만들어야 해요. 지금 연습 음원은{" "}
-            {view.practiceVoice}(지시 없음)이에요.
+            {view.practiceVoice}이에요.
           </p>
         ) : null}
         <Pill tone="future">검수 전 초안 음원</Pill>

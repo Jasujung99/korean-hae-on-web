@@ -19,6 +19,14 @@ import {
   type Consonant,
 } from "../../content/practice.ts";
 import { FLASH_TTS_MODEL, FLAT_READING_STYLE, VOICE_CANDIDATE } from "../../content/tts/pipeline.ts";
+import {
+  DEFAULT_PRACTICE_VOICE,
+  PRACTICE_VOICES,
+  isPracticeVoiceKey,
+  voicedAudioId,
+  type PracticeVoiceKey,
+} from "../../content/practice-voices.ts";
+import { stageZeroCells, syllableAudioBase } from "../../content/core-table.ts";
 import { AUDITION_TEXT, AUDITION_VOICES, auditionAudioId, flatAuditionAudioId } from "../../content/voices.ts";
 import type { PreviewAudio } from "./audio.ts";
 import {
@@ -50,10 +58,18 @@ const PREVIEW_LEARNER: Omit<LearnerSummary, "lastActive" | "days" | "note"> = {
 /** 미리보기에서 재생할 수 있는 모든 음원 id */
 export function previewAudioIds(): string[] {
   const ids = new Set<string>();
-  for (const item of PRACTICE_ITEMS) ids.add(item.audioId);
+  const bases = new Set<string>();
+  for (const item of PRACTICE_ITEMS) bases.add(item.audioId);
+  for (const cell of stageZeroCells()) bases.add(syllableAudioBase(cell.stimulus));
   for (const word of practiceWords()) {
-    ids.add(word.wordAudioId);
-    ids.add(word.exampleAudioId);
+    bases.add(word.wordAudioId);
+    if (word.exampleAudioId) bases.add(word.exampleAudioId);
+    ids.add(word.legacyWordAudioId);
+    if (word.legacyExampleAudioId) ids.add(word.legacyExampleAudioId);
+  }
+  for (const base of bases) {
+    ids.add(base);
+    for (const voice of PRACTICE_VOICES) ids.add(voicedAudioId(base, voice.key));
   }
   for (const voice of AUDITION_VOICES) {
     ids.add(auditionAudioId(voice.voice));
@@ -101,7 +117,21 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
   const learnerEvents = () => store.all().filter((event) => event.learnerId === PREVIEW_LEARNER_ID);
   const plans = () => learnerEvents().filter((event) => event.type === "session_planned");
   const planFor = (sessionId: string) => plans().find((event) => event.sessionId === sessionId);
-  const practiceVoice = () => audio.meta(PRACTICE_ITEMS[0]?.audioId ?? "")?.voice || VOICE_CANDIDATE;
+  // 학습자가 고른 연습 목소리. 그 목소리 파일이 아직 없으면 예전 파일(Iapetus 초안)로 돌아간다.
+  const practiceVoiceKey = (): PracticeVoiceKey => {
+    const saved = store.getSetting("practiceVoiceKey");
+    return isPracticeVoiceKey(saved) ? saved : DEFAULT_PRACTICE_VOICE;
+  };
+  const pick = (baseId: string, legacyId: string = baseId): string => {
+    if (!baseId) return legacyId;
+    const voiced = voicedAudioId(baseId, practiceVoiceKey());
+    return audio.refFor(voiced) ? voiced : legacyId;
+  };
+  const refOf = (baseId: string, legacyId?: string): string | null => {
+    const id = pick(baseId, legacyId);
+    return id ? audio.refFor(id) : null;
+  };
+  const practiceVoice = () => audio.meta(pick(PRACTICE_ITEMS[0]?.audioId ?? ""))?.voice || VOICE_CANDIDATE;
   const settings = (): PreviewSettings => ({
     style: store.getSetting("style") === "canvas" ? "canvas" : "proto",
     sound: store.getSetting("sound") === "browser" ? "browser" : "file",
@@ -136,8 +166,8 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
       answer,
       countsAsScore: Boolean(event.payload.countsAsScore),
       excludedReason: (event.payload.excludedReason as AnswerResult["excludedReason"]) ?? null,
-      answerRef: audio.refFor(choiceAudioId(answer.text)),
-      choiceRef: chosen ? audio.refFor(choiceAudioId(chosen.text)) : null,
+      answerRef: refOf(choiceAudioId(answer.text)),
+      choiceRef: chosen ? refOf(choiceAudioId(chosen.text)) : null,
     };
   };
 
@@ -170,7 +200,7 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
         {
           itemId,
           choices: item.choices,
-          audioRef: audio.refFor(item.audioId),
+          audioRef: refOf(item.audioId),
           speechText: settings().sound === "browser" ? item.stimulus : null,
           positionLabel: item.positionLabel,
           stage: item.stage,
@@ -283,8 +313,8 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
         excludedReason,
         position: item.position,
         previousVowel: item.previousVowel,
-        audioId: item.audioId,
-        voice: audio.meta(item.audioId)?.voice ?? null,
+        audioId: pick(item.audioId),
+        voice: audio.meta(pick(item.audioId))?.voice ?? null,
         audioSource: body.audioSource === "browser" ? "browser" : "file",
         style: body.style === "canvas" ? "canvas" : "proto",
         policyVersion: plan.payload.policyVersion,
@@ -317,7 +347,7 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
       trial: {
         trialId: trial.trialId,
         itemId,
-        refs: { a: audio.refFor(trial.audio.a), b: audio.refFor(trial.audio.b), x: audio.refFor(trial.audio.x) },
+        refs: { a: refOf(trial.audio.a), b: refOf(trial.audio.b), x: refOf(trial.audio.x) },
         texts:
           settings().sound === "browser"
             ? {
@@ -421,7 +451,7 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
         lead,
         sounds: CONSONANTS.map((key) => {
           const text = abxSyllable(lead, key);
-          return { key, text, audioRef: audio.refFor(choiceAudioId(text)) };
+          return { key, text, audioRef: refOf(choiceAudioId(text)) };
         }),
       })),
     };
@@ -440,8 +470,8 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
       scene: word.scene,
       example: word.example,
       related: word.related,
-      wordAudioRef: audio.refFor(word.wordAudioId),
-      exampleAudioRef: audio.refFor(word.exampleAudioId),
+      wordAudioRef: refOf(word.wordAudioId, word.legacyWordAudioId),
+      exampleAudioRef: word.exampleAudioId ? refOf(word.exampleAudioId, word.legacyExampleAudioId) : null,
     }));
     return c.json({ words });
   });
@@ -451,6 +481,17 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
     flatStyle: FLAT_READING_STYLE,
     model: FLASH_TTS_MODEL,
     practiceVoice: practiceVoice(),
+    practiceVoiceKey: practiceVoiceKey(),
+    practiceVoices: PRACTICE_VOICES.map((row) => ({
+      key: row.key,
+      voice: row.voice,
+      label: row.label,
+      note: row.note,
+      // 이 목소리로 만든 연습 음원 수(의사단어 9개 기준)
+      ready: PRACTICE_ITEMS.filter((item) => audio.refFor(voicedAudioId(item.audioId, row.key))).length,
+      total: PRACTICE_ITEMS.length,
+      sampleRef: audio.refFor(voicedAudioId(PRACTICE_ITEMS[0]?.audioId ?? "", row.key)),
+    })),
     chosen: typeof store.getSetting("voiceChoice") === "string" ? (store.getSetting("voiceChoice") as string) : null,
     voices: AUDITION_VOICES.map((voice) => ({
       ...voice,
@@ -460,6 +501,15 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
   });
 
   app.get("/voices", (c) => c.json(voicesView()));
+
+  app.post("/practice-voice", async (c) => {
+    const body = await readJson(c);
+    const key = body?.key;
+    if (!isPracticeVoiceKey(key)) return c.json({ error: "unknown_voice" }, 400);
+    store.setSetting("practiceVoiceKey", key);
+    store.append([serverEvent("practice_voice", null, { key })]);
+    return c.json(voicesView());
+  });
 
   app.post("/voice-choice", async (c) => {
     const body = await readJson(c);
@@ -494,9 +544,11 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
 
   app.post("/reset", (c) => {
     const keep = settings();
+    const keepVoice = practiceVoiceKey();
     store.clear();
     store.setSetting("style", keep.style);
     store.setSetting("sound", keep.sound);
+    store.setSetting("practiceVoiceKey", keepVoice);
     return c.json({ ok: true });
   });
 

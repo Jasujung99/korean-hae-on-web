@@ -48,6 +48,8 @@ export type PracticeValue = {
   saved: string[];
   ensureSession: () => void;
   startNew: () => Promise<void>;
+  /** 서버에서 지금 회기를 다시 받는다(연습 목소리를 바꾼 뒤 음원 ref를 새로 받기 위해). */
+  refreshSession: () => Promise<void>;
   playStimulus: () => Promise<void>;
   playRole: (ref: string | null, role: PlayRole, label?: string) => Promise<void>;
   /** 의사단어 한 개를 지금 소리 방식으로 들려준다(소리 익히기). */
@@ -163,6 +165,16 @@ export function PracticeProvider({ children }: { children: ReactNode }) {
       adopt((await previewApi.newSession()).session);
     } catch {
       setStatus("error");
+    }
+  }, [adopt]);
+
+  const refreshSession = useCallback(async () => {
+    stopAudio();
+    try {
+      const { session: current } = await previewApi.currentSession();
+      if (current) adopt(current);
+    } catch {
+      // 다음에 화면을 열 때 다시 받는다.
     }
   }, [adopt]);
 
@@ -370,6 +382,7 @@ export function PracticeProvider({ children }: { children: ReactNode }) {
       saved,
       ensureSession,
       startNew,
+      refreshSession,
       playStimulus,
       playRole,
       playSound,
@@ -413,7 +426,7 @@ export function PracticeProvider({ children }: { children: ReactNode }) {
       answerAbx,
       createTrial,
       toggleWord,
-    ],
+    , refreshSession],
   );
 
   return <PracticeContext.Provider value={value}>{children}</PracticeContext.Provider>;
