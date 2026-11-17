@@ -28,6 +28,8 @@ import { AUDITION_TEXT, AUDITION_VOICES, auditionAudioId, flatAuditionAudioId } 
 import { coreWords, sentenceAudioBase, stageZeroCells, syllableAudioBase, wordAudioBase } from "../content/core-table.ts";
 import { PRACTICE_ITEMS } from "../content/practice.ts";
 import { PRACTICE_VOICES, voicedAudioId } from "../content/practice-voices.ts";
+import { GROUP_MODES, groupFullId, groupPlans, splitAudioId, type GroupMode } from "../content/tts/groups.ts";
+import { splitWavBySilence } from "../content/tts/split.ts";
 
 const appRoot = fileURLToPath(new URL("..", import.meta.url));
 const rawDir = join(appRoot, "audio", "raw");
@@ -69,14 +71,20 @@ async function generateOne(input: {
   style?: string | null;
   apiKey: string;
   skipExisting: boolean;
+  /** 여러 소리를 한 번에 읽힌 파일이면 쉼 자리에서 잘라 parts로 따로 저장한다(통째 파일도 남김). */
+  split?: { mode: GroupMode; parts: Array<{ id: string; text: string }> };
 }): Promise<Outcome> {
   const { id, kind, text, voice, apiKey } = input;
   // 톤 지시가 있으면 Interactions 요청(지시를 본문과 따로 보냄), 없으면 기존 generateContent 요청.
   const style = input.style ?? null;
   const wavPath = join(rawDir, `${id}.wav`);
-  if (input.skipExisting && (await exists(wavPath))) {
-    console.log(`skip (already generated): ${id}`);
-    return "skipped";
+  if (input.skipExisting) {
+    const targets = input.split ? input.split.parts.map((part) => join(rawDir, `${part.id}.wav`)) : [wavPath];
+    const present = await Promise.all(targets.map((path) => exists(path)));
+    if (present.every(Boolean)) {
+      console.log(`skip (already generated): ${id}`);
+      return "skipped";
+    }
   }
 
   let response: Response | null = null;
@@ -154,11 +162,44 @@ async function generateOne(input: {
   };
   await writeFile(join(rawDir, `${id}.meta.json`), `${JSON.stringify(meta, null, 2)}\n`);
   console.log(`written: audio/raw/${id}.wav (${normalized.bytes.length} bytes, ${voice})`);
+
+  if (input.split) {
+    const result = splitWavBySilence(normalized.bytes, input.split.parts.length);
+    if (!result) {
+      console.error(`could not find ${input.split.parts.length - 1} pauses in ${id}. Kept the whole file only.`);
+      return "failed";
+    }
+    for (const [index, part] of input.split.parts.entries()) {
+      const bytes = result.parts[index];
+      const cut = result.cuts[index];
+      if (!bytes || !cut) continue;
+      await writeFile(join(rawDir, `${part.id}.wav`), bytes);
+      const partMeta = {
+        ...meta,
+        id: part.id,
+        kind: "pseudoword",
+        text: part.text,
+        sha256: await sha256Hex(bytes),
+        byteLength: bytes.length,
+        storedMime: "audio/wav",
+        split: { from: id, fromText: text, mode: input.split.mode, index, startMs: cut.startMs, endMs: cut.endMs },
+      };
+      await writeFile(join(rawDir, `${part.id}.meta.json`), `${JSON.stringify(partMeta, null, 2)}\n`);
+      console.log(`  split: audio/raw/${part.id}.wav (${cut.startMs}-${cut.endMs} ms)`);
+    }
+  }
   return "written";
 }
 
 async function runAll(
-  jobs: Array<{ id: string; kind: string; text: string; voice: string; style?: string | null }>,
+  jobs: Array<{
+    id: string;
+    kind: string;
+    text: string;
+    voice: string;
+    style?: string | null;
+    split?: { mode: GroupMode; parts: Array<{ id: string; text: string }> };
+  }>,
   apiKey: string,
   skipExisting: boolean,
 ) {
@@ -178,8 +219,13 @@ async function runAll(
 
 async function main() {
   const command = process.argv[2];
-  if (!["audition", "auditions", "generate", "batch", "practice"].includes(command ?? "")) {
-    fail("Use audition, auditions, generate, batch, or practice.");
+  if (!["audition", "auditions", "generate", "batch", "practice", "pseudo-groups"].includes(command ?? "")) {
+    fail("Use audition, auditions, generate, batch, practice, or pseudo-groups.");
+  }
+  if (command === "pseudo-groups" && process.argv.includes("--dry-run")) {
+    // 키 없이도 무엇을 만들지 보여 준다.
+    for (const { mode } of GROUP_MODES) for (const plan of groupPlans(mode)) console.log(`${mode}: ${plan.text} -> ${plan.parts.length} parts`);
+    return;
   }
   const apiKey = readApiKey(process.env);
   if (!apiKey) fail(NOT_CONFIGURED_MESSAGE, 2);
@@ -212,6 +258,34 @@ async function main() {
       apiKey,
       skipExisting,
     );
+    return;
+  }
+
+  if (command === "pseudo-groups") {
+    // 의사단어를 묶어서 읽힌 뒤 잘라 쓰는 비교용 음원. 예) --modes trio,all --voices erinome
+    const modes = (argValue("--modes") ?? "trio,all")
+      .split(",")
+      .map((item) => item.trim())
+      .filter((item): item is GroupMode => item === "trio" || item === "all");
+    const keys = (argValue("--voices") ?? PRACTICE_VOICES.map((row) => row.key).join(","))
+      .split(",")
+      .map((item) => item.trim().toLowerCase());
+    const voices = PRACTICE_VOICES.filter((row) => keys.includes(row.key));
+    if (modes.length === 0 || voices.length === 0) fail("pseudo-groups needs --modes trio,all and --voices charon,erinome,sulafat.");
+    const jobs = voices.flatMap((row) =>
+      modes.flatMap((mode) =>
+        groupPlans(mode).map((plan) => ({
+          id: groupFullId(plan.fullBase, row.key, mode),
+          kind: "pseudoword_group",
+          text: plan.text,
+          voice: row.voice,
+          style: unitStyle("pseudoword"),
+          split: { mode, parts: plan.parts.map((part) => ({ id: splitAudioId(part.base, row.key, mode), text: part.text })) },
+        })),
+      ),
+    );
+    console.log(`pseudo groups: ${jobs.length} requests (${modes.join(", ")} × ${voices.map((row) => row.voice).join(", ")})`);
+    await runAll(jobs, apiKey, skipExisting);
     return;
   }
 

@@ -120,6 +120,9 @@ export function CanvasWords() {
         <div className="c-example">
           <p className="c-label">예문 · {word.scene}</p>
           <p className="c-key">{word.example}</p>
+          {word.exampleVoice && word.wordVoice && word.exampleVoice !== word.wordVoice ? (
+            <p className="c-label">예문 음원은 아직 {word.exampleVoice} 목소리(예전 초안)만 있어서 낱말과 목소리가 달라요.</p>
+          ) : null}
           <button
             type="button"
             className="c-link"

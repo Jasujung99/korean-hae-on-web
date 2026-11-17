@@ -6,8 +6,11 @@ import { coreWords, sentenceAudioBase, stageZeroCells, syllableAudioBase, wordAu
 import { PRACTICE_GROUP_ID, PRACTICE_ITEMS } from "../../content/practice.ts";
 import { PRACTICE_VOICES, voicedAudioId, type PracticeVoiceKey } from "../../content/practice-voices.ts";
 import { AUDITION_VOICES, auditionAudioId, flatAuditionAudioId } from "../../content/voices.ts";
+import { groupFullId, groupPlans, pseudoFrames, splitAudioId } from "../../content/tts/groups.ts";
 import type { PreviewAudio } from "./audio.ts";
 import type {
+  GenerationMethod,
+  MethodCompareView,
   AudioCellView,
   AudioColumnView,
   AudioGroupView,
@@ -18,6 +21,12 @@ import type {
 } from "./contract.ts";
 
 export const LEGACY_COLUMN = "legacy";
+
+const METHOD_LABEL: Record<GenerationMethod, string> = {
+  single: "하나씩",
+  trio: "세 소리 묶음",
+  all: "아홉 소리 한 번에",
+};
 
 const COLUMNS: AudioColumnView[] = [
   ...PRACTICE_VOICES.map((row) => ({ key: row.key, label: `${row.voice} · ${row.label}`, voice: row.voice })),
@@ -131,6 +140,39 @@ export function buildInventory(audio: PreviewAudio, rawDir = "apps/learn/audio/r
     return { voice: row.voice, plain, flat };
   }).filter((row) => row.plain || row.flat);
 
+  // 의사단어 생성 방식 비교(하나씩 / 세 소리 묶음 / 아홉 소리 한 번에)
+  const methods: MethodCompareView[] = PRACTICE_VOICES.map((row) => {
+    const take = (id: string) => {
+      const cell = cellOf(audio, id);
+      if (cell) used.add(cell.id);
+      return cell;
+    };
+    const allPlan = groupPlans("all")[0];
+    const allFull = allPlan ? take(groupFullId(allPlan.fullBase, row.key, "all")) : null;
+    const trioPlans = groupPlans("trio");
+    const frames = pseudoFrames().map((frame) => {
+      const trioPlan = trioPlans.find((plan) => plan.parts[0]?.base === frame.parts[0]?.base);
+      const build = (method: GenerationMethod) => {
+        const items = frame.parts.map((part) => ({
+          text: part.text,
+          cell:
+            method === "single"
+              ? cellOf(audio, voicedAudioId(part.base, row.key))
+              : take(splitAudioId(part.base, row.key, method)),
+        }));
+        return {
+          method,
+          label: METHOD_LABEL[method],
+          full: method === "trio" && trioPlan ? take(groupFullId(trioPlan.fullBase, row.key, "trio")) : null,
+          items,
+          spreadPct: spread(items.map((item) => item.cell?.durationMs ?? null)),
+        };
+      };
+      return { lead: frame.lead, methods: (["single", "trio", "all"] as const).map(build) };
+    });
+    return { voiceKey: row.key, voice: row.voice, allFull, frames };
+  }).filter((row) => row.allFull || row.frames.some((frame) => frame.methods.some((method) => method.items.some((item) => item.cell))));
+
   const others = audio
     .listIds()
     .filter((id) => !used.has(id))
@@ -213,7 +255,9 @@ export function buildInventory(audio: PreviewAudio, rawDir = "apps/learn/audio/r
     auditions,
     others,
     lengthChecks,
+    methods,
     commands: [
+      { label: "의사단어 묶어 읽고 자르기(비교용)", command: "npm run tts:pseudo-groups -- --modes trio,all --voices erinome,charon,sulafat" },
       { label: "의사단어·첫 듣기 음절과 Stage 1 낱말·예문", command: "npm run tts:practice -- --stages 0,1 --voices charon,erinome,sulafat" },
       { label: "Stage 2~5 낱말·예문", command: "npm run tts:practice -- --stages 2,3,4,5 --voices charon,erinome,sulafat" },
       { label: "목소리 표본(평평한 낭독)", command: "npm run tts:auditions -- --flat" },

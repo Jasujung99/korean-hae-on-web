@@ -91,6 +91,7 @@ export function AudioDashboard({ practiceVoiceKey }: { practiceVoiceKey: string 
   const [lengthColumn, setLengthColumn] = useState<string | null>(null);
   const [limit, setLimit] = useState(PAGE);
   const [copied, setCopied] = useState<string | null>(null);
+  const [methodVoiceChoice, setMethodVoice] = useState<string | null>(null);
   const listRef = useRef<HTMLDivElement>(null);
 
   const load = () => {
@@ -179,6 +180,9 @@ export function AudioDashboard({ practiceVoiceKey }: { practiceVoiceKey: string 
   const checks = view.lengthChecks.filter((check) => check.column === lengthKey);
   const flagged = view.lengthChecks.filter((check) => (check.spreadPct ?? 0) >= SPREAD_WARN).length;
   const busy = practice.playing !== null;
+  const methodVoice =
+    methodVoiceChoice ?? view.methods.find((row) => row.voiceKey === practiceVoiceKey)?.voiceKey ?? view.methods[0]?.voiceKey ?? null;
+  const methodRow = view.methods.find((row) => row.voiceKey === methodVoice) ?? null;
 
   const focus = (next: Partial<Filters>) => {
     setFilters({ ...START, status: "all", ...next });
@@ -347,8 +351,118 @@ export function AudioDashboard({ practiceVoiceKey }: { practiceVoiceKey: string 
         )}
       </Section>
 
+      <Section
+        num="03"
+        title="의사단어 만드는 방식 비교"
+        note="하나씩 만든 것 / 세 소리를 묶어 읽혀 자른 것 / 아홉 소리를 한 번에 읽혀 자른 것"
+      >
+        {view.methods.length === 0 ? (
+          <p className="tc-empty">비교할 음원이 아직 없어요. 아래 05의 첫 명령으로 만들 수 있어요.</p>
+        ) : (
+          <>
+            <div className="tc-toggle" role="group" aria-label="비교할 목소리">
+              {view.methods.map((row) => (
+                <button key={row.voiceKey} type="button" aria-pressed={methodVoice === row.voiceKey} onClick={() => setMethodVoice(row.voiceKey)}>
+                  <span>{row.voice}</span>
+                  {methodVoice === row.voiceKey ? <Blade /> : <span className="tc-blade-gap" />}
+                </button>
+              ))}
+            </div>
+            {methodRow ? (
+              <>
+                {methodRow.allFull?.ref ? (
+                  <p className="tc-label">
+                    아홉 소리를 한 번에 읽힌 원본({seconds(methodRow.allFull.durationMs)}){" "}
+                    <button
+                      type="button"
+                      className="ad-play"
+                      disabled={busy}
+                      onClick={() => void practice.playRole(methodRow.allFull?.ref ?? null, "voice", "아홉 소리 원본")}
+                    >
+                      원본 듣기
+                    </button>
+                  </p>
+                ) : null}
+                <div className="tc-table-wrap">
+                  <table className="tc-table ad-methods">
+                    <thead>
+                      <tr>
+                        <th scope="col">틀</th>
+                        <th scope="col">방식</th>
+                        <th scope="col">세 소리(누르면 들려줘요)</th>
+                        <th scope="col" className="num">
+                          길이 차이
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {methodRow.frames.flatMap((frame) =>
+                        frame.methods.map((method, index) => {
+                          const warn = (method.spreadPct ?? 0) >= SPREAD_WARN;
+                          return (
+                            <tr key={`${frame.lead}-${method.method}`} className={warn ? "is-warn" : undefined}>
+                              {index === 0 ? (
+                                <th scope="rowgroup" rowSpan={frame.methods.length}>
+                                  {frame.lead}자 · {frame.lead}차 · {frame.lead}짜
+                                </th>
+                              ) : null}
+                              <td>
+                                {method.label}
+                                {method.full?.ref ? (
+                                  <button
+                                    type="button"
+                                    className="tc-ul"
+                                    disabled={busy}
+                                    onClick={() => void practice.playRole(method.full?.ref ?? null, "voice", "묶음 원본")}
+                                  >
+                                    원본
+                                  </button>
+                                ) : null}
+                              </td>
+                              <td>
+                                <div className="ad-method-items">
+                                  {method.items.map((item) =>
+                                    item.cell?.ref ? (
+                                      <button
+                                        key={item.text}
+                                        type="button"
+                                        className="ad-play"
+                                        disabled={busy}
+                                        onClick={() => void practice.playRole(item.cell?.ref ?? null, "voice", item.text)}
+                                      >
+                                        {item.text} <small>{seconds(item.cell.durationMs)}</small>
+                                      </button>
+                                    ) : (
+                                      <span key={item.text} className="ad-missing">
+                                        {item.text} 없음
+                                      </span>
+                                    ),
+                                  )}
+                                </div>
+                              </td>
+                              <td className="num">
+                                {method.spreadPct === null ? "-" : `${method.spreadPct}%`}
+                                {warn ? <span className="ad-flag">차이 큼</span> : null}
+                              </td>
+                            </tr>
+                          );
+                        }),
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="tc-label">
+                  묶어 읽히면 마지막 소리에 문장 끝 억양(내려감)이 붙을 수 있어요. 세 소리를 번갈아 들으며 셋째 소리만 다르게
+                  들리지 않는지 살펴보세요. 하나씩 만든 파일은 앞뒤 쉼이 길어 길이가 더 길게 나와요.
+                </p>
+              </>
+            ) : null}
+          </>
+        )}
+      </Section>
+
       <div ref={listRef}>
-        <Section num="03" title="음원 목록" note={`${shown.length}개 · 칸이 비어 있으면 아직 만들지 않은 것`}>
+        <Section num="04" title="음원 목록" note={`${shown.length}개 · 칸이 비어 있으면 아직 만들지 않은 것`}>
           <div className="ad-filters">
             <label>
               목소리
@@ -472,7 +586,7 @@ export function AudioDashboard({ practiceVoiceKey }: { practiceVoiceKey: string 
         </Section>
       </div>
 
-      <Section num="04" title="빠진 음원 만들기" note="이 화면은 생성을 부르지 않아요">
+      <Section num="05" title="빠진 음원 만들기" note="이 화면은 생성을 부르지 않아요">
         <p className="tc-label">
           apps/learn 폴더에서 실행해요. 키는 환경 변수로만 넣고(README 참고), 이미 만든 파일은 건너뛰어요.
         </p>

@@ -63,6 +63,8 @@ const previewWord: WordView = {
   related: "모자를 쓰다",
   wordAudioRef: "ref-w",
   exampleAudioRef: "ref-s",
+  wordVoice: null,
+  exampleVoice: null,
   step: 3,
   stepLabel: "실전 어휘 일반화",
   pairGroupId: null,

@@ -524,6 +524,8 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
       related: word.related,
       wordAudioRef: refOf(word.wordAudioId, word.legacyWordAudioId),
       exampleAudioRef: word.exampleAudioId ? refOf(word.exampleAudioId, word.legacyExampleAudioId) : null,
+      wordVoice: audio.meta(pick(word.wordAudioId, word.legacyWordAudioId))?.voice ?? null,
+      exampleVoice: word.exampleAudioId ? (audio.meta(pick(word.exampleAudioId, word.legacyExampleAudioId))?.voice ?? null) : null,
       step: word.step,
       stepLabel: STEP_LABELS[word.step],
       pairGroupId: word.contrast?.pairGroupId ?? null,

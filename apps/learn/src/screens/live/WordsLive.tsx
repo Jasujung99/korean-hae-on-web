@@ -125,6 +125,10 @@ export function WordsLive() {
               <span className="small">예문 · {word.scene}</span>
               <p>{word.example}</p>
             </div>
+            {word.exampleVoice && word.wordVoice && word.exampleVoice !== word.wordVoice ? (
+            <p className="small">예문 음원은 아직 {word.exampleVoice} 목소리(예전 초안)만 있어서 낱말과 목소리가 달라요.</p>
+          ) : null}
+
             <button
               type="button"
               onClick={() => void practice.playRole(word.exampleAudioRef, "example", word.example)}

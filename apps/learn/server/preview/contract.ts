@@ -136,6 +136,9 @@ export type WordView = {
   related: string;
   wordAudioRef: string | null;
   exampleAudioRef: string | null;
+  /** 실제로 들려줄 파일의 목소리. 예문은 아직 예전 초안(Iapetus)만 있는 경우가 있다. */
+  wordVoice: string | null;
+  exampleVoice: string | null;
   /** Stage 안 출제 순서(1 기준점 잡기 · 2 음절 틀 넓히기 · 3 실전 어휘 일반화) */
   step: 1 | 2 | 3;
   stepLabel: string;
@@ -266,6 +269,26 @@ export type ListenView = {
 
 // ---- 만든 음원 목록(목소리 화면의 대시보드) ----
 
+export type GenerationMethod = "single" | "trio" | "all";
+
+export type MethodCompareView = {
+  voiceKey: string;
+  voice: string;
+  /** 아홉 소리를 한 번에 읽힌 통째 파일 */
+  allFull: AudioCellView | null;
+  frames: Array<{
+    lead: string;
+    methods: Array<{
+      method: GenerationMethod;
+      label: string;
+      /** 세 소리를 묶어 읽힌 통째 파일(trio만) */
+      full: AudioCellView | null;
+      items: Array<{ text: string; cell: AudioCellView | null }>;
+      spreadPct: number | null;
+    }>;
+  }>;
+};
+
 export type AudioCellView = {
   id: string;
   /** 목록 화면 전용 ref(연습 화면 ref와 따로) */
@@ -323,6 +346,8 @@ export type AudioInventoryView = {
   /** 위 어디에도 속하지 않는 파일 */
   others: Array<AudioCellView & { text: string }>;
   lengthChecks: LengthCheckView[];
+  /** 의사단어 생성 방식 비교: 하나씩 / 세 소리씩 묶어 읽고 자름 / 아홉 소리 한 번에 읽고 자름 */
+  methods: MethodCompareView[];
   /** 빠진 음원을 만들 때 쓰는 명령(키는 환경 변수로만) */
   commands: Array<{ label: string; command: string }>;
 };

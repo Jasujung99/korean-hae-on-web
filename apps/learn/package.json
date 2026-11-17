@@ -21,6 +21,7 @@
     "tts:auditions": "node --experimental-strip-types scripts/tts.ts auditions",
     "tts:batch": "node --experimental-strip-types scripts/tts.ts batch",
     "tts:practice": "node --experimental-strip-types scripts/tts.ts practice",
+    "tts:pseudo-groups": "node --experimental-strip-types scripts/tts.ts pseudo-groups",
     "verify:clean": "node scripts/verify-clean.mjs"
   },
   "dependencies": {
