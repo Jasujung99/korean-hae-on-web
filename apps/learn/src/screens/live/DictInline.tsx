@@ -1,13 +1,21 @@
 // 사전 방식 A: 단어 카드 안에서 '사전 풀이'를 펼친다(2026-11-17 결정).
 // 사전 자료는 아직 연결하지 않았다. 펼쳤을 때의 자리와 순서만 실제로 동작한다.
 import { useId, useState } from "react";
+import type { DictLanguage } from "../../../server/preview/contract.ts";
+import { useLearner } from "../../preview/settings";
 import { track } from "../../preview/telemetry";
 
-const LANGUAGES = ["Русский", "English", "Tiếng Việt", "中文"];
+// 사전 대역어 언어는 러시아어·영어 두 가지. 학습자 설정을 기본으로 펼치고, 바꾸면 설정에 저장한다.
+const LANGUAGES: Array<{ key: DictLanguage; label: string }> = [
+  { key: "ru", label: "Русский" },
+  { key: "en", label: "English" },
+];
 
 export function DictInline({ word, wordId, pos }: { word: string; wordId: string; pos: string }) {
   const [open, setOpen] = useState(false);
-  const [language, setLanguage] = useState(LANGUAGES[0] as string);
+  const learner = useLearner();
+  const language = learner.dictLanguage;
+  const languageLabel = LANGUAGES.find((row) => row.key === language)?.label ?? "Русский";
   const panelId = useId();
 
   const toggle = () => {
@@ -34,13 +42,13 @@ export function DictInline({ word, wordId, pos }: { word: string; wordId: string
           <div className="dict-inline-row">
             <p className="dict-inline-source">내 언어</p>
             <div className="dict-inline-langs" role="group" aria-label="내 언어 고르기">
-              {LANGUAGES.map((name) => (
-                <button key={name} type="button" aria-pressed={language === name} onClick={() => setLanguage(name)}>
-                  {name}
+              {LANGUAGES.map((row) => (
+                <button key={row.key} type="button" aria-pressed={language === row.key} onClick={() => void learner.change({ dictLanguage: row.key })}>
+                  {row.label}
                 </button>
               ))}
             </div>
-            <p className="dict-inline-empty">[ {language} 대역어가 들어올 자리 ]</p>
+            <p className="dict-inline-empty">[ {languageLabel} 대역어가 들어올 자리 ]</p>
           </div>
           <div className="dict-inline-row">
             <p className="dict-inline-source">

@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 import { createLearnApp } from "./app.ts";
 import { readApprovedDistribution } from "./audio-files.ts";
 import { readLearnConfig } from "./config.ts";
-import { previewDeps } from "./preview/setup.ts";
+import { accountsDeps } from "./preview/setup.ts";
 
 // Dev uses Vite. This entry is the production server, so an unset NODE_ENV stays production.
 if (!process.env.NODE_ENV) process.env.NODE_ENV = "production";
@@ -29,7 +29,7 @@ const app = createLearnApp(
   {
     readDistribution: (id) => readApprovedDistribution(appRoot, id),
   },
-  config.screenPreview ? previewDeps(appRoot) : null,
+  accountsDeps(appRoot, config),
 );
 
 app.use("*", serveStatic({ root: clientDir }));
@@ -54,6 +54,7 @@ async function main() {
     console.log(`learn app http://${config.host}:${info.port}`);
     console.log(config.origin ? "LEARN_APP_ORIGIN is set" : "LEARN_APP_ORIGIN is unset");
     console.log(config.screenPreview ? "screen preview is on" : "screen preview is off");
+    console.log(config.accounts ? "accounts database is configured" : "accounts database is not configured");
   });
 }
 

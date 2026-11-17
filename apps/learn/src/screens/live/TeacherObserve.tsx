@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { Link, useSearchParams } from "react-router";
 import type { LearnerDetail, LearnerSummary, Matrix, Tally } from "../../../server/preview/contract.ts";
-import { previewApi } from "../../preview/api";
+import { teacherApi } from "../../preview/api";
 import { ScreenTitle } from "../../ui";
 import { formatDay, formatDuration } from "./format";
 
@@ -14,7 +14,6 @@ const vowels = [
 ] as const;
 type VowelFilter = (typeof vowels)[number]["value"];
 
-const DEFAULT_LEARNER = "preview-learner";
 const FEW_ITEMS = 10;
 const WEEKDAYS = ["월", "화", "수", "목", "금", "토", "일"];
 const TIER_BANDS = {
@@ -214,7 +213,7 @@ function Trend({ rows }: { rows: LearnerDetail["trend"] }) {
   );
 }
 
-function ListView({ learners }: { learners: LearnerSummary[] }) {
+export function ListView({ learners }: { learners: LearnerSummary[] }) {
   const studied = learners.filter((learner) => learner.days > 0).length;
   const resting = learners.filter(
     (learner) => learner.lastActive !== null && Date.now() - Date.parse(learner.lastActive) > 7 * 86_400_000,
@@ -228,7 +227,7 @@ function ListView({ learners }: { learners: LearnerSummary[] }) {
           <p className="tc-label">선생님 화면 · 읽기 전용</p>
           <h2 className="tc-title">학습 관찰</h2>
         </div>
-        <p className="tc-label">미리보기 · 예시 학습자의 수치는 실제 기록이 아니에요</p>
+        <p className="tc-label">담당 학습자의 기록만 보여요</p>
       </div>
       <div className="tc-rule" />
       <div className="tc-stats three">
@@ -317,7 +316,7 @@ function ListView({ learners }: { learners: LearnerSummary[] }) {
   );
 }
 
-function DetailView({ detail, onReset, resetting }: { detail: LearnerDetail; onReset: () => void; resetting: boolean }) {
+function DetailView({ detail }: { detail: LearnerDetail }) {
   const [vowel, setVowel] = useState<VowelFilter>("any");
   const medial = vowel === "any" ? detail.identify.medial : (detail.identify.byVowel[vowel] ?? detail.identify.medial);
   const vowelLabel = vowels.find((row) => row.value === vowel)?.label ?? "";
@@ -334,7 +333,7 @@ function DetailView({ detail, onReset, resetting }: { detail: LearnerDetail; onR
         </h2>
         <p className="tc-label">
           {detail.isExample ? <span className="tc-pill">예시</span> : null}
-          {detail.isExample ? "예시 수치, 실제 학습 기록이 아니에요" : "미리보기 기록 · 음원은 검수 전 초안"}
+          {detail.isExample ? "예시 수치, 실제 학습 기록이 아니에요" : "학습 기록 · 음원은 검수 전 초안"}
         </p>
       </div>
       <div className="tc-rule" />
@@ -548,68 +547,43 @@ function DetailView({ detail, onReset, resetting }: { detail: LearnerDetail; onR
           <b>화면 이탈·무응답</b> — 화면을 숨긴 시간과 30초 넘게 조작이 없던 시간이에요. 총시간에서 두 번 빼지 않아요.
         </p>
       </div>
-      <p className="tc-label">역할 전환은 교사 인증이 아니에요. 이 화면은 개발 미리보기예요.</p>
-      {!detail.isExample ? (
-        <button type="button" className="ghost-danger" onClick={onReset} disabled={resetting}>
-          미리보기 기록 지우기
-        </button>
-      ) : null}
     </>
   );
 }
 
-export function TeacherLive({ mode }: { mode: "list" | "detail" }) {
+/** 학습자 한 명의 관찰 상세. 목록은 TeacherHome이 보여 준다. */
+export function TeacherDetail() {
   const [params] = useSearchParams();
-  const selected = params.get("learner") ?? DEFAULT_LEARNER;
-  const [learners, setLearners] = useState<LearnerSummary[] | null>(null);
+  const selected = params.get("learner") ?? "";
   const [detail, setDetail] = useState<LearnerDetail | null>(null);
   const [failed, setFailed] = useState(false);
-  const [resetting, setResetting] = useState(false);
 
   const load = useCallback(() => {
     setFailed(false);
-    if (mode === "list") {
-      previewApi
-        .learners()
-        .then(({ learners: list }) => setLearners(list))
-        .catch(() => setFailed(true));
-    } else {
-      setDetail(null);
-      previewApi
-        .learner(selected)
-        .then(({ detail: next }) => setDetail(next))
-        .catch(() => setFailed(true));
-    }
-  }, [mode, selected]);
+    setDetail(null);
+    teacherApi
+      .learner(selected)
+      .then(({ detail: next }) => setDetail(next))
+      .catch(() => setFailed(true));
+  }, [selected]);
 
   useEffect(() => {
     load();
   }, [load]);
 
-  const reset = async () => {
-    if (!window.confirm("이 컴퓨터의 미리보기 학습 기록을 모두 지울까요? 예시 학습자는 그대로 남아요.")) return;
-    setResetting(true);
-    try {
-      await previewApi.reset();
-      load();
-    } finally {
-      setResetting(false);
-    }
-  };
-
-  const ready = mode === "list" ? learners !== null : detail !== null;
-
   return (
     <div className="tc-page">
-      <ScreenTitle title={mode === "detail" && detail ? `${detail.learner.name} 학습 기록` : "학습 관찰"} />
+      <ScreenTitle title={detail ? `${detail.learner.name} 학습 기록` : "학습 관찰"} />
       {failed ? (
         <p className="notice" role="status">
-          기록을 불러오지 못했어요. 미리보기 서버가 켜져 있는지 확인해 주세요.
+          기록을 불러오지 못했어요. 담당 학습자인지, 로그인이 이어지는지 확인해 주세요.{" "}
+          <Link className="tc-ul" to="/teach">
+            학습자 목록으로
+          </Link>
         </p>
       ) : null}
-      {!ready && !failed ? <p className="tc-label">기록을 불러오고 있어요…</p> : null}
-      {mode === "list" && learners ? <ListView learners={learners} /> : null}
-      {mode === "detail" && detail ? <DetailView detail={detail} onReset={() => void reset()} resetting={resetting} /> : null}
+      {!detail && !failed ? <p className="tc-label">기록을 불러오고 있어요…</p> : null}
+      {detail ? <DetailView detail={detail} /> : null}
     </div>
   );
 }

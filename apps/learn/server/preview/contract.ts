@@ -1,5 +1,5 @@
-// 미리보기 API의 요청·응답 모양. 서버와 화면이 같은 정의를 쓴다(화면은 type import만).
-// 미리보기는 기기 세션·초대·DB가 없는 로컬 검토용이다. 학습자는 고정된 '미리보기 학습자' 하나다.
+// 학습 API의 요청·응답 모양. 서버와 화면이 같은 정의를 쓴다(화면은 type import만).
+// 학습자는 개인 초대로 연결한 기기 세션(쿠키)으로, 교사는 교사 세션으로 서버가 정한다.
 
 export type ConsonantKey = string;
 
@@ -9,8 +9,6 @@ export type ItemView = {
   itemId: string;
   choices: ChoiceView[];
   audioRef: string | null;
-  /** 소리 방식이 '브라우저 음성'일 때만 준다. 브라우저가 읽을 글자라 정답이 화면 코드에 드러난다. */
-  speechText: string | null;
   positionLabel: string;
   stage: string;
   slotKind: string;
@@ -34,9 +32,9 @@ export type AnswerResult = {
   /** 답을 낸 뒤에만 알려 주는 정답·내 선택 음원 */
   answerRef: string | null;
   choiceRef: string | null;
-  /** 비교 재생에 쓰는 두 소리의 글자. 낱말 상대가 없으면 같은 앞 모음의 의사단어다. */
-  answerSpeech: string;
-  choiceSpeech: string;
+  /** 비교 재생하는 두 소리의 글자. 낱말 상대가 없으면 같은 앞 모음의 의사단어다. */
+  answerText: string;
+  choiceText: string;
   compareKind: ItemKind;
   compareTier: number | null;
 };
@@ -51,7 +49,6 @@ export type SessionView = {
   skipped: string[];
   finished: boolean;
   voice: string;
-  sound: SoundSource;
   itemKind: ItemKind;
 };
 
@@ -66,7 +63,6 @@ export type AnswerRequest = {
   msFromStimulusEnd: number | null;
   answeredDuringPlayback: boolean;
   audioState: "ok" | "error";
-  audioSource?: SoundSource;
   style?: PreviewStyle;
 };
 
@@ -74,8 +70,6 @@ export type AbxTrialView = {
   trialId: string;
   itemId: string;
   refs: { a: string | null; b: string | null; x: string | null };
-  /** 브라우저 음성일 때만 */
-  texts: { a: string; b: string; x: string } | null;
 };
 
 export type AbxAnswerRequest = {
@@ -201,7 +195,7 @@ export type LearnerSummary = {
   id: string;
   name: string;
   languages: string;
-  kind: "preview" | "example";
+  kind: "learner" | "example";
   lastActive: string | null;
   days: number;
   note: string;
@@ -256,9 +250,40 @@ export type LearnerDetail = {
 };
 
 export type PreviewStyle = "proto" | "canvas";
-export type SoundSource = "file" | "browser";
 export type ItemKind = "word" | "pseudo";
-export type PreviewSettings = { style: PreviewStyle; sound: SoundSource; items: ItemKind };
+export type DictLanguage = "ru" | "en";
+/** 학습자 설정. 학습자 id에 저장하므로 기기를 바꿔도 이어진다. */
+export type LearnerSettings = { style: PreviewStyle; items: ItemKind; dictLanguage: DictLanguage; practiceVoice: string };
+
+export type MeView = {
+  learner: { id: string; nickname: string };
+  settings: LearnerSettings;
+  practiceVoices: PracticeVoiceView[];
+};
+
+export type InviteInspectView = {
+  status: "ok" | "invalid" | "used" | "revoked" | "expired";
+  nickname: string | null;
+  dictLanguage: DictLanguage | null;
+};
+
+export type InviteStatus = "none" | "open" | "expired" | "used" | "revoked";
+
+export type TeacherLearnerRow = {
+  id: string;
+  nickname: string;
+  classLabel: string | null;
+  homeLanguage: "ru" | null;
+  dictLanguage: DictLanguage;
+  isTest: boolean;
+  invite: { status: InviteStatus; expiresAt: string | null; createdAt: string | null };
+  devices: number;
+  summary: LearnerSummary;
+};
+
+export type TeacherView = { teacher: { displayName: string }; inviteOrigin: string; learners: TeacherLearnerRow[] };
+
+export type InviteIssued = { url: string; expiresAt: string };
 
 export type ListenView = {
   frames: Array<{ lead: string; sounds: Array<{ key: string; text: string; audioRef: string | null }> }>;

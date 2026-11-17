@@ -1,14 +1,34 @@
-// 미리보기 보기 설정: 화면 스타일(저장소 시안 / 캔버스), 의사단어 소리 방식(고정 음원 / 브라우저 음성),
-// 듣고 고르기 문항(낱말 대립쌍 / 의사단어).
-// 서버의 미리보기 저장소에 남겨 새로고침해도 유지한다. 비교용이며 운영 설정이 아니다.
+// 연결된 학습자와 그 설정(화면 모양, 사전 언어, 연습 목소리, 문항 종류).
+// 설정은 서버의 학습자 id에 저장하므로 기기를 바꿔도 이어진다. 브라우저 저장소는 쓰지 않는다.
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import type { PreviewSettings } from "../../server/preview/contract.ts";
-import { previewApi } from "./api";
+import type { LearnerSettings, MeView } from "../../server/preview/contract.ts";
+import { accountApi, PreviewApiError } from "./api";
 
-type SettingsValue = PreviewSettings & { loaded: boolean; change: (next: Partial<PreviewSettings>) => void };
+export type LearnerStatus = "loading" | "connected" | "not_connected" | "error";
 
-// 미리보기 밖(제공자 없음)에서는 회기를 바꾸지 않도록 문항 종류를 의사단어로 둔다.
-const defaults: SettingsValue = { style: "proto", sound: "file", items: "pseudo", loaded: true, change: () => {} };
+type SettingsValue = LearnerSettings & {
+  loaded: boolean;
+  status: LearnerStatus;
+  me: MeView | null;
+  change: (next: Partial<Pick<LearnerSettings, "style" | "dictLanguage" | "practiceVoice">>) => Promise<void>;
+  adopt: (me: MeView | null) => void;
+  reload: () => void;
+};
+
+const base: LearnerSettings = { style: "canvas", items: "word", dictLanguage: "ru", practiceVoice: "charon" };
+
+// 제공자 밖(계정 DB 없음)에서는 회기를 바꾸지 않도록 문항 종류를 의사단어로 둔다.
+const defaults: SettingsValue = {
+  ...base,
+  style: "proto",
+  items: "pseudo",
+  loaded: true,
+  status: "not_connected",
+  me: null,
+  change: async () => {},
+  adopt: () => {},
+  reload: () => {},
+};
 
 const SettingsContext = createContext<SettingsValue>(defaults);
 
@@ -16,25 +36,62 @@ export function usePreviewSettings(): SettingsValue {
   return useContext(SettingsContext);
 }
 
+export const useLearner = usePreviewSettings;
+
 export function PreviewSettingsProvider({ enabled, children }: { enabled: boolean; children: ReactNode }) {
-  const [settings, setSettings] = useState<PreviewSettings>({ style: "canvas", sound: "file", items: "word" });
-  const [loaded, setLoaded] = useState(false);
+  const [me, setMe] = useState<MeView | null>(null);
+  const [status, setStatus] = useState<LearnerStatus>("loading");
+  const [round, setRound] = useState(0);
 
   useEffect(() => {
     if (!enabled) return;
-    previewApi
-      .settings()
-      .then(setSettings)
-      .catch(() => {})
-      .finally(() => setLoaded(true));
-  }, [enabled]);
+    let cancelled = false;
+    setStatus("loading");
+    accountApi
+      .me()
+      .then((view) => {
+        if (cancelled) return;
+        setMe(view);
+        setStatus("connected");
+      })
+      .catch((error: unknown) => {
+        if (cancelled) return;
+        setMe(null);
+        setStatus(error instanceof PreviewApiError && error.status === 401 ? "not_connected" : "error");
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [enabled, round]);
 
-  const change = useCallback((next: Partial<PreviewSettings>) => {
-    setSettings((prev) => ({ ...prev, ...next }));
-    previewApi.saveSettings(next).catch(() => {});
+  const adopt = useCallback((view: MeView | null) => {
+    setMe(view);
+    setStatus(view ? "connected" : "not_connected");
   }, []);
 
-  const value = useMemo(() => ({ ...settings, loaded: loaded || !enabled, change }), [settings, loaded, enabled, change]);
+  const change = useCallback(async (next: Partial<Pick<LearnerSettings, "style" | "dictLanguage" | "practiceVoice">>) => {
+    setMe((prev) => (prev ? { ...prev, settings: { ...prev.settings, ...next } } : prev));
+    try {
+      setMe(await accountApi.saveSettings(next));
+    } catch {
+      setRound((value) => value + 1);
+    }
+  }, []);
+
+  const reload = useCallback(() => setRound((value) => value + 1), []);
+
+  const value = useMemo<SettingsValue>(
+    () => ({
+      ...(me?.settings ?? base),
+      loaded: status !== "loading",
+      status,
+      me,
+      change,
+      adopt,
+      reload,
+    }),
+    [me, status, change, adopt, reload],
+  );
   if (!enabled) return <>{children}</>;
   return <SettingsContext.Provider value={value}>{children}</SettingsContext.Provider>;
 }

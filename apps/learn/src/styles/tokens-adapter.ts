@@ -16,4 +16,5 @@ import "./teacher.css";
 import "./live.css";
 import "./canvas.css";
 import "./observe.css";
+import "./accounts.css";
 import "./responsive.css";

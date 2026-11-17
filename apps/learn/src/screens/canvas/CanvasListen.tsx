@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router";
 import type { ListenView } from "../../../server/preview/contract.ts";
 import { previewApi } from "../../preview/api";
 import { usePractice } from "../../preview/PracticeContext";
-import { usePreviewSettings } from "../../preview/settings";
 import { ScreenTitle } from "../../ui";
 import { Blade, StripLink } from "./parts";
 import { topConfusion } from "./summary";
@@ -13,7 +12,6 @@ const CARD_TONE = ["paper", "sage", "lavender"];
 // 소리 익히기: 듣고 고르기를 먼저 푼 뒤에 온다. 점수를 매기지 않고, 글자를 보며 자유롭게 비교해 듣는다.
 export function CanvasListen() {
   const practice = usePractice();
-  const settings = usePreviewSettings();
   const navigate = useNavigate();
   const [view, setView] = useState<ListenView | null>(null);
   const [frame, setFrame] = useState(0);
@@ -68,7 +66,7 @@ export function CanvasListen() {
               type="button"
               className={[`tone-${CARD_TONE[position]}`, marked ? "is-marked" : ""].filter(Boolean).join(" ")}
               aria-label={`${sound.text} 듣기`}
-              disabled={practice.playing !== null || (!sound.audioRef && settings.sound === "file")}
+              disabled={practice.playing !== null || !sound.audioRef}
               onClick={() => {
                 setLast(sound.text);
                 void practice.playSound(sound.audioRef, sound.text, "listen");
@@ -83,7 +81,7 @@ export function CanvasListen() {
       </div>
       <p className="c-caption center" aria-live="polite">
         {last ? `지금 들은 소리 — ${last}` : "카드를 눌러 보세요."} ·{" "}
-        {settings.sound === "browser" ? "브라우저 음성" : "고정 음원(검수 전 초안)"}
+        고정 음원(검수 전 초안)
       </p>
 
       <StripLink onClick={() => navigate("/dictionary")}>새 단어 보기</StripLink>

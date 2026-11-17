@@ -1,7 +1,7 @@
 // 학습 이벤트 전송. 메모리 큐에 쌓았다가 묶어서 보내고, 실패하면 다음에 다시 보낸다.
 // 서버는 이벤트 id로 중복을 걸러 낸다. 브라우저에 따로 저장해 두지 않는다.
 import type { ClientEvent, ClientEventType } from "../../server/preview/contract.ts";
-import { makeId, previewApi } from "./api";
+import { makeId, PreviewApiError, previewApi } from "./api";
 
 let seq = 0;
 let sessionId: string | null = null;
@@ -18,7 +18,15 @@ export function nextSeq(): number {
   return seq;
 }
 
+/** 다른 학습자로 연결되거나 이 기기에서 나가면 보내지 못한 기록을 버린다. 다른 학습자 id로 옮겨 보내지 않는다. */
+export function resetTelemetry() {
+  queue.length = 0;
+  sessionId = null;
+}
+
 export function track(type: ClientEventType, payload?: ClientEvent["payload"]) {
+  // 교사 화면의 재생은 학습 기록이 아니다.
+  if (typeof window !== "undefined" && window.location.pathname.startsWith("/teach")) return;
   queue.push({ id: makeId(), sessionId, seq: nextSeq(), type, clientTime: new Date().toISOString(), payload });
   schedule();
 }
@@ -37,9 +45,14 @@ export async function flushEvents(keepalive = false): Promise<void> {
   const batch = queue.splice(0, 50);
   try {
     await previewApi.events(batch, keepalive);
-  } catch {
-    queue.unshift(...batch);
-    schedule(4000);
+  } catch (error) {
+    // 기기 연결이 끊겼으면(401) 더 보내지 않는다. 그 밖의 실패는 잠시 뒤 다시 보낸다.
+    if (error instanceof PreviewApiError && error.status === 401) {
+      queue.length = 0;
+    } else {
+      queue.unshift(...batch);
+      schedule(4000);
+    }
   } finally {
     inflight = false;
   }
