@@ -82,11 +82,18 @@ async function generateOne(input: {
   let response: Response | null = null;
   try {
     for (let attempt = 0; attempt < 4; attempt += 1) {
-      response = await fetch(style ? interactionsEndpoint() : modelEndpoint(), {
-        method: "POST",
-        headers: authHeaders(apiKey),
-        body: JSON.stringify(style ? buildInteractionBody(text, voice, style) : buildGenerateContentBody(text, voice)),
-      });
+      try {
+        response = await fetch(style ? interactionsEndpoint() : modelEndpoint(), {
+          method: "POST",
+          headers: authHeaders(apiKey),
+          body: JSON.stringify(style ? buildInteractionBody(text, voice, style) : buildGenerateContentBody(text, voice)),
+        });
+      } catch (error) {
+        // 연결이 잠깐 끊긴 경우: 기다렸다가 다시 시도한다.
+        if (attempt === 3) throw error;
+        await new Promise((resolve) => setTimeout(resolve, 5000 * (attempt + 1)));
+        continue;
+      }
       if (response.status !== 429 && response.status < 500) break;
       const delay = Math.max(retryDelayMs(attempt, response.headers.get("retry-after")), 2000 * (attempt + 1));
       await new Promise((resolve) => setTimeout(resolve, delay));
