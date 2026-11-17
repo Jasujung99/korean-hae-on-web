@@ -35,6 +35,11 @@ const previewSession: SessionView = {
       positionLabel: "모음 사이",
       stage: "Stage 1",
       slotKind: "common",
+      kind: "pseudo",
+      step: null,
+      stepLabel: null,
+      syllableIndex: 2,
+      vowel: "ㅏ",
     },
   ],
   answers: [],
@@ -42,6 +47,7 @@ const previewSession: SessionView = {
   finished: false,
   voice: "Iapetus",
   sound: "file",
+  itemKind: "pseudo",
 };
 
 const previewWord: WordView = {

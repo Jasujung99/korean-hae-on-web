@@ -150,23 +150,30 @@ export function PracticeProvider({ children }: { children: ReactNode }) {
       .currentSession()
       .then(async ({ session: current }) => {
         if (current) adopt(current);
-        else adopt((await previewApi.newSession()).session);
+        else adopt((await previewApi.newSession(settings.items)).session);
       })
       .catch(() => setStatus("error"))
       .finally(() => {
         loading.current = false;
       });
-  }, [adopt, status]);
+  }, [adopt, settings.items, status]);
 
   const startNew = useCallback(async () => {
     stopAudio();
     setStatus("loading");
     try {
-      adopt((await previewApi.newSession()).session);
+      adopt((await previewApi.newSession(settings.items)).session);
     } catch {
       setStatus("error");
     }
-  }, [adopt]);
+  }, [adopt, settings.items]);
+
+  // 듣고 고르기 문항(낱말 대립쌍 / 의사단어)을 바꾸면 새 회기를 받는다.
+  const sessionKind = session?.itemKind;
+  useEffect(() => {
+    if (!settings.loaded || !sessionKind || sessionKind === settings.items) return;
+    void startNew();
+  }, [settings.loaded, sessionKind, settings.items, startNew]);
 
   const refreshSession = useCallback(async () => {
     stopAudio();

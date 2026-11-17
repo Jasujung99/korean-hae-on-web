@@ -79,7 +79,9 @@ export function QuizLive() {
   const skipped = practice.skipped.includes(item.itemId);
   const listening = practice.playing === "stimulus";
   const doneIds = new Set([...Object.keys(practice.results), ...practice.skipped]);
-  const chosenText = item.choices.find((row) => row.key === result?.choice)?.text ?? "";
+  const chosenText = result?.choiceSpeech ?? "";
+  // 브라우저 음성은 의사단어에만 쓴다. 낱말 비교는 고정 음원이다.
+  const speak = (text: string) => (result?.compareKind === "pseudo" ? text : undefined);
   const last = index === total - 1;
 
   const goNext = () => {
@@ -97,7 +99,9 @@ export function QuizLive() {
       <ScreenTitle title="듣기 퀴즈" />
       <section className="panel" aria-labelledby="quiz-title">
         <div className="lesson-top">
-          <Pill>{item.positionLabel} · ㅈ ㅊ ㅉ</Pill>
+          <Pill>
+            {item.positionLabel} · ㅈ ㅊ ㅉ{item.stepLabel ? ` · ${item.stepLabel}` : ""}
+          </Pill>
           <div className="lesson-track">
             <span className="track" role="img" aria-label={`${total}문항 가운데 ${index + 1}번째`}>
               {session.items.map((row, position) => (
@@ -170,8 +174,8 @@ export function QuizLive() {
                 disabled={Boolean(result) || skipped}
                 onClick={() => practice.choose(row.key)}
               >
-                {row.text}
-                <small>{note}</small>
+                {row.text || row.key}
+                <small>{row.text ? note : note === row.key ? "\u00a0" : note}</small>
               </button>
             );
           })}
@@ -180,20 +184,29 @@ export function QuizLive() {
           <div className="feedback" role="status">
             <strong>{result.correct ? "같은 소리를 골랐어요." : "두 소리를 나란히 들어 봐요."}</strong>
             <p>
-              정답 {result.answer.text} · 내 선택 {chosenText}
+              정답 {result.answer.text} · 내 선택 {result.choice}
               {result.countsAsScore ? "" : " · 이 문항은 성적에 넣지 않아요"}
+            </p>
+            <p className="small">
+              {result.correct
+                ? ""
+                : result.compareKind === "word"
+                  ? `같은 묶음의 낱말로 비교해요: ${result.answerSpeech} · ${chosenText}`
+                  : item.kind === "word"
+                    ? `짝이 되는 낱말이 없어 의사단어로 비교해요: ${result.answerSpeech} · ${chosenText}`
+                    : ""}
             </p>
             <div className="pair">
               <button
                 type="button"
-                onClick={() => void practice.playRole(result.answerRef, "answer", result.answer.text)}
+                onClick={() => void practice.playRole(result.answerRef, "answer", speak(result.answerSpeech))}
                 disabled={practice.playing !== null}
               >
                 정답 소리 듣기
               </button>
               <button
                 type="button"
-                onClick={() => void practice.playRole(result.choiceRef, "chosen", chosenText)}
+                onClick={() => void practice.playRole(result.choiceRef, "chosen", speak(chosenText))}
                 disabled={result.correct || practice.playing !== null}
               >
                 내 선택 듣기

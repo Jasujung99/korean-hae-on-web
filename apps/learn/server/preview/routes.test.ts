@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { PRACTICE_ITEMS, practiceItem } from "../../content/practice.ts";
+import { PRACTICE_ITEMS, WORD_ITEMS, practiceItem } from "../../content/practice.ts";
 import { createLearnApp } from "../app.ts";
 import type { LearnConfig } from "../config.ts";
 import { createFixtureAudio } from "./audio.ts";
@@ -13,7 +13,7 @@ const wav = new Uint8Array([0x52, 0x49, 0x46, 0x46, 1, 2, 3, 4]);
 
 function setup(overrides: Partial<LearnConfig> = {}) {
   const store = createMemoryStore();
-  const audio = createFixtureAudio(Object.fromEntries(PRACTICE_ITEMS.map((item) => [item.audioId, wav])));
+  const audio = createFixtureAudio(Object.fromEntries([...PRACTICE_ITEMS, ...WORD_ITEMS].map((item) => [item.audioId, wav])));
   const app = createLearnApp({ ...config, ...overrides }, {}, { store, audio });
   return { app, store };
 }
@@ -28,8 +28,8 @@ function post(app: App, path: string, body: unknown, origin = ORIGIN) {
   });
 }
 
-async function newSession(app: App): Promise<SessionView> {
-  const response = await post(app, "/api/preview/sessions", {});
+async function newSession(app: App, itemKind: "word" | "pseudo" = "pseudo"): Promise<SessionView> {
+  const response = await post(app, "/api/preview/sessions", { itemKind });
   expect(response.status).toBe(201);
   return ((await response.json()) as { session: SessionView }).session;
 }
@@ -56,7 +56,7 @@ describe("preview API", () => {
   it("stays closed when the screen preview is off", async () => {
     const { app } = setup({ screenPreview: false });
     expect((await app.request("/api/preview/course")).status).toBe(404);
-    expect((await post(app, "/api/preview/sessions", {})).status).toBe(404);
+    expect((await post(app, "/api/preview/sessions", { itemKind: "pseudo" })).status).toBe(404);
     const health = (await (await app.request("/api/health")).json()) as { persistence: string };
     expect(health.persistence).toBe("none");
   });
@@ -315,5 +315,67 @@ describe("time measures", () => {
     expect(result.openMs).toBe(140_000);
     expect(result.audioMs).toBe(1200);
     expect(result.visits).toHaveLength(2);
+  });
+});
+
+describe("word contrast items", () => {
+  it("plans word items in step order with three of each consonant", async () => {
+    const { app } = setup();
+    const session = await newSession(app, "word");
+    expect(session.itemKind).toBe("word");
+    expect(session.policyVersion).toBe("contrast-step-v1");
+    expect(session.items).toHaveLength(9);
+    const steps = session.items.map((item) => item.step ?? 0);
+    expect(steps).toEqual([...steps].sort((a, b) => a - b));
+    expect(steps[0]).toBe(1);
+    const targets = session.items.map((item) => practiceItem(item.itemId)?.target);
+    for (const consonant of ["ㅈ", "ㅊ", "ㅉ"]) expect(targets.filter((target) => target === consonant)).toHaveLength(3);
+    for (const item of session.items) {
+      expect(item.kind).toBe("word");
+      expect(item.choices.map((choice) => choice.text)).toEqual(["", "", ""]);
+      expect(item.speechText).toBeNull();
+      expect(JSON.stringify(item)).not.toContain(practiceItem(item.itemId)?.stimulus ?? "?");
+    }
+  });
+
+  it("compares a wrong answer with the partner word and records the pair group", async () => {
+    const { app, store } = setup();
+    const session = await newSession(app, "word");
+    const target = session.items.find((item) => practiceItem(item.itemId)?.stimulus === "기차") ?? session.items[0];
+    if (!target) throw new Error("no item");
+    const item = practiceItem(target.itemId);
+    if (!item) throw new Error("unknown item");
+    const wrong = item.stimulus === "기차" ? "ㅈ" : (["ㅈ", "ㅊ", "ㅉ"].find((key) => key !== item.target) as string);
+    const response = await post(app, "/api/preview/answers", answerBody(session, target.itemId, wrong));
+    const { result } = (await response.json()) as { result: { answerSpeech: string; choiceSpeech: string; compareKind: string } };
+    if (item.stimulus === "기차") {
+      expect(result).toMatchObject({ answerSpeech: "기차", choiceSpeech: "기자", compareKind: "word" });
+    } else {
+      expect(["word", "pseudo"]).toContain(result.compareKind);
+    }
+    const recorded = store.all().find((event) => event.type === "answer_submitted");
+    expect(recorded?.payload).toMatchObject({ itemKind: "word", pairGroupId: item.pairGroupId, contrastTier: item.contrastTier });
+  });
+
+  it("builds ABX from partner words and plays the tense word first", async () => {
+    const { app } = setup();
+    const session = await newSession(app, "word");
+    const target = session.items.find((item) => practiceItem(item.itemId)?.stimulus === "가짜");
+    if (!target) return;
+    const trial = (await (await post(app, "/api/preview/abx/trials", { sessionId: session.sessionId, itemId: target.itemId, partner: "ㅈ" })).json()) as {
+      trial: { trialId: string };
+    };
+    const answer = (await (
+      await post(app, "/api/preview/abx/answers", {
+        eventId: "evt-abx-word-0001",
+        sessionId: session.sessionId,
+        trialId: trial.trial.trialId,
+        choice: "A",
+        seq: 1,
+        clientTime: new Date().toISOString(),
+      })
+    ).json()) as { result: { a: { key: string; text: string }; b: { key: string; text: string } } };
+    expect(answer.result.a).toEqual({ key: "ㅉ", text: "가짜" });
+    expect(answer.result.b).toEqual({ key: "ㅈ", text: "가장" });
   });
 });

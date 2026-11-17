@@ -1,5 +1,6 @@
 // 미리보기 API 호출. 같은 origin의 /api/preview/* 만 부른다. 키나 외부 주소를 쓰지 않는다.
 import type {
+  ItemKind,
   AbxAnswerRequest,
   AbxAnswerResult,
   AbxTrialView,
@@ -42,7 +43,8 @@ async function postJson<T>(path: string, body: unknown, keepalive = false): Prom
 export const previewApi = {
   course: () => getJson<CourseView>("/api/preview/course"),
   currentSession: () => getJson<{ session: SessionView | null }>("/api/preview/sessions/current"),
-  newSession: () => postJson<{ session: SessionView }>("/api/preview/sessions", {}),
+  newSession: (itemKind?: ItemKind) =>
+    postJson<{ session: SessionView }>("/api/preview/sessions", itemKind ? { itemKind } : {}),
   answer: (request: AnswerRequest) => postJson<{ result: AnswerResult; duplicate: boolean }>("/api/preview/answers", request),
   abxTrial: (sessionId: string, itemId: string, partner: string | null) =>
     postJson<{ trial: AbxTrialView }>("/api/preview/abx/trials", { sessionId, itemId, partner }),

@@ -2,7 +2,9 @@ import { useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router";
 import { usePractice } from "../../preview/PracticeContext";
 import { ScreenTitle } from "../../ui";
-import { Blade, Dots, Sticker, StripLink, leadVowel } from "./parts";
+import { Blade, Dots, Sticker, StripLink, leadVowel, withCopula, withPast } from "./parts";
+
+const ORDINAL = ["첫째", "둘째", "셋째", "넷째"];
 
 export function CanvasQuiz() {
   const practice = usePractice();
@@ -65,8 +67,11 @@ export function CanvasQuiz() {
   const listening = practice.playing === "stimulus";
   const done = Object.keys(practice.results).length + practice.skipped.length;
   const last = index === total - 1;
-  const lead = leadVowel(item.choices[0]?.text ?? "아");
-  const chosenText = item.choices.find((row) => row.key === picked)?.text ?? "";
+  const lead = leadVowel(item.choices[0]?.text || "아");
+  const word = item.kind === "word";
+  const chosenText = result?.choiceSpeech ?? "";
+  // 브라우저 음성은 의사단어에만 쓴다. 낱말 비교는 고정 음원이다.
+  const speak = (text: string) => (result?.compareKind === "pseudo" ? text : undefined);
   const canPick = (heard || failed) && !result && !skipped && !practice.submitting;
 
   const goNext = () => {
@@ -85,6 +90,7 @@ export function CanvasQuiz() {
       <div className="c-top">
         <p className="c-label">
           <span className="c-num sm">01</span> 듣고 고르기 · {item.positionLabel}
+          {item.stepLabel ? ` · ${item.stepLabel}` : ""}
         </p>
         <p className="c-count">
           <Dots total={total} done={done} current={index} />
@@ -109,8 +115,16 @@ export function CanvasQuiz() {
       </div>
 
       <div className="c-stage" role="img" aria-label={picked ? `고른 조각 ${picked}이 빈칸에 놓였어요` : "가운데 첫소리 자리가 비어 있어요"}>
-        <b className="t1">ㅇ</b>
-        <em>{lead}</em>
+        {word ? (
+          Array.from({ length: item.syllableIndex - 1 }, (_, position) => (
+            <span key={position} className="c-ghost" aria-hidden="true" />
+          ))
+        ) : (
+          <>
+            <b className="t1">ㅇ</b>
+            <em>{lead}</em>
+          </>
+        )}
         {picked ? (
           <b key={`${item.itemId}-${picked}`} className="c-slot filled">
             {picked}
@@ -118,18 +132,27 @@ export function CanvasQuiz() {
         ) : (
           <span className="c-slot" />
         )}
-        <em>ㅏ</em>
+        <em>{word ? item.vowel : "ㅏ"}</em>
       </div>
+      {word ? (
+        <p className="c-caption center">
+          낱말의 {ORDINAL[item.syllableIndex - 1] ?? `${item.syllableIndex}번째`} 소리 · 첫소리만 골라요
+        </p>
+      ) : null}
 
       <div className="c-say">
         {result ? (
           <>
             <div>
-              <h2 className="c-key">{result.answer.text}였어요.</h2>
+              <h2 className="c-key">{withPast(result.answer.text)}</h2>
               <p className="c-body">
                 {result.correct
                   ? `${result.answer.key} 소리를 또렷하게 가려 들었어요.`
-                  : `고른 소리는 ${chosenText}예요. 두 소리를 이어서 들어 보세요.`}
+                  : result.compareKind === "word"
+                    ? `${result.choice}을 고르면 ${withCopula(chosenText)} 두 낱말을 이어서 들어 보세요.`
+                    : word
+                      ? `짝이 되는 낱말이 없어 ${result.answerSpeech}·${chosenText}로 비교해요.`
+                      : `고른 소리는 ${withCopula(chosenText)} 두 소리를 이어서 들어 보세요.`}
                 {result.countsAsScore ? "" : " 이 문항은 성적에 넣지 않아요."}
               </p>
             </div>
@@ -168,11 +191,11 @@ export function CanvasQuiz() {
 
       {result && !result.correct ? (
         <div className="c-pair">
-          <button type="button" onClick={() => void practice.playRole(result.answerRef, "answer", result.answer.text)} disabled={practice.playing !== null}>
-            {result.answer.text} 듣기
+          <button type="button" onClick={() => void practice.playRole(result.answerRef, "answer", speak(result.answerSpeech))} disabled={practice.playing !== null}>
+            {result.answerSpeech} 듣기
             <Blade />
           </button>
-          <button type="button" onClick={() => void practice.playRole(result.choiceRef, "chosen", chosenText)} disabled={practice.playing !== null}>
+          <button type="button" onClick={() => void practice.playRole(result.choiceRef, "chosen", speak(chosenText))} disabled={practice.playing !== null}>
             {chosenText} 듣기
             <Blade tone="lavender" />
           </button>
@@ -188,7 +211,7 @@ export function CanvasQuiz() {
       ) : null}
       <p className="c-foot">
         <Link to="/compare">두 소리 비교 열기</Link> · 고르면 바로 첫 응답으로 기록돼요 ·{" "}
-        {session.sound === "browser" ? "이 기기의 브라우저 음성" : "음원은 검수 전 초안"}
+        {session.sound === "browser" && !word ? "이 기기의 브라우저 음성" : "음원은 검수 전 초안"}
       </p>
     </div>
   );

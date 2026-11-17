@@ -35,6 +35,14 @@ function PreviewSwitch({ teacherRoute }: { teacherRoute: boolean }) {
           브라우저 음성
         </button>
       </div>
+      <div className="roles" role="group" aria-label="듣고 고르기 문항">
+        <button type="button" aria-pressed={settings.items === "word"} onClick={() => settings.change({ items: "word" })}>
+          낱말 대립쌍
+        </button>
+        <button type="button" aria-pressed={settings.items === "pseudo"} onClick={() => settings.change({ items: "pseudo" })}>
+          의사단어
+        </button>
+      </div>
       <small>역할 전환은 교사 인증이 아닙니다.</small>
     </div>
   );

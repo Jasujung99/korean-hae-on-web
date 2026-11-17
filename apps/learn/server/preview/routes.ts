@@ -9,6 +9,7 @@ import {
   PRACTICE_GROUP_ID,
   PRACTICE_ITEMS,
   abxSyllable,
+  comparePair,
   choiceAudioId,
   isConsonant,
   judge,
@@ -17,6 +18,7 @@ import {
   practiceItem,
   practiceWords,
   type Consonant,
+  type ItemKind,
 } from "../../content/practice.ts";
 import { STEP_LABELS } from "../../content/contrast.ts";
 import { FLASH_TTS_MODEL, FLAT_READING_STYLE, VOICE_CANDIDATE } from "../../content/tts/pipeline.ts";
@@ -27,7 +29,7 @@ import {
   voicedAudioId,
   type PracticeVoiceKey,
 } from "../../content/practice-voices.ts";
-import { stageZeroCells, syllableAudioBase } from "../../content/core-table.ts";
+import { coreWords, stageZeroCells, syllableAudioBase, wordAudioBase } from "../../content/core-table.ts";
 import { AUDITION_TEXT, AUDITION_VOICES, auditionAudioId, flatAuditionAudioId } from "../../content/voices.ts";
 import type { PreviewAudio } from "./audio.ts";
 import {
@@ -61,6 +63,7 @@ export function previewAudioIds(): string[] {
   const ids = new Set<string>();
   const bases = new Set<string>();
   for (const item of PRACTICE_ITEMS) bases.add(item.audioId);
+  for (const word of coreWords()) bases.add(wordAudioBase(word));
   for (const cell of stageZeroCells()) bases.add(syllableAudioBase(cell.stimulus));
   for (const word of practiceWords()) {
     bases.add(word.wordAudioId);
@@ -126,7 +129,10 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
   const pick = (baseId: string, legacyId: string = baseId): string => {
     if (!baseId) return legacyId;
     const voiced = voicedAudioId(baseId, practiceVoiceKey());
-    return audio.refFor(voiced) ? voiced : legacyId;
+    if (audio.refFor(voiced)) return voiced;
+    if (audio.refFor(legacyId)) return legacyId;
+    // 고른 목소리 파일도 예전 파일도 없으면 다른 연습 목소리를 쓴다. 실제 목소리는 응답 기록(voice)에 남는다.
+    return PRACTICE_VOICES.map((row) => voicedAudioId(baseId, row.key)).find((id) => audio.refFor(id)) ?? legacyId;
   };
   const refOf = (baseId: string, legacyId?: string): string | null => {
     const id = pick(baseId, legacyId);
@@ -136,6 +142,7 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
   const settings = (): PreviewSettings => ({
     style: store.getSetting("style") === "proto" ? "proto" : "canvas",
     sound: store.getSetting("sound") === "browser" ? "browser" : "file",
+    items: store.getSetting("items") === "pseudo" ? "pseudo" : "word",
   });
 
   const serverEvent = (
@@ -158,8 +165,8 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
     const item = practiceItem(String(event.payload.itemId));
     const answerKey = String(event.payload.target);
     const chosenKey = String(event.payload.choice);
-    const answer = item?.choices.find((choice) => choice.key === answerKey) ?? { key: answerKey, text: answerKey };
-    const chosen = item?.choices.find((choice) => choice.key === chosenKey);
+    const answer = { key: answerKey, text: item?.stimulus ?? answerKey };
+    const pair = item && isConsonant(chosenKey) ? comparePair(item, chosenKey) : null;
     return {
       itemId: String(event.payload.itemId),
       choice: chosenKey,
@@ -167,8 +174,12 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
       answer,
       countsAsScore: Boolean(event.payload.countsAsScore),
       excludedReason: (event.payload.excludedReason as AnswerResult["excludedReason"]) ?? null,
-      answerRef: refOf(choiceAudioId(answer.text)),
-      choiceRef: chosen ? refOf(choiceAudioId(chosen.text)) : null,
+      answerRef: pair ? refOf(pair.answer.audioId, pair.answer.legacyAudioId) : null,
+      choiceRef: pair ? refOf(pair.chosen.audioId, pair.chosen.legacyAudioId) : null,
+      answerSpeech: pair?.answer.text ?? answer.text,
+      choiceSpeech: pair?.chosen.text ?? chosenKey,
+      compareKind: pair?.kind ?? "pseudo",
+      compareTier: pair?.tier ?? null,
     };
   };
 
@@ -201,11 +212,16 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
         {
           itemId,
           choices: item.choices,
-          audioRef: refOf(item.audioId),
-          speechText: settings().sound === "browser" ? item.stimulus : null,
+          audioRef: refOf(item.audioId, item.legacyAudioId),
+          speechText: settings().sound === "browser" && item.kind === "pseudo" ? item.stimulus : null,
           positionLabel: item.positionLabel,
           stage: item.stage,
           slotKind: kinds[index] ?? "common",
+          kind: item.kind,
+          step: item.step,
+          stepLabel: item.step ? STEP_LABELS[item.step] : null,
+          syllableIndex: item.syllableIndex,
+          vowel: item.vowel,
         },
       ];
     });
@@ -220,6 +236,7 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
       finished: ended || answers.length + skipped.length >= items.length,
       voice: practiceVoice(),
       sound: settings().sound,
+      itemKind: plan.payload.itemKind === "word" ? "word" : "pseudo",
     };
   };
 
@@ -242,11 +259,14 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
     return c.json(view);
   });
 
-  app.post("/sessions", (c) => {
+  app.post("/sessions", async (c) => {
+    const body = (await readJson(c)) ?? {};
+    const itemKind: ItemKind = body.itemKind === "word" || body.itemKind === "pseudo" ? body.itemKind : settings().items;
     const sessionId = randomUUID();
-    const plan = planPracticeSession(sessionId);
+    const plan = planPracticeSession(sessionId, itemKind);
     const event = serverEvent("session_planned", sessionId, {
       groupId: PRACTICE_GROUP_ID,
+      itemKind,
       policyVersion: plan.policyVersion,
       itemIds: plan.slots.map((slot) => slot.itemId),
       slotKinds: plan.slots.map((slot) => slot.kind),
@@ -316,8 +336,11 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
         previousVowel: item.previousVowel,
         pairGroupId: item.pairGroupId,
         contrastTier: item.contrastTier,
-        audioId: pick(item.audioId),
-        voice: audio.meta(pick(item.audioId))?.voice ?? null,
+        itemKind: item.kind,
+        step: item.step,
+        syllableIndex: item.syllableIndex,
+        audioId: pick(item.audioId, item.legacyAudioId),
+        voice: audio.meta(pick(item.audioId, item.legacyAudioId))?.voice ?? null,
         audioSource: body.audioSource === "browser" ? "browser" : "file",
         style: body.style === "canvas" ? "canvas" : "proto",
         policyVersion: plan.payload.policyVersion,
@@ -342,22 +365,34 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
     if (!plan || !item) return c.json({ error: "unknown_item" }, 404);
     const trial = makeAbxTrial(item, isConsonant(partner) ? partner : null, randomUUID().slice(0, 8));
     store.append([
-      serverEvent("abx_trial", sessionId, { ...trial, audioA: trial.audio.a, audioB: trial.audio.b, audioX: trial.audio.x }, {
-        id: trial.trialId,
-      }),
+      serverEvent(
+        "abx_trial",
+        sessionId,
+        {
+          ...trial,
+          audioA: pick(trial.audio.a, trial.legacy.a),
+          audioB: pick(trial.audio.b, trial.legacy.b),
+          audioX: pick(trial.audio.x, trial.legacy.x),
+          textA: trial.texts.a,
+          textB: trial.texts.b,
+        },
+        {
+          id: trial.trialId,
+        },
+      ),
     ]);
     return c.json({
       trial: {
         trialId: trial.trialId,
         itemId,
-        refs: { a: refOf(trial.audio.a), b: refOf(trial.audio.b), x: refOf(trial.audio.x) },
+        refs: {
+          a: refOf(trial.audio.a, trial.legacy.a),
+          b: refOf(trial.audio.b, trial.legacy.b),
+          x: refOf(trial.audio.x, trial.legacy.x),
+        },
         texts:
-          settings().sound === "browser"
-            ? {
-                a: abxSyllable(trial.lead, trial.a),
-                b: abxSyllable(trial.lead, trial.b),
-                x: abxSyllable(trial.lead, trial.x === "A" ? trial.a : trial.b),
-              }
+          settings().sound === "browser" && trial.kind === "pseudo"
+            ? { a: trial.texts.a, b: trial.texts.b, x: trial.x === "A" ? trial.texts.a : trial.texts.b }
             : null,
       },
     });
@@ -379,8 +414,8 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
       trialId,
       correct: choice === xWas,
       xWas,
-      a: { key: a, text: abxSyllable(lead, a) },
-      b: { key: b, text: abxSyllable(lead, b) },
+      a: { key: a, text: typeof trial.payload.textA === "string" ? trial.payload.textA : abxSyllable(lead, a) },
+      b: { key: b, text: typeof trial.payload.textB === "string" ? trial.payload.textB : abxSyllable(lead, b) },
     };
     const existing = store.byId(eventId);
     if (existing) return c.json({ result: reply, duplicate: true });
@@ -391,7 +426,18 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
       serverEvent(
         "abx_answer",
         typeof sessionId === "string" ? sessionId : (trial.sessionId ?? null),
-        { trialId, itemId: trial.payload.itemId ?? null, choice, correct: reply.correct, attempt, pair, task: "abx" },
+        {
+          trialId,
+          itemId: trial.payload.itemId ?? null,
+          choice,
+          correct: reply.correct,
+          attempt,
+          pair,
+          task: "abx",
+          compareKind: trial.payload.kind ?? null,
+          contrastTier: trial.payload.tier ?? null,
+          pairGroupId: trial.payload.pairGroupId ?? null,
+        },
         {
           id: eventId,
           seq: typeof seq === "number" && Number.isFinite(seq) ? seq : 0,
@@ -443,6 +489,7 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
     if (!body) return c.json({ error: "invalid_body" }, 400);
     if (body.style === "proto" || body.style === "canvas") store.setSetting("style", body.style);
     if (body.sound === "file" || body.sound === "browser") store.setSetting("sound", body.sound);
+    if (body.items === "word" || body.items === "pseudo") store.setSetting("items", body.items);
     return c.json(settings());
   });
 
@@ -560,6 +607,7 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
     store.clear();
     store.setSetting("style", keep.style);
     store.setSetting("sound", keep.sound);
+    store.setSetting("items", keep.items);
     store.setSetting("practiceVoiceKey", keepVoice);
     return c.json({ ok: true });
   });

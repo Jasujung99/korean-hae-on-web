@@ -14,6 +14,14 @@ export type ItemView = {
   positionLabel: string;
   stage: string;
   slotKind: string;
+  /** word: 낱말 대립쌍 / pseudo: 의사단어 */
+  kind: ItemKind;
+  /** Stage 안 출제 순서(낱말만) */
+  step: 1 | 2 | 3 | null;
+  stepLabel: string | null;
+  /** 목표 자음이 든 음절(1부터)과 그 음절의 모음. 다른 음절·받침은 답을 드러낼 수 있어 보내지 않는다. */
+  syllableIndex: number;
+  vowel: string;
 };
 
 export type AnswerResult = {
@@ -26,6 +34,11 @@ export type AnswerResult = {
   /** 답을 낸 뒤에만 알려 주는 정답·내 선택 음원 */
   answerRef: string | null;
   choiceRef: string | null;
+  /** 비교 재생에 쓰는 두 소리의 글자. 낱말 상대가 없으면 같은 앞 모음의 의사단어다. */
+  answerSpeech: string;
+  choiceSpeech: string;
+  compareKind: ItemKind;
+  compareTier: number | null;
 };
 
 export type SessionView = {
@@ -39,6 +52,7 @@ export type SessionView = {
   finished: boolean;
   voice: string;
   sound: SoundSource;
+  itemKind: ItemKind;
 };
 
 export type AnswerRequest = {
@@ -243,7 +257,8 @@ export type LearnerDetail = {
 
 export type PreviewStyle = "proto" | "canvas";
 export type SoundSource = "file" | "browser";
-export type PreviewSettings = { style: PreviewStyle; sound: SoundSource };
+export type ItemKind = "word" | "pseudo";
+export type PreviewSettings = { style: PreviewStyle; sound: SoundSource; items: ItemKind };
 
 export type ListenView = {
   frames: Array<{ lead: string; sounds: Array<{ key: string; text: string; audioRef: string | null }> }>;

@@ -995,3 +995,11 @@ b.p3 {
 .tc-tiers {
   margin-top: var(--space-2);
 }
+
+/* 낱말 문항: 목표 음절 앞의 음절 자리 */
+.c-ghost {
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 50%;
+}

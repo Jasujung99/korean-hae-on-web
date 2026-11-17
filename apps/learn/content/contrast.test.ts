@@ -80,3 +80,48 @@ describe("in-stage order of the first group", () => {
     expect(stage5.find((word) => word.word === "빚")?.contrast?.partners).toEqual([{ consonant: "ㅊ", word: "빛" }]);
   });
 });
+
+describe("word contrast items", () => {
+  it("keeps only words with one target consonant between vowels", async () => {
+    const { WORD_ITEMS } = await import("./practice.ts");
+    const words = WORD_ITEMS.map((item) => item.stimulus);
+    expect(words).toContain("기차");
+    expect(words).not.toContain("김치찌개");
+    expect(WORD_ITEMS.find((item) => item.stimulus === "가르치다")).toMatchObject({ syllableIndex: 3, vowel: "ㅣ", previousVowel: "ㅡ" });
+  });
+
+  it("compares with the partner word first and falls back to pseudowords on the same lead vowel", async () => {
+    const { WORD_ITEMS, comparePair } = await import("./practice.ts");
+    const find = (word: string) => {
+      const item = WORD_ITEMS.find((row) => row.stimulus === word);
+      if (!item) throw new Error(word);
+      return item;
+    };
+    expect(comparePair(find("기차"), "ㅈ")).toMatchObject({ kind: "word", tier: 1, chosen: { text: "기자" } });
+    expect(comparePair(find("가장"), "ㅉ")).toMatchObject({ kind: "word", tier: 3, chosen: { text: "가짜" } });
+    expect(comparePair(find("모자"), "ㅉ")).toMatchObject({ kind: "pseudo", answer: { text: "오자" }, chosen: { text: "오짜" } });
+  });
+
+  it("builds word ABX with the tense word as A", async () => {
+    const { WORD_ITEMS } = await import("./practice.ts");
+    const item = WORD_ITEMS.find((row) => row.stimulus === "가짜");
+    if (!item) throw new Error("가짜");
+    for (const seed of ["a", "b", "c"]) {
+      expect(makeAbxTrial(item, "ㅈ", seed)).toMatchObject({ a: "ㅉ", b: "ㅈ", texts: { a: "가짜", b: "가장" }, kind: "word", tier: 3 });
+    }
+  });
+
+  it("orders a word session by step and avoids a step with one answer only", async () => {
+    const { planWordSession, practiceItem: find } = await import("./practice.ts");
+    for (const seed of ["s1", "s2", "s3", "s4", "s5", "s6"]) {
+      const slots = planWordSession(seed).slots;
+      const items = slots.map((slot) => find(slot.itemId));
+      const steps = items.map((item) => item?.step ?? 0);
+      expect(steps).toEqual([...steps].sort((a, b) => a - b));
+      for (const step of [1, 2, 3]) {
+        const targets = new Set(items.filter((item) => item?.step === step).map((item) => item?.target));
+        expect(targets.size).toBeGreaterThan(1);
+      }
+    }
+  });
+});

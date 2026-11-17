@@ -44,3 +44,18 @@ export function Dots({ total, done, current }: { total: number; done: number; cu
     </span>
   );
 }
+
+function hasBatchim(text: string): boolean {
+  const code = text.charCodeAt(text.length - 1) - 0xac00;
+  return code >= 0 && code <= 11171 && code % 28 !== 0;
+}
+
+/** 기차였어요 / 아침이었어요 */
+export function withPast(text: string): string {
+  return `${text}${hasBatchim(text) ? "이었어요." : "였어요."}`;
+}
+
+/** 기자예요. / 아침이에요. */
+export function withCopula(text: string): string {
+  return `${text}${hasBatchim(text) ? "이에요." : "예요."}`;
+}
