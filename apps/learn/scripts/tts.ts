@@ -9,8 +9,12 @@ import {
   NOT_CONFIGURED_MESSAGE,
   VOICE_CANDIDATE,
   authHeaders,
+  FLAT_READING_STYLE,
   buildGenerateContentBody,
+  buildInteractionBody,
   decodeBase64,
+  interactionsEndpoint,
+  parseInteractionAudio,
   modelEndpoint,
   normalizeToWav,
   parseGenerateContentAudio,
@@ -19,7 +23,7 @@ import {
   sha256Hex,
   type TtsUnit,
 } from "../content/tts/pipeline.ts";
-import { AUDITION_TEXT, AUDITION_VOICES, auditionAudioId } from "../content/voices.ts";
+import { AUDITION_TEXT, AUDITION_VOICES, auditionAudioId, flatAuditionAudioId } from "../content/voices.ts";
 
 const appRoot = fileURLToPath(new URL("..", import.meta.url));
 const rawDir = join(appRoot, "audio", "raw");
@@ -58,10 +62,13 @@ async function generateOne(input: {
   kind: string;
   text: string;
   voice: string;
+  style?: string | null;
   apiKey: string;
   skipExisting: boolean;
 }): Promise<Outcome> {
   const { id, kind, text, voice, apiKey } = input;
+  // 톤 지시가 있으면 Interactions 요청(지시를 본문과 따로 보냄), 없으면 기존 generateContent 요청.
+  const style = input.style ?? null;
   const wavPath = join(rawDir, `${id}.wav`);
   if (input.skipExisting && (await exists(wavPath))) {
     console.log(`skip (already generated): ${id}`);
@@ -71,10 +78,10 @@ async function generateOne(input: {
   let response: Response | null = null;
   try {
     for (let attempt = 0; attempt < 4; attempt += 1) {
-      response = await fetch(modelEndpoint(), {
+      response = await fetch(style ? interactionsEndpoint() : modelEndpoint(), {
         method: "POST",
         headers: authHeaders(apiKey),
-        body: JSON.stringify(buildGenerateContentBody(text, voice)),
+        body: JSON.stringify(style ? buildInteractionBody(text, voice, style) : buildGenerateContentBody(text, voice)),
       });
       if (response.status !== 429 && response.status < 500) break;
       const delay = Math.max(retryDelayMs(attempt, response.headers.get("retry-after")), 2000 * (attempt + 1));
@@ -101,7 +108,8 @@ async function generateOne(input: {
     return "failed";
   }
 
-  const parsed = parseGenerateContentAudio(await response.json());
+  const payload = await response.json();
+  const parsed = style ? parseInteractionAudio(payload) : parseGenerateContentAudio(payload);
   if (!parsed) {
     console.error(`response had no audio: ${id}`);
     return "failed";
@@ -122,7 +130,7 @@ async function generateOne(input: {
     model: FLASH_TTS_MODEL,
     voice,
     voiceFixed: false,
-    settings: { requestStyle: "generateContent", temperature: null, stylePrompt: null },
+    settings: { requestStyle: style ? "interactions" : "generateContent", temperature: null, stylePrompt: style },
     sourceMime: parsed.mime,
     storedMime: normalized.mime,
     wrappedFromPcm: normalized.wrappedFromPcm,
@@ -139,7 +147,7 @@ async function generateOne(input: {
 }
 
 async function runAll(
-  jobs: Array<{ id: string; kind: string; text: string; voice: string }>,
+  jobs: Array<{ id: string; kind: string; text: string; voice: string; style?: string | null }>,
   apiKey: string,
   skipExisting: boolean,
 ) {
@@ -174,12 +182,20 @@ async function main() {
   }
 
   if (command === "auditions") {
+    // --flat: 평평한 낭독 톤 지시를 붙인 표본(audition-<voice>-flat)을 만든다.
+    const flat = process.argv.includes("--flat");
     const voices = (argValue("--voices") ?? AUDITION_VOICES.map((item) => item.voice).join(","))
       .split(",")
       .map((item) => item.trim())
       .filter(Boolean);
     await runAll(
-      voices.map((name) => ({ id: auditionAudioId(name), kind: "audition", text: AUDITION_TEXT, voice: name })),
+      voices.map((name) => ({
+        id: flat ? flatAuditionAudioId(name) : auditionAudioId(name),
+        kind: "audition",
+        text: AUDITION_TEXT,
+        voice: name,
+        style: flat ? FLAT_READING_STYLE : null,
+      })),
       apiKey,
       skipExisting,
     );

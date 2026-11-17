@@ -18,8 +18,8 @@ import {
   practiceWords,
   type Consonant,
 } from "../../content/practice.ts";
-import { VOICE_CANDIDATE } from "../../content/tts/pipeline.ts";
-import { AUDITION_TEXT, AUDITION_VOICES, auditionAudioId } from "../../content/voices.ts";
+import { FLASH_TTS_MODEL, FLAT_READING_STYLE, VOICE_CANDIDATE } from "../../content/tts/pipeline.ts";
+import { AUDITION_TEXT, AUDITION_VOICES, auditionAudioId, flatAuditionAudioId } from "../../content/voices.ts";
 import type { PreviewAudio } from "./audio.ts";
 import {
   CLIENT_EVENT_TYPES,
@@ -55,7 +55,10 @@ export function previewAudioIds(): string[] {
     ids.add(word.wordAudioId);
     ids.add(word.exampleAudioId);
   }
-  for (const voice of AUDITION_VOICES) ids.add(auditionAudioId(voice.voice));
+  for (const voice of AUDITION_VOICES) {
+    ids.add(auditionAudioId(voice.voice));
+    ids.add(flatAuditionAudioId(voice.voice));
+  }
   return [...ids];
 }
 
@@ -445,9 +448,15 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
 
   const voicesView = (): VoicesView => ({
     sampleText: AUDITION_TEXT,
+    flatStyle: FLAT_READING_STYLE,
+    model: FLASH_TTS_MODEL,
     practiceVoice: practiceVoice(),
     chosen: typeof store.getSetting("voiceChoice") === "string" ? (store.getSetting("voiceChoice") as string) : null,
-    voices: AUDITION_VOICES.map((voice) => ({ ...voice, audioRef: audio.refFor(auditionAudioId(voice.voice)) })),
+    voices: AUDITION_VOICES.map((voice) => ({
+      ...voice,
+      audioRef: audio.refFor(auditionAudioId(voice.voice)),
+      flatAudioRef: audio.refFor(flatAuditionAudioId(voice.voice)),
+    })),
   });
 
   app.get("/voices", (c) => c.json(voicesView()));

@@ -144,12 +144,19 @@ export type CourseView = {
 export type VoiceView = {
   voice: string;
   character: string;
+  reading: boolean;
   note: string;
+  /** 톤 지시 없이 만든 표본 */
   audioRef: string | null;
+  /** 평평한 낭독 톤 지시를 붙여 만든 표본 */
+  flatAudioRef: string | null;
 };
 
 export type VoicesView = {
   sampleText: string;
+  /** 표본에 붙인 톤 지시(영어 원문). 본문과 따로 보내 소리로 읽히지 않는다. */
+  flatStyle: string;
+  model: string;
   practiceVoice: string;
   chosen: string | null;
   voices: VoiceView[];

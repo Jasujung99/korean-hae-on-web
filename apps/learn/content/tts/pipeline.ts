@@ -60,6 +60,55 @@ export function buildGenerateContentBody(text: string, voice = VOICE_CANDIDATE):
   };
 }
 
+/**
+ * 평평한 낭독 톤 지시. 본문(text)은 그대로 읽히므로 지시는 speech_metadata.style에만 넣는다.
+ * 문서 권고대로 짧고 늘 같은 문자열을 쓰며, 음색을 고정하라는 지시는 넣지 않는다.
+ */
+export const FLAT_READING_STYLE = "neutral, monotone and flat, read aloud slowly and clearly";
+
+export function interactionsEndpoint(): string {
+  return "https://generativelanguage.googleapis.com/v1beta/interactions";
+}
+
+export type InteractionBody = {
+  model: string;
+  input: Array<{
+    type: "user_input";
+    content: Array<{ type: "text"; text: string; annotations?: Array<{ type: "speech_metadata"; style: string }> }>;
+  }>;
+  response_format: { type: "audio" };
+  generation_config: { speech_config: Array<{ voice: string }> };
+};
+
+export function buildInteractionBody(text: string, voice: string, style: string | null, model = FLASH_TTS_MODEL): InteractionBody {
+  const content: InteractionBody["input"][number]["content"][number] = { type: "text", text };
+  if (style) content.annotations = [{ type: "speech_metadata", style }];
+  return {
+    model,
+    input: [{ type: "user_input", content: [content] }],
+    response_format: { type: "audio" },
+    generation_config: { speech_config: [{ voice }] },
+  };
+}
+
+/** steps[].content[] 가운데 마지막 audio 조각. 문서상 단건 응답은 RIFF WAV다. */
+export function parseInteractionAudio(payload: unknown): { mime: string; base64: string } | null {
+  if (!payload || typeof payload !== "object") return null;
+  const record = payload as {
+    steps?: Array<{ type?: string; content?: Array<{ type?: string; data?: string; mime_type?: string; mimeType?: string }> }>;
+    output_audio?: { data?: string; mime_type?: string };
+  };
+  let found: { mime: string; base64: string } | null = null;
+  for (const step of record.steps ?? []) {
+    if (step.type && step.type !== "model_output") continue;
+    for (const item of step.content ?? []) {
+      if (item.type === "audio" && item.data) found = { mime: item.mime_type ?? item.mimeType ?? "", base64: item.data };
+    }
+  }
+  if (!found && record.output_audio?.data) found = { mime: record.output_audio.mime_type ?? "", base64: record.output_audio.data };
+  return found;
+}
+
 export function authHeaders(apiKey: string): Record<string, string> {
   return {
     "content-type": "application/json",

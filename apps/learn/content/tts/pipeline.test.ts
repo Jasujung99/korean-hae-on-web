@@ -9,7 +9,11 @@ import {
   VOICE_CANDIDATE,
   VOICE_FIXED,
   applyRawResult,
+  FLAT_READING_STYLE,
   buildGenerateContentBody,
+  buildInteractionBody,
+  interactionsEndpoint,
+  parseInteractionAudio,
   classifyPlayback,
   decodeBase64,
   modelEndpoint,
@@ -173,6 +177,32 @@ describe("tts pipeline", () => {
     expect(stderr).not.toMatch(/AIza/);
   });
 });
+
+describe("flat reading style", () => {
+  it("sends the style apart from the spoken text", () => {
+    const body = buildInteractionBody("아자", "Charon", FLAT_READING_STYLE);
+    expect(interactionsEndpoint()).toBe("https://generativelanguage.googleapis.com/v1beta/interactions");
+    expect(body.model).toBe("gemini-3.8-flash-tts");
+    expect(body.input[0]?.content[0]?.text).toBe("아자");
+    expect(body.input[0]?.content[0]?.annotations).toEqual([{ type: "speech_metadata", style: FLAT_READING_STYLE }]);
+    expect(body.generation_config.speech_config).toEqual([{ voice: "Charon" }]);
+    expect(JSON.stringify(body)).not.toMatch(/AIza|api[_-]?key/i);
+    expect(buildInteractionBody("아자", "Kore", null).input[0]?.content[0]?.annotations).toBeUndefined();
+  });
+
+  it("reads the last audio block from model output steps", () => {
+    const payload = {
+      steps: [
+        { type: "user_input", content: [{ type: "text", text: "아자" }] },
+        { type: "model_output", content: [{ type: "audio", data: "AAAA" }, { type: "audio", data: "UklGRg==", mime_type: "audio/wav" }] },
+      ],
+    };
+    expect(parseInteractionAudio(payload)).toEqual({ mime: "audio/wav", base64: "UklGRg==" });
+    expect(parseInteractionAudio({ steps: [] })).toBeNull();
+    expect(parseInteractionAudio(null)).toBeNull();
+  });
+});
+
 
 function wavWithPcm(pcm: Uint8Array): Uint8Array {
   const bytes = new Uint8Array(12 + 8 + pcm.length);
