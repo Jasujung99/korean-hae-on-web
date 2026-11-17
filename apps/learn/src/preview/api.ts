@@ -1,5 +1,6 @@
 // 미리보기 API 호출. 같은 origin의 /api/preview/* 만 부른다. 키나 외부 주소를 쓰지 않는다.
 import type {
+  AudioInventoryView,
   ItemKind,
   AbxAnswerRequest,
   AbxAnswerResult,
@@ -54,6 +55,7 @@ export const previewApi = {
     postJson<{ accepted: number; duplicates: number }>("/api/preview/events", { events }, keepalive),
   words: () => getJson<{ words: WordView[] }>("/api/preview/words"),
   voices: () => getJson<VoicesView>("/api/preview/voices"),
+  audioInventory: () => getJson<AudioInventoryView>("/api/preview/audio-inventory"),
   choosePracticeVoice: (key: string) => postJson<VoicesView>("/api/preview/practice-voice", { key }),
   chooseVoice: (voice: string) => postJson<VoicesView>("/api/preview/voice-choice", { voice }),
   learners: () => getJson<{ learners: LearnerSummary[] }>("/api/preview/teacher/learners"),

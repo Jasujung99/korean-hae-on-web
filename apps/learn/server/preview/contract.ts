@@ -263,3 +263,66 @@ export type PreviewSettings = { style: PreviewStyle; sound: SoundSource; items: 
 export type ListenView = {
   frames: Array<{ lead: string; sounds: Array<{ key: string; text: string; audioRef: string | null }> }>;
 };
+
+// ---- 만든 음원 목록(목소리 화면의 대시보드) ----
+
+export type AudioCellView = {
+  id: string;
+  /** 목록 화면 전용 ref(연습 화면 ref와 따로) */
+  ref: string | null;
+  voice: string;
+  model: string;
+  generatedAt: string;
+  durationMs: number | null;
+  bytes: number;
+  /** flat: 평평한 낭독 지시를 붙임 / plain: 지시 없음 / null: 기록 없음 */
+  style: "flat" | "plain" | null;
+};
+
+export type AudioColumnView = { key: string; label: string; voice: string };
+
+export type AudioUnitKind = "pseudoword" | "syllable" | "word" | "sentence";
+
+export type AudioUnitView = {
+  base: string;
+  groupId: string;
+  kind: AudioUnitKind;
+  text: string;
+  /** 열(목소리) key별 파일. 없으면 null */
+  cells: Record<string, AudioCellView | null>;
+};
+
+export type AudioGroupView = {
+  id: string;
+  label: string;
+  kind: AudioUnitKind;
+  total: number;
+  ready: Record<string, number>;
+};
+
+export type LengthCheckView = {
+  label: string;
+  column: string;
+  items: Array<{ text: string; durationMs: number | null }>;
+  /** (가장 긴 것 − 가장 짧은 것) / 가장 짧은 것, 퍼센트 */
+  spreadPct: number | null;
+};
+
+export type AudioInventoryView = {
+  rawDir: string;
+  totals: {
+    files: number;
+    durationMs: number;
+    lastGeneratedAt: string | null;
+    byVoice: Array<{ voice: string; files: number }>;
+  };
+  columns: AudioColumnView[];
+  groups: AudioGroupView[];
+  units: AudioUnitView[];
+  auditions: Array<{ voice: string; plain: AudioCellView | null; flat: AudioCellView | null }>;
+  /** 위 어디에도 속하지 않는 파일 */
+  others: Array<AudioCellView & { text: string }>;
+  lengthChecks: LengthCheckView[];
+  /** 빠진 음원을 만들 때 쓰는 명령(키는 환경 변수로만) */
+  commands: Array<{ label: string; command: string }>;
+};

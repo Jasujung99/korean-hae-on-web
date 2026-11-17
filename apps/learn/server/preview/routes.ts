@@ -47,6 +47,7 @@ import {
 } from "./contract.ts";
 import { EXAMPLE_LEARNER, exampleDetail } from "./example.ts";
 import { detail, summarize } from "./observe.ts";
+import { buildInventory } from "./inventory.ts";
 import type { PreviewStore, StoredEvent } from "./store.ts";
 
 export const PREVIEW_LEARNER_ID = "preview-learner";
@@ -580,6 +581,9 @@ export function createPreviewRoutes(deps: { store: PreviewStore; audio: PreviewA
     store.append([serverEvent("voice_choice", null, { voice })]);
     return c.json(voicesView());
   });
+
+  // 만든 음원 목록(목소리 화면의 대시보드). 생성은 부르지 않는다.
+  app.get("/audio-inventory", (c) => c.json(buildInventory(audio)));
 
   app.get("/audio/:ref", (c) => {
     const ref = c.req.param("ref");
