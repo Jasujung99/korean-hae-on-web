@@ -2,12 +2,10 @@ import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
-import { createLearnApp } from "../app.ts";
-import type { LearnConfig } from "../config.ts";
+import { createTestAccounts } from "../accounts/test-kit.ts";
 import { createFixtureAudio, createRawAudio, wavDurationMs } from "./audio.ts";
 import type { AudioInventoryView } from "./contract.ts";
 import { buildInventory } from "./inventory.ts";
-import { createMemoryStore } from "./store.ts";
 
 /** 24kHz 16비트 모노 WAV(초당 48,000바이트) */
 function wav(ms: number): Uint8Array {
@@ -78,12 +76,13 @@ describe("audio inventory", () => {
     const cell = buildInventory(audio).units.find((unit) => unit.base === "pw-아자")?.cells.erinome;
     expect(cell).toMatchObject({ voice: "Erinome", style: "flat", durationMs: 900 });
 
-    const config: LearnConfig = { origin: "http://127.0.0.1:4174", screenPreview: true, host: "127.0.0.1", port: 4174 };
-    const app = createLearnApp(config, {}, { store: createMemoryStore(), audio });
-    const response = await app.request("/api/preview/audio-inventory");
+    const kit = await createTestAccounts({ audio });
+    const app = kit.teacher;
+    const response = await app.request("/api/teacher/audio-inventory");
     expect(response.status).toBe(200);
     const body = (await response.json()) as AudioInventoryView;
     expect(body.totals.files).toBe(1);
-    expect((await app.request(`/api/preview/audio/${inventoryRef}`)).status).toBe(200);
+    expect((await app.request(`/api/sound/${inventoryRef}`)).status).toBe(200);
+    expect((await kit.client(null).request("/api/teacher/audio-inventory")).status).toBe(401);
   });
 });

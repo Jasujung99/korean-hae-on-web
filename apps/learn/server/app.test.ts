@@ -41,6 +41,7 @@ describe("learn API", () => {
       dnsChanged: false,
       screenPreview: true,
       session: "not-issued",
+      accounts: false,
     });
   });
 

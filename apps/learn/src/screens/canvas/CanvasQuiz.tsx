@@ -69,9 +69,8 @@ export function CanvasQuiz() {
   const last = index === total - 1;
   const lead = leadVowel(item.choices[0]?.text || "아");
   const word = item.kind === "word";
-  const chosenText = result?.choiceSpeech ?? "";
+  const chosenText = result?.choiceText ?? "";
   // 브라우저 음성은 의사단어에만 쓴다. 낱말 비교는 고정 음원이다.
-  const speak = (text: string) => (result?.compareKind === "pseudo" ? text : undefined);
   const canPick = (heard || failed) && !result && !skipped && !practice.submitting;
 
   const goNext = () => {
@@ -151,7 +150,7 @@ export function CanvasQuiz() {
                   : result.compareKind === "word"
                     ? `${result.choice}을 고르면 ${withCopula(chosenText)} 두 낱말을 이어서 들어 보세요.`
                     : word
-                      ? `짝이 되는 낱말이 없어 ${result.answerSpeech}·${chosenText}로 비교해요.`
+                      ? `짝이 되는 낱말이 없어 ${result.answerText}·${chosenText}로 비교해요.`
                       : `고른 소리는 ${withCopula(chosenText)} 두 소리를 이어서 들어 보세요.`}
                 {result.countsAsScore ? "" : " 이 문항은 성적에 넣지 않아요."}
               </p>
@@ -191,11 +190,11 @@ export function CanvasQuiz() {
 
       {result && !result.correct ? (
         <div className="c-pair">
-          <button type="button" onClick={() => void practice.playRole(result.answerRef, "answer", speak(result.answerSpeech))} disabled={practice.playing !== null}>
-            {result.answerSpeech} 듣기
+          <button type="button" onClick={() => void practice.playRole(result.answerRef, "answer", result.answerText)} disabled={practice.playing !== null}>
+            {result.answerText} 듣기
             <Blade />
           </button>
-          <button type="button" onClick={() => void practice.playRole(result.choiceRef, "chosen", speak(chosenText))} disabled={practice.playing !== null}>
+          <button type="button" onClick={() => void practice.playRole(result.choiceRef, "chosen", chosenText)} disabled={practice.playing !== null}>
             {chosenText} 듣기
             <Blade tone="lavender" />
           </button>
@@ -211,7 +210,7 @@ export function CanvasQuiz() {
       ) : null}
       <p className="c-foot">
         <Link to="/compare">두 소리 비교 열기</Link> · 고르면 바로 첫 응답으로 기록돼요 ·{" "}
-        {session.sound === "browser" && !word ? "이 기기의 브라우저 음성" : "음원은 검수 전 초안"}
+        음원은 검수 전 초안
       </p>
     </div>
   );

@@ -1,10 +1,6 @@
 import { Hono } from "hono";
+import { createAccountRoutes, type AccountsDeps } from "./accounts/routes.ts";
 import { toPublicConfig, type LearnConfig } from "./config.ts";
-import type { PreviewAudio } from "./preview/audio.ts";
-import { createPreviewRoutes } from "./preview/routes.ts";
-import type { PreviewStore } from "./preview/store.ts";
-
-export type PreviewDeps = { store: PreviewStore; audio: PreviewAudio };
 
 const SAFE_METHODS = new Set(["GET", "HEAD", "OPTIONS"]);
 
@@ -22,9 +18,8 @@ function isJsonContentType(value: string | undefined): boolean {
 export function createLearnApp(
   config: LearnConfig,
   audio: { readDistribution?: (id: string) => Uint8Array | null } = {},
-  preview: PreviewDeps | null = null,
+  accounts: AccountsDeps | null = null,
 ) {
-  const previewEnabled = config.screenPreview && preview !== null;
   const app = new Hono();
 
   app.use("*", async (c, next) => {
@@ -44,7 +39,7 @@ export function createLearnApp(
       }
     }
     await next();
-    c.header("Cache-Control", "no-store");
+    if (!c.res.headers.has("cache-control")) c.header("Cache-Control", "no-store");
   });
 
   app.get("/robots.txt", (c) => c.text("User-agent: *\nDisallow: /\n"));
@@ -53,15 +48,11 @@ export function createLearnApp(
     c.json({
       ok: true,
       service: "learn",
-      stage: 1,
-      persistence: previewEnabled ? "preview-local" : "none",
-      session: "not-issued",
+      stage: accounts ? 4 : 1,
+      persistence: accounts ? "database" : "none",
+      session: accounts ? "device-cookie" : "not-issued",
     }),
   );
-
-  if (previewEnabled && preview) {
-    app.route("/api/preview", createPreviewRoutes(preview));
-  }
 
   app.get("/api/config", (c) => c.json(toPublicConfig(config)));
 
@@ -73,12 +64,16 @@ export function createLearnApp(
     return c.body(bytes.slice().buffer, 200, { "content-type": "audio/wav" });
   });
 
+  if (accounts) {
+    app.route("/api", createAccountRoutes(accounts));
+  }
+
   app.all("/api/*", (c) => c.json({ error: "not_found" }, 404));
 
   app.onError((error, c) => {
     console.error("learn api error");
     if (process.env.NODE_ENV !== "production" && error instanceof Error) {
-      console.error(error.name);
+      console.error(error.name, error.message.slice(0, 120));
     }
     applyDocumentHeaders(c);
     return c.json({ error: "internal" }, 500);

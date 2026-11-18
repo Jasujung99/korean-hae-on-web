@@ -1,4 +1,4 @@
-// 미리보기 연습 상태. 라우트 위에 두어 비교 도움·사전 화면에 다녀와도 풀던 문항이 그대로 남는다.
+// 연습 상태. 라우트 위에 두어 비교 도움·사전 화면에 다녀와도 풀던 문항이 그대로 남는다.
 // 새로고침하면 서버의 마지막 회기와 답을 다시 받아 이어 간다. 브라우저 저장소는 쓰지 않는다.
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type {
@@ -8,7 +8,7 @@ import type {
   SessionView,
 } from "../../server/preview/contract.ts";
 import { makeId, previewApi } from "./api";
-import { currentPlayingRole, playRef, speakText, stopAudio, type PlayOutcome, type PlayRole } from "./audio";
+import { currentPlayingRole, playRef, stopAudio, type PlayOutcome, type PlayRole } from "./audio";
 import { usePreviewSettings } from "./settings";
 import { flushEvents, nextSeq, setTelemetrySession, track, watchVisibility } from "./telemetry";
 
@@ -52,7 +52,7 @@ export type PracticeValue = {
   refreshSession: () => Promise<void>;
   playStimulus: () => Promise<void>;
   playRole: (ref: string | null, role: PlayRole, label?: string) => Promise<void>;
-  /** 의사단어 한 개를 지금 소리 방식으로 들려준다(소리 익히기). */
+  /** 소리 하나를 들려준다(소리 익히기). 늘 고정 음원이다. */
   playSound: (ref: string | null, text: string, role: PlayRole) => Promise<void>;
   choose: (key: string) => void;
   /** 고른 답을 보낸다. key를 주면 고르면서 바로 보낸다(캔버스 스타일). */
@@ -98,13 +98,11 @@ export function PracticeProvider({ children }: { children: ReactNode }) {
   const stimulusEndedAt = useRef<Record<string, number>>({});
   const loading = useRef(false);
   const settings = usePreviewSettings();
-  const useSpeech = settings.sound === "browser";
 
-  // 의사단어는 소리 방식 설정을 따른다. 단어·예문·목소리 표본은 늘 고정 음원이다.
+  // 소리는 늘 검수용 고정 음원으로 낸다. 기기마다 달라지는 브라우저 음성은 쓰지 않는다.
   const emit = useCallback(
-    (ref: string | null, text: string | null | undefined, role: PlayRole, itemId?: string): Promise<PlayOutcome> =>
-      useSpeech && text ? speakText(text, role, { itemId }) : playRef(ref, role, { itemId }),
-    [useSpeech],
+    (ref: string | null, role: PlayRole, itemId?: string): Promise<PlayOutcome> => playRef(ref, role, { itemId }),
+    [],
   );
 
   useEffect(() => watchVisibility(), []);
@@ -187,38 +185,19 @@ export function PracticeProvider({ children }: { children: ReactNode }) {
 
   const item = session?.items[index] ?? null;
 
-  // 소리 방식을 바꾸면 서버가 주는 문항 모양(읽을 글자 포함 여부)이 달라지므로 회기를 다시 받는다.
-  const sessionSound = session?.sound;
-  useEffect(() => {
-    if (!sessionSound || sessionSound === settings.sound) return;
-    let cancelled = false;
-    stopAudio();
-    previewApi
-      .saveSettings({ sound: settings.sound })
-      .then(() => previewApi.currentSession())
-      .then(({ session: current }) => {
-        if (!cancelled && current) adopt(current);
-      })
-      .catch(() => {});
-    return () => {
-      cancelled = true;
-    };
-  }, [adopt, sessionSound, settings.sound]);
-
   const playRole = useCallback(
-    async (ref: string | null, role: PlayRole, label?: string) => {
+    async (ref: string | null, role: PlayRole, _label?: string) => {
       setPlaying(role);
-      const pseudo = role === "answer" || role === "chosen";
-      await emit(ref, pseudo ? label : null, role, item?.itemId);
+      await emit(ref, role, item?.itemId);
       setPlaying(currentPlayingRole());
     },
     [emit, item],
   );
 
   const playSound = useCallback(
-    async (ref: string | null, text: string, role: PlayRole) => {
+    async (ref: string | null, _text: string, role: PlayRole) => {
       setPlaying(role);
-      await emit(ref, text, role);
+      await emit(ref, role);
       setPlaying(currentPlayingRole());
     },
     [emit],
@@ -229,7 +208,7 @@ export function PracticeProvider({ children }: { children: ReactNode }) {
     const itemId = item.itemId;
     setPlays((prev) => ({ ...prev, [itemId]: (prev[itemId] ?? 0) + 1 }));
     setPlaying("stimulus");
-    const outcome = await emit(item.audioRef, item.speechText, "stimulus", itemId);
+    const outcome = await emit(item.audioRef, "stimulus", itemId);
     setPlaying(currentPlayingRole());
     if (outcome.ok && outcome.completed) {
       stimulusEndedAt.current[itemId] = performance.now();
@@ -267,7 +246,6 @@ export function PracticeProvider({ children }: { children: ReactNode }) {
         msFromStimulusEnd: endedAt === undefined ? null : Math.round(performance.now() - endedAt),
         answeredDuringPlayback: currentPlayingRole() === "stimulus",
         audioState: audioFailed[itemId] && !heard[itemId] ? "error" : "ok",
-        audioSource: useSpeech ? "browser" : "file",
         style: settings.style,
       });
       setResults((prev) => ({ ...prev, [itemId]: result }));
@@ -276,7 +254,7 @@ export function PracticeProvider({ children }: { children: ReactNode }) {
     } finally {
       setSubmitting(false);
     }
-  }, [audioFailed, choices, heard, item, plays, results, session, settings.style, submitting, useSpeech]);
+  }, [audioFailed, choices, heard, item, plays, results, session, settings.style, submitting]);
 
   const skip = useCallback(() => {
     if (!item || results[item.itemId]) return;
@@ -330,7 +308,7 @@ export function PracticeProvider({ children }: { children: ReactNode }) {
     async (which: "a" | "b" | "x") => {
       const ref = abx.trial?.refs[which] ?? null;
       setPlaying(`abx_${which}`);
-      const outcome = await emit(ref, abx.trial?.texts?.[which], `abx_${which}`, abx.trial?.itemId);
+      const outcome = await emit(ref, `abx_${which}`, abx.trial?.itemId);
       setPlaying(currentPlayingRole());
       if (outcome.ok && outcome.completed) setAbx((prev) => ({ ...prev, heard: { ...prev.heard, [which]: true } }));
     },

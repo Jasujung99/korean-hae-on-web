@@ -2,7 +2,7 @@
 // audio/raw 폴더의 검수 전 초안을 목소리·묶음별로 보여 준다. 생성은 부르지 않는다.
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { AudioCellView, AudioInventoryView, AudioUnitKind } from "../../../server/preview/contract.ts";
-import { previewApi } from "../../preview/api";
+import { teacherApi } from "../../preview/api";
 import { usePractice } from "../../preview/PracticeContext";
 
 const KIND_LABEL: Record<AudioUnitKind | "audition" | "other", string> = {
@@ -96,7 +96,7 @@ export function AudioDashboard({ practiceVoiceKey }: { practiceVoiceKey: string 
 
   const load = () => {
     setFailed(false);
-    previewApi
+    teacherApi
       .audioInventory()
       .then(setView)
       .catch(() => setFailed(true));

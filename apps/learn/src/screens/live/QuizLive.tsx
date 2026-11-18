@@ -79,9 +79,8 @@ export function QuizLive() {
   const skipped = practice.skipped.includes(item.itemId);
   const listening = practice.playing === "stimulus";
   const doneIds = new Set([...Object.keys(practice.results), ...practice.skipped]);
-  const chosenText = result?.choiceSpeech ?? "";
+  const chosenText = result?.choiceText ?? "";
   // 브라우저 음성은 의사단어에만 쓴다. 낱말 비교는 고정 음원이다.
-  const speak = (text: string) => (result?.compareKind === "pseudo" ? text : undefined);
   const last = index === total - 1;
 
   const goNext = () => {
@@ -191,22 +190,22 @@ export function QuizLive() {
               {result.correct
                 ? ""
                 : result.compareKind === "word"
-                  ? `같은 묶음의 낱말로 비교해요: ${result.answerSpeech} · ${chosenText}`
+                  ? `같은 묶음의 낱말로 비교해요: ${result.answerText} · ${chosenText}`
                   : item.kind === "word"
-                    ? `짝이 되는 낱말이 없어 의사단어로 비교해요: ${result.answerSpeech} · ${chosenText}`
+                    ? `짝이 되는 낱말이 없어 의사단어로 비교해요: ${result.answerText} · ${chosenText}`
                     : ""}
             </p>
             <div className="pair">
               <button
                 type="button"
-                onClick={() => void practice.playRole(result.answerRef, "answer", speak(result.answerSpeech))}
+                onClick={() => void practice.playRole(result.answerRef, "answer", result.answerText)}
                 disabled={practice.playing !== null}
               >
                 정답 소리 듣기
               </button>
               <button
                 type="button"
-                onClick={() => void practice.playRole(result.choiceRef, "chosen", speak(chosenText))}
+                onClick={() => void practice.playRole(result.choiceRef, "chosen", chosenText)}
                 disabled={result.correct || practice.playing !== null}
               >
                 내 선택 듣기

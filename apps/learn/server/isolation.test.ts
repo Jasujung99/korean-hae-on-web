@@ -61,7 +61,10 @@ describe("package boundary", () => {
     expect(bundleScript).toContain('tsconfig: "tsconfig.json"');
 
     expect(code).not.toMatch(/learn\.haeonkorean\.com/i);
-    expect(code).not.toMatch(/localStorage|sessionStorage|indexedDB|supabase|service_role/i);
+    expect(code).not.toMatch(/localStorage|sessionStorage|indexedDB|service_role/i);
+    // 계정 DB(Supabase)는 같은 origin 서버만 부른다. 화면 코드는 DB 주소·키를 모른다.
+    expect(clientCode).not.toMatch(/supabase|LEARN_DB_|LEARN_SESSION_SECRET|sb_secret_|sb_publishable_/i);
+    expect(code).not.toMatch(/sb_secret_[A-Za-z0-9_-]{8,}|sb_publishable_[A-Za-z0-9_-]{8,}/);
     expect(code).not.toMatch(/gemini/i);
     expect(code).not.toMatch(/AIza[0-9A-Za-z_-]{10,}/);
     expect(relative(repoRoot, join(learnRoot, "package.json")).split(sep).join("/")).toBe("apps/learn/package.json");

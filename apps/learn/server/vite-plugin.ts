@@ -6,7 +6,8 @@ import type { IncomingMessage, ServerResponse } from "node:http";
 import { createLearnApp } from "./app.ts";
 import { readApprovedDistribution } from "./audio-files.ts";
 import { readLearnConfig } from "./config.ts";
-import { previewDeps } from "./preview/setup.ts";
+import { networkInterfaces } from "node:os";
+import { accountsDeps } from "./preview/setup.ts";
 
 const securityHeaders = {
   "X-Robots-Tag": "noindex, nofollow",
@@ -26,6 +27,16 @@ function mount(middlewares: Connect.Server, devOrigin: string) {
   if (!config.origin) {
     config.origin = devOrigin;
     config.devOrigins = [devOrigin.replace("//127.0.0.1:", "//localhost:")];
+    // 같은 와이파이 휴대폰 시험(LEARN_LAN=1): 이 PC의 내부 주소도 받고, 초대 링크는 그 주소로 만든다.
+    if (process.env.LEARN_LAN === "1") {
+      const port = new URL(devOrigin).port;
+      const lan = Object.values(networkInterfaces())
+        .flat()
+        .filter((row) => row && row.family === "IPv4" && !row.internal && /^(10|172\.(1[6-9]|2\d|3[01])|192\.168)\./.test(row.address))
+        .map((row) => `http://${row!.address}:${port}`);
+      config.devOrigins.push(...lan);
+      if (!config.inviteOrigin && lan[0]) config.inviteOrigin = lan[0];
+    }
   }
   const appRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
   const app = createLearnApp(
@@ -33,7 +44,7 @@ function mount(middlewares: Connect.Server, devOrigin: string) {
     {
       readDistribution: (id) => readApprovedDistribution(appRoot, id),
     },
-    config.screenPreview ? previewDeps(appRoot) : null,
+    accountsDeps(appRoot, config),
   );
   const listener = getRequestListener(app.fetch, { hostname: config.host });
 

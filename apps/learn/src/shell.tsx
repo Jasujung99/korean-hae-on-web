@@ -1,61 +1,19 @@
 import type { ReactNode } from "react";
-import { Link, useLocation, useNavigate } from "react-router";
+import { Link, useLocation } from "react-router";
 import { BrandMark } from "./brand";
-import { usePreviewSettings } from "./preview/settings";
+import { useLearner } from "./preview/settings";
 import { originStatus, type LearnRuntime } from "./runtime";
 
-function PreviewSwitch({ teacherRoute }: { teacherRoute: boolean }) {
-  const navigate = useNavigate();
-  const settings = usePreviewSettings();
-
-  return (
-    <div className="preview">
-      <strong>개발 미리보기</strong>
-      <div className="roles" role="group" aria-label="개발 미리보기 역할">
-        <button type="button" aria-pressed={!teacherRoute} onClick={() => navigate("/")}>
-          학습자
-        </button>
-        <button type="button" aria-pressed={teacherRoute} onClick={() => navigate("/teach")}>
-          교사 관찰
-        </button>
-      </div>
-      <div className="roles" role="group" aria-label="화면 스타일">
-        <button type="button" aria-pressed={settings.style === "proto"} onClick={() => settings.change({ style: "proto" })}>
-          시안 스타일
-        </button>
-        <button type="button" aria-pressed={settings.style === "canvas"} onClick={() => settings.change({ style: "canvas" })}>
-          캔버스 스타일
-        </button>
-      </div>
-      <div className="roles" role="group" aria-label="의사단어 소리 방식">
-        <button type="button" aria-pressed={settings.sound === "file"} onClick={() => settings.change({ sound: "file" })}>
-          고정 음원
-        </button>
-        <button type="button" aria-pressed={settings.sound === "browser"} onClick={() => settings.change({ sound: "browser" })}>
-          브라우저 음성
-        </button>
-      </div>
-      <div className="roles" role="group" aria-label="듣고 고르기 문항">
-        <button type="button" aria-pressed={settings.items === "word"} onClick={() => settings.change({ items: "word" })}>
-          낱말 대립쌍
-        </button>
-        <button type="button" aria-pressed={settings.items === "pseudo"} onClick={() => settings.change({ items: "pseudo" })}>
-          의사단어
-        </button>
-      </div>
-      <small>역할 전환은 교사 인증이 아닙니다.</small>
-    </div>
-  );
-}
-
-function LearnerNav({ place, preview }: { place: "head" | "bottom"; preview: boolean }) {
+function LearnerNav({ place, live }: { place: "head" | "bottom"; live: boolean }) {
   const location = useLocation();
-  const { style } = usePreviewSettings();
-  if (preview && style === "canvas") {
+  const { style, status } = useLearner();
+  if (live && status !== "connected") return null;
+  if (live && style === "canvas") {
     const tabs = [
       { to: "/dictionary", label: "내 말" },
       { to: "/listen", label: "다시" },
       { to: "/course", label: "발견" },
+      { to: "/settings", label: "설정" },
     ];
     return (
       <nav className={place === "bottom" ? "bottom-nav index-tabs" : "index-tabs"} aria-label={place === "head" ? "내 공책" : "내 공책 아래"}>
@@ -68,7 +26,7 @@ function LearnerNav({ place, preview }: { place: "head" | "bottom"; preview: boo
     );
   }
   const dictionary = location.pathname.startsWith("/dictionary");
-  const course = location.pathname.startsWith("/course") || location.pathname.startsWith("/voices");
+  const course = location.pathname.startsWith("/course");
   const quiz =
     location.pathname === "/practice" || location.pathname === "/compare" || location.pathname === "/finish";
 
@@ -80,9 +38,14 @@ function LearnerNav({ place, preview }: { place: "head" | "bottom"; preview: boo
       <Link to="/dictionary" aria-current={dictionary ? "page" : undefined}>
         사전·예문 <span className="pill future">확장</span>
       </Link>
-      {preview ? (
+      {live ? (
         <Link to="/course" aria-current={course ? "page" : undefined}>
           학습 순서
+        </Link>
+      ) : null}
+      {live ? (
+        <Link to="/settings" aria-current={location.pathname.startsWith("/settings") ? "page" : undefined}>
+          설정
         </Link>
       ) : null}
     </nav>
@@ -92,12 +55,13 @@ function LearnerNav({ place, preview }: { place: "head" | "bottom"; preview: boo
 export function Shell({ runtime, children }: { runtime: LearnRuntime; children: ReactNode }) {
   const location = useLocation();
   const teacherRoute = location.pathname.startsWith("/teach");
-  const teacherPreview = teacherRoute && runtime.screenPreview;
-  const { style } = usePreviewSettings();
-  const canvas = runtime.screenPreview && style === "canvas" && !teacherRoute;
+  const live = runtime.accounts;
+  const teacherLive = teacherRoute && live;
+  const learner = useLearner();
+  const canvas = live && learner.style === "canvas" && !teacherRoute && learner.status === "connected";
   let avatar = "연결 전";
-  if (teacherPreview) avatar = "관찰 미리보기";
-  else if (runtime.screenPreview) avatar = "미리보기 학습자";
+  if (teacherRoute) avatar = "교사";
+  else if (learner.status === "connected" && learner.me) avatar = `${learner.me.learner.nickname} 님`;
 
   return (
     <div
@@ -108,26 +72,20 @@ export function Shell({ runtime, children }: { runtime: LearnRuntime; children: 
       <a className="skip" href="#content">
         본문으로
       </a>
-      {runtime.screenPreview ? <PreviewSwitch teacherRoute={teacherRoute} /> : null}
-      <div className={teacherPreview ? "window is-teacher" : canvas ? "window style-canvas" : "window"}>
+      <div className={teacherLive ? "window is-teacher" : canvas ? "window style-canvas" : "window"}>
         <h1 className="visually-hidden">해온 소리 연습</h1>
         <header className="app-head">
           <div className="wordmark">
             <BrandMark />
             <p className="brand-sub">소리에서 단어까지</p>
           </div>
-          <LearnerNav place="head" preview={runtime.screenPreview} />
+          {teacherRoute ? null : <LearnerNav place="head" live={live} />}
           <p className="avatar">{avatar}</p>
         </header>
         <main id="content">{children}</main>
-        <LearnerNav place="bottom" preview={runtime.screenPreview} />
+        {teacherRoute ? null : <LearnerNav place="bottom" live={live} />}
         <footer className="app-footer">
           <span lang="en">At ease. As yourself.</span>
-          {runtime.screenPreview ? (
-            <Link className="footer-link" to="/voices">
-              목소리 표본 듣기
-            </Link>
-          ) : null}
           <span lang="en">haeon · Your voice, in Korean.</span>
           <p className="origin-line">{originStatus(runtime)}</p>
         </footer>

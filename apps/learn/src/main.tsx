@@ -12,10 +12,10 @@ function LearnApp() {
 
   return (
     <BrowserRouter>
-      <PreviewSettingsProvider enabled={runtime.ready && runtime.screenPreview}>
+      <PreviewSettingsProvider enabled={runtime.ready && runtime.accounts}>
       <Shell runtime={runtime}>
         {runtime.ready ? (
-          <LearnRoutes preview={runtime.screenPreview} />
+          <LearnRoutes live={runtime.accounts} />
         ) : (
           <section className="panel stack">
             <p className="muted">화면을 준비하고 있어요…</p>

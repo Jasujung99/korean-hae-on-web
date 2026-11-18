@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 import type { VoicesView } from "../../../server/preview/contract.ts";
-import { previewApi } from "../../preview/api";
+import { teacherApi } from "../../preview/api";
 import { usePractice } from "../../preview/PracticeContext";
-import { LearnerFrame, Pill, ScreenTitle } from "../../ui";
+import { Pill, ScreenTitle } from "../../ui";
 import { AudioDashboard } from "./AudioDashboard";
 
 const LISTEN_FOR = [
@@ -23,28 +23,16 @@ export function VoicesScreen() {
   const tab = params.get("view") === "audio" ? "audio" : "voices";
 
   useEffect(() => {
-    previewApi
+    teacherApi
       .voices()
       .then(setView)
       .catch(() => setFailed(true));
   }, []);
 
-  const choosePractice = async (key: string) => {
-    setSaving(true);
-    try {
-      setView(await previewApi.choosePracticeVoice(key));
-      await practice.refreshSession();
-    } catch {
-      setFailed(true);
-    } finally {
-      setSaving(false);
-    }
-  };
-
   const choose = async (voice: string) => {
     setSaving(true);
     try {
-      setView(await previewApi.chooseVoice(voice));
+      setView(await teacherApi.chooseVoice(voice));
     } catch {
       setFailed(true);
     } finally {
@@ -93,12 +81,12 @@ export function VoicesScreen() {
   }
 
   return (
-    <LearnerFrame preview>
-      <ScreenTitle title="목소리 고르기" />
+    <div className="tc-page">
+      <ScreenTitle title="목소리 표본" />
       {tabs}
       <section className="panel stack" aria-labelledby="voices-title">
         <div>
-          <p className="eyebrow">대표 목소리 · 미리보기</p>
+          <p className="eyebrow">대표 목소리 · 교사 화면</p>
           <h2 id="voices-title">목소리 표본 듣기</h2>
           <p className="muted">
             같은 문장을 {view ? <span lang="en">{view.model}</span> : "TTS"}의 기본 목소리로 만들었어요. 목소리마다 평평한 낭독
@@ -108,20 +96,20 @@ export function VoicesScreen() {
         {view ? (
           <section className="practice-voices" aria-labelledby="practice-voice-title">
             <h3 id="practice-voice-title">연습에서 들을 목소리</h3>
-            <p className="muted">듣고 고르기와 단어·예문을 이 목소리로 들려줘요. 언제든 바꿀 수 있어요.</p>
-            <div className="practice-voice-list" role="radiogroup" aria-label="연습 목소리">
+            <p className="muted">학습자가 설정에서 세 목소리 중 하나를 골라요. 기본은 {view.practiceVoiceKey}예요.</p>
+            <div className="practice-voice-list">
               {view.practiceVoices.map((row) => {
                 const on = view.practiceVoiceKey === row.key;
                 return (
                   <div key={row.key} className={on ? "practice-voice is-on" : "practice-voice"}>
-                    <button type="button" role="radio" aria-checked={on} disabled={saving} onClick={() => void choosePractice(row.key)}>
+                    <div className="practice-voice-label">
                       <span>{row.label}</span>
                       <strong lang="en">{row.voice}</strong>
                       <small>
                         {row.note}
                         {row.ready < row.total ? ` · 음원 ${row.ready}/${row.total} 준비` : ""}
                       </small>
-                    </button>
+                    </div>
                     <button
                       type="button"
                       className="text-link"
@@ -227,6 +215,6 @@ export function VoicesScreen() {
         ) : null}
         <Pill tone="future">검수 전 초안 음원</Pill>
       </section>
-    </LearnerFrame>
+    </div>
   );
 }
