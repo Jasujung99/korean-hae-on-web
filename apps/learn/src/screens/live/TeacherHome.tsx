@@ -250,6 +250,11 @@ function RosterRow({
       onIssued(issued, row.nickname);
     });
   const status = row.invite.status;
+  // 표 안의 고르기 칸은 바꾸는 즉시 저장되므로, 잘못 건드린 경우를 막으려고 한 번 묻는다.
+  const confirmChange = (field: string, label: string, save: () => Promise<unknown>) => {
+    if (!window.confirm(`${row.nickname} 님의 ${field}을(를) ${label}(으)로 바꿀까요?`)) return;
+    void run(save);
+  };
 
   return (
     <tr>
@@ -263,7 +268,10 @@ function RosterRow({
           aria-label={`${row.nickname} 모어`}
           value={row.homeLanguage ?? ""}
           disabled={busy}
-          onChange={(event) => void run(() => teacherApi.updateLearner(row.id, { homeLanguage: event.target.value === "ru" ? "ru" : null }))}
+          onChange={(event) => {
+            const homeLanguage = event.target.value === "ru" ? "ru" : null;
+            confirmChange("모어", homeLanguage ? "러시아어" : "기록 안 함", () => teacherApi.updateLearner(row.id, { homeLanguage }));
+          }}
         >
           <option value="ru">러시아어</option>
           <option value="">기록 안 함</option>
@@ -274,9 +282,12 @@ function RosterRow({
           aria-label={`${row.nickname} 사전 언어`}
           value={row.dictLanguage}
           disabled={busy}
-          onChange={(event) =>
-            void run(() => teacherApi.updateLearner(row.id, { dictLanguage: event.target.value === "en" ? "en" : "ru" }))
-          }
+          onChange={(event) => {
+            const dictLanguage: DictLanguage = event.target.value === "en" ? "en" : "ru";
+            confirmChange("사전 언어", dictLanguage === "en" ? "English" : "Русский", () =>
+              teacherApi.updateLearner(row.id, { dictLanguage }),
+            );
+          }}
         >
           <option value="ru">Русский</option>
           <option value="en">English</option>
@@ -290,31 +301,33 @@ function RosterRow({
         {row.devices}대
       </td>
       <td data-label="마지막 학습">{row.summary.lastActive ? formatDay(row.summary.lastActive) : "기록 없음"}</td>
-      <td className="acct-actions">
-        <button type="button" disabled={busy} onClick={() => void invite()}>
-          {status === "none" ? "초대 링크 만들기" : "링크 새로 만들기"}
-        </button>
-        {status === "open" ? (
-          <button type="button" disabled={busy} onClick={() => void run(() => teacherApi.revokeInvites(row.id))}>
-            링크 폐기
+      <td className="acct-actions-cell">
+        <div className="acct-actions">
+          <button type="button" className="tc-ul" disabled={busy} onClick={() => void invite()}>
+            {status === "none" ? "초대 링크 만들기" : "링크 새로 만들기"}
           </button>
-        ) : null}
-        {row.devices > 0 ? (
-          <button
-            type="button"
-            className="ghost-danger"
-            disabled={busy}
-            onClick={() => {
-              if (!window.confirm(`${row.nickname} 님의 기기 연결 ${row.devices}대를 모두 끊을까요? 학습 기록은 남아요.`)) return;
-              void run(() => teacherApi.revokeDevices(row.id));
-            }}
-          >
-            기기 연결 끊기
-          </button>
-        ) : null}
-        <Link className="tc-ul" to={`/teach/detail?learner=${encodeURIComponent(row.id)}`}>
-          기록 보기
-        </Link>
+          {status === "open" ? (
+            <button type="button" className="tc-ul" disabled={busy} onClick={() => void run(() => teacherApi.revokeInvites(row.id))}>
+              링크 폐기
+            </button>
+          ) : null}
+          {row.devices > 0 ? (
+            <button
+              type="button"
+              className="tc-ul"
+              disabled={busy}
+              onClick={() => {
+                if (!window.confirm(`${row.nickname} 님의 기기 연결 ${row.devices}대를 모두 끊을까요? 학습 기록은 남아요.`)) return;
+                void run(() => teacherApi.revokeDevices(row.id));
+              }}
+            >
+              기기 연결 끊기
+            </button>
+          ) : null}
+          <Link className="tc-ul" to={`/teach/detail?learner=${encodeURIComponent(row.id)}`}>
+            기록 보기
+          </Link>
+        </div>
       </td>
     </tr>
   );
