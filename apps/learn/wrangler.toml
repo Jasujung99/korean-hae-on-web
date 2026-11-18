@@ -1,0 +1,14 @@
+# Cloudflare Pages 프로젝트 설정 (학습 앱 sori.haeonkorean.com)
+# 배포: npm run build:cloud && npm run deploy:cloud
+# 비밀값(LEARN_DB_SECRET_KEY, LEARN_DB_PUBLISHABLE_KEY, LEARN_SESSION_SECRET)은 여기 적지 않고
+# `wrangler pages secret put` 으로 Cloudflare에만 둔다.
+name = "haeon-sori"
+pages_build_output_dir = "dist/client"
+compatibility_date = "2026-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+LEARN_APP_ORIGIN = "https://sori.haeonkorean.com"
+LEARN_INVITE_ORIGIN = "https://sori.haeonkorean.com"
+LEARN_EXTRA_ORIGINS = "https://haeon-sori.pages.dev"
+LEARN_DB_URL = "https://cryirvqcpgcdmaupyllq.supabase.co"

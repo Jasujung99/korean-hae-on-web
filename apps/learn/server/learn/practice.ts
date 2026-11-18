@@ -502,7 +502,7 @@ export function createPracticeRoutes(deps: { audio: PreviewAudio; now?: () => Da
 }
 
 /** 음원 응답. 연결된 학습자나 교사만 받는다(앞단에서 확인). */
-export function serveAudio(audio: PreviewAudio, ref: string) {
-  const bytes = /^[A-Za-z0-9-]{1,40}$/.test(ref) ? audio.read(ref) : null;
-  return bytes && bytes.length > 0 ? bytes : null;
+export async function serveAudio(audio: PreviewAudio, ref: string) {
+  const body = /^[A-Za-z0-9-]{1,40}$/.test(ref) ? await audio.read(ref) : null;
+  return body && body.bytes.length > 0 ? body : null;
 }
