@@ -174,6 +174,8 @@ function AddLearner({ onAdded }: { onAdded: () => void }) {
       });
       setNickname("");
       setClassLabel("");
+      setHomeLanguage("ru");
+      setDictLanguage("ru");
       setIsTest(false);
       onAdded();
     } catch {
@@ -365,10 +367,10 @@ function Roster({ view, reload }: { view: TeacherView; reload: () => void }) {
 export function TeacherHome() {
   return (
     <div className="tc-page">
-      <ScreenTitle title="교사 화면" />
       <TeacherGate>
         {(view, reload) => (
           <>
+            <ScreenTitle title="교사 화면" />
             <TeacherBar name={view.teacher.displayName} />
             <Roster view={view} reload={reload} />
             <ListView learners={view.learners.map((row) => row.summary)} />

@@ -16,7 +16,8 @@ export function accountsDeps(appRoot: string, config: LearnConfig): AccountsDeps
     repo: createSupabaseRepo({ url: db.dbUrl, secretKey: db.secretKey }),
     auth: supabaseTeacherAuth({ url: db.dbUrl, publishableKey: db.publishableKey }),
     sessionSecret: db.sessionSecret,
-    audio: createRawAudio(join(appRoot, "audio", "raw"), previewAudioIds()),
+    // 음원 초안 폴더. 다른 체크아웃의 음원을 쓸 때만 LEARN_AUDIO_DIR로 바꾼다.
+    audio: createRawAudio(process.env.LEARN_AUDIO_DIR?.trim() || join(appRoot, "audio", "raw"), previewAudioIds()),
     inviteOrigin: config.inviteOrigin ?? config.origin ?? null,
     secureCookies,
   };
