@@ -91,7 +91,7 @@ const previewDetail: LearnerDetail = {
 
 const me: MeView = {
   learner: { id: "learner-1", nickname: "알렉세이" },
-  settings: { style: "proto", items: "pseudo", dictLanguage: "ru", practiceVoice: "charon" },
+  settings: { style: "proto", items: "pseudo", dictLanguage: "ru", practiceVoice: "charon", exampleReading: "spoken" },
   practiceVoices: [],
 };
 

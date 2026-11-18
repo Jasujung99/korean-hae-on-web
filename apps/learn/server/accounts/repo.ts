@@ -5,6 +5,8 @@ import type { StoredEvent } from "../preview/store.ts";
 export type DictLanguage = "ru" | "en";
 export type UiStyle = "proto" | "canvas";
 export type ItemKindSetting = "word" | "pseudo";
+/** 예문 읽기: spoken = 말하듯이(기본), turns = 또박또박 */
+export type ExampleReading = "spoken" | "turns";
 
 export type LearnerRow = {
   id: string;
@@ -16,13 +18,14 @@ export type LearnerRow = {
   uiStyle: UiStyle;
   practiceVoice: string;
   itemKind: ItemKindSetting;
+  exampleReading: ExampleReading;
   status: "active" | "archived";
   isTest: boolean;
   createdAt: string;
 };
 
 export type LearnerPatch = Partial<
-  Pick<LearnerRow, "nickname" | "classLabel" | "homeLanguage" | "dictLanguage" | "uiStyle" | "practiceVoice" | "itemKind">
+  Pick<LearnerRow, "nickname" | "classLabel" | "homeLanguage" | "dictLanguage" | "uiStyle" | "practiceVoice" | "itemKind" | "exampleReading">
 >;
 
 export type NewLearner = {

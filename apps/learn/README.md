@@ -52,6 +52,27 @@ npm run tts:practice -- --stages 0,1 --delay 8000
 
 단계별로 나눠 교체합니다. 지금은 Stage 0·1만 만듭니다(의사단어·첫 듣기 음절 15, 단어 28, 주어진 예문 18 × 3목소리 = 183). 할당량에 걸리면 멈추고, 다시 실행하면 이미 만든 파일은 건너뜁니다.
 
+### 묶어서 만들기 (2026-11-18)
+
+하루 100건 한도는 요청 횟수로 세므로, 여러 소리를 한 요청에 읽힌 뒤 쉼에서 잘라 씁니다(`npm run tts:groups`, 계획은 `content/tts/batch-plan.ts`).
+
+| 종류 | 방식 | 한 요청 |
+| --- | --- | --- |
+| 의사단어·첫소리 | 마침표 + `<long pause>`, 앞뒤 버릴 "네.", 순서 섞음 | 9개 / 6개 |
+| 단어 | 단어마다 칸(content)을 나눔, 칸마다 평평 낭독 지시, "네." 없음 | 10개 |
+| 예문 · 말하듯이(기본) | `<long pause>`로 이음, 톤 지시 없음 | 5개 |
+| 예문 · 또박또박 | 문장마다 칸을 나눔, 파일 끝에 `--turns` | 5개 |
+
+```sh
+npm run tts:groups -- --voices erinome,sulafat,charon --dry-run   # 요청 수만 보기
+npm run tts:groups -- --voices erinome,sulafat,charon             # 적은 순서대로 만듦
+```
+
+- 자르기 전에 점검합니다: 자르는 쉼이 최소 길이 이상이고 다른 쉼보다 1.5배 이상 길어야 합니다. 어긋나면 자르지 않고 통째 파일만 `audio/raw/groups/`에 남깁니다.
+- 이미 묶음 방식으로 만든 파일은 건너뜁니다. 하나씩 만든 예전 파일은 `<id>--single.wav`로 옮겨 보관합니다.
+- 하루 한도에 걸리면 멈춥니다. 같은 명령을 다시 실행하면 이어서 만듭니다.
+- 학습자는 설정의 "예문 읽기"(말하듯이/또박또박)로 예문 버전을 고릅니다. 고른 버전이 없으면 다른 버전으로 들려줍니다. 이 설정은 `phoneme_learners.example_reading` 컬럼에 저장되며, 마이그레이션 `20261118120000_phoneme_example_reading.sql`을 운영 DB에 적용해야 저장됩니다(적용 전에는 '말하듯이'로 읽힘).
+
 ### 평평한 낭독 톤 지시
 
 짧은 의사단어를 글자만 보내면 모델이 감탄사처럼 억양을 붙이는 일이 있습니다. 그래서 표본에 톤 지시 `neutral, monotone and flat, read aloud slowly and clearly`를 붙여 비교합니다. 지시는 문서 권고대로 읽을 글자와 따로(`speech_metadata.style`) 보내야 소리로 읽히지 않으므로, 지시가 있는 요청만 Interactions 엔드포인트(`/v1beta/interactions`)를 씁니다. 지시가 없는 요청은 기존 `generateContent`를 그대로 씁니다. 연습 음원(`tts:generate`, `tts:batch`)은 종류별로 나눕니다. 의사단어·단어는 평평한 낭독 지시를 붙이고, 예문은 지시 없이 문장에 어울리게 읽힙니다(`--no-style`이면 모두 지시 없이). 메타 파일(`*.meta.json`)의 `settings.stylePrompt`에 어떤 지시로 만들었는지 남습니다.

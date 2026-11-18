@@ -1,4 +1,4 @@
-// 학습자 설정: 화면 모양, 사전 언어, 연습 목소리, 이 기기에서 나가기.
+// 학습자 설정: 화면 모양, 사전 언어, 연습 목소리, 예문 읽기, 이 기기에서 나가기.
 // 값은 학습자 id에 저장된다. 기기를 바꿔도 같은 설정으로 이어진다.
 import { useState } from "react";
 import { accountApi } from "../../preview/api";
@@ -84,6 +84,19 @@ export function SettingsScreen() {
             );
           })}
         </div>
+      </fieldset>
+
+      <fieldset className="acct-choice">
+        <legend>예문 읽기</legend>
+        <div className="mode-nav">
+          <button type="button" aria-pressed={learner.exampleReading !== "turns"} onClick={() => void learner.change({ exampleReading: "spoken" })}>
+            말하듯이
+          </button>
+          <button type="button" aria-pressed={learner.exampleReading === "turns"} onClick={() => void learner.change({ exampleReading: "turns" })}>
+            또박또박
+          </button>
+        </div>
+        <p className="small">말하듯이는 실제 대화처럼 자연스럽게, 또박또박은 문장마다 끊어 또렷하게 읽어요. 단어와 소리 연습에는 영향이 없어요.</p>
       </fieldset>
 
       <div className="acct-leave">

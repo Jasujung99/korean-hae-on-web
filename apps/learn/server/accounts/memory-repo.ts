@@ -42,6 +42,7 @@ export function createMemoryRepo(options: { now?: () => Date; teachers?: Array<{
         uiStyle: "canvas",
         practiceVoice: "charon",
         itemKind: "word",
+        exampleReading: "spoken",
         status: "active",
         isTest: input.isTest,
         createdAt: iso(),

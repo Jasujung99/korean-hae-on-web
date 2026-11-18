@@ -256,7 +256,15 @@ export type PreviewStyle = "proto" | "canvas";
 export type ItemKind = "word" | "pseudo";
 export type DictLanguage = "ru" | "en";
 /** 학습자 설정. 학습자 id에 저장하므로 기기를 바꿔도 이어진다. */
-export type LearnerSettings = { style: PreviewStyle; items: ItemKind; dictLanguage: DictLanguage; practiceVoice: string };
+/** 예문 읽기: spoken = 말하듯이(기본), turns = 또박또박 */
+export type ExampleReading = "spoken" | "turns";
+export type LearnerSettings = {
+  style: PreviewStyle;
+  items: ItemKind;
+  dictLanguage: DictLanguage;
+  practiceVoice: string;
+  exampleReading: ExampleReading;
+};
 
 export type MeView = {
   learner: { id: string; nickname: string };

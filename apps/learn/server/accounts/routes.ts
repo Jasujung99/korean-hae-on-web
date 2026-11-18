@@ -66,6 +66,7 @@ function settingsOf(learner: LearnerRow): LearnerSettings {
     items: learner.itemKind,
     dictLanguage: learner.dictLanguage,
     practiceVoice: isPracticeVoiceKey(learner.practiceVoice) ? learner.practiceVoice : DEFAULT_PRACTICE_VOICE,
+    exampleReading: learner.exampleReading === "turns" ? "turns" : "spoken",
   };
 }
 
@@ -239,6 +240,7 @@ export function createAccountRoutes(deps: AccountsDeps) {
     if (body.style === "proto" || body.style === "canvas") patch.uiStyle = body.style;
     if (body.dictLanguage === "ru" || body.dictLanguage === "en") patch.dictLanguage = body.dictLanguage;
     if (isPracticeVoiceKey(body.practiceVoice)) patch.practiceVoice = body.practiceVoice;
+    if (body.exampleReading === "spoken" || body.exampleReading === "turns") patch.exampleReading = body.exampleReading;
     if (Object.keys(patch).length === 0) return c.json({ error: "nothing_to_change" }, 400);
     const learner = (await repo.updateLearner(found.learner.id, patch)) ?? found.learner;
     return c.json(meView(learner));

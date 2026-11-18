@@ -10,12 +10,12 @@ type SettingsValue = LearnerSettings & {
   loaded: boolean;
   status: LearnerStatus;
   me: MeView | null;
-  change: (next: Partial<Pick<LearnerSettings, "style" | "dictLanguage" | "practiceVoice">>) => Promise<void>;
+  change: (next: Partial<Pick<LearnerSettings, "style" | "dictLanguage" | "practiceVoice" | "exampleReading">>) => Promise<void>;
   adopt: (me: MeView | null) => void;
   reload: () => void;
 };
 
-const base: LearnerSettings = { style: "canvas", items: "word", dictLanguage: "ru", practiceVoice: "charon" };
+const base: LearnerSettings = { style: "canvas", items: "word", dictLanguage: "ru", practiceVoice: "charon", exampleReading: "spoken" };
 
 // 제공자 밖(계정 DB 없음)에서는 회기를 바꾸지 않도록 문항 종류를 의사단어로 둔다.
 const defaults: SettingsValue = {
@@ -69,7 +69,7 @@ export function PreviewSettingsProvider({ enabled, children }: { enabled: boolea
     setStatus(view ? "connected" : "not_connected");
   }, []);
 
-  const change = useCallback(async (next: Partial<Pick<LearnerSettings, "style" | "dictLanguage" | "practiceVoice">>) => {
+  const change = useCallback(async (next: Partial<Pick<LearnerSettings, "style" | "dictLanguage" | "practiceVoice" | "exampleReading">>) => {
     setMe((prev) => (prev ? { ...prev, settings: { ...prev.settings, ...next } } : prev));
     try {
       setMe(await accountApi.saveSettings(next));

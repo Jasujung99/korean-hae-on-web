@@ -24,6 +24,8 @@ function learnerFrom(row: Row): LearnerRow {
     uiStyle: row.ui_style === "proto" ? "proto" : "canvas",
     practiceVoice: String(row.practice_voice ?? "charon"),
     itemKind: row.item_kind === "pseudo" ? "pseudo" : "word",
+    // 컬럼이 아직 없는 DB에서도 읽히도록 기본값을 둔다.
+    exampleReading: row.example_reading === "turns" ? "turns" : "spoken",
     status: row.status === "archived" ? "archived" : "active",
     isTest: row.is_test === true,
     createdAt: String(row.created_at),
@@ -71,6 +73,7 @@ const LEARNER_FIELDS: Record<string, string> = {
   uiStyle: "ui_style",
   practiceVoice: "practice_voice",
   itemKind: "item_kind",
+  exampleReading: "example_reading",
 };
 
 const inList = (ids: string[]) => `in.(${ids.map((id) => encodeURIComponent(id)).join(",")})`;

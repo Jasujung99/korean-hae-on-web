@@ -21,6 +21,7 @@ import {
 } from "../../content/practice.ts";
 import { STEP_LABELS } from "../../content/contrast.ts";
 import { VOICE_CANDIDATE } from "../../content/tts/pipeline.ts";
+import { turnsAudioId } from "../../content/tts/batch-plan.ts";
 import { DEFAULT_PRACTICE_VOICE, PRACTICE_VOICES, isPracticeVoiceKey, voicedAudioId, type PracticeVoiceKey } from "../../content/practice-voices.ts";
 import type { LearnerStore } from "../accounts/events.ts";
 import type { LearnerRow } from "../accounts/repo.ts";
@@ -71,7 +72,7 @@ export async function readJson(c: Context): Promise<Record<string, unknown> | nu
 }
 
 /** 학습자가 고른 연습 목소리로 음원 id를 고른다. 파일이 없으면 예전 초안, 그다음 다른 목소리 순서로 찾는다. */
-export function audioPicker(audio: PreviewAudio, voiceKey: string) {
+export function audioPicker(audio: PreviewAudio, voiceKey: string, exampleReading: string = "spoken") {
   const key: PracticeVoiceKey = isPracticeVoiceKey(voiceKey) ? voiceKey : DEFAULT_PRACTICE_VOICE;
   const pick = (baseId: string, legacyId: string = baseId): string => {
     if (!baseId) return legacyId;
@@ -84,12 +85,20 @@ export function audioPicker(audio: PreviewAudio, voiceKey: string) {
     const id = pick(baseId, legacyId);
     return id ? audio.refFor(id) : null;
   };
+  // 예문: '또박또박'을 고르면 --turns 파일을 먼저 찾고, 없으면 '말하듯이' 파일로 들려준다.
+  const exampleRefOf = (baseId: string, legacyId?: string): string | null => {
+    if (exampleReading === "turns" && baseId) {
+      const turns = audio.refFor(turnsAudioId(voicedAudioId(baseId, key)));
+      if (turns) return turns;
+    }
+    return refOf(baseId, legacyId);
+  };
   const voice = () => audio.meta(pick(PRACTICE_ITEMS[0]?.audioId ?? ""))?.voice || VOICE_CANDIDATE;
-  return { pick, refOf, voice };
+  return { pick, refOf, exampleRefOf, voice };
 }
 
 function scope(learner: LearnerRow, store: LearnerStore, audio: PreviewAudio, now: () => Date) {
-  const { pick, refOf, voice } = audioPicker(audio, learner.practiceVoice);
+  const { pick, refOf, exampleRefOf, voice } = audioPicker(audio, learner.practiceVoice, learner.exampleReading);
   const events = () => store.all();
   const plans = () => events().filter((event) => event.type === "session_planned");
   const planFor = (sessionId: string) => plans().find((event) => event.sessionId === sessionId);
@@ -188,7 +197,7 @@ function scope(learner: LearnerRow, store: LearnerStore, audio: PreviewAudio, no
     };
   };
 
-  return { pick, refOf, voice, events, plans, planFor, serverEvent, answerResult, sessionView };
+  return { pick, refOf, exampleRefOf, voice, events, plans, planFor, serverEvent, answerResult, sessionView };
 }
 
 export function createPracticeRoutes(deps: { audio: PreviewAudio; now?: () => Date }) {
@@ -474,7 +483,7 @@ export function createPracticeRoutes(deps: { audio: PreviewAudio; now?: () => Da
       example: word.example,
       related: word.related,
       wordAudioRef: s.refOf(word.wordAudioId, word.legacyWordAudioId),
-      exampleAudioRef: word.exampleAudioId ? s.refOf(word.exampleAudioId, word.legacyExampleAudioId) : null,
+      exampleAudioRef: word.exampleAudioId ? s.exampleRefOf(word.exampleAudioId, word.legacyExampleAudioId) : null,
       wordVoice: audio.meta(s.pick(word.wordAudioId, word.legacyWordAudioId))?.voice ?? null,
       exampleVoice: word.exampleAudioId ? (audio.meta(s.pick(word.exampleAudioId, word.legacyExampleAudioId))?.voice ?? null) : null,
       step: word.step,

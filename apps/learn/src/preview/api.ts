@@ -79,7 +79,7 @@ export const previewApi = {
 
 export const accountApi = {
   me: () => getJson<MeView>("/api/me"),
-  saveSettings: (next: Partial<Pick<LearnerSettings, "style" | "dictLanguage" | "practiceVoice">>) =>
+  saveSettings: (next: Partial<Pick<LearnerSettings, "style" | "dictLanguage" | "practiceVoice" | "exampleReading">>) =>
     postJson<MeView>("/api/me/settings", next),
   leave: () => postJson<{ ok: boolean }>("/api/me/leave", {}),
   inspect: (token: string) => postJson<InviteInspectView>("/api/invitations/inspect", { token }),

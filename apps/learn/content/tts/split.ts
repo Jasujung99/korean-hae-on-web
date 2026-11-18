@@ -108,3 +108,81 @@ export function splitWavBySilence(bytes: Uint8Array, count: number, options: Spl
   }
   return { parts, cuts };
 }
+
+export type CheckedSplit = {
+  ok: boolean;
+  reason: string | null;
+  totalMs: number;
+  /** 자르는 데 쓴 쉼 가운데 가장 짧은 것 */
+  shortestCutGapMs: number;
+  /** 자르지 않은 쉼 가운데 가장 긴 것 */
+  longestOtherGapMs: number;
+  parts: Array<{ bytes: Uint8Array; startMs: number; endMs: number }>;
+};
+
+/**
+ * 묶어 읽힌 WAV를 count개로 자르고 점검한다(2026-11-18 시험 방식).
+ * - 자르는 쉼은 minGapMs 이상이고, 자르지 않은 쉼보다 1.5배 이상 길어야 한다.
+ * - 조각 앞뒤 5ms를 줄여 딸깍 소리를 막는다.
+ * 점검에 실패하면 ok=false로 돌려주고, 부르는 쪽은 조각을 쓰지 않는다.
+ */
+export function splitChecked(bytes: Uint8Array, count: number, minGapMs: number): CheckedSplit | null {
+  const pcm = readPcm16Wav(bytes);
+  if (!pcm || pcm.channels !== 1 || count < 1) return null;
+  const frameMs = 10;
+  const size = Math.max(1, Math.round((pcm.sampleRate * frameMs) / 1000));
+  const rms: number[] = [];
+  for (let start = 0; start + size <= pcm.samples.length; start += size) {
+    let sum = 0;
+    for (let index = start; index < start + size; index += 1) sum += (pcm.samples[index] ?? 0) ** 2;
+    rms.push(Math.sqrt(sum / size));
+  }
+  const peak = rms.reduce((max, value) => Math.max(max, value), 0);
+  const totalMs = Math.round((pcm.samples.length / pcm.sampleRate) * 1000);
+  const fail = (reason: string): CheckedSplit => ({ ok: false, reason, totalMs, shortestCutGapMs: 0, longestOtherGapMs: 0, parts: [] });
+  if (peak === 0) return fail("silent");
+  const voiced = rms.map((value) => value >= peak * 0.04);
+  const first = voiced.indexOf(true);
+  const last = voiced.lastIndexOf(true);
+  const gaps: Array<{ start: number; end: number }> = [];
+  let run = -1;
+  for (let frame = first; frame <= last; frame += 1) {
+    if (!voiced[frame]) {
+      if (run < 0) run = frame;
+    } else if (run >= 0) {
+      gaps.push({ start: run, end: frame });
+      run = -1;
+    }
+  }
+  const length = (gap: { start: number; end: number }) => (gap.end - gap.start) * frameMs;
+  const sorted = [...gaps].sort((a, b) => length(b) - length(a));
+  if (sorted.length < count - 1) return fail("too_few_pauses");
+  const chosen = sorted.slice(0, count - 1).sort((a, b) => a.start - b.start);
+  const shortestCutGapMs = count > 1 ? Math.min(...chosen.map(length)) : 0;
+  const other = sorted[count - 1];
+  const longestOtherGapMs = other ? length(other) : 0;
+  const base = { totalMs, shortestCutGapMs, longestOtherGapMs };
+  if (count > 1 && shortestCutGapMs < minGapMs) return { ...fail("pause_too_short"), ...base };
+  if (count > 1 && shortestCutGapMs < longestOtherGapMs * 1.5) return { ...fail("pauses_not_distinct"), ...base };
+
+  const pad = 6; // 60ms
+  const fade = Math.round(pcm.sampleRate * 0.005);
+  const parts: CheckedSplit["parts"] = [];
+  for (let index = 0; index < count; index += 1) {
+    const before = chosen[index - 1];
+    const after = chosen[index];
+    const lowest = before ? Math.floor((before.start + before.end) / 2) : 0;
+    const highest = after ? Math.ceil((after.start + after.end) / 2) : rms.length;
+    const startFrame = Math.max(lowest, (before ? before.end : first) - pad);
+    const endFrame = Math.min(highest, (after ? after.start : last + 1) + pad);
+    const slice = pcm.samples.slice(startFrame * size, endFrame * size);
+    for (let offset = 0; offset < fade && offset < slice.length; offset += 1) {
+      const gain = offset / fade;
+      slice[offset] = Math.round((slice[offset] ?? 0) * gain);
+      const tail = slice.length - 1 - offset;
+      slice[tail] = Math.round((slice[tail] ?? 0) * gain);
+    }
+    parts.push({ bytes: pcmToWav(new Uint8Array(slice.buffer), pcm.sampleRate, 1), startMs: startFrame * frameMs, endMs: endFrame * frameMs });
+  }
+  return { ok: true, reason: null, ...base, parts };
+}
