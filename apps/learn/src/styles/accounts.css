@@ -81,9 +81,17 @@
   margin-top: var(--space-3);
 }
 
-.acct-leave {
+.acct-leave,
+.acct-license {
   padding-top: var(--space-5);
   border-top: 1px solid var(--line);
+}
+
+/* 사전 자료 출처: 밑줄 링크 세 개. 링크 안쪽 여백만큼 왼쪽으로 당겨 글줄과 맞춘다. */
+.acct-license-links {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(var(--space-3) * -1);
 }
 
 .acct-bar {

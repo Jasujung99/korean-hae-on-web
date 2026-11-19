@@ -4,6 +4,7 @@
 // 사전 사이트는 iframe으로 넣지 않고 새 창 링크(↗)로만 연다. 사전 발음 파일은 쓰지 않는다.
 // 2026-11-19: 화면에는 한국어기초사전과 내 언어만 풀이로 보이고, 표준국어대사전·네이버 사전은 머리줄 바로가기로만 둔다.
 import { useId, useState, type ReactNode } from "react";
+import { Link } from "react-router";
 import type { DictLanguage, WordDictView } from "../../../server/preview/contract.ts";
 import { useLearner } from "../../preview/settings";
 import { track } from "../../preview/telemetry";
@@ -17,7 +18,10 @@ const LANGUAGES: Array<{ key: DictLanguage; label: string; name: string; nation:
 
 export const DICT_LICENSE = {
   text: "크리에이티브 커먼즈 저작자표시-동일조건변경허락 2.0 대한민국 라이선스",
+  short: "CC BY-SA 2.0 KR",
   url: "https://creativecommons.org/licenses/by-sa/2.0/kr/",
+  /** 학습자 설정의 '사전 자료 출처' 칸. 긴 라이선스 설명과 전문 링크는 거기에 둔다. */
+  settingsHref: "/settings#dict-license",
 } as const;
 
 export type DictLinkTarget = "krdict" | "stdict" | "naver";
@@ -165,11 +169,12 @@ export function DictInline({ word, wordId, pos, dict }: { word: string; wordId: 
                   <p className="dict-inline-empty">이 낱말은 아직 {languageRow.name} 풀이가 없어요.</p>
                 )}
               </div>
+              {/* CC BY-SA는 자료 가까이에 출처와 라이선스 표시를 요구한다. 패널에는 한 줄만 두고 긴 설명은 설정으로 옮긴다. */}
               <p className="dict-inline-credit">
-                출처: 국립국어원 한국어기초사전 · 표준국어대사전. {DICT_LICENSE.text}(CC BY-SA 2.0 KR)에 따라 옮겼어요.{" "}
-                <a className="tc-ul" href={DICT_LICENSE.url} target="_blank" rel="noopener">
-                  라이선스 전문 보기
-                </a>
+                출처 국립국어원 한국어기초사전 · 표준국어대사전 ·{" "}
+                <Link className="tc-ul" to={DICT_LICENSE.settingsHref}>
+                  {DICT_LICENSE.short}
+                </Link>
               </p>
             </>
           )}

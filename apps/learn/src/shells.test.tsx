@@ -234,6 +234,31 @@ describe("stage 1 shells", () => {
     expect(screen.queryByText(/브라우저 음성/)).not.toBeInTheDocument();
   });
 
+  it("keeps the dictionary source and license note at the bottom of learner settings", async () => {
+    const scrolled = vi.fn();
+    Element.prototype.scrollIntoView = scrolled;
+    stubPreviewApi({ "GET /api/me": me });
+    const { container } = renderAt("/settings#dict-license", true);
+    const section = within(await screen.findByRole("region", { name: "사전 자료 출처" }));
+    const box = container.querySelector("#dict-license");
+    expect(box).not.toBeNull();
+    expect(box).toHaveTextContent("사전 풀이는 국립국어원 한국어기초사전과 표준국어대사전에서 옮겼어요.");
+    expect(box).toHaveTextContent("크리에이티브 커먼즈 저작자표시-동일조건변경허락 2.0 대한민국 라이선스(CC BY-SA 2.0 KR)를 따라요.");
+    const links = [
+      ["라이선스 전문 보기", "https://creativecommons.org/licenses/by-sa/2.0/kr/"],
+      ["한국어기초사전", "https://krdict.korean.go.kr/"],
+      ["표준국어대사전", "https://stdict.korean.go.kr/"],
+    ] as const;
+    for (const [name, href] of links) {
+      const link = section.getByRole("link", { name });
+      expect(link).toHaveAttribute("href", href);
+      expect(link).toHaveAttribute("target", "_blank");
+      expect(link).toHaveAttribute("rel", "noopener noreferrer");
+    }
+    expect(box?.parentElement?.lastElementChild).toBe(box);
+    expect(scrolled).toHaveBeenCalled();
+  });
+
   it("shows a quiet dictionary empty state when the word has no approved entry", async () => {
     stubPreviewApi({ "GET /api/me": me, "GET /api/learn/words": { words: [previewWord] } });
     renderAt("/dictionary", true);

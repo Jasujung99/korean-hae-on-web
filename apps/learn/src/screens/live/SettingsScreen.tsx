@@ -1,6 +1,7 @@
-// 학습자 설정: 화면 모양, 사전 언어, 연습 목소리, 예문 읽기, 이 기기에서 나가기.
+// 학습자 설정: 화면 모양, 사전 언어, 연습 목소리, 예문 읽기, 이 기기에서 나가기, 사전 자료 출처.
 // 값은 학습자 id에 저장된다. 기기를 바꿔도 같은 설정으로 이어진다.
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router";
 import { accountApi } from "../../preview/api";
 import { usePractice } from "../../preview/PracticeContext";
 import { useLearner } from "../../preview/settings";
@@ -12,6 +13,13 @@ export function SettingsScreen() {
   const practice = usePractice();
   const [leaving, setLeaving] = useState(false);
   const voices = learner.me?.practiceVoices ?? [];
+  const location = useLocation();
+
+  // 사전 풀이의 'CC BY-SA 2.0 KR' 링크(/settings#dict-license)로 들어오면 출처 칸으로 내려간다. 앱 안 이동은 해시로 스크롤하지 않아서 직접 부른다.
+  useEffect(() => {
+    if (location.hash !== "#dict-license") return;
+    document.getElementById("dict-license")?.scrollIntoView?.({ block: "start" });
+  }, [location.hash]);
 
   const chooseVoice = async (key: string) => {
     await learner.change({ practiceVoice: key });
@@ -106,6 +114,23 @@ export function SettingsScreen() {
           {leaving ? "나가는 중…" : "이 기기에서 나가기"}
         </button>
       </div>
+
+      <section id="dict-license" className="acct-license" aria-labelledby="dict-license-title">
+        <h3 id="dict-license-title">사전 자료 출처</h3>
+        <p className="small">사전 풀이는 국립국어원 한국어기초사전과 표준국어대사전에서 옮겼어요.</p>
+        <p className="small">크리에이티브 커먼즈 저작자표시-동일조건변경허락 2.0 대한민국 라이선스(CC BY-SA 2.0 KR)를 따라요.</p>
+        <div className="acct-license-links">
+          <a className="tc-ul" href="https://creativecommons.org/licenses/by-sa/2.0/kr/" target="_blank" rel="noopener noreferrer">
+            라이선스 전문 보기
+          </a>
+          <a className="tc-ul" href="https://krdict.korean.go.kr/" target="_blank" rel="noopener noreferrer">
+            한국어기초사전
+          </a>
+          <a className="tc-ul" href="https://stdict.korean.go.kr/" target="_blank" rel="noopener noreferrer">
+            표준국어대사전
+          </a>
+        </div>
+      </section>
     </section>
   );
 }

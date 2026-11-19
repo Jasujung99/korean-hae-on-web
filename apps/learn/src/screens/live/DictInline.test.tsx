@@ -2,6 +2,7 @@
 import "@testing-library/jest-dom/vitest";
 import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
+import { MemoryRouter } from "react-router";
 import type { WordDictView } from "../../../server/preview/contract.ts";
 
 const tracked = vi.hoisted(() => [] as Array<{ type: string; payload: unknown }>);
@@ -58,8 +59,16 @@ const approved: WordDictView = {
   },
 };
 
+function renderPanel(dict: WordDictView | null) {
+  return render(
+    <MemoryRouter>
+      <DictInline word="모자" wordId="w-1871" pos="명" dict={dict} />
+    </MemoryRouter>,
+  );
+}
+
 function openPanel(dict: WordDictView | null) {
-  render(<DictInline word="모자" wordId="w-1871" pos="명" dict={dict} />);
+  renderPanel(dict);
   fireEvent.click(screen.getByRole("button", { name: /사전 풀이/ }));
 }
 
@@ -69,7 +78,8 @@ describe("DictInline", () => {
     expect(screen.getByText(approved.krdict!.definition)).toBeInTheDocument();
     expect(screen.getByText(/명사 · 초급/)).toBeInTheDocument();
     expect(screen.queryByText(/검수 전/)).not.toBeInTheDocument();
-    expect(screen.getByText(/크리에이티브 커먼즈 저작자표시-동일조건변경허락 2.0 대한민국 라이선스/)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "CC BY-SA 2.0 KR" })).toBeInTheDocument();
+    expect(screen.queryByText(/크리에이티브 커먼즈 저작자표시-동일조건변경허락/)).not.toBeInTheDocument();
     expect(tracked).toEqual([{ type: "dictionary_opened", payload: { wordId: "w-1871", mode: "inline" } }]);
   });
 
@@ -103,8 +113,13 @@ describe("DictInline", () => {
     expect(screen.queryByText(approved.stdict!.definition)).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /표준국어대사전 풀이/ })).not.toBeInTheDocument();
     expect(screen.queryByText("사전에서 더 보기")).not.toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "라이선스 전문 보기" })).toHaveAttribute("href", "https://creativecommons.org/licenses/by-sa/2.0/kr/");
-    expect(screen.getByText(/출처: 국립국어원 한국어기초사전 · 표준국어대사전/)).toBeInTheDocument();
+    const credit = screen.getByText(/출처 국립국어원 한국어기초사전 · 표준국어대사전 ·/);
+    expect(credit).toHaveTextContent("출처 국립국어원 한국어기초사전 · 표준국어대사전 · CC BY-SA 2.0 KR");
+    const license = within(credit).getByRole("link", { name: "CC BY-SA 2.0 KR" });
+    expect(license).toHaveAttribute("href", "/settings#dict-license");
+    expect(license).not.toHaveAttribute("target");
+    expect(screen.queryByText("라이선스 전문 보기")).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "라이선스 전문 보기" })).not.toBeInTheDocument();
   });
 
   it("shows a quiet empty state with only the Naver shortcut when there is no entry", () => {
@@ -117,7 +132,7 @@ describe("DictInline", () => {
   });
 
   it("puts the standard dictionary and Naver shortcuts in the header and the basic dictionary link on its label", () => {
-    render(<DictInline word="모자" wordId="w-1871" pos="명" dict={approved} />);
+    renderPanel(approved);
     expect(screen.queryAllByRole("link")).toHaveLength(0);
     fireEvent.click(screen.getByRole("button", { name: /사전 풀이/ }));
     const stdict = screen.getByRole("link", { name: "표준국어대사전 새 창으로 열기" });
@@ -133,7 +148,10 @@ describe("DictInline", () => {
     expect(krdict).toHaveAttribute("href", "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=69297");
     expect(stdict).toHaveAttribute("href", "https://stdict.korean.go.kr/search/searchView.do?word_no=425739&searchKeywordTo=3");
     expect(naver).toHaveAttribute("href", `https://ko.dict.naver.com/#/search?query=${encodeURIComponent("모자")}`);
-    for (const link of screen.getAllByRole("link")) {
+    // 앱 안 링크(CC BY-SA 2.0 KR → 설정)만 빼고, 사전 바깥 링크는 모두 새 창으로 연다.
+    const outside = screen.getAllByRole("link").filter((link) => link.getAttribute("href")?.startsWith("https://"));
+    expect(outside).toHaveLength(4); // 표준국어대사전·네이버·한국어기초사전·대역어 뒤 ↗
+    for (const link of outside) {
       expect(link).toHaveAttribute("target", "_blank");
       expect(link).toHaveAttribute("rel", "noopener");
     }
