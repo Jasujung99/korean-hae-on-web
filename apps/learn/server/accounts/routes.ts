@@ -8,8 +8,13 @@ import { FLASH_TTS_MODEL, FLAT_READING_STYLE } from "../../content/tts/pipeline.
 import { DAILY_TTS_LIMIT, ttsQuotaDay } from "../../content/tts/quota.ts";
 import { DEFAULT_PRACTICE_VOICE, PRACTICE_VOICES, isPracticeVoiceKey, voicedAudioId } from "../../content/practice-voices.ts";
 import { PRACTICE_ITEMS } from "../../content/practice.ts";
+import { snapshotFromReferenceJson, type ContentSnapshot } from "../../content/snapshot.ts";
 import { AUDITION_TEXT, AUDITION_VOICES, auditionAudioId, flatAuditionAudioId } from "../../content/voices.ts";
+import type { AudioObjectStore } from "../content/audio-store.ts";
 import { buildReadOnlyContentView, isGroupId } from "../content/read-only.ts";
+import type { ContentRepo } from "../content/repo.ts";
+import { createAssetsInventoryAudio, createSnapshotAudio, createSnapshotCache, type SnapshotCache } from "../content/runtime.ts";
+import { isMissingContentTableError } from "../content/supabase-repo.ts";
 import { audioPicker, createPracticeRoutes, readJson, serveAudio, type LearnVars } from "../learn/practice.ts";
 import type { PreviewAudio } from "../preview/audio.ts";
 import type {
@@ -51,6 +56,10 @@ export type AccountsDeps = {
   secureCookies: boolean;
   /** 단건 TTS 생성 키. 비어 있으면 생성 준비 안 됨 상태 */
   ttsApiKey?: string | null;
+  contentRepo?: ContentRepo;
+  audioStore?: AudioObjectStore;
+  snapshotCache?: SnapshotCache;
+  ttsFetcher?: typeof fetch;
   now?: () => Date;
 };
 
@@ -107,6 +116,19 @@ export function createAccountRoutes(deps: AccountsDeps) {
   const hash = makeHasher(deps.sessionSecret);
   const cache = createEventCache(repo);
   const limitLogin = createAttemptLimiter();
+  const snapshotCache = deps.contentRepo ? (deps.snapshotCache ?? createSnapshotCache(deps.contentRepo)) : null;
+  let refFallback: ContentSnapshot | null = null;
+  const resolveContent = async (): Promise<{ snapshot: ContentSnapshot; audio: PreviewAudio }> => {
+    if (snapshotCache) {
+      const { snapshot, fromRelease } = await snapshotCache.get();
+      if (fromRelease && deps.audioStore) {
+        return { snapshot, audio: createSnapshotAudio(snapshot, deps.sessionSecret, deps.audioStore) };
+      }
+      return { snapshot, audio };
+    }
+    if (!refFallback) refFallback = snapshotFromReferenceJson();
+    return { snapshot: refFallback, audio };
+  };
   const app = new Hono();
 
   const cookieOptions = (maxAgeMs: number) => ({
@@ -156,22 +178,25 @@ export function createAccountRoutes(deps: AccountsDeps) {
     return learner && learner.teacherId === teacherId && learner.status === "active" ? learner : null;
   }
 
-  const practiceVoicesView = (): PracticeVoiceView[] =>
+  const practiceVoicesView = (resolvedAudio: PreviewAudio): PracticeVoiceView[] =>
     PRACTICE_VOICES.map((row) => ({
       key: row.key,
       voice: row.voice,
       label: row.label,
       note: row.note,
-      ready: PRACTICE_ITEMS.filter((item) => audio.refFor(voicedAudioId(item.audioId, row.key))).length,
+      ready: PRACTICE_ITEMS.filter((item) => resolvedAudio.refFor(voicedAudioId(item.audioId, row.key))).length,
       total: PRACTICE_ITEMS.length,
-      sampleRef: audio.refFor(voicedAudioId(PRACTICE_ITEMS[0]?.audioId ?? "", row.key)),
+      sampleRef: resolvedAudio.refFor(voicedAudioId(PRACTICE_ITEMS[0]?.audioId ?? "", row.key)),
     }));
 
-  const meView = (learner: LearnerRow): MeView => ({
-    learner: { id: learner.id, nickname: learner.nickname },
-    settings: settingsOf(learner),
-    practiceVoices: practiceVoicesView(),
-  });
+  const meView = async (learner: LearnerRow): Promise<MeView> => {
+    const { audio: resolvedAudio } = await resolveContent();
+    return {
+      learner: { id: learner.id, nickname: learner.nickname },
+      settings: settingsOf(learner),
+      practiceVoices: practiceVoicesView(resolvedAudio),
+    };
+  };
 
   // ── 첫 연결 ──────────────────────────────────────────────
   app.post("/invitations/inspect", async (c) => {
@@ -224,7 +249,7 @@ export function createAccountRoutes(deps: AccountsDeps) {
       if (old) await repo.revokeDeviceSession(old.id);
     }
     setCookie(c, DEVICE_COOKIE, deviceToken, cookieOptions(DEVICE_TTL_MS));
-    return c.json(meView(learner));
+    return c.json(await meView(learner));
   });
 
   // ── 학습자 자신 ──────────────────────────────────────────
@@ -232,7 +257,7 @@ export function createAccountRoutes(deps: AccountsDeps) {
     const found = await currentLearner(c);
     if (!found) return c.json({ error: "not_connected" }, 401);
     void repo.touchDeviceSession(found.sessionId).catch(() => {});
-    return c.json(meView(found.learner));
+    return c.json(await meView(found.learner));
   });
 
   app.post("/me/settings", async (c) => {
@@ -247,7 +272,7 @@ export function createAccountRoutes(deps: AccountsDeps) {
     if (body.exampleReading === "spoken" || body.exampleReading === "turns") patch.exampleReading = body.exampleReading;
     if (Object.keys(patch).length === 0) return c.json({ error: "nothing_to_change" }, 400);
     const learner = (await repo.updateLearner(found.learner.id, patch)) ?? found.learner;
-    return c.json(meView(learner));
+    return c.json(await meView(learner));
   });
 
   app.post("/me/leave", async (c) => {
@@ -260,13 +285,16 @@ export function createAccountRoutes(deps: AccountsDeps) {
   // ── 연습 ────────────────────────────────────────────────
   const learn = new Hono<LearnVars>();
   learn.use("*", requireLearner);
-  learn.route("/", createPracticeRoutes({ audio, now }));
+  learn.route("/", createPracticeRoutes({ audio, resolveContent, now }));
   app.route("/learn", learn);
 
   // 음원: 연결된 학습자나 로그인한 교사만.
   app.get("/sound/:ref", async (c) => {
     if (!(await currentLearner(c)) && !(await currentTeacher(c))) return c.json({ error: "not_connected" }, 401);
-    const body = await serveAudio(audio, c.req.param("ref"));
+    const ref = c.req.param("ref");
+    const { audio: resolvedAudio } = await resolveContent();
+    const body =
+      (await serveAudio(resolvedAudio, ref)) ?? (resolvedAudio !== audio ? await serveAudio(audio, ref) : null);
     if (!body) return c.json({ error: "audio_not_ready", display: "아직 준비 중" }, 404);
     return c.body(body.bytes.slice().buffer, 200, { "content-type": body.type, "cache-control": "private, max-age=3600" });
   });
@@ -401,7 +429,8 @@ export function createAccountRoutes(deps: AccountsDeps) {
   });
 
   const voicesView = async (): Promise<VoicesView> => {
-    const picker = audioPicker(audio, DEFAULT_PRACTICE_VOICE);
+    const { audio: resolvedAudio } = await resolveContent();
+    const picker = audioPicker(resolvedAudio, DEFAULT_PRACTICE_VOICE);
     const chosen = await repo.appSetting("voiceChoice");
     return {
       sampleText: AUDITION_TEXT,
@@ -409,12 +438,12 @@ export function createAccountRoutes(deps: AccountsDeps) {
       model: FLASH_TTS_MODEL,
       practiceVoice: picker.voice(),
       practiceVoiceKey: DEFAULT_PRACTICE_VOICE,
-      practiceVoices: practiceVoicesView(),
+      practiceVoices: practiceVoicesView(resolvedAudio),
       chosen: typeof chosen === "string" ? chosen : null,
       voices: AUDITION_VOICES.map((voice) => ({
         ...voice,
-        audioRef: audio.refFor(auditionAudioId(voice.voice)),
-        flatAudioRef: audio.refFor(flatAuditionAudioId(voice.voice)),
+        audioRef: resolvedAudio.refFor(auditionAudioId(voice.voice)) ?? audio.refFor(auditionAudioId(voice.voice)),
+        flatAudioRef: resolvedAudio.refFor(flatAuditionAudioId(voice.voice)) ?? audio.refFor(flatAuditionAudioId(voice.voice)),
       })),
     };
   };
@@ -422,7 +451,39 @@ export function createAccountRoutes(deps: AccountsDeps) {
   teacher.get("/voices", async (c) => c.json(await voicesView()));
 
   // 만든 음원 목록(목소리 화면의 대시보드). 생성은 부르지 않는다.
-  teacher.get("/audio-inventory", (c) => c.json(buildInventory(audio)));
+  teacher.get("/audio-inventory", async (c) => {
+    if (deps.contentRepo) {
+      try {
+        const dbAssets = await deps.contentRepo.listAudioAssets();
+        if (dbAssets.length > 0) {
+          const [dbItems, dbStage0] = await Promise.all([
+            deps.contentRepo.listItems({ includeHidden: false }),
+            deps.contentRepo.listStageZero(),
+          ]);
+          const workingSnap: ContentSnapshot =
+            dbItems.length > 0
+              ? { seq: 0, releasedAt: "", items: dbItems, stage0: dbStage0, audio: {} }
+              : snapshotFromReferenceJson();
+          return c.json(buildInventory(createAssetsInventoryAudio(dbAssets), "DB · phoneme_audio_assets", workingSnap));
+        }
+      } catch (error) {
+        if (!isMissingContentTableError(error)) throw error;
+      }
+    }
+    return c.json(buildInventory(audio));
+  });
+
+  teacher.get("/content/audio/:assetId", async (c) => {
+    if (!deps.contentRepo || !deps.audioStore) return c.json({ error: "not_found" }, 404);
+    const asset = await deps.contentRepo.getAudioAsset(c.req.param("assetId"));
+    if (!asset) return c.json({ error: "not_found" }, 404);
+    const got = await deps.audioStore.get(asset.storage, asset.objectKey, asset.audioId);
+    if (!got || got.bytes.length === 0) return c.json({ error: "audio_not_ready" }, 404);
+    return c.body(got.bytes.slice().buffer, 200, {
+      "content-type": got.mime ?? asset.mime,
+      "cache-control": "private, no-store",
+    });
+  });
 
   teacher.get("/content", (c) => {
     const rawGroup = c.req.query("group") ?? "j_ch_jj";

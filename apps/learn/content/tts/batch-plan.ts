@@ -3,10 +3,19 @@
 // - 단어: 한 요청 안에 단어마다 칸(content)을 나눔, 칸마다 평평 낭독 지시, 앞뒤 '네.' 없음 → 쉼에서 자름
 // - 예문: 두 버전. 말하듯이(<long pause>로 이음, 기본) / 또박또박(문장마다 칸을 나눔, 파일 끝에 --turns)
 import { FLAT_READING_STYLE } from "./pipeline.ts";
-import { coreWords, sentenceAudioBase, stageZeroCells, syllableAudioBase, wordAudioBase } from "../core-table.ts";
-import { PRACTICE_ITEMS, seededShuffle } from "../practice.ts";
+import { syllableAudioBase } from "../core-table.ts";
+import type { GroupId } from "../course-order.ts";
+import { seededShuffle } from "../practice.ts";
 import { voicedAudioId, type PracticeVoiceKey } from "../practice-voices.ts";
-import { groupPseudowords, groupStageZero, groupWords, isOtherGroup } from "../group-tables.ts";
+import {
+  snapshotFromReferenceJson,
+  snapshotPseudowords,
+  snapshotSentenceAudioBase,
+  snapshotStageZero,
+  snapshotWordAudioBase,
+  snapshotWords,
+  type ContentSnapshot,
+} from "../snapshot.ts";
 
 export type BatchKind = "pseudo" | "stage0" | "words" | "sentences" | "turns";
 export type BatchMethod = "pause_group" | "per_content_group";
@@ -60,23 +69,29 @@ function chunk<T>(list: T[], size: number): T[][] {
 }
 
 /** 묶음 계획에 쓰는 낱말(묶음과 상관없이 같은 모양) */
-type PlanWord = { entryId: number; word: string; example: string };
+type PlanWord = { id: string; entryId: number | null; word: string; example: string };
 
-function sourceFor(groupId: string): { pseudo: string[]; stage0Syllables: string[]; stage0Words: string[]; words: PlanWord[] } {
-  if (isOtherGroup(groupId)) {
-    const cells = groupStageZero(groupId);
+function sourceFor(
+  groupId: string,
+  snapshot: ContentSnapshot,
+): { pseudo: string[]; stage0Syllables: string[]; stage0Words: string[]; words: PlanWord[] } {
+  const id = groupId as GroupId;
+  const cells = snapshotStageZero(snapshot, id);
+  const pseudos = snapshotPseudowords(snapshot, id).map((row) => row.stimulus);
+  const words = snapshotWords(snapshot, id);
+  if (id !== "j_ch_jj") {
     return {
-      pseudo: groupPseudowords(groupId),
+      pseudo: pseudos,
       stage0Syllables: [],
       stage0Words: cells.filter((cell) => cell.word).map((cell) => cell.word as string),
-      words: groupWords(groupId),
+      words,
     };
   }
   return {
-    pseudo: PRACTICE_ITEMS.map((item) => item.stimulus),
-    stage0Syllables: [...new Set(stageZeroCells().map((cell) => cell.stimulus))].filter((text) => text.length === 1),
+    pseudo: pseudos,
+    stage0Syllables: [...new Set(cells.map((cell) => cell.stimulus))].filter((text) => text.length === 1),
     stage0Words: [],
-    words: coreWords(),
+    words,
   };
 }
 
@@ -91,9 +106,10 @@ export function batchPlan(
   done: (id: string) => boolean,
   groupId = "j_ch_jj",
   taken: Set<string> = new Set(),
+  snapshot: ContentSnapshot = snapshotFromReferenceJson(),
 ): BatchGroup[] {
   const groups: BatchGroup[] = [];
-  const source = sourceFor(groupId);
+  const source = sourceFor(groupId, snapshot);
   const tag = groupId === "j_ch_jj" ? voiceKey : `${voiceKey}-${groupId}`;
   const seed = (name: string) => `${tag}:${name}`;
   const skip = (id: string) => done(id) || taken.has(id);
@@ -116,14 +132,14 @@ export function batchPlan(
   }
   if (kinds.includes("words")) {
     const items: BatchItem[] = [];
-    const add = (word: { entryId: number; word: string }) => {
-      const id = voicedAudioId(wordAudioBase(word), voiceKey);
+    const add = (word: { id: string; entryId: number | null; word: string }) => {
+      const id = voicedAudioId(snapshotWordAudioBase(word), voiceKey);
       if (skip(id) || items.some((item) => item.id === id)) return;
       items.push({ id, text: word.word, unitKind: "word" });
     };
     for (const word of source.words) add(word);
     // 첫 듣기 점검(Stage 0)의 낱말이 단계 목록에 없으면 함께 만든다.
-    for (const text of source.stage0Words) add(source.words.find((word) => word.word === text) ?? { entryId: 0, word: text });
+    for (const text of source.stage0Words) add(source.words.find((word) => word.word === text) ?? { id: "0", entryId: 0, word: text });
     chunk(seededShuffle(items, seed("words")), WORDS_PER_GROUP).forEach((part, index) =>
       groups.push({ groupId: `words-${tag}-${index + 1}`, kind: "words", method: "per_content_group", style: FLAT_READING_STYLE, fillers: false, minGapMs: 300, items: take(part) }),
     );
@@ -133,7 +149,7 @@ export function batchPlan(
     const items: BatchItem[] = [];
     for (const word of source.words) {
       if (!word.example) continue;
-      const voiced = voicedAudioId(sentenceAudioBase(word), voiceKey);
+      const voiced = voicedAudioId(snapshotSentenceAudioBase(word), voiceKey);
       const id = kind === "turns" ? turnsAudioId(voiced) : voiced;
       if (skip(id) || items.some((item) => item.id === id)) continue;
       items.push({ id, text: word.example, unitKind: "sentence" });
