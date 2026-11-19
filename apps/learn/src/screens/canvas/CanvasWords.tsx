@@ -113,7 +113,7 @@ export function CanvasWords() {
             </div>
           </div>
         ) : null}
-        <DictInline word={word.word} wordId={word.id} pos={word.pos} />
+        <DictInline word={word.word} wordId={word.id} pos={word.pos} dict={word.dict} />
       </article>
 
       {word.example ? (

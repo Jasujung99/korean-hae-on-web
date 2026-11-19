@@ -37,6 +37,7 @@ import {
   type WordView,
 } from "../preview/contract.ts";
 import type { StoredEvent } from "../preview/store.ts";
+import { wordDictView } from "./dict-view.ts";
 
 export type LearnVars = { Variables: { learner: LearnerRow; store: LearnerStore } };
 
@@ -200,7 +201,8 @@ function scope(learner: LearnerRow, store: LearnerStore, audio: PreviewAudio, no
   return { pick, refOf, exampleRefOf, voice, events, plans, planFor, serverEvent, answerResult, sessionView };
 }
 
-export function createPracticeRoutes(deps: { audio: PreviewAudio; now?: () => Date }) {
+/** dictReview: 개발 미리보기 서버. 검수 전 사전 풀이도 '검수 전' 표시와 함께 보낸다. */
+export function createPracticeRoutes(deps: { audio: PreviewAudio; now?: () => Date; dictReview?: boolean }) {
   const { audio } = deps;
   const now = deps.now ?? (() => new Date());
   const app = new Hono<LearnVars>();
@@ -471,6 +473,8 @@ export function createPracticeRoutes(deps: { audio: PreviewAudio; now?: () => Da
   app.get("/words", (c) => {
     const s = use(c);
     const cards = practiceWords();
+    // 학습자에게는 승인된 사전 풀이만. 개발 미리보기와 교사가 만든 시험 학습자에게는 검수 전 항목도 보낸다.
+    const dictReview = deps.dictReview === true || c.get("learner").isTest;
     const words: WordView[] = cards.map((word) => ({
       id: word.id,
       word: word.word,
@@ -494,6 +498,7 @@ export function createPracticeRoutes(deps: { audio: PreviewAudio; now?: () => Da
         const card = cards.find((row) => row.word === partner.word && row.consonant === partner.consonant);
         return { ...partner, audioRef: card ? s.refOf(card.wordAudioId, card.legacyWordAudioId) : null };
       }),
+      dict: wordDictView(word.tableId, dictReview),
     }));
     return c.json({ words });
   });

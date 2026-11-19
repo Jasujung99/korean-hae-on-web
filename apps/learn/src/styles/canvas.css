@@ -805,7 +805,7 @@ b.p3 {
   border-left: 2px solid var(--sage);
 }
 
-.dict-inline-row:nth-child(2) {
+.dict-inline-row.is-lang {
   border-left-color: var(--lavender);
 }
 
@@ -839,7 +839,7 @@ b.p3 {
 }
 
 .dict-inline .dict-inline-langs button {
-  min-height: 36px;
+  min-height: 44px;
   padding: 0 var(--space-3);
   border: 1px solid var(--line);
   border-radius: var(--radius-pill);
@@ -859,6 +859,64 @@ b.p3 {
 .dict-inline-note {
   color: var(--ink-muted);
   font: var(--text-doc-label);
+}
+
+/* 사전 풀이 내용(기초사전·내 언어·표준국어대사전·더 보기·출처) */
+.dict-inline-text {
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.dict-inline-example {
+  color: var(--ink-muted);
+  font-family: var(--font-serif);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.dict-inline-trans,
+.dict-inline-sub,
+.dict-inline-more-links,
+.dict-inline-credit {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.dict-inline-review {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--line);
+  background: var(--wash-sage);
+  color: var(--olive);
+  font: var(--text-doc-label);
+}
+
+.dict-inline-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-1);
+  margin-left: calc(var(--space-3) * -1);
+}
+
+.dict-inline .dict-inline-more,
+.dict-inline-credit .tc-ul {
+  justify-self: start;
+  margin-left: calc(var(--space-3) * -1);
+}
+
+.dict-inline button.tc-ul {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  font-family: var(--font-serif);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dict-inline a.tc-ul {
+  font-family: var(--font-serif);
+  text-decoration: none;
 }
 
 @keyframes dict-open {

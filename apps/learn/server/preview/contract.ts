@@ -102,6 +102,8 @@ export const CLIENT_EVENT_TYPES = [
   "item_skipped",
   "word_viewed",
   "dictionary_opened",
+  /** 사전 풀이의 '사전에서 더 보기' 새 창 링크. payload { wordId, target: "krdict" | "stdict" | "naver" } */
+  "dictionary_link_opened",
   "word_saved",
   "word_unsaved",
 ] as const;
@@ -140,6 +142,26 @@ export type WordView = {
   contrastTier: number | null;
   /** 같은 대립쌍 묶음의 상대 낱말. 음원이 있으면 바로 비교해 들을 수 있다. */
   partners: Array<{ consonant: string; word: string; audioRef: string | null }>;
+  /** 사전 풀이(국립국어원 사전에서 미리 받아 검수한 정적 자료). 학습자에게는 승인 항목만, 개발 미리보기에서는 검수 전 항목도 온다. */
+  dict: WordDictView | null;
+};
+
+export type DictStatusView = "draft" | "needs_review" | "approved";
+
+export type DictTranslationView = { word: string; definition: string };
+
+export type WordDictView = {
+  status: DictStatusView;
+  krdict: {
+    targetCode: number;
+    pos: string;
+    grade: string;
+    definition: string;
+    /** 기초사전 문장 용례 하나(보조). 주 예문은 우리 단어표의 예문이다. */
+    example: string | null;
+    translations: Record<DictLanguage, DictTranslationView | null>;
+  } | null;
+  stdict: { targetCode: number; origin: string; pos: string; pronunciation: string; definition: string } | null;
 };
 
 export type CourseGroupView = {

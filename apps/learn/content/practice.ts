@@ -212,6 +212,8 @@ export type WordCard = {
   legacyWordAudioId: string;
   legacyExampleAudioId: string;
   sourceEntryId: number;
+  /** 배치표 낱말 id(예: jcj-1871). 사전 풀이 자료(content/dict/entries.json)의 키 */
+  tableId: string;
   /** Stage 안 출제 순서: 1 기준점 잡기, 2 음절 틀 넓히기, 3 실전 어휘 일반화 */
   step: InStageStep;
   contrast: Contrast | null;
@@ -240,6 +242,7 @@ function toCard(word: CoreWord): WordCard {
     legacyWordAudioId: `word-Stage1-${word.entryId}-${word.word}`,
     legacyExampleAudioId: word.example ? `sentence-Stage1-${word.entryId}-${word.word}` : "",
     sourceEntryId: word.entryId,
+    tableId: word.id,
     step: inStageStep(contrast?.tier ?? null),
     contrast,
   };
