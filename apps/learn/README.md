@@ -68,6 +68,12 @@ npm run tts:groups -- --voices erinome,sulafat,charon --dry-run   # 요청 수�
 npm run tts:groups -- --voices erinome,sulafat,charon             # 적은 순서대로 만듦
 ```
 
+다른 자음 묶음은 `--groups`로 고릅니다(기본 `j_ch_jj`). 단어표는 PR #5 `08` 문서 3.2~3.5의 배치표를 옮긴 `content/reference/group-core-tables.json`입니다(ㅅ·ㅆ 42, ㄱ·ㅋ·ㄲ 61, ㅂ·ㅍ·ㅃ 59, ㄷ·ㅌ·ㄸ 60개, 예문은 로드맵 JSON에 있는 것만). 두 묶음에 같이 나오는 단어는 한 번만 만듭니다.
+
+```sh
+npm run tts:groups -- --groups s_ss,g_k_kk,b_p_pp,d_t_tt --voices erinome,sulafat,charon --dry-run
+```
+
 - 자르기 전에 점검합니다: 자르는 쉼이 최소 길이 이상이고 다른 쉼보다 1.5배 이상 길어야 합니다. 어긋나면 자르지 않고 통째 파일만 `audio/raw/groups/`에 남깁니다.
 - 이미 묶음 방식으로 만든 파일은 건너뜁니다. 하나씩 만든 예전 파일은 `<id>--single.wav`로 옮겨 보관합니다.
 - 하루 한도에 걸리면 멈춥니다. 같은 명령을 다시 실행하면 이어서 만듭니다.

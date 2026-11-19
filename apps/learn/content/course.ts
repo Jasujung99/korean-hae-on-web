@@ -6,6 +6,7 @@ import { COURSE_ORDER, PRACTICE_READY_GROUPS, type GroupId } from "./course-orde
 import roadmapJson from "./reference/consonant-groups-roadmap.json" with { type: "json" };
 import { stageZeroCells, wordsInStage, type CoreStageKey } from "./core-table.ts";
 import { contrastOf, orderInStage } from "./contrast.ts";
+import { groupStageZero, groupWords, isOtherGroup, type OtherGroupId } from "./group-tables.ts";
 
 export { COURSE_ORDER, COURSE_ORDER_NOTE, PRACTICE_READY_GROUPS, type GroupId } from "./course-order.ts";
 
@@ -102,6 +103,22 @@ function coreStages(): CourseStage[] {
   ];
 }
 
+/** 나머지 네 묶음도 PR #5 `08` 문서의 배치표를 쓴다. */
+function groupTableStages(id: OtherGroupId): CourseStage[] {
+  const zero = groupStageZero(id);
+  const stages: CourseStage[] = [
+    { stage: "Stage 0", title: stageTitle("Stage 0"), count: zero.length, samples: zero.slice(0, 4).map((cell) => cell.stimulus) },
+  ];
+  for (const stage of ["Stage 1", "Stage 2", "Stage 3", "Stage 4", "Stage 5"] as const) {
+    const words = orderInStage(
+      groupWords(id).filter((word) => word.stage === stage),
+      (word) => contrastOf(id, word.word, word.consonant, word.stage)?.tier ?? null,
+    );
+    stages.push({ stage, title: stageTitle(stage), count: words.length, samples: words.slice(0, 4).map((word) => word.word) });
+  }
+  return stages;
+}
+
 function stageTitle(stage: string): string {
   return STAGE_TITLE_OVERRIDES[stage] ?? roadmap.stage_definitions.find((row) => row.stage === stage)?.title ?? stage;
 }
@@ -111,7 +128,7 @@ export function courseGroups(): CourseGroup[] {
     const macro = roadmap.macro_sequence.find((row) => row.group_id === id);
     const group = roadmap.consonant_groups[id];
     if (!macro || !group) throw new Error(`roadmap has no group ${id}`);
-    const stages = id === "j_ch_jj" ? coreStages() : Object.entries(group.stages).map(([stage, rows]) => ({
+    const stages = id === "j_ch_jj" ? coreStages() : isOtherGroup(id) ? groupTableStages(id) : Object.entries(group.stages).map(([stage, rows]) => ({
       stage,
       title: stageTitle(stage),
       count: rows.length,

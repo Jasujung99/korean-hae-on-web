@@ -79,3 +79,29 @@ describe("example reading", () => {
     expect(audioPicker(audio, "erinome", "spoken").exampleRefOf(base)).toBe(audio.refFor(`${base}--erinome`));
   });
 });
+
+describe("other consonant groups", () => {
+  it("loads the four group tables from the PR #5 placement tables", async () => {
+    const { groupWords, groupStageZero, groupPseudowords, OTHER_GROUP_IDS } = await import("../group-tables.ts");
+    expect([...OTHER_GROUP_IDS].sort()).toEqual(["b_p_pp", "d_t_tt", "g_k_kk", "s_ss"]);
+    expect(groupWords("s_ss")).toHaveLength(42);
+    expect(groupWords("g_k_kk")).toHaveLength(61);
+    expect(groupWords("b_p_pp")).toHaveLength(59);
+    expect(groupWords("d_t_tt")).toHaveLength(60);
+    expect(groupPseudowords("s_ss")).toEqual(["아사", "아싸", "이사", "이싸", "오사", "오싸"]);
+    expect(groupStageZero("s_ss")).toHaveLength(6);
+    // 묶음을 섞지 않는다: ㅅ·ㅆ 표에 ㅈ·ㅊ·ㅉ 낱말이 들어오지 않는다.
+    expect(groupWords("s_ss").every((word) => word.consonant === "ㅅ" || word.consonant === "ㅆ")).toBe(true);
+  });
+
+  it("plans a group and makes a word shared by two groups only once", () => {
+    const taken = new Set<string>();
+    const first = batchPlan("charon", ["words"], () => false, "b_p_pp", taken);
+    const second = batchPlan("charon", ["words"], () => false, "j_ch_jj", taken);
+    const ids = [...first, ...second].flatMap((group) => group.items.map((item) => item.id));
+    expect(new Set(ids).size).toBe(ids.length);
+    expect(first[0]?.groupId.startsWith("words-charon-b_p_pp-")).toBe(true);
+    const pseudo = batchPlan("charon", ["pseudo"], () => false, "s_ss");
+    expect(pseudo[0]?.items).toHaveLength(6);
+  });
+});

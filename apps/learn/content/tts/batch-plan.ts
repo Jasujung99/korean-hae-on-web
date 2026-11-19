@@ -6,6 +6,7 @@ import { FLAT_READING_STYLE } from "./pipeline.ts";
 import { coreWords, sentenceAudioBase, stageZeroCells, syllableAudioBase, wordAudioBase } from "../core-table.ts";
 import { PRACTICE_ITEMS, seededShuffle } from "../practice.ts";
 import { voicedAudioId, type PracticeVoiceKey } from "../practice-voices.ts";
+import { groupPseudowords, groupStageZero, groupWords, isOtherGroup } from "../group-tables.ts";
 
 export type BatchKind = "pseudo" | "stage0" | "words" | "sentences" | "turns";
 export type BatchMethod = "pause_group" | "per_content_group";
@@ -58,62 +59,94 @@ function chunk<T>(list: T[], size: number): T[][] {
   return out;
 }
 
+/** 묶음 계획에 쓰는 낱말(묶음과 상관없이 같은 모양) */
+type PlanWord = { entryId: number; word: string; example: string };
+
+function sourceFor(groupId: string): { pseudo: string[]; stage0Syllables: string[]; stage0Words: string[]; words: PlanWord[] } {
+  if (isOtherGroup(groupId)) {
+    const cells = groupStageZero(groupId);
+    return {
+      pseudo: groupPseudowords(groupId),
+      stage0Syllables: [],
+      stage0Words: cells.filter((cell) => cell.word).map((cell) => cell.word as string),
+      words: groupWords(groupId),
+    };
+  }
+  return {
+    pseudo: PRACTICE_ITEMS.map((item) => item.stimulus),
+    stage0Syllables: [...new Set(stageZeroCells().map((cell) => cell.stimulus))].filter((text) => text.length === 1),
+    stage0Words: [],
+    words: coreWords(),
+  };
+}
+
 /**
- * 목소리 하나의 묶음 계획. done(id)이 참인 음원(이미 묶음 방식으로 만든 것)은 빼고 묶는다.
+ * 목소리 하나, 자음 묶음 하나의 묶음 계획. done(id)이 참인 음원(이미 묶음 방식으로 만든 것)은 빼고 묶는다.
+ * taken에 든 id도 뺀다(같은 단어가 두 자음 묶음에 나올 때 한 번만 만들려고). 계획에 넣은 id는 taken에 더한다.
  * 의사단어·첫소리는 하나라도 없으면 묶음 전체를 다시 만든다(한 묶음 안의 소리 조건을 맞추려고).
  */
-export function batchPlan(voiceKey: PracticeVoiceKey, kinds: BatchKind[], done: (id: string) => boolean): BatchGroup[] {
+export function batchPlan(
+  voiceKey: PracticeVoiceKey,
+  kinds: BatchKind[],
+  done: (id: string) => boolean,
+  groupId = "j_ch_jj",
+  taken: Set<string> = new Set(),
+): BatchGroup[] {
   const groups: BatchGroup[] = [];
-  const seed = (name: string) => `${voiceKey}:${name}`;
+  const source = sourceFor(groupId);
+  const tag = groupId === "j_ch_jj" ? voiceKey : `${voiceKey}-${groupId}`;
+  const seed = (name: string) => `${tag}:${name}`;
+  const skip = (id: string) => done(id) || taken.has(id);
+  const take = (items: BatchItem[]) => {
+    for (const item of items) taken.add(item.id);
+    return items;
+  };
 
   if (kinds.includes("pseudo")) {
-    const items: BatchItem[] = PRACTICE_ITEMS.map((item) => ({ id: voicedAudioId(item.audioId, voiceKey), text: item.stimulus, unitKind: "pseudoword" }));
-    if (items.some((item) => !done(item.id))) {
-      groups.push({ groupId: `pseudo-${voiceKey}`, kind: "pseudo", method: "pause_group", style: FLAT_READING_STYLE, fillers: true, minGapMs: 300, items: seededShuffle(items, seed("pseudo")) });
+    const items: BatchItem[] = source.pseudo.map((text) => ({ id: voicedAudioId(syllableAudioBase(text), voiceKey), text, unitKind: "pseudoword" }));
+    if (items.some((item) => !skip(item.id))) {
+      groups.push({ groupId: `pseudo-${tag}`, kind: "pseudo", method: "pause_group", style: FLAT_READING_STYLE, fillers: true, minGapMs: 300, items: take(seededShuffle(items, seed("pseudo"))) });
     }
   }
-  if (kinds.includes("stage0")) {
-    const items: BatchItem[] = [...new Set(stageZeroCells().map((cell) => cell.stimulus))]
-      .filter((text) => text.length === 1)
-      .map((text) => ({ id: voicedAudioId(syllableAudioBase(text), voiceKey), text, unitKind: "pseudoword" }));
-    if (items.some((item) => !done(item.id))) {
-      groups.push({ groupId: `stage0-${voiceKey}`, kind: "stage0", method: "pause_group", style: FLAT_READING_STYLE, fillers: true, minGapMs: 300, items: seededShuffle(items, seed("stage0")) });
+  if (kinds.includes("stage0") && source.stage0Syllables.length > 0) {
+    const items: BatchItem[] = source.stage0Syllables.map((text) => ({ id: voicedAudioId(syllableAudioBase(text), voiceKey), text, unitKind: "pseudoword" }));
+    if (items.some((item) => !skip(item.id))) {
+      groups.push({ groupId: `stage0-${tag}`, kind: "stage0", method: "pause_group", style: FLAT_READING_STYLE, fillers: true, minGapMs: 300, items: take(seededShuffle(items, seed("stage0"))) });
     }
   }
   if (kinds.includes("words")) {
-    const seen = new Set<string>();
     const items: BatchItem[] = [];
-    for (const word of coreWords()) {
+    const add = (word: { entryId: number; word: string }) => {
       const id = voicedAudioId(wordAudioBase(word), voiceKey);
-      if (seen.has(id) || done(id)) continue;
-      seen.add(id);
+      if (skip(id) || items.some((item) => item.id === id)) return;
       items.push({ id, text: word.word, unitKind: "word" });
-    }
+    };
+    for (const word of source.words) add(word);
+    // 첫 듣기 점검(Stage 0)의 낱말이 단계 목록에 없으면 함께 만든다.
+    for (const text of source.stage0Words) add(source.words.find((word) => word.word === text) ?? { entryId: 0, word: text });
     chunk(seededShuffle(items, seed("words")), WORDS_PER_GROUP).forEach((part, index) =>
-      groups.push({ groupId: `words-${voiceKey}-${index + 1}`, kind: "words", method: "per_content_group", style: FLAT_READING_STYLE, fillers: false, minGapMs: 300, items: part }),
+      groups.push({ groupId: `words-${tag}-${index + 1}`, kind: "words", method: "per_content_group", style: FLAT_READING_STYLE, fillers: false, minGapMs: 300, items: take(part) }),
     );
   }
   for (const kind of ["sentences", "turns"] as const) {
     if (!kinds.includes(kind)) continue;
-    const seen = new Set<string>();
     const items: BatchItem[] = [];
-    for (const word of coreWords()) {
+    for (const word of source.words) {
       if (!word.example) continue;
       const voiced = voicedAudioId(sentenceAudioBase(word), voiceKey);
       const id = kind === "turns" ? turnsAudioId(voiced) : voiced;
-      if (seen.has(id) || done(id)) continue;
-      seen.add(id);
+      if (skip(id) || items.some((item) => item.id === id)) continue;
       items.push({ id, text: word.example, unitKind: "sentence" });
     }
     chunk(seededShuffle(items, seed(kind)), SENTENCES_PER_GROUP).forEach((part, index) =>
       groups.push({
-        groupId: `${kind}-${voiceKey}-${index + 1}`,
+        groupId: `${kind}-${tag}-${index + 1}`,
         kind,
         method: kind === "turns" ? "per_content_group" : "pause_group",
         style: null,
         fillers: false,
         minGapMs: kind === "turns" ? 450 : 600,
-        items: part,
+        items: take(part),
       }),
     );
   }

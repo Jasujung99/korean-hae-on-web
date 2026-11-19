@@ -1,5 +1,6 @@
 // 연습 음원을 묶어서 만든다(2026-11-18 결정, 계획은 content/tts/batch-plan.ts).
 // 예) npm run tts:groups -- --voices erinome,sulafat --dry-run
+//     npm run tts:groups -- --groups s_ss,g_k_kk --voices erinome,sulafat,charon --dry-run
 //     npm run tts:groups -- --voices erinome --kinds pseudo,stage0,words,sentences,turns
 // 키는 GEMINI_API_KEY 환경 변수에서만 읽는다. 결과는 audio/raw/ 에만 쓰고 검수 상태는 draft로 둔다.
 // 이미 묶음 방식으로 만든 파일은 건너뛴다. 하나씩 만든 예전 파일은 `<id>--single`로 옮겨 보관한다.
@@ -30,6 +31,7 @@ import {
 } from "../content/tts/pipeline.ts";
 import { splitChecked } from "../content/tts/split.ts";
 import { PRACTICE_VOICES, type PracticeVoiceKey } from "../content/practice-voices.ts";
+import { isOtherGroup } from "../content/group-tables.ts";
 
 const appRoot = fileURLToPath(new URL("..", import.meta.url));
 const rawDir = process.env.LEARN_AUDIO_DIR?.trim() || join(appRoot, "audio", "raw");
@@ -185,7 +187,19 @@ async function main() {
     .split(",")
     .map((item) => item.trim())
     .filter((item): item is BatchKind => (BATCH_KINDS as string[]).includes(item));
-  const plans = voices.map((row) => ({ row, groups: batchPlan(row.key, kinds, doneGrouped) }));
+  // 자음 묶음: 예) --groups j_ch_jj,s_ss,g_k_kk,b_p_pp,d_t_tt (기본 j_ch_jj). 학습 순서대로 적는다.
+  const groupIds = (argValue("--groups") ?? "j_ch_jj")
+    .split(",")
+    .map((item) => item.trim())
+    .filter((item) => item === "j_ch_jj" || isOtherGroup(item));
+  if (groupIds.length === 0) {
+    console.error("--groups accepts j_ch_jj, s_ss, g_k_kk, b_p_pp, d_t_tt.");
+    process.exit(1);
+  }
+  const plans = voices.map((row) => {
+    const taken = new Set<string>();
+    return { row, groups: groupIds.flatMap((groupId) => batchPlan(row.key, kinds, doneGrouped, groupId, taken)) };
+  });
   for (const { row, groups } of plans) {
     const byKind = kinds.map((kind) => {
       const list = groups.filter((group) => group.kind === kind);
