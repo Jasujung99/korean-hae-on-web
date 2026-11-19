@@ -18,9 +18,12 @@ export type AudioMeta = {
 
 export type AudioFileInfo = { bytes: number; durationMs: number | null };
 
+/** 들려줄 음원 내용과 형식. 로컬은 wav, Cloudflare 배포본은 압축(m4a)이다. */
+export type AudioBody = { bytes: Uint8Array; type: string };
+
 export type PreviewAudio = {
   refFor(audioId: string): string | null;
-  read(ref: string): Uint8Array | null;
+  read(ref: string): Promise<AudioBody | null>;
   meta(audioId: string): AudioMeta | null;
   /** 음원 폴더에 있는 모든 파일 id(.wav 앞부분) */
   listIds(): string[];
@@ -68,11 +71,11 @@ export function createRawAudio(rawDir: string, knownIds: string[], salt: string 
       if (!ref || !existsSync(pathOf(audioId))) return null;
       return ref;
     },
-    read(ref) {
+    async read(ref) {
       const id = idByRef.get(ref);
       if (!id) return null;
       try {
-        return new Uint8Array(readFileSync(pathOf(id)));
+        return { bytes: new Uint8Array(readFileSync(pathOf(id))), type: "audio/wav" };
       } catch {
         return null;
       }
@@ -139,10 +142,11 @@ export function createFixtureAudio(present: Record<string, Uint8Array>): Preview
   const ids = Object.keys(present);
   return {
     refFor: (audioId) => (ids.includes(audioId) ? `ref-${ids.indexOf(audioId)}` : null),
-    read: (ref) => {
+    read: async (ref) => {
       const index = Number(ref.replace("ref-", ""));
       const id = ids[index];
-      return id ? (present[id] ?? null) : null;
+      const bytes = id ? present[id] : undefined;
+      return bytes ? { bytes, type: "audio/wav" } : null;
     },
     meta: (audioId) =>
       ids.includes(audioId)

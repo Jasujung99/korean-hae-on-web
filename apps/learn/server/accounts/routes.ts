@@ -262,9 +262,9 @@ export function createAccountRoutes(deps: AccountsDeps) {
   // 음원: 연결된 학습자나 로그인한 교사만.
   app.get("/sound/:ref", async (c) => {
     if (!(await currentLearner(c)) && !(await currentTeacher(c))) return c.json({ error: "not_connected" }, 401);
-    const bytes = serveAudio(audio, c.req.param("ref"));
-    if (!bytes) return c.json({ error: "audio_not_ready", display: "아직 준비 중" }, 404);
-    return c.body(bytes.slice().buffer, 200, { "content-type": "audio/wav", "cache-control": "private, max-age=3600" });
+    const body = await serveAudio(audio, c.req.param("ref"));
+    if (!body) return c.json({ error: "audio_not_ready", display: "아직 준비 중" }, 404);
+    return c.body(body.bytes.slice().buffer, 200, { "content-type": body.type, "cache-control": "private, max-age=3600" });
   });
 
   // ── 교사 ────────────────────────────────────────────────

@@ -24,7 +24,10 @@
     "tts:groups": "node --experimental-strip-types scripts/tts-groups.ts",
     "tts:pseudo-groups": "node --experimental-strip-types scripts/tts.ts pseudo-groups",
     "verify:clean": "node scripts/verify-clean.mjs",
-    "dev:lan": "node scripts/dev-lan.mjs"
+    "dev:lan": "node scripts/dev-lan.mjs",
+    "build:cloud": "npm run build && node --experimental-strip-types scripts/build-cloud.ts",
+    "deploy:cloud": "wrangler pages deploy --branch main",
+    "audio:upload": "node --experimental-strip-types scripts/audio-upload.ts"
   },
   "dependencies": {
     "@hono/node-server": "^2.1.8",
@@ -44,6 +47,7 @@
     "jsdom": "^31.0.1",
     "typescript": "^7.0.2",
     "vite": "^8.3.8",
-    "vitest": "^5.1.0"
+    "vitest": "^5.1.0",
+    "wrangler": "^4.164.0"
   }
 }
