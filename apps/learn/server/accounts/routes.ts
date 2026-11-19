@@ -5,9 +5,11 @@
 import { Hono, type Context, type MiddlewareHandler } from "hono";
 import { deleteCookie, getCookie, setCookie } from "hono/cookie";
 import { FLASH_TTS_MODEL, FLAT_READING_STYLE } from "../../content/tts/pipeline.ts";
+import { DAILY_TTS_LIMIT, ttsQuotaDay } from "../../content/tts/quota.ts";
 import { DEFAULT_PRACTICE_VOICE, PRACTICE_VOICES, isPracticeVoiceKey, voicedAudioId } from "../../content/practice-voices.ts";
 import { PRACTICE_ITEMS } from "../../content/practice.ts";
 import { AUDITION_TEXT, AUDITION_VOICES, auditionAudioId, flatAuditionAudioId } from "../../content/voices.ts";
+import { buildReadOnlyContentView, isGroupId } from "../content/read-only.ts";
 import { audioPicker, createPracticeRoutes, readJson, serveAudio, type LearnVars } from "../learn/practice.ts";
 import type { PreviewAudio } from "../preview/audio.ts";
 import type {
@@ -47,6 +49,8 @@ export type AccountsDeps = {
   inviteOrigin: string | null;
   /** https 주소에서만 쿠키에 Secure를 붙인다(로컬·같은 와이파이 HTTP 시험용). */
   secureCookies: boolean;
+  /** 단건 TTS 생성 키. 비어 있으면 생성 준비 안 됨 상태 */
+  ttsApiKey?: string | null;
   now?: () => Date;
 };
 
@@ -419,6 +423,23 @@ export function createAccountRoutes(deps: AccountsDeps) {
 
   // 만든 음원 목록(목소리 화면의 대시보드). 생성은 부르지 않는다.
   teacher.get("/audio-inventory", (c) => c.json(buildInventory(audio)));
+
+  teacher.get("/content", (c) => {
+    const rawGroup = c.req.query("group") ?? "j_ch_jj";
+    if (!isGroupId(rawGroup)) return c.json({ error: "unknown_group" }, 400);
+    return c.json(buildReadOnlyContentView(rawGroup, audio, Boolean(deps.ttsApiKey)));
+  });
+
+  teacher.get("/content/usage", (c) => {
+    return c.json({
+      quotaDay: ttsQuotaDay(now()),
+      limit: DAILY_TTS_LIMIT,
+      used: 0,
+      remaining: DAILY_TTS_LIMIT,
+      bySource: { ui_single: 0, pc_batch: 0 },
+      ttsReady: Boolean(deps.ttsApiKey),
+    });
+  });
 
   teacher.post("/voice-choice", async (c) => {
     const body = await readJson(c);

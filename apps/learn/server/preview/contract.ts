@@ -384,3 +384,122 @@ export type AudioInventoryView = {
   /** 빠진 음원을 만들 때 쓰는 명령(키는 환경 변수로만) */
   commands: Array<{ label: string; command: string }>;
 };
+
+// ---- 콘텐츠 운영(/teach/content) ----
+
+export type ContentAudioState = "approved" | "draft" | "stale" | "missing";
+
+export type ContentAudioCell = {
+  state: ContentAudioState;
+  assetId: string | null;
+  audioId: string;
+  playUrl: string | null;
+  durationMs: number | null;
+  generatedAt: string | null;
+  source: string | null;
+};
+
+export type ContentTurnsCell = {
+  ready: boolean;
+  playUrl: string | null;
+  assetId: string | null;
+  durationMs: number | null;
+};
+
+export type ContentItemView = {
+  id: string;
+  legacyId: string | null;
+  groupId: string;
+  stage: string;
+  substage: string | null;
+  consonant: string;
+  word: string;
+  entryId: number | null;
+  pos: string;
+  gloss: string;
+  scene: string;
+  example: string;
+  related: string;
+  note: string;
+  sortOrder: number;
+  source: "roadmap_seed" | "teacher";
+  status: "draft" | "approved" | "hidden";
+  wordAudio: Record<string, ContentAudioCell>;
+  exampleAudio: Record<string, ContentAudioCell> | null;
+  turnsAudio: Record<string, ContentTurnsCell> | null;
+};
+
+export type ContentStageZeroRow = {
+  id: string;
+  groupId: string;
+  kind: "pseudoword" | "cell";
+  consonant: string;
+  stimulus: string;
+  word: string | null;
+  context: string;
+  audio: Record<string, ContentAudioCell>;
+};
+
+export type DraftAudioReviewRow = {
+  assetId: string;
+  audioId: string;
+  itemId: string | null;
+  word: string;
+  kind: "word" | "sentence" | "pseudo" | "syllable";
+  voiceKey: string;
+  voiceLabel: string;
+  durationMs: number | null;
+  generatedAt: string;
+  playUrl: string | null;
+};
+
+export type ContentStageSection = {
+  key: string;
+  title: string;
+  totalCount: number;
+  approvedCount: number;
+  draftCount: number;
+  items: ContentItemView[];
+  draftAudios: DraftAudioReviewRow[];
+};
+
+export type ContentReleaseStatusView = {
+  latestSeq: number | null;
+  latestReleasedAt: string | null;
+  latestNote: string | null;
+  pendingReviewCount: number;
+  draftItemCount: number;
+  draftAudioCount: number;
+  staleAudioCount: number;
+  unpublishedApprovedCount: number;
+  nextItemCount: number;
+  nextAudioCount: number;
+};
+
+export type TtsUsageView = {
+  quotaDay: string;
+  limit: number;
+  used: number;
+  remaining: number;
+  bySource: { ui_single: number; pc_batch: number };
+  ttsReady: boolean;
+};
+
+export type ContentVersionRow = {
+  version: number;
+  changedFields: string[];
+  reason: string | null;
+  editedBy: string | null;
+  createdAt: string;
+  snapshot: Record<string, unknown>;
+};
+
+export type TeacherContentView = {
+  groups: Array<{ id: string; label: string; choices: string[]; count: number }>;
+  group: { id: string; label: string; choices: string[] };
+  stage0: ContentStageZeroRow[];
+  stages: ContentStageSection[];
+  release: ContentReleaseStatusView;
+  ttsReady: boolean;
+  writable: boolean;
+};

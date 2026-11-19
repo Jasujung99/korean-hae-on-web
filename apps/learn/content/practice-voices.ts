@@ -19,6 +19,13 @@ export function practiceVoiceName(key: PracticeVoiceKey): string {
   return PRACTICE_VOICES.find((row) => row.key === key)?.voice ?? "Charon";
 }
 
+/** 목록·운영 표에서 보여주는 순서: E=Erinome, S=Sulafat, C=Charon */
+export const CONTENT_VOICES: ReadonlyArray<{ key: PracticeVoiceKey; short: string; voice: string }> = [
+  { key: "erinome", short: "E", voice: "Erinome" },
+  { key: "sulafat", short: "S", voice: "Sulafat" },
+  { key: "charon", short: "C", voice: "Charon" },
+];
+
 /** 목소리별 음원 id */
 export function voicedAudioId(baseId: string, key: PracticeVoiceKey): string {
   return `${baseId}--${key}`;

@@ -119,7 +119,7 @@ function groupTableStages(id: OtherGroupId): CourseStage[] {
   return stages;
 }
 
-function stageTitle(stage: string): string {
+export function stageTitle(stage: string): string {
   return STAGE_TITLE_OVERRIDES[stage] ?? roadmap.stage_definitions.find((row) => row.stage === stage)?.title ?? stage;
 }
 

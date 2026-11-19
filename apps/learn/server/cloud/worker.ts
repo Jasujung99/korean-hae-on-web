@@ -25,6 +25,7 @@ export type CloudEnv = {
   LEARN_DB_SECRET_KEY?: string;
   LEARN_DB_PUBLISHABLE_KEY?: string;
   LEARN_SESSION_SECRET?: string;
+  GEMINI_API_KEY?: string;
 };
 
 const audioSource = createR2AudioSource(previewAudioIds());
@@ -61,6 +62,7 @@ async function buildApp(env: CloudEnv) {
     audio,
     inviteOrigin: config.inviteOrigin ?? config.origin ?? null,
     secureCookies: (config.origin ?? "").startsWith("https://"),
+    ttsApiKey: config.ttsApiKey ?? null,
   });
 }
 

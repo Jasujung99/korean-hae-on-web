@@ -20,5 +20,6 @@ export function accountsDeps(appRoot: string, config: LearnConfig): AccountsDeps
     audio: createRawAudio(process.env.LEARN_AUDIO_DIR?.trim() || join(appRoot, "audio", "raw"), previewAudioIds()),
     inviteOrigin: config.inviteOrigin ?? config.origin ?? null,
     secureCookies,
+    ttsApiKey: config.ttsApiKey ?? null,
   };
 }
