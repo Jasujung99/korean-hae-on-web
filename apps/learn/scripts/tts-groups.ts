@@ -32,6 +32,7 @@ import {
 import { splitChecked } from "../content/tts/split.ts";
 import { PRACTICE_VOICES, type PracticeVoiceKey } from "../content/practice-voices.ts";
 import { isOtherGroup } from "../content/group-tables.ts";
+import { logPcTtsUsage } from "./tts-usage-log.ts";
 
 const appRoot = fileURLToPath(new URL("..", import.meta.url));
 const rawDir = process.env.LEARN_AUDIO_DIR?.trim() || join(appRoot, "audio", "raw");
@@ -89,17 +90,23 @@ async function request(group: BatchGroup, voice: string, apiKey: string): Promis
 
 async function runGroup(group: BatchGroup, voiceKey: PracticeVoiceKey, voice: string, apiKey: string): Promise<Outcome> {
   const response = await request(group, voice, apiKey);
-  if (response === "quota") return "quota";
+  if (response === "quota") {
+    await logPcTtsUsage({ voiceKey, kind: group.kind, ok: false, errorCode: "daily_quota" });
+    return "quota";
+  }
   if (!response) {
+    await logPcTtsUsage({ voiceKey, kind: group.kind, ok: false, errorCode: "network_error" });
     console.error(`${group.groupId}: request failed`);
     return "failed";
   }
   if (!response.ok) {
+    await logPcTtsUsage({ voiceKey, kind: group.kind, ok: false, errorCode: `http_${response.status}` });
     console.error(`${group.groupId}: ${response.status}`);
     return "failed";
   }
   const parsed = parseInteractionAudio(await response.json());
   const wav = parsed ? normalizeToWav(decodeBase64(parsed.base64), parsed.mime) : null;
+  await logPcTtsUsage({ voiceKey, kind: group.kind, ok: Boolean(wav), errorCode: wav ? null : "invalid_audio" });
   if (!wav) {
     console.error(`${group.groupId}: no audio`);
     return "failed";

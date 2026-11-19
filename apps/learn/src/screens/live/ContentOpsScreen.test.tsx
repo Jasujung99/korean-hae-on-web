@@ -424,4 +424,58 @@ describe("teacher navigation and read-only content ops screen", () => {
     renderTeacher("/teach/content");
     expect(await screen.findByRole("button", { name: "Charon 모자 단어 음원, 없음, 생성 준비 안 됨" })).toBeDisabled();
   });
+
+  it("renders bottom release bar, opens inline confirmation with counts, and publishes a release", async () => {
+    const view = makeContentView("j_ch_jj");
+    view.writable = true;
+    view.release = {
+      latestSeq: 1,
+      latestReleasedAt: "2026-11-19T10:00:00.000Z",
+      latestNote: "초기",
+      pendingReviewCount: 2,
+      draftItemCount: 1,
+      draftAudioCount: 1,
+      staleAudioCount: 0,
+      unpublishedApprovedCount: 3,
+      nextItemCount: 326,
+      nextAudioCount: 845,
+    };
+    const releasePosts: Array<{ note?: string }> = [];
+
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+        const url = new URL(typeof input === "string" ? input : input.toString(), "http://127.0.0.1:4174");
+        const method = (init?.method ?? "GET").toUpperCase();
+        if (url.pathname === "/api/me") return new Response(JSON.stringify({ error: "not_connected" }), { status: 401 });
+        if (url.pathname === "/api/teacher/learners") return new Response(JSON.stringify(teacherView), { status: 200 });
+        if (url.pathname === "/api/teacher/content/usage") return new Response(JSON.stringify(usageView), { status: 200 });
+        if (url.pathname === "/api/teacher/content") return new Response(JSON.stringify(view), { status: 200 });
+        if (method === "POST" && url.pathname === "/api/teacher/content/releases") {
+          releasePosts.push(init?.body ? (JSON.parse(String(init.body)) as { note?: string }) : {});
+          return new Response(
+            JSON.stringify({
+              release: { seq: 2, releasedAt: "2026-11-20T00:00:00.000Z", note: "1차 반영", itemCount: 326, audioCount: 845 },
+              status: { ...view.release, latestSeq: 2, unpublishedApprovedCount: 0 },
+            }),
+            { status: 201 },
+          );
+        }
+        return new Response(JSON.stringify({ error: "not_found" }), { status: 404 });
+      }),
+    );
+
+    renderTeacher("/teach/content");
+    const bar = await screen.findByRole("region", { name: "학습자에게 내보내기" });
+    expect(bar).toHaveTextContent("검수 대기 2 · 승인했지만 아직 안 나간 것 3");
+    expect(bar).toHaveTextContent("제1판");
+
+    fireEvent.click(screen.getByRole("button", { name: "학습자에게 내보내기" }));
+    expect(screen.getByText("단어 326개, 음원 845개가 학습자 화면에 반영돼요.")).toBeInTheDocument();
+    fireEvent.change(screen.getByLabelText("내보내기 메모 (선택)"), { target: { value: "1차 반영" } });
+    fireEvent.click(screen.getByRole("button", { name: "지금 내보내기" }));
+
+    expect(await screen.findByText("제2판으로 내보냈어요.")).toBeInTheDocument();
+    expect(releasePosts).toEqual([{ note: "1차 반영" }]);
+  });
 });

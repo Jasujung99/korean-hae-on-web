@@ -9,6 +9,7 @@ import type {
   AnswerResult,
   ClientEvent,
   ContentItemView,
+  ContentReleaseStatusView,
   ContentVersionRow,
   CourseView,
   DictLanguage,
@@ -173,6 +174,12 @@ export const teacherApi = {
     postJson<{ asset: { id: string; status: string } }>(`/api/teacher/content/audio/${encodeURIComponent(assetId)}/approve`, {}),
   rejectContentAudio: (assetId: string) =>
     postJson<{ asset: { id: string; status: string } }>(`/api/teacher/content/audio/${encodeURIComponent(assetId)}/reject`, {}),
+  releaseStatus: () => getJson<ContentReleaseStatusView>("/api/teacher/content/release-status"),
+  publishRelease: (note?: string) =>
+    postJson<{
+      release: { seq: number; releasedAt: string; note: string | null; itemCount: number; audioCount: number };
+      status: ContentReleaseStatusView;
+    }>("/api/teacher/content/releases", { note }),
 };
 
 export function audioUrl(ref: string): string {

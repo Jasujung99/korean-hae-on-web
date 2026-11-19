@@ -6,6 +6,7 @@ import { CONTENT_VOICES } from "../../../content/practice-voices.ts";
 import type {
   ContentAudioCell,
   ContentItemView,
+  ContentReleaseStatusView,
   ContentStageSection,
   ContentStageZeroRow,
   ContentVersionRow,
@@ -1366,8 +1367,114 @@ export function ContentOpsScreen() {
             </span>
             <span className="co-legend-voices">E = Erinome · S = Sulafat · C = Charon</span>
           </p>
+
+          {view.writable ? <ReleaseBar release={view.release} onPublished={load} /> : null}
         </>
       ) : null}
     </div>
+  );
+}
+
+function ReleaseBar({
+  release,
+  onPublished,
+}: {
+  release: ContentReleaseStatusView;
+  onPublished: () => void;
+}) {
+  const [confirming, setConfirming] = useState(false);
+  const [note, setNote] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [doneMessage, setDoneMessage] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const submit = async () => {
+    setBusy(true);
+    setError(null);
+    setDoneMessage(null);
+    try {
+      const res = await teacherApi.publishRelease(note.trim() || undefined);
+      setConfirming(false);
+      setNote("");
+      setDoneMessage(`제${res.release.seq}판으로 내보냈어요.`);
+      onPublished();
+    } catch {
+      setError("내보내지 못했어요. 다시 시도해 주세요.");
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <section className="tc-section co-release-bar" aria-label="학습자에게 내보내기">
+      <div className="co-release-head">
+        <div className="co-release-summary">
+          <p className="co-release-counts">
+            검수 대기 {release.pendingReviewCount} · 승인했지만 아직 안 나간 것 {release.unpublishedApprovedCount}
+            {release.staleAudioCount > 0 ? ` · 다시 만들 음원 ${release.staleAudioCount}` : ""}
+          </p>
+          <p className="co-sub">
+            {release.latestSeq !== null
+              ? `마지막 내보내기: 제${release.latestSeq}판 · ${formatDay(release.latestReleasedAt)}${release.latestNote ? ` · ${release.latestNote}` : ""}`
+              : "아직 내보낸 판이 없어요."}
+          </p>
+        </div>
+        {!confirming ? (
+          <button
+            type="button"
+            className="co-release-primary"
+            onClick={() => {
+              setConfirming(true);
+              setError(null);
+              setDoneMessage(null);
+            }}
+          >
+            학습자에게 내보내기
+          </button>
+        ) : null}
+      </div>
+
+      {confirming ? (
+        <div className="co-release-confirm" role="region" aria-label="내보내기 확인">
+          <p>
+            단어 {release.nextItemCount}개, 음원 {release.nextAudioCount}개가 학습자 화면에 반영돼요.
+          </p>
+          <div className="co-release-confirm-row">
+            <input
+              type="text"
+              aria-label="내보내기 메모 (선택)"
+              placeholder="메모 (선택)"
+              value={note}
+              onChange={(event) => setNote(event.target.value)}
+            />
+            <button type="button" className="co-release-primary" disabled={busy} onClick={() => void submit()}>
+              {busy ? "내보내는 중…" : "지금 내보내기"}
+            </button>
+            <button
+              type="button"
+              className="tc-ul"
+              disabled={busy}
+              onClick={() => {
+                setConfirming(false);
+                setError(null);
+              }}
+            >
+              취소
+            </button>
+          </div>
+        </div>
+      ) : null}
+
+      {doneMessage ? (
+        <p className="co-release-done" role="status">
+          {doneMessage}
+        </p>
+      ) : null}
+      {error ? (
+        <p className="acct-error" role="alert">
+          {error}
+        </p>
+      ) : null}
+    </section>
   );
 }

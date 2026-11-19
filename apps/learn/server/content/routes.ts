@@ -873,6 +873,60 @@ export function createContentRoutes(deps: ContentRoutesDeps) {
     return c.json({ asset: updated ?? existing });
   });
 
+  app.get("/release-status", async (c) => {
+    if (!deps.contentRepo) return c.json({ error: "db_not_configured" }, 503);
+    const [allItems, allStage0, allAssets, latestRelease] = await Promise.all([
+      deps.contentRepo.listItems({ includeHidden: true }),
+      deps.contentRepo.listStageZero(),
+      deps.contentRepo.listAudioAssets(),
+      deps.contentRepo.latestRelease(),
+    ]);
+    return c.json(computeReleaseStatus(allItems, allStage0, allAssets, latestRelease, deps.now().toISOString()));
+  });
+
+  app.post("/releases", async (c) => {
+    if (!deps.contentRepo) return c.json({ error: "db_not_configured" }, 503);
+    const body = await readBody(c);
+    const note = cleanText(body?.note, 200) || null;
+    const nowIso = deps.now().toISOString();
+    const [allItems, allStage0, allAssets, latestRelease] = await Promise.all([
+      deps.contentRepo.listItems({ includeHidden: true }),
+      deps.contentRepo.listStageZero(),
+      deps.contentRepo.listAudioAssets(),
+      deps.contentRepo.latestRelease(),
+    ]);
+    const visibleItems = allItems.filter((row) => row.status !== "hidden");
+    const { snapshot, itemCount, audioCount } = buildReleaseSnapshot(
+      visibleItems as ReleaseCandidateItem[],
+      allStage0,
+      allAssets as readonly ReleaseCandidateAsset[],
+      (latestRelease?.seq ?? 0) + 1,
+      nowIso,
+    );
+    const release = await deps.contentRepo.createRelease({
+      releasedBy: c.get("teacherId"),
+      note,
+      snapshot,
+      itemCount,
+      audioCount,
+    });
+    deps.snapshotCache?.invalidate();
+    const status = computeReleaseStatus(allItems, allStage0, allAssets, release, nowIso);
+    return c.json(
+      {
+        release: {
+          seq: release.seq,
+          releasedAt: release.releasedAt,
+          note: release.note,
+          itemCount: release.itemCount,
+          audioCount: release.audioCount,
+        },
+        status,
+      },
+      201,
+    );
+  });
+
   return app;
 }
 
