@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import "@testing-library/jest-dom/vitest";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { WordDictView } from "../../../server/preview/contract.ts";
 
@@ -28,7 +28,7 @@ vi.mock("../../preview/settings", async () => {
   };
 });
 
-const { DictInline, dictLinks } = await import("./DictInline");
+const { DictInline, dictShortcuts, krdictHref } = await import("./DictInline");
 
 afterEach(() => {
   cleanup();
@@ -98,45 +98,79 @@ describe("DictInline", () => {
     expect(screen.getByText("이 낱말은 아직 영어 풀이가 없어요.")).toBeInTheDocument();
   });
 
-  it("keeps the standard dictionary folded until asked", () => {
+  it("shows only the basic dictionary and my language, without the standard dictionary text", () => {
     openPanel(approved);
     expect(screen.queryByText(approved.stdict!.definition)).not.toBeInTheDocument();
-    const more = screen.getByRole("button", { name: "표준국어대사전 풀이 펼치기" });
-    expect(more).toHaveAttribute("aria-expanded", "false");
-    fireEvent.click(more);
-    expect(screen.getByText(approved.stdict!.definition)).toBeInTheDocument();
-    expect(screen.getByText(/帽子 · 명사 · \[모자\]/)).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /표준국어대사전 풀이/ })).not.toBeInTheDocument();
+    expect(screen.queryByText("사전에서 더 보기")).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "라이선스 전문 보기" })).toHaveAttribute("href", "https://creativecommons.org/licenses/by-sa/2.0/kr/");
+    expect(screen.getByText(/출처: 국립국어원 한국어기초사전 · 표준국어대사전/)).toBeInTheDocument();
   });
 
-  it("shows a quiet empty state with only the Naver link when there is no entry", () => {
+  it("shows a quiet empty state with only the Naver shortcut when there is no entry", () => {
     openPanel(null);
     expect(screen.getByText("이 낱말의 사전 풀이는 아직 준비하고 있어요.")).toBeInTheDocument();
     expect(screen.queryByText(/검수 전/)).not.toBeInTheDocument();
     expect(screen.queryByText(/출처:/)).not.toBeInTheDocument();
     const links = screen.getAllByRole("link");
-    expect(links.map((link) => link.textContent)).toEqual(["네이버 사전"]);
+    expect(links.map((link) => link.getAttribute("aria-label"))).toEqual(["네이버 사전 새 창으로 열기"]);
   });
 
-  it("opens the three dictionaries in a new window and records which one", () => {
-    openPanel(approved);
-    const krdict = screen.getByRole("link", { name: "한국어기초사전" });
-    const stdict = screen.getByRole("link", { name: "표준국어대사전" });
-    const naver = screen.getByRole("link", { name: "네이버 사전" });
+  it("puts the standard dictionary and Naver shortcuts in the header and the basic dictionary link on its label", () => {
+    render(<DictInline word="모자" wordId="w-1871" pos="명" dict={approved} />);
+    expect(screen.queryAllByRole("link")).toHaveLength(0);
+    fireEvent.click(screen.getByRole("button", { name: /사전 풀이/ }));
+    const stdict = screen.getByRole("link", { name: "표준국어대사전 새 창으로 열기" });
+    const naver = screen.getByRole("link", { name: "네이버 사전 새 창으로 열기" });
+    const krdict = screen.getByRole("link", { name: "한국어기초사전 새 창으로 열기" });
+    expect(stdict).toHaveTextContent("표준국어대사전 ↗");
+    expect(naver).toHaveTextContent("네이버 사전 ↗");
+    expect(krdict).toHaveTextContent("한국어기초사전 ↗");
+    const head = stdict.closest(".dict-inline-head");
+    expect(head).not.toBeNull();
+    expect(head).toContainElement(naver);
+    expect(head).not.toContainElement(krdict);
     expect(krdict).toHaveAttribute("href", "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=69297");
     expect(stdict).toHaveAttribute("href", "https://stdict.korean.go.kr/search/searchView.do?word_no=425739&searchKeywordTo=3");
     expect(naver).toHaveAttribute("href", `https://ko.dict.naver.com/#/search?query=${encodeURIComponent("모자")}`);
-    for (const link of [krdict, stdict, naver]) {
+    for (const link of screen.getAllByRole("link")) {
       expect(link).toHaveAttribute("target", "_blank");
       expect(link).toHaveAttribute("rel", "noopener");
     }
     tracked.length = 0;
     fireEvent.click(stdict);
-    expect(tracked).toEqual([{ type: "dictionary_link_opened", payload: { wordId: "w-1871", target: "stdict" } }]);
+    fireEvent.click(krdict);
+    expect(tracked).toEqual([
+      { type: "dictionary_link_opened", payload: { wordId: "w-1871", target: "stdict" } },
+      { type: "dictionary_link_opened", payload: { wordId: "w-1871", target: "krdict" } },
+    ]);
     expect(document.querySelector("iframe")).toBeNull();
   });
 
-  it("builds links only for dictionaries that have an entry number", () => {
-    expect(dictLinks("김치찌개", { ...approved, stdict: null }).map((link) => link.target)).toEqual(["krdict", "naver"]);
-    expect(dictLinks("김치찌개", null)[0]?.href).toBe("https://ko.dict.naver.com/#/search?query=%EA%B9%80%EC%B9%98%EC%B0%8C%EA%B0%9C");
+  it("links the translated word to the basic dictionary in the chosen language", () => {
+    openPanel(approved);
+    const group = screen.getByRole("group", { name: "내 언어 고르기" });
+    expect(within(group).queryAllByRole("link")).toHaveLength(0);
+    const ru = screen.getByRole("link", { name: "한국어기초사전 러시아어 화면 새 창으로 열기" });
+    expect(ru).toHaveTextContent("↗");
+    expect(ru.closest("p")).toHaveTextContent("головной убор; шапка; шляпа");
+    expect(ru).toHaveAttribute("href", "https://krdict.korean.go.kr/rus/dicSearch/SearchView?ParaWordNo=69297&nation=rus&nationCode=5");
+    expect(ru).toHaveAttribute("target", "_blank");
+    expect(ru).toHaveAttribute("rel", "noopener");
+    tracked.length = 0;
+    fireEvent.click(ru);
+    expect(tracked).toEqual([{ type: "dictionary_link_opened", payload: { wordId: "w-1871", target: "krdict", lang: "ru" } }]);
+    expect(screen.getByRole("button", { name: "Русский" })).toHaveAttribute("aria-pressed", "true");
+    fireEvent.click(screen.getByRole("button", { name: "English" }));
+    const en = screen.getByRole("link", { name: "한국어기초사전 영어 화면 새 창으로 열기" });
+    expect(en).toHaveAttribute("href", "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=69297&nation=eng&nationCode=6");
+    expect(screen.queryByRole("link", { name: /러시아어 화면/ })).not.toBeInTheDocument();
+  });
+
+  it("builds shortcuts only for dictionaries that have an entry number", () => {
+    expect(dictShortcuts("김치찌개", { ...approved, stdict: null }).map((link) => link.target)).toEqual(["naver"]);
+    expect(dictShortcuts("모자", approved).map((link) => link.target)).toEqual(["stdict", "naver"]);
+    expect(dictShortcuts("김치찌개", null)[0]?.href).toBe("https://ko.dict.naver.com/#/search?query=%EA%B9%80%EC%B9%98%EC%B0%8C%EA%B0%9C");
+    expect(krdictHref(69297)).toBe("https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=69297");
   });
 });

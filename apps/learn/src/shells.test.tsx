@@ -245,7 +245,7 @@ describe("stage 1 shells", () => {
     expect(screen.getByText("이 낱말의 사전 풀이는 아직 준비하고 있어요.")).toBeInTheDocument();
     const panel = within(toggle.closest("section") as HTMLElement);
     expect(panel.queryByText(/검수 전/)).not.toBeInTheDocument();
-    expect(panel.getAllByRole("link").map((link) => link.textContent)).toEqual(["네이버 사전"]);
+    expect(panel.getAllByRole("link").map((link) => link.getAttribute("aria-label"))).toEqual(["네이버 사전 새 창으로 열기"]);
   });
 
   it("opens the comparison, finish, and dictionary placeholders", () => {

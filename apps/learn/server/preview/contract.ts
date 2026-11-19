@@ -102,7 +102,7 @@ export const CLIENT_EVENT_TYPES = [
   "item_skipped",
   "word_viewed",
   "dictionary_opened",
-  /** 사전 풀이의 '사전에서 더 보기' 새 창 링크. payload { wordId, target: "krdict" | "stdict" | "naver" } */
+  /** 사전 풀이의 새 창 링크(↗). payload { wordId, target: "krdict" | "stdict" | "naver", lang?: "ru" | "en" }. lang은 다국어 한국어기초사전 화면일 때만 붙는다. */
   "dictionary_link_opened",
   "word_saved",
   "word_unsaved",
