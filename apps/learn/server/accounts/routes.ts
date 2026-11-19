@@ -5,14 +5,13 @@
 import { Hono, type Context, type MiddlewareHandler } from "hono";
 import { deleteCookie, getCookie, setCookie } from "hono/cookie";
 import { FLASH_TTS_MODEL, FLAT_READING_STYLE } from "../../content/tts/pipeline.ts";
-import { DAILY_TTS_LIMIT, ttsQuotaDay } from "../../content/tts/quota.ts";
 import { DEFAULT_PRACTICE_VOICE, PRACTICE_VOICES, isPracticeVoiceKey, voicedAudioId } from "../../content/practice-voices.ts";
 import { PRACTICE_ITEMS } from "../../content/practice.ts";
 import { snapshotFromReferenceJson, type ContentSnapshot } from "../../content/snapshot.ts";
 import { AUDITION_TEXT, AUDITION_VOICES, auditionAudioId, flatAuditionAudioId } from "../../content/voices.ts";
 import type { AudioObjectStore } from "../content/audio-store.ts";
-import { buildReadOnlyContentView, isGroupId } from "../content/read-only.ts";
 import type { ContentRepo } from "../content/repo.ts";
+import { createContentRoutes } from "../content/routes.ts";
 import { createAssetsInventoryAudio, createSnapshotAudio, createSnapshotCache, type SnapshotCache } from "../content/runtime.ts";
 import { isMissingContentTableError } from "../content/supabase-repo.ts";
 import { audioPicker, createPracticeRoutes, readJson, serveAudio, type LearnVars } from "../learn/practice.ts";
@@ -473,34 +472,18 @@ export function createAccountRoutes(deps: AccountsDeps) {
     return c.json(buildInventory(audio));
   });
 
-  teacher.get("/content/audio/:assetId", async (c) => {
-    if (!deps.contentRepo || !deps.audioStore) return c.json({ error: "not_found" }, 404);
-    const asset = await deps.contentRepo.getAudioAsset(c.req.param("assetId"));
-    if (!asset) return c.json({ error: "not_found" }, 404);
-    const got = await deps.audioStore.get(asset.storage, asset.objectKey, asset.audioId);
-    if (!got || got.bytes.length === 0) return c.json({ error: "audio_not_ready" }, 404);
-    return c.body(got.bytes.slice().buffer, 200, {
-      "content-type": got.mime ?? asset.mime,
-      "cache-control": "private, no-store",
-    });
-  });
-
-  teacher.get("/content", (c) => {
-    const rawGroup = c.req.query("group") ?? "j_ch_jj";
-    if (!isGroupId(rawGroup)) return c.json({ error: "unknown_group" }, 400);
-    return c.json(buildReadOnlyContentView(rawGroup, audio, Boolean(deps.ttsApiKey)));
-  });
-
-  teacher.get("/content/usage", (c) => {
-    return c.json({
-      quotaDay: ttsQuotaDay(now()),
-      limit: DAILY_TTS_LIMIT,
-      used: 0,
-      remaining: DAILY_TTS_LIMIT,
-      bySource: { ui_single: 0, pc_batch: 0 },
-      ttsReady: Boolean(deps.ttsApiKey),
-    });
-  });
+  teacher.route(
+    "/content",
+    createContentRoutes({
+      contentRepo: deps.contentRepo,
+      fallbackAudio: audio,
+      audioStore: deps.audioStore,
+      snapshotCache: snapshotCache ?? undefined,
+      ttsApiKey: deps.ttsApiKey ?? null,
+      ttsFetcher: deps.ttsFetcher,
+      now,
+    }),
+  );
 
   teacher.post("/voice-choice", async (c) => {
     const body = await readJson(c);

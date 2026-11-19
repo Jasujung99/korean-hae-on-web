@@ -8,6 +8,8 @@ import type {
   AnswerRequest,
   AnswerResult,
   ClientEvent,
+  ContentItemView,
+  ContentVersionRow,
   CourseView,
   DictLanguage,
   InviteInspectView,
@@ -129,9 +131,40 @@ export const teacherApi = {
   audioInventory: () => getJson<AudioInventoryView>("/api/teacher/audio-inventory"),
   content: (group: string) => getJson<TeacherContentView>(`/api/teacher/content?group=${encodeURIComponent(group)}`),
   ttsUsage: () => getJson<TtsUsageView>("/api/teacher/content/usage"),
+  createContentItem: (input: {
+    groupId: string;
+    stage: string;
+    substage?: string | null;
+    consonant: string;
+    word: string;
+    gloss?: string;
+    example?: string;
+  }) => postJson<{ item: ContentItemView }>("/api/teacher/content/items", input),
+  updateContentItem: (
+    id: string,
+    patch: Partial<{
+      word: string;
+      consonant: string;
+      pos: string;
+      gloss: string;
+      scene: string;
+      example: string;
+      related: string;
+      note: string;
+      reason: string;
+    }>,
+  ) =>
+    patchJson<{ item: ContentItemView; version: ContentVersionRow | null; changedFields: string[]; staleMarked: number }>(
+      `/api/teacher/content/items/${encodeURIComponent(id)}`,
+      patch,
+    ),
+  itemVersions: (id: string) =>
+    getJson<{ versions: ContentVersionRow[] }>(`/api/teacher/content/items/${encodeURIComponent(id)}/versions`),
+  approveContentItem: (id: string) =>
+    postJson<{ item: ContentItemView }>(`/api/teacher/content/items/${encodeURIComponent(id)}/approve`, {}),
+  hideContentItem: (id: string, reason?: string) =>
+    postJson<{ item: ContentItemView }>(`/api/teacher/content/items/${encodeURIComponent(id)}/hide`, { reason }),
 };
-
-export const teacherPatchJson = patchJson;
 
 export function audioUrl(ref: string): string {
   if (ref.startsWith("/api/")) return ref;

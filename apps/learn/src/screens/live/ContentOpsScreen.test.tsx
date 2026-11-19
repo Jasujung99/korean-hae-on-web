@@ -242,4 +242,66 @@ describe("teacher navigation and read-only content ops screen", () => {
     fireEvent.click(screen.getByRole("button", { name: /ㅅ · ㅆ 42/ }));
     expect(await screen.findByText("사과")).toBeInTheDocument();
   });
+
+  it("supports inline edit, version history, add validation, and duplicate confirmation when writable", async () => {
+    const view = makeContentView("j_ch_jj");
+    view.writable = true;
+    const calls: Array<{ method: string; path: string; body?: unknown }> = [];
+
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+        const url = new URL(typeof input === "string" ? input : input.toString(), "http://127.0.0.1:4174");
+        const method = (init?.method ?? "GET").toUpperCase();
+        calls.push({ method, path: url.pathname, body: init?.body ? JSON.parse(String(init.body)) : undefined });
+        if (url.pathname === "/api/me") return new Response(JSON.stringify({ error: "not_connected" }), { status: 401 });
+        if (url.pathname === "/api/teacher/learners") return new Response(JSON.stringify(teacherView), { status: 200 });
+        if (url.pathname === "/api/teacher/content/usage") return new Response(JSON.stringify(usageView), { status: 200 });
+        if (url.pathname === "/api/teacher/content") return new Response(JSON.stringify(view), { status: 200 });
+        if (method === "PATCH" && url.pathname === "/api/teacher/content/items/item-1") {
+          return new Response(JSON.stringify({ item: view.stages[0]!.items[0], version: null, changedFields: ["gloss"], staleMarked: 0 }), { status: 200 });
+        }
+        if (method === "GET" && url.pathname === "/api/teacher/content/items/item-1/versions") {
+          return new Response(
+            JSON.stringify({
+              versions: [{ version: 2, changedFields: ["gloss"], reason: "다듬기", editedBy: "t1", createdAt: "2026-11-19T12:00:00.000Z", snapshot: {} }],
+            }),
+            { status: 200 },
+          );
+        }
+        if (method === "POST" && url.pathname === "/api/teacher/content/items") {
+          return new Response(JSON.stringify({ item: { id: "new-item" } }), { status: 201 });
+        }
+        return new Response(JSON.stringify({ error: "not_found" }), { status: 404 });
+      }),
+    );
+
+    renderTeacher("/teach/content");
+    const wordBtn = await screen.findByRole("button", { name: "모자" });
+    fireEvent.click(wordBtn);
+    expect(screen.getByRole("form", { name: "모자 편집" })).toBeInTheDocument();
+    const glossInput = screen.getByLabelText("쉬운 뜻");
+    fireEvent.change(glossInput, { target: { value: "고친 뜻" } });
+    fireEvent.change(screen.getByLabelText("고친 이유 (선택)"), { target: { value: "다듬기" } });
+    fireEvent.click(screen.getByRole("button", { name: "저장" }));
+
+    expect(await screen.findByRole("button", { name: "모자 기록" })).toBeInTheDocument();
+    expect(calls.some((c) => c.method === "PATCH" && c.path === "/api/teacher/content/items/item-1")).toBe(true);
+
+    fireEvent.click(screen.getByRole("button", { name: "모자 기록" }));
+    expect(await screen.findByRole("region", { name: "모자 수정 기록" })).toHaveTextContent("v2");
+
+    // 추가 줄 필수값 오류 및 중복 확인
+    const addForm = screen.getByRole("form", { name: "Stage 1-A 새 단어 추가" });
+    fireEvent.submit(addForm);
+    expect(screen.getByText("새 단어를 써 주세요.")).toBeInTheDocument();
+    expect(screen.getByText("자음을 골라 주세요.")).toBeInTheDocument();
+
+    fireEvent.change(screen.getByLabelText("Stage 1-A 새 단어"), { target: { value: "모자" } });
+    fireEvent.change(screen.getByLabelText("Stage 1-A 자음 선택"), { target: { value: "ㅈ" } });
+    fireEvent.submit(addForm);
+    expect(screen.getByText("이미 있는 단어예요. 그래도 추가할까요?")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "그래도 추가" }));
+    expect(calls.some((c) => c.method === "POST" && c.path === "/api/teacher/content/items")).toBe(true);
+  });
 });

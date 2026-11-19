@@ -1,6 +1,6 @@
 // 콘텐츠 운영 화면(/teach/content).
-// 1단계에서는 저장소 JSON과 현재 음원 목록을 읽기 전용으로 보여 주고 미리듣기를 연결한다.
-import { useCallback, useEffect, useState } from "react";
+// 단어·예문 추가·수정·숨기기·판 기록과 목소리별 음원 상태·미리듣기를 한 화면에서 다룬다.
+import { Fragment, useCallback, useEffect, useState, type FormEvent } from "react";
 import { useSearchParams } from "react-router";
 import { CONTENT_VOICES } from "../../../content/practice-voices.ts";
 import type {
@@ -8,11 +8,13 @@ import type {
   ContentItemView,
   ContentStageSection,
   ContentStageZeroRow,
+  ContentVersionRow,
   TeacherContentView,
 } from "../../../server/preview/contract.ts";
 import { teacherApi } from "../../preview/api";
 import { usePractice } from "../../preview/PracticeContext";
 import { ScreenTitle } from "../../ui";
+import { formatDay } from "./format";
 
 const CONTEXT_LABEL: Record<string, string> = {
   medial_vcv: "모음 사이",
@@ -25,6 +27,21 @@ const STATE_LABEL: Record<ContentAudioCell["state"], string> = {
   draft: "초안",
   stale: "다시 만들어야 함",
   missing: "없음",
+};
+
+const FIELD_LABEL: Record<string, string> = {
+  created: "추가",
+  word: "단어",
+  consonant: "자음",
+  stage: "단계",
+  substage: "세부 단계",
+  pos: "품사",
+  gloss: "뜻",
+  scene: "장면",
+  example: "예문",
+  related: "함께 쓰는 말",
+  note: "메모",
+  status: "상태",
 };
 
 function PlayIcon() {
@@ -178,101 +195,542 @@ function StageZeroTable({
   );
 }
 
-function ContentRow({
+function InlineEditPanel({
   item,
-  busy,
-  readOnly,
-  onPlay,
+  choices,
+  focusField,
+  onSaved,
+  onCancel,
 }: {
   item: ContentItemView;
-  busy: boolean;
-  readOnly: boolean;
-  onPlay: (url: string, label: string) => void;
+  choices: readonly string[];
+  focusField: "word" | "example";
+  onSaved: () => void;
+  onCancel: () => void;
 }) {
-  const hasTurns = item.turnsAudio && CONTENT_VOICES.some((voice) => item.turnsAudio?.[voice.key]?.ready);
+  const [word, setWord] = useState(item.word);
+  const [consonant, setConsonant] = useState(item.consonant);
+  const [pos, setPos] = useState(item.pos);
+  const [gloss, setGloss] = useState(item.gloss);
+  const [scene, setScene] = useState(item.scene);
+  const [example, setExample] = useState(item.example);
+  const [related, setRelated] = useState(item.related);
+  const [note, setNote] = useState(item.note);
+  const [reason, setReason] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+
+  const submit = async (event: FormEvent) => {
+    event.preventDefault();
+    if (!word.trim()) {
+      setError("단어를 비울 수 없어요.");
+      return;
+    }
+    setBusy(true);
+    setError(null);
+    try {
+      await teacherApi.updateContentItem(item.id, {
+        word: word.trim(),
+        consonant,
+        pos: pos.trim(),
+        gloss: gloss.trim(),
+        scene: scene.trim(),
+        example: example.trim(),
+        related: related.trim(),
+        note: note.trim(),
+        reason: reason.trim(),
+      });
+      onSaved();
+    } catch {
+      setError("저장하지 못했어요. 다시 시도해 주세요.");
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const approve = async () => {
+    setBusy(true);
+    setError(null);
+    try {
+      await teacherApi.approveContentItem(item.id);
+      onSaved();
+    } catch {
+      setError("승인하지 못했어요.");
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const hide = async () => {
+    if (!window.confirm(`'${item.word}' 단어를 목록에서 숨길까요? 기록과 음원은 지워지지 않아요.`)) return;
+    setBusy(true);
+    setError(null);
+    try {
+      await teacherApi.hideContentItem(item.id, reason.trim() || undefined);
+      onSaved();
+    } catch {
+      setError("숨기지 못했어요.");
+    } finally {
+      setBusy(false);
+    }
+  };
+
   return (
-    <tr>
-      <th scope="row" data-label="단어">
-        <div className="co-word-cell">
-          <strong>{item.word}</strong>
-          <span className="co-meta-line">
-            <span>{item.consonant}</span>
-            {item.pos ? <span>· {item.pos}</span> : null}
-            {item.status === "draft" ? <span className="tc-pill">초안</span> : null}
-          </span>
-        </div>
-      </th>
-      <td data-label="뜻" className="co-gloss-cell">
-        {item.gloss ? <p>{item.gloss}</p> : <p className="tc-none">뜻 없음</p>}
-        {item.scene ? <small className="co-sub">{item.scene}</small> : null}
-      </td>
-      <td data-label="예문" className="co-example-cell">
-        {item.example ? (
-          <div className="co-example-wrap">
-            <p>{item.example}</p>
-            <div className="co-example-audio">
-              <span className="co-sub">예문</span>
-              {item.exampleAudio ? (
-                <AudioVoiceRow
-                  kindLabel={`${item.word} 예문`}
-                  cells={item.exampleAudio}
-                  busy={busy}
-                  readOnly={readOnly}
-                  onPlay={onPlay}
-                />
-              ) : null}
-              <span className="co-turns-note">
-                또박또박:{" "}
-                {hasTurns
-                  ? CONTENT_VOICES.filter((voice) => item.turnsAudio?.[voice.key]?.ready).map((voice) => {
-                      const turns = item.turnsAudio?.[voice.key];
-                      return turns?.playUrl ? (
-                        <button
-                          key={voice.key}
-                          type="button"
-                          className="co-turns-play"
-                          disabled={busy}
-                          aria-label={`${voice.voice} ${item.word} 예문 또박또박 재생`}
-                          onClick={() => onPlay(turns.playUrl as string, `${voice.voice} 또박또박`)}
-                        >
-                          {voice.short}
-                        </button>
-                      ) : null;
-                    })
-                  : "PC에서 생성"}
-              </span>
-            </div>
+    <tr className="co-edit-row">
+      <td colSpan={4}>
+        <form className="co-edit-form" onSubmit={(event) => void submit(event)} noValidate aria-label={`${item.word} 편집`}>
+          <div className="co-edit-grid">
+            <label className="acct-field">
+              <span>단어</span>
+              <input
+                value={word}
+                autoFocus={focusField === "word"}
+                onChange={(event) => setWord(event.target.value)}
+              />
+            </label>
+            <label className="acct-field">
+              <span>자음</span>
+              <select value={consonant} onChange={(event) => setConsonant(event.target.value)}>
+                {choices.map((ch) => (
+                  <option key={ch} value={ch}>
+                    {ch}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="acct-field">
+              <span>품사</span>
+              <input value={pos} onChange={(event) => setPos(event.target.value)} placeholder="명·동·형" />
+            </label>
+            <label className="acct-field co-span-2">
+              <span>쉬운 뜻</span>
+              <input value={gloss} onChange={(event) => setGloss(event.target.value)} />
+            </label>
+            <label className="acct-field">
+              <span>장면</span>
+              <input value={scene} onChange={(event) => setScene(event.target.value)} />
+            </label>
+            <label className="acct-field co-span-3">
+              <span>예문 (직접 작성)</span>
+              <textarea
+                rows={2}
+                value={example}
+                autoFocus={focusField === "example"}
+                onChange={(event) => setExample(event.target.value)}
+              />
+            </label>
+            <label className="acct-field">
+              <span>함께 쓰는 말</span>
+              <input value={related} onChange={(event) => setRelated(event.target.value)} />
+            </label>
+            <label className="acct-field">
+              <span>메모</span>
+              <input value={note} onChange={(event) => setNote(event.target.value)} />
+            </label>
+            <label className="acct-field">
+              <span>고친 이유 (선택)</span>
+              <input value={reason} onChange={(event) => setReason(event.target.value)} placeholder="예: 자연스러운 표현으로 다듬음" />
+            </label>
           </div>
-        ) : (
-          <p className="tc-none">예문 없음</p>
-        )}
-      </td>
-      <td data-label="음원 E · S · C" className="co-audio-col">
-        <AudioVoiceRow
-          kindLabel={`${item.word} 단어`}
-          cells={item.wordAudio}
-          busy={busy}
-          readOnly={readOnly}
-          onPlay={onPlay}
-        />
+          {error ? (
+            <p className="acct-error" role="alert">
+              {error}
+            </p>
+          ) : null}
+          <div className="co-edit-actions">
+            <button type="submit" disabled={busy}>
+              {busy ? "저장하는 중…" : "저장"}
+            </button>
+            <button type="button" disabled={busy} onClick={onCancel}>
+              취소
+            </button>
+            {item.status === "draft" ? (
+              <button type="button" className="tc-ul" disabled={busy} onClick={() => void approve()}>
+                승인
+              </button>
+            ) : null}
+            <button type="button" className="tc-ul" disabled={busy} onClick={() => void hide()}>
+              숨기기
+            </button>
+          </div>
+        </form>
       </td>
     </tr>
   );
 }
 
+function HistoryPanel({ item }: { item: ContentItemView }) {
+  const [versions, setVersions] = useState<ContentVersionRow[] | null>(null);
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+    teacherApi
+      .itemVersions(item.id)
+      .then((res) => {
+        if (active) setVersions(res.versions);
+      })
+      .catch(() => {
+        if (active) setFailed(true);
+      });
+    return () => {
+      active = false;
+    };
+  }, [item.id]);
+
+  return (
+    <tr className="co-history-row">
+      <td colSpan={4}>
+        <div className="co-history-box" role="region" aria-label={`${item.word} 수정 기록`}>
+          <p className="co-sub">수정 기록</p>
+          {failed ? <p className="acct-error">기록을 불러오지 못했어요.</p> : null}
+          {!versions && !failed ? <p className="co-sub">불러오는 중…</p> : null}
+          {versions && versions.length === 0 ? <p className="co-sub">아직 기록이 없어요.</p> : null}
+          {versions && versions.length > 0 ? (
+            <ul className="co-history-list">
+              {versions.map((ver) => (
+                <li key={ver.version}>
+                  <strong>v{ver.version}</strong> · {formatDay(ver.createdAt)} ·{" "}
+                  {ver.changedFields.map((f) => FIELD_LABEL[f] ?? f).join(", ")}
+                  {ver.reason ? ` · ${ver.reason}` : ""}
+                </li>
+              ))}
+            </ul>
+          ) : null}
+        </div>
+      </td>
+    </tr>
+  );
+}
+
+function AddWordRow({
+  groupId,
+  stageKey,
+  choices,
+  existingWords,
+  onAdded,
+}: {
+  groupId: string;
+  stageKey: string;
+  choices: readonly string[];
+  existingWords: ReadonlySet<string>;
+  onAdded: () => void;
+}) {
+  const [word, setWord] = useState("");
+  const [consonant, setConsonant] = useState("");
+  const [gloss, setGloss] = useState("");
+  const [example, setExample] = useState("");
+  const [wordErr, setWordErr] = useState<string | null>(null);
+  const [consonantErr, setConsonantErr] = useState<string | null>(null);
+  const [submitErr, setSubmitErr] = useState<string | null>(null);
+  const [confirmDup, setConfirmDup] = useState(false);
+  const [busy, setBusy] = useState(false);
+
+  const doCreate = async () => {
+    setBusy(true);
+    setSubmitErr(null);
+    try {
+      await teacherApi.createContentItem({
+        groupId,
+        stage: stageKey,
+        consonant,
+        word: word.trim(),
+        gloss: gloss.trim(),
+        example: example.trim(),
+      });
+      setWord("");
+      setConsonant("");
+      setGloss("");
+      setExample("");
+      setConfirmDup(false);
+      onAdded();
+    } catch {
+      setSubmitErr("추가하지 못했어요. 다시 시도해 주세요.");
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+    const trimmed = word.trim();
+    let bad = false;
+    if (!trimmed) {
+      setWordErr("새 단어를 써 주세요.");
+      bad = true;
+    } else {
+      setWordErr(null);
+    }
+    if (!consonant) {
+      setConsonantErr("자음을 골라 주세요.");
+      bad = true;
+    } else {
+      setConsonantErr(null);
+    }
+    if (bad) return;
+
+    if (existingWords.has(trimmed) && !confirmDup) {
+      setConfirmDup(true);
+      return;
+    }
+    void doCreate();
+  };
+
+  return (
+    <form className="co-add-row" onSubmit={handleSubmit} noValidate aria-label={`${stageKey} 새 단어 추가`}>
+      <div className="co-add-field">
+        <input
+          aria-label={`${stageKey} 새 단어`}
+          placeholder="새 단어"
+          value={word}
+          onChange={(event) => {
+            setWord(event.target.value);
+            setWordErr(null);
+            setConfirmDup(false);
+          }}
+        />
+        {wordErr ? (
+          <small className="acct-error" role="alert">
+            {wordErr}
+          </small>
+        ) : null}
+      </div>
+      <div className="co-add-field">
+        <select
+          aria-label={`${stageKey} 자음 선택`}
+          value={consonant}
+          onChange={(event) => {
+            setConsonant(event.target.value);
+            setConsonantErr(null);
+          }}
+        >
+          <option value="">자음 선택</option>
+          {choices.map((ch) => (
+            <option key={ch} value={ch}>
+              {ch}
+            </option>
+          ))}
+        </select>
+        {consonantErr ? (
+          <small className="acct-error" role="alert">
+            {consonantErr}
+          </small>
+        ) : null}
+      </div>
+      <div className="co-add-field">
+        <input
+          aria-label={`${stageKey} 쉬운 뜻`}
+          placeholder="쉬운 뜻"
+          value={gloss}
+          onChange={(event) => setGloss(event.target.value)}
+        />
+      </div>
+      <div className="co-add-field co-add-example">
+        <input
+          aria-label={`${stageKey} 생활 예문`}
+          placeholder="생활 예문 (직접 작성)"
+          value={example}
+          onChange={(event) => setExample(event.target.value)}
+        />
+      </div>
+      <div className="co-add-submit">
+        <button type="submit" disabled={busy}>
+          {busy ? "추가 중…" : "추가"}
+        </button>
+      </div>
+      {confirmDup ? (
+        <div className="co-dup-confirm" role="status">
+          <span>이미 있는 단어예요. 그래도 추가할까요?</span>
+          <button type="button" disabled={busy} onClick={() => void doCreate()}>
+            그래도 추가
+          </button>
+          <button type="button" disabled={busy} onClick={() => setConfirmDup(false)}>
+            취소
+          </button>
+        </div>
+      ) : null}
+      {submitErr ? (
+        <p className="acct-error" role="alert">
+          {submitErr}
+        </p>
+      ) : null}
+    </form>
+  );
+}
+
+function ContentRow({
+  item,
+  busy,
+  readOnly,
+  editing,
+  focusField,
+  historyOpen,
+  choices,
+  onStartEdit,
+  onCancelEdit,
+  onSaved,
+  onToggleHistory,
+  onPlay,
+}: {
+  item: ContentItemView;
+  busy: boolean;
+  readOnly: boolean;
+  editing: boolean;
+  focusField: "word" | "example";
+  historyOpen: boolean;
+  choices: readonly string[];
+  onStartEdit: (focus: "word" | "example") => void;
+  onCancelEdit: () => void;
+  onSaved: () => void;
+  onToggleHistory: () => void;
+  onPlay: (url: string, label: string) => void;
+}) {
+  const hasTurns = item.turnsAudio && CONTENT_VOICES.some((voice) => item.turnsAudio?.[voice.key]?.ready);
+  return (
+    <>
+      <tr>
+        <th scope="row" data-label="단어">
+          <div className="co-word-cell">
+            {readOnly ? (
+              <strong>{item.word}</strong>
+            ) : (
+              <button
+                type="button"
+                className="co-word-btn"
+                aria-expanded={editing}
+                onClick={() => (editing ? onCancelEdit() : onStartEdit("word"))}
+              >
+                {item.word}
+              </button>
+            )}
+            <span className="co-meta-line">
+              <span>{item.consonant}</span>
+              {item.pos ? <span>· {item.pos}</span> : null}
+              {item.status === "draft" ? <span className="tc-pill">초안</span> : null}
+              {!readOnly ? (
+                <button
+                  type="button"
+                  className="tc-ul co-history-btn"
+                  aria-expanded={historyOpen}
+                  aria-label={`${item.word} 기록`}
+                  onClick={onToggleHistory}
+                >
+                  기록
+                </button>
+              ) : null}
+            </span>
+          </div>
+        </th>
+        <td data-label="뜻" className="co-gloss-cell">
+          {item.gloss ? <p>{item.gloss}</p> : <p className="tc-none">뜻 없음</p>}
+          {item.scene ? <small className="co-sub">{item.scene}</small> : null}
+        </td>
+        <td data-label="예문" className="co-example-cell">
+          {item.example ? (
+            <div className="co-example-wrap">
+              <p>{item.example}</p>
+              <div className="co-example-audio">
+                <span className="co-sub">예문</span>
+                {item.exampleAudio ? (
+                  <AudioVoiceRow
+                    kindLabel={`${item.word} 예문`}
+                    cells={item.exampleAudio}
+                    busy={busy}
+                    readOnly={readOnly}
+                    onPlay={onPlay}
+                  />
+                ) : null}
+                <span className="co-turns-note">
+                  또박또박:{" "}
+                  {hasTurns
+                    ? CONTENT_VOICES.filter((voice) => item.turnsAudio?.[voice.key]?.ready).map((voice) => {
+                        const turns = item.turnsAudio?.[voice.key];
+                        return turns?.playUrl ? (
+                          <button
+                            key={voice.key}
+                            type="button"
+                            className="co-turns-play"
+                            disabled={busy}
+                            aria-label={`${voice.voice} ${item.word} 예문 또박또박 재생`}
+                            onClick={() => onPlay(turns.playUrl as string, `${voice.voice} 또박또박`)}
+                          >
+                            {voice.short}
+                          </button>
+                        ) : null;
+                      })
+                    : "PC에서 생성"}
+                </span>
+              </div>
+            </div>
+          ) : (
+            <p className="tc-none">
+              예문 없음
+              {!readOnly ? (
+                <>
+                  {" · "}
+                  <button
+                    type="button"
+                    className="tc-ul co-inline-link"
+                    onClick={() => onStartEdit("example")}
+                  >
+                    예문 쓰기
+                  </button>
+                </>
+              ) : null}
+            </p>
+          )}
+        </td>
+        <td data-label="음원 E · S · C" className="co-audio-col">
+          <AudioVoiceRow
+            kindLabel={`${item.word} 단어`}
+            cells={item.wordAudio}
+            busy={busy}
+            readOnly={readOnly}
+            onPlay={onPlay}
+          />
+        </td>
+      </tr>
+      {editing ? (
+        <InlineEditPanel item={item} choices={choices} focusField={focusField} onSaved={onSaved} onCancel={onCancelEdit} />
+      ) : null}
+      {historyOpen ? <HistoryPanel item={item} /> : null}
+    </>
+  );
+}
+
 function StageAccordion({
+  groupId,
+  choices,
+  existingWords,
   stage,
   open,
   busy,
   readOnly,
+  editingId,
+  focusField,
+  historyId,
   onToggle,
+  onStartEdit,
+  onCancelEdit,
+  onToggleHistory,
+  onChanged,
   onPlay,
 }: {
+  groupId: string;
+  choices: readonly string[];
+  existingWords: ReadonlySet<string>;
   stage: ContentStageSection;
   open: boolean;
   busy: boolean;
   readOnly: boolean;
+  editingId: string | null;
+  focusField: "word" | "example";
+  historyId: string | null;
   onToggle: () => void;
+  onStartEdit: (id: string, focus: "word" | "example") => void;
+  onCancelEdit: () => void;
+  onToggleHistory: (id: string) => void;
+  onChanged: () => void;
   onPlay: (url: string, label: string) => void;
 }) {
   return (
@@ -291,26 +749,55 @@ function StageAccordion({
         </span>
       </button>
       {open ? (
-        <div className="tc-table-wrap">
-          <table className="tc-table co-table">
-            <caption className="visually-hidden">
-              {stage.key} {stage.title} 단어 목록
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">단어</th>
-                <th scope="col">뜻</th>
-                <th scope="col">예문</th>
-                <th scope="col">음원 E · S · C</th>
-              </tr>
-            </thead>
-            <tbody>
-              {stage.items.map((item) => (
-                <ContentRow key={item.id} item={item} busy={busy} readOnly={readOnly} onPlay={onPlay} />
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <>
+          <div className="tc-table-wrap">
+            <table className="tc-table co-table">
+              <caption className="visually-hidden">
+                {stage.key} {stage.title} 단어 목록
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">단어</th>
+                  <th scope="col">뜻</th>
+                  <th scope="col">예문</th>
+                  <th scope="col">음원 E · S · C</th>
+                </tr>
+              </thead>
+              <tbody>
+                {stage.items.map((item) => (
+                  <Fragment key={item.id}>
+                    <ContentRow
+                      item={item}
+                      busy={busy}
+                      readOnly={readOnly}
+                      editing={editingId === item.id}
+                      focusField={focusField}
+                      historyOpen={historyId === item.id}
+                      choices={choices}
+                      onStartEdit={(focus) => onStartEdit(item.id, focus)}
+                      onCancelEdit={onCancelEdit}
+                      onSaved={() => {
+                        onCancelEdit();
+                        onChanged();
+                      }}
+                      onToggleHistory={() => onToggleHistory(item.id)}
+                      onPlay={onPlay}
+                    />
+                  </Fragment>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {!readOnly ? (
+            <AddWordRow
+              groupId={groupId}
+              stageKey={stage.key}
+              choices={choices}
+              existingWords={existingWords}
+              onAdded={onChanged}
+            />
+          ) : null}
+        </>
       ) : null}
     </section>
   );
@@ -351,6 +838,8 @@ export function ContentOpsScreen() {
   const stageParam = params.get("stage");
   const [view, setView] = useState<TeacherContentView | null>(null);
   const [failed, setFailed] = useState(false);
+  const [editing, setEditing] = useState<{ id: string; focus: "word" | "example" } | null>(null);
+  const [historyId, setHistoryId] = useState<string | null>(null);
 
   const load = useCallback(() => {
     setFailed(false);
@@ -376,6 +865,8 @@ export function ContentOpsScreen() {
 
   const selectGroup = (nextGroup: string) => {
     setView(null);
+    setEditing(null);
+    setHistoryId(null);
     setParams({ group: nextGroup }, { replace: true });
   };
 
@@ -399,6 +890,7 @@ export function ContentOpsScreen() {
   };
 
   const busy = practice.playing !== null;
+  const existingWords = new Set(view?.stages.flatMap((s) => s.items.map((item) => item.word)) ?? []);
 
   return (
     <div className="tc-page co-page">
@@ -445,11 +937,21 @@ export function ContentOpsScreen() {
           {view.stages.map((stage) => (
             <StageAccordion
               key={stage.key}
+              groupId={view.group.id}
+              choices={view.group.choices}
+              existingWords={existingWords}
               stage={stage}
               open={expandedSet.has(stage.key)}
               busy={busy}
               readOnly={!view.writable}
+              editingId={editing?.id ?? null}
+              focusField={editing?.focus ?? "word"}
+              historyId={historyId}
               onToggle={() => toggleStage(stage.key)}
+              onStartEdit={(id, focus) => setEditing({ id, focus })}
+              onCancelEdit={() => setEditing(null)}
+              onToggleHistory={(id) => setHistoryId((prev) => (prev === id ? null : id))}
+              onChanged={load}
               onPlay={playUrl}
             />
           ))}

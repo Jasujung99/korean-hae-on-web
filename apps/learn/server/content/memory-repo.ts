@@ -308,12 +308,15 @@ export async function seedMemoryContentRepo(
   await repo.seedStageZero(ref.stage0);
 
   const dbItems = await repo.listItems({ includeHidden: true });
-  const itemByAudioBase = new Map<string, string>();
+  const itemsByAudioBase = new Map<string, string[]>();
+  const linkBase = (base: string, itemId: string) => {
+    const list = itemsByAudioBase.get(base);
+    if (list) list.push(itemId);
+    else itemsByAudioBase.set(base, [itemId]);
+  };
   for (const item of dbItems) {
-    const wb = snapshotWordAudioBase(item);
-    const sb = snapshotSentenceAudioBase(item);
-    if (!itemByAudioBase.has(wb)) itemByAudioBase.set(wb, item.id);
-    if (item.example && !itemByAudioBase.has(sb)) itemByAudioBase.set(sb, item.id);
+    linkBase(snapshotWordAudioBase(item), item.id);
+    if (item.example) linkBase(snapshotSentenceAudioBase(item), item.id);
   }
 
   const assetsToSeed: NewAudioAssetInput[] = audioIds.map((audioId) => {
@@ -332,9 +335,10 @@ export async function seedMemoryContentRepo(
             ? "audition"
             : "pseudo";
     const storage = options.storage ?? "local";
+    const linked = itemsByAudioBase.get(base);
     return {
       audioId,
-      itemId: itemByAudioBase.get(base) ?? null,
+      itemId: linked && linked.length === 1 ? (linked[0] ?? null) : null,
       kind,
       voiceKey,
       storage,
