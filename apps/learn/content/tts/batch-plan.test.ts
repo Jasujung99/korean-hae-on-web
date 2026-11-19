@@ -21,7 +21,7 @@ describe("batch plan", () => {
     expect(pseudo?.items.map((item) => item.text)).not.toEqual(["아자", "아차", "아짜", "이자", "이차", "이짜", "오자", "오차", "오짜"]);
 
     const words = groups.filter((group) => group.kind === "words");
-    expect(words.every((group) => group.method === "per_content_group" && !group.fillers && group.items.length <= 10)).toBe(true);
+    expect(words.every((group) => group.method === "per_content_group" && !group.fillers && group.items.length <= 25)).toBe(true);
     const first = words[0];
     expect(first && groupContents(first)).toHaveLength(first?.items.length ?? 0);
 

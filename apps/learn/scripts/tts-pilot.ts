@@ -5,6 +5,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { coreWords } from "../content/core-table.ts";
+import { groupWords } from "../content/group-tables.ts";
 import {
   FLASH_TTS_MODEL,
   FLAT_READING_STYLE,
@@ -19,7 +20,7 @@ import {
 import { readPcm16Wav } from "../content/tts/split.ts";
 
 const outDir = fileURLToPath(new URL("../audio/raw/pilot/", import.meta.url));
-const VOICE = "Erinome";
+const VOICE = process.argv.includes("--voice") ? (process.argv[process.argv.indexOf("--voice") + 1] ?? "Erinome") : "Erinome";
 const FILLER = "네.";
 
 const WORDS_A = ["모자", "기차", "가짜", "의자", "아침", "이쪽", "사진", "우체국", "그쪽", "가족"];
@@ -45,7 +46,14 @@ function sentencesFor(words: string[]): string[] {
   return words.map((word) => coreWords().find((row) => row.word === word)?.example ?? "").filter(Boolean);
 }
 
+// 큰 묶음 시험(2026-11-19): 단어 30·40개, 예문 15개
+const BIG_WORDS = [...groupWords("g_k_kk"), ...groupWords("b_p_pp")].map((row) => row.word).filter((word, index, all) => all.indexOf(word) === index);
+const BIG_SENTENCES = [...groupWords("g_k_kk"), ...groupWords("b_p_pp")].map((row) => row.example).filter(Boolean).slice(0, 15);
+
 const TRIALS: Trial[] = [
+  { id: "t9-words30-percontent", title: "단어 30개 · 칸 나눔", kind: "word", items: BIG_WORDS.slice(0, 30), fillers: false, perItemContent: true, separator: "long_pause", style: FLAT_READING_STYLE },
+  { id: "t10-words40-percontent", title: "단어 40개 · 칸 나눔", kind: "word", items: BIG_WORDS.slice(30, 70), fillers: false, perItemContent: true, separator: "long_pause", style: FLAT_READING_STYLE },
+  { id: "t11-sentences15-longpause", title: "예문 15개 · <long pause> (말하듯이)", kind: "sentence", items: BIG_SENTENCES, fillers: false, perItemContent: false, separator: "long_pause", style: null },
   { id: "t1-words-longpause", title: "단어 10개 · <long pause> 구분 · 앞뒤 '네.'", kind: "word", items: WORDS_A, fillers: true, perItemContent: false, separator: "long_pause", style: FLAT_READING_STYLE },
   { id: "t2-words-newline", title: "단어 10개 · 줄바꿈만 · 앞뒤 '네.'", kind: "word", items: WORDS_A, fillers: true, perItemContent: false, separator: "newline", style: FLAT_READING_STYLE },
   { id: "t3-words-reordered", title: "단어 10개 · <long pause> · 순서 바꿈", kind: "word", items: WORDS_B, fillers: true, perItemContent: false, separator: "long_pause", style: FLAT_READING_STYLE },
@@ -224,8 +232,9 @@ async function main() {
     console.log(`${trial.id}: blocks ${wavs.length}${entry.splitOk !== undefined ? `, split ok ${entry.splitOk}` : ""}`);
     await new Promise((resolve) => setTimeout(resolve, 8000));
   }
-  await writeFile(join(outDir, "report.json"), `${JSON.stringify(report, null, 2)}\n`);
-  console.log("report: audio/raw/pilot/report.json");
+  const reportName = process.argv.includes("--report") ? (process.argv[process.argv.indexOf("--report") + 1] ?? "report.json") : "report.json";
+  await writeFile(join(outDir, reportName), `${JSON.stringify(report, null, 2)}\n`);
+  console.log(`report: audio/raw/pilot/${reportName}`);
 }
 
 void main();

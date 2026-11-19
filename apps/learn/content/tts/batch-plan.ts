@@ -14,8 +14,8 @@ export type BatchMethod = "pause_group" | "per_content_group";
 export const BATCH_KINDS: BatchKind[] = ["pseudo", "stage0", "words", "sentences", "turns"];
 export const GROUPED_METHODS: string[] = ["pause_group", "per_content_group"];
 export const GROUP_FILLER = "네.";
-export const WORDS_PER_GROUP = 10;
-export const SENTENCES_PER_GROUP = 5;
+export const WORDS_PER_GROUP = 25;
+export const SENTENCES_PER_GROUP = 10;
 export const TURNS_SUFFIX = "--turns";
 
 export type BatchItem = { id: string; text: string; unitKind: "pseudoword" | "word" | "sentence" };
