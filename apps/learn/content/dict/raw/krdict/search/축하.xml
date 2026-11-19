@@ -1,0 +1,6313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 검색</title>
+	<link>https://krdict.korean.go.kr</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 검색 결과</description>
+	<lastBuildDate>20261119203214</lastBuildDate>
+	<total>28</total>
+	<start>1</start>
+	<num>100</num>
+	
+	
+	
+	<item>
+		
+		
+		<target_code>72137</target_code>
+		<word>축하</word>
+		<sup_no>0</sup_no>
+		
+		<origin>祝賀</origin>
+		
+		
+		<pronunciation>추카</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=72137</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>남의 좋은 일에 대해 기쁜 마음으로 인사함. 또는 그런 인사.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[congratulations; celebration]]></trans_word>
+				<trans_dfn><![CDATA[An act of greeting someone with pleasure, commenting on his/her happy occasion, achievement, etc., or such a greeting.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[поздравление]]></trans_word>
+				<trans_dfn><![CDATA[Горячее приветствие кого-либо по какому-либо радостному, приятному событию.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>63664</target_code>
+		<word>축하하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>祝賀하다</origin>
+		
+		
+		<pronunciation>추카하다</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=63664</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>남의 좋은 일에 대해 기쁜 마음으로 인사하다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[congratulate; celebrate]]></trans_word>
+				<trans_dfn><![CDATA[To greet someone with pleasure, commenting on his/her happy occasion, achievement, etc.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[поздравлять кого-либо; приветствовать кого-либо]]></trans_word>
+				<trans_dfn><![CDATA[Приветствовать и радоваться хорошим событиям, произошедшим с кем-либо.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>82807</target_code>
+		<word>축하객</word>
+		<sup_no>0</sup_no>
+		
+		<origin>祝賀客</origin>
+		
+		
+		<pronunciation>추카객</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=82807</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>축하하기 위해 온 손님.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[guest; visitor]]></trans_word>
+				<trans_dfn><![CDATA[A person coming to congratulate someone on a certain event.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[]]></trans_word>
+				<trans_dfn><![CDATA[Гость, который пришел с целью поздравить кого-либо. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>82808</target_code>
+		<word>축하연</word>
+		<sup_no>0</sup_no>
+		
+		<origin>祝賀宴</origin>
+		
+		
+		<pronunciation>추카연</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=82808</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>축하하기 위해 여는 잔치.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[celebration]]></trans_word>
+				<trans_dfn><![CDATA[A party held to celebrate a happy event.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[праздник; празднование]]></trans_word>
+				<trans_dfn><![CDATA[Торжество в честь какого-либо события.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>25337</target_code>
+		<word>건축하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>建築하다</origin>
+		
+		
+		<pronunciation>건ː추카다</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=25337</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>집이나 건물, 다리 등을 설계하여 짓다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[build; construct]]></trans_word>
+				<trans_dfn><![CDATA[To design and construct houses, buildings, bridges, etc.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[строить; сооружать]]></trans_word>
+				<trans_dfn><![CDATA[Возводить дом, здание, мост и т.п.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>74650</target_code>
+		<word>저축하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>貯蓄하다</origin>
+		
+		
+		<pronunciation>저ː추카다</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=74650</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>돈이나 재물 등을 아껴 써서 모아 두다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[save]]></trans_word>
+				<trans_dfn><![CDATA[To save money, wealth, etc., by spending it frugally. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[копить; откладывать деньги]]></trans_word>
+				<trans_dfn><![CDATA[Копить деньги, имущество и т.п., экономно используя их.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>22547</target_code>
+		<word>감축하다</word>
+		<sup_no>1</sup_no>
+		
+		<origin>減縮하다</origin>
+		
+		
+		<pronunciation>감ː추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=22547</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>어떤 것의 수나 양을 줄이다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[reduce]]></trans_word>
+				<trans_dfn><![CDATA[To reduce the quantity or number of something.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[сокращать]]></trans_word>
+				<trans_dfn><![CDATA[Уменьшать количество или объём чего-либо. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>22562</target_code>
+		<word>감축하다</word>
+		<sup_no>2</sup_no>
+		
+		<origin>感祝하다</origin>
+		
+		
+		<pronunciation>감ː추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=22562</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>좋은 일을 함께 감사하고 축하하다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[celebrate; congratulate]]></trans_word>
+				<trans_dfn><![CDATA[To be thankful for something auspicious and celebrate it together.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[]]></trans_word>
+				<trans_dfn><![CDATA[Поздравлять кого-либо с чем-либо радостным и праздновать вместе.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>18702</target_code>
+		<word>개축하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>改築하다</origin>
+		
+		
+		<pronunciation>개ː추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=18702</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>건물이나 시설물을 고쳐서 다시 짓다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[rebuild]]></trans_word>
+				<trans_dfn><![CDATA[To renovate and rebuild a building or facilities.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[проводить реконструкцию; модернизировать]]></trans_word>
+				<trans_dfn><![CDATA[Перестраивать, переоборудовать заново здание или коммуникации. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>26019</target_code>
+		<word>경축하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>慶祝하다</origin>
+		
+		
+		<pronunciation>경ː추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=26019</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>기쁘고 즐거운 일을 축하하다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[celebrate; congratulate]]></trans_word>
+				<trans_dfn><![CDATA[To celebrate a happy and joyful occasion.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[праздновать]]></trans_word>
+				<trans_dfn><![CDATA[Отмечать какое-либо радостное и приятное событие.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>36725</target_code>
+		<word>구축하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>構築하다</origin>
+		
+		
+		<pronunciation>구추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=36725</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>시설물을 짓다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[construct; build]]></trans_word>
+				<trans_dfn><![CDATA[To build a facility.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[Строить]]></trans_word>
+				<trans_dfn><![CDATA[возводить здания, сооружения. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		<sense>
+			<sense_order>2</sense_order>
+			<definition>어떤 일을 하기 위한 기초 또는 체계를 만들다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[establish; build]]></trans_word>
+				<trans_dfn><![CDATA[To lay the foundation or develop a system to do something.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[Сооружать; структурировать]]></trans_word>
+				<trans_dfn><![CDATA[создавать систему или основу для совершения чего-либо.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>43865</target_code>
+		<word>긴축하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>緊縮하다</origin>
+		
+		
+		<pronunciation>긴추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=43865</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>가정, 기업, 정부 등의 지출을 줄이다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[retrench; tighten]]></trans_word>
+				<trans_dfn><![CDATA[To reduce the expenditure of a household, corporations or the government. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[экономить]]></trans_word>
+				<trans_dfn><![CDATA[Сокращать текущие расходы в семейном, производственном или государственном бюджете.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>45261</target_code>
+		<word>농축하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>濃縮하다</origin>
+		
+		
+		<pronunciation>농추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=45261</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>어떤 물질을 구성하는 성분들 중 일부를 없애 그 성질을 진하게 하다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[concentrate]]></trans_word>
+				<trans_dfn><![CDATA[To make the properties of a substance stronger by eliminating some elements of it.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[сгущать; концентрировать; обогащать]]></trans_word>
+				<trans_dfn><![CDATA[Удалять какое-либо составляющее одного вещества и увеличивать его плотность. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>42041</target_code>
+		<word>단축하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>短縮하다</origin>
+		
+		
+		<pronunciation>단ː추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=42041</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>시간, 거리 등을 줄이다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[reduce]]></trans_word>
+				<trans_dfn><![CDATA[To shorten time, distance, etc.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[уменьшать]]></trans_word>
+				<trans_dfn><![CDATA[Сокращать время, расстояние и т.п. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>601883</target_code>
+		<word>도축하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>屠畜하다</origin>
+		
+		
+		<pronunciation>도추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=601883</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>고기를 얻기 위하여 가축을 잡아 죽이다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[slaughter]]></trans_word>
+				<trans_dfn><![CDATA[To slaughter and kill livestock for meat.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[забивать; убивать]]></trans_word>
+				<trans_dfn><![CDATA[Убивать домашний скот для получения мяса.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>59619</target_code>
+		<word>부축하다</word>
+		<sup_no>0</sup_no>
+		
+		
+		<pronunciation>부ː추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=59619</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>다른 사람이 몸을 움직이는 것을 곁에서 도와주다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[help]]></trans_word>
+				<trans_dfn><![CDATA[For a person to help another around him/her move his/her body.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[Поддерживать]]></trans_word>
+				<trans_dfn><![CDATA[помогать кому-либо в передвижении поддержкой.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>60805</target_code>
+		<word>비축하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>備蓄하다</origin>
+		
+		
+		<pronunciation>비ː추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=60805</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>만약의 경우를 대비하여 미리 모아 두다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[reserve; lay aside]]></trans_word>
+				<trans_dfn><![CDATA[To save something ahead of time in preparation for an emergency.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[запасаться]]></trans_word>
+				<trans_dfn><![CDATA[Собрать, заготовив заблаговременно, на случай непредвиденных событий.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>64797</target_code>
+		<word>수축하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>收縮하다</origin>
+		
+		
+		<pronunciation>수추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=64797</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>줄어들거나 오그라들어 크기가 작아지다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[contract]]></trans_word>
+				<trans_dfn><![CDATA[To become smaller because it has shrunk or shriveled.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[садиться (о материи); давать усадку; сжиматься; усыхать; усохнуть; сокращаться; сморщиться; сжаться; съёжиться]]></trans_word>
+				<trans_dfn><![CDATA[Уменьшаться в размере или объёме.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>65594</target_code>
+		<word>신축하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>新築하다</origin>
+		
+		
+		<pronunciation>신추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=65594</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>건물을 새로 짓다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[build; construct]]></trans_word>
+				<trans_dfn><![CDATA[To make a building newly. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[строить ]]></trans_word>
+				<trans_dfn><![CDATA[Возводить новое здание. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>66863</target_code>
+		<word>압축하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>壓縮하다</origin>
+		
+		
+		<pronunciation>압추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=66863</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>물질 등에 압력을 가하여 부피를 줄이다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[condense; compress]]></trans_word>
+				<trans_dfn><![CDATA[To reduce the volume of something by applying pressure to it.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[компрессовать]]></trans_word>
+				<trans_dfn><![CDATA[Уменьшать объём какого-либо предмета под прессом.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		<sense>
+			<sense_order>2</sense_order>
+			<definition>글이나 문장의 길이를 줄여 짧게 하다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[condense; summarize]]></trans_word>
+				<trans_dfn><![CDATA[To reduce the length of a piece of writing or sentence to be short.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[сокращать]]></trans_word>
+				<trans_dfn><![CDATA[Уменьшать длину текста или предложения.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		<sense>
+			<sense_order>3</sense_order>
+			<definition>범위나 거리를 줄이다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[narrow down]]></trans_word>
+				<trans_dfn><![CDATA[To reduce a range or distance.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[сокращать]]></trans_word>
+				<trans_dfn><![CDATA[Уменьшать охватываемый объём, расстояние.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		<sense>
+			<sense_order>4</sense_order>
+			<definition>컴퓨터에서, 특수한 방법을 사용하여 데이터의 양을 줄이다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[compress]]></trans_word>
+				<trans_dfn><![CDATA[In a computer system, to reduce the amount of data by using a specific method.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[сжимать]]></trans_word>
+				<trans_dfn><![CDATA[(комп.) Уменьшать объём данных при помощи специальных методов.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>69946</target_code>
+		<word>위축하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>萎縮하다</origin>
+		
+		
+		<pronunciation>위추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=69946</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>마르거나 시들어서 쪼그라들거나 부피가 작아지다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[wither; shrivel; shrink]]></trans_word>
+				<trans_dfn><![CDATA[For something to contract or get smaller in volume as it dries or wilts.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[сокращаться; сморщиться; атрофироваться]]></trans_word>
+				<trans_dfn><![CDATA[Уменьшаться в размере, высыхать, увядать или сжиматься.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		<sense>
+			<sense_order>2</sense_order>
+			<definition>어떤 힘에 눌려 기를 펴지 못하다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[be dispirited; be daunted]]></trans_word>
+				<trans_dfn><![CDATA[To be repressed by some power.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[подавляться; угнетаться]]></trans_word>
+				<trans_dfn><![CDATA[Сдерживаться какой-либо силой, не чувствуя свободу.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>71616</target_code>
+		<word>응축하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>凝縮하다</origin>
+		
+		
+		<pronunciation>응ː추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=71616</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>한 덩어리로 엉겨 굳어서 줄어들다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[condense]]></trans_word>
+				<trans_dfn><![CDATA[To become smaller by being solidified into a mass.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[сгущаться; концентрироваться]]></trans_word>
+				<trans_dfn><![CDATA[ Собираться в один комок, уменьшаться. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		<sense>
+			<sense_order>2</sense_order>
+			<definition>여러 가지 의미나 감정 등이 한곳에 집중되어 모이다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[condense]]></trans_word>
+				<trans_dfn><![CDATA[For various meanings, emotions, etc., to be concentrated and converged.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[концентрироваться]]></trans_word>
+				<trans_dfn><![CDATA[Собираться в одно (о множестве различных мнений или чувств). ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		<sense>
+			<sense_order>3</sense_order>
+			<definition>온도가 낮아지거나 압력을 받아 기체가 액체로 변하다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[condense]]></trans_word>
+				<trans_dfn><![CDATA[For gas to change into liquid when the temperature goes down or pressure is applied to it.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[конденсироваться]]></trans_word>
+				<trans_dfn><![CDATA[Превращаться в жидкость при низкой температуре или под давлением (о газообразном веществе). ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>72621</target_code>
+		<word>일축하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>一蹴하다</origin>
+		
+		
+		<pronunciation>일추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=72621</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>제안이나 부탁 등을 한 번에 거절하여 받아들이지 않다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[refuse flatly; turn down; reject]]></trans_word>
+				<trans_dfn><![CDATA[To reject a proposal, request, etc., flatly and not accept it.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[отказывать]]></trans_word>
+				<trans_dfn><![CDATA[Отвечать категорическим отказом на предложение, просьбу и т.п., не воспринимать. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		<sense>
+			<sense_order>2</sense_order>
+			<definition>소문이나 의혹, 주장 등을 강하게 부인하거나 더 이상 말하지 않다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[reject; dismiss]]></trans_word>
+				<trans_dfn><![CDATA[To deny a rumor, suspicion, claim, etc., strongly or not talk about it anymore.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[отвергать]]></trans_word>
+				<trans_dfn><![CDATA[Отрицать или больше не говорить о каком-либо слухе, сомнении, утверждении. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		<sense>
+			<sense_order>3</sense_order>
+			<definition>운동 경기 등에서 상대를 손쉽게 이기다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[beat easily]]></trans_word>
+				<trans_dfn><![CDATA[To beat one's competitor easily in a sports game.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[]]></trans_word>
+				<trans_dfn><![CDATA[Легко побеждать противника в спортивных соревнованиях или т.п. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>73207</target_code>
+		<word>자축하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>自祝하다</origin>
+		
+		
+		<pronunciation>자추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=73207</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>자기에게 생긴 좋은 일을 스스로 축하하다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[celebrate oneself]]></trans_word>
+				<trans_dfn><![CDATA[To celebrate a happy thing that has happened to oneself.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[]]></trans_word>
+				<trans_dfn><![CDATA[Поздравлять самого себя с каким-либо хорошим событием. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>600915</target_code>
+		<word>재건축하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>再建築하다 </origin>
+		
+		
+		<pronunciation>재ː건추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=600915</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>원래 있던 건물을 허물고 다시 짓다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[rebuild]]></trans_word>
+				<trans_dfn><![CDATA[Demolish the original building and rebuild it.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[перестраивать; реконструировать]]></trans_word>
+				<trans_dfn><![CDATA[Разрушить бывшее здание и построить заново.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>91655</target_code>
+		<word>증축하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>增築하다</origin>
+		
+		
+		<pronunciation>증추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=91655</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>이미 지어져 있는 건축물에 덧붙여 더 늘려서 짓다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[add]]></trans_word>
+				<trans_dfn><![CDATA[To add to an existing building and construct a room, building, etc.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[пристроить]]></trans_word>
+				<trans_dfn><![CDATA[Дополнительно расширить построенное ранее здание.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>82323</target_code>
+		<word>축축하다</word>
+		<sup_no>0</sup_no>
+		
+		
+		<pronunciation>축추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>형용사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=82323</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>물기가 있어 꽤 젖은 듯하다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[wet; damp]]></trans_word>
+				<trans_dfn><![CDATA[Feeling or looking wet because of moisture.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[влажный; сырой]]></trans_word>
+				<trans_dfn><![CDATA[Насыщенный, пропитанный влагой.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>85610</target_code>
+		<word>함축하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>含蓄하다</origin>
+		
+		
+		<pronunciation>함추카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=85610</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>겉으로 드러내지 않고 속에 간직하다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[imply; suggest; allude to]]></trans_word>
+				<trans_dfn><![CDATA[To keep information, intention, etc., to oneself without revealing it outwardly.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[подразумевать]]></trans_word>
+				<trans_dfn><![CDATA[Не показывать снаружи, хранить внутри. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		<sense>
+			<sense_order>2</sense_order>
+			<definition>말이나 글이 속에 많은 뜻을 담고 있다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[imply; connote; signify]]></trans_word>
+				<trans_dfn><![CDATA[For a speech or text to contain many hidden meanings or messages.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[подразумевать]]></trans_word>
+				<trans_dfn><![CDATA[Слова или текст заключают в себе большой смысл. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	
+	
+</channel>
+
+

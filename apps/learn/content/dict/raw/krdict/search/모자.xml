@@ -1,0 +1,2016 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 검색</title>
+	<link>https://krdict.korean.go.kr</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 검색 결과</description>
+	<lastBuildDate>20261119202024</lastBuildDate>
+	<total>11</total>
+	<start>1</start>
+	<num>100</num>
+	
+	
+	
+	<item>
+		
+		
+		<target_code>69297</target_code>
+		<word>모자</word>
+		<sup_no>2</sup_no>
+		
+		<origin>帽子</origin>
+		
+		
+		<pronunciation>모자</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=69297</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>예의를 차리거나 추위나 더위 등을 막기 위해 머리에 쓰는 물건.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[hat]]></trans_word>
+				<trans_dfn><![CDATA[An object worn on the head in order to be polite or to keep out the cold or heat, etc.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[головной убор; шапка; шляпа; кепка; берет; фуражка]]></trans_word>
+				<trans_dfn><![CDATA[Элемент одежды, который надевается на голову в целях защиты от холода или жары, а также для соблюдения этикета.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>55580</target_code>
+		<word>모자</word>
+		<sup_no>1</sup_no>
+		
+		<origin>母子</origin>
+		
+		
+		<pronunciation>모ː자</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=55580</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>어머니와 아들.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[mother and son]]></trans_word>
+				<trans_dfn><![CDATA[Mother and son.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[]]></trans_word>
+				<trans_dfn><![CDATA[Мать и сын.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>46143</target_code>
+		<word>모자라다</word>
+		<sup_no>0</sup_no>
+		
+		
+		<pronunciation>모ː자라다</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=46143</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>정해진 수, 양이나 정도에 이르지 못하다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[lack; be short; be insufficient]]></trans_word>
+				<trans_dfn><![CDATA[To not reach a fixed number, quantity, or level.                                                                                       ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[недоставать; не хватать]]></trans_word>
+				<trans_dfn><![CDATA[Быть, иметься в меньшем, чем следует количестве.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		<sense>
+			<sense_order>2</sense_order>
+			<definition>능력, 힘, 지식 등이 기준에 미치지 못하다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[be dull; be slow-witted; be stupid]]></trans_word>
+				<trans_dfn><![CDATA[For a level of competency, power, knowledge, etc., to not reach a standard.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[недостаточный; неполный; неудовлетворительный; несоответствующий]]></trans_word>
+				<trans_dfn><![CDATA[Не отвечать требованиям, не соответствовать какому-либо уровню (о способностях, силах, знаниях и т.п.)]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>55581</target_code>
+		<word>모자간</word>
+		<sup_no>0</sup_no>
+		
+		<origin>母子間</origin>
+		
+		
+		<pronunciation>모ː자간</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=55581</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>어머니와 아들 사이.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[relationship of mother and son]]></trans_word>
+				<trans_dfn><![CDATA[The relation between mother and son.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[]]></trans_word>
+				<trans_dfn><![CDATA[Связь, взаимоотношения между матерью и сыном. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>55582</target_code>
+		<word>모자이크</word>
+		<sup_no>0</sup_no>
+		
+		<origin>mosaic</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=55582</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>여러 가지 빛깔의 돌이나 유리, 금속, 조개껍데기 등을 붙여서 만든 무늬나 그림. 또는 그 기법.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[mosaic]]></trans_word>
+				<trans_dfn><![CDATA[A pattern or picture created by putting together stones, pieces of glass or metal, shells, etc. of different colors.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[мозаика]]></trans_word>
+				<trans_dfn><![CDATA[Картина или узор, выполненные из разноцветных кусочков камня, стекла, металла, ракушек и т.п. Либо вид такого искусства.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		<sense>
+			<sense_order>2</sense_order>
+			<definition>사진이나 화면 등에서, 일부분만 가리기 위하여 잘 안 보이게 처리하는 일. 또는 그렇게 처리된 상태.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[mosaic]]></trans_word>
+				<trans_dfn><![CDATA[In a photo or screen, etc., an act of covering a part of it to keep it from being viewed or such a state. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[коллаж; ретушь; обработка; растушевка]]></trans_word>
+				<trans_dfn><![CDATA[Работа с фотографией либо видео материалом с целью удаления каких-либо отдельных частей изображения. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>78497</target_code>
+		<word>모자라-</word>
+		<sup_no>0</sup_no>
+		
+		
+		
+		<pos>품사 없음</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=78497</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>(모자라고, 모자란데, 모자라, 모자라서, 모자라니, 모자라면, 모자란, 모자라는, 모자랄, 모자랍니다, 모자랐다)→ 모자라다</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>68803</target_code>
+		<word>운동모자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>運動帽子</origin>
+		
+		
+		<pronunciation>운ː동모자</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=68803</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>운동할 때 쓰는 모자.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[sports cap]]></trans_word>
+				<trans_dfn><![CDATA[A cap worn when doing exercise.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[спортивная шапка; спортивная кепка]]></trans_word>
+				<trans_dfn><![CDATA[Шапка, используемая при занятии спортом.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>80446</target_code>
+		<word>털모자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>털帽子</origin>
+		
+		
+		<pronunciation>털모자</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=80446</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>털실로 짠 모자.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[woolen hat]]></trans_word>
+				<trans_dfn><![CDATA[A hat knitted with wool.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[шерстяная шапка]]></trans_word>
+				<trans_dfn><![CDATA[Шапка, связанная шерстяными нитками.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		<sense>
+			<sense_order>2</sense_order>
+			<definition>짐승의 털가죽으로 만든 모자.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[fur hat]]></trans_word>
+				<trans_dfn><![CDATA[A hat made of the fur or pelt of an animal.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[меховая шапка]]></trans_word>
+				<trans_dfn><![CDATA[Шапка, сшитая из меха животного.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>56654</target_code>
+		<word>밀짚모자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>밀짚帽子</origin>
+		
+		
+		<pronunciation>밀찜모자</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=56654</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>밀짚이나 보리의 짚으로 만든 챙이 넓은 모자.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[straw hat]]></trans_word>
+				<trans_dfn><![CDATA[A wide-brimmed hat made of wheat or barley straw.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[соломенная шляпа]]></trans_word>
+				<trans_dfn><![CDATA[Шляпа с широкими полями, сделанная из пшеничной или ячменной соломы.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>71769</target_code>
+		<word>응모자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>應募者</origin>
+		
+		
+		<pronunciation>응ː모자</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=71769</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>모집에 응한 사람.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[applicant]]></trans_word>
+				<trans_dfn><![CDATA[A person who has signed up for a contest, etc.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[участник]]></trans_word>
+				<trans_dfn><![CDATA[Тот, кто участвует в каком-либо сборе, приёме.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>77046</target_code>
+		<word>중절모자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>中折帽子</origin>
+		
+		
+		<pronunciation>중절모자</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=77046</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>꼭대기의 가운데를 눌러쓰는, 둥근 챙이 달린 신사용 모자.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[homburg]]></trans_word>
+				<trans_dfn><![CDATA[A round-brimmed hat for men whose crown is dented.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[трибли; федора]]></trans_word>
+				<trans_dfn><![CDATA[Мужской головной убор с тульей, которая придавливается посередине, и полями. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	
+	
+</channel>
+
+

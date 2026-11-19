@@ -1,0 +1,301 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203409</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>72210</target_code>
+		<word_info>
+			<word><![CDATA[다르다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[다르다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[달라]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[달라]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[다르니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[다르니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+			
+			<relation_info>
+				<word>다름(이) 아니라</word>
+				<type>관용구</type>
+				<link_target_code>520515</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=520515&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>다름 아닌</word>
+				<type>관용구</type>
+				<link_target_code>520516</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=520516&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[＜다다＜용가＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>72210001</pos_code>
+				<pos>형용사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>72210001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>817</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[비교가 되는 두 대상이 서로 같지 아니하다.]]></definition>
+						<definition_original><![CDATA[비교가 되는 두 대상이 서로 같지 아니하다.]]></definition_original>
+						
+
+						
+						
+						<sense_pattern_info>
+							<pattern>(…과)</pattern>
+						</sense_pattern_info>
+						
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[‘…과’가 나타나지 않을 때에는 여럿임을 뜻하는 말이 주어로 온다]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[아들이 아버지와 얼굴이 다르다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나는 너와 다르다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[군자와 소인은 다르다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나이가 드니까 몸이 예전과 다르다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[쌍둥이도 서로 성격이 다르다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[칠월이 되자 날씨가 하루가 다르게 더워진다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[형제가 달라도 너무 다르군.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>같다</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>339450</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=391368&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>37529</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[보통의 것보다 두드러진 데가 있다.]]></definition>
+						<definition_original><![CDATA[보통의 것보다 두드러진 데가 있다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[고장 난 문을 감쪽같이 고치다니 기술자는 역시 달라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[역시 신문 기자의 센스는 다르구먼.]]></example>
+							
+							<source><![CDATA[이병주, 행복어 사전]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

@@ -1,0 +1,109 @@
+{
+  "channel": {
+    "total": 8,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "119012",
+        "pos": "명사",
+        "origin": "母子",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=119012&searchKeywordTo=3",
+          "definition": "어머니와 아들을 아울러 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "모자"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "425737",
+        "pos": "명사",
+        "origin": "母字",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=425737&searchKeywordTo=3",
+          "definition": "음소 문자 체계에 쓰이는 낱낱의 글자.",
+          "type": "일반어"
+        },
+        "word": "모자"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "119013",
+        "pos": "명사",
+        "origin": "母姊",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=119013&searchKeywordTo=3",
+          "definition": "어머니와 누나를 아울러 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "모자"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "119014",
+        "pos": "명사",
+        "origin": "母慈",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=119014&searchKeywordTo=3",
+          "definition": "어머니의 사랑.",
+          "type": "일반어"
+        },
+        "word": "모자"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "425738",
+        "pos": "명사",
+        "origin": "茅茨",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=425738&searchKeywordTo=3",
+          "definition": "띠나 이엉 따위로 지붕을 인 초라한 집.",
+          "type": "일반어"
+        },
+        "word": "모자"
+      },
+      {
+        "sup_no": "6",
+        "target_code": "119015",
+        "pos": "명사",
+        "origin": "眸子",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=119015&searchKeywordTo=3",
+          "definition": "눈알의 한가운데에 있는, 빛이 들어가는 부분. 검게 보이며, 빛의 세기에 따라 그 주위를 둘러싸고 있는 홍채로 크기가 조절된다.",
+          "type": "일반어"
+        },
+        "word": "모자"
+      },
+      {
+        "sup_no": "7",
+        "target_code": "425739",
+        "pos": "명사",
+        "origin": "帽子",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=425739&searchKeywordTo=3",
+          "definition": "머리에 쓰는 물건의 하나. 예의를 차리거나 추위, 더위, 먼지 따위를 막기 위한 것이다.",
+          "type": "일반어"
+        },
+        "word": "모자"
+      },
+      {
+        "sup_no": "8",
+        "target_code": "118721",
+        "pos": "명사",
+        "origin": "帽子",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=118721&searchKeywordTo=3",
+          "definition": "바둑에서, 변에 놓인 상대편의 돌을 누르기 위하여 위로 한 칸 걸러 놓는 수. 상대편 집의 수를 줄이거나 공격하는 수단으로 보통 중반전에 쓴다.",
+          "type": "일반어"
+        },
+        "word": "모자"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202025",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

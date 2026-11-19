@@ -1,0 +1,195 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203211</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>327528</target_code>
+		<word_info>
+			<word><![CDATA[책]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				한자어
+				
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[柵]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[책]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[책만]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[챙만]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>327528001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>327528001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>24713</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[말뚝으로 만든 우리나 울타리.]]></definition>
+						<definition_original><![CDATA[말뚝으로 만든 우리나 울타리.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[적이 책 쪽으로 접근해 왔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[돼지를 책 안에 가두어 기른다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>55763</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[물결에 둑이 넘어지지 않게 하기 위하여 둑 앞에 말뚝을 듬성듬성 박고 대쪽으로 얽어 놓는 장치.]]></definition>
+						<definition_original><![CDATA[물결에 둑이 넘어지지 않게 하기 위하여 둑 앞에 말뚝을 듬성듬성 박고 대쪽으로 얽어 놓는 장치.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[책이 오래되어 일부는 보수하고 일부는 다시 세우기로 했다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

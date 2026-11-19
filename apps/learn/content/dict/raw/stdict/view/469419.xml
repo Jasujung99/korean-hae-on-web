@@ -1,0 +1,297 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203838</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>469419</target_code>
+		<word_info>
+			<word><![CDATA[옷]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[옫]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[옷만]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[온만]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+			
+			<relation_info>
+				<word>옷은 나이로 입는다</word>
+				<type>속담</type>
+				<link_target_code>530956</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530956&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>옷은 새 옷이 좋고 사람은 옛 사람이 좋다</word>
+				<type>속담</type>
+				<link_target_code>530957</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530957&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>옷은 새 옷이 좋고 임은 옛 임이 좋다</word>
+				<type>속담</type>
+				<link_target_code>530958</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530958&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>옷은 시집올 때처럼 음식은 한가위처럼</word>
+				<type>속담</type>
+				<link_target_code>530959</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530959&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>옷을 격해 가려운 데를 긁는다</word>
+				<type>속담</type>
+				<link_target_code>530960</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530960&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>옷이 날개고 밥이 분이다</word>
+				<type>속담</type>
+				<link_target_code>530961</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530961&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>옷이 날개라</word>
+				<type>속담</type>
+				<link_target_code>530962</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530962&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>옷 입고 가려운 데 긁기</word>
+				<type>속담</type>
+				<link_target_code>530963</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530963&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[옷＜훈해＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>469419001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>469419001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>503897</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[몸을 싸서 가리거나 보호하기 위하여 피륙 따위로 만들어 입는 물건.]]></definition>
+						<definition_original><![CDATA[몸을 싸서 가리거나 보호하기 위하여 피륙 따위로 만들어 입는 물건.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[옷 한 벌.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[옷 두 점.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[옷을 벗다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[새 옷을 사다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[옷을 입다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[입고 나갈 옷이 마땅찮다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그 옷은 너한테 잘 어울린다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[졸업식 때 입을 옷 한 벌을 장만하였다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그녀는 천을 떠서 손수 옷을 지어 입는다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>의복01</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>358185</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=269299&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>의전02</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>431604</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=264066&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

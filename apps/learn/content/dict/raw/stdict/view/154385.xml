@@ -1,0 +1,207 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202144</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>154385</target_code>
+		<word_info>
+			<word><![CDATA[부치다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[부치다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[부치어]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[부치어]]></pronunciation>
+					</pronunciation_info>
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[부치여]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+				<abbreviation_info>
+					<abbreviation><![CDATA[부쳐]]></abbreviation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[부처]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</abbreviation_info>
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[부치니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[부치니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			<origin><![CDATA[＜브치다＜붗다＜능엄＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>154385001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>154385001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>177596</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[부채 따위를 흔들어서 바람을 일으키다.]]></definition>
+						<definition_original><![CDATA[부채 따위를 흔들어서 바람을 일으키다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[부채를 부치다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 신문지로 연방 바람을 부치면서 신기하다는 듯 가게 안을 둘러보았다.]]></example>
+							
+							<source><![CDATA[황석영, 한 씨 연대기]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>요선-하다</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>503931</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=245545&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

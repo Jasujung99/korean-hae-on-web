@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색</title>
+	<link>https://krdict.korean.go.kr/dicSearch/SearchView?ParaWordNo=66641</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색 결과</description>
+	<lastBuildDate>20261119202754</lastBuildDate> 
+	<total>1</total>
+	
+	<item>
+		<target_code>66641</target_code>
+		<word_info>
+			<word>뿐</word>
+			<sup_no>1</sup_no>
+			<word_unit>단어</word_unit>
+			<pos>의존 명사</pos>
+			<word_type>고유어</word_type>
+			
+			
+			
+			<pronunciation_info>
+				<pronunciation>뿐</pronunciation>
+				<link>https://krdicmedia.korean.go.kr/front/search/searchResultView.do?file_no=4678</link>
+			</pronunciation_info>
+			
+			
+			
+			<pos>의존 명사</pos>
+			
+			
+			<word_grade>중급</word_grade>
+			
+			
+			
+			
+			
+			
+			<sense_info>
+				<definition>다만 그것만이고 그 이상은 아님을 나타내는 말.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[ppun]]></trans_word>
+					<trans_dfn><![CDATA[A bound noun indicating that there is nothing more than that.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[только; всего лишь]]></trans_word>
+					<trans_dfn><![CDATA[Зависимое существительное, указывающее на ограничение: только лишь это, не больше.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference>'-을 뿐'으로 쓴다.</reference>
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>그들은 조용히 그의 이야기만을 듣고 있을 뿐이었다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>나는 단지 그가 좋아서 선물을 한 것일 뿐 다른 의도는 없었다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>네가 여기 있던 화분을 넘어뜨렸지?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example> 전 그냥 여기 서 있었을 뿐이라고요.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			<sense_info>
+				<definition>오직 그렇게 하거나 그러하다는 것만 한정함을 나타내는 말.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[ppun]]></trans_word>
+					<trans_dfn><![CDATA[A bound noun indicating that a person only acts a certain way or that he/she is confined to doing just as he/she does.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[только; всего лишь]]></trans_word>
+					<trans_dfn><![CDATA[Зависимое существительное, указывающее на ограничение: только так.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference>'-다 뿐이지'로 쓴다.</reference>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>이 식당은 이름만 났다 뿐이지 맛은 정말 없었다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>나는 지수가 좋더라.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>걔는 얼굴만 예뻤다 뿐이지 성격이 얼마나 까다로운데.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>우리는 인사만 하지 않았다 뿐이지 서로에 대해서는 이미 알고 있었다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			
+			
+		</word_info>
+	</item>
+	
+</channel>    
+
+

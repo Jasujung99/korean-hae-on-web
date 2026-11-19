@@ -1,0 +1,1489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색</title>
+	<link>https://krdict.korean.go.kr/dicSearch/SearchView?ParaWordNo=32556</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색 결과</description>
+	<lastBuildDate>20261119202722</lastBuildDate> 
+	<total>1</total>
+	
+	<item>
+		<target_code>32556</target_code>
+		<word_info>
+			<word>깜빡</word>
+			<sup_no>0</sup_no>
+			<word_unit>단어</word_unit>
+			<pos>부사</pos>
+			<word_type>고유어</word_type>
+			
+			
+			
+			<pronunciation_info>
+				<pronunciation>깜빡</pronunciation>
+				<link>https://krdicmedia.korean.go.kr/front/search/searchResultView.do?file_no=27134</link>
+			</pronunciation_info>
+			
+			
+			
+			<pos>부사</pos>
+			
+			
+			<der_info>
+				<word>깜빡거리다</word>
+				<link_type>C</link_type>
+				
+				<link_target_code>37733</link_target_code>
+				<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=37733</link>
+				
+			</der_info>
+			
+			<der_info>
+				<word>깜빡대다</word>
+				<link_type>C</link_type>
+				
+				<link_target_code>88525</link_target_code>
+				<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=88525</link>
+				
+			</der_info>
+			
+			<der_info>
+				<word>깜빡이다</word>
+				<link_type>C</link_type>
+				
+				<link_target_code>37736</link_target_code>
+				<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=37736</link>
+				
+			</der_info>
+			
+			<der_info>
+				<word>깜빡하다</word>
+				<link_type>C</link_type>
+				
+				<link_target_code>37737</link_target_code>
+				<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=37737</link>
+				
+			</der_info>
+			
+			
+			
+			<word_grade>중급</word_grade>
+			
+			
+			<category_info>
+				<type>의미 범주</type>
+				<written_form>인간 &gt; 인지 행위</written_form>
+			</category_info>			
+			
+			
+			
+			
+			<category_info>
+				<type>주제 및 상황 범주</type>
+				<written_form>없음</written_form>
+			</category_info>			
+			
+			
+			
+			
+			
+			
+			<sense_info>
+				<definition>불빛이 밝았다가 잠깐 어두워지거나 어두웠다가 잠깐 밝아지는 모양.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[with a flash]]></trans_word>
+					<trans_dfn><![CDATA[A word mimicking the manner of a  source of light brigtening and then going dim, or dimming and then going bright in quick succession.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[]]></trans_word>
+					<trans_dfn><![CDATA[О виде мерцающего света.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>밤하늘을 수놓은 별빛이 깜빡 빛나고 있었다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>전등이 깜빡 켜졌다가 금방 다시 꺼져 버렸다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>아무도 살지 않을 듯한 산속 어딘가에서 희미한 불빛이 깜빡 빛났다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>이런! 손전등이 깜빡 켜졌다 꺼지는 걸 보니 배터리 수명이 다했나 봐요. </example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>아예 꺼져 버리기 전에 얼른 길을 찾아야겠어요.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>깜빡 꺼지다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>깜빡 밝아지다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>깜빡 빛나다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>깜빡 어두워지다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>깜빡 켜지다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<rel_info>
+					<word>깜박</word>
+					<type>여린말</type>
+					<link_type>C</link_type>
+					
+					<link_target_code>37725</link_target_code>
+					<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=37725</link>
+					
+				</rel_info>
+				
+				
+				
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			<sense_info>
+				<definition>눈을 잠깐 감았다가 뜨는 모양.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[with a blink]]></trans_word>
+					<trans_dfn><![CDATA[A word mimicking the manner of closing one's eyes momentarily before opening.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[]]></trans_word>
+					<trans_dfn><![CDATA[О виде моргающих глаз.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>승규는 졸린지 눈을 깜빡 감았다 떴다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>깜빡 눈을 떠 보니 나도 모르게 졸고 있었다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>깜빡 눈을 뜨다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>떠들썩한 소리에 깜빡 눈을 뜨니 선생님이 앞에 계셨다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>승규야, 잘 도착했어?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>응. 버스에서 졸다가 깜빡 눈을 뜨니 도착했더라. </example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<rel_info>
+					<word>깜박</word>
+					<type>여린말</type>
+					<link_type>C</link_type>
+					
+					<link_target_code>37725</link_target_code>
+					<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=37725</link>
+					
+				</rel_info>
+				
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			<sense_info>
+				<definition>기억이나 의식 등이 잠깐 흐려지는 모양.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[forgetfully]]></trans_word>
+					<trans_dfn><![CDATA[In a manner of one's memory or conciousness being dim or lost.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[]]></trans_word>
+					<trans_dfn><![CDATA[О виде минутного замутнения рассудка, памяти.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>나는 졸다가 깜빡 잠이 들어 기차를 놓쳤다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>나는 선생님께 전화 드린다는 것을 깜빡 잊었다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>뒤통수에 축구공을 맞은 승규는 깜빡 정신을 잃고 말았다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>숙제 다 했지?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>아니. 숙제가 있다는 것을 깜빡 잊고 있었네.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>깜빡 기절하다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>깜빡 잊다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>깜빡 잠들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>깜빡 졸다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<rel_info>
+					<word>깜박</word>
+					<type>여린말</type>
+					<link_type>C</link_type>
+					
+					<link_target_code>37725</link_target_code>
+					<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=37725</link>
+					
+				</rel_info>
+				
+				
+				
+				
+			</sense_info>
+			
+			
+			
+			
+			<subword_info>
+				<subword>깜빡 가다</subword>
+				<subword_unit>
+					
+						관용구
+						
+					
+				</subword_unit>
+				
+				
+				
+				
+				<subsense_info>
+					<definition>무엇이 옳고 그른지 판단도 못할 만큼 지나치게 좋아하다.</definition>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						
+						영어
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[go with a flash]]></trans_word>
+						<trans_dfn><![CDATA[To like something so much to such an extent that one cannot judge what is right or wrong.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						러시아어
+						
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[]]></trans_word>
+						<trans_dfn><![CDATA[Чрезмерно радоваться чему-либо и не мочь объективно оценить, что правильно, что нет.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<pattern_info>
+						<pattern>1이 2-라면 깜빡 가다</pattern>
+					</pattern_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							문장
+							
+								
+						</type>
+						<example>우리 삼촌은 여자라면 깜빡 간다.</example>
+					</example_info>
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							문장
+							
+								
+						</type>
+						<example>민준이는 술이라면 자다가도 일어날 정도로 깜빡 간다.</example>
+					</example_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				</subsense_info>
+				
+				
+				
+				
+				
+			</subword_info>
+			
+			<subword_info>
+				<subword>깜빡 죽다</subword>
+				<subword_unit>
+					
+						관용구
+						
+					
+				</subword_unit>
+				
+				
+				
+				
+				
+				
+				<subsense_info>
+					<definition>무엇이 옳고 그른지 판단도 못할 만큼 지나치게 좋아하다.</definition>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						
+						영어
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[die with a flash]]></trans_word>
+						<trans_dfn><![CDATA[To like something so much to such an extent that one cannot judge what is right or wrong.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						러시아어
+						
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[]]></trans_word>
+						<trans_dfn><![CDATA[Чрезмерно радоваться чему-либо и не мочь объективно оценить, что правильно, что нет.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<pattern_info>
+						<pattern>1이 2-라면 깜빡 죽다</pattern>
+					</pattern_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							문장
+							
+								
+						</type>
+						<example>단 걸 좋아하는 내 동생은 초콜릿이라면 깜빡 죽는다.</example>
+					</example_info>
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							문장
+							
+								
+						</type>
+						<example>나는 여행이라면 돈이 아까운 줄도 모를 만큼 깜빡 죽는다.</example>
+					</example_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				</subsense_info>
+				
+				
+				
+			</subword_info>
+			
+			
+		</word_info>
+	</item>
+	
+</channel>    
+
+

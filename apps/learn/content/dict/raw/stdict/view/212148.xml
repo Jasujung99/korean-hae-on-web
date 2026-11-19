@@ -1,0 +1,187 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203831</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>212148</target_code>
+		<word_info>
+			<word><![CDATA[썰다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[썰ː다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[썰어]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[써ː러]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[써니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[써ː니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[써오]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[써ː오]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>212148001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>212148001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>213148</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[‘써리다’의 준말.]]></definition>
+						<definition_original><![CDATA[‘<sense_no>215788</sense_no>써리다’의 준말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>농업</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[논 써는 거 빼놓으면 내가 아저씨보다 못할 게 없을걸요.]]></example>
+							
+							<source><![CDATA[한수산, 유민]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

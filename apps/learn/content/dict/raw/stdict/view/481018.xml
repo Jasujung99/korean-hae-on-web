@@ -1,0 +1,232 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203315</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>481018</target_code>
+		<word_info>
+			<word><![CDATA[점심-때]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				혼종어
+				
+				
+				
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[點心]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			<original_language_info>
+				<original_language><![CDATA[때]]></original_language>
+				<language_type>고유어</language_type>
+			</original_language_info>
+			
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[점ː심때]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+			
+			<lexical_info>
+				<word>아침-때</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>456262</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=456262&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			<lexical_info>
+				<word>저녁-때</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>475916</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=475916&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			
+
+			
+			<pos_info>
+				<pos_code>481018001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>481018001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>1374066</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[점심인 때.]]></definition>
+						<definition_original><![CDATA[점심인 때.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[비가 오더니 점심때 그쳤다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[아침에 오겠다던 사람이 점심때가 지났는데도 감감무소식이다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그날 이 집 아주머니는 몸이 불편하다는 이유로 집에서 쉬고 있었고, 점심때가 지나자 미리 약속이라도 있었는지 신사동 아주머니가 찾아왔었습니다.]]></example>
+							
+							<source><![CDATA[최일남, 춘자의 사계]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>396685</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[점심밥을 먹는 때.]]></definition>
+						<definition_original><![CDATA[점심밥을 먹는 때.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그녀는 점심때가 다 지나서 라면을 끓여 먹었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그 식당은 이미 점심때를 넘겨 사람들이 거의 없었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

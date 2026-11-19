@@ -1,0 +1,137 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202040</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>467817</target_code>
+		<word_info>
+			<word><![CDATA[의자]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				한자어
+				
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[倚子]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[의자]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>467817001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>467817001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>247752</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[앉을 때에, 벽에 세워 놓고 등을 기대는 기구.]]></definition>
+						<definition_original><![CDATA[앉을 때에, 벽에 세워 놓고 등을 기대는 기구.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>등자02</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>136529</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=94598&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

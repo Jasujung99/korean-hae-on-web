@@ -1,0 +1,25 @@
+{
+  "channel": {
+    "total": 1,
+    "item": [
+      {
+        "sup_no": "0",
+        "target_code": "433983",
+        "pos": "명사",
+        "origin": "普通",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=433983&searchKeywordTo=3",
+          "definition": "특별하지 아니하고 흔히 볼 수 있음. 또는 뛰어나지도 열등하지도 아니한 중간 정도.",
+          "type": "일반어"
+        },
+        "word": "보통"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203236",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

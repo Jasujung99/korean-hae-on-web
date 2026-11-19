@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색</title>
+	<link>https://krdict.korean.go.kr/dicSearch/SearchView?ParaWordNo=40293</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색 결과</description>
+	<lastBuildDate>20261119203334</lastBuildDate> 
+	<total>1</total>
+	
+	<item>
+		<target_code>40293</target_code>
+		<word_info>
+			<word>등산</word>
+			<sup_no>0</sup_no>
+			<word_unit>단어</word_unit>
+			<pos>명사</pos>
+			<word_type>한자어</word_type>
+			
+			
+			<original_language_info>
+				<original_language>登山</original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+			
+			
+			<pronunciation_info>
+				<pronunciation>등산</pronunciation>
+				<link>https://krdicmedia.korean.go.kr/front/search/searchResultView.do?file_no=13029</link>
+			</pronunciation_info>
+			
+			
+			
+			<pos>명사</pos>
+			
+			
+			<der_info>
+				<word>등산하다</word>
+				<link_type>C</link_type>
+				
+				<link_target_code>48802</link_target_code>
+				<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=48802</link>
+				
+			</der_info>
+			
+			
+			
+			<word_grade>초급</word_grade>
+			
+			
+			<category_info>
+				<type>의미 범주</type>
+				<written_form>삶 &gt; 여가 활동</written_form>
+			</category_info>			
+			
+			
+			
+			
+			<category_info>
+				<type>주제 및 상황 범주</type>
+				<written_form>취미</written_form>
+			</category_info>			
+			
+			
+			
+			
+			
+			
+			<sense_info>
+				<definition>운동이나 놀이 등의 목적으로 산에 올라감.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[hike; mountain climbing]]></trans_word>
+					<trans_dfn><![CDATA[Mountain climbing with the purpose of exercising, amusement, etc.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[восхождение на гору]]></trans_word>
+					<trans_dfn><![CDATA[Подъём на гору с целью занятия спортом или проведения отдыха.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>등산 모임.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>등산 모자.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>등산 양말.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>등산 용구.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>등산 용품.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>등산 인파.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>등산 장비.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>등산 코스.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>등산을 가다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>등산을 하다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>등산을 할 때에는 산에 쓰레기를 버리지 말아야 한다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>아내는 등산이 건강에 좋다며 아침마다 뒷산에 올랐다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>산 정상까지는 아직 멀었어?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>등산 코스를 따라 가면 두 시간은 더 올라가야 해.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				<rel_info>
+					<word>하산</word>
+					<type>반대말</type>
+					<link_type>C</link_type>
+					
+					<link_target_code>84334</link_target_code>
+					<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=84334</link>
+					
+				</rel_info>
+				
+				
+				
+				
+				
+				
+				<multimedia_info>
+					<label>등산</label>
+					<type>사진</type>
+					<link>https://krdicmedia.korean.go.kr/front/search/searchResultView.do?file_no=197056</link>
+				</multimedia_info>
+				
+				
+				
+				<multimedia_info>
+					<label>등산</label>
+					<type>사진</type>
+					<link>https://krdicmedia.korean.go.kr/front/search/searchResultView.do?file_no=197057</link>
+				</multimedia_info>
+				
+				
+				
+			</sense_info>
+			
+			
+			
+		</word_info>
+	</item>
+	
+</channel>    
+
+

@@ -1,0 +1,467 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202214</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>456388</target_code>
+		<word_info>
+			<word><![CDATA[언제]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[언ː제]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+			
+			<relation_info>
+				<word>언제는 외조할미 콩죽으로 살았나</word>
+				<type>속담</type>
+				<link_target_code>530235</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530235&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>언제 쓰자는 하눌타리냐</word>
+				<type>속담</type>
+				<link_target_code>530236</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530236&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[언제＜석상＞←어느+적+-의]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>456388001</pos_code>
+				<pos>대명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>456388001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>478031</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[잘 모르는 때를 가리키는 지시 대명사.]]></definition>
+						<definition_original><![CDATA[잘 모르는 때를 가리키는 지시 대명사.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[의문문에 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[휴가가 언제부터지?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[보고서를 언제까지 제출해야 합니까?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[약속 시간이 언제였더라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[언제까지 이렇게 살 수는 없다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그때가 언제지?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>481257</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[과거의 어느 때.]]></definition>
+						<definition_original><![CDATA[과거의 어느 때.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[조사 ‘는’과 함께 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[언제는 빌려달라고 애원하더니 지금은 도리어 큰소리를 친다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[언제는 결혼하자고 하더니 이제 와서 헤어지자고 한다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>62730</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[때가 특별히 정해지지 않았음을 나타내는 말.]]></definition>
+						<definition_original><![CDATA[때가 특별히 정해지지 않았음을 나타내는 말.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[조사 ‘든’, ‘든지’, ‘라도’ 따위와 함께 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[언제든 오십시오.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[전화 한 통만 하시면 언제든지 서비스를 받으실 수 있습니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[맡기신 물건은 언제라도 찾아가실 수 있습니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+			<pos_info>
+				<pos_code>456388002</pos_code>
+				<pos>부사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>456388002001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>2541</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[잘 모르는 때를 물을 때 쓰는 말.]]></definition>
+						<definition_original><![CDATA[잘 모르는 때를 물을 때 쓰는 말.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[의문문에 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[언제 만날까?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[언제 왔니?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[언제 가는 것이 좋겠습니까?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>31674</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[정해지지 않은 막연한 때를 나타내는 말.]]></definition>
+						<definition_original><![CDATA[정해지지 않은 막연한 때를 나타내는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[언제 한번 만나자.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[시간이 나면 언제 등산이나 갑시다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>484687</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[때가 특별히 정해지지 않았음을 나타내는 말.]]></definition>
+						<definition_original><![CDATA[때가 특별히 정해지지 않았음을 나타내는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그 노래는 언제 들어도 좋다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[설악산은 언제 보아도 아름답다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

@@ -1,0 +1,49 @@
+{
+  "channel": {
+    "total": 3,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "418363",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=418363&searchKeywordTo=3",
+          "definition": "붙어 있는 것을 잡아떼다.",
+          "type": "일반어"
+        },
+        "word": "따다"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "97393",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=97393&searchKeywordTo=3",
+          "definition": "찾아온 사람을 핑계를 대고 만나지 않다.",
+          "type": "일반어"
+        },
+        "word": "따다"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "97397",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=97397&searchKeywordTo=3",
+          "definition": "→ 뜨다.",
+          "type": "일반어"
+        },
+        "word": "따다"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203434",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

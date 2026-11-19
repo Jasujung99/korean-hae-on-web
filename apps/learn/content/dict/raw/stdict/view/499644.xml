@@ -1,0 +1,136 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202830</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>499644</target_code>
+		<word_info>
+			<word><![CDATA[포장]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				한자어
+				
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[褒章]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[포장]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>499644001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>499644001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>310786</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[나라와 사회에 공헌한 사람에게 칭찬하는 표시로 주는 휘장. 훈장에 다음가는 훈격(勳格)으로, 가슴에 달도록 만들어졌다. 건국·국민·무공·근정·보국·예비군·수교·산업·새마을·문화·체육·과학 기술의 열두 가지가 있다.]]></definition>
+						<definition_original><![CDATA[나라와 사회에 공헌한 사람에게 칭찬하는 표시로 주는 휘장. 훈장에 다음가는 훈격(勳格)으로, 가슴에 달도록 만들어졌다. 건국·국민·무공·근정·보국·예비군·수교·산업·새마을·문화·체육·과학 기술의 열두 가지가 있다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>법률</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[우리말 보급에 애써 온 사람이 포장을 받았다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색</title>
+	<link>https://krdict.korean.go.kr/dicSearch/SearchView?ParaWordNo=57313</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색 결과</description>
+	<lastBuildDate>20261119203017</lastBuildDate> 
+	<total>1</total>
+	
+	<item>
+		<target_code>57313</target_code>
+		<word_info>
+			<word>잠깐</word>
+			<sup_no>2</sup_no>
+			<word_unit>단어</word_unit>
+			<pos>부사</pos>
+			<word_type>고유어</word_type>
+			
+			
+			
+			<pronunciation_info>
+				<pronunciation>잠깐</pronunciation>
+				<link>https://krdicmedia.korean.go.kr/front/search/searchResultView.do?file_no=55244</link>
+			</pronunciation_info>
+			
+			
+			
+			<pos>부사</pos>
+			
+			
+			<word_grade>초급</word_grade>
+			
+			
+			<category_info>
+				<type>의미 범주</type>
+				<written_form>개념 &gt; 시간</written_form>
+			</category_info>			
+			
+			
+			
+			
+			<category_info>
+				<type>주제 및 상황 범주</type>
+				<written_form>시간 표현하기</written_form>
+			</category_info>			
+			
+			
+			
+			
+			
+			
+			<sense_info>
+				<definition>아주 짧은 시간 동안에.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[for a moment; for an instant; for a while]]></trans_word>
+					<trans_dfn><![CDATA[For a very short time.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[на минутку; на секунду]]></trans_word>
+					<trans_dfn><![CDATA[На очень короткий промежуток времени.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>나는 수업 시간에 잠깐 졸았다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>승규는 서울에 간 김에 삼촌 댁에 잠깐 들렀다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>왜 이렇게 늦게 일어났어요?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>잠깐 눈 좀 붙인다는 게 계속 자 버렸네요.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>잠깐 기다리다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>잠깐 끊기다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>잠깐 들르다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>잠깐 쉬다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>잠깐 이야기하다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>잠깐 자다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>민준은 전화 받는 동안 방 밖에서 잠깐 기다리라고 했다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			
+			
+		</word_info>
+	</item>
+	
+</channel>    
+
+

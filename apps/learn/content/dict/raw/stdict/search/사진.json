@@ -1,0 +1,85 @@
+{
+  "channel": {
+    "total": 6,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "167830",
+        "pos": "명사",
+        "origin": "仕進",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167830&searchKeywordTo=3",
+          "definition": "벼슬아치가 규정된 시간에 근무지로 출근함.",
+          "type": "일반어"
+        },
+        "word": "사진"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "167831",
+        "pos": "명사",
+        "origin": "司津",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167831&searchKeywordTo=3",
+          "definition": "조선 시대에, 궁중에서 쓰는 생선·고기·소금·땔나무·숯 따위를 공급하던 관아. 태조 원년(1392)에 설치하여 고종 19년(1882)에 없앴다.",
+          "type": "일반어"
+        },
+        "word": "사진"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "167832",
+        "pos": "명사",
+        "origin": "沙塵/砂塵",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167832&searchKeywordTo=3",
+          "definition": "연기와 같이 자욱하게 일어나는 모래 섞인 흙먼지.",
+          "type": "일반어"
+        },
+        "word": "사진"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "439867",
+        "pos": "명사",
+        "origin": "査陳",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=439867&searchKeywordTo=3",
+          "definition": "예전에, 묵힌 땅에 대한 실태를 조사하던 일.",
+          "type": "일반어"
+        },
+        "word": "사진"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "168083",
+        "pos": "명사",
+        "origin": "絲診",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=168083&searchKeywordTo=3",
+          "definition": "맥과 연결된 실의 끝을 잡고 그 감촉으로 살피는 진맥. 부녀자의 몸에 손을 대거나 마주 보지 않도록 벽을 사이하여 진맥한다.",
+          "type": "일반어"
+        },
+        "word": "사진"
+      },
+      {
+        "sup_no": "6",
+        "target_code": "439868",
+        "pos": "명사",
+        "origin": "寫眞",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=439868&searchKeywordTo=3",
+          "definition": "물체의 형상을 감광막 위에 나타나도록 찍어 오랫동안 보존할 수 있게 만든 영상. 물체로부터 오는 광선을 사진기 렌즈로 모아 필름, 건판 따위에 결상(結像)을 시킨 뒤에, 이것을 현상액으로 처리하여 음화(陰畫)를 만들고 다시 인화지로 양화(陽畫)를 만든다.",
+          "type": "일반어"
+        },
+        "word": "사진"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202051",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

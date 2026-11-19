@@ -1,0 +1,257 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202056</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>402860</target_code>
+		<word_info>
+			<word><![CDATA[기차]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				한자어
+				
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[汽車]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[기차]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>402860001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>402860001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>588445</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[여객차나 화차를 끌고 다니는 철도 차량. 증기 기관차, 디젤 기관차, 전기 기관차 따위가 있다.]]></definition>
+						<definition_original><![CDATA[여객차나 화차를 끌고 다니는 철도 차량. 증기 기관차, 디젤 기관차, 전기 기관차 따위가 있다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>기관-차</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>478551</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=405073&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>489789</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[기관차에 여객차나 화물차를 연결하여 궤도 위를 운행하는 차량. 사람이나 화물을 실어 나른다.]]></definition>
+						<definition_original><![CDATA[기관차에 여객차나 화물차를 연결하여 궤도 위를 운행하는 차량. 사람이나 화물을 실어 나른다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[부산행 기차.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[기차를 타다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[여장을 꾸려 기차에 오르다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[기차가 철도 위를 달린다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[삼랑진 쪽에서 검은 연기를 내뿜으며 기차가 플랫폼으로 미끄러져 들어왔다.]]></example>
+							
+							<source><![CDATA[김원일, 불의 제전]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>증기-차</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>434949</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=307727&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>철륜</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>484088</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=488640&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>화차02</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>522359</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=501790&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

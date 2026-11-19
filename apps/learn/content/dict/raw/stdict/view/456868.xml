@@ -1,0 +1,684 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202629</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>456868</target_code>
+		<word_info>
+			<word><![CDATA[아버지]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[아버지]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+			
+			<relation_info>
+				<word>아버지는 아들이 잘났다고 하면 기뻐하고 형은 아우가 더 낫다고 하면 노한다</word>
+				<type>속담</type>
+				<link_target_code>530301</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530301&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>아버지 종도 내 종만 못하다</word>
+				<type>속담</type>
+				<link_target_code>530303</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530303&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			
+
+			
+			
+			<lexical_info>
+				<word>가부04</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>1523</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=1523&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			<lexical_info>
+				<word>가친</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>390002</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=390002&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			<lexical_info>
+				<word>선-대인</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>449645</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=449645&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			<lexical_info>
+				<word>선친</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>443370</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=443370&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			<lexical_info>
+				<word>아빠</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>217717</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=217717&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			<lexical_info>
+				<word>춘부-장</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>490506</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=490506&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			
+
+			
+			<pos_info>
+				<pos_code>456868001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>456868001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>589203</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[자기를 낳아 준 남자를 이르거나 부르는 말.]]></definition>
+						<definition_original><![CDATA[자기를 낳아 준 남자를 이르거나 부르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[아버지를 찾다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[아버지의 얼굴을 떠올리다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[아버지를 아버지라 부를 수 있었던 감격스러움 때문에 강바람에 흔들리는 연초록빛의 물억새처럼 마음이 가벼워졌다.]]></example>
+							
+							<source><![CDATA[문순태, 타오르는 강]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>아버-님</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>442623</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=456883&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>아비01</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>553000</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=458341&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>어머니01</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>17531</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=460545&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>589205</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[자녀를 둔 남자를 자식에 대한 관계로 이르거나 부르는 말.]]></definition>
+						<definition_original><![CDATA[자녀를 둔 남자를 자식에 대한 관계로 이르거나 부르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[아버지가 되다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[성균이 아버지, 웬일이세요? 물건 하러 나오셨나 보죠.]]></example>
+							
+							<source><![CDATA[한수산, 유민]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>아버-님</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>446216</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=456883&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>아비01</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>556482</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=458341&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>어머니01</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>47813</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=460545&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>589206</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[자녀의 이름 뒤에 붙여, 자기 남편을 이르거나 부르는 말.]]></definition>
+						<definition_original><![CDATA[자녀의 이름 뒤에 붙여, 자기 남편을 이르거나 부르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[죄인은 나지 우리 형님은 아무 죄 없으니, 여보, 치려거든 나를 쳐요. 네, 수남 아버지.]]></example>
+							
+							<source><![CDATA[박완서, 도시의 흉년]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>589207</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[자기를 낳아 준 남자처럼 삼은 이를 이르거나 부르는 말.]]></definition>
+						<definition_original><![CDATA[자기를 낳아 준 남자처럼 삼은 이를 이르거나 부르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>아버-님</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>448246</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=456883&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>어머니01</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>66269</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=460545&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>589208</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[자기의 아버지와 나이가 비슷한 남자를 친근하게 이르거나 부르는 말.]]></definition>
+						<definition_original><![CDATA[자기의 아버지와 나이가 비슷한 남자를 친근하게 이르거나 부르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[아버지, 저 철수 친구 영호입니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>아버-님</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>448712</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=456883&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>어머니01</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>69769</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=460545&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>589209</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[시조부모 앞에서 시아버지를 이르거나 부르는 말.]]></definition>
+						<definition_original><![CDATA[시조부모 앞에서 시아버지를 이르거나 부르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>589210</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 일을 처음 이루거나 완성한 사람을 비유적으로 이르는 말.]]></definition>
+						<definition_original><![CDATA[어떤 일을 처음 이루거나 완성한 사람을 비유적으로 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[음악의 아버지.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[현대 미술의 아버지.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[갈릴레이는 자연 과학의 아버지라고 일컬어진다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>589211</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[기독교에서, ‘하나님’을 친근하게 이르거나 부르는 말.]]></definition>
+						<definition_original><![CDATA[기독교에서, ‘<sense_no>365534</sense_no>하나님’을 친근하게 이르거나 부르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>기독교</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

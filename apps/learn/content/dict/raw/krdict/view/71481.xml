@@ -1,0 +1,1052 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색</title>
+	<link>https://krdict.korean.go.kr/dicSearch/SearchView?ParaWordNo=71481</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색 결과</description>
+	<lastBuildDate>20261119203341</lastBuildDate> 
+	<total>1</total>
+	
+	<item>
+		<target_code>71481</target_code>
+		<word_info>
+			<word>틀리다</word>
+			<sup_no>1</sup_no>
+			<word_unit>단어</word_unit>
+			<pos>동사</pos>
+			<word_type>고유어</word_type>
+			
+			
+			
+			<pronunciation_info>
+				<pronunciation>틀리다</pronunciation>
+				<link>https://krdicmedia.korean.go.kr/front/search/searchResultView.do?file_no=91693</link>
+			</pronunciation_info>
+			
+			
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation>틀리어</conjugation>
+					
+					
+					
+					<pronunciation_info>
+						<pronunciation>틀리어</pronunciation>
+					</pronunciation_info>
+					
+					
+					
+					<pronunciation_info>
+						<pronunciation>틀리여</pronunciation>
+					</pronunciation_info>
+					
+					
+					
+				</conjugation_info>
+				
+				
+				<abbreviation_info>
+					<abbreviation>틀려</abbreviation>
+					
+				</abbreviation_info>
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation>틀리니</conjugation>
+					
+					
+					
+					
+					
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+			<pos>동사</pos>
+			
+			
+			<word_grade>초급</word_grade>
+			
+			
+			<category_info>
+				<type>의미 범주</type>
+				<written_form>인간 &gt; 인지 행위</written_form>
+			</category_info>			
+			
+			
+			
+			
+			<category_info>
+				<type>주제 및 상황 범주</type>
+				<written_form>없음</written_form>
+			</category_info>			
+			
+			
+			
+			
+			
+			
+			<sense_info>
+				<definition>계산이나 답, 사실 등이 맞지 않다.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[be wrong; be incorrect]]></trans_word>
+					<trans_dfn><![CDATA[For a calculation, answer, fact, etc., to not be correct.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[неверный; неправильный; ошибочный; не совпадать; не соответствовать]]></trans_word>
+					<trans_dfn><![CDATA[Быть неверным (о подсчёте, ответе, факте или пр.).]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				<pattern_info>
+					<pattern>1이 틀리다</pattern>
+				</pattern_info>
+				
+				
+				
+				<pattern_info>
+					<pattern>1이 2를 틀리다</pattern>
+				</pattern_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>시험지를 채점해 보니 수학에서 세 문제가 틀렸다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>나는 그가 쓴 글을 읽으며 맞춤법이 틀린 곳을 고쳐 주었다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>사람들이 지수가 결혼을 못 하는 건 성격이 나빠서래. 그게 말이 돼?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>사실 틀린 이야기는 아니지. 지수가 좀 괴팍하긴 하잖아.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>틀린 말.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>틀린 사실.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>계산이 틀리다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>답이 틀리다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>대사를 틀리다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			<sense_info>
+				<definition>바라거나 하려는 일이 잘되지 못하다.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[be frustrated; be baffled]]></trans_word>
+					<trans_dfn><![CDATA[For something hoped for or intended to go wrong.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[невозможный]]></trans_word>
+					<trans_dfn><![CDATA[Не получаться (о желаемом или планируемом деле).]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				
+				
+				<pattern_info>
+					<pattern>1이 틀리다</pattern>
+				</pattern_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>7시가 약속인데 7시에 일어났으니 시간에 맞춰 가기는 이미 틀린 일이었다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>도망을 간 그에게 빌려준 돈을 돌려받기는 틀린 것 같다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>에잇, 이렇게 가뭄이 계속되니 이번에 풍년이 되기는 틀렸어. </example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>그러게, 올해 농사는 다 망쳤구먼.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>틀린 일.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>성공하기는 틀리다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>잘 되기는 틀리다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			<sense_info>
+				<definition>마음이나 행동 등이 올바르지 못하고 비뚤어지다.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[be warped; be twisted]]></trans_word>
+					<trans_dfn><![CDATA[For one's mind or behavior to be extremely twisted, not upright.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[неправильный; идти вразрез]]></trans_word>
+					<trans_dfn><![CDATA[Быть неправильным, искажённым (о душе, действии и пр.).]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<pattern_info>
+					<pattern>1이 틀리다</pattern>
+				</pattern_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>감독은 선수들에게 경기에 임하는 자세가 틀렸다고 정신력을 강조했다. </example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>걔는 사람이 틀렸어. 예의도 없고 자기 밖에 모르는 아주 이기적인 아이야. </example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>걔가 성격이 좀 모나긴 했어도 그렇게 나쁜 아이는 아닌데.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>사람이 틀리다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>성격이 틀리다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>인간이 틀리다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>자세가 틀리다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>태도가 틀리다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>선생님은 건방지게 말하는 한 학생에게 태도가 틀렸다며 크게 나무랐다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			
+			
+		</word_info>
+	</item>
+	
+</channel>    
+
+

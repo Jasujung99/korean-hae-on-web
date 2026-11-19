@@ -1,0 +1,37 @@
+{
+  "channel": {
+    "total": 2,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "246648",
+        "pos": "명사",
+        "origin": "雲箋",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=246648&searchKeywordTo=3",
+          "definition": "상대편의 편지를 높여 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "운전"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "246649",
+        "pos": "명사",
+        "origin": "運轉",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=246649&searchKeywordTo=3",
+          "definition": "기계나 자동차 따위를 움직여 부림.",
+          "type": "일반어"
+        },
+        "word": "운전"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202221",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

@@ -1,0 +1,481 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202817</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>498265</target_code>
+		<word_info>
+			<word><![CDATA[팔다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[팔다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[팔아]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[파라]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[파니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[파니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[파오]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[파오]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			<origin><![CDATA[＜다＜석상＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>498265001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>498265001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…에/에게 …을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>30641</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[값을 받고 물건이나 권리 따위를 남에게 넘기거나 노력 따위를 제공하다.]]></definition>
+						<definition_original><![CDATA[값을 받고 물건이나 권리 따위를 남에게 넘기거나 노력 따위를 제공하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[학생들에게 책을 팔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[정부에 땅을 팔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 사람들에게 재주를 팔아서 먹고 산다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>사다</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>182941</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167720&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>69482</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[사람을 돈을 받고 물건처럼 거래하다.]]></definition>
+						<definition_original><![CDATA[사람을 돈을 받고 물건처럼 거래하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[아이를 파는 행위는 범죄이다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[심지어 몹시 곤궁한 집에서는 제 가족을 노비로 팔기도 하였으며….]]></example>
+							
+							<source><![CDATA[최명희, 혼불]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>70608</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[주의를 집중하여야 할 곳에 두지 아니하고 다른 데로 돌리다.]]></definition>
+						<definition_original><![CDATA[주의를 집중하여야 할 곳에 두지 아니하고 다른 데로 돌리다.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[‘눈’, ‘정신’ 따위와 함께 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[너는 도대체 어디에 정신을 팔고 있었니?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>498265001002</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>31536</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[자기의 이익을 위하여 무엇을 끌어다가 핑계를 대다.]]></definition>
+						<definition_original><![CDATA[자기의 이익을 위하여 무엇을 끌어다가 핑계를 대다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[아무리 급하다고 해도 아버지의 이름을 팔아서 해결할 생각은 전혀 없다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>62840</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[옳지 아니한 이득을 얻으려고 양심이나 지조 따위를 저버리다.]]></definition>
+						<definition_original><![CDATA[옳지 아니한 이득을 얻으려고 양심이나 지조 따위를 저버리다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[나라를 판 매국노.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[양심을 팔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[지조를 팔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>498265001003</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…에서/에게서 …을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>308897</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[돈을 주고 곡식을 사다.]]></definition>
+						<definition_original><![CDATA[돈을 주고 곡식을 사다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[아버지는 늘 다니는 가게에서 쌀을 팔아 오셨다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[친구에게서 싸게 쌀을 팔아 오는 덕분에 근근이 생활을 꾸려 나가고 있다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

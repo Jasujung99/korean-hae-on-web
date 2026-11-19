@@ -1,0 +1,109 @@
+{
+  "channel": {
+    "total": 8,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "76237",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=76237&searchKeywordTo=3",
+          "definition": "심마니들의 은어로, ‘불’을 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "달"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "76238",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=76238&searchKeywordTo=3",
+          "definition": "심마니들의 은어로, ‘씨’를 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "달"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "413676",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=413676&searchKeywordTo=3",
+          "definition": "연의 머리, 허리, 가운데와 네 귀를 얼러서 꼬챙이처럼 깎아 붙이는 대나무. 머릿달, 허릿달, 꽁숫달, 귓달 따위로 나눈다.",
+          "type": "일반어"
+        },
+        "word": "달"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "413862",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=413862&searchKeywordTo=3",
+          "definition": "볏과의 여러해살이풀. 갈대와 비슷한데 높이는 1.5~3미터이고 마디에 잔털이 많으며, 땅 위에 덩굴져 번성하기도 한다. 9월에 띠와 같은 꽃이 핀다. 연못이나 강변 등지에 자라는데 한국의 경북·함경·제주, 일본에 분포한다.",
+          "type": "일반어"
+        },
+        "word": "달"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "413863",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=413863&searchKeywordTo=3",
+          "definition": "지구의 위성(衛星). 햇빛을 반사하여 밤에 밝은 빛을 낸다. 표면에 많은 분화구가 있으며 대기는 없다. 공전 주기는 27.32일, 반지름은 1,738km이다.",
+          "type": "일반어"
+        },
+        "word": "달"
+      },
+      {
+        "sup_no": "6",
+        "target_code": "76240",
+        "pos": "품사 없음",
+        "origin": "達",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=76240&searchKeywordTo=3",
+          "definition": "‘달하다’의 어근.",
+          "type": "일반어"
+        },
+        "word": "달"
+      },
+      {
+        "sup_no": "7",
+        "target_code": "76302",
+        "pos": "명사",
+        "origin": "㿹",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=76302&searchKeywordTo=3",
+          "definition": "껍질이 살갗에서 벗겨져 있는 상태.",
+          "type": "일반어"
+        },
+        "word": "달"
+      },
+      {
+        "sup_no": "8",
+        "target_code": "77643",
+        "pos": "품사 없음",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=77643&searchKeywordTo=3",
+          "definition": "‘-다고 할’이 줄어든 말.",
+          "type": "일반어"
+        },
+        "word": "-달"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203403",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

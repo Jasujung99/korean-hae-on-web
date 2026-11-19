@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색</title>
+	<link>https://krdict.korean.go.kr/dicSearch/SearchView?ParaWordNo=28030</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색 결과</description>
+	<lastBuildDate>20261119202050</lastBuildDate> 
+	<total>1</total>
+	
+	<item>
+		<target_code>28030</target_code>
+		<word_info>
+			<word>사진</word>
+			<sup_no>0</sup_no>
+			<word_unit>단어</word_unit>
+			<pos>명사</pos>
+			<word_type>한자어</word_type>
+			
+			
+			<original_language_info>
+				<original_language>寫眞</original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+			
+			
+			<pronunciation_info>
+				<pronunciation>사진</pronunciation>
+				<link>https://krdicmedia.korean.go.kr/front/search/searchResultView.do?file_no=80187</link>
+			</pronunciation_info>
+			
+			
+			
+			<pos>명사</pos>
+			
+			
+			<word_grade>초급</word_grade>
+			
+			
+			<category_info>
+				<type>의미 범주</type>
+				<written_form>문화 &gt; 예술</written_form>
+			</category_info>			
+			
+			
+			
+			
+			<category_info>
+				<type>주제 및 상황 범주</type>
+				<written_form>취미</written_form>
+			</category_info>			
+			
+			
+			
+			
+			
+			
+			<sense_info>
+				<definition>사물의 모습을 오래 보존할 수 있도록 사진기로 찍어 종이나 컴퓨터 등에 나타낸 영상.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[picture; photo]]></trans_word>
+					<trans_dfn><![CDATA[An image of a certain object recorded by a camera, and then produced in a print format, in a file on the computer, etc. to preserve it for a long period of time. ]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[фотография]]></trans_word>
+					<trans_dfn><![CDATA[Оптическое изображение, проявленное на бумаге или экране монитора и т.п., запечатлённое фотоаппаратом.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>나는 여행을 가면 기념으로 꼭 사진을 찍는다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>이 교수의 인터뷰 기사가 사진과 함께 신문에 실렸다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>어머니는 가끔씩 모아 둔 옛날 사진들을 보면서 추억을 떠올리곤 하신다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>학생들이 모두 모이자 선생님은 하나, 둘, 셋까지 세고 사진을 찍으셨다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>입학 원서를 제출하려고 하는데 사진은 몇 장이 필요한가요?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>원서에 붙여서 한 장만 내면 됩니다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>광고 사진.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>대형 사진.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>스냅 사진.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>위성 사진.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>작품 사진.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>졸업 사진.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>컬러 사진.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>초음파 사진.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>흑백 사진.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>선명한 사진.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>좋은 사진.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>사진 한 장.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>사진 기자.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>사진 자료.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>사진 작품.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>사진 촬영.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>사진 현상.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>사진이 나오다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>사진이 잘 나오다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>사진이 잘 받다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>사진을 걸다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>사진을 박다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>사진을 인화하다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>사진을 찍다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>사진을 현상하다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>사진을 확대하다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>사진에 담기다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>사진에 담다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			
+			
+		</word_info>
+	</item>
+	
+</channel>    
+
+

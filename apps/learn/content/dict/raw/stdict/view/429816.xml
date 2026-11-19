@@ -1,0 +1,597 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203628</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>429816</target_code>
+		<word_info>
+			<word><![CDATA[밭]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[받]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[밭이]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[바치]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[밭을]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[바틀]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[밭만]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[반만]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+			
+			<relation_info>
+				<word>밭을 사려면 변두리를 보라</word>
+				<type>속담</type>
+				<link_target_code>528328</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528328&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밭 장자는 있어도 논 장자는 없다</word>
+				<type>속담</type>
+				<link_target_code>528329</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528329&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밭 팔아 논 사면 좋아도 논 팔아 밭 사면 안 된다</word>
+				<type>속담</type>
+				<link_target_code>528330</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528330&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밭 팔아 논 살 때는 이밥[흰쌀밥] 먹자는 뜻</word>
+				<type>속담</type>
+				<link_target_code>528331</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528331&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<norm_info>
+				
+				<type>한글 맞춤법</type>
+				
+				
+				
+				<desc><![CDATA[‘밭’이 일부 명사의 바로 뒤에 쓰여 그것이 많이 있거나 나는 곳임을 나타낼 때는 앞말에 붙여 쓴다.]]></desc>
+				
+			</norm_info>
+			
+			
+			
+			<origin><![CDATA[밭＜석상＞]]></origin>
+			
+			
+
+			
+			
+			<lexical_info>
+				<word>논01</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>69446</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=69446&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			
+
+			
+			<pos_info>
+				<pos_code>429816001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>429816001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>10731</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[물을 대지 아니하거나 필요한 때에만 물을 대어서 야채나 곡류를 심어 농사를 짓는 땅.]]></definition>
+						<definition_original><![CDATA[물을 대지 아니하거나 필요한 때에만 물을 대어서 야채나 곡류를 심어 농사를 짓는 땅.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[밭 한 뙈기.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[밭을 일구다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[밭을 갈다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[밭을 매다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[밭에 씨를 뿌리다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+						
+						<multimedia_info>
+							
+							<lable><![CDATA[밭]]></lable>
+							
+							<type>
+								
+								
+								
+								
+								사진
+								
+								
+							</type>
+							<link><![CDATA[https://dicmedia.korean.go.kr/front/view/mediaView.do?file_no=195491]]></link>
+						</multimedia_info>
+						
+						<multimedia_info>
+							
+							<lable><![CDATA[밭]]></lable>
+							
+							<type>
+								
+								
+								
+								
+								사진
+								
+								
+							</type>
+							<link><![CDATA[https://dicmedia.korean.go.kr/front/view/mediaView.do?file_no=197062]]></link>
+						</multimedia_info>
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>육전04</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>245452</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=258821&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>전03</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>360048</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=286772&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>한전01</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>549367</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=367883&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>한지01</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>315172</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=499904&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>69734</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[장기판, 고누판, 윷판, 바둑판 따위에서 말이 머무르는 자리.]]></definition>
+						<definition_original><![CDATA[장기판, 고누판, 윷판, 바둑판 따위에서 말이 머무르는 자리.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[말을 밭에 놓다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>72631</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 사물의 바탕이나 토대를 비유적으로 이르는 말.]]></definition>
+						<definition_original><![CDATA[어떤 사물의 바탕이나 토대를 비유적으로 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[왕실과 사대부는 백성을 밭 삼아 농사를 지었다.]]></example>
+							
+							<source><![CDATA[현기영, 변방에 우짖는 새]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>72509</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[남녀 생식 관계에서, 자녀를 출산하는 여자나 여자의 생식기를 남자의 씨에 상대하여 비유적으로 이르는 말.]]></definition>
+						<definition_original><![CDATA[남녀 생식 관계에서, 자녀를 출산하는 여자나 여자의 생식기를 남자의 씨에 상대하여 비유적으로 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[김윤식은 초렴의 몸을 빌려 이목구비가 또렷하고 체모가 제대로 빠진 남아를 하나 얻었다. 씨는 여물지 못해도 밭이 좋았나 보다.]]></example>
+							
+							<source><![CDATA[현기영, 변방에 우짖는 새]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>41596</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[그 식물이나 자연물, 수산물 따위가 많이 있거나 나는 곳.]]></definition>
+						<definition_original><![CDATA[그 식물이나 자연물, 수산물 따위가 많이 있거나 나는 곳.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[일부 명사 뒤에 붙어]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[고추밭.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[대나무밭.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[흙밭.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[파래밭.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>73277</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[장기판·고누판·윷판·바둑판 따위에서, 말이 머무르는 자리를 세는 단위.]]></definition>
+						<definition_original><![CDATA[장기판·고누판·윷판·바둑판 따위에서, 말이 머무르는 자리를 세는 단위.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[수량을 나타내는 말 뒤에 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[세 밭을 가다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

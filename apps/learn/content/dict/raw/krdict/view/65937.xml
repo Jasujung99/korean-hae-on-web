@@ -1,0 +1,4618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색</title>
+	<link>https://krdict.korean.go.kr/dicSearch/SearchView?ParaWordNo=65937</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색 결과</description>
+	<lastBuildDate>20261119203743</lastBuildDate> 
+	<total>1</total>
+	
+	<item>
+		<target_code>65937</target_code>
+		<word_info>
+			<word>씨</word>
+			<sup_no>1</sup_no>
+			<word_unit>단어</word_unit>
+			<pos>명사</pos>
+			<word_type>고유어</word_type>
+			
+			
+			
+			<pronunciation_info>
+				<pronunciation>씨</pronunciation>
+				<link>https://krdicmedia.korean.go.kr/front/search/searchResultView.do?file_no=84642</link>
+			</pronunciation_info>
+			
+			
+			
+			<pos>명사</pos>
+			
+			
+			<word_grade>중급</word_grade>
+			
+			
+			<category_info>
+				<type>의미 범주</type>
+				<written_form>동식물 &gt; 식물의 부분</written_form>
+			</category_info>			
+			
+			
+			
+			
+			<category_info>
+				<type>주제 및 상황 범주</type>
+				<written_form>음식 설명하기</written_form>
+			</category_info>			
+			
+			
+			
+			
+			
+			
+			<sense_info>
+				<definition>식물의 열매 속에 있는, 앞으로 싹이 터서 자라게 될 단단한 물질.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[seed]]></trans_word>
+					<trans_dfn><![CDATA[The hard substance inside the fruit of a plant that will bud and grow.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[семя; семена; кость; косточка]]></trans_word>
+					<trans_dfn><![CDATA[Твёрдое вещество внутри плода растения, из которого прорастает росток.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>농부는 봄이 되자 곡식의 씨를 밭에 뿌렸다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>아이들은 수박을 먹으면서 수박의 씨를 멀리 뱉는 놀이를 하였다. </example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>참외에 있는 씨는 왜 다 발라내는 거야?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>응, 난 씨가 잘 소화가 안 되는 것 같아서.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>참외의 씨.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>씨 없는 수박.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>씨를 발라내다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>씨를 뿌리다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>씨를 심다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			<sense_info>
+				<definition>동물을 낳아 번식시키는 근원이 되는 것.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[sperm]]></trans_word>
+					<trans_dfn><![CDATA[The source of an animal's birth and reproduction.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[семя]]></trans_word>
+					<trans_dfn><![CDATA[Начало, благодаря которому рождается и размножается животное.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>씨를 받다. </example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>아버지는 암소가 새끼를 벨 수 있도록 씨를 받게 했다. </example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>김 씨는 자기 마구간에 있는 말들이 씨가 좋은 것들이라며 자랑을 했다. </example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>개가 아주 잘생겼네요.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>좋은 씨를 받아서 낳은 놈이거든요.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>씨를 베다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			<sense_info>
+				<definition>(비유적으로) 앞으로 커질 수 있는 근원.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[seed]]></trans_word>
+					<trans_dfn><![CDATA[(figurative) A source from which something can grow in the future.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[семя]]></trans_word>
+					<trans_dfn><![CDATA[(перен.) Корень чего-либо, который может в будущем увеличиться.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>문제의 씨.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>김 선생이 승규를 편애하는 것은 다른 학생들에게 불만의 씨가 되었다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>급하게 빌려온 돈으로 당장의 걱정은 해결했지만 그 빚은 다시 근심의 씨가 되었다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>이렇게 놀기만 하다가 재수하는 거 아니야?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>야, 말이 씨가 돼. </example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>불행의 씨.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>씨가 되다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			<sense_info>
+				<definition>(낮잡아 이르는 말로) 어떤 가문의 혈통.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[lineage]]></trans_word>
+					<trans_dfn><![CDATA[(disparaging) The bloodline of a family.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[]]></trans_word>
+					<trans_dfn><![CDATA[(пренебр.) Родословие какой-либо семьи.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>김 대감은 양반, 상놈의 씨는 따로 있다면서 노비들을 업신여겼다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>김 씨 아들이 도박하다가 경찰에 잡혀갔대요.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>씨는 못 속인다더니 아들도 그 모양이네.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>양반의 씨.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>상놈의 씨.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>씨가 다르다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>씨가 따로 있다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>씨는 못 속인다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>사람들은 이복형제인 둘을 두고 씨가 다르니 성격도 너무 다르다며 수군거렸다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			<sense_info>
+				<definition>그 식물이나 동물의 씨를 나타내는 말.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[seed]]></trans_word>
+					<trans_dfn><![CDATA[A word referring to the seed of a plant or animal.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[кость; семя]]></trans_word>
+					<trans_dfn><![CDATA[Выражение, которое обозначает семя какого-либо растения или животного.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference>일부 식물이나 동물을 나타내는 명사 뒤에 붙여 쓴다. </reference>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>배추씨.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>복숭아씨.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>살구씨.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>수박씨.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>조개씨.</example>
+				</example_info>
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			
+			
+			
+			<subword_info>
+				<subword>씨가 마르다</subword>
+				<subword_unit>
+					
+						관용구
+						
+					
+				</subword_unit>
+				
+				
+				
+				
+				<subsense_info>
+					<definition>어떤 종류의 것이 하나도 남김없이 모두 없어지다.</definition>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						
+						영어
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[Seeds dry up]]></trans_word>
+						<trans_dfn><![CDATA[For all of a kind of something to disappear.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						러시아어
+						
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[полностью уничтожаться]]></trans_word>
+						<trans_dfn><![CDATA[Исчезать полностью без остатка (о разновидности чего-либо).]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<pattern_info>
+						<pattern>1이 씨가 마르다</pattern>
+					</pattern_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							
+							대화
+								
+						</type>
+						<example>요즘 이 근처 아파트 시세가 어떻게 되나요?</example>
+					</example_info>
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							
+							대화
+								
+						</type>
+						<example>물량이 씨가 마르다보니 가격도 하루가 다르게 치솟아요.</example>
+					</example_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				</subsense_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</subword_info>
+			
+			<subword_info>
+				<subword>씨도 먹히지 않다</subword>
+				<subword_unit>
+					
+						관용구
+						
+					
+				</subword_unit>
+				
+				
+				
+				
+				
+				
+				<subsense_info>
+					<definition>어떤 의견이나 생각 등이 상대방에게 전혀 받아들여지지 않다.</definition>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						
+						영어
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[Even a seed is not accepted]]></trans_word>
+						<trans_dfn><![CDATA[For one's opinion, thoughts, etc., to not be accepted by someone.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						러시아어
+						
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[]]></trans_word>
+						<trans_dfn><![CDATA[Совершенно не признаваться собеседником (о каком-либо мнении, мысли и т.п.).]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<pattern_info>
+						<pattern>1이 씨도 먹히지 않다</pattern>
+					</pattern_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							
+							대화
+								
+						</type>
+						<example>제수씨한테 여행 가는 거 허락은 받았어?</example>
+					</example_info>
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							
+							대화
+								
+						</type>
+						<example>아니. 아무리 얘기해도 씨도 먹히지 않아.</example>
+					</example_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				</subsense_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</subword_info>
+			
+			<subword_info>
+				<subword>씨를 말리다</subword>
+				<subword_unit>
+					
+						관용구
+						
+					
+				</subword_unit>
+				
+				
+				
+				
+				
+				
+				
+				
+				<subsense_info>
+					<definition>하나도 남기지 않고 모조리 없애다.</definition>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						
+						영어
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[dry off seeds]]></trans_word>
+						<trans_dfn><![CDATA[To remove all of something leaving nothing.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						러시아어
+						
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[]]></trans_word>
+						<trans_dfn><![CDATA[Полностью уничтожать, ничего не оставляя.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<pattern_info>
+						<pattern>1이 2를 씨를 말리다</pattern>
+					</pattern_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							
+							대화
+								
+						</type>
+						<example>가뭄과 메뚜기 떼의 출현으로 농작물 피해가 심각하다고 들었습니다.</example>
+					</example_info>
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							
+							대화
+								
+						</type>
+						<example>네. 메뚜기 떼들이 진짜 농작물의 씨를 말리려는 것 같습니다.</example>
+					</example_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				</subsense_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</subword_info>
+			
+			<subword_info>
+				<subword>씨 뿌린 자는 거두어야 한다</subword>
+				<subword_unit>
+					
+						
+						속담
+					
+				</subword_unit>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<subsense_info>
+					<definition>어떤 일을 벌이면 그에 따른 결과를 책임져야 한다.</definition>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						
+						영어
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[Those who have sown the seeds must harvest them]]></trans_word>
+						<trans_dfn><![CDATA[You should take responsibility for the result of your action.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						러시아어
+						
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[]]></trans_word>
+						<trans_dfn><![CDATA[Необходимо нести ответственность за результаты развёрнутого дела.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							
+							대화
+								
+						</type>
+						<example>유학 가기 싫어졌는데, 이제 와서 안 가겠다고 하면 안 되겠지?</example>
+					</example_info>
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							
+							대화
+								
+						</type>
+						<example>씨 뿌린 자는 거두어야 한다고 했어. 네가 시작한 일이니까, 책임을 져야지.</example>
+					</example_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				</subsense_info>
+				
+				
+				
+				
+				
+				
+				
+			</subword_info>
+			
+			<subword_info>
+				<subword>씨는 속일 수 없다</subword>
+				<subword_unit>
+					
+						
+						속담
+					
+				</subword_unit>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<subsense_info>
+					<definition>유전으로 이어받는 집안 내력은 숨기려 해도 숨길 수 없다.</definition>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						
+						영어
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[You cannot deceive your lineage]]></trans_word>
+						<trans_dfn><![CDATA[It is hard to conceal the traits or the character that has been inherited from the family.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						러시아어
+						
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[]]></trans_word>
+						<trans_dfn><![CDATA[Невозможно скрыть никакими попытками семейное происхождение, полученное генами.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							
+							대화
+								
+						</type>
+						<example>그 집 딸이 피아노를 그렇게 잘 친다면서요?</example>
+					</example_info>
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							
+							대화
+								
+						</type>
+						<example>씨는 속일 수 없다더니, 그 집 애 엄마가 피아니스트였대요.</example>
+					</example_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				</subsense_info>
+				
+				
+				
+				
+				
+			</subword_info>
+			
+			<subword_info>
+				<subword>씨를 뿌리면 거두게 마련이다</subword>
+				<subword_unit>
+					
+						
+						속담
+					
+				</subword_unit>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<subsense_info>
+					<definition>어떤 일을 하면 그에 따른 보람이나 결과가 꼭 나온다.</definition>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						
+						영어
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[The seeds that have been sown are bound to bear fruit]]></trans_word>
+						<trans_dfn><![CDATA[Any effort is bound to produce rewards or outcomes.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						러시아어
+						
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[]]></trans_word>
+						<trans_dfn><![CDATA[При осуществлении какого-либо дела, обязательно выходят соответствующие результаты или плоды.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							
+							대화
+								
+						</type>
+						<example>드디어 네 노력이 빛을 발하는구나. 합격 축하해.</example>
+					</example_info>
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							
+							대화
+								
+						</type>
+						<example>씨를 뿌리면 거두게 마련인 것 같아. 고마워, 정말.</example>
+					</example_info>
+					
+					
+					
+					
+					
+					
+					
+					
+				</subsense_info>
+				
+				
+				
+			</subword_info>
+			
+			
+		</word_info>
+	</item>
+	
+</channel>    
+
+

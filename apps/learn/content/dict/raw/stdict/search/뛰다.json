@@ -1,0 +1,49 @@
+{
+  "channel": {
+    "total": 3,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "414830",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=414830&searchKeywordTo=3",
+          "definition": "있던 자리로부터 몸을 높이 솟구쳐 오르다.",
+          "type": "일반어"
+        },
+        "word": "뛰다"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "99383",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=99383&searchKeywordTo=3",
+          "definition": "발을 몹시 재게 움직여 빨리 나아가다.",
+          "type": "일반어"
+        },
+        "word": "뛰다"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "99271",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=99271&searchKeywordTo=3",
+          "definition": "순서 따위를 거르거나 넘기다.",
+          "type": "일반어"
+        },
+        "word": "뛰다"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203348",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

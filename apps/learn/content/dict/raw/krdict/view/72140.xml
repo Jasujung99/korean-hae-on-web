@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색</title>
+	<link>https://krdict.korean.go.kr/dicSearch/SearchView?ParaWordNo=72140</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색 결과</description>
+	<lastBuildDate>20261119202653</lastBuildDate> 
+	<total>1</total>
+	
+	<item>
+		<target_code>72140</target_code>
+		<word_info>
+			<word>출발</word>
+			<sup_no>0</sup_no>
+			<word_unit>단어</word_unit>
+			<pos>명사</pos>
+			<word_type>한자어</word_type>
+			
+			
+			<original_language_info>
+				<original_language>出發</original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+			
+			
+			<pronunciation_info>
+				<pronunciation>출발</pronunciation>
+				<link>https://krdicmedia.korean.go.kr/front/search/searchResultView.do?file_no=9671</link>
+			</pronunciation_info>
+			
+			
+			
+			<pos>명사</pos>
+			
+			
+			<der_info>
+				<word>출발되다</word>
+				<link_type>C</link_type>
+				
+				<link_target_code>79135</link_target_code>
+				<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=79135</link>
+				
+			</der_info>
+			
+			<der_info>
+				<word>출발시키다</word>
+				<link_type>C</link_type>
+				
+				<link_target_code>85656</link_target_code>
+				<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=85656</link>
+				
+			</der_info>
+			
+			<der_info>
+				<word>출발하다</word>
+				<link_type>C</link_type>
+				
+				<link_target_code>72141</link_target_code>
+				<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=72141</link>
+				
+			</der_info>
+			
+			
+			
+			<word_grade>초급</word_grade>
+			
+			
+			<category_info>
+				<type>의미 범주</type>
+				<written_form>사회 생활 &gt; 교통 이용 행위</written_form>
+			</category_info>			
+			
+			
+			
+			
+			<category_info>
+				<type>주제 및 상황 범주</type>
+				<written_form>교통 이용하기</written_form>
+			</category_info>			
+			
+			
+			
+			
+			
+			
+			<sense_info>
+				<definition>어떤 곳을 향하여 길을 떠남.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[departure; leaving]]></trans_word>
+					<trans_dfn><![CDATA[An act of leaving a place, heading for another place.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[отправление]]></trans_word>
+					<trans_dfn><![CDATA[Покидание какого-либо места в направлении другого.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>달리기의 출발을 알리는 총 소리가 울려 퍼졌다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>기차의 출발 시각이 다가오자 사람들은 서둘러 기차에 타기 시작했다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>약속 장소에 언제까지 올 수 있어?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>미안해. 아직 집에서 출발도 못 했어.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>출발 날짜.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>출발 시간.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>출발 신호.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>출발 예정.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>출발 지점.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>출발이 결정되다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>출발을 늦추다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>출발을 서두르다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>출발을 준비하다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<rel_info>
+					<word>도착</word>
+					<type>반대말</type>
+					<link_type>C</link_type>
+					
+					<link_target_code>64543</link_target_code>
+					<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=64543</link>
+					
+				</rel_info>
+				
+				
+				
+				
+			</sense_info>
+			
+			<sense_info>
+				<definition>어떤 일을 시작함. 또는 그 시작.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[start; beginning; kick-off]]></trans_word>
+					<trans_dfn><![CDATA[An act of starting to do something, or such a start.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[начало]]></trans_word>
+					<trans_dfn><![CDATA[Приступание к какому-либо действию. Или подобное действие.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>나는 과거의 실패를 딛고 새로운 출발을 시작했다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>우리는 사회인으로서의 출발을 앞두고 마지막 남은 대학 생활을 즐겼다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>새 출발.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>본격적인 출발.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>성공적인 출발.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>화려한 출발.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>활기찬 출발.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>출발을 다짐하다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>출발을 맞이하다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>출발을 시도하다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>출발을 앞두다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>출발을 의미하다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>출발로 삼다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			
+			
+		</word_info>
+	</item>
+	
+</channel>    
+
+

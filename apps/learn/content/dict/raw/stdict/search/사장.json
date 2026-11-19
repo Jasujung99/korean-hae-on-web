@@ -1,0 +1,385 @@
+{
+  "channel": {
+    "total": 31,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "440197",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=440197&searchKeywordTo=3",
+          "definition": "달구지 틀 사이에 대어 까는 널빤지. 짐 싣는 바닥이 된다.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "167325",
+        "pos": "명사",
+        "origin": "士長",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167325&searchKeywordTo=3",
+          "definition": "궁중에서, 내시를 감독하는 사람을 이르던 말.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "167326",
+        "pos": "명사",
+        "origin": "司長",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167326&searchKeywordTo=3",
+          "definition": "대한 제국 때에, 궁내부와 각 부(部)에 속한 각 사(司)의 으뜸 벼슬.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "440198",
+        "pos": "명사",
+        "origin": "四杖",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=440198&searchKeywordTo=3",
+          "definition": "부(缶)를 치는 채. 대를 아홉 조각으로 쪼개어 만든다.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "440199",
+        "pos": "명사",
+        "origin": "四葬",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=440199&searchKeywordTo=3",
+          "definition": "네 가지 장례 방식. 수장(水葬), 화장(火葬), 토장(土葬), 임장(林葬)을 이른다.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "6",
+        "target_code": "167337",
+        "pos": "명사",
+        "origin": "四障",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167337&searchKeywordTo=3",
+          "definition": "불도 수행의 네 가지 장애. 혹장(惑障), 악장(惡障), 보장(報障), 견장(見障)을 이른다.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "7",
+        "target_code": "440200",
+        "pos": "명사",
+        "origin": "四藏",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=440200&searchKeywordTo=3",
+          "definition": "불교의 네 가지 성전. 경장(經藏), 율장(律藏), 논장(論藏)에 주장(呪藏)이나 잡장(雜藏)을 넣은 네 가지를 이른다.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "8",
+        "target_code": "167338",
+        "pos": "명사",
+        "origin": "寺長",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167338&searchKeywordTo=3",
+          "definition": "남사당놀이에서, 각 놀이 분야의 우두머리.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "9",
+        "target_code": "167339",
+        "pos": "명사",
+        "origin": "死藏",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167339&searchKeywordTo=3",
+          "definition": "사물 따위를 필요한 곳에 활용하지 않고 썩혀 둠.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "10",
+        "target_code": "167341",
+        "pos": "명사",
+        "origin": "沙場/砂場",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167341&searchKeywordTo=3",
+          "definition": "강가나 바닷가에 있는 넓고 큰 모래벌판.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "11",
+        "target_code": "167342",
+        "pos": "명사",
+        "origin": "私匠",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167342&searchKeywordTo=3",
+          "definition": "관부에 예속되지 않은 장인(匠人).",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "12",
+        "target_code": "440363",
+        "pos": "명사",
+        "origin": "私莊",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=440363&searchKeywordTo=3",
+          "definition": "개인이 사사로이 소유한 별장.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "13",
+        "target_code": "167343",
+        "pos": "명사",
+        "origin": "私藏",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167343&searchKeywordTo=3",
+          "definition": "개인이 사사로이 간직함. 또는 그런 물건.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "14",
+        "target_code": "167345",
+        "pos": "명사",
+        "origin": "事障",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167345&searchKeywordTo=3",
+          "definition": "열반을 해치는 번뇌.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "15",
+        "target_code": "439990",
+        "pos": "명사",
+        "origin": "社長",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=439990&searchKeywordTo=3",
+          "definition": "회사의 책임자. 회사 업무의 최고 집행자로서 회사 대표의 권한을 지닌다.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "16",
+        "target_code": "167346",
+        "pos": "명사",
+        "origin": "社章",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167346&searchKeywordTo=3",
+          "definition": "결사(結社)할 때 서로 약속하여 정한 기념장.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "17",
+        "target_code": "167347",
+        "pos": "명사",
+        "origin": "社葬",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167347&searchKeywordTo=3",
+          "definition": "회사가 주재하여 지내는 장례.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "18",
+        "target_code": "167739",
+        "pos": "명사",
+        "origin": "査丈",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167739&searchKeywordTo=3",
+          "definition": "혼인한 두 집안의 부모들 사이에서 그 집안의 위 항렬이 되는 상대편을 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "19",
+        "target_code": "167740",
+        "pos": "명사",
+        "origin": "射場",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167740&searchKeywordTo=3",
+          "definition": "활을 쏘기 위한 일정한 설비를 갖추어 놓은 곳.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "20",
+        "target_code": "167741",
+        "pos": "명사",
+        "origin": "師丈",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167741&searchKeywordTo=3",
+          "definition": "스승이 되는 어른.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "21",
+        "target_code": "168046",
+        "pos": "명사",
+        "origin": "師匠",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=168046&searchKeywordTo=3",
+          "definition": "학문이나 기예에 능하여 남의 스승이 될 만한 사람. 또는 학문이나 기예를 가르치는 사람.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "22",
+        "target_code": "167813",
+        "pos": "명사",
+        "origin": "師長",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167813&searchKeywordTo=3",
+          "definition": "스승과 나이 많은 어른.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "23",
+        "target_code": "167815",
+        "pos": "명사",
+        "origin": "紗帳",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167815&searchKeywordTo=3",
+          "definition": "얇고 가벼운 비단으로 만든 휘장.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "24",
+        "target_code": "167816",
+        "pos": "명사",
+        "origin": "赦狀",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167816&searchKeywordTo=3",
+          "definition": "형벌을 용서한다는 편지.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "25",
+        "target_code": "441222",
+        "pos": "명사",
+        "origin": "詞狀",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=441222&searchKeywordTo=3",
+          "definition": "소송을 제기하기 위하여 제일심 법원에 제출하는 서류. 이에는 법정 기재 사항인 당사자, 법정 대리인, 청구의 취지, 청구의 원인을 적어야 한다.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "26",
+        "target_code": "167817",
+        "pos": "명사",
+        "origin": "詞章/辭章",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=167817&searchKeywordTo=3",
+          "definition": "시가와 문장을 아울러 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "27",
+        "target_code": "168063",
+        "pos": "명사",
+        "origin": "詞場",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=168063&searchKeywordTo=3",
+          "definition": "문인(文人)들의 사회.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "28",
+        "target_code": "443472",
+        "pos": "명사",
+        "origin": "寫場",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=443472&searchKeywordTo=3",
+          "definition": "사진을 찍는 시설을 갖추어 놓은 곳.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "29",
+        "target_code": "168064",
+        "pos": "명사",
+        "origin": "謝狀",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=168064&searchKeywordTo=3",
+          "definition": "사례하는 편지.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "30",
+        "target_code": "168065",
+        "pos": "명사",
+        "origin": "謝章",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=168065&searchKeywordTo=3",
+          "definition": "임금의 은혜에 감사하는 뜻을 표하여 올리던 글.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      },
+      {
+        "sup_no": "31",
+        "target_code": "443473",
+        "pos": "명사",
+        "origin": "辭狀",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=443473&searchKeywordTo=3",
+          "definition": "직책에서 사임하겠다는 뜻을 적어 내는 문서.",
+          "type": "일반어"
+        },
+        "word": "사장"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202045",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

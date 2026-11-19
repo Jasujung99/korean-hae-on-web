@@ -1,0 +1,49 @@
+{
+  "channel": {
+    "total": 3,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "496839",
+        "pos": "명사",
+        "origin": "通帳",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=496839&searchKeywordTo=3",
+          "definition": "금융 기관에서, 예금한 사람에게 출납의 상태를 적어 주는 장부.",
+          "type": "일반어"
+        },
+        "word": "통장"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "338578",
+        "pos": "명사",
+        "origin": "統長",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=338578&searchKeywordTo=3",
+          "definition": "행정 구역의 단위인 통(統)을 대표하여 일을 맡아보는 사람.",
+          "type": "일반어"
+        },
+        "word": "통장"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "338579",
+        "pos": "명사",
+        "origin": "統將",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=338579&searchKeywordTo=3",
+          "definition": "조선 시대에 둔, 무예별감의 으뜸 벼슬.",
+          "type": "일반어"
+        },
+        "word": "통장"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203422",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

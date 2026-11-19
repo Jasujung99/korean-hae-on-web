@@ -1,0 +1,25 @@
+{
+  "channel": {
+    "total": 1,
+    "item": [
+      {
+        "sup_no": "0",
+        "target_code": "475365",
+        "pos": "대명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=475365&searchKeywordTo=3",
+          "definition": "말하는 이와 듣는 이로부터 멀리 있는 곳이나 방향을 가리키는 지시 대명사.",
+          "type": "일반어"
+        },
+        "word": "저-쪽"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202148",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

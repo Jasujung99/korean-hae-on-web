@@ -1,0 +1,49 @@
+{
+  "channel": {
+    "total": 3,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "86826",
+        "pos": "명사",
+        "origin": "到着",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=86826&searchKeywordTo=3",
+          "definition": "목적한 곳에 다다름.",
+          "type": "일반어"
+        },
+        "word": "도착"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "86880",
+        "pos": "명사",
+        "origin": "倒着",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=86880&searchKeywordTo=3",
+          "definition": "옷 따위를 거꾸로 입음.",
+          "type": "일반어"
+        },
+        "word": "도착"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "86882",
+        "pos": "명사",
+        "origin": "倒錯",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=86882&searchKeywordTo=3",
+          "definition": "뒤바뀌어 거꾸로 됨.",
+          "type": "일반어"
+        },
+        "word": "도착"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202133",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

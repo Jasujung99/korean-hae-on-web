@@ -1,0 +1,211 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202640</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>455149</target_code>
+		<word_info>
+			<word><![CDATA[아파트]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				
+				외래어
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[←apartment]]></original_language>
+				<language_type>영어</language_type>
+			</original_language_info>
+			
+			
+
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+			
+			<lexical_info>
+				<word>연립^주택</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>453875</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=453875&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			
+
+			
+			<pos_info>
+				<pos_code>455149001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>455149001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>218559</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[공동 주택 양식의 하나. 오 층 이상의 건물을 층마다 여러 집으로 일정하게 구획하여 각각의 독립된 가구가 생활할 수 있도록 만든 주거 형태이다.]]></definition>
+						<definition_original><![CDATA[공동 주택 양식의 하나. 오 층 이상의 건물을 층마다 여러 집으로 일정하게 구획하여 각각의 독립된 가구가 생활할 수 있도록 만든 주거 형태이다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[아파트를 분양하다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[아파트에 거주하다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[같은 아파트에 사는 주민들은 정기적으로 모여 아파트 관리 문제를 상의합니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그 산 뒤쪽으로 늘어선 열 동의 오 층 아파트가 모서리를 보이고 있었다.]]></example>
+							
+							<source><![CDATA[김원일, 도요새에 관한 명상]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[거대한 아파트 외벽에 매달린 계단은 거미의 발처럼 위태롭게 이어져 내려가고 있었다.]]></example>
+							
+							<source><![CDATA[최인호, 돌의 초상]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+						
+						<multimedia_info>
+							
+							<lable><![CDATA[아파트]]></lable>
+							
+							<type>
+								
+								
+								
+								
+								사진
+								
+								
+							</type>
+							<link><![CDATA[https://dicmedia.korean.go.kr/front/view/mediaView.do?file_no=100906]]></link>
+						</multimedia_info>
+						
+						<multimedia_info>
+							
+							<lable><![CDATA[아파트]]></lable>
+							
+							<type>
+								
+								
+								
+								
+								사진
+								
+								
+							</type>
+							<link><![CDATA[https://dicmedia.korean.go.kr/front/view/mediaView.do?file_no=197077]]></link>
+						</multimedia_info>
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

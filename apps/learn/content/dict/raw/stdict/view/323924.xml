@@ -1,0 +1,326 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202457</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>323924</target_code>
+		<word_info>
+			<word><![CDATA[차]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				한자어
+				
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[車]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[차]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+			
+			<relation_info>
+				<word>차 (떼고) 포 떼다</word>
+				<type>관용구</type>
+				<link_target_code>524312</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=524312&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>차 치고 포 친다</word>
+				<type>속담</type>
+				<link_target_code>524311</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=524311&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>323924001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>323924001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>24839</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[바퀴가 굴러서 나아가게 되어 있는, 사람이나 짐을 실어 옮기는 기관. 자동차, 기차, 전차, 우차, 마차 따위를 통틀어 이른다.]]></definition>
+						<definition_original><![CDATA[바퀴가 굴러서 나아가게 되어 있는, 사람이나 짐을 실어 옮기는 기관. 자동차, 기차, 전차, 우차, 마차 따위를 통틀어 이른다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[차가 다니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[차로 가다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[차를 몰다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[차를 타다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[차에서 내리다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[정거장에서 차가 떠나는 소리가 들린다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[오는 길에 차가 고장이 나서 늦었습니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[정류장에는 시동을 거는 차들의 소음이 요란했다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>55644</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[화물을 ‘「1」’에 실어 그 분량을 세는 단위.]]></definition>
+						<definition_original><![CDATA[화물을 ‘「1」’에 실어 그 분량을 세는 단위.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[수량을 나타내는 말 뒤에 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[모래 세 차.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[한 차 분량의 배추.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>68148</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[‘車’ 자를 새긴 장기짝. 한편에 둘씩 모두 넷이 있고 일직선으로 가로나 세로로 몇 칸이든지 다닌다.]]></definition>
+						<definition_original><![CDATA[‘車’ 자를 새긴 장기짝. 한편에 둘씩 모두 넷이 있고 일직선으로 가로나 세로로 몇 칸이든지 다닌다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>체육</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[차하고 마하고 바꾸다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[차 장 받아라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+						
+						<multimedia_info>
+							
+							<lable><![CDATA[차]]></lable>
+							
+							<type>
+								
+								
+								
+								
+								
+								삽화
+								
+							</type>
+							<link><![CDATA[https://dicmedia.korean.go.kr/front/view/mediaView.do?file_no=102995]]></link>
+						</multimedia_info>
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

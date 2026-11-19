@@ -1,0 +1,261 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203128</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>490027</target_code>
+		<word_info>
+			<word><![CDATA[칼]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[칼]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+			
+			<relation_info>
+				<word>칼(을) 갈다[벼리다]</word>
+				<type>관용구</type>
+				<link_target_code>532374</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=532374&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>칼(을) 맞다</word>
+				<type>관용구</type>
+				<link_target_code>532375</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=532375&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>칼(을) 먹이다</word>
+				<type>관용구</type>
+				<link_target_code>532376</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=532376&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>칼(을) 품다</word>
+				<type>관용구</type>
+				<link_target_code>532377</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=532377&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>칼을 빼 들다</word>
+				<type>관용구</type>
+				<link_target_code>532378</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=532378&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>칼(을) 물고 뒈질 녀석</word>
+				<type>속담</type>
+				<link_target_code>532364</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=532364&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>칼도 날이 서야 쓴다</word>
+				<type>속담</type>
+				<link_target_code>532366</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=532366&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>칼로 물 베기</word>
+				<type>속담</type>
+				<link_target_code>532368</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=532368&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>칼 물고[놓고/짚고] 뜀뛰기</word>
+				<type>속담</type>
+				<link_target_code>532369</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=532369&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>칼을 물고 토할 노릇이다</word>
+				<type>속담</type>
+				<link_target_code>532372</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=532372&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>칼을 뽑고는 그대로 집에 꽂지 않는다</word>
+				<type>속담</type>
+				<link_target_code>532373</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=532373&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[＜캃＜갏＜용가＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>490027001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>490027001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>363640</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[물건을 베거나 썰거나 깎는 데 쓰는 도구. 날과 자루로 이루어져 있다.]]></definition>
+						<definition_original><![CDATA[물건을 베거나 썰거나 깎는 데 쓰는 도구. 날과 자루로 이루어져 있다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[칼 한 자루.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[칼이 잘 들다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[칼을 숫돌에 갈다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[칼이 무디다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[칼로 찌르다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 시퍼렇게 날이 선 칼을 빼어 들고 우리를 쫓아왔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>금인03</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>35042</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=48378&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색</title>
+	<link>https://krdict.korean.go.kr/dicSearch/SearchView?ParaWordNo=60291</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색 결과</description>
+	<lastBuildDate>20261119202745</lastBuildDate> 
+	<total>1</total>
+	
+	<item>
+		<target_code>60291</target_code>
+		<word_info>
+			<word>피곤하다</word>
+			<sup_no>0</sup_no>
+			<word_unit>단어</word_unit>
+			<pos>형용사</pos>
+			<word_type>혼종어</word_type>
+			
+			
+			<original_language_info>
+				<original_language>疲困</original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			<original_language_info>
+				<original_language>하다</original_language>
+				<language_type>고유어</language_type>
+			</original_language_info>
+			
+			
+			
+			
+			<pronunciation_info>
+				<pronunciation>피곤하다</pronunciation>
+				<link>https://krdicmedia.korean.go.kr/front/search/searchResultView.do?file_no=326067</link>
+			</pronunciation_info>
+			
+			
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation>피곤한</conjugation>
+					
+					
+					
+					<pronunciation_info>
+						<pronunciation>피곤한</pronunciation>
+					</pronunciation_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation>피곤하여</conjugation>
+					
+					
+					
+					
+					
+					<pronunciation_info>
+						<pronunciation>피곤하여</pronunciation>
+					</pronunciation_info>
+					
+					
+					
+					
+					
+					
+					
+				</conjugation_info>
+				
+				
+				<abbreviation_info>
+					<abbreviation>피곤해</abbreviation>
+					
+					
+					
+					<pronunciation_info>
+						<pronunciation>피곤해</pronunciation>
+					</pronunciation_info>
+					
+					
+					
+				</abbreviation_info>
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation>피곤하니</conjugation>
+					
+					
+					
+					
+					
+					
+					
+					<pronunciation_info>
+						<pronunciation>피곤하니</pronunciation>
+					</pronunciation_info>
+					
+					
+					
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation>피곤합니다</conjugation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<pronunciation_info>
+						<pronunciation>피곤함니다</pronunciation>
+					</pronunciation_info>
+					
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+			<pos>형용사</pos>
+			
+			
+			
+			<der_info>
+				<word>피곤</word>
+				<link_type>C</link_type>
+				
+				<link_target_code>83798</link_target_code>
+				<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=83798</link>
+				
+			</der_info>
+			
+			
+			<word_grade>초급</word_grade>
+			
+			
+			<category_info>
+				<type>의미 범주</type>
+				<written_form>인간 &gt; 감각</written_form>
+			</category_info>			
+			
+			
+			
+			
+			
+			
+			
+			<sense_info>
+				<definition>몸이나 마음이 지쳐서 힘들다.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[tired; exhausted; fatigued]]></trans_word>
+					<trans_dfn><![CDATA[Being tired and worn-out physically or mentally. ]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[усталый; утомлённый]]></trans_word>
+					<trans_dfn><![CDATA[Состояние физической и душевной усталости, не позволяющее чем-либо заниматься.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				<pattern_info>
+					<pattern>1이 피곤하다</pattern>
+				</pattern_info>
+				
+				
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>그녀는 피곤한지 눈이 빨갰다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>나는 너무 피곤해서 집에 가자마자 잠이 들었다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>우리 좀 쉬었다 해요. 너무 피곤해요.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>안 돼요. 날이 어두워지기 전에 끝내야 해요.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>죄송해요. 이야기에 집중이 잘 안 되고 머리가 아프네요.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>피곤하신가 봐요. 그럼 좀 주무세요.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>피곤한 몸.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>피곤한 일.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>피곤해서 자다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>몸이 피곤하다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>지치고 피곤하다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				<rel_info>
+					<word>고단하다</word>
+					<type>유의어</type>
+					<link_type>C</link_type>
+					
+					<link_target_code>25437</link_target_code>
+					<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=25437</link>
+					
+				</rel_info>
+				
+				
+				
+				<rel_info>
+					<word>곤하다</word>
+					<type>유의어</type>
+					<link_type>C</link_type>
+					
+					<link_target_code>27691</link_target_code>
+					<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=27691</link>
+					
+				</rel_info>
+				
+				
+				
+				<rel_info>
+					<word>노곤하다</word>
+					<type>유의어</type>
+					<link_type>C</link_type>
+					
+					<link_target_code>41859</link_target_code>
+					<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=41859</link>
+					
+				</rel_info>
+				
+				
+				
+				
+			</sense_info>
+			
+			
+			
+		</word_info>
+	</item>
+	
+</channel>    
+
+

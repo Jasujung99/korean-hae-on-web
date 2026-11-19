@@ -1,0 +1,37 @@
+{
+  "channel": {
+    "total": 2,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "426456",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=426456&searchKeywordTo=3",
+          "definition": "아랫도리에 입는 옷의 하나. 위는 통으로 되고 아래에는 두 다리를 꿰는 가랑이가 있다.",
+          "type": "일반어"
+        },
+        "word": "바지"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "130382",
+        "pos": "명사",
+        "origin": "barge",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=130382&searchKeywordTo=3",
+          "definition": "운하·하천·항내(港內)에서 사용하는, 밑바닥이 편평한 화물 운반선.",
+          "type": "일반어"
+        },
+        "word": "바지"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202030",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

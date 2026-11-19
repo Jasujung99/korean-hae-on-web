@@ -1,0 +1,25 @@
+{
+  "channel": {
+    "total": 1,
+    "item": [
+      {
+        "sup_no": "0",
+        "target_code": "459353",
+        "pos": "명사",
+        "origin": "←air conditioner",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=459353&searchKeywordTo=3",
+          "definition": "여름에 실내 공기의 온도, 습도를 조절하는 장치.",
+          "type": "일반어"
+        },
+        "word": "에어컨"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202938",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

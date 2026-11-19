@@ -1,0 +1,207 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203046</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>343987</target_code>
+		<word_info>
+			<word><![CDATA[키]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[키]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+			
+			<relation_info>
+				<word>키(를) 잡다</word>
+				<type>관용구</type>
+				<link_target_code>524565</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=524565&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[＜치＜훈몽＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>343987001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>343987001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>301997</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[배의 방향을 조종하는 장치.]]></definition>
+						<definition_original><![CDATA[배의 방향을 조종하는 장치.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>기계</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[박용태 선장은 키를 잡고 방향을 조정하면서 밀려오는 파도를 보았다.]]></example>
+							
+							<source><![CDATA[홍성암, 큰물로 가는 큰 고기]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+						
+						<multimedia_info>
+							
+							<lable><![CDATA[키]]></lable>
+							
+							<type>
+								
+								
+								
+								
+								
+								삽화
+								
+							</type>
+							<link><![CDATA[https://dicmedia.korean.go.kr/front/view/mediaView.do?file_no=103268]]></link>
+						</multimedia_info>
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>방향-키</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>1357922</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=142807&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>방향-타</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>1357921</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=142808&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>타05</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>299172</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=343711&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

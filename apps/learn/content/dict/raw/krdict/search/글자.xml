@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 검색</title>
+	<link>https://krdict.korean.go.kr</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 검색 결과</description>
+	<lastBuildDate>20261119202301</lastBuildDate>
+	<total>7</total>
+	<start>1</start>
+	<num>100</num>
+	
+	
+	
+	<item>
+		
+		
+		<target_code>62490</target_code>
+		<word>글자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>글字</origin>
+		
+		
+		<pronunciation>글짜</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=62490</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>말을 적는 기호.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[letter; character]]></trans_word>
+				<trans_dfn><![CDATA[A sign used to write down a spoken word.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[буква; письменный знак; литера]]></trans_word>
+				<trans_dfn><![CDATA[Знак, при помощи которого записывают слова или речь.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>32829</target_code>
+		<word>글자체</word>
+		<sup_no>0</sup_no>
+		
+		<origin>글字體</origin>
+		
+		
+		<pronunciation>글짜체</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=32829</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>글자의 모양.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[font]]></trans_word>
+				<trans_dfn><![CDATA[The shape of a letter]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[шрифт]]></trans_word>
+				<trans_dfn><![CDATA[Начертание букв.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>33347</target_code>
+		<word>글자판</word>
+		<sup_no>0</sup_no>
+		
+		<origin>글字板</origin>
+		
+		
+		<pronunciation>글짜판</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=33347</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>컴퓨터나 시계 등에서 글자나 숫자, 기호가 적힌 판.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[plate; keyboard]]></trans_word>
+				<trans_dfn><![CDATA[A board with buttons for letters, numbers or symbols, and which is used as part of a computer or watch.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[клавиатура]]></trans_word>
+				<trans_dfn><![CDATA[(в компьютере, часах и т.п.) Совокупность клавишей в разного рода механизмах.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>54145</target_code>
+		<word>뜻글자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>뜻글字</origin>
+		
+		
+		<pronunciation>뜯끌짜</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=54145</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>하나하나가 일정한 뜻을 나타내는 글자.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[ideogram]]></trans_word>
+				<trans_dfn><![CDATA[A letter that represents a certain meaning by itself.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[идеограмма]]></trans_word>
+				<trans_dfn><![CDATA[Письменный знак, условно изображающий какое-либо понятие.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>55392</target_code>
+		<word>머리글자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>머리글字</origin>
+		
+		
+		<pronunciation>머리글짜</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=55392</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>보통 알파벳 표기에서 어떤 단어의 처음에 오는 글자.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[initial letter]]></trans_word>
+				<trans_dfn><![CDATA[The first letter of words written in the Roman alphabet.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[первая буква; начальная буква]]></trans_word>
+				<trans_dfn><![CDATA[Буква, с которой начинается какое-либо слово (обычно в буквенном письме).]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>63456</target_code>
+		<word>소리글자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>소리글字</origin>
+		
+		
+		<pronunciation>소리글짜</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=63456</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>글자 하나하나가 뜻이 없이 소리만 나타내는 글자.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[phonetic symbol]]></trans_word>
+				<trans_dfn><![CDATA[A letter that expresses only sound without any meaning.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[фонетический знак]]></trans_word>
+				<trans_dfn><![CDATA[Знак, не имеющий отдельного смысла, а только обозначающий звук.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>73926</target_code>
+		<word>자글자글</word>
+		<sup_no>0</sup_no>
+		
+		
+		<pronunciation>자글자글</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>부사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=73926</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>적은 양의 물이나 기름 등이 걸쭉하게 줄어들면서 자꾸 끓는 소리.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[with a sizzling sound]]></trans_word>
+				<trans_dfn><![CDATA[A word imitating the sound of a small amount of water, oil, etc., continuously boiling and becoming thick.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[буль-буль]]></trans_word>
+				<trans_dfn><![CDATA[Звук, издающийся при кипячении небольшого количества воды или масла, при этом жидкость густеет и убавляется.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	
+	
+</channel>
+
+

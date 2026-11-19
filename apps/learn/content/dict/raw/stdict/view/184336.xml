@@ -1,0 +1,217 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203309</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>184336</target_code>
+		<word_info>
+			<word><![CDATA[설탕]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				한자어
+				
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[雪糖▽]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			<original_language_info>
+				<original_language><![CDATA[/]]></original_language>
+				<language_type>/(병기)</language_type>
+			</original_language_info>
+			
+			<original_language_info>
+				<original_language><![CDATA[屑糖▽]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[설탕]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			<norm_info>
+				
+				<type>한글 맞춤법</type>
+				
+				
+				
+				<desc><![CDATA[‘설탕(雪糖)’에서 ‘糖’은 본음이 ‘당’이지만 ‘<IN>설당</IN>’으로 적지 않고 ‘설탕’으로 적는다. 이는 한자어에서 본음으로도 나고 속음으로도 나는 것은 각각 그 소리에 따라 적는다는 규정(한글 맞춤법 제52항)에 따른 것이다.]]></desc>
+				
+			</norm_info>
+			
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>184336001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>184336001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>499697</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[맛이 달고 물에 잘 녹는 결정체. 사탕수수, 사탕무 따위를 원료로 하여 만든다.]]></definition>
+						<definition_original><![CDATA[맛이 달고 물에 잘 녹는 결정체. 사탕수수, 사탕무 따위를 원료로 하여 만든다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[설탕이 듬뿍 묻은 도넛.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[커피에 설탕을 넣다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 손에 쥔 감자에 설탕을 꾹 묻혀서 한 입 베어 먹었다.]]></example>
+							
+							<source><![CDATA[최인훈, 회색인]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>가루-사탕</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>522574</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=1829&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>사탕02</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>372243</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=435423&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>사탕-가루</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>351633</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=163752&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

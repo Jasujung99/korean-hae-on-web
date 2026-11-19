@@ -1,0 +1,350 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202523</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>318733</target_code>
+		<word_info>
+			<word><![CDATA[짜다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[짜다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[짜]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[짜]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[짜니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[짜니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			<origin><![CDATA[＜다＜석상＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>318733001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>318733001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>517271</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[누르거나 비틀어서 물기나 기름 따위를 빼내다.]]></definition>
+						<definition_original><![CDATA[누르거나 비틀어서 물기나 기름 따위를 빼내다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[여드름을 짜다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[젖을 짜다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[치약을 짜다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[참깨로 기름을 짜다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[빨래를 짜서 널다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[윤 씨는 약탕관의 약을 삼베 헝겊에 쏟아 대접에 짜기 시작했다.]]></example>
+							
+							<source><![CDATA[최일남, 거룩한 응달]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>520701</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[온갖 수단을 써서 남의 재물 따위를 빼앗다.]]></definition>
+						<definition_original><![CDATA[온갖 수단을 써서 남의 재물 따위를 빼앗다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[새로 부임한 수령은 백성들에게 혹독하게 세금을 짜고 부역을 강요했다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[일본 정부는 식민지로부터 많은 세금을 짜기 위해 세목의 종류를 늘렸다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>522051</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 새로운 것을 생각해 내기 위하여 온 힘을 기울이거나, 온 정신을 기울이다.]]></definition>
+						<definition_original><![CDATA[어떤 새로운 것을 생각해 내기 위하여 온 힘을 기울이거나, 온 정신을 기울이다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[생각을 짜다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[지혜를 짜다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[머리를 아무리 짜 보아도 대책이 없다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>522331</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[잘 나오지 아니하거나 생기지 아니하는 것을 억지로 만들다.]]></definition>
+						<definition_original><![CDATA[잘 나오지 아니하거나 생기지 아니하는 것을 억지로 만들다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[재작년 아버지 생신에 왔다가는 죽어도 다시 가지 않겠노라고 울고 짜고 하는 것을 억지로 몰아내다시피 해서 보낸 뒤로는….]]></example>
+							
+							<source><![CDATA[이무영, 농민]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

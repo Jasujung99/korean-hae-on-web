@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 검색</title>
+	<link>https://krdict.korean.go.kr</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 검색 결과</description>
+	<lastBuildDate>20261119202524</lastBuildDate>
+	<total>5</total>
+	<start>1</start>
+	<num>100</num>
+	
+	
+	
+	<item>
+		
+		
+		<target_code>71579</target_code>
+		<word>짜증</word>
+		<sup_no>0</sup_no>
+		
+		
+		<pronunciation>짜증</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=71579</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>마음에 들지 않아서 화를 내거나 싫은 느낌을 겉으로 드러내는 일. 또는 그런 성미.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[irritation; annoyance]]></trans_word>
+				<trans_dfn><![CDATA[An act of expressing one's anger or dislike towards something because one is dissatisfied, or such a disposition.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[недовольство; раздражительность]]></trans_word>
+				<trans_dfn><![CDATA[Показ недовольства из-за того, что что-либо не нравится. А также такой характер.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>37139</target_code>
+		<word>짜증스럽다</word>
+		<sup_no>0</sup_no>
+		
+		
+		<pronunciation>짜증스럽따</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>형용사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=37139</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>귀찮고 성가셔서 싫다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[irritated; annoyed]]></trans_word>
+				<trans_dfn><![CDATA[Disliking someone or something because one is tired of and bothered by it.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[раздражительный]]></trans_word>
+				<trans_dfn><![CDATA[Выражающий раздражение, исполненный раздражения.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>81169</target_code>
+		<word>짜증스러우-</word>
+		<sup_no>0</sup_no>
+		
+		
+		
+		<pos>품사 없음</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=81169</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>(짜증스러운데, 짜증스러우니, 짜증스러우면, 짜증스러운, 짜증스러울)→ 짜증스럽다</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>81173</target_code>
+		<word>짜증스러워-</word>
+		<sup_no>0</sup_no>
+		
+		
+		
+		<pos>품사 없음</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=81173</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>(짜증스러워, 짜증스러워서, 짜증스러웠다)→ 짜증스럽다</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>93234</target_code>
+		<word>짜증스럽-</word>
+		<sup_no>0</sup_no>
+		
+		
+		
+		<pos>품사 없음</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=93234</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>(짜증스럽고, 짜증스럽습니다)→ 짜증스럽다</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	
+	
+</channel>
+
+

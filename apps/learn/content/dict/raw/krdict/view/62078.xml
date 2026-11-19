@@ -1,0 +1,2185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색</title>
+	<link>https://krdict.korean.go.kr/dicSearch/SearchView?ParaWordNo=62078</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색 결과</description>
+	<lastBuildDate>20261119202930</lastBuildDate> 
+	<total>1</total>
+	
+	<item>
+		<target_code>62078</target_code>
+		<word_info>
+			<word>누구</word>
+			<sup_no>0</sup_no>
+			<word_unit>단어</word_unit>
+			<pos>대명사</pos>
+			<word_type>고유어</word_type>
+			
+			
+			
+			<pronunciation_info>
+				<pronunciation>누구</pronunciation>
+				<link>https://krdicmedia.korean.go.kr/front/search/searchResultView.do?file_no=74813</link>
+			</pronunciation_info>
+			
+			
+			
+			<pos>대명사</pos>
+			
+			
+			<word_grade>초급</word_grade>
+			
+			
+			<category_info>
+				<type>의미 범주</type>
+				<written_form>개념 &gt; 의문</written_form>
+			</category_info>			
+			
+			
+			
+			
+			<category_info>
+				<type>주제 및 상황 범주</type>
+				<written_form>소개하기(가족 소개)</written_form>
+			</category_info>			
+			
+			
+			
+			
+			
+			
+			<sense_info>
+				<definition>모르는 사람을 가리키는 말.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[]]></trans_word>
+					<trans_dfn><![CDATA[A pronoun used to indicate a person that one does not know.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[кто]]></trans_word>
+					<trans_dfn><![CDATA[Выражение, обозначающее кого-либо незнакомого.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference>의문문에 쓴다.</reference>
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>당신은 누구이기에 우리 누나를 찾아요?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>민준은 자기 집에 들어온 낯선 사람에게 누구냐고 물었다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>선생님은 학생들에게 이 잃어버린 연필은 누구의 것이냐고 말했다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>웬 꽃다발이야? 누구 갖다 주려고?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>여자 친구에게 선물로 줄 거야.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>와! 집이 정말 좋다. 이 집은 누구의 소유니?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>우리 부모님 거야.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>거기 누구 계세요? 아무도 안 계세요?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>제가 이 집 주인입니다만 무슨 일이시죠?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>승규 씨가 누구입니까?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>저 책상에 앉은 분이 승규 씨입니다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			<sense_info>
+				<definition>정해지지 않은 어떤 사람을 가리키는 말.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[]]></trans_word>
+					<trans_dfn><![CDATA[A pronoun used to indicate a random person.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[кто-нибудь; кто-угодно]]></trans_word>
+					<trans_dfn><![CDATA[Выражение, обозначающее обычного человека, никого в особенности.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>이 일은 매우 쉬워서 누구든지 금방 할 수 있다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>그 선수의 축구에 대한 열정은 누구 못지않게 대단했다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>승규는 누구보다도 자기 일을 아끼고 사랑하는 사람이다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>죄를 지으면 지위의 높고 낮음과 관계없이 누구나 벌을 받아야 한다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>사람이 길가에 쓰러져 있었지만 누구 하나 도와주는 사람이 없었다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>민주주의 사회에서는 국민이라면 누구든지 자신의 의견을 마음껏 말할 권리를 가진다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>정말 이 모임에 가입하는 데 아무런 조건이 없나요?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>네. 남녀노소 상관없이 누구나 가입할 수 있어요.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			<sense_info>
+				<definition>굳이 이름을 밝힐 필요가 없는 사람을 가리키는 말.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[]]></trans_word>
+					<trans_dfn><![CDATA[A pronoun used to indicate a person whose name does not have to be necessarily disclosed.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[такой-то; он; она]]></trans_word>
+					<trans_dfn><![CDATA[Выражение, обозначающее кого-либо, кого не хочется называть по-имени.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>지수는 개그맨 누구 같다며 놀려 대는 소리에 화를 냈다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>이 대학은 올해 저명한 학자 누구를 신임 교수로 임명하였다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>수상자는 누구 덕에 큰 상을 받게 되었다고 수상 소감을 말하였다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>이 그림은 누구라고 이름을 대면 다 알 법한 유명한 화가의 작품이다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>아버지는 압정을 바닥에 둔 아들에게 누구 다치는 꼴을 보고 싶어서 그랬냐며 꾸중하셨다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>왜 이렇게 늦었어?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>미안해. 누구를 잠깐 만나고 오느라고 늦었어.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>환자분, 수술을 받으시려면 보호자가 필요한데 누구 함께 온 사람 없으신가요?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>네. 저 혼자 병원에 왔는데요.</example>
+				</example_info>
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			
+			
+			
+			<subword_info>
+				<subword>누구 입에 붙이겠는가</subword>
+				<subword_unit>
+					
+						관용구
+						
+					
+				</subword_unit>
+				
+				
+				
+				
+				<subsense_info>
+					<definition>여러 사람에게 나누어 주어야 할 물건 등의 양이 너무 적다.</definition>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						
+						영어
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[To whose lip is it attached?]]></trans_word>
+						<trans_dfn><![CDATA[The quantity of something to be shared by many people is too small.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						러시아어
+						
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[слишком мало; кот наплакал]]></trans_word>
+						<trans_dfn><![CDATA[Очень маленькое количество чего-либо должно быть разделено на нескольких человек.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							문장
+							
+								
+						</type>
+						<example>이 많은 사람들이 양껏 먹어야 하는데 빵을 요만큼 가져와서 누구 입에 붙이겠는가?</example>
+					</example_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				</subsense_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</subword_info>
+			
+			<subword_info>
+				<subword>누구 코에 바르겠는가[붙이겠는가]</subword>
+				<subword_unit>
+					
+						관용구
+						
+					
+				</subword_unit>
+				
+				
+				
+				
+				
+				
+				<subsense_info>
+					<definition>여러 사람에게 나누어 주어야 할 물건 등의 양이 너무 적다.</definition>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						
+						영어
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[To whose nose is it applied[attached]?]]></trans_word>
+						<trans_dfn><![CDATA[The quantity of something to be shared by many people is too small.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						러시아어
+						
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[кот наплакал]]></trans_word>
+						<trans_dfn><![CDATA[Очень маленькое количество чего-либо должно быть разделено на нескольких человек.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							문장
+							
+								
+						</type>
+						<example>잔칫집에 마련된 음식이 이것밖에 안 된다니 누구 코에 바르겠는가?</example>
+					</example_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				</subsense_info>
+				
+				
+				
+				
+				
+				
+				
+			</subword_info>
+			
+			<subword_info>
+				<subword>누구 할 것 없이</subword>
+				<subword_unit>
+					
+						관용구
+						
+					
+				</subword_unit>
+				
+				
+				
+				
+				
+				
+				
+				
+				<subsense_info>
+					<definition>특정한 사람을 가리켜서 말할 필요 없이 다 그러하게.</definition>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						
+						영어
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[regardless of anyone]]></trans_word>
+						<trans_dfn><![CDATA[Applying not only to a certain person, but to all people.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						러시아어
+						
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[все без исключения]]></trans_word>
+						<trans_dfn><![CDATA[Выражение, обозначающее, что нет никакой необходимости указывать на какого-либо определённого человека, все одинаковые.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							문장
+							
+								
+						</type>
+						<example>재난 복구 현장에서는 누구 할 것 없이 무너진 곳을 보수하는 데 힘쓰고 있었다.</example>
+					</example_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				</subsense_info>
+				
+				
+				
+				
+				
+			</subword_info>
+			
+			<subword_info>
+				<subword>누구를 막론하고[물론하고]</subword>
+				<subword_unit>
+					
+						관용구
+						
+					
+				</subword_unit>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<subsense_info>
+					<definition>특정한 사람을 가리켜서 말할 필요 없이 다 그러하게.</definition>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						
+						영어
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[regardless[irrespective] of anyone]]></trans_word>
+						<trans_dfn><![CDATA[Applying not only to a certain person, but to all people.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						러시아어
+						
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[]]></trans_word>
+						<trans_dfn><![CDATA[Выражение, обозначающее, что нет никакой необходимости указывать на какого-либо определённого человека, все одинаковые.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							
+							대화
+								
+						</type>
+						<example>한국에서는 젊은 남자라면 누구를 막론하고 군대에 가는 것으로 병역의 의무를 지게 되어 있어?</example>
+					</example_info>
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							
+							대화
+								
+						</type>
+						<example>응. 국가를 위해 공을 세웠다든가하는 특별한 경우를 제외하고 말이지.</example>
+					</example_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				</subsense_info>
+				
+				
+				
+			</subword_info>
+			
+			
+		</word_info>
+	</item>
+	
+</channel>    
+
+

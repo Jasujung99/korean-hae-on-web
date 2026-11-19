@@ -1,0 +1,163 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203755</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>211089</target_code>
+		<word_info>
+			<word><![CDATA[쓰다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[쓰다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[써]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[써]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[쓰니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[쓰니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>211089001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>211089001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>427799</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[장기나 윷놀이 따위에서 말을 규정대로 옮겨 놓다.]]></definition>
+						<definition_original><![CDATA[장기나 윷놀이 따위에서 말을 규정대로 옮겨 놓다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[윷놀이는 말을 잘 쓰는 것이 제일 중요하다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

@@ -1,0 +1,479 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202957</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>455915</target_code>
+		<word_info>
+			<word><![CDATA[어깨]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[어깨]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+			
+			<relation_info>
+				<word>어깨(를) 견주다</word>
+				<type>관용구</type>
+				<link_target_code>530196</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530196&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어깨가[어깨를] 으쓱거리다</word>
+				<type>관용구</type>
+				<link_target_code>530197</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530197&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어깨가 가볍다</word>
+				<type>관용구</type>
+				<link_target_code>530198</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530198&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어깨가 무겁다</word>
+				<type>관용구</type>
+				<link_target_code>530199</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530199&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어깨가 올라가다</word>
+				<type>관용구</type>
+				<link_target_code>530200</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530200&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어깨가 움츠러들다</word>
+				<type>관용구</type>
+				<link_target_code>530201</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530201&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어깨가 처지다[낮아지다/늘어지다]</word>
+				<type>관용구</type>
+				<link_target_code>530202</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530202&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어깨로 숨을 쉬다</word>
+				<type>관용구</type>
+				<link_target_code>530203</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530203&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어깨를 같이하다</word>
+				<type>관용구</type>
+				<link_target_code>530204</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530204&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어깨를 겨누다[겨루다]</word>
+				<type>관용구</type>
+				<link_target_code>530205</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530205&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어깨를 겯다</word>
+				<type>관용구</type>
+				<link_target_code>530206</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530206&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어깨를 나란히 하다</word>
+				<type>관용구</type>
+				<link_target_code>530207</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530207&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어깨를 낮추다</word>
+				<type>관용구</type>
+				<link_target_code>530208</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530208&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어깨를 들이밀다[들이대다]</word>
+				<type>관용구</type>
+				<link_target_code>530209</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530209&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어깨를 짓누르다</word>
+				<type>관용구</type>
+				<link_target_code>530210</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530210&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어깨를 펴다</word>
+				<type>관용구</type>
+				<link_target_code>530211</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530211&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어깨에 걸머지다</word>
+				<type>관용구</type>
+				<link_target_code>530212</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530212&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어깨에 지다[짊어지다]</word>
+				<type>관용구</type>
+				<link_target_code>530213</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530213&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어깨에 힘(을) 주다</word>
+				<type>관용구</type>
+				<link_target_code>530214</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530214&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어깨에 힘이 들어가다</word>
+				<type>관용구</type>
+				<link_target_code>530215</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530215&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어깨가 귀를 넘어까지 산다</word>
+				<type>속담</type>
+				<link_target_code>530195</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530195&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[＜억게＜엇게＜석상＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>455915001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>455915001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>479663</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[사람의 몸에서, 목의 아래 끝에서 팔의 위 끝에 이르는 부분.]]></definition>
+						<definition_original><![CDATA[사람의 몸에서, 목의 아래 끝에서 팔의 위 끝에 이르는 부분.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[어깨가 쑤시다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어깨가 딱 벌어지다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어깨를 펴다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어깨에 윗옷을 걸치다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[누군가 뒤에서 내 어깨를 툭 쳤다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[명훈이 다시 어깨 어름을 후려 오는 각목을 손으로 쳐 내며 본격적인 방어 태세를 취했다.]]></example>
+							
+							<source><![CDATA[이문열, 변경]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>견두</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>413326</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=393374&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>483049</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[옷소매가 붙은 솔기와 깃 사이의 부분.]]></definition>
+						<definition_original><![CDATA[옷소매가 붙은 솔기와 깃 사이의 부분.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[요사이는 어깨가 넓은 옷이 유행이다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>485084</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[짐승의 앞다리나 새의 날개가 붙은 윗부분.]]></definition>
+						<definition_original><![CDATA[짐승의 앞다리나 새의 날개가 붙은 윗부분.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[새의 어깨는 등쪽으로 올라와 있다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>485488</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[힘이나 폭력 따위를 일삼는 불량배를 속되게 이르는 말.]]></definition>
+						<definition_original><![CDATA[힘이나 폭력 따위를 일삼는 불량배를 속되게 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[고통을 함께 나눈 우정을 가지고 우리는 하나처럼 움직였다. 산동네와 시장통 어깨들이 우리를 피할 정도였다.]]></example>
+							
+							<source><![CDATA[전상국, 아베의 가족]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[규율부원 하나와 그를 돕는 몇몇 어깨가 명훈처럼 늦은 학생들을 몰아대고 있을 뿐이었다.]]></example>
+							
+							<source><![CDATA[이문열, 변경]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>불량-자</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>11599</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=155074&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

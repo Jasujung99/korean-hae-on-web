@@ -1,0 +1,2518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색</title>
+	<link>https://krdict.korean.go.kr/dicSearch/SearchView?ParaWordNo=57293</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색 결과</description>
+	<lastBuildDate>20261119203321</lastBuildDate> 
+	<total>1</total>
+	
+	<item>
+		<target_code>57293</target_code>
+		<word_info>
+			<word>들다</word>
+			<sup_no>3</sup_no>
+			<word_unit>단어</word_unit>
+			<pos>동사</pos>
+			<word_type>고유어</word_type>
+			
+			
+			
+			<pronunciation_info>
+				<pronunciation>들다</pronunciation>
+				<link>https://krdicmedia.korean.go.kr/front/search/searchResultView.do?file_no=336955</link>
+			</pronunciation_info>
+			
+			
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation>들어</conjugation>
+					
+					
+					
+					<pronunciation_info>
+						<pronunciation>드러</pronunciation>
+					</pronunciation_info>
+					
+					
+					
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation>드니</conjugation>
+					
+					
+					
+					
+					
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation>듭니다</conjugation>
+					
+					
+					
+					
+					
+					<pronunciation_info>
+						<pronunciation>듬니다</pronunciation>
+					</pronunciation_info>
+					
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+			<pos>동사</pos>
+			
+			
+			<der_info>
+				<word>들리다</word>
+				<link_type>C</link_type>
+				
+				<link_target_code>49874</link_target_code>
+				<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=49874</link>
+				
+			</der_info>
+			
+			<der_info>
+				<word>들리다</word>
+				<link_type>C</link_type>
+				
+				<link_target_code>49876</link_target_code>
+				<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=49876</link>
+				
+			</der_info>
+			
+			
+			
+			<word_grade>초급</word_grade>
+			
+			
+			<category_info>
+				<type>의미 범주</type>
+				<written_form>인간 &gt; 신체 행위</written_form>
+			</category_info>			
+			
+			
+			
+			
+			<category_info>
+				<type>주제 및 상황 범주</type>
+				<written_form>없음</written_form>
+			</category_info>			
+			
+			
+			
+			
+			
+			
+			<sense_info>
+				<definition>손에 가지다.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[hold; take; carry]]></trans_word>
+					<trans_dfn><![CDATA[To have something in hand.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[взять; держать]]></trans_word>
+					<trans_dfn><![CDATA[Брать что-либо в руки.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				<pattern_info>
+					<pattern>1이 2를 3에 들다</pattern>
+				</pattern_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>하얀 드레스에 손에 꽃을 들고 서 있는 신부의 모습이 정말 아름다웠다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>밖에 비가 오는지 들어오는 사람들마다 손에 우산을 하나씩 들고 있었다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>손에 든 표는 뭐야?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>이거 영화표인데 같이 갈래?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>가방을 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>꽃을 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>우산을 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>책을 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>표를 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>손에 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>잔뜩 들다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			<sense_info>
+				<definition>아래에 있는 것을 위로 올리다.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[raise; lift]]></trans_word>
+					<trans_dfn><![CDATA[To lift something from below in an upward motion.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[поднимать]]></trans_word>
+					<trans_dfn><![CDATA[Поднимать наверх то, что находится внизу.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				<pattern_info>
+					<pattern>1이 2를 들다</pattern>
+				</pattern_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>민준은 무거워 보이는 가방을 가볍게 들어 올렸다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>아이는 울다가 강아지 짖는 소리에 고개를 들었다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>상자 밑에 편지가 깔렸는데 상자 좀 들어 줄래?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>이 상자 말이지?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>들어 옮기다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>고개를 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>손을 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>얼굴을 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>짐을 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>가볍게 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>번쩍 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>힘들게 들다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<rel_info>
+					<word>내리다</word>
+					<type>반대말</type>
+					<link_type>C</link_type>
+					
+					<link_target_code>73353</link_target_code>
+					<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=73353</link>
+					
+				</rel_info>
+				
+				
+				
+				
+			</sense_info>
+			
+			<sense_info>
+				<definition>어떤 사실이나 예를 끌어다 대다.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[take; give]]></trans_word>
+					<trans_dfn><![CDATA[To find and give a certain fact or example.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[приводить пример; ставить в пример]]></trans_word>
+					<trans_dfn><![CDATA[Говорить о чём-либо, приводя при этом примеры или факты.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<pattern_info>
+					<pattern>1이 2를 들다</pattern>
+				</pattern_info>
+				
+				
+				
+				<pattern_info>
+					<pattern>1이 2를 3으로 들다</pattern>
+				</pattern_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>잘 이해가 안 되는데 사례를 좀 들어 주시겠습니까?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>예를 들면 한국의 김치가 바로 그러한 음식이라고 할 수 있다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>우리는 선생님이 쉬운 예를 들어 주셔서 개념을 빨리 이해했다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>보기를 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>사례를 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>실례를 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>예를 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>일례를 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>올해부터 회사가 직원들을 위해 다양한 제도를 마련했다고 들었어요.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>네. 예를 들면 아이를 키우는 직원들의 출근 시간을 늦춰 준대요.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			<sense_info>
+				<definition>(높임말로) 먹다.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[have; eat]]></trans_word>
+					<trans_dfn><![CDATA[(honorific) To eat.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[есть; пить; принимать пищу]]></trans_word>
+					<trans_dfn><![CDATA[(вежл.) Есть, кушать.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				
+				
+				<pattern_info>
+					<pattern>1이 2를 들다</pattern>
+				</pattern_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>커피가 식기 전에 좀 들어요.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>선생님은 제자들에게 차를 내오시면서 어서 들라고 하셨다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>가서 할아버지 진지 드시라고 해.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>네, 할아버지 진지 드세요.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>과자를 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>식사를 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>음식을 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>진지를 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>차를 들다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>커피를 들다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			
+			
+			
+			<subword_info>
+				<subword>들었다 놓다</subword>
+				<subword_unit>
+					
+						관용구
+						
+					
+				</subword_unit>
+				
+				
+				
+				
+				<subsense_info>
+					<definition>어떤 소리가 어떤 장소에 있는 모든 것을 들었다가 놓을 정도로 매우 크게 울리다.</definition>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						
+						영어
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[raise and put down]]></trans_word>
+						<trans_dfn><![CDATA[For a sound to be loud to such an extent as to shake everything up and down in a certain place.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						러시아어
+						
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[сотрясать от сильного звука]]></trans_word>
+						<trans_dfn><![CDATA[Производить сильный звук, от которого всё вокруг сотрясается.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<pattern_info>
+						<pattern>1이 2를 들었다 놓다</pattern>
+					</pattern_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							문장
+							
+								
+						</type>
+						<example>군인들이 외치는 소리가 어찌나 큰지 부대 안을 들었다 놓았다.</example>
+					</example_info>
+					
+					
+					
+					
+					
+					
+					
+					
+				</subsense_info>
+				
+				
+				
+				<subsense_info>
+					<definition>아주 큰 영향을 미치다.</definition>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						
+						영어
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[raise and put down]]></trans_word>
+						<trans_dfn><![CDATA[To have a huge influence.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						러시아어
+						
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[влиять; оказывать давление; воздействовать]]></trans_word>
+						<trans_dfn><![CDATA[Оказывать очень сильное влияние.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<pattern_info>
+						<pattern>1이 2를 들었다 놓다</pattern>
+					</pattern_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							문장
+							
+								
+						</type>
+						<example>대통령 부인의 정치 간섭이 얼마나 심한지 그녀의 한 마디가 나라를 들었다 놓을 정도였다.</example>
+					</example_info>
+					
+					
+					
+					
+					
+					
+				</subsense_info>
+				
+				
+				
+				<subsense_info>
+					<definition>어떤 곳에서 매우 바쁘게 뛰어다니며 정신 없게 하다.</definition>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						
+						영어
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[raise and put down]]></trans_word>
+						<trans_dfn><![CDATA[To buzz around a certain place to distract others.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<translation>
+						<trans_lang>
+						
+						
+						
+						
+						
+						러시아어
+						
+						
+						
+						
+						
+						
+						
+						</trans_lang>
+						<trans_word><![CDATA[быть в суматохе; наводить переполох]]></trans_word>
+						<trans_dfn><![CDATA[Наводить суматоху в одном месте.]]></trans_dfn>
+					</translation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<pattern_info>
+						<pattern>1이 2를 들었다 놓다</pattern>
+					</pattern_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<example_info>
+						<type>
+							
+							
+							문장
+							
+								
+						</type>
+						<example>아이들이 정신없이 뛰어다니며 집 안을 들었다 놓는 바람에 엄마는 정신을 차릴 수가 없었다.</example>
+					</example_info>
+					
+					
+					
+					
+				</subsense_info>
+				
+				
+				
+			</subword_info>
+			
+			
+		</word_info>
+	</item>
+	
+</channel>    
+
+

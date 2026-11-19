@@ -1,0 +1,25 @@
+{
+  "channel": {
+    "total": 1,
+    "item": [
+      {
+        "sup_no": "0",
+        "target_code": "186076",
+        "pos": "명사",
+        "origin": "選擇",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=186076&searchKeywordTo=3",
+          "definition": "여럿 가운데서 필요한 것을 골라 뽑음.",
+          "type": "일반어"
+        },
+        "word": "선택"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203304",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

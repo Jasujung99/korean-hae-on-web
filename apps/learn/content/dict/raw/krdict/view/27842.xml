@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색</title>
+	<link>https://krdict.korean.go.kr/dicSearch/SearchView?ParaWordNo=27842</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색 결과</description>
+	<lastBuildDate>20261119202706</lastBuildDate> 
+	<total>1</total>
+	
+	<item>
+		<target_code>27842</target_code>
+		<word_info>
+			<word>출판</word>
+			<sup_no>0</sup_no>
+			<word_unit>단어</word_unit>
+			<pos>명사</pos>
+			<word_type>한자어</word_type>
+			
+			
+			<original_language_info>
+				<original_language>出版</original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+			
+			
+			<pronunciation_info>
+				<pronunciation>출판</pronunciation>
+				<link>https://krdicmedia.korean.go.kr/front/search/searchResultView.do?file_no=9703</link>
+			</pronunciation_info>
+			
+			
+			
+			<pos>명사</pos>
+			
+			
+			<der_info>
+				<word>출판되다</word>
+				<link_type>C</link_type>
+				
+				<link_target_code>84330</link_target_code>
+				<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=84330</link>
+				
+			</der_info>
+			
+			<der_info>
+				<word>출판하다</word>
+				<link_type>C</link_type>
+				
+				<link_target_code>79060</link_target_code>
+				<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=79060</link>
+				
+			</der_info>
+			
+			
+			
+			<word_grade>중급</word_grade>
+			
+			
+			<category_info>
+				<type>의미 범주</type>
+				<written_form>사회 생활 &gt; 통신 행위</written_form>
+			</category_info>			
+			
+			
+			
+			
+			<category_info>
+				<type>주제 및 상황 범주</type>
+				<written_form>대중 매체</written_form>
+			</category_info>			
+			
+			
+			
+			
+			
+			
+			<sense_info>
+				<definition>글, 그림, 악보 등을 책으로 만들어 세상에 내놓음.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[publishing]]></trans_word>
+					<trans_dfn><![CDATA[An act of making pieces of writing, painting, music, etc., into a book or collection and releasing them in public.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[издание]]></trans_word>
+					<trans_dfn><![CDATA[Воспроизведение и выпуск в свет текста, рисунка и т.п.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>이 소설은 영어로 번역되어 출판이 되자 큰 인기를 얻었다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>최 교수는 이 책의 출판을 계기로 많은 학자들의 주목을 받았다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>도서 출판.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>출판 기념회.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>출판 산업.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>출판 업계.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>출판이 거절되다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>출판을 준비하다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				<rel_info>
+					<word>간행</word>
+					<type>유의어</type>
+					<link_type>C</link_type>
+					
+					<link_target_code>15117</link_target_code>
+					<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=15117</link>
+					
+				</rel_info>
+				
+				
+				
+				<rel_info>
+					<word>출간</word>
+					<type>유의어</type>
+					<link_type>C</link_type>
+					
+					<link_target_code>78968</link_target_code>
+					<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=78968</link>
+					
+				</rel_info>
+				
+				
+				
+				
+			</sense_info>
+			
+			
+			
+		</word_info>
+	</item>
+	
+</channel>    
+
+

@@ -1,0 +1,152 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202945</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>494300</target_code>
+		<word_info>
+			<word><![CDATA[초콜릿]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				
+				외래어
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[chocolate]]></original_language>
+				<language_type>영어</language_type>
+			</original_language_info>
+			
+			
+
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>494300001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>494300001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>295232</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[카카오나무 열매의 씨를 볶아 만든 가루에 우유, 설탕, 향료 따위를 섞어 만든 것.]]></definition>
+						<definition_original><![CDATA[카카오나무 열매의 씨를 볶아 만든 가루에 우유, 설탕, 향료 따위를 섞어 만든 것.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[달콤한 초콜릿.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그들은 먼지를 마시며 길가에 늘어서 있는 아이들에게 껌이며 초콜릿 따위를 곧잘 던져 주었다.]]></example>
+							
+							<source><![CDATA[이동하, 우울한 귀향]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+						
+						<multimedia_info>
+							
+							<lable><![CDATA[초콜릿]]></lable>
+							
+							<type>
+								
+								
+								
+								
+								사진
+								
+								
+							</type>
+							<link><![CDATA[https://dicmedia.korean.go.kr/front/view/mediaView.do?file_no=102919]]></link>
+						</multimedia_info>
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

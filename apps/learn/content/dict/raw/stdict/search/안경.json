@@ -1,0 +1,49 @@
+{
+  "channel": {
+    "total": 3,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "216655",
+        "pos": "명사",
+        "origin": "安慶",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=216655&searchKeywordTo=3",
+          "definition": "→ 안칭.",
+          "type": "일반어"
+        },
+        "word": "안경"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "451608",
+        "pos": "명사",
+        "origin": "眼境",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=451608&searchKeywordTo=3",
+          "definition": "생각이 미치는 범위.",
+          "type": "일반어"
+        },
+        "word": "안경"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "451609",
+        "pos": "명사",
+        "origin": "眼鏡",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=451609&searchKeywordTo=3",
+          "definition": "시력이 나쁜 눈을 잘 보이게 하기 위하여나 바람, 먼지, 강한 햇빛 따위를 막기 위하여 눈에 쓰는 물건.",
+          "type": "일반어"
+        },
+        "word": "안경"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202959",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

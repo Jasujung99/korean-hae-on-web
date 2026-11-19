@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 검색</title>
+	<link>https://krdict.korean.go.kr</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 검색 결과</description>
+	<lastBuildDate>20261119203343</lastBuildDate>
+	<total>2</total>
+	<start>1</start>
+	<num>100</num>
+	
+	
+	
+	<item>
+		
+		
+		<target_code>71300</target_code>
+		<word>특히</word>
+		<sup_no>0</sup_no>
+		
+		<origin>特히</origin>
+		
+		
+		<pronunciation>트키</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>부사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=71300</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>보통과 다르게.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[specially; particularly; especially]]></trans_word>
+				<trans_dfn><![CDATA[Differently from a normal one.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[особенно; особо; в особенности; преимущественно; тем более что; в частности]]></trans_word>
+				<trans_dfn><![CDATA[В отличии от обычного.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>89879</target_code>
+		<word>기특히</word>
+		<sup_no>0</sup_no>
+		
+		<origin>奇特히</origin>
+		
+		
+		<pronunciation>기트키</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>부사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=89879</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>말이나 행동이 놀라우면서 자랑스럽고 귀엽게.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[laudably; admirably]]></trans_word>
+				<trans_dfn><![CDATA[In the manner of someone's remark or behavior being surprising, admirable, and adorable.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[похвально; лестно]]></trans_word>
+				<trans_dfn><![CDATA[(в кор. яз. является нар.) Речь или действия удивительны, милы и великолепны.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	
+	
+</channel>
+
+

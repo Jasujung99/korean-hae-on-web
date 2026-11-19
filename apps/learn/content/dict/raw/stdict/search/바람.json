@@ -1,0 +1,49 @@
+{
+  "channel": {
+    "total": 3,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "426114",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=426114&searchKeywordTo=3",
+          "definition": "기압의 변화 또는 사람이나 기계에 의하여 일어나는 공기의 움직임.",
+          "type": "일반어"
+        },
+        "word": "바람"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "134732",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=134732&searchKeywordTo=3",
+          "definition": "어떤 일이 이루어지기를 기다리는 간절한 마음.",
+          "type": "일반어"
+        },
+        "word": "바람"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "134733",
+        "pos": "의존 명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=134733&searchKeywordTo=3",
+          "definition": "길이의 단위. 한 바람은 실이나 새끼 따위 한 발 정도의 길이이다.",
+          "type": "일반어"
+        },
+        "word": "바람"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202801",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

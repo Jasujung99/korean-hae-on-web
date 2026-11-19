@@ -1,0 +1,285 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202429</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>280712</target_code>
+		<word_info>
+			<word><![CDATA[자리]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[자리]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+			
+			<relation_info>
+				<word>자리(를) 보다</word>
+				<type>관용구</type>
+				<link_target_code>523800</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=523800&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>자리를 걷고[털고] 일어나다</word>
+				<type>관용구</type>
+				<link_target_code>523801</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=523801&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>자리를 걷다</word>
+				<type>관용구</type>
+				<link_target_code>523802</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=523802&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>자리에 눕다</word>
+				<type>관용구</type>
+				<link_target_code>523803</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=523803&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[자리＜석상＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>280712001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>280712001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>19593</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[앉거나 누울 수 있도록 바닥에 까는 물건. 주로 직사각형으로 되어 있으며, 왕골·부들·갈대 따위로 짜서 만든다.]]></definition>
+						<definition_original><![CDATA[앉거나 누울 수 있도록 바닥에 까는 물건. 주로 직사각형으로 되어 있으며, 왕골·부들·갈대 따위로 짜서 만든다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[자리를 깔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[양지바른 곳에 자리를 편 필묵 장수, 지물 장수, 물감 장수 노인들은 가을 햇볕 아래서 꾸벅꾸벅 졸고 있다.]]></example>
+							
+							<source><![CDATA[박경리, 토지]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>51511</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[이불과 요를 통틀어 이르는 말.]]></definition>
+						<definition_original><![CDATA[이불과 요를 통틀어 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[사랑방에 자리를 펴 놓았으니 편히 쉬십시오.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>이부-자리</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>468669</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=263850&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>67055</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[잠을 자기 위해 사용하는 이부자리나 침대보 따위를 통틀어 이르는 말.]]></definition>
+						<definition_original><![CDATA[잠을 자기 위해 사용하는 이부자리나 침대보 따위를 통틀어 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[자리를 마련해 두었으니 가서 주무세요.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나는 자리에 든 뒤에도 다음 날의 일을 생각하느라 잠을 잘 이룰 수가 없었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>잠-자리01</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>21837</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=476408&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

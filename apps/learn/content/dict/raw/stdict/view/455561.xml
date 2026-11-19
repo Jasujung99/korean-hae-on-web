@@ -1,0 +1,447 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202638</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>455561</target_code>
+		<word_info>
+			<word><![CDATA[아프다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[아프다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[아파]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[아파]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[아프니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[아프니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+			
+			<relation_info>
+				<word>아픈 곳을[데를] 건드리다[찌르다]</word>
+				<type>관용구</type>
+				<link_target_code>530181</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530181&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>아픈 아이 눈 들어가듯 한다</word>
+				<type>속담</type>
+				<link_target_code>530180</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530180&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[＜아다＜알다＜석상＞←앓-+--]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>455561001</pos_code>
+				<pos>형용사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>455561001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…이</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>442620</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[몸의 어느 부분이 다치거나 맞거나 자극을 받아 괴로움을 느끼다.]]></definition>
+						<definition_original><![CDATA[몸의 어느 부분이 다치거나 맞거나 자극을 받아 괴로움을 느끼다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[손바닥을 아프게 때리다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[칼에 벤 자리가 아프다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[매 맞은 자리가 아프다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[바늘에 찔려 아프다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[돌부리를 걷어차 발이 아프다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>446196</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[몸이 병이 나거나 들어 앓는 상태에 있다.]]></definition>
+						<definition_original><![CDATA[몸이 병이 나거나 들어 앓는 상태에 있다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[몸이 아파서 조퇴를 하였다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[사람들은 아파 봐야 건강의 소중함을 안다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그 사람은 걸핏하면 아파 주위 사람을 걱정시킨다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어디가 어떻게 아프다고 말을 해야 알지 덮어놓고서 아프다기만 하면 어디가 어떻게 아픈지 알 수가 있는가.]]></example>
+							
+							<source><![CDATA[이무영, 농민]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>448260</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[오랫동안 어떤 일을 하여 몸의 어떤 부분에 괴로운 느낌을 받는 상태에 있다.]]></definition>
+						<definition_original><![CDATA[오랫동안 어떤 일을 하여 몸의 어떤 부분에 괴로운 느낌을 받는 상태에 있다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[책을 오래 보았더니 눈이 아프다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[손이 차츰 바빠지며 팔이 아프고 국자를 쥔 손아귀가 뻑뻑하다.]]></example>
+							
+							<source><![CDATA[박영한, 머나먼 송바강]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>448716</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[해결하기 어려운 일이나 복잡한 문제로 생각을 하기 어렵거나 괴로운 상태에 있다.]]></definition>
+						<definition_original><![CDATA[해결하기 어려운 일이나 복잡한 문제로 생각을 하기 어렵거나 괴로운 상태에 있다.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[‘머리’를 뜻하는 말과 함께 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[머리 아픈 문제.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[이 일을 어떻게 했으면 좋을지, 정말 골머리가 아팠다.]]></example>
+							
+							<source><![CDATA[하근찬, 야호]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>448895</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[슬픔이나 연민이나 쓰라림 따위가 있어 괴로운 상태에 있다.]]></definition>
+						<definition_original><![CDATA[슬픔이나 연민이나 쓰라림 따위가 있어 괴로운 상태에 있다.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[‘마음’을 뜻하는 말과 함께 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그와 헤어져 가슴이 아프다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[당신 혼자 밤을 새울 것을 생각하니 도저히 마음이 아파서 견딜 수 없었어요.]]></example>
+							
+							<source><![CDATA[최인호, 지구인]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그와 더불어 지낸 세월을 회고하니 내 가슴은 찢어지는 듯 아프오.]]></example>
+							
+							<source><![CDATA[이병주, 지리산]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

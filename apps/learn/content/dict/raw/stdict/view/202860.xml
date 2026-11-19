@@ -1,0 +1,130 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202128</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>202860</target_code>
+		<word_info>
+			<word><![CDATA[시장]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[시장]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>202860001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>202860001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>390406</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어린아이를 일으켜 세워 두 손을 잡고 ‘시장시장’ 소리를 내면서 앞뒤로 밀었다 당겼다 하는 짓.]]></definition>
+						<definition_original><![CDATA[어린아이를 일으켜 세워 두 손을 잡고 ‘시장시장’ 소리를 내면서 앞뒤로 밀었다 당겼다 하는 짓.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>시장-질</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>208854</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=204045&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

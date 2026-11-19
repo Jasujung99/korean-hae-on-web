@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색</title>
+	<link>https://krdict.korean.go.kr/dicSearch/SearchView?ParaWordNo=70869</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색 결과</description>
+	<lastBuildDate>20261119203314</lastBuildDate> 
+	<total>1</total>
+	
+	<item>
+		<target_code>70869</target_code>
+		<word_info>
+			<word>점심때</word>
+			<sup_no>0</sup_no>
+			<word_unit>단어</word_unit>
+			<pos>명사</pos>
+			<word_type>혼종어</word_type>
+			
+			
+			<original_language_info>
+				<original_language>點心</original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			<original_language_info>
+				<original_language>때</original_language>
+				<language_type>고유어</language_type>
+			</original_language_info>
+			
+			
+			
+			
+			<pronunciation_info>
+				<pronunciation>점ː심때</pronunciation>
+				<link>https://krdicmedia.korean.go.kr/front/search/searchResultView.do?file_no=336241</link>
+			</pronunciation_info>
+			
+			
+			
+			<pos>명사</pos>
+			
+			
+			<word_grade>중급</word_grade>
+			
+			
+			<category_info>
+				<type>의미 범주</type>
+				<written_form>개념 &gt; 시간</written_form>
+			</category_info>			
+			
+			
+			
+			
+			<category_info>
+				<type>주제 및 상황 범주</type>
+				<written_form>없음</written_form>
+			</category_info>			
+			
+			
+			
+			
+			
+			
+			<sense_info>
+				<definition>하루 중에 해가 가장 높이 떠 있는, 아침과 저녁의 중간이 되는 시간.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[afternoon]]></trans_word>
+					<trans_dfn><![CDATA[The time between morning and evening when the sun is at its highest during the day.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[обеденное время; полдень]]></trans_word>
+					<trans_dfn><![CDATA[Промежуток времени суток, когда солнце стоит высоко над горизонтом; от утра до вечера.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>아침을 늦게 먹은 민준이는 점심때가 돼도 배가 고프지 않았다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>맛있다고 소문난 식당은 점심때에 손님들로 발 디딜 틈이 없었다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>오늘 점심에 무엇을 먹을까요?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>먼저 드세요. 저는 지금 외근 나가면 점심때가 지나서 돌아올 것 같아요.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>점심때가 다가오다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>점심때가 되다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>점심때가 오다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>점심때가 지나다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>점심때에 맞추다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				<rel_info>
+					<word>점심</word>
+					<type>유의어</type>
+					<link_type>C</link_type>
+					
+					<link_target_code>70868</link_target_code>
+					<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=70868</link>
+					
+				</rel_info>
+				
+				
+				
+				<rel_info>
+					<word>아침때, 저녁때</word>
+					<type>참고어</type>
+					<link_type>T</link_type>
+					
+				</rel_info>
+				
+				
+				
+				
+			</sense_info>
+			
+			
+			
+		</word_info>
+	</item>
+	
+</channel>    
+
+

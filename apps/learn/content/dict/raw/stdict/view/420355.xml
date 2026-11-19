@@ -1,0 +1,230 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203840</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>420355</target_code>
+		<word_info>
+			<word><![CDATA[맛-있다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[마딛따]]></pronunciation>
+			</pronunciation_info>
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[마싣따]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[맛있어]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[마디써]]></pronunciation>
+					</pronunciation_info>
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[마시써]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[맛있으니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[마디쓰니]]></pronunciation>
+					</pronunciation_info>
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[마시쓰니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[맛있는]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[마딘는]]></pronunciation>
+					</pronunciation_info>
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[마신는]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+			
+			<relation_info>
+				<word>맛있는 음식도 늘 먹으면 싫다</word>
+				<type>속담</type>
+				<link_target_code>527425</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527425&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<norm_info>
+				
+				<type>표준어</type>
+				
+				
+				
+				<desc><![CDATA[‘맛있다’는 [마딛따]로 발음하는 것이 원칙이고 [마싣따]로도 발음할 수 있다. 이는 받침 뒤에 모음 ‘ㅏ, ㅓ, ㅗ, ㅜ, ㅟ’ 들로 시작되는 실질 형태소가 연결되는 경우에는 대표음으로 바꾸어서 뒤 음절 첫소리로 옮겨 발음하는 것을 원칙으로 하되, ‘맛있다’는 [마싣따]로도 발음할 수 있다는 규정(표준 발음법 제15항)에 따른 것이다.]]></desc>
+				
+			</norm_info>
+			
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>420355001</pos_code>
+				<pos>형용사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>420355001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>146329</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[음식의 맛이 좋다.]]></definition>
+						<definition_original><![CDATA[음식의 맛이 좋다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[맛있는 과자.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[빈대떡을 아주 맛있게 굽는 대폿집이 있는데 거기 들렀다 가.]]></example>
+							
+							<source><![CDATA[이문열, 변경]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[할머니가 맛보라고 권하는 음식은 넙죽넙죽 잘 받아먹으면서 허풍스럽게 맛있다고 음식 칭찬을 했다.]]></example>
+							
+							<source><![CDATA[박완서, 도시의 흉년]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

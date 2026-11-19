@@ -1,0 +1,49 @@
+{
+  "channel": {
+    "total": 3,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "490442",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=490442&searchKeywordTo=3",
+          "definition": "사개를 맞추어 가구나 상자 따위를 만들다.",
+          "type": "일반어"
+        },
+        "word": "짜다"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "318733",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=318733&searchKeywordTo=3",
+          "definition": "누르거나 비틀어서 물기나 기름 따위를 빼내다.",
+          "type": "일반어"
+        },
+        "word": "짜다"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "319020",
+        "pos": "형용사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=319020&searchKeywordTo=3",
+          "definition": "소금과 같은 맛이 있다.",
+          "type": "일반어"
+        },
+        "word": "짜다"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202521",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

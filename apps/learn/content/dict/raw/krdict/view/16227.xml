@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색</title>
+	<link>https://krdict.korean.go.kr/dicSearch/SearchView?ParaWordNo=16227</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색 결과</description>
+	<lastBuildDate>20261119203011</lastBuildDate> 
+	<total>1</total>
+	
+	<item>
+		<target_code>16227</target_code>
+		<word_info>
+			<word>상쾌하다</word>
+			<sup_no>0</sup_no>
+			<word_unit>단어</word_unit>
+			<pos>형용사</pos>
+			<word_type>혼종어</word_type>
+			
+			
+			<original_language_info>
+				<original_language>爽快</original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			<original_language_info>
+				<original_language>하다</original_language>
+				<language_type>고유어</language_type>
+			</original_language_info>
+			
+			
+			
+			
+			<pronunciation_info>
+				<pronunciation>상ː쾌하다</pronunciation>
+				<link>https://krdicmedia.korean.go.kr/front/search/searchResultView.do?file_no=304391</link>
+			</pronunciation_info>
+			
+			
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation>상쾌한</conjugation>
+					
+					
+					
+					<pronunciation_info>
+						<pronunciation>상ː쾌한</pronunciation>
+					</pronunciation_info>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation>상쾌하여</conjugation>
+					
+					
+					
+					
+					
+					<pronunciation_info>
+						<pronunciation>상ː쾌하여</pronunciation>
+					</pronunciation_info>
+					
+					
+					
+					
+					
+					
+					
+				</conjugation_info>
+				
+				
+				<abbreviation_info>
+					<abbreviation>상쾌해</abbreviation>
+					
+					
+					
+					<pronunciation_info>
+						<pronunciation>상ː쾌해</pronunciation>
+					</pronunciation_info>
+					
+					
+					
+				</abbreviation_info>
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation>상쾌하니</conjugation>
+					
+					
+					
+					
+					
+					
+					
+					<pronunciation_info>
+						<pronunciation>상ː쾌하니</pronunciation>
+					</pronunciation_info>
+					
+					
+					
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation>상쾌합니다</conjugation>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<pronunciation_info>
+						<pronunciation>상ː쾌함니다</pronunciation>
+					</pronunciation_info>
+					
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+			<pos>형용사</pos>
+			
+			
+			<word_grade>중급</word_grade>
+			
+			
+			<category_info>
+				<type>의미 범주</type>
+				<written_form>인간 &gt; 감정</written_form>
+			</category_info>			
+			
+			
+			
+			
+			<category_info>
+				<type>주제 및 상황 범주</type>
+				<written_form>날씨와 계절</written_form>
+			</category_info>			
+			
+			<category_info>
+				<type>주제 및 상황 범주</type>
+				<written_form>감정, 기분 표현하기</written_form>
+			</category_info>			
+			
+			
+			
+			
+			
+			
+			<sense_info>
+				<definition>기분이나 느낌 등이 시원하고 산뜻하다.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[refreshing]]></trans_word>
+					<trans_dfn><![CDATA[Feeling cool and fresh.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[бодрый; веселый; свежий]]></trans_word>
+					<trans_dfn><![CDATA[Освежающий и бодрящий (о настроении, чувствах, воздухе и т.п.).]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				<pattern_info>
+					<pattern>1이 상쾌하다</pattern>
+				</pattern_info>
+				
+				
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>나무 사이로 부는 바람이 상쾌해서 기분까지 좋아진다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>그동안 미루어 왔던 대청소를 하고 나니까 기분이 무척 상쾌했다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>등산을 좋아하는 이유가 뭐야?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>산 공기가 상쾌하고 정상에 오르면 성취감이 느껴지기 때문에 등산을 좋아해.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>상쾌한 공기.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>상쾌한 느낌.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>상쾌한 아침.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>기분이 상쾌하다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>마음이 상쾌하다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+			</sense_info>
+			
+			
+			
+		</word_info>
+	</item>
+	
+</channel>    
+
+

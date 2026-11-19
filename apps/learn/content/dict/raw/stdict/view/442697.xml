@@ -1,0 +1,443 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203716</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>442697</target_code>
+		<word_info>
+			<word><![CDATA[선생]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				한자어
+				
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[先生]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[선생]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+			
+			<relation_info>
+				<word>선생의 똥은 개도 안 먹는다</word>
+				<type>속담</type>
+				<link_target_code>529231</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=529231&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			
+
+			
+			
+			<lexical_info>
+				<word>교사09</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>396567</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=396567&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			<lexical_info>
+				<word>교수06</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>35987</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=35987&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			<lexical_info>
+				<word>교원03</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>398634</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=398634&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			<lexical_info>
+				<word>교직-자</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>34054</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=34054&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			
+
+			
+			<pos_info>
+				<pos_code>442697001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>442697001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>13642</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[학생을 가르치는 사람.]]></definition>
+						<definition_original><![CDATA[학생을 가르치는 사람.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[고등학교 선생.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[수학 선생.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>45490</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[학예가 뛰어난 사람을 높여 이르는 말.]]></definition>
+						<definition_original><![CDATA[학예가 뛰어난 사람을 높여 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[율곡 선생.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>64784</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[성(姓)이나 직함 따위에 붙여 남을 높여 이르는 말.]]></definition>
+						<definition_original><![CDATA[성(姓)이나 직함 따위에 붙여 남을 높여 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[김 선생.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[의사 선생.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>69950</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 일에 경험이 많거나 잘 아는 사람을 비유적으로 이르는 말.]]></definition>
+						<definition_original><![CDATA[어떤 일에 경험이 많거나 잘 아는 사람을 비유적으로 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[다른 건 몰라도 바둑은 내가 선생이지.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>71732</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[자기보다 나이가 적은 남자 어른을 높여 이르는 말.]]></definition>
+						<definition_original><![CDATA[자기보다 나이가 적은 남자 어른을 높여 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[선생, 길 좀 물어봅시다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>72075</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[조선 시대에, 성균관에 둔 교무 직원.]]></definition>
+						<definition_original><![CDATA[조선 시대에, 성균관에 둔 교무 직원.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>역사</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>72564</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[각 관아의 전임 관원을 이르던 말.]]></definition>
+						<definition_original><![CDATA[각 관아의 전임 관원을 이르던 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>역사</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

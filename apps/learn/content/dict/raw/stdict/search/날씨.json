@@ -1,0 +1,37 @@
+{
+  "channel": {
+    "total": 2,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "61199",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=61199&searchKeywordTo=3",
+          "definition": "그날그날의 비, 구름, 바람, 기온 따위가 나타나는 기상 상태.",
+          "type": "일반어"
+        },
+        "word": "날씨"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "60229",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=60229&searchKeywordTo=3",
+          "definition": "베의 날과 씨.",
+          "type": "일반어"
+        },
+        "word": "날-씨"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203718",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

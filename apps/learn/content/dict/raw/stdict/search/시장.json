@@ -1,0 +1,145 @@
+{
+  "channel": {
+    "total": 11,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "202328",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=202328&searchKeywordTo=3",
+          "definition": "배가 고픔.",
+          "type": "일반어"
+        },
+        "word": "시장"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "202860",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=202860&searchKeywordTo=3",
+          "definition": "어린아이를 일으켜 세워 두 손을 잡고 ‘시장시장’ 소리를 내면서 앞뒤로 밀었다 당겼다 하는 짓.",
+          "type": "일반어"
+        },
+        "word": "시장"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "202862",
+        "pos": "명사",
+        "origin": "市長",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=202862&searchKeywordTo=3",
+          "definition": "지방 자치 단체인 시의 책임자. 집행 기관으로서 시를 맡아서 다스린다.",
+          "type": "일반어"
+        },
+        "word": "시장"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "202863",
+        "pos": "명사",
+        "origin": "市場",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=202863&searchKeywordTo=3",
+          "definition": "여러 가지 상품을 사고파는 일정한 장소.",
+          "type": "일반어"
+        },
+        "word": "시장"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "202875",
+        "pos": "명사",
+        "origin": "市葬",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=202875&searchKeywordTo=3",
+          "definition": "시장 명의로 지내는 장례.",
+          "type": "일반어"
+        },
+        "word": "시장"
+      },
+      {
+        "sup_no": "6",
+        "target_code": "450338",
+        "pos": "명사",
+        "origin": "屍帳",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=450338&searchKeywordTo=3",
+          "definition": "시체를 검안한 증명서.",
+          "type": "일반어"
+        },
+        "word": "시장"
+      },
+      {
+        "sup_no": "7",
+        "target_code": "202876",
+        "pos": "명사",
+        "origin": "施裝",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=202876&searchKeywordTo=3",
+          "definition": "포장을 함.",
+          "type": "일반어"
+        },
+        "word": "시장"
+      },
+      {
+        "sup_no": "8",
+        "target_code": "450339",
+        "pos": "명사",
+        "origin": "柴場",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=450339&searchKeywordTo=3",
+          "definition": "나무를 가꾸는 말림갓.",
+          "type": "일반어"
+        },
+        "word": "시장"
+      },
+      {
+        "sup_no": "9",
+        "target_code": "202878",
+        "pos": "명사",
+        "origin": "詩章",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=202878&searchKeywordTo=3",
+          "definition": "시(詩)의 장(章)과 구(句)를 통틀어 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "시장"
+      },
+      {
+        "sup_no": "10",
+        "target_code": "202879",
+        "pos": "명사",
+        "origin": "試場",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=202879&searchKeywordTo=3",
+          "definition": "재능이나 실력 따위를 일정한 절차에 따라 검사하고 평가하기 위한 시설을 갖추어 놓은 곳.",
+          "type": "일반어"
+        },
+        "word": "시장"
+      },
+      {
+        "sup_no": "11",
+        "target_code": "450340",
+        "pos": "명사",
+        "origin": "諡狀",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=450340&searchKeywordTo=3",
+          "definition": "재상이나 유교에 밝은 사람들에게 시호를 내리도록 임금에게 건의할 때에, 그가 살았을 때의 일들을 적어 올리던 글.",
+          "type": "일반어"
+        },
+        "word": "시장"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202126",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

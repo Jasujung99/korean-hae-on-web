@@ -1,0 +1,49 @@
+{
+  "channel": {
+    "total": 3,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "495961",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=495961&searchKeywordTo=3",
+          "definition": "구멍이나 구덩이를 만들다.",
+          "type": "일반어"
+        },
+        "word": "파다"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "351415",
+        "pos": "품사 없음",
+        "origin": "頗多",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=351415&searchKeywordTo=3",
+          "definition": "‘파다하다’의 어근.",
+          "type": "일반어"
+        },
+        "word": "파다"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "351418",
+        "pos": "품사 없음",
+        "origin": "播多",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=351418&searchKeywordTo=3",
+          "definition": "‘파다하다’의 어근.",
+          "type": "일반어"
+        },
+        "word": "파다"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202813",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

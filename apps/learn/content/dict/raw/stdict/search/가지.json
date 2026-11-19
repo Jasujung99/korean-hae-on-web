@@ -1,0 +1,85 @@
+{
+  "channel": {
+    "total": 6,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "6051",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=6051&searchKeywordTo=3",
+          "definition": "나무나 풀의 원줄기에서 뻗어 나온 줄기.",
+          "type": "일반어"
+        },
+        "word": "가지"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "6052",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=6052&searchKeywordTo=3",
+          "definition": "‘거지’를 낮잡아 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "가지"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "390194",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=390194&searchKeywordTo=3",
+          "definition": "가짓과의 한해살이풀. 높이는 60~100cm이며, 온몸에 털이 나 있고, 잎은 어긋난다. 줄기와 잎은 검은 자주색이고 6~9월에 흰색이나 엷은 자주색 따위의 통꽃이 핀다. 열매는 식용한다. 인도가 원산지로 세계 각지에 150여 종이 분포한다.",
+          "type": "일반어"
+        },
+        "word": "가지"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "6053",
+        "pos": "의존 명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=6053&searchKeywordTo=3",
+          "definition": "사물을 그 성질이나 특징에 따라 종류별로 낱낱이 헤아리는 말.",
+          "type": "일반어"
+        },
+        "word": "가지"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "390195",
+        "pos": "명사",
+        "origin": "加持",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=390195&searchKeywordTo=3",
+          "definition": "부처와 중생이 일체가 되는 일.",
+          "type": "일반어"
+        },
+        "word": "가지"
+      },
+      {
+        "sup_no": "6",
+        "target_code": "4406",
+        "pos": "명사",
+        "origin": "可知",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=4406&searchKeywordTo=3",
+          "definition": "알 만함. 또는 알 수 있음.",
+          "type": "일반어"
+        },
+        "word": "가지"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202107",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

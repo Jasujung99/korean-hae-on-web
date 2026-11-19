@@ -1,0 +1,37 @@
+{
+  "channel": {
+    "total": 2,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "452542",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=452542&searchKeywordTo=3",
+          "definition": "어떤 물체에 칼이나 톱을 대고 아래로 누르면서 날을 앞뒤로 움직여서 잘라 내거나 토막이 나게 하다.",
+          "type": "일반어"
+        },
+        "word": "썰다"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "212148",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=212148&searchKeywordTo=3",
+          "definition": "‘써리다’의 준말.",
+          "type": "일반어"
+        },
+        "word": "썰다"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203829",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "channel": {
+    "total": 3,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "131134",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=131134&searchKeywordTo=3",
+          "definition": "다른 사람이 주거나 보내오는 물건 따위를 가지다.",
+          "type": "일반어"
+        },
+        "word": "받다"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "427342",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=427342&searchKeywordTo=3",
+          "definition": "머리나 뿔 따위로 세차게 부딪치다.",
+          "type": "일반어"
+        },
+        "word": "받다"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "131136",
+        "pos": "접사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=131136&searchKeywordTo=3",
+          "definition": "‘피동’의 뜻을 더하고 동사를 만드는 접미사.",
+          "type": "일반어"
+        },
+        "word": "-받다"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203448",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

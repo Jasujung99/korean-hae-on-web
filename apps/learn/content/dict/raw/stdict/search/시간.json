@@ -1,0 +1,73 @@
+{
+  "channel": {
+    "total": 5,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "203093",
+        "pos": "명사",
+        "origin": "矢幹",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=203093&searchKeywordTo=3",
+          "definition": "화살의 몸을 이루는 대.",
+          "type": "일반어"
+        },
+        "word": "시간"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "203110",
+        "pos": "명사",
+        "origin": "屍姦",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=203110&searchKeywordTo=3",
+          "definition": "시체를 간음(姦淫)함.",
+          "type": "일반어"
+        },
+        "word": "시간"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "203112",
+        "pos": "명사",
+        "origin": "屍諫",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=203112&searchKeywordTo=3",
+          "definition": "죽음을 무릅쓰고 임금에게 간언함.",
+          "type": "일반어"
+        },
+        "word": "시간"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "448126",
+        "pos": "명사",
+        "origin": "時間",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=448126&searchKeywordTo=3",
+          "definition": "어떤 시각에서 어떤 시각까지의 사이.",
+          "type": "일반어"
+        },
+        "word": "시간"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "203115",
+        "pos": "명사",
+        "origin": "時艱",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=203115&searchKeywordTo=3",
+          "definition": "그때의 어려움. 또는 시국의 어려움.",
+          "type": "일반어"
+        },
+        "word": "시간"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203730",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

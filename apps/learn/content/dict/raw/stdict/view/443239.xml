@@ -1,0 +1,210 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202755</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>443239</target_code>
+		<word_info>
+			<word><![CDATA[뿐]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[뿐]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			<origin><![CDATA[＜＜석상＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>443239001</pos_code>
+				<pos>의존 명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>443239001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>12485</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[다만 어떠하거나 어찌할 따름이라는 뜻을 나타내는 말.]]></definition>
+						<definition_original><![CDATA[다만 어떠하거나 어찌할 따름이라는 뜻을 나타내는 말.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[어미 ‘-을’ 뒤에 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[소문으로만 들었을 뿐이네.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 웃고만 있을 뿐이지 싫다 좋다 말이 없다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[모두들 구경만 할 뿐 누구 하나 거드는 이가 없었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[학생들은 약간 기가 질려서 눈만 말똥거릴 뿐 대뜸 반응은 없다.]]></example>
+							
+							<source><![CDATA[최인훈, 회색인]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>44647</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[오직 그렇게 하거나 그러하다는 것을 나타내는 말.]]></definition>
+						<definition_original><![CDATA[오직 그렇게 하거나 그러하다는 것을 나타내는 말.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[‘-다 뿐이지’ 구성으로 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[이름이 나지 않았다 뿐이지 참 성실한 사람이다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[시간만 보냈다 뿐이지 한 일은 없다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

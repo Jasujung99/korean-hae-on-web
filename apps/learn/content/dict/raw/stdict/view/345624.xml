@@ -1,0 +1,532 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203052</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>345624</target_code>
+		<word_info>
+			<word><![CDATA[키우다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[키우다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[키우어]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[키우어]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+				<abbreviation_info>
+					<abbreviation><![CDATA[키워]]></abbreviation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[키워]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</abbreviation_info>
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[키우니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[키우니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			<origin><![CDATA[＜킈우다＜신합＞←크-+-이-+-우-]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>345624001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>345624001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>363965</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[동식물을 돌보아 기르다. ‘크다’의 사동사.]]></definition>
+						<definition_original><![CDATA[동식물을 돌보아 기르다. ‘<sense_no>2696</sense_no>크다’의 사동사.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[정성 들여 키운 작물.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나무를 키우다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[소를 키우다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그들은 텃밭에서 토마토, 상추 등을 키웠다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그 땅에 씨를 뿌려 모를 키우고, 옥구슬보다 귀한 열매를 거두는 기쁨을 어디에 비할 수 있단 말인가.]]></example>
+							
+							<source><![CDATA[문순태, 타오르는 강]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>기르다</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>6992</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=406741&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>1394095</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[사람을 돌보아 몸과 마음을 자라게 하다. ‘크다’의 사동사.]]></definition>
+						<definition_original><![CDATA[사람을 돌보아 몸과 마음을 자라게 하다. ‘<sense_no>31770</sense_no>크다’의 사동사.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[자녀를 키우다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[애지중지 키운 딸아이가 이번 봄에 결혼한다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[동시에 나는 내 힘으로 아내를 먹여 살리고 아이들을 키우고 싶소.]]></example>
+							
+							<source><![CDATA[이병주, 행복어 사전]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>1394096</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[수준이나 능력 따위를 높이다. ‘크다’의 사동사.]]></definition>
+						<definition_original><![CDATA[수준이나 능력 따위를 높이다. ‘<sense_no>62735</sense_no>크다’의 사동사.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[적절한 칭찬은 아이의 자신감을 키운다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[현실에 눈을 뜨고 역사의 고통을 이해하는 능력을 키우게 되었다는 점이었다.]]></example>
+							
+							<source><![CDATA[박태순, 어느 사학도의 젊은 시절]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 서광범, 서재필과 함께 멀리 미국으로 건너가 꿈을 키우기도 했다.]]></example>
+							
+							<source><![CDATA[유주현, 대한 제국]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>1394097</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[규모, 범위 따위를 늘리다.]]></definition>
+						<definition_original><![CDATA[규모, 범위 따위를 늘리다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[회사를 키우다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 가게를 조금씩 확장하며 사업을 키워 나갔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그 세력을 키우니 나라를 잃은 백성들이 이에 호응하여 전라도, 경상도 일대가 삼별초군의 수중이 되었지요.]]></example>
+							
+							<source><![CDATA[김원일, 불의 제전]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>1394098</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[상태나 상황 따위를 나빠지거나 심해지게 하다.]]></definition>
+						<definition_original><![CDATA[상태나 상황 따위를 나빠지거나 심해지게 하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[화를 키우다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[병을 키우다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[사실인지 아닌지 알 수 없는 소문들이 사람들의 불안을 키웠다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[자기 때문에 성규가 궁지에 몰려 있는 걸 보고만 있을 수 없어서였는데, 아들은 집안의 분란을 더 키우고 싶지 않았던지, 민 노인 쪽엔 시선을 돌리지도 않은 채 성규에게만 소리를 꽥 질렀다.]]></example>
+							
+							<source><![CDATA[최일남, 흐르는 북]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[감옥에 처넣으면 원한만 더 키우는 꼴이 될 것 같습니다. 더구나, 아버님이 저러고 나오시니 쉽게 감옥에 넘길 수도 없을 것 같고 또….]]></example>
+							
+							<source><![CDATA[송기숙, 녹두 장군]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>1394099</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[소리를 강하게 하다.]]></definition>
+						<definition_original><![CDATA[소리를 강하게 하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[음악 소리를 키우다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[통화 음량을 너무 키워서 맞은편 자리에 있는 나도 말소리를 들을 수 있었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[볼륨을 조금만 더 키워주게.]]></example>
+							
+							<source><![CDATA[홍성원, 육이오]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

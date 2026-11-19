@@ -1,0 +1,867 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203300</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>420130</target_code>
+		<word_info>
+			<word><![CDATA[만들다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[만들다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[만들어]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[만드러]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[만드니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[만드니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[만드오]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[만드오]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			<origin><![CDATA[＜들다/다＜들다/다＜다＜다＜용가＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>420130001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>420130001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>30490</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[노력이나 기술 따위를 들여 목적하는 사물을 이루다.]]></definition>
+						<definition_original><![CDATA[노력이나 기술 따위를 들여 목적하는 사물을 이루다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[음식을 만들다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[오랜 공사를 벌인 끝에 마침내 터널을 만들었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[임진왜란 때에, 이순신이 거북선을 만들었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[날이 밝자 대정 민당은 두 군데 왕대밭을 쓰러뜨려 죽창을 만드는 한편 서둘러 통문을 작성하여 삼읍에 급주로 띄웠다.]]></example>
+							
+							<source><![CDATA[현기영, 변방에 우짖는 새]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>60810</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[책을 저술하거나 편찬하다.]]></definition>
+						<definition_original><![CDATA[책을 저술하거나 편찬하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[교과서를 만들다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그런 허무맹랑한 이야기로 책을 만들 수는 없다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>68712</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[새로운 상태를 이루어 내다.]]></definition>
+						<definition_original><![CDATA[새로운 상태를 이루어 내다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[새 분위기를 만들다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[우리 팀은 이번 안타로 추격의 발판을 만들었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>70973</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[글이나 노래를 짓거나 문서 같은 것을 짜다.]]></definition>
+						<definition_original><![CDATA[글이나 노래를 짓거나 문서 같은 것을 짜다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[노래를 만들다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[밤새 오늘 제출할 보고서를 만들었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>72431</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[규칙이나 법, 제도 따위를 정하다.]]></definition>
+						<definition_original><![CDATA[규칙이나 법, 제도 따위를 정하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[회칙을 만들다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[법률을 만들다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[협회는 경기 규칙을 새로이 만들었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>71996</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[기관이나 단체 따위를 결성하다.]]></definition>
+						<definition_original><![CDATA[기관이나 단체 따위를 결성하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[동아리를 만들다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[협동조합을 만들어 운영하다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[회사에서 새로운 사업을 추진할 팀을 만들었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>72976</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[돈이나 일 따위를 마련하다.]]></definition>
+						<definition_original><![CDATA[돈이나 일 따위를 마련하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[여행 경비를 만들다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 물려받은 땅을 팔아 사업 자금을 만들었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그들에게 무슨 일거리를 만들어 주어야 할 것 같아요.]]></example>
+							
+							<source><![CDATA[송기숙, 암태도]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>72870</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[틈, 시간 따위를 짜내다.]]></definition>
+						<definition_original><![CDATA[틈, 시간 따위를 짜내다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[짬을 만들다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[기회를 만들다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[무척 바빴지만 잠시 쉴 틈을 만들었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[담배 한 대를 피울 시간도 만들지 않고, 팔기는 일을 서둔다.]]></example>
+							
+							<source><![CDATA[김춘복, 쌈짓골]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>73290</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[허물이나 상처 따위를 생기게 하다.]]></definition>
+						<definition_original><![CDATA[허물이나 상처 따위를 생기게 하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[얼굴에 상처를 만들다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 유리를 돌로 긁어 흠집을 만들었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>72920</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[말썽이나 일 따위를 일으키거나 꾸며 내다.]]></definition>
+						<definition_original><![CDATA[말썽이나 일 따위를 일으키거나 꾸며 내다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[넌, 괜한 일을 만들어서 사람을 귀찮게 하니?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>73125</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[영화나 드라마 따위를 제작하다.]]></definition>
+						<definition_original><![CDATA[영화나 드라마 따위를 제작하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[어느 영화감독이 엉터리 영화를 만들고 싶겠니?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 심금을 울리는 드라마를 만드는 감독으로 이미 정평이 나 있다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>420130001002</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을 …으로</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>146062</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[무엇이 되게 하다.]]></definition>
+						<definition_original><![CDATA[무엇이 되게 하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[이웃 나라를 속국으로 만들다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그의 계획은 지금까지 들은 이야기들을 소설로 만들겠다는 것이다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[내가 하는 일이라야 기껏해서 남들의 원고를 책으로 만들기 위해 틀린 글자를 잡아내는 것이니….]]></example>
+							
+							<source><![CDATA[안정효, 하얀 전쟁]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>420130001003</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을 -게/도록</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>146063</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[그렇게 되게 하다.]]></definition>
+						<definition_original><![CDATA[그렇게 되게 하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[상대를 꼼짝 못 하게 만들다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[술은 마시는 사람의 혈압을 올라가게 만든다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[대위는 부하들이 자신의 명령에 복종하도록 만들었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[고향이 나를 따뜻이 감싸 준다기보다 더 쓸쓸하고 처참한 심정만 들게 만드니, 이게 무슨 남들이 말하는 정든 고향인가.]]></example>
+							
+							<source><![CDATA[김원일, 노을]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

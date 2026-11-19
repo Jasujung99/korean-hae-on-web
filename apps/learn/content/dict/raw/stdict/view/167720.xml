@@ -1,0 +1,585 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203759</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>167720</target_code>
+		<word_info>
+			<word><![CDATA[사다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[사다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[사]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[사]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[사니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[사니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+			
+			<relation_info>
+				<word>사서 고생(을) 하다</word>
+				<type>관용구</type>
+				<link_target_code>522138</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=522138&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[사다＜석상＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>167720001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>167720001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…에서/에게서 …을</pattern>
+					</pattern_info>
+					
+					
+					
+					
+					<grammar_info>
+						<grammar><![CDATA[‘…에게서’ 대신에 ‘…에게’가 쓰이기도 한다]]></grammar>
+					</grammar_info>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>182941</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[값을 치르고 어떤 물건이나 권리를 자기 것으로 만들다.]]></definition>
+						<definition_original><![CDATA[값을 치르고 어떤 물건이나 권리를 자기 것으로 만들다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[중고 시장에서 자가용을 사다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[온라인 쇼핑몰에서 친구 생일 선물을 샀다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[문구점에서 학용품을 사다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[헌책방에서 싼값으로 책을 샀다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[해 먹기 귀찮아서 밖에서 밥을 사 먹을 떄가 많다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[약방에서 붕대를 사다가 상처 난 곳에 감았다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[꼬마는 친구에게 돈 오백 원을 주고 구슬 다섯 개를 샀다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>팔다</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>30641</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=498265&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>167720001002</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>30856</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[가진 것을 팔아 돈을 장만하다.]]></definition>
+						<definition_original><![CDATA[가진 것을 팔아 돈을 장만하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>62918</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[안 해도 좋을 일을 일부러 하다.]]></definition>
+						<definition_original><![CDATA[안 해도 좋을 일을 일부러 하다.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[주로 ‘사서’ 꼴로 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[가만히 있으면 되는데 왜 사서 일을 만들까요?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[모두들 쉬쉬하고 있는데 회의 시간에 이야기를 꺼내 사서 분란을 일으키네요.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>69266</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[다른 사람의 태도나 어떤 일의 가치를 인정하다.]]></definition>
+						<definition_original><![CDATA[다른 사람의 태도나 어떤 일의 가치를 인정하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[공로를 높이 사다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나는 그 친구의 성실함을 높이 산다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[새로운 시도라는 점에서 그의 작품을 높이 사고 싶다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>71701</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[대가를 치르고 사람을 부리다.]]></definition>
+						<definition_original><![CDATA[대가를 치르고 사람을 부리다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[짐꾼을 사서 이삿짐을 날랐다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[일꾼이라도 사서 오늘 안으로 일을 마쳐야 한다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>167720001003</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…에게서 …을</pattern>
+					</pattern_info>
+					
+					
+					
+					
+					<grammar_info>
+						<grammar><![CDATA[‘…에게서’ 대신에 ‘…에게’나 ‘…으로부터’가 쓰이기도 한다]]></grammar>
+					</grammar_info>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>182942</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[다른 사람에게 어떤 감정을 가지게 하다.]]></definition>
+						<definition_original><![CDATA[다른 사람에게 어떤 감정을 가지게 하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[남한테서 의심을 살 만한 일은 하지 마라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그에게 호감을 사기 위해 그녀는 별의별 노력을 다 했다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[새로 부임한 사또는 폭정으로 백성들로부터 원한을 샀다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>167720001004</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…에게 …을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>182943</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[음식 따위를 함께 먹기 위하여 값을 치르다.]]></definition>
+						<definition_original><![CDATA[음식 따위를 함께 먹기 위하여 값을 치르다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[친구에게 저녁을 사다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[오늘 일이 잘되면 저녁에 내가 한잔 사지.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

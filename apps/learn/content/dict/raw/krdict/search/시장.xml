@@ -1,0 +1,4200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 검색</title>
+	<link>https://krdict.korean.go.kr</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 검색 결과</description>
+	<lastBuildDate>20261119202125</lastBuildDate>
+	<total>28</total>
+	<start>1</start>
+	<num>100</num>
+	
+	
+	
+	<item>
+		
+		
+		<target_code>17193</target_code>
+		<word>시장</word>
+		<sup_no>2</sup_no>
+		
+		<origin>市場</origin>
+		
+		
+		<pronunciation>시ː장</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=17193</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>여러 가지 상품을 사고파는 곳.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[market]]></trans_word>
+				<trans_dfn><![CDATA[A place for selling and buying a variety of products. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[базар; рынок]]></trans_word>
+				<trans_dfn><![CDATA[Место, где покупают и продают разные виды товаров.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		<sense>
+			<sense_order>2</sense_order>
+			<definition>상품, 재화, 서비스 등의 거래가 이루어지는 추상적인 영역.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[market]]></trans_word>
+				<trans_dfn><![CDATA[The abstract space where products, goods, and service, etc., are traded. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[рынок]]></trans_word>
+				<trans_dfn><![CDATA[Абстрактная сфера (область), где проводится торговый обмен товарами, имуществом, услугами и т.п.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>13978</target_code>
+		<word>시장</word>
+		<sup_no>1</sup_no>
+		
+		<origin>市長</origin>
+		
+		
+		<pronunciation>시ː장</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=13978</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>시를 다스리는 최고 책임자.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[mayor]]></trans_word>
+				<trans_dfn><![CDATA[The highest executive that governs a city.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[мэр (города)]]></trans_word>
+				<trans_dfn><![CDATA[Высшее должностное лицо, управляющее делами города.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>66042</target_code>
+		<word>시장기</word>
+		<sup_no>0</sup_no>
+		
+		<origin>시장氣</origin>
+		
+		
+		<pronunciation>시장끼</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=66042</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>배가 고픈 느낌.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[hunger]]></trans_word>
+				<trans_dfn><![CDATA[A hungry feeling.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[чувство голода]]></trans_word>
+				<trans_dfn><![CDATA[Ощущение потребности в еде.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>66043</target_code>
+		<word>시장성</word>
+		<sup_no>0</sup_no>
+		
+		<origin>市場性</origin>
+		
+		
+		<pronunciation>시ː장썽</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=66043</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>물건이 잘 팔릴 가능성이나 정도.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[marketability]]></trans_word>
+				<trans_dfn><![CDATA[The possibility or degree that a product will be sold well.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[пригодность к реализации; рыночные возможности]]></trans_word>
+				<trans_dfn><![CDATA[Вероятность или уровень вероятности продажи товара. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>66044</target_code>
+		<word>시장하다</word>
+		<sup_no>0</sup_no>
+		
+		
+		<pronunciation>시장하다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>형용사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=66044</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>배가 고프다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[hungry]]></trans_word>
+				<trans_dfn><![CDATA[Feeling hunger.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[чувствовать себя голодным]]></trans_word>
+				<trans_dfn><![CDATA[Голодный.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>37686</target_code>
+		<word>국내 시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>國內市場</origin>
+		
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=37686</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>생산과 소비 등과 같은 경제 활동이 이루어지는 나라 안의 시장.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[domestic market]]></trans_word>
+				<trans_dfn><![CDATA[A market of a country in which economic activities such as production, consumption, etc., are engaged in.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[Внутренний рынок; отечественный рынок]]></trans_word>
+				<trans_dfn><![CDATA[рынок, ограниченный территорией определённого государства, где осуществляется производство и сбыт товара; экономическая деятельность.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>38621</target_code>
+		<word>국제 시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>國際市場</origin>
+		
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=38621</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>상품의 수요와 공급이 국제적으로 이루어지는 시장.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[international market]]></trans_word>
+				<trans_dfn><![CDATA[A market in which the supply and demand of products take place internationally.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[международный рынок]]></trans_word>
+				<trans_dfn><![CDATA[Рынок, где происходит международная купля-продажа товаров. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		<sense>
+			<sense_order>2</sense_order>
+			<definition>세계인이 경제의 주체가 되어 서로 대립하는 시장 관계.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[international market]]></trans_word>
+				<trans_dfn><![CDATA[A market relationship in which world citizens are the main agent of the economy and conflict with each other.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[мировой рынок; международный рынок]]></trans_word>
+				<trans_dfn><![CDATA[Противоположные рыночные отношения людей мира, ставших субьектами экономики.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>58637</target_code>
+		<word>벼룩시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>벼룩市場</origin>
+		
+		
+		<pronunciation>벼룩씨장</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=58637</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>중고품을 싸게 사고파는 시장.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[flea market]]></trans_word>
+				<trans_dfn><![CDATA[The market where secondhand goods are sold and bought cheaply.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[блошиный рынок, барахолка
+]]></trans_word>
+				<trans_dfn><![CDATA[Рынок, на котором дёшево продают и покупают бывшие в употреблении товары. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>64032</target_code>
+		<word>세계 시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>世界市場</origin>
+		
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=64032</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>무역을 통해 전 세계적으로 상품의 교환이 이루어지는 시장.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[world market; global market]]></trans_word>
+				<trans_dfn><![CDATA[A market on the global scale, where goods are exchanged through trade.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[мировой рынок]]></trans_word>
+				<trans_dfn><![CDATA[Рынок, на котором посредством торговли осуществляется обмен товаров во всем мире.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>90057</target_code>
+		<word>야시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>夜市場</origin>
+		
+		
+		<pronunciation>야ː시장</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=90057</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>밤에 열리는 시장.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[night market]]></trans_word>
+				<trans_dfn><![CDATA[A market that opens at night. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[вечерний (ночной) базар; ночной рынок]]></trans_word>
+				<trans_dfn><![CDATA[Рынок, открывающийся по вечерам. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>31690</target_code>
+		<word>전시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>展示場</origin>
+		
+		
+		<pronunciation>전ː시장</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=31690</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>여러 가지 물품을 차려 놓고 찾아온 사람들에게 보여 주는 장소.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[showroom; exhibition hall]]></trans_word>
+				<trans_dfn><![CDATA[A place where a variety of items are set up for visitors to look at.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[выставочный зал; выставка]]></trans_word>
+				<trans_dfn><![CDATA[Место, где выставлены на всеобщее обозрение какие-либо предметы.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>39911</target_code>
+		<word>금융 시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>金融市場</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=39911</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>자금의 수요와 공급에 따라 자금 거래가 이루어지는 추상적인 시장.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[financial market]]></trans_word>
+				<trans_dfn><![CDATA[An abstract market in which financial activities take place according to the supply and demand of money.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[финансовый рынок]]></trans_word>
+				<trans_dfn><![CDATA[Абстрактный рынок, на котором производятся операции с капиталом, согласно его наличию и поступлению. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>47775</target_code>
+		<word>도깨비시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>도깨비市場</origin>
+		
+		
+		<pronunciation>도깨비시장</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=47775</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>많은 사람들이 모여 여러 종류의 물건을 무질서하게 사고파는 시끄럽고 어수선한 시장.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[busy and disorderly market; zoo]]></trans_word>
+				<trans_dfn><![CDATA[A noisy, chaotic market bustling with many people selling and buying a variety of things in a disheveled manner.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[токкэбисиджан]]></trans_word>
+				<trans_dfn><![CDATA[Рынок, где собирается большое количество людей и ведётся беспорядочная торговля различного рода товарами.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>47863</target_code>
+		<word>도떼기시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>도떼기市場</origin>
+		
+		
+		<pronunciation>도떼기시장</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=47863</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>많은 사람들이 모여 여러 종류의 물건을 무질서하게 사고파는 시끄럽고 어수선한 시장.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[crowded and disorderly market]]></trans_word>
+				<trans_dfn><![CDATA[A market where many people gather to sell or buy many different things usually with much noise and disorder.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[рынок; барахолка]]></trans_word>
+				<trans_dfn><![CDATA[Очень шумное многолюдное место, где продают и покупают различного рода товары.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>47095</target_code>
+		<word>도매 시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>都賣市場</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=47095</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>물건을 낱개로 팔지 않고 여러 개를 한꺼번에 파는 가게가 모여 있는 시장.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[wholesale market]]></trans_word>
+				<trans_dfn><![CDATA[A market where many stores sell a large quantity of the same product, rather than selling them one by one.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[оптовый рынок]]></trans_word>
+				<trans_dfn><![CDATA[Рынок, где расположены магазины, торгующие не в розницу, а большими партиями. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>59923</target_code>
+		<word>부시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>副市長</origin>
+		
+		
+		<pronunciation>부ː시장</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=59923</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>시장을 돕고 시장의 자리가 비었을 때 그 일을 대신하는, 시장 다음의 직위. 또는 그런 직위에 있는 사람.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[deputy mayor]]></trans_word>
+				<trans_dfn><![CDATA[A position below mayor, which assists the mayor and deals with the mayor's job when the office is vacant; a person in such a position. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[заместитель мэра; помощник мэра; вице-мэр]]></trans_word>
+				<trans_dfn><![CDATA[Должность, следующая после должности мэра, в обязанности которой входит помощь мэру или замещение мэра во время его отсутствия. Или человек, занимающий данную должность.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>63466</target_code>
+		<word>소매 시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>小賣市場</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=63466</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>물건을 생산자에게서 사서 직접 소비자에게 파는 사람들이 모여서 이룬 시장.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[retail market]]></trans_word>
+				<trans_dfn><![CDATA[A market for sellers who buy products from the manufacturers and sell them directly to consumers. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[розничный рынок]]></trans_word>
+				<trans_dfn><![CDATA[Рынок, состоящий из продавцов, купивших товары непосредственно у производителя и продающих их покупателям. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>66675</target_code>
+		<word>암시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>暗市場</origin>
+		
+		
+		<pronunciation>암ː시장</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=66675</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>불법으로 몰래 물건을 사고파는 시장.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[black market]]></trans_word>
+				<trans_dfn><![CDATA[A market where goods are sold and bought, secretly and illegally.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[чёрный рынок]]></trans_word>
+				<trans_dfn><![CDATA[Рынок, где осуществляется нелегальная купля и продажа товаров.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>67040</target_code>
+		<word>어시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>魚市場</origin>
+		
+		
+		<pronunciation>어시장</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=67040</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>생선 등의 수산물을 파는 시장.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[fish market]]></trans_word>
+				<trans_dfn><![CDATA[A market that sells marine products including food. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[рынок морепродуктов]]></trans_word>
+				<trans_dfn><![CDATA[Рынок или базар, на котором продают рыбу и другие морепродукты. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>69175</target_code>
+		<word>외환 시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>外換市場</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=69175</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>외국과 거래할 때 쓰는 어음을 사고파는 시장.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[foreign exchange market; forex market]]></trans_word>
+				<trans_dfn><![CDATA[The market where the notes used in a transaction with a foreign country are bought and sold.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[рынок обмена валюты]]></trans_word>
+				<trans_dfn><![CDATA[Рынок купли и продажи иностранной валюты, используемый при проведении сделок с зарубежными странами. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>69500</target_code>
+		<word>우시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>牛市場</origin>
+		
+		
+		<pronunciation>우시장</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=69500</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>소를 사고파는 시장.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[cattle market]]></trans_word>
+				<trans_dfn><![CDATA[A market for selling and buying cattle.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[скотный рынок]]></trans_word>
+				<trans_dfn><![CDATA[Рынок крупного рогатого скота или рынок, на котором продают и покупают коров или быков.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>72884</target_code>
+		<word>인력 시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>人力市場</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=72884</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>남의 일을 해 주고 돈을 받는 노동자들과 일할 사람을 찾는 사람들 사이에서 흥정이 벌어지는 장소.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[day labor market]]></trans_word>
+				<trans_dfn><![CDATA[A place where hirers and day laborers meet and negotiate employment terms.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[рынок труда]]></trans_word>
+				<trans_dfn><![CDATA[Сфера формирования спроса и предложения на рабочую силу, через которую продажа трудовых услуг осуществляется посредством переговоров между наёмниками и нанимателями.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>74481</target_code>
+		<word>재래시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>在來市場</origin>
+		
+		
+		<pronunciation>재ː래시장</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=74481</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>한 지역에 예전부터 있어 온 시장.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[traditional market]]></trans_word>
+				<trans_dfn><![CDATA[A market that has existed in an area for a long time.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[традиционный рынок; старый рынок]]></trans_word>
+				<trans_dfn><![CDATA[Рынок, который существует в каком-либо одном районе с давних пор и по настоящий день.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>76970</target_code>
+		<word>주식 시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>株式市場</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=76970</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>주식을 사고파는 시장.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[stock market]]></trans_word>
+				<trans_dfn><![CDATA[A market where stocks and other securities are bought and sold.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[фондовая биржа]]></trans_word>
+				<trans_dfn><![CDATA[Рынок, где ведётся покупка и продажа акций.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>77410</target_code>
+		<word>증권 시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>證券市場</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=77410</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>증권을 발행하고 사고파는 시장.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[stock market]]></trans_word>
+				<trans_dfn><![CDATA[A market where securities are issued, bought, and sold.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[биржа]]></trans_word>
+				<trans_dfn><![CDATA[Рынок выпуска и купли-продажи ценных бумаг.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>82651</target_code>
+		<word>틈새시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>틈새市場</origin>
+		
+		
+		<pronunciation>틈새시장</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=82651</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>비슷한 상품이 많지만 수요자가 원하는 바로 그 상품이 없어서 공급이 틈새처럼 비어 있는 시장.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[niche market]]></trans_word>
+				<trans_dfn><![CDATA[A market whose supply side is empty, because the very product which buyers want is not available despite the availability of similar products.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[нишевой рынок]]></trans_word>
+				<trans_dfn><![CDATA[Рынок, имеющий относительно небольшое число потребителей, объединённых характерным признаком, в противоположность крупному рынку, который охватывает большое число разнородных потребителей.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>68279</target_code>
+		<word>남대문 시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>南大門市場</origin>
+		
+		
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=68279</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>서울의 남대문 동쪽에 있는 큰 시장. 아동복과 주방용품, 수입 상품 등을 주로 취급한다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[Namdaemun Market]]></trans_word>
+				<trans_dfn><![CDATA[A big market located at the eastern side of Namdaemun, Seoul; it mainly sells children's clothing, kitchen appliances, imported goods, etc.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[рынок Намдемун]]></trans_word>
+				<trans_dfn><![CDATA[Крупный рынок около Больших южных ворот г. Сеула. В основном осуществляется как оптовая, так и розничная торговля детской одежды, кухонных принадлежностей, импортных товаров и т.п.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>68280</target_code>
+		<word>동대문 시장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>東大門市場</origin>
+		
+		
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=68280</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>서울의 동대문 주변에 있는 대규모의 도매, 소매 시장. 의류를 취급하는 가게가 많고 쇼핑 명소로도 유명하다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[Dongdaemun Market]]></trans_word>
+				<trans_dfn><![CDATA[A large-sized market near Dongdaemun in Seoul, which sells clothes to wholesalers and ordinary customers; a famous shopping area in Seoul.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[рынок Дондэмун]]></trans_word>
+				<trans_dfn><![CDATA[Крупнейший рынок оптовой и розничной торговли, расположенный вблизи восточных ворот г. Сеула - ворот Дондэмун. Данный рынок известен большим количеством магазинов на своей территории.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	
+	
+</channel>
+
+

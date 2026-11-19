@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색</title>
+	<link>https://krdict.korean.go.kr/dicSearch/SearchView?ParaWordNo=29610</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 내용 검색 결과</description>
+	<lastBuildDate>20261119202639</lastBuildDate> 
+	<total>1</total>
+	
+	<item>
+		<target_code>29610</target_code>
+		<word_info>
+			<word>아파트</word>
+			<sup_no>0</sup_no>
+			<word_unit>단어</word_unit>
+			<pos>명사</pos>
+			<word_type>외래어</word_type>
+			
+			
+			<original_language_info>
+				<original_language>←apartment</original_language>
+				<language_type>영어</language_type>
+			</original_language_info>
+			
+			
+			
+			
+			<pos>명사</pos>
+			
+			
+			<word_grade>초급</word_grade>
+			
+			
+			<category_info>
+				<type>의미 범주</type>
+				<written_form>주생활 &gt; 건물 종류</written_form>
+			</category_info>			
+			
+			
+			
+			
+			<category_info>
+				<type>주제 및 상황 범주</type>
+				<written_form>집 구하기</written_form>
+			</category_info>			
+			
+			
+			
+			
+			
+			
+			<sense_info>
+				<definition>한 채의 높고 큰 건물 안에 여러 가구가 독립하여 살 수 있게 지은 주택.</definition>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					
+					영어
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[apartment; apartment building]]></trans_word>
+					<trans_dfn><![CDATA[A residential building made for many households to live independently in one tall, large building.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<translation>
+					<trans_lang>
+					
+					
+					
+					
+					
+					러시아어
+					
+					
+					
+					
+					
+					
+					
+					</trans_lang>
+					<trans_word><![CDATA[многоквартирный дом; квартира]]></trans_word>
+					<trans_dfn><![CDATA[Дом, построенный для того, чтобы несколько семей могли отдельно жить внутри одного высокого и большого здания.]]></trans_dfn>
+				</translation>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<reference></reference>
+				
+				
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>단독 주택에 살던 나는 지난달에 십오 층 아파트로 이사했다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>문장</type>
+					<example>우리 동네에 초고층 아파트 단지가 생기자 많은 사람들이 이사를 왔다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>유민아, 너도 이 아파트에 사니?</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>대화</type>
+					<example>응. 지난달에 이사 왔어. 삼 동 천오백이 호에 살아.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>고층 아파트.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>새 아파트.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>높은 아파트.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>아파트 한 동.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>아파트 한 채.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>아파트 건물.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>아파트 경비원.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>아파트 단지.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>아파트 상가.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>아파트 주차장.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>아파트가 들어서다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>아파트를 분양하다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>아파트를 사다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>아파트를 짓다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>아파트에 살다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>아파트에 이사하다.</example>
+				</example_info>
+				
+				
+				
+				<example_info>
+					<type>구</type>
+					<example>아파트에 입주하다.</example>
+				</example_info>
+				
+				
+				
+				
+				
+				
+				<rel_info>
+					<word>공동 주택</word>
+					<type>참고어</type>
+					<link_type>C</link_type>
+					
+					<link_target_code>22739</link_target_code>
+					<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=22739</link>
+					
+				</rel_info>
+				
+				
+				
+				<rel_info>
+					<word>단독 주택</word>
+					<type>참고어</type>
+					<link_type>C</link_type>
+					
+					<link_target_code>42167</link_target_code>
+					<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=42167</link>
+					
+				</rel_info>
+				
+				
+				
+				<rel_info>
+					<word>연립 주택</word>
+					<type>참고어</type>
+					<link_type>C</link_type>
+					
+					<link_target_code>67502</link_target_code>
+					<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=67502</link>
+					
+				</rel_info>
+				
+				
+				
+				
+				
+				
+				<multimedia_info>
+					<label>아파트</label>
+					<type>사진</type>
+					<link>https://krdicmedia.korean.go.kr/front/search/searchResultView.do?file_no=100906</link>
+				</multimedia_info>
+				
+				
+				
+				<multimedia_info>
+					<label>아파트</label>
+					<type>사진</type>
+					<link>https://krdicmedia.korean.go.kr/front/search/searchResultView.do?file_no=197077</link>
+				</multimedia_info>
+				
+				
+				
+			</sense_info>
+			
+			
+			
+		</word_info>
+	</item>
+	
+</channel>    
+
+

@@ -1,0 +1,37 @@
+{
+  "channel": {
+    "total": 2,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "57931",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=57931&searchKeywordTo=3",
+          "definition": "아침, 점심, 저녁과 같이 날마다 일정한 시간에 먹는 밥. 또는 그렇게 먹는 일.",
+          "type": "일반어"
+        },
+        "word": "끼"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "57919",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=57919&searchKeywordTo=3",
+          "definition": "연예에 대한 재능이나 소질을 속되게 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "끼"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203057",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

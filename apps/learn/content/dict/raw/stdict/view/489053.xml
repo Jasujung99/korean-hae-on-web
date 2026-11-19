@@ -1,0 +1,529 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203131</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>489053</target_code>
+		<word_info>
+			<word><![CDATA[카드]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				
+				외래어
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[card]]></original_language>
+				<language_type>영어</language_type>
+			</original_language_info>
+			
+			
+
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>489053001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>489053001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>370182</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[일정한 크기로 조그맣게 자른 두꺼운 종이나 플라스틱. 어떤 내용을 증명하는 역할을 한다.]]></definition>
+						<definition_original><![CDATA[일정한 크기로 조그맣게 자른 두꺼운 종이나 플라스틱. 어떤 내용을 증명하는 역할을 한다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[카드 출입  단말기.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[출입 카드를 대고 들어가다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[카드가 없을 때에는 인터폰으로 관리자를 호출하세요.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>373656</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[그림이나 장식이 인쇄된 우편물의 일종. 간단한 내용을 적어 인사나 연락의 목적으로 쓴다.]]></definition>
+						<definition_original><![CDATA[그림이나 장식이 인쇄된 우편물의 일종. 간단한 내용을 적어 인사나 연락의 목적으로 쓴다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[생일 카드.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[축하 카드.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[카드를 보내다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[카드를 쓰다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[카드에는 생일을 축하한다는 간단한 인사말이 적혀 있었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+						
+						<multimedia_info>
+							
+							<lable><![CDATA[카드]]></lable>
+							
+							<type>
+								
+								
+								
+								
+								사진
+								
+								
+							</type>
+							<link><![CDATA[https://dicmedia.korean.go.kr/front/view/mediaView.do?file_no=103141]]></link>
+						</multimedia_info>
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>374889</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[내용을 기록하여 자료의 정리, 집계 따위에 사용하는 종이.]]></definition>
+						<definition_original><![CDATA[내용을 기록하여 자료의 정리, 집계 따위에 사용하는 종이.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[의료 보험 카드.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[병적 카드.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[마침 환자가 있어서 치료해 보내고 만기가 자기 자리로 돌아와 환자 카드를 정리하려는데….]]></example>
+							
+							<source><![CDATA[손창섭, 잉여 인간]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>375222</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[카드놀이에 쓰는 제구. 보통 하트, 다이아몬드, 클로버, 스페이드 각 13매씩 네 벌과 조커를 포함하여 53매로 이루어진다.]]></definition>
+						<definition_original><![CDATA[카드놀이에 쓰는 제구. 보통 하트, 다이아몬드, 클로버, 스페이드 각 13매씩 네 벌과 조커를 포함하여 53매로 이루어진다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[게임 전에 카드를 잘 섞어 앞면이 보이지 않게 쌓아 둡니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[카지노에서 딜러가 게임 참여자에게 카드를 한 장씩 나누어 줬다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>375300</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[방법이나 수단.]]></definition>
+						<definition_original><![CDATA[방법이나 수단.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[비장의 카드.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[저쪽에서 어떤 카드를 숨기고 있는지 두고 볼 일이다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>1080641</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[상품이나 서비스의 대금 지급을 그 자리에서 바로 하거나, 일정한 기간 뒤에 할 수 있도록 만든 네모난 판을 통틀어 이르는 말.]]></definition>
+						<definition_original><![CDATA[상품이나 서비스의 대금 지급을 그 자리에서 바로 하거나, 일정한 기간 뒤에 할 수 있도록 만든 네모난 판을 통틀어 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>경제</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[카드로 결제하다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[이번 달 카드 대금이 너무 많이 나왔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[카드 쓰지 말고 현금을 써.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>375361</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[문자, 숫자, 기호를 부호화된 정보대로 구멍을 뚫어 기록하여 컴퓨터에 대한 정보 매개체로 사용하는 일정한 규격의 종이.]]></definition>
+						<definition_original><![CDATA[문자, 숫자, 기호를 부호화된 정보대로 구멍을 뚫어 기록하여 컴퓨터에 대한 정보 매개체로 사용하는 일정한 규격의 종이.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>정보·통신</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>375322</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[특정한 기능을 갖추어 컴퓨터의 확장 슬롯에 꽂도록 설계된 전자 회로 기판(基板).]]></definition>
+						<definition_original><![CDATA[특정한 기능을 갖추어 컴퓨터의 확장 슬롯에 꽂도록 설계된 전자 회로 기판(基板).]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>정보·통신</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[카드를 삽입하다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[카드를 꽃아 저장 공간을 늘리다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

@@ -1,0 +1,25 @@
+{
+  "channel": {
+    "total": 1,
+    "item": [
+      {
+        "sup_no": "0",
+        "target_code": "489213",
+        "pos": "명사",
+        "origin": "眞짜",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=489213&searchKeywordTo=3",
+          "definition": "본뜨거나 거짓으로 만들어 낸 것이 아닌 참된 것.",
+          "type": "일반어"
+        },
+        "word": "진짜"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202250",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

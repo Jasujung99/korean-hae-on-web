@@ -1,0 +1,25 @@
+{
+  "channel": {
+    "total": 1,
+    "item": [
+      {
+        "sup_no": "0",
+        "target_code": "402004",
+        "pos": "대명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=402004&searchKeywordTo=3",
+          "definition": "듣는 이에게 가까운 곳이나 방향을 가리키는 지시 대명사.",
+          "type": "일반어"
+        },
+        "word": "그-쪽"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202146",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

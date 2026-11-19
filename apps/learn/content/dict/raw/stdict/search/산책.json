@@ -1,0 +1,25 @@
+{
+  "channel": {
+    "total": 1,
+    "item": [
+      {
+        "sup_no": "0",
+        "target_code": "174676",
+        "pos": "명사",
+        "origin": "散策",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=174676&searchKeywordTo=3",
+          "definition": "휴식을 취하거나 건강을 위해서 천천히 걷는 일.",
+          "type": "일반어"
+        },
+        "word": "산책"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202237",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

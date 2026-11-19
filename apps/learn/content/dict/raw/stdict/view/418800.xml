@@ -1,0 +1,331 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203355</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>418800</target_code>
+		<word_info>
+			<word><![CDATA[뚜껑]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[뚜껑]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+			
+			<relation_info>
+				<word>뚜껑(을) 열다</word>
+				<type>관용구</type>
+				<link_target_code>527265</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527265&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>뚜껑을 덮다</word>
+				<type>관용구</type>
+				<link_target_code>527266</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527266&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>뚜껑이 열리다</word>
+				<type>관용구</type>
+				<link_target_code>527267</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527267&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>418800001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>418800001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>330940</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[그릇이나 상자 따위의 아가리를 덮는 물건.]]></definition>
+						<definition_original><![CDATA[그릇이나 상자 따위의 아가리를 덮는 물건.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[뚜껑을 덮다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[뚜껑을 닫다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[장독 뚜껑을 열다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[친구는 그릇 뚜껑에 음식을 덜어서 먹었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[순철은 자신도 뚜껑의 술을 비우고 나서 이번에는 환국의 뚜껑에다 아주 소량의 술을 부어 준다.]]></example>
+							
+							<source><![CDATA[박경리, 토지]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[상에 하나 가득 놓인 하얀 그릇들이 하나같이 뚜껑이 덮여 있었다.]]></example>
+							
+							<source><![CDATA[박완서, 그 많던 싱아는 누가 다 먹었을까]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>개자03</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>376262</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=11859&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>덮-개</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>38617</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=83584&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>335011</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[만년필이나 펜 따위의 촉을 보호하기 위하여 겉에 씌우는 물건.]]></definition>
+						<definition_original><![CDATA[만년필이나 펜 따위의 촉을 보호하기 위하여 겉에 씌우는 물건.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[잉크가 마르지 않게 펜 뚜껑을 잘 닫아 두어라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>337745</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[‘모자’를 속되게 이르는 말.]]></definition>
+						<definition_original><![CDATA[‘<word_no>425739</word_no>모자’를 속되게 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>338282</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[책 따위의 앞뒤에 씌운 두꺼운 표지.]]></definition>
+						<definition_original><![CDATA[책 따위의 앞뒤에 씌운 두꺼운 표지.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[우리는 모두 까만 가죽 뚜껑이 덮인 크고 두툼한 그 성경책을 바라보았다.]]></example>
+							
+							<source><![CDATA[김용성, 도둑 일기]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

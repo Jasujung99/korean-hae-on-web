@@ -1,0 +1,480 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203749</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>455247</target_code>
+		<word_info>
+			<word><![CDATA[씻다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[씯따]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[씻어]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[씨서]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[씻으니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[씨스니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[씻는]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[씬는]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+			
+			<relation_info>
+				<word>씻은 듯 부신 듯</word>
+				<type>관용구</type>
+				<link_target_code>530170</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530170&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>씻은 듯이</word>
+				<type>관용구</type>
+				<link_target_code>530171</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530171&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>씻어 놓은 흰 죽사발 같다</word>
+				<type>속담</type>
+				<link_target_code>530167</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530167&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>씻은 배추 줄기 같다</word>
+				<type>속담</type>
+				<link_target_code>530168</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530168&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>씻은 팥알[쌀알] 같다</word>
+				<type>속담</type>
+				<link_target_code>530169</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530169&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[＜싯다＜석상＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>455247001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>455247001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>16060</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[물이나 휴지 따위로 때나 더러운 것을 없게 하다.]]></definition>
+						<definition_original><![CDATA[물이나 휴지 따위로 때나 더러운 것을 없게 하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[얼굴을 씻다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[때를 씻다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[쌀을 씻어 안치다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[손을 씻고 밥을 먹어라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[소독약으로 상처를 씻어야 덧나지 않는다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[쏟아지는 빗물을 받아 손에 묻은 흙물을 씻어 내렸다.]]></example>
+							
+							<source><![CDATA[최인호, 지구인]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>47366</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[누명, 오해, 죄과 따위에서 벗어나 다른 사람 앞에서 떳떳한 상태가 되다.]]></definition>
+						<definition_original><![CDATA[누명, 오해, 죄과 따위에서 벗어나 다른 사람 앞에서 떳떳한 상태가 되다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[치욕을 씻다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[저의 억울한 누명을 씻어 주세요.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[세무 조사에 대한 일부의 의혹을 씻기 위해서는 그 조사 과정이 투명해야 한다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[우리는 영감이 지난 잘못을 씻고 우리에게 협조할 줄 믿었는데….]]></example>
+							
+							<source><![CDATA[이문열, 영웅시대]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>66315</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[원한 따위를 풀어서 마음속에 응어리가 된 것을 없애다.]]></definition>
+						<definition_original><![CDATA[원한 따위를 풀어서 마음속에 응어리가 된 것을 없애다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그에게 천추에 씻지 못할 원한이 맺혔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>70384</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[관계 따위를 끊다.]]></definition>
+						<definition_original><![CDATA[관계 따위를 끊다.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[주로 ‘인연’ 따위와 함께 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그는 속세와의 인연을 씻고 산으로 들어갔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>71927</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[현재의 좋지 않은 상태에서 벗어나다.]]></definition>
+						<definition_original><![CDATA[현재의 좋지 않은 상태에서 벗어나다.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[주로 ‘걱정’, ‘부진’ 따위와 함께 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[여행은 당신의 걱정을 씻어 줄 것입니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 한동안의 부진을 씻고 다시 활동을 시작했다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[음악을 들으면서 하루의 피로를 씻는다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[피로를 씻으며 내장으로 흘러내리는 밀주(密酒)에 나는 사내보다 빨리 취하고 있었다.]]></example>
+							
+							<source><![CDATA[이제하, 기차, 기선, 바다, 하늘]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

@@ -1,0 +1,145 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202803</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>134732</target_code>
+		<word_info>
+			<word><![CDATA[바람]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[바람]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			<norm_info>
+				
+				<type>표준어</type>
+				
+				
+				
+				<desc><![CDATA[‘바람’이 표준어이고 ‘<IN>바램</IN>’은 비표준어이다. 이는 비슷한 발음의 몇 형태가 쓰일 경우, 그 의미에 아무런 차이가 없고, 그중 하나가 더 널리 쓰이면, 그 한 형태만을 표준어로 삼는다는 규정(표준어 사정 원칙 제17항)에 따른 것이다.]]></desc>
+				
+			</norm_info>
+			
+			
+			
+			<origin><![CDATA[＜람＜법화＞←라-+-ㅁ]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>134732001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>134732001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>160943</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 일이 이루어지기를 기다리는 간절한 마음.]]></definition>
+						<definition_original><![CDATA[어떤 일이 이루어지기를 기다리는 간절한 마음.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[우리의 간절한 바람은 그가 무사히 돌아오는 것이다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나의 바람대로 내일은 흰 눈이 왔으면 좋겠다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

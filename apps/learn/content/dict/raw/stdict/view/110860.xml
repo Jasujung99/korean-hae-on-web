@@ -1,0 +1,239 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203724</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>110860</target_code>
+		<word_info>
+			<word><![CDATA[말씀]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[말ː씀]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			<origin><![CDATA[＜말＜용가＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>110860001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>110860001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>403959</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[남의 말을 높여 이르는 말.]]></definition>
+						<definition_original><![CDATA[남의 말을 높여 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[선생님의 말씀대로 저는 집으로 돌아가겠습니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[아버님 말씀도 옳으신 데가 있어요. 세상일이란 한꺼번에 당장 다 되는 일도 아니니까요.]]></example>
+							
+							<source><![CDATA[송영, 석공 조합 대표]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>408356</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[자기의 말을 낮추어 이르는 말.]]></definition>
+						<definition_original><![CDATA[자기의 말을 낮추어 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[말씀을 올리다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[말씀을 드리다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[내 말씀은 못 믿으셔도 며느님 말은 믿으시겠다는 말씀이죠?]]></example>
+							
+							<source><![CDATA[염상섭, 삼대]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>411004</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[하나님이 자신의 계획과 목적을 인간에게 알리고 그것을 성취시키는 데 쓴 수단.]]></definition>
+						<definition_original><![CDATA[하나님이 자신의 계획과 목적을 인간에게 알리고 그것을 성취시키는 데 쓴 수단.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>기독교</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[저는 그동안 남편에게 순종하기를 주께 하듯 하라는 성경 말씀에 따라서 당신의 뜻에 순종해 왔습니다.]]></example>
+							
+							<source><![CDATA[김성일, 비워 둔 자리]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

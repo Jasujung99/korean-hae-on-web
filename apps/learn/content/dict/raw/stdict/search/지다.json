@@ -1,0 +1,109 @@
+{
+  "channel": {
+    "total": 8,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "307560",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=307560&searchKeywordTo=3",
+          "definition": "젖이 불어 저절로 나오다.",
+          "type": "일반어"
+        },
+        "word": "지다"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "486281",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=486281&searchKeywordTo=3",
+          "definition": "해나 달이 서쪽으로 넘어가다.",
+          "type": "일반어"
+        },
+        "word": "지다"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "307852",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=307852&searchKeywordTo=3",
+          "definition": "내기나 시합, 싸움 따위에서 재주나 힘을 겨루어 상대에게 꺾이다.",
+          "type": "일반어"
+        },
+        "word": "지다"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "481022",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=481022&searchKeywordTo=3",
+          "definition": "어떤 현상이나 상태가 이루어지다.",
+          "type": "일반어"
+        },
+        "word": "지다"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "307853",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=307853&searchKeywordTo=3",
+          "definition": "물건을 짊어서 등에 얹다.",
+          "type": "일반어"
+        },
+        "word": "지다"
+      },
+      {
+        "sup_no": "6",
+        "target_code": "307854",
+        "pos": "보조 형용사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=307854&searchKeywordTo=3",
+          "definition": "(예스러운 표현으로) 앞말이 나타내는 동작을 소망함을 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "지다"
+      },
+      {
+        "sup_no": "7",
+        "target_code": "308132",
+        "pos": "명사",
+        "origin": "Jidda",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=308132&searchKeywordTo=3",
+          "definition": "사우디아라비아의 서부, 홍해 연안에 있는 항구 도시. 메카 순례의 상륙항이기도 하다.",
+          "type": "일반어"
+        },
+        "word": "지다"
+      },
+      {
+        "sup_no": "8",
+        "target_code": "481023",
+        "pos": "접사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=481023&searchKeywordTo=3",
+          "definition": "‘그런 성질이 있음’ 또는 ‘그런 모양임’의 뜻을 더하고 형용사를 만드는 접미사.",
+          "type": "일반어"
+        },
+        "word": "-지다"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202411",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

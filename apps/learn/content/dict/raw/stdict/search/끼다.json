@@ -1,0 +1,49 @@
+{
+  "channel": {
+    "total": 3,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "405754",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=405754&searchKeywordTo=3",
+          "definition": "‘끼이다’의 준말.",
+          "type": "일반어"
+        },
+        "word": "끼다"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "404652",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=404652&searchKeywordTo=3",
+          "definition": "안개나 연기 따위가 퍼져서 서리다.",
+          "type": "일반어"
+        },
+        "word": "끼다"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "56237",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=56237&searchKeywordTo=3",
+          "definition": "‘끼우다’의 준말.",
+          "type": "일반어"
+        },
+        "word": "끼다"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203103",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

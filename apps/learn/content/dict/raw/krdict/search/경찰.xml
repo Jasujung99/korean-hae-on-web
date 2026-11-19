@@ -1,0 +1,1980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 검색</title>
+	<link>https://krdict.korean.go.kr</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 검색 결과</description>
+	<lastBuildDate>20261119202229</lastBuildDate>
+	<total>13</total>
+	<start>1</start>
+	<num>100</num>
+	
+	
+	
+	<item>
+		
+		
+		<target_code>25949</target_code>
+		<word>경찰</word>
+		<sup_no>0</sup_no>
+		
+		<origin>警察</origin>
+		
+		
+		<pronunciation>경ː찰</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=25949</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>사회의 질서를 지키고 국민의 안전과 재산을 보호하는 일. 또는 그러한 일을 맡은 국가 기관.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[police; policing]]></trans_word>
+				<trans_dfn><![CDATA[The act of keeping order in society and protecting people and property from crimes; or a government agency in charge of such tasks.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[полиция]]></trans_word>
+				<trans_dfn><![CDATA[Государственный орган, обязанностью которого является сохранение общественного порядка, обеспечение безопасности населения и его имущества.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		<sense>
+			<sense_order>2</sense_order>
+			<definition>사회의 질서를 지키고 국민의 안전과 재산을 보호하는 일을 하는 공무원.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[police officer; cop]]></trans_word>
+				<trans_dfn><![CDATA[A government employee whose job it is to keep order in society and protect people and property from crimes.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[полицейский]]></trans_word>
+				<trans_dfn><![CDATA[Государственный служащий, в обязанности которого входит сохранение общественного порядка, обеспечение безопасности населения и его имущества.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>25960</target_code>
+		<word>경찰서</word>
+		<sup_no>0</sup_no>
+		
+		<origin>警察署</origin>
+		
+		
+		<pronunciation>경ː찰써</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=25960</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>한 지역의 경찰 일을 맡아보는 관청.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[police station]]></trans_word>
+				<trans_dfn><![CDATA[A government office responsible for the police administration of a region.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[полицейский участок; полицейское управление]]></trans_word>
+				<trans_dfn><![CDATA[Помещение, где располагается полиция какого-либо района.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>25950</target_code>
+		<word>경찰관</word>
+		<sup_no>0</sup_no>
+		
+		<origin>警察官</origin>
+		
+		
+		<pronunciation>경ː찰관</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=25950</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>사회의 질서를 지키고 국민의 안전과 재산을 보호하는 일을 하는 공무원.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[police officer; cop]]></trans_word>
+				<trans_dfn><![CDATA[A government employee whose job it is to keep order in society and protect people and property from crimes.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[полицейский]]></trans_word>
+				<trans_dfn><![CDATA[Государственный служащий, в обязанности которого входит сохранение общественного порядка, обеспечение безопасности населения и его имущества.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>25954</target_code>
+		<word>경찰 대학</word>
+		<sup_no>0</sup_no>
+		
+		<origin>警察大學</origin>
+		
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=25954</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>경찰의 고급 인력을 양성할 목적으로 설치한 4년제 국립 대학.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[police academy; police university]]></trans_word>
+				<trans_dfn><![CDATA[A 4-year national university that was established with the purpose of training high-quality policemen and policewomen.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[полицейская академия]]></trans_word>
+				<trans_dfn><![CDATA[Государственная академия, с четырёхлетним сроком обучения, по подготовке полицейских офицерского состава.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>25964</target_code>
+		<word>경찰차</word>
+		<sup_no>0</sup_no>
+		
+		<origin>警察車</origin>
+		
+		
+		<pronunciation>경ː찰차</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=25964</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>경찰이 업무에 이용하는 차.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[police car; patrol car; squad car]]></trans_word>
+				<trans_dfn><![CDATA[A car used by the police in the course of carrying out their duties.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[полицейский автомобиль]]></trans_word>
+				<trans_dfn><![CDATA[Транспортное средство, используемое полицией  при выполнении своих обязанностей.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>25951</target_code>
+		<word>경찰권</word>
+		<sup_no>0</sup_no>
+		
+		<origin>警察權</origin>
+		
+		
+		<pronunciation>경ː찰꿘</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=25951</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>경찰이 사회의 질서 유지를 위해 개인의 자유를 제한할 수 있는 권한.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[police authority; police power]]></trans_word>
+				<trans_dfn><![CDATA[The power of the police to restrict freedom of individuals to keep social order. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[права полиции]]></trans_word>
+				<trans_dfn><![CDATA[Полномочия, которыми обладают работники полиции.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>25957</target_code>
+		<word>경찰력</word>
+		<sup_no>0</sup_no>
+		
+		<origin>警察力</origin>
+		
+		
+		<pronunciation>경ː찰력</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=25957</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>경찰이 인원과 조직과 장비를 써서 행사할 수 있는 힘.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[police force]]></trans_word>
+				<trans_dfn><![CDATA[The force of the police, enabled with the use of police manpower and equipment.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[полицейская сила]]></trans_word>
+				<trans_dfn><![CDATA[Сила полиции, заключающаяся в штате сотрудников, организации и применении специальной амуниции. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>25959</target_code>
+		<word>경찰봉</word>
+		<sup_no>0</sup_no>
+		
+		<origin>警察棒</origin>
+		
+		
+		<pronunciation>경ː찰봉</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=25959</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>경찰관이 가지고 다니는 둥글고 긴 방망이.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[police baton; nightstick; truncheon; club]]></trans_word>
+				<trans_dfn><![CDATA[A round, long club a police officer carries.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[полицейская дубинка]]></trans_word>
+				<trans_dfn><![CDATA[Круглая палка, дубинка, используемая полицейским.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>25966</target_code>
+		<word>경찰청</word>
+		<sup_no>0</sup_no>
+		
+		<origin>警察廳</origin>
+		
+		
+		<pronunciation>경ː찰청</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=25966</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>한 나라의 경찰 업무를 책임지고 맡아 하는 국가 행정 기관.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[National Police Agency]]></trans_word>
+				<trans_dfn><![CDATA[The government agency responsible for the police administration of a country.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[Национальное агентство полиции]]></trans_word>
+				<trans_dfn><![CDATA[Государственный административный орган, регулирующий работу полиции.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>35957</target_code>
+		<word>교통경찰</word>
+		<sup_no>0</sup_no>
+		
+		<origin>交通警察</origin>
+		
+		
+		<pronunciation>교통경찰</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=35957</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>도로에서 차와 사람이 안전하게 다닐 수 있도록 교통 법규 위반을 단속하는 경찰.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[traffic police ]]></trans_word>
+				<trans_dfn><![CDATA[A police officer who enforces traffic laws to ensure that cars and pedestrians can safely move on the roads.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[дорожно-транспортный патруль]]></trans_word>
+				<trans_dfn><![CDATA[Полиция, следящая за соблюдением правил дорожно-транспортной безопасности. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>71675</target_code>
+		<word>의무 경찰</word>
+		<sup_no>0</sup_no>
+		
+		<origin>義務警察</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=71675</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>병역의 의무로 군대에 들어가는 대신 경찰 업무를 거드는 일. 또는 그런 일을 하는 사람.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[auxiliary police]]></trans_word>
+				<trans_dfn><![CDATA[The job of assisting the police to fulfill one's duty of national defense, instead of serving in the military; a person who does such a job. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[альтернативная служба]]></trans_word>
+				<trans_dfn><![CDATA[Служба в полиции вместо срочной службы в армии.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>75084</target_code>
+		<word>전투 경찰</word>
+		<sup_no>0</sup_no>
+		
+		<origin>戰鬪警察</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=75084</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>적의 간첩 활동을 막기 위한 작전 및 경비 임무를 수행하는 경찰.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[riot police]]></trans_word>
+				<trans_dfn><![CDATA[A police unit that is responsible for maintaining civil order and guard duty that sometimes can be aimed at preventing the spying activities of enemies.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[]]></trans_word>
+				<trans_dfn><![CDATA[Полиция, проводящая операцию или охрану для пресечения секретных действий противника. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>79317</target_code>
+		<word>청원 경찰</word>
+		<sup_no>0</sup_no>
+		
+		<origin>請願警察</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=79317</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>어떤 시설이나 기관이 일정한 비용을 내고 경비를 요청함에 따라 배치되는 경찰.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[security guard]]></trans_word>
+				<trans_dfn><![CDATA[A police officer appointed to guard a certain institution or facility at the latter's request and cost.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[полицеский по найму; охранник]]></trans_word>
+				<trans_dfn><![CDATA[Полиция, которая предоставляется по просьбе кого-либо за определённую плату.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	
+	
+</channel>
+
+

@@ -1,0 +1,61 @@
+{
+  "channel": {
+    "total": 4,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "299271",
+        "pos": "명사",
+        "origin": "住所",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=299271&searchKeywordTo=3",
+          "definition": "사람이 살고 있는 곳이나 기관, 회사 따위가 자리 잡고 있는 곳을 행정 구역으로 나타낸 이름.",
+          "type": "일반어"
+        },
+        "word": "주소"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "297743",
+        "pos": "명사",
+        "origin": "奏疏",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=297743&searchKeywordTo=3",
+          "definition": "임금에게 글을 올리던 일. 또는 그 글. 주로 간관(諫官)이나 삼관(三館)의 관원이 임금에게 정사(政事)를 간하기 위하여 올렸다.",
+          "type": "일반어"
+        },
+        "word": "주소"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "482778",
+        "pos": "명사",
+        "origin": "晝宵",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=482778&searchKeywordTo=3",
+          "definition": "밤과 낮을 아울러 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "주소"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "304421",
+        "pos": "명사",
+        "origin": "註疏",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=304421&searchKeywordTo=3",
+          "definition": "본문에 대한 주해. 또는 이전 사람의 주해에 대한 주해. 소(疏)는 주(註)를 해석·부연한 것이고, 주(註)는 경(經)을 해석한 것이다.",
+          "type": "일반어"
+        },
+        "word": "주소"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203644",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

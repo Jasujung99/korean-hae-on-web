@@ -1,0 +1,264 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202436</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>475740</target_code>
+		<word_info>
+			<word><![CDATA[저녁]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[저녁]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[저녁만]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[저녕만]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+			
+			<relation_info>
+				<word>저녁 굶은 시어미 상</word>
+				<type>속담</type>
+				<link_target_code>531373</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=531373&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>저녁 굶은 초라</word>
+				<type>속담</type>
+				<link_target_code>531374</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=531374&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>저녁 두 번 먹었다</word>
+				<type>속담</type>
+				<link_target_code>531376</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=531376&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>저녁 먹을 것은 없어도 도둑맞을 것은 있다</word>
+				<type>속담</type>
+				<link_target_code>531377</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=531377&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[＜져녁＜동신효＞]]></origin>
+			
+			
+
+			
+			
+			<lexical_info>
+				<word>아침</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>458645</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=458645&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			
+
+			
+			<pos_info>
+				<pos_code>475740001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>475740001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>22678</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[해가 질 무렵부터 밤이 되기까지의 사이.]]></definition>
+						<definition_original><![CDATA[해가 질 무렵부터 밤이 되기까지의 사이.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[입추가 지나니 저녁에는 제법 선선하다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그가 집으로 돌아온 것은 날이 어둑해진 저녁 무렵이었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>일석05</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>254555</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=265246&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>53510</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[‘「1」’에 끼니로 먹는 음식. 또는 ‘「1」’에 끼니를 먹는 일.]]></definition>
+						<definition_original><![CDATA[‘「1」’에 끼니로 먹는 음식. 또는 ‘「1」’에 끼니를 먹는 일.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[저녁을 먹다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[저녁 지을 때쯤 해서 두만이는 어미가 돌아올 것으로 알고 둑 밑 풀밭에 매 놓은 소를 찾으러 나갔다.]]></example>
+							
+							<source><![CDATA[박경리, 토지]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

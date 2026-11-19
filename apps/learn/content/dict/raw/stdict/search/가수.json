@@ -1,0 +1,157 @@
+{
+  "channel": {
+    "total": 12,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "3079",
+        "pos": "명사",
+        "origin": "加水",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=3079&searchKeywordTo=3",
+          "definition": "물을 더함.",
+          "type": "일반어"
+        },
+        "word": "가수"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "389810",
+        "pos": "명사",
+        "origin": "加數",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=389810&searchKeywordTo=3",
+          "definition": "돈이나 물품의 수를 늘림.",
+          "type": "일반어"
+        },
+        "word": "가수"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "3082",
+        "pos": "명사",
+        "origin": "枷囚",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=3082&searchKeywordTo=3",
+          "definition": "죄인의 목에 칼을 씌워 옥에 가두던 일.",
+          "type": "일반어"
+        },
+        "word": "가수"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "3283",
+        "pos": "명사",
+        "origin": "家嫂",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=3283&searchKeywordTo=3",
+          "definition": "자기의 형수를 남에게 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "가수"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "3997",
+        "pos": "명사",
+        "origin": "家數",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=3997&searchKeywordTo=3",
+          "definition": "집안을 이룬 수라는 뜻으로, 한집안의 사회적 처지를 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "가수"
+      },
+      {
+        "sup_no": "6",
+        "target_code": "3998",
+        "pos": "명사",
+        "origin": "假受",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=3998&searchKeywordTo=3",
+          "definition": "어떤 물건이나 돈을 사유(事由)가 확정될 때까지 임시로 받아 둠.",
+          "type": "일반어"
+        },
+        "word": "가수"
+      },
+      {
+        "sup_no": "7",
+        "target_code": "4001",
+        "pos": "명사",
+        "origin": "假睡",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=4001&searchKeywordTo=3",
+          "definition": "의식이 반쯤 깨어 있는 상태로 자는 잠.",
+          "type": "일반어"
+        },
+        "word": "가수"
+      },
+      {
+        "sup_no": "8",
+        "target_code": "389987",
+        "pos": "명사",
+        "origin": "假需",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=389987&searchKeywordTo=3",
+          "definition": "당장 필요가 없으면서도 일어나는 수요. 가격 인상이나 물자 부족이 예상되는 경우에 생겨난다.",
+          "type": "일반어"
+        },
+        "word": "가수"
+      },
+      {
+        "sup_no": "9",
+        "target_code": "389988",
+        "pos": "명사",
+        "origin": "假數",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=389988&searchKeywordTo=3",
+          "definition": "상용로그의 값에서 0과 같거나 0보다 크고 1보다 작은 소수. 상용로그의 값이 1.3010일 때 0.3010, 상용로그의 값이 －0.2517일 때 0.7483과 같은 수이다.",
+          "type": "일반어"
+        },
+        "word": "가수"
+      },
+      {
+        "sup_no": "10",
+        "target_code": "4059",
+        "pos": "명사",
+        "origin": "嫁樹",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=4059&searchKeywordTo=3",
+          "definition": "음력 정월 초하룻날이나 대보름날에 행하는 풍속의 하나. 그해에 과일이 많이 열리기를 기원하는 마음으로 과실나무의 두 가지 틈에 돌을 끼운다.",
+          "type": "일반어"
+        },
+        "word": "가수"
+      },
+      {
+        "sup_no": "11",
+        "target_code": "4061",
+        "pos": "명사",
+        "origin": "歌手",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=4061&searchKeywordTo=3",
+          "definition": "노래 부르는 것이 직업인 사람.",
+          "type": "일반어"
+        },
+        "word": "가수"
+      },
+      {
+        "sup_no": "12",
+        "target_code": "389989",
+        "pos": "명사",
+        "origin": "價數",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=389989&searchKeywordTo=3",
+          "definition": "원소(元素)의 원자가를 나타내는 수. 또는 어떤 기(基)가 다른 원자와 만들 수 있는 화학 결합의 수.",
+          "type": "일반어"
+        },
+        "word": "가수"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203650",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

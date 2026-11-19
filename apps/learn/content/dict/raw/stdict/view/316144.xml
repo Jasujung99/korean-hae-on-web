@@ -1,0 +1,250 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202315</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>316144</target_code>
+		<word_info>
+			<word><![CDATA[질문]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				한자어
+				
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[質問]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[질문]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>316144001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>316144001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>24100</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[알고자 하는 바를 얻기 위해 물음.]]></definition>
+						<definition_original><![CDATA[알고자 하는 바를 얻기 위해 물음.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[질문 사항.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[질문을 받다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[질문 공세를 펴다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[질문을 던지다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[질문에 답하다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[질문이 있으신 분은 발표가 끝난 후에 해 주시기 바랍니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그들은 학렬의 왼쪽 테이블 앞에 선 채 보위부원이 묻는 질문에 간간이 고개를 끄덕이며 짧은 대답들을 하고 있었다.]]></example>
+							
+							<source><![CDATA[홍성원, 육이오]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>질의01</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>23428</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=481447&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>55147</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[국회법에 따라, 국회 의원이 정부에 대하여 일정한 사항에 관하여 설명을 요구하고 그 의견을 묻는 일. 서면 질문의 경우 질문 요지서를 작성하여 의장에게 제출하면 의장은 이를 정부에 이송하고, 정부는 이 질문 요지서를 받은 날부터 10일 이내에 서면으로 답변하여야 한다.]]></definition>
+						<definition_original><![CDATA[국회법에 따라, 국회 의원이 정부에 대하여 일정한 사항에 관하여 설명을 요구하고 그 의견을 묻는 일. 서면 질문의 경우 질문 요지서를 작성하여 의장에게 제출하면 의장은 이를 정부에 이송하고, 정부는 이 질문 요지서를 받은 날부터 10일 이내에 서면으로 답변하여야 한다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>법률</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[국회법에서 국무 위원에게 사전에 질문의 요지를 전달하도록 한 것은 답변을 충실히 준비하라는 취지이다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[국회법에 따라 본회의는 회기 중 기간을 정하여 국정 전반 또는 국정의 특정 분야를 대상으로 정부에 대하여 질문을 할 수 있다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

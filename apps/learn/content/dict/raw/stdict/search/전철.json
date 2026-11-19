@@ -1,0 +1,73 @@
+{
+  "channel": {
+    "total": 5,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "287910",
+        "pos": "명사",
+        "origin": "前哲",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=287910&searchKeywordTo=3",
+          "definition": "옛날의 어질고 사리에 밝은 사람.",
+          "type": "일반어"
+        },
+        "word": "전철"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "287911",
+        "pos": "명사",
+        "origin": "前轍",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=287911&searchKeywordTo=3",
+          "definition": "앞에 지나간 수레바퀴의 자국이라는 뜻으로, 이전 사람의 그릇된 일이나 행동의 자취를 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "전철"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "477031",
+        "pos": "명사",
+        "origin": "煎鐵",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=477031&searchKeywordTo=3",
+          "definition": "전을 부치거나 고기 따위를 볶을 때에 쓰는, 솥뚜껑처럼 생긴 무쇠 그릇.",
+          "type": "일반어"
+        },
+        "word": "전철"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "287912",
+        "pos": "명사",
+        "origin": "電鐵",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=287912&searchKeywordTo=3",
+          "definition": "전기 철도 위를 달리는 전동차.",
+          "type": "일반어"
+        },
+        "word": "전철"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "477032",
+        "pos": "명사",
+        "origin": "轉轍",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=477032&searchKeywordTo=3",
+          "definition": "선로의 갈림길에서 기차나 전차 따위의 차량이 갈려 가도록 궤도를 돌림.",
+          "type": "일반어"
+        },
+        "word": "전철"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202246",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

@@ -1,0 +1,171 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203020</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>501524</target_code>
+		<word_info>
+			<word><![CDATA[함께]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[함께]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			<origin><![CDATA[＜＜＜석상＞←+]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>501524001</pos_code>
+				<pos>부사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>501524001001</comm_pattern_code>
+					
+					
+					
+					<grammar_info>
+						<grammar><![CDATA[주로 ‘…과 함께’ 구성으로 쓰여]]></grammar>
+					</grammar_info>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>439256</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[한꺼번에 같이. 또는 서로 더불어.]]></definition>
+						<definition_original><![CDATA[한꺼번에 같이. 또는 서로 더불어.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[온 가족이 함께 여행을 간다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[형과 동생이 함께 놀고 함께 공부한다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어머니는 선생님과 함께 이야기를 나누었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[과자와 함께 음료수도 사 오너라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[봄과 함께 새싹이 돋고 꽃이 핀다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[적장은 화살을 맞고 외마디 비명과 함께 말에서 굴러떨어졌다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

@@ -1,0 +1,389 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203432</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>418869</target_code>
+		<word_info>
+			<word><![CDATA[딸]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[딸]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+			
+			<relation_info>
+				<word>딸 덕에 부원군</word>
+				<type>속담</type>
+				<link_target_code>527276</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527276&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>딸 먹는 것은 쥐 먹는 것 같다</word>
+				<type>속담</type>
+				<link_target_code>527277</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527277&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>딸 삼 형제 시집보내면 좀도둑도 안 든다</word>
+				<type>속담</type>
+				<link_target_code>527278</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527278&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>딸 셋을 여의면 기둥뿌리가 팬다</word>
+				<type>속담</type>
+				<link_target_code>527279</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527279&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>딸 손자는 가을볕에 놀리고 아들 손자는 봄볕에 놀린다</word>
+				<type>속담</type>
+				<link_target_code>527280</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527280&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>딸 없는 사위</word>
+				<type>속담</type>
+				<link_target_code>527281</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527281&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>딸은 두 번 서운하다</word>
+				<type>속담</type>
+				<link_target_code>527282</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527282&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>딸은 산적 도둑이라 하네</word>
+				<type>속담</type>
+				<link_target_code>527283</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527283&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>딸은 예쁜 도적</word>
+				<type>속담</type>
+				<link_target_code>527285</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527285&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>딸은 제 딸이 고와 보이고, 곡식은 남의 곡식이 탐스러워 보인다</word>
+				<type>속담</type>
+				<link_target_code>527286</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527286&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>딸의 굿에 가도 전대가 셋(이다)</word>
+				<type>속담</type>
+				<link_target_code>527288</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527288&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>딸의 굿에를 가도 자루 아홉을 가지고 간다</word>
+				<type>속담</type>
+				<link_target_code>527289</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527289&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>딸의 시앗은 바늘방석에 앉히고 며느리 시앗은 꽃방석에 앉힌다</word>
+				<type>속담</type>
+				<link_target_code>527290</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527290&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>딸의 집에서 가져온 고추장</word>
+				<type>속담</type>
+				<link_target_code>527291</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527291&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>딸의 차반 재 넘어가고 며느리 차반 농 위에 둔다</word>
+				<type>속담</type>
+				<link_target_code>527292</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527292&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>딸이 셋이면 문을 열어 놓고 잔다</word>
+				<type>속담</type>
+				<link_target_code>527293</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527293&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>딸이 여럿이면 어미 속곳 벗는다</word>
+				<type>속담</type>
+				<link_target_code>527294</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527294&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>딸이 하나면 과하고 반이면 모자란다</word>
+				<type>속담</type>
+				<link_target_code>527295</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527295&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>딸 죽은 사위 불 꺼진 화로</word>
+				<type>속담</type>
+				<link_target_code>527296</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527296&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[＜＜용가＞]]></origin>
+			
+			
+
+			
+			
+			<lexical_info>
+				<word>영애01</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>236165</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=236165&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			
+
+			
+			<pos_info>
+				<pos_code>418869001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>418869001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>2147</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[여자로 태어난 자식.]]></definition>
+						<definition_original><![CDATA[여자로 태어난 자식.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[딸을 낳다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[딸을 시집보내다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[우리 집은 딸 둘, 아들 하나로 삼 남매입니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[아이는 장사치의 딸 같지는 않았다. 단아하고 범절이 몸에 배어 있었다.]]></example>
+							
+							<source><![CDATA[한무숙, 만남]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>소애</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>482894</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=186018&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>아들</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>214174</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=213070&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>여식01</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>392561</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=230383&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>39462</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 조직이나 사회, 국가에 속한 여자들을 비유적으로 이르는 말.]]></definition>
+						<definition_original><![CDATA[어떤 조직이나 사회, 국가에 속한 여자들을 비유적으로 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[대한의 딸.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

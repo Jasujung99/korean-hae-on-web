@@ -1,0 +1,773 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203226</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>460122</target_code>
+		<word_info>
+			<word><![CDATA[어디]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[어디]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+			
+			<relation_info>
+				<word>어디 (두고) 보자</word>
+				<type>관용구</type>
+				<link_target_code>530572</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530572&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어디라 없이</word>
+				<type>관용구</type>
+				<link_target_code>530573</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530573&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어디를 막론하고</word>
+				<type>관용구</type>
+				<link_target_code>530574</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530574&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어디에다 대고</word>
+				<type>관용구</type>
+				<link_target_code>530575</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530575&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어디 개가 짖느냐 한다</word>
+				<type>속담</type>
+				<link_target_code>530570</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530570&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어디 소경은 본다던</word>
+				<type>속담</type>
+				<link_target_code>530571</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=530571&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[＜어듸＜석상＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>460122001</pos_code>
+				<pos>대명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>460122001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>2436</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[잘 모르는 어느 곳을 가리키는 지시 대명사.]]></definition>
+						<definition_original><![CDATA[잘 모르는 어느 곳을 가리키는 지시 대명사.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[의문문에 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[학교가 어디냐?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어디가 이장 댁이오?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[실례지만 어디서 오셨습니까?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[칠백 리 긴 강을 녹이며 입김처럼 불어오는 바람은 어디서 오는 것일까.]]></example>
+							
+							<source><![CDATA[문순태, 타오르는 강]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>31631</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[가리키는 곳을 굳이 밝혀서 말하지 아니할 때 쓰는 지시 대명사.]]></definition>
+						<definition_original><![CDATA[가리키는 곳을 굳이 밝혀서 말하지 아니할 때 쓰는 지시 대명사.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[어디 가 볼 데가 있다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>62514</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[일정하게 정해져 있지 아니하거나 꼭 집어 댈 수 없는 곳을 가리키는 지시 대명사.]]></definition>
+						<definition_original><![CDATA[일정하게 정해져 있지 아니하거나 꼭 집어 댈 수 없는 곳을 가리키는 지시 대명사.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[어디나 다 정들면 고향이다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[네가 원하면 어디든 가도 좋다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[한 가닥 불안에 휩싸이며 도로 집으로 내려오는데, 어디에선가 갓난애의 울음소리가 들리는 것 같았다.]]></example>
+							
+							<source><![CDATA[김춘복, 쌈짓골]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>69194</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[무엇이라 말하기 어려운 점을 가리키는 지시 대명사.]]></definition>
+						<definition_original><![CDATA[무엇이라 말하기 어려운 점을 가리키는 지시 대명사.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[‘어딘가’, ‘어딘지’ 꼴로 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그녀는 어딘가 짙은 피곤기 같은 것이 어려 있는 사내의 표정과 허름한 몰골에 금세 흥미가 떨어지는 어조였다.]]></example>
+							
+							<source><![CDATA[이청준, 선학동 나그네]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그녀의 말은 나직했으나 어딘가 거절할 수 없는 힘을 가지고 있었다.]]></example>
+							
+							<source><![CDATA[윤후명, 별보다 멀리]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[깨끗한 양복을 차려입었는데도 어딘지 모르게 궁색하고 초조해 있는 낯빛이다.]]></example>
+							
+							<source><![CDATA[박경리, 토지]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>71308</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[수량, 범위, 장소 따위가 아주 대단함을 가리키는 지시 대명사.]]></definition>
+						<definition_original><![CDATA[수량, 범위, 장소 따위가 아주 대단함을 가리키는 지시 대명사.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[반어적 의문문에 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[치열한 입시에서 5점이면 어디냐?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어딜 까부니?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[여기가 어디라고 소란을 피운단 말이냐?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[집안 망신을 시켜도 분수가 있지. 그 꼴로 어딜…….]]></example>
+							
+							<source><![CDATA[박완서, 도시의 흉년]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>72276</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[조금의 여지도 없음을 이르는 말.]]></definition>
+						<definition_original><![CDATA[조금의 여지도 없음을 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[‘어디까지나’ 꼴로 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[이번 결정은 어디까지나 네게 달렸다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[이 말은 어디까지나 농담에 불과합니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+			<pos_info>
+				<pos_code>460122002</pos_code>
+				<pos>감탄사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>460122002001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>2544</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[벼르거나 다짐할 때 쓰는 말.]]></definition>
+						<definition_original><![CDATA[벼르거나 다짐할 때 쓰는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[어디, 그런 눈에 보이는 거짓말을!]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어디, 너도 한번 당해 봐라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>31677</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[되물어 강조할 때 쓰는 말.]]></definition>
+						<definition_original><![CDATA[되물어 강조할 때 쓰는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[문제가 어디 그뿐인 줄 알아?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>62731</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[남의 주의를 끌 때 쓰는 말.]]></definition>
+						<definition_original><![CDATA[남의 주의를 끌 때 쓰는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[어디, 네가 이번 시험에서 일 등을 한 학생이냐?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>69276</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[마음대로 되지 아니하여 딱한 사정이 있는 형편을 강조할 때 쓰는 말.]]></definition>
+						<definition_original><![CDATA[마음대로 되지 아니하여 딱한 사정이 있는 형편을 강조할 때 쓰는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[받기 싫어서가 아니라 어디 내놔야 받지요.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[세상이 이처럼 각박해 가지고야 불안해서 어디 살겠어요.]]></example>
+							
+							<source><![CDATA[이병주, 지리산]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>71349</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[소가 길을 잘못 들려고 할 때 바른길로 몰려고 내는 소리.]]></definition>
+						<definition_original><![CDATA[소가 길을 잘못 들려고 할 때 바른길로 몰려고 내는 소리.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>어디여</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>16127</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=224326&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>72280</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[소를 오른쪽으로 가라는 뜻으로 내는 소리.]]></definition>
+						<definition_original><![CDATA[소를 오른쪽으로 가라는 뜻으로 내는 소리.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>어디여</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>48072</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=224326&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

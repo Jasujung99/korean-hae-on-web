@@ -1,0 +1,311 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202158</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>390962</target_code>
+		<word_info>
+			<word><![CDATA[감자]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[감자]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			<origin><![CDATA[＜甘藷]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>390962001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>390962001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>3554</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[가짓과의 여러해살이풀. 높이는 60~100cm이며, 잎은 겹잎이고 어긋난다. 초여름에 흰색 또는 자주색의 통꽃이 줄기 끝에 핀다. 비교적 찬 기후에서 잘 자라고 성장 기간이 짧다. 남아메리카 칠레가 원산지로 온대, 한대에서 널리 재배된다.]]></definition>
+						<definition_original><![CDATA[가짓과의 여러해살이풀. 높이는 60~100cm이며, 잎은 겹잎이고 어긋난다. 초여름에 흰색 또는 자주색의 통꽃이 줄기 끝에 핀다. 비교적 찬 기후에서 잘 자라고 성장 기간이 짧다. 남아메리카 칠레가 원산지로 온대, 한대에서 널리 재배된다.]]></definition_original>
+						
+						<scientific_name><![CDATA[Solanum tuberosum]]></scientific_name>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>식물</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[여름이 되자 밭에 심은 감자가 잘 자라 녹색 잎이 무성해졌다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+						
+						<multimedia_info>
+							
+							<lable><![CDATA[감자]]></lable>
+							
+							<type>
+								
+								
+								
+								
+								사진
+								
+								
+							</type>
+							<link><![CDATA[https://dicmedia.korean.go.kr/front/view/mediaView.do?file_no=95802]]></link>
+						</multimedia_info>
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>마령-서</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>346941</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=107425&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>번서01</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>10562</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=145826&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>북-감저</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>534177</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=152038&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>32636</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[‘「1」’의 덩이줄기. 둥글고 황록색·적색·갈색이며, 녹말이 많아 식용하거나 가공용으로 널리 쓴다.]]></definition>
+						<definition_original><![CDATA[‘「1」’의 덩이줄기. 둥글고 황록색·적색·갈색이며, 녹말이 많아 식용하거나 가공용으로 널리 쓴다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[찐 감자.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[감자 한 알.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[감자가 굵다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[감자를 캐다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[점심에 감자를 삶아 먹었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[삶은 감자를 으깨어 샐러드를 만들었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+						
+						<multimedia_info>
+							
+							<lable><![CDATA[감자]]></lable>
+							
+							<type>
+								
+								
+								
+								
+								사진
+								
+								
+							</type>
+							<link><![CDATA[https://dicmedia.korean.go.kr/front/view/mediaView.do?file_no=260099]]></link>
+						</multimedia_info>
+						
+						<multimedia_info>
+							
+							<lable><![CDATA[감자]]></lable>
+							
+							<type>
+								
+								
+								
+								
+								사진
+								
+								
+							</type>
+							<link><![CDATA[https://dicmedia.korean.go.kr/front/view/mediaView.do?file_no=260098]]></link>
+						</multimedia_info>
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

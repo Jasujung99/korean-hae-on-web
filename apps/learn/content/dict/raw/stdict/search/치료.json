@@ -1,0 +1,25 @@
+{
+  "channel": {
+    "total": 1,
+    "item": [
+      {
+        "sup_no": "0",
+        "target_code": "492905",
+        "pos": "명사",
+        "origin": "治療",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=492905&searchKeywordTo=3",
+          "definition": "병이나 상처 따위를 잘 다스려 낫게 함.",
+          "type": "일반어"
+        },
+        "word": "치료"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202338",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

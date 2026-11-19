@@ -1,0 +1,379 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203342</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>495620</target_code>
+		<word_info>
+			<word><![CDATA[틀-리다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[틀리다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[틀리어]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[틀리어]]></pronunciation>
+					</pronunciation_info>
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[틀리여]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+				<abbreviation_info>
+					<abbreviation><![CDATA[틀려]]></abbreviation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[틀려]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</abbreviation_info>
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[틀리니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[틀리니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>495620001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>495620001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>517914</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[방향이 꼬이게 돌려지다. ‘틀다’의 피동사.]]></definition>
+						<definition_original><![CDATA[방향이 꼬이게 돌려지다. ‘<sense_no>30648</sense_no>틀다’의 피동사.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[몸이 틀리다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[오래 서 있었더니 허리가 비비 틀린다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[병인의 눈자위는 틀려 갔다.]]></example>
+							
+							<source><![CDATA[염상섭, 임종]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>521413</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[나사나 열쇠 따위가 돌려지다. ‘틀다’의 피동사.]]></definition>
+						<definition_original><![CDATA[나사나 열쇠 따위가 돌려지다. ‘<sense_no>62183</sense_no>틀다’의 피동사.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[수도꼭지가 얼어 틀리지를 않는다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[오랫동안 쓰지 않았더니 열쇠가 틀리지 않는다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>495620001002</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…이</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>548444</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[감정이나 심리 상태 따위가 나빠지다.]]></definition>
+						<definition_original><![CDATA[감정이나 심리 상태 따위가 나빠지다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그는 심사가 틀려 있다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[동생은 지금 사소한 일로 감정이 틀려 말을 하지 않는다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[배알이 틀려 더 이상 못 봐 주겠다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>495620001003</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>(…과)</pattern>
+					</pattern_info>
+					
+					
+					
+					
+					<grammar_info>
+						<grammar><![CDATA[‘과’가 나타나지 않을 때는 여럿임을 뜻하는 말이 주어로 온다]]></grammar>
+					</grammar_info>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>548445</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[다른 사람과 사이가 나빠지다.]]></definition>
+						<definition_original><![CDATA[다른 사람과 사이가 나빠지다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[사소한 일로 형님과 틀려 지내고 싶지는 않다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[낯익은 얼굴들이 무슨 일로 틀려서 같은 서울에 살면서 만나기만 하면 외면을 해야 되는 사람이 몇이 있다.]]></example>
+							
+							<source><![CDATA[조풍연, 청사 수필]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

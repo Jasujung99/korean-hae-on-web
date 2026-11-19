@@ -1,0 +1,1237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 검색</title>
+	<link>https://krdict.korean.go.kr</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 검색 결과</description>
+	<lastBuildDate>20261119203034</lastBuildDate>
+	<total>9</total>
+	<start>1</start>
+	<num>100</num>
+	
+	
+	
+	<item>
+		
+		
+		<target_code>38812</target_code>
+		<word>기억</word>
+		<sup_no>0</sup_no>
+		
+		<origin>記憶</origin>
+		
+		
+		<pronunciation>기억</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=38812</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>이전의 모습, 사실, 지식, 경험 등을 잊지 않거나 다시 생각해 냄.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[memory]]></trans_word>
+				<trans_dfn><![CDATA[The act of not forgetting or recalling past figures, facts, knowledge or experiences.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[память; воспоминание]]></trans_word>
+				<trans_dfn><![CDATA[Сохранение или воспроизведение в сознании прежних образов, фактов, знаний, пережитого опыта и т.п.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>17229</target_code>
+		<word>기억나다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>記憶나다</origin>
+		
+		
+		<pronunciation>기엉나다</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=17229</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>이전의 모습, 사실, 지식, 경험 등이 마음이나 생각 속에 떠오르다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[remember; recall]]></trans_word>
+				<trans_dfn><![CDATA[To recall past figures, facts, knowledge or experiences in one's mind or thought.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[вспомнить; припомнить]]></trans_word>
+				<trans_dfn><![CDATA[Облик, факт, знания, опыт и т.п., которые были известны ранее, всплывают в голове или в глубине души.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>32513</target_code>
+		<word>기억되다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>記憶되다</origin>
+		
+		
+		<pronunciation>기억뙤다/기억뛔다</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=32513</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>이전의 모습, 사실, 지식, 경험 등이 잊히지 않거나 다시 생각나다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[be remembered; be recalled]]></trans_word>
+				<trans_dfn><![CDATA[For past figures, facts, knowledge or experiences to be recalled or unforgotten.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[вспоминаться; находиться в памяти; помниться]]></trans_word>
+				<trans_dfn><![CDATA[Вспоминаться или не забываться (о прошлом чего-либо, факте, знании, опыте и т.п.).]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>62319</target_code>
+		<word>기억하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>記憶하다</origin>
+		
+		
+		<pronunciation>기어카다</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=62319</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>이전의 모습, 사실, 지식, 경험 등을 잊지 않거나 다시 생각해 내다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[remember; recall]]></trans_word>
+				<trans_dfn><![CDATA[Not to forget or recall past figures, facts, knowledge or experiences. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[помнить; вспоминать]]></trans_word>
+				<trans_dfn><![CDATA[Не забывать и снова думать или вспоминать прошлый образ, факт, знания, опыт и т.п.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>38802</target_code>
+		<word>기억력</word>
+		<sup_no>0</sup_no>
+		
+		<origin>記憶力</origin>
+		
+		
+		<pronunciation>기엉녁</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=38802</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>이전의 모습, 사실, 지식, 경험 등을 마음이나 생각 속에 간직해 두고 생각해 내는 능력.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[memory]]></trans_word>
+				<trans_dfn><![CDATA[The mental ability to retain and retrieve previous figures, facts, knowledge, experiences, etc.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[память]]></trans_word>
+				<trans_dfn><![CDATA[Способность запоминать, сохранять и воспроизводить в сознании образы, факты, знания, предшествующий опыт и т.п.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>38814</target_code>
+		<word>기억 상실</word>
+		<sup_no>0</sup_no>
+		
+		<origin>記憶喪失</origin>
+		
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=38814</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>충격을 받아서 이전의 어느 기간 동안 있었던 일을 생각해 내지 못하는 일. 또는 그런 병.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[amnesia]]></trans_word>
+				<trans_dfn><![CDATA[The state of not being able to recall an event during a certain period in the past because of a shock, or such a disease.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[потеря памяти; амнезия]]></trans_word>
+				<trans_dfn><![CDATA[Отсутствие воспоминаний или неполные воспоминания о событиях и переживаниях определенного периода, вызванные какой-либо травмой, психологическим шоком и т.п. Или заболевание с подобными симптомами.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>85417</target_code>
+		<word>기억시키다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>記憶시키다</origin>
+		
+		
+		<pronunciation>기억씨키다</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=85417</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>이전의 모습, 사실, 지식, 경험 등을 잊지 않게 하거나 다시 생각나게 하다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[make remember; make recall]]></trans_word>
+				<trans_dfn><![CDATA[To make one not forget or recall past figures, facts, knowledge or experiences.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[заставлять вспоминать]]></trans_word>
+				<trans_dfn><![CDATA[Заставлять помнить или не забывать (о прошлом очертании чего-либо, факте, знании, опыте и т.п.).]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>89874</target_code>
+		<word>기억 상실증</word>
+		<sup_no>0</sup_no>
+		
+		<origin>記憶喪失症</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=89874</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>충격을 받아서 이전의 어느 기간 동안 있었던 일을 생각해 내지 못하는 병.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[amnesia]]></trans_word>
+				<trans_dfn><![CDATA[A disease of not being able to recall an event during a certain period in the past because of a shock.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[амнезия]]></trans_word>
+				<trans_dfn><![CDATA[Заболевание, при котором частично теряется память о каких-либо прошлых событиях в результате получения шока. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>38815</target_code>
+		<word>기억 장치</word>
+		<sup_no>0</sup_no>
+		
+		<origin>記憶裝置</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=38815</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>컴퓨터를 비롯한 디지털 기기에서, 수치나 명령 등을 기억하는 장치.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[memory; storage]]></trans_word>
+				<trans_dfn><![CDATA[A device which remembers figures, orders, etc., in digital machines such as the computer.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[запоминающее устройство]]></trans_word>
+				<trans_dfn><![CDATA[Устройство для записи и хранения каких-либо команд, числовых значений. Используется в компьютерах и других цифровых устройствах.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	
+	
+</channel>
+
+

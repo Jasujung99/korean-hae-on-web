@@ -1,0 +1,25 @@
+{
+  "channel": {
+    "total": 1,
+    "item": [
+      {
+        "sup_no": "0",
+        "target_code": "456868",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=456868&searchKeywordTo=3",
+          "definition": "자기를 낳아 준 남자를 이르거나 부르는 말.",
+          "type": "일반어"
+        },
+        "word": "아버지"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202629",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

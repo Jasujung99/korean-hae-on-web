@@ -1,0 +1,61 @@
+{
+  "channel": {
+    "total": 4,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "402860",
+        "pos": "명사",
+        "origin": "汽車",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=402860&searchKeywordTo=3",
+          "definition": "여객차나 화차를 끌고 다니는 철도 차량. 증기 기관차, 디젤 기관차, 전기 기관차 따위가 있다.",
+          "type": "일반어"
+        },
+        "word": "기차"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "51247",
+        "pos": "명사",
+        "origin": "其次",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=51247&searchKeywordTo=3",
+          "definition": "그것에 뒤이어 오는 때나 자리.",
+          "type": "일반어"
+        },
+        "word": "기차"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "51248",
+        "pos": "명사",
+        "origin": "氣差",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=51248&searchKeywordTo=3",
+          "definition": "천체(天體)에서 오는 빛이 지구 대기층을 지나며 굴절하는 현상 때문에 생기는 천체의 겉보기 방향과 실제 방향과의 차이.",
+          "type": "일반어"
+        },
+        "word": "기차"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "51249",
+        "pos": "명사",
+        "origin": "幾次",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=51249&searchKeywordTo=3",
+          "definition": "몇 차례.",
+          "type": "일반어"
+        },
+        "word": "기차"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202056",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

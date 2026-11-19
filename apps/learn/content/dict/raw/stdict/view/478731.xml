@@ -1,0 +1,281 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203714</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>478731</target_code>
+		<word_info>
+			<word><![CDATA[점심]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				한자어
+				
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[點心]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[점ː심]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>478731001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>478731001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>1374065</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[하루 중에 해가 가장 높이 떠 있는, 정오부터 반나절쯤까지의 동안.]]></definition>
+						<definition_original><![CDATA[하루 중에 해가 가장 높이 떠 있는, 정오부터 반나절쯤까지의 동안.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[딸아이는 점심에나 일어났다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어제 점심에 비가 내렸다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나는 점심에 낮잠을 꼭 잔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>22236</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[‘「1」’에 끼니로 먹는 음식. 또는 ‘「1」’에 끼니를 먹는 일.]]></definition>
+						<definition_original><![CDATA[‘「1」’에 끼니로 먹는 음식. 또는 ‘「1」’에 끼니를 먹는 일.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[점심 급식.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[점심을 먹다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[점심을 라면으로 때우다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[밭에서 일하는 장손이 부부에게 점심도 갖다줄 겸 모가 붙은 논을 보고 오라고 보내고….]]></example>
+							
+							<source><![CDATA[안수길, 북간도]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>53048</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[무당이 삼신에게 떡과 과일 따위의 간단한 음식을 차려 놓고, 갓난아이에게 먹일 젖이 풍족하기를 빌거나 죽은 사람의 명복을 비는 일.]]></definition>
+						<definition_original><![CDATA[무당이 삼신에게 떡과 과일 따위의 간단한 음식을 차려 놓고, 갓난아이에게 먹일 젖이 풍족하기를 빌거나 죽은 사람의 명복을 비는 일.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>민속</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>66661</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[선원에서, 배고플 때에 조금 먹는 음식을 이르는 말. 마음을 점검한다는 뜻이다.]]></definition>
+						<definition_original><![CDATA[선원에서, 배고플 때에 조금 먹는 음식을 이르는 말. 마음을 점검한다는 뜻이다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>불교</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

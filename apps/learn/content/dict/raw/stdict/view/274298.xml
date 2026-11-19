@@ -1,0 +1,370 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202905</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>274298</target_code>
+		<word_info>
+			<word><![CDATA[잎]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[입]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[잎이]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[이피]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[잎만]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[임만]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			<norm_info>
+				
+				<type>한글 맞춤법</type>
+				
+				
+				
+				<desc><![CDATA[‘잎’이 일부 명사의 바로 뒤에 쓰여 그 잎임을 나타낼 때는 앞말에 붙여 쓴다.]]></desc>
+				
+			</norm_info>
+			
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>274298001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>274298001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>20919</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[식물의 영양 기관의 하나. 줄기의 끝이나 둘레에 붙어 호흡 작용과 탄소 동화 작용을 한다. 대개 녹색으로 모양은 넓적하고 잎몸, 잎자루, 턱잎 따위로 이루어진다.]]></definition>
+						<definition_original><![CDATA[식물의 영양 기관의 하나. 줄기의 끝이나 둘레에 붙어 호흡 작용과 탄소 동화 작용을 한다. 대개 녹색으로 모양은 넓적하고 잎몸, 잎자루, 턱잎 따위로 이루어진다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>식물</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[잎이 우거진 푸른 숲.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[잎이 나다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[잎이 무성하다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[잎이 시들다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[잎이 지다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[잎이 피다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+						
+						<multimedia_info>
+							
+							<lable><![CDATA[잎]]></lable>
+							
+							<type>
+								
+								
+								
+								
+								
+								삽화
+								
+							</type>
+							<link><![CDATA[https://dicmedia.korean.go.kr/front/view/mediaView.do?file_no=102002]]></link>
+						</multimedia_info>
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>51075</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[이파리를 세는 단위.]]></definition>
+						<definition_original><![CDATA[이파리를 세는 단위.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[수량을 나타내는 말 뒤에 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[나뭇잎이 한 잎 두 잎 떨어지기 시작하는 계절이 왔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>1393778</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[‘꽃잎’을 달리 이르는 말.]]></definition>
+						<definition_original><![CDATA[‘<word_no>401377</word_no>꽃잎’을 달리 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[벚꽃나무가 바람에 흔들려 하얀 잎이 날린다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>1356720</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[‘그 잎’의 뜻을 나타내는 말.]]></definition>
+						<definition_original><![CDATA[‘그 잎’의 뜻을 나타내는 말.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[일부 명사 뒤에 붙어]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[오동잎.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[토란잎.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

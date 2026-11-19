@@ -1,0 +1,169 @@
+{
+  "channel": {
+    "total": 13,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "332641",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=332641&searchKeywordTo=3",
+          "definition": "바람이 세차게 불거나 비, 눈 따위가 세차게 뿌리다.",
+          "type": "일반어"
+        },
+        "word": "치다"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "490114",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=490114&searchKeywordTo=3",
+          "definition": "손이나 손에 든 물건으로 세게 부딪게 하다.",
+          "type": "일반어"
+        },
+        "word": "치다"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "333000",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=333000&searchKeywordTo=3",
+          "definition": "붓이나 연필 따위로 점을 찍거나 선이나 그림을 그리다.",
+          "type": "일반어"
+        },
+        "word": "치다"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "333272",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=333272&searchKeywordTo=3",
+          "definition": "적은 분량의 액체를 따르거나 가루 따위를 뿌려서 넣다.",
+          "type": "일반어"
+        },
+        "word": "치다"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "333273",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=333273&searchKeywordTo=3",
+          "definition": "막이나 그물, 발 따위를 펴서 벌이거나 늘어뜨리다.",
+          "type": "일반어"
+        },
+        "word": "치다"
+      },
+      {
+        "sup_no": "6",
+        "target_code": "325826",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=325826&searchKeywordTo=3",
+          "definition": "돗자리, 멍석, 가마니 따위를 틀로 짜다.",
+          "type": "일반어"
+        },
+        "word": "치다"
+      },
+      {
+        "sup_no": "7",
+        "target_code": "329626",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=329626&searchKeywordTo=3",
+          "definition": "가축이나 가금 따위를 기르다.",
+          "type": "일반어"
+        },
+        "word": "치다"
+      },
+      {
+        "sup_no": "8",
+        "target_code": "329627",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=329627&searchKeywordTo=3",
+          "definition": "불필요하게 쌓인 물건을 파내거나 옮기어 깨끗이 하다.",
+          "type": "일반어"
+        },
+        "word": "치다"
+      },
+      {
+        "sup_no": "9",
+        "target_code": "329609",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=329609&searchKeywordTo=3",
+          "definition": "차나 수레 따위가 사람을 강한 힘으로 부딪고 지나가다.",
+          "type": "일반어"
+        },
+        "word": "치다"
+      },
+      {
+        "sup_no": "10",
+        "target_code": "489863",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=489863&searchKeywordTo=3",
+          "definition": "셈을 맞추다.",
+          "type": "일반어"
+        },
+        "word": "치다"
+      },
+      {
+        "sup_no": "11",
+        "target_code": "329610",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=329610&searchKeywordTo=3",
+          "definition": "가루 상태의 물질을 체로 흔들어서 곱게 만들다.",
+          "type": "일반어"
+        },
+        "word": "치다"
+      },
+      {
+        "sup_no": "12",
+        "target_code": "329612",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=329612&searchKeywordTo=3",
+          "definition": "→ 치이다.",
+          "type": "일반어"
+        },
+        "word": "치다"
+      },
+      {
+        "sup_no": "13",
+        "target_code": "329613",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=329613&searchKeywordTo=3",
+          "definition": "→ 치우다.",
+          "type": "일반어"
+        },
+        "word": "치다"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202419",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

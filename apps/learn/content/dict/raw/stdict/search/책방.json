@@ -1,0 +1,37 @@
+{
+  "channel": {
+    "total": 2,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "324707",
+        "pos": "명사",
+        "origin": "冊房",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=324707&searchKeywordTo=3",
+          "definition": "책을 갖추어 놓고 팔거나 사는 가게.",
+          "type": "일반어"
+        },
+        "word": "책방"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "491636",
+        "pos": "명사",
+        "origin": "冊房",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=491636&searchKeywordTo=3",
+          "definition": "조선 시대에, 궁중에서 편찬과 인쇄를 맡아보던 관아. 세종 때에 두었다.",
+          "type": "일반어"
+        },
+        "word": "책방"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202916",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

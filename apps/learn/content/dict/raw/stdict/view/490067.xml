@@ -1,0 +1,244 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202403</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>490067</target_code>
+		<word_info>
+			<word><![CDATA[찌다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[찌다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[찌어]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[찌어]]></pronunciation>
+					</pronunciation_info>
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[찌여]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+				<abbreviation_info>
+					<abbreviation><![CDATA[쪄]]></abbreviation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[쩌]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</abbreviation_info>
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[찌니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[찌니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+			
+			<relation_info>
+				<word>찐 붕어가 되었다</word>
+				<type>속담</type>
+				<link_target_code>532380</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=532380&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[＜다＜능엄＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>490067001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>490067001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>24780</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[뜨거운 김을 쐬는 것같이 더워지다.]]></definition>
+						<definition_original><![CDATA[뜨거운 김을 쐬는 것같이 더워지다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[찌는 더위 속에서도 열심히 일했다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[한여름이 되니 날씨가 푹푹 찐다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>55777</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[뜨거운 김으로 익히거나 데우다.]]></definition>
+						<definition_original><![CDATA[뜨거운 김으로 익히거나 데우다.]]></definition_original>
+						
+
+						
+						
+						<sense_pattern_info>
+							<pattern>…을</pattern>
+						</sense_pattern_info>
+						
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[시루에 떡을 찌다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[오늘 점심에는 감자를 쪄서 먹자.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

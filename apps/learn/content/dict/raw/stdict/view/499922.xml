@@ -1,0 +1,632 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203337</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>499922</target_code>
+		<word_info>
+			<word><![CDATA[틀다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[틀다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[틀어]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[트러]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[트니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[트니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[트오]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[트오]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			<origin><![CDATA[틀다＜가언＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>499922001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>499922001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>30648</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[방향이 꼬이게 돌리다.]]></definition>
+						<definition_original><![CDATA[방향이 꼬이게 돌리다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[몸을 틀다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[허리를 비비 틀다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그녀는 눈을 감은 채, 옆에 앉은 남자의 가슴에 얼굴을 묻기라도 하듯이 몸을 모로 틀면서 얼굴을 무덤의 잔디 속에 묻었다.]]></example>
+							
+							<source><![CDATA[한승원, 해일]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>62183</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[나사나 열쇠 따위를 돌리다.]]></definition>
+						<definition_original><![CDATA[나사나 열쇠 따위를 돌리다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[수도꼭지를 틀다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[열쇠를 구멍에 넣고 틀자 문이 열렸다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>69523</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[음향 기기 따위를 작동하게 하다.]]></definition>
+						<definition_original><![CDATA[음향 기기 따위를 작동하게 하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[라디오를 틀다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[심심하면 전축을 틀어도 좋고 저기 화집이 있으니 그걸 꺼내 봐도 좋다.]]></example>
+							
+							<source><![CDATA[이병주, 지리산]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>70653</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[잘되어 가던 일을 꼬이게 하다.]]></definition>
+						<definition_original><![CDATA[잘되어 가던 일을 꼬이게 하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[여자 쪽 부모가 일을 틀어서 결혼이 이루어지지 않았다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>71968</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[상투나 쪽 따위로 머리털을 올려붙이다.]]></definition>
+						<definition_original><![CDATA[상투나 쪽 따위로 머리털을 올려붙이다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[머리를 틀다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[보통 사람은 성혼하자 곧 상투를 틀었지만 백정은 애를 난 후에야 틀 수 있었다는군요.]]></example>
+							
+							<source><![CDATA[황순원, 일월]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>72118</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[짚이나 대 따위로 엮어서 보금자리, 둥지, 멍석 따위를 만들다.]]></definition>
+						<definition_original><![CDATA[짚이나 대 따위로 엮어서 보금자리, 둥지, 멍석 따위를 만들다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[가마니를 틀다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[보금자리를 틀다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>73056</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[솜틀로 솜을 타다.]]></definition>
+						<definition_original><![CDATA[솜틀로 솜을 타다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[솜을 틀다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[솜틀에서는 달칵달칵 솜이 틀어지고 있었다.]]></example>
+							
+							<source><![CDATA[최인호, 지구인]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>72951</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[뱀 따위가 몸을 둥글게 말아 똬리처럼 만들다.]]></definition>
+						<definition_original><![CDATA[뱀 따위가 몸을 둥글게 말아 똬리처럼 만들다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[뱀이 똬리를 틀다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[몸을 어떻게 똬리를 틀었는지 몸의 부피가 갓난아기처럼 작게 오그라들어 보였다.]]></example>
+							
+							<source><![CDATA[박완서, 도시의 흉년]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>72674</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[몸을 움직여 어떤 모양이나 자세를 만들다.]]></definition>
+						<definition_original><![CDATA[몸을 움직여 어떤 모양이나 자세를 만들다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[나는 슬그머니 인례의 어깨를 밀면서 반가부좌를 틀었다.]]></example>
+							
+							<source><![CDATA[김성동, 먼 산]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>499922001002</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을 …으로</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>306085</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[일정한 방향으로 나가는 물체를 돌려 다른 방향이 되게 하다.]]></definition>
+						<definition_original><![CDATA[일정한 방향으로 나가는 물체를 돌려 다른 방향이 되게 하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[차를 오른쪽으로 틀어라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[배가 진로를 북북서로 틀었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

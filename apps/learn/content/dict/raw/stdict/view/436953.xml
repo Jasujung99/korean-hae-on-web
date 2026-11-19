@@ -1,0 +1,377 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203700</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>436953</target_code>
+		<word_info>
+			<word><![CDATA[비싸다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[비싸다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[비싸]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[비싸]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[비싸니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[비싸니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+			
+			<relation_info>
+				<word>비싼 놈의 떡은 안 사 먹으면 그만이다</word>
+				<type>속담</type>
+				<link_target_code>528841</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528841&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>비싼 밥 먹고 헐한 걱정 한다</word>
+				<type>속담</type>
+				<link_target_code>528842</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528842&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[<<빋다＜석상＞←빋+-]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>436953001</pos_code>
+				<pos>형용사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>436953001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>442123</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[물건값이나 사람 또는 물건을 쓰는 데 드는 비용이 보통보다 높다.]]></definition>
+						<definition_original><![CDATA[물건값이나 사람 또는 물건을 쓰는 데 드는 비용이 보통보다 높다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[값이 비싸다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그 제품은 값이 비싼 만큼 질은 아주 좋다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[집을 생각보다 비싼 가격에 팔았다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[이 시설은 요금이 너무 비싸서 이용하는 사람이 많지 않다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[전문가는 인건비가 비싸기 때문에 고용이 어렵다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>싸다05</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>30164</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=453734&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>445708</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[다른 사람의 요구에 쉽게 응하지 아니하고 도도하게 행동하다.]]></definition>
+						<definition_original><![CDATA[다른 사람의 요구에 쉽게 응하지 아니하고 도도하게 행동하다.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[주로 ‘비싸게’ 꼴로 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[비싸게 굴다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[이 사람, 그리 비싸게 그러지 말고 전하께서도 소청이시고, 나도 소원이니 한 곡조 듣세.]]></example>
+							
+							<source><![CDATA[김동인, 대수양]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>448182</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 일에 대한 대가가 보통을 넘는 상태에 있다.]]></definition>
+						<definition_original><![CDATA[어떤 일에 대한 대가가 보통을 넘는 상태에 있다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그는 성공을 위해 이혼이라는 비싼 대가를 치르고 말았다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그 불명예 한번 더럽게 비싸게 치르는군.]]></example>
+							
+							<source><![CDATA[홍성원, 육이오]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>448763</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 대상에 대한 가치가 보통보다 높다.]]></definition>
+						<definition_original><![CDATA[어떤 대상에 대한 가치가 보통보다 높다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[돈이 인생의 전부인 양 돈만을 비싸게 여기더니 네가 이제야 가족의 소중함을 깨닫는구나.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[민간의 돈이란 돈은 모두 민씨의 손으로 들어갔으므로, 돈의 가치가 여간 비싸지 않은 데다가….]]></example>
+							
+							<source><![CDATA[김동인, 젊은 그들]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

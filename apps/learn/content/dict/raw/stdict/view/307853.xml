@@ -1,0 +1,520 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202415</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>307853</target_code>
+		<word_info>
+			<word><![CDATA[지다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[지다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[지어]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[지어]]></pronunciation>
+					</pronunciation_info>
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[지여]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+				<abbreviation_info>
+					<abbreviation><![CDATA[져]]></abbreviation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[저]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</abbreviation_info>
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[지니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[지니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+			
+			<relation_info>
+				<word>지나 업으나</word>
+				<type>관용구</type>
+				<link_target_code>524139</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=524139&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[지다＜월석＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>307853001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>307853001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을 …에</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>280046</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[물건을 짊어서 등에 얹다.]]></definition>
+						<definition_original><![CDATA[물건을 짊어서 등에 얹다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[짐을 등에 지다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[등에 지게를 지다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[배낭을 등에 지다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[아우와 나는 이불과 옷 보따리를 등에 졌다.]]></example>
+							
+							<source><![CDATA[김용성, 도둑 일기]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[솔가지 나무 한 짐을 지면 지게 질빵을 걸고 일어나지 못했다.]]></example>
+							
+							<source><![CDATA[유현종, 들불]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그 모진 매질을 당하고도 상님이는 사흘도 못 돼 어정어정 물짐을 져 날랐다.]]></example>
+							
+							<source><![CDATA[천승세, 낙월도]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>307853001002</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>280047</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[무엇을 뒤쪽에 두다.]]></definition>
+						<definition_original><![CDATA[무엇을 뒤쪽에 두다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[해를 지고 걷다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[바람을 지고 달리다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[낡은 초가집이 산을 지고 앉아 있었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>594677</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[줄이나 포승 따위에 묶이다.]]></definition>
+						<definition_original><![CDATA[줄이나 포승 따위에 묶이다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그가 그렇게 오라를 진 것처럼 부자유스러워 보이기도 처음이었다.]]></example>
+							
+							<source><![CDATA[박완서, 도시의 흉년]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[죄수가 결박을 진 채 혼자서 뜰에 방황한다는 것은 그에게는 놀라운 일이었던 모양이었다.]]></example>
+							
+							<source><![CDATA[김동인, 젊은 그들]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>307853001003</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…에/에게 …을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>31366</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[신세나 은혜를 입다.]]></definition>
+						<definition_original><![CDATA[신세나 은혜를 입다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[선생님께 하해와 같은 은혜를 지었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[아무래도 네가 다시 한번 본국의 김수길 병장한테 신세를 져야 할 것 같다.]]></example>
+							
+							<source><![CDATA[이상문, 황색인]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>62667</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[책임이나 의무를 맡다.]]></definition>
+						<definition_original><![CDATA[책임이나 의무를 맡다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[당신은 당신이 한 말에 책임을 져야 합니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그로 말미암아 야기될 모든 사태에 대해서 본관에게 책임을 지라는 겁니다.]]></example>
+							
+							<source><![CDATA[유주현, 대한 제국]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>68973</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[빌린 돈을 갚아야 할 의무가 있다.]]></definition>
+						<definition_original><![CDATA[빌린 돈을 갚아야 할 의무가 있다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[김 사장에게 300만 원의 빚을 지고 있다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[내가 빚을 졌나? 난 어음 할인해 준 죄밖에 없어.]]></example>
+							
+							<source><![CDATA[박완서, 오만과 몽상]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

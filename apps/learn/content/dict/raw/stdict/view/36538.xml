@@ -1,0 +1,172 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203039</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>36538</target_code>
+		<word_info>
+			<word><![CDATA[구두]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				한자어
+				
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[口頭]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[구ː두]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>36538001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>36538001001</comm_pattern_code>
+					
+					
+					
+					<grammar_info>
+						<grammar><![CDATA[주로 일부 명사 앞에 쓰이거나 ‘구두로’ 꼴로 쓰여]]></grammar>
+					</grammar_info>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>97473</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[마주 대하여 입으로 하는 말.]]></definition>
+						<definition_original><![CDATA[마주 대하여 입으로 하는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[구두 표결.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[구두로 약속하다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[구두로 지시하다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[이건 당(黨)의 구두 지령이오.]]></example>
+							
+							<source><![CDATA[이문열, 영웅시대]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[보고에 의하면 이번에는 아무런 문서도 가지고 있지 않고 동학 대장 전봉준을 직접 만나 왕의 윤음을 구두로 전하겠다는 것이었다.]]></example>
+							
+							<source><![CDATA[유현종, 들불]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

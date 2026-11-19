@@ -1,0 +1,140 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202609</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>420872</target_code>
+		<word_info>
+			<word><![CDATA[맥주]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				한자어
+				
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[麥酒]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[맥쭈]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>420872001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>420872001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>150140</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[알코올성 음료의 하나. 엿기름가루를 물과 함께 가열하여 당화한 후, 홉(hop)을 넣어 향(香)과 쓴맛이 나게 한 뒤 발효하여 만든다. 오래 보존하기 위하여 가열한 병맥주와 가열하지 않은 생맥주가 있다.]]></definition>
+						<definition_original><![CDATA[알코올성 음료의 하나. 엿기름가루를 물과 함께 가열하여 당화한 후, 홉(hop)을 넣어 향(香)과 쓴맛이 나게 한 뒤 발효하여 만든다. 오래 보존하기 위하여 가열한 병맥주와 가열하지 않은 생맥주가 있다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그는 단숨에 맥주 한 컵을 들이켰다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나는 극장에서 나와 급우들과 맥주를 조금 마셨기 때문에 기분이 나른해져 있었다.]]></example>
+							
+							<source><![CDATA[황석영, 섬섬옥수]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

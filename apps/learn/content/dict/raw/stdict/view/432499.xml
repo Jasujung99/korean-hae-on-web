@@ -1,0 +1,579 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202857</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>432499</target_code>
+		<word_info>
+			<word><![CDATA[밥]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[밥]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[밥만]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[밤만]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+			
+			<relation_info>
+				<word>밥(을) 벌다</word>
+				<type>관용구</type>
+				<link_target_code>528561</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528561&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밥(을) 주다</word>
+				<type>관용구</type>
+				<link_target_code>528563</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528563&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밥 구경(을) 하다</word>
+				<type>관용구</type>
+				<link_target_code>528564</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528564&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밥 구경을 못 하다</word>
+				<type>관용구</type>
+				<link_target_code>528565</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528565&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밥 먹듯 하다</word>
+				<type>관용구</type>
+				<link_target_code>528566</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528566&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밥 군 것이 떡 군 것보다 못하다</word>
+				<type>속담</type>
+				<link_target_code>528534</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528534&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밥 먹을 때는 개도 안 때린다</word>
+				<type>속담</type>
+				<link_target_code>528535</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528535&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밥 빌어다가 죽을 쑤어 먹을 놈[자식]</word>
+				<type>속담</type>
+				<link_target_code>528537</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528537&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밥 빌어먹기는 장타령이 제일</word>
+				<type>속담</type>
+				<link_target_code>528538</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528538&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밥 선 것은 사람 살려도 의원 선 것은 사람 죽인다</word>
+				<type>속담</type>
+				<link_target_code>528539</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528539&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밥 아니 먹어도 배부르다</word>
+				<type>속담</type>
+				<link_target_code>528540</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528540&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밥 위에 떡</word>
+				<type>속담</type>
+				<link_target_code>528542</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528542&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밥은 굶어도 속이 편해야 산다</word>
+				<type>속담</type>
+				<link_target_code>528543</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528543&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밥은 열 곳에 가 먹어도 잠은 한 곳에서 자랬다</word>
+				<type>속담</type>
+				<link_target_code>528544</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528544&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밥은 주는 대로 먹고 일은 시키는 대로 하라</word>
+				<type>속담</type>
+				<link_target_code>528545</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528545&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밥을 치면 떡이 되고 사람을 치면 도둑이 된다</word>
+				<type>속담</type>
+				<link_target_code>528549</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528549&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밥이 얼굴에 더덕더덕 붙었다</word>
+				<type>속담</type>
+				<link_target_code>528552</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528552&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밥 팔아 똥 사 먹겠다</word>
+				<type>속담</type>
+				<link_target_code>528555</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528555&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>밥 한 알이 귀신 열을 쫓는다</word>
+				<type>속담</type>
+				<link_target_code>528560</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528560&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[밥＜훈해＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>432499001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>432499001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>440856</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[쌀, 보리 따위의 곡식을 씻어서 솥 따위의 용기에 넣고 물을 알맞게 부어, 낟알이 풀어지지 않고 물기가 잦아들게 끓여 익힌 음식.]]></definition>
+						<definition_original><![CDATA[쌀, 보리 따위의 곡식을 씻어서 솥 따위의 용기에 넣고 물을 알맞게 부어, 낟알이 풀어지지 않고 물기가 잦아들게 끓여 익힌 음식.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[밥을 안치다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[밥을 짓다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[밥을 뜸을 들이다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[밥을 퍼서 공기에 담다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[숟가락으로 밥을 떠먹다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[물의 양이 적어 밥이 설익었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[밥이 질지도 않고 되지도 않다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>반식02</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>422213</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=132437&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>445515</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[끼니로 먹는 음식.]]></definition>
+						<definition_original><![CDATA[끼니로 먹는 음식.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[밥을 굶다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[밥을 얻어먹다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[밥을 차려 주다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[밥만 축내다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[요즘 같아서는 세끼 밥 먹기가 힘들다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>식사03</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>210377</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=209490&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>진지01</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>283790</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=316407&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>448220</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[동물의 먹이.]]></definition>
+						<definition_original><![CDATA[동물의 먹이.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[고양이 밥 갖다줘라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[식당에서 남은 음식은 돼지 밥으로 썼다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>448722</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[나누어 가질 물건 중 각각 갖게 되는 한 부분.]]></definition>
+						<definition_original><![CDATA[나누어 가질 물건 중 각각 갖게 되는 한 부분.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[제 밥은 제가 찾아 먹어야지 남이 어떻게 챙겨 주니?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>448919</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[남에게 눌려 지내거나 이용만 당하는 사람을 비유적으로 이르는 말.]]></definition>
+						<definition_original><![CDATA[남에게 눌려 지내거나 이용만 당하는 사람을 비유적으로 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그는 그녀 앞에선 꼼짝 못 하는 그녀의 밥이었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 한참 기세가 등등하더니 하루아침에 권력의 밥이 되고 말았다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

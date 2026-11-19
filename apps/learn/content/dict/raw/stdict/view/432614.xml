@@ -1,0 +1,686 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202738</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>432614</target_code>
+		<word_info>
+			<word><![CDATA[부르다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[부르다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[불러]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[불러]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[부르니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[부르니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+			
+			<relation_info>
+				<word>부르느니 말하지</word>
+				<type>관용구</type>
+				<link_target_code>528579</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528579&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>부르는 게[것이] 값(이다)</word>
+				<type>관용구</type>
+				<link_target_code>528580</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528580&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[＜브르다＜용가＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>432614001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>432614001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>481130</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[말이나 행동 따위로 다른 사람의 주의를 끌거나 오라고 하다.]]></definition>
+						<definition_original><![CDATA[말이나 행동 따위로 다른 사람의 주의를 끌거나 오라고 하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[지나가는 친구를 큰 소리로 불렀다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어머니가 아이를 손짓하여 부른다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그녀는 자기를 부르는 소리를 듣고도 모른 척하였다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>484634</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[이름이나 명단을 소리 내어 읽으며 대상을 확인하다.]]></definition>
+						<definition_original><![CDATA[이름이나 명단을 소리 내어 읽으며 대상을 확인하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[출석을 부르다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[직원이 대기자 명단을 보고 이름을 불렀다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>485389</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[남이 자신의 말을 받아 적을 수 있게 또박또박 읽다.]]></definition>
+						<definition_original><![CDATA[남이 자신의 말을 받아 적을 수 있게 또박또박 읽다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[내가 부르는 대로 받아 적어라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[전화번호를 불러 줄 테니 꼭 전화해라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>485629</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[곡조에 맞추어 노래의 가사를 소리 내다.]]></definition>
+						<definition_original><![CDATA[곡조에 맞추어 노래의 가사를 소리 내다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[가곡을 부르다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[유행가를 부르다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[응원가를 부르다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>485785</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[값이나 액수 따위를 얼마라고 말하다.]]></definition>
+						<definition_original><![CDATA[값이나 액수 따위를 얼마라고 말하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그 가게에서는 값을 비싸게 불렀다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>485729</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[구호나 만세 따위를 소리 내어 외치다.]]></definition>
+						<definition_original><![CDATA[구호나 만세 따위를 소리 내어 외치다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[만세를 부르다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 속으로 쾌재를 불렀다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>485833</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 방향으로 따라오거나 동참하도록 유도하다.]]></definition>
+						<definition_original><![CDATA[어떤 방향으로 따라오거나 동참하도록 유도하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[조국이 우리를 부른다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[푸른 바다가 우리를 부른다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>485824</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 행동이나 말이 관련된 다른 일이나 상황을 초래하다.]]></definition>
+						<definition_original><![CDATA[어떤 행동이나 말이 관련된 다른 일이나 상황을 초래하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[화는 또 다른 화를 부른다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[피는 피를 부르기 마련이다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[한 나라가 너무 부강해지면 전쟁을 부르게 된다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그로 하여 오히려 사람과 세상일에 대한 이해의 잘못이나 무모한 거짓을 부르게 되는 일은 없을는지….]]></example>
+							
+							<source><![CDATA[이청준, 키 작은 자유인]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>432614001002</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을 …에</pattern>
+					</pattern_info>
+					
+					<pattern_info>
+						<pattern>…을 …으로</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>497025</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[청하여 오게 하다.]]></definition>
+						<definition_original><![CDATA[청하여 오게 하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[의사를 집에 부르다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[택시를 이곳으로 부르다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[생일에 친구들을 집으로 불렀다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>432614001003</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을 …으로</pattern>
+					</pattern_info>
+					
+					<pattern_info>
+						<pattern>…을 -고</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>497026</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[무엇이라고 가리켜 말하거나 이름을 붙이다.]]></definition>
+						<definition_original><![CDATA[무엇이라고 가리켜 말하거나 이름을 붙이다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[앞으로 우리는 그를 형님으로 부르면서 깍듯이 대접할 것이다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[사람들은 그를 불운한 천재라고 부른다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

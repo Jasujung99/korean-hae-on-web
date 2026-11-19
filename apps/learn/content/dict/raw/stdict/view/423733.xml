@@ -1,0 +1,477 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203016</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>423733</target_code>
+		<word_info>
+			<word><![CDATA[만큼]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[만큼]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			<norm_info>
+				
+				<type>표준어</type>
+				
+				
+				
+				<desc><![CDATA[‘만큼’과 ‘만치’는 모두 표준어이다. 이는 한 가지 의미를 나타내는 형태 몇 가지가 널리 쓰이며 표준어 규정에 맞으면, 그 모두를 표준어로 삼는다는 규정(표준어 사정 원칙 제26항)에 따른 것이다.]]></desc>
+				
+			</norm_info>
+			
+			
+			
+			<origin><![CDATA[＜마곰＜구간＞[←마+-곰]/맛감＜월석＞[←마+-ㅅ+감]]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>423733001</pos_code>
+				<pos>의존 명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>423733001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>551375</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[앞의 내용에 상당한 수량이나 정도임을 나타내는 말.]]></definition>
+						<definition_original><![CDATA[앞의 내용에 상당한 수량이나 정도임을 나타내는 말.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[주로 어미 ‘-은, -는, -을’ 뒤에 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[노력한 만큼 대가를 얻다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[주는 만큼 받아 오다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[방 안은 숨소리가 들릴 만큼 조용했다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[선창 거리가 북적거리는 만큼, 개항지 목포를 찾아드는 이주민들도 날마다 불어났다.]]></example>
+							
+							<source><![CDATA[문순태, 타오르는 강]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[바람이 몹시 휘몰아치고 있었으므로 얼굴을 들 수 없을 만큼 대기는 차가웠다.]]></example>
+							
+							<source><![CDATA[김용성, 리빠똥 장군]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>만치</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>478047</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=110575&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>554639</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[뒤에 나오는 내용의 원인이나 근거가 됨을 나타내는 말.]]></definition>
+						<definition_original><![CDATA[뒤에 나오는 내용의 원인이나 근거가 됨을 나타내는 말.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[주로 어미 ‘-은, -는, -던’ 뒤에 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[어른이 심하게 다그친 만큼 그의 행동도 달라져 있었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[까다롭게 검사하는 만큼 준비를 철저히 해야 한다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그들은 강제로 머리를 깎이리라고는 상상도 못 하였던 만큼 모두들 방심한 태도로 있었다.]]></example>
+							
+							<source><![CDATA[이기영, 봄]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>만치</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>481207</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=110575&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+			<pos_info>
+				<pos_code>423733002</pos_code>
+				<pos>조사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>423733002001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>145230</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[앞말과 비슷한 정도나 한도임을 나타내는 격 조사.]]></definition>
+						<definition_original><![CDATA[앞말과 비슷한 정도나 한도임을 나타내는 격 조사.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[체언의 뒤에 붙어]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[집을 대궐만큼 크게 짓다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[명주는 무명만큼 질기지 못하다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나도 당신만큼은 할 수 있다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>만치</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>145229</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=110575&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>1394252</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[앞말에 한정됨을 나타내는 보조사.]]></definition>
+						<definition_original><![CDATA[앞말에 한정됨을 나타내는 보조사.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[체언의 뒤, 어미 ‘-어서’ 따위에 붙어]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[배 아픈 데만큼은 이 약이 잘 듣는다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[이것은 보잘것없어 보이지만 나에게만큼은 소중한 보물이다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 자신이 맡은 일에서만큼은 최고의 전문가다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어느 누구도 바느질에 있어서만큼은 할머니의 솜씨를 따라갈 수 없었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[건강만큼이라도 확실히 지키도록 노력하세요.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[박 선생만큼은 어쩌면 그냥 곱게 봐줄지도 모릅니다.]]></example>
+							
+							<source><![CDATA[윤흥길, 묵시의 바다]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>만치</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>1394253</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=110575&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

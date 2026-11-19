@@ -1,0 +1,1241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 검색</title>
+	<link>https://krdict.korean.go.kr</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 검색 결과</description>
+	<lastBuildDate>20261119203303</lastBuildDate>
+	<total>9</total>
+	<start>1</start>
+	<num>100</num>
+	
+	
+	
+	<item>
+		
+		
+		<target_code>63164</target_code>
+		<word>선택</word>
+		<sup_no>0</sup_no>
+		
+		<origin>選擇</origin>
+		
+		
+		<pronunciation>선ː택</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=63164</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>여럿 중에서 필요한 것을 골라 뽑음.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[choice; selection]]></trans_word>
+				<trans_dfn><![CDATA[The act of choosing what one needs among many.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[отбор; выбор; избрание]]></trans_word>
+				<trans_dfn><![CDATA[Выбор нужной вещи из нескольких. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>63166</target_code>
+		<word>선택되다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>選擇되다</origin>
+		
+		
+		<pronunciation>선ː택뙤다/선ː택뛔다</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=63166</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>여럿 중에서 필요한 것이 골라져 뽑히다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[be chosen; be selected]]></trans_word>
+				<trans_dfn><![CDATA[For what one needs to be chosen among many.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[выбираться; отбираться; избираться; быть выбранным; быть отобранным; быть избранным]]></trans_word>
+				<trans_dfn><![CDATA[Быть выбранным или отобранным из нескольких (о чём-либо необходимом).]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>65115</target_code>
+		<word>선택하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>選擇하다</origin>
+		
+		
+		<pronunciation>선ː태카다</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=65115</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>여럿 중에서 필요한 것을 골라 뽑다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[choose; make a choice; select]]></trans_word>
+				<trans_dfn><![CDATA[To choose what one needs among many.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[выбирать; избирать; отбирать]]></trans_word>
+				<trans_dfn><![CDATA[Выбрав из нескольких необходимое, отбирать.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>63167</target_code>
+		<word>선택적</word>
+		<sup_no>2</sup_no>
+		
+		<origin>選擇的</origin>
+		
+		
+		<pronunciation>선ː택쩍</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>관형사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=63167</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>여럿 중에서 필요한 것을 골라 뽑는.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[choosing; selective]]></trans_word>
+				<trans_dfn><![CDATA[Choosing what one needs among many.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[выборочный; отобранный; выбранный; избранный; избирающий]]></trans_word>
+				<trans_dfn><![CDATA[Выбранный или отобранный из нескольких (о чём-либо необходимом).]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>63165</target_code>
+		<word>선택권</word>
+		<sup_no>0</sup_no>
+		
+		<origin>選擇權</origin>
+		
+		
+		<pronunciation>선ː택꿘</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=63165</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>여럿 중에서 마음에 드는 것이나 필요한 것을 골라 뽑을 수 있는 권리.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[option; choice]]></trans_word>
+				<trans_dfn><![CDATA[The right to choose what one likes or needs among many.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[право выбора; свобода выбора]]></trans_word>
+				<trans_dfn><![CDATA[Право выбирать что-либо понравившееся или необходимое из нескольких.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>63168</target_code>
+		<word>선택적</word>
+		<sup_no>1</sup_no>
+		
+		<origin>選擇的</origin>
+		
+		
+		<pronunciation>선ː택쩍</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=63168</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>여럿 중에서 필요한 것을 골라 뽑는 것.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[being selective]]></trans_word>
+				<trans_dfn><![CDATA[Choosing what one needs among many.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[выбор; отбор; избрание]]></trans_word>
+				<trans_dfn><![CDATA[Выделение, отбор из многого того, что необходимо.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>600441</target_code>
+		<word>선택지</word>
+		<sup_no>0</sup_no>
+		
+		<origin>選擇肢</origin>
+		
+		
+		<pronunciation>선ː택찌</pronunciation>
+		
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=600441</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>여럿 중에서 필요한 것을 골라 뽑을 수 있도록 제시한 목록.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[options]]></trans_word>
+				<trans_dfn><![CDATA[A list presented so that you can choose what you need from many.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[варианты выбора]]></trans_word>
+				<trans_dfn><![CDATA[Список или ряд возможностей для выбора.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>78906</target_code>
+		<word>취사선택</word>
+		<sup_no>0</sup_no>
+		
+		<origin>取捨選擇</origin>
+		
+		
+		<pronunciation>취ː사선택</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=78906</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>여럿 가운데서 쓸 만한 것은 쓰고 버릴 것은 버림.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[adoption or rejection; choice; selection]]></trans_word>
+				<trans_dfn><![CDATA[Among many, an act of taking what is worth taking, and dumping what is not.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[выбор; отбор]]></trans_word>
+				<trans_dfn><![CDATA[Использование нужных и избавление от ненужных объектов.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>78907</target_code>
+		<word>취사선택하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>取捨選擇하다</origin>
+		
+		
+		<pronunciation>취ː사선태카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=78907</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>여럿 가운데서 쓸 만한 것은 쓰고 버릴 것은 버리다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[adopt or reject; choose; select]]></trans_word>
+				<trans_dfn><![CDATA[Among many, to take what is worth taking, and dump what is not.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[выбирать; отбирать]]></trans_word>
+				<trans_dfn><![CDATA[Использовать нужные объекты и избавляться от ненужных.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	
+	
+</channel>
+
+

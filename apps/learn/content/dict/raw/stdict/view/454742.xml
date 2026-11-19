@@ -1,0 +1,271 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203705</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>454742</target_code>
+		<word_info>
+			<word><![CDATA[애-쓰다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[애ː쓰다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[애써]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[애ː써]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[애쓰니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[애ː쓰니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			<origin><![CDATA[＜애다＜계축＞←애+-]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>454742001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>454742001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…에/에게</pattern>
+					</pattern_info>
+					
+					<pattern_info>
+						<pattern>-기에</pattern>
+					</pattern_info>
+					
+					<pattern_info>
+						<pattern>-려고</pattern>
+					</pattern_info>
+					
+					<pattern_info>
+						<pattern>-게/도록</pattern>
+					</pattern_info>
+					
+					<pattern_info>
+						<pattern>-고</pattern>
+					</pattern_info>
+					
+					
+					
+					
+					<grammar_info>
+						<grammar><![CDATA[‘…에’ 대신에 ‘-기 위하여’나 ‘…을 위하여’가 쓰이기도 한다]]></grammar>
+					</grammar_info>
+					
+					<grammar_info>
+						<grammar><![CDATA[‘-려고, -게/도록, -고’ 대신에 ‘-고자’나 ‘-느라고’ 따위가 쓰이기도 한다]]></grammar>
+					</grammar_info>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>465334</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[마음과 힘을 다하여 무엇을 이루려고 힘쓰다.]]></definition>
+						<definition_original><![CDATA[마음과 힘을 다하여 무엇을 이루려고 힘쓰다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그는 요즘 새로 맡은 일의 준비 작업에 무척 애쓰고 있다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나는 아이들에게 그처럼 애쓰는 부모를 본 적이 없다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[오늘날 많은 여성이 날씬한 몸매를 유지하기 위해 애쓴다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[우리들을 위해서 애쓰고 계시는데 빈들빈들 놀고만 있으니 죄송합니다.]]></example>
+							
+							<source><![CDATA[이병주, 지리산]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그저 우리가 이런 상처 속에서도 그냥 삶을 영위할 수 있는 것은 그것들을 망각하기에 애쓰고 또한 거기에 익숙해진 때문인 것이다.]]></example>
+							
+							<source><![CDATA[황순원, 나무들 비탈에 서다]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[아버지들은 가족들을 위하여 한 푼이라도 더 벌려고 애쓴다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 봄의 아름다움을 글로 표현하고자 애쓰고 있다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그 일이 잘되게 애쓰고 있기는 합니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[매사에 일관하고 투철하고 자잘한 일에도 타의 모범이 되도록 애쓰고, 남의 어려운 일에 진정으로 마음 아파하고….]]></example>
+							
+							<source><![CDATA[이호철, 문]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[기도하고 기도해서 그런 처참한 꼴을 면해야겠다고 애쓰는 믿음이 어째서 인간의 위신을 모독하는 게 되는 겁니까?]]></example>
+							
+							<source><![CDATA[이병주, 행복어 사전]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

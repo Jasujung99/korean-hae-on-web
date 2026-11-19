@@ -1,0 +1,200 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203344</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>499743</target_code>
+		<word_info>
+			<word><![CDATA[특-히]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				혼종어
+				
+				
+				
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[特]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			<original_language_info>
+				<original_language><![CDATA[히]]></original_language>
+				<language_type>고유어</language_type>
+			</original_language_info>
+			
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[트키]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			<norm_info>
+				
+				<type>한글 맞춤법</type>
+				
+				
+				
+				<desc><![CDATA[‘특히’는 부사의 끝음절이 ‘히’로만 나거나 ‘이’나 ‘히’로 나는 것은 ‘-히’로 적는다는 규정(한글 맞춤법 제51항)에 따라 ‘<IN>특이</IN>’로 적지 않고 ‘특히’로 적는다.]]></desc>
+				
+			</norm_info>
+			
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>499743001</pos_code>
+				<pos>부사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>499743001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>305889</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[보통과 다르게.]]></definition>
+						<definition_original><![CDATA[보통과 다르게.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[특히 퇴근 시간에는 다른 때보다 차가 많이 밀린다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[이 문제는 특히 해결하기가 어렵다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나는 과일 중에서도 특히 사과를 좋아한다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 더덕구이가 특히 감칠맛 있어서 그것만 해서 밥 한 사발을 비웠다.]]></example>
+							
+							<source><![CDATA[박완서, 오만과 몽상]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[제주 삼읍 중 특히 가뭄이 심한 대정 고을은 아예 보리농사를 파장 보고 말았다는 소문이었다.]]></example>
+							
+							<source><![CDATA[현기영, 변방에 우짖는 새]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>특별-히</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>308577</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=497847&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

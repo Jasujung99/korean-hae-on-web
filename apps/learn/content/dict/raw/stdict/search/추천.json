@@ -1,0 +1,61 @@
+{
+  "channel": {
+    "total": 4,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "331564",
+        "pos": "명사",
+        "origin": "秋天",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=331564&searchKeywordTo=3",
+          "definition": "가을철의 하늘.",
+          "type": "일반어"
+        },
+        "word": "추천"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "331565",
+        "pos": "명사",
+        "origin": "追薦",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=331565&searchKeywordTo=3",
+          "definition": "죽은 사람의 넋의 괴로움을 덜고 명복을 축원하려고 선근 복덕(善根福德)을 닦아 그 공덕을 회향함. 보통 사십구일까지는 매 7일마다, 그 뒤에는 백일과 기일에 불사를 베푼다.",
+          "type": "일반어"
+        },
+        "word": "추천"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "331894",
+        "pos": "명사",
+        "origin": "推薦",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=331894&searchKeywordTo=3",
+          "definition": "어떤 조건에 적합한 대상을 책임지고 소개함.",
+          "type": "일반어"
+        },
+        "word": "추천"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "331897",
+        "pos": "명사",
+        "origin": "鞦韆",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=331897&searchKeywordTo=3",
+          "definition": "민속놀이의 하나. 또는 그 놀이기구. 큰 나무의 가지나, 두 기둥 사이로 가로지른 막대에 두 가닥의 줄을 매어 늘이고, 줄의 맨 아래에 밑싣개를 걸쳐 놓고 올라서서 몸을 움직여 앞뒤로 왔다 갔다 하면서 논다.",
+          "type": "일반어"
+        },
+        "word": "추천"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202348",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

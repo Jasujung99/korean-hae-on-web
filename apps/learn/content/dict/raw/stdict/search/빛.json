@@ -1,0 +1,25 @@
+{
+  "channel": {
+    "total": 1,
+    "item": [
+      {
+        "sup_no": "0",
+        "target_code": "437713",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=437713&searchKeywordTo=3",
+          "definition": "시각 신경을 자극하여 물체를 볼 수 있게 하는 일종의 전자기파. 태양이나 고온의 물질에서 발한다.",
+          "type": "일반어"
+        },
+        "word": "빛"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202614",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "channel": {
+    "total": 1,
+    "item": [
+      {
+        "sup_no": "0",
+        "target_code": "448220",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=448220&searchKeywordTo=3",
+          "definition": "손바닥과 손가락을 합친 전체 바닥.",
+          "type": "일반어"
+        },
+        "word": "손-뼉"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202724",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

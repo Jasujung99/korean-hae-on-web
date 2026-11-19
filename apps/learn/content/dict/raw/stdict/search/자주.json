@@ -1,0 +1,181 @@
+{
+  "channel": {
+    "total": 14,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "471585",
+        "pos": "부사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=471585&searchKeywordTo=3",
+          "definition": "같은 일을 잇따라 잦게.",
+          "type": "일반어"
+        },
+        "word": "자주"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "277565",
+        "pos": "명사",
+        "origin": "子株",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=277565&searchKeywordTo=3",
+          "definition": "‘신주’(新株)를 구주(舊株)에 상대하여 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "자주"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "277566",
+        "pos": "명사",
+        "origin": "自主",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=277566&searchKeywordTo=3",
+          "definition": "남의 보호나 간섭을 받지 아니하고 자기 일을 스스로 처리함.",
+          "type": "일반어"
+        },
+        "word": "자주"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "277569",
+        "pos": "명사",
+        "origin": "自走",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=277569&searchKeywordTo=3",
+          "definition": "엔진, 바퀴 따위를 갖추어 스스로 움직임.",
+          "type": "일반어"
+        },
+        "word": "자주"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "471586",
+        "pos": "명사",
+        "origin": "自做",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=471586&searchKeywordTo=3",
+          "definition": "자기 스스로 만들거나 지음. 또는 그렇게 만든 것.",
+          "type": "일반어"
+        },
+        "word": "자주"
+      },
+      {
+        "sup_no": "6",
+        "target_code": "277570",
+        "pos": "명사",
+        "origin": "自註",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=277570&searchKeywordTo=3",
+          "definition": "자기가 쓴 글에 스스로 주석(註釋)을 다는 일. 또는 그 주석.",
+          "type": "일반어"
+        },
+        "word": "자주"
+      },
+      {
+        "sup_no": "7",
+        "target_code": "471772",
+        "pos": "명사",
+        "origin": "紫朱",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=471772&searchKeywordTo=3",
+          "definition": "짙은 남빛을 띤 붉은색. 또는 그런 색의 물감.",
+          "type": "일반어"
+        },
+        "word": "자주"
+      },
+      {
+        "sup_no": "8",
+        "target_code": "273577",
+        "pos": "명사",
+        "origin": "紫珠",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=273577&searchKeywordTo=3",
+          "definition": "마편초과의 낙엽 관목. 높이는 2~3미터이며, 잎은 마주나고 타원형이다. 여름에 연한 자주색의 잔꽃이 취산(聚繖) 화서로 피고 열매는 자주색의 둥근 핵과(核果)로 가을에 익는다. 목재가 희고 단단하여 도구(道具), 양산 자루 따위에 쓴다. 함경남도 이남에 분포한다.",
+          "type": "일반어"
+        },
+        "word": "자주"
+      },
+      {
+        "sup_no": "9",
+        "target_code": "273578",
+        "pos": "명사",
+        "origin": "紫酒",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=273578&searchKeywordTo=3",
+          "definition": "튤립을 넣어서 빚은, 향기 나는 술. 제사의 강신(降神)에 쓴다.",
+          "type": "일반어"
+        },
+        "word": "자주"
+      },
+      {
+        "sup_no": "10",
+        "target_code": "273579",
+        "pos": "명사",
+        "origin": "紫紬",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=273579&searchKeywordTo=3",
+          "definition": "자줏빛이 나는 명주. 해주, 대구 등지에서 난다.",
+          "type": "일반어"
+        },
+        "word": "자주"
+      },
+      {
+        "sup_no": "11",
+        "target_code": "273580",
+        "pos": "명사",
+        "origin": "煮酒",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=273580&searchKeywordTo=3",
+          "definition": "좋은 술에 호두와 벌꿀을 넣고 중탕(重湯)한 술.",
+          "type": "일반어"
+        },
+        "word": "자주"
+      },
+      {
+        "sup_no": "12",
+        "target_code": "273581",
+        "pos": "명사",
+        "origin": "雌株",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=273581&searchKeywordTo=3",
+          "definition": "암꽃이 피는 포기.",
+          "type": "일반어"
+        },
+        "word": "자주"
+      },
+      {
+        "sup_no": "13",
+        "target_code": "273582",
+        "pos": "명사",
+        "origin": "慈主",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=273582&searchKeywordTo=3",
+          "definition": "한문 투의 편지에서, ‘어머님’의 뜻으로 쓰는 말.",
+          "type": "일반어"
+        },
+        "word": "자주"
+      },
+      {
+        "sup_no": "14",
+        "target_code": "273583",
+        "pos": "명사",
+        "origin": "磁州",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=273583&searchKeywordTo=3",
+          "definition": "→ 츠저우.",
+          "type": "일반어"
+        },
+        "word": "자주"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202223",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

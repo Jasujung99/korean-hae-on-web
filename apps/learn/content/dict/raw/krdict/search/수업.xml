@@ -1,0 +1,1509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 검색</title>
+	<link>https://krdict.korean.go.kr</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 검색 결과</description>
+	<lastBuildDate>20261119202859</lastBuildDate>
+	<total>11</total>
+	<start>1</start>
+	<num>100</num>
+	
+	
+	
+	<item>
+		
+		
+		<target_code>64597</target_code>
+		<word>수업</word>
+		<sup_no>2</sup_no>
+		
+		<origin>授業</origin>
+		
+		
+		<pronunciation>수업</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=64597</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>교사가 학생에게 지식이나 기술을 가르쳐 줌.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[class; lesson; course]]></trans_word>
+				<trans_dfn><![CDATA[A teacher teaching a student certain studies or skills.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[урок]]></trans_word>
+				<trans_dfn><![CDATA[Обучение педагогом учеников знаниям или технике.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>15636</target_code>
+		<word>수업</word>
+		<sup_no>1</sup_no>
+		
+		<origin>受業</origin>
+		
+		
+		<pronunciation>수업</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=15636</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>학문이나 기술을 배우고 익힘.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[class; lesson; course]]></trans_word>
+				<trans_dfn><![CDATA[The act of learning and practicing studies or skills.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[урок]]></trans_word>
+				<trans_dfn><![CDATA[Изучение какой-либо науки, каких-либо технологий.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>64601</target_code>
+		<word>수업하다</word>
+		<sup_no>2</sup_no>
+		
+		<origin>授業하다</origin>
+		
+		
+		<pronunciation>수어파다</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=64601</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>교사가 학생에게 지식이나 기술을 가르쳐 주다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[teach; give a lesson; teach a course]]></trans_word>
+				<trans_dfn><![CDATA[For a teacher to teach a student certain studies or skills.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[проводить урок; учить]]></trans_word>
+				<trans_dfn><![CDATA[Обучать ученика знаниям или технике (о преподавателе). ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>64598</target_code>
+		<word>수업료</word>
+		<sup_no>0</sup_no>
+		
+		<origin>授業料</origin>
+		
+		
+		<pronunciation>수엄뇨</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=64598</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>학생이 수업을 받는 대가로 내는 돈.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[tuition fee]]></trans_word>
+				<trans_dfn><![CDATA[Money paid by a student as the price of receiving lessons.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[стоимость урока]]></trans_word>
+				<trans_dfn><![CDATA[Деньги, оплачиваемые за один прослушанный учеником урок. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>64599</target_code>
+		<word>수업하다</word>
+		<sup_no>1</sup_no>
+		
+		<origin>修業하다</origin>
+		
+		
+		<pronunciation>수어파다</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=64599</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>학문이나 기술을 배우고 익히다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[take courses; take classes; take lessons]]></trans_word>
+				<trans_dfn><![CDATA[To learn and practice studies or skills.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[учиться; обучаться]]></trans_word>
+				<trans_dfn><![CDATA[Учить и познавать науку или технику. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>59771</target_code>
+		<word>보충 수업</word>
+		<sup_no>0</sup_no>
+		
+		<origin>補充授業</origin>
+		
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=59771</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>방과 후나 방학 등을 이용하여 부족한 공부를 보충하려고 하는 수업.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[remedial class; supplementary lesson]]></trans_word>
+				<trans_dfn><![CDATA[A class provided after school or during a vacation, to make up for insufficient learning.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[дополнительный урок]]></trans_word>
+				<trans_dfn><![CDATA[Дополнительные занятия по предметам после основных уроков или во время каникул. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>55575</target_code>
+		<word>모의 수업</word>
+		<sup_no>0</sup_no>
+		
+		<origin>模擬授業</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=55575</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>준비한 학습 지도안을 가지고 실제 수업과 똑같이 해 보는 수업.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[simulation class]]></trans_word>
+				<trans_dfn><![CDATA[A class conducted like a real class, based on the prepared lesson plan.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[имитация урока]]></trans_word>
+				<trans_dfn><![CDATA[Репитиционный урок по подготовленному плану и методике. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>67444</target_code>
+		<word>연구 수업</word>
+		<sup_no>0</sup_no>
+		
+		<origin>硏究授業</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=67444</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>효율적인 학습 지도 방법을 생각해 내기 위해 교사들이 공개적으로 실시하는 수업.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[demonstration class]]></trans_word>
+				<trans_dfn><![CDATA[Classes that are given by teachers in front of an audience, to come up with efficient methods of teaching.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[]]></trans_word>
+				<trans_dfn><![CDATA[Открытый урок, проводимый профессорами в целях поиска продуктивной методики преподавания. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>69063</target_code>
+		<word>운수업</word>
+		<sup_no>0</sup_no>
+		
+		<origin>運輸業</origin>
+		
+		
+		<pronunciation>운ː수업</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=69063</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>큰 규모로 사람을 태워 나르거나 물건을 실어 나르는 산업.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[transportation business]]></trans_word>
+				<trans_dfn><![CDATA[A business that carries people or things on a large scale.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[транспортная компания; транспортная корпорация; транспортное предприятие]]></trans_word>
+				<trans_dfn><![CDATA[Отрасль, занимающаяся крупномасштабной перевозкой людей или грузов.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>56344</target_code>
+		<word>밀수업자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>密輸業者</origin>
+		
+		
+		<pronunciation>밀쑤업짜</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=56344</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>법적인 허가 없이 국경을 넘어 몰래 물건을 사고 파는 일이 직업인 사람.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[smuggler]]></trans_word>
+				<trans_dfn><![CDATA[A person who is engaged in secret cross-border buying and selling without legal permission.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[контрабандист]]></trans_word>
+				<trans_dfn><![CDATA[Человек, занимающийся незаконным ввозом товара из или вывозом товара на территорию иностранного государства с целью его реализации.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>69115</target_code>
+		<word>운수업자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>運輸業者</origin>
+		
+		
+		<pronunciation>운ː수업짜</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=69115</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>큰 규모로 사람을 태워 나르거나 물건을 실어 나르는 일을 직업으로 하는 사람.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[common carrier]]></trans_word>
+				<trans_dfn><![CDATA[A person whose job it is to carry people or things on a large scale.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[человек, занимающийся перевозками; возчик; перевозчик; фрахтовщик; экспедитор]]></trans_word>
+				<trans_dfn><![CDATA[Человек, который занимается крупномасштабной перевозкой людей или грузов как профессией.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	
+	
+</channel>
+
+

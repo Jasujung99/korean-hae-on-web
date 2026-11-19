@@ -1,0 +1,123 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203406</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>413862</target_code>
+		<word_info>
+			<word><![CDATA[달]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[달ː]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			<origin><![CDATA[달＜훈몽＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>413862001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>413862001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>124910</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[볏과의 여러해살이풀. 갈대와 비슷한데 높이는 1.5~3미터이고 마디에 잔털이 많으며, 땅 위에 덩굴져 번성하기도 한다. 9월에 띠와 같은 꽃이 핀다. 연못이나 강변 등지에 자라는데 한국의 경북·함경·제주, 일본에 분포한다.]]></definition>
+						<definition_original><![CDATA[볏과의 여러해살이풀. 갈대와 비슷한데 높이는 1.5~3미터이고 마디에 잔털이 많으며, 땅 위에 덩굴져 번성하기도 한다. 9월에 띠와 같은 꽃이 핀다. 연못이나 강변 등지에 자라는데 한국의 경북·함경·제주, 일본에 분포한다.]]></definition_original>
+						
+						<scientific_name><![CDATA[Phragmites communis]]></scientific_name>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>식물</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

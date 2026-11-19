@@ -1,0 +1,337 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203302</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>392748</target_code>
+		<word_info>
+			<word><![CDATA[가운데]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[가운데]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			<origin><![CDATA[＜가온대＜가온＜가＜월석＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>392748001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>392748001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>2795</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[일정한 공간이나 길이를 갖는 사물에서, 한쪽으로 치우치지 않고 양 끝에서 거의 같은 거리가 떨어져 있는 부분.]]></definition>
+						<definition_original><![CDATA[일정한 공간이나 길이를 갖는 사물에서, 한쪽으로 치우치지 않고 양 끝에서 거의 같은 거리가 떨어져 있는 부분.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[강 가운데 배가 떠 있다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[함께 쓰는 물건은 책상 가운데에 놓아라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[일감을 가운데 늘어놓고 둘러앉아서 바느질을 하는 늙은 마님, 젊은이들은 번갈아 가며 힐끔힐끔 쳐다들 보며….]]></example>
+							
+							<source><![CDATA[염상섭, 수절내기]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>31893</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[양쪽의 사이.]]></definition>
+						<definition_original><![CDATA[양쪽의 사이.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[어떤 여자가 두 사람의 가운데 불쑥 끼어들었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나란히 늘어선 세 건물 중 가운데 건물이 가장 높다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>62960</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[여럿으로 이루어진 일정한 범위의 안.]]></definition>
+						<definition_original><![CDATA[여럿으로 이루어진 일정한 범위의 안.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[많은 꽃들 가운데 내가 제일 좋아하는 꽃은 코스모스이다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나에게는 먹는 것이 인간사 가운데 가장 즐거운 일이다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>69378</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[순서에서, 처음이나 마지막이 아닌 중간.]]></definition>
+						<definition_original><![CDATA[순서에서, 처음이나 마지막이 아닌 중간.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그는 반에서 키가 가운데는 된다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[세 자식 중에 가운데 아이가 가장 똑똑하다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>71391</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 일이나 상태가 이루어지는 범위의 안.]]></definition>
+						<definition_original><![CDATA[어떤 일이나 상태가 이루어지는 범위의 안.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[관형사형 ‘-ㄴ, -는’ 다음에 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그는 어려운 가운데서도 남을 돕는다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[애국가가 울려 퍼지는 가운데 태극기가 게양되었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

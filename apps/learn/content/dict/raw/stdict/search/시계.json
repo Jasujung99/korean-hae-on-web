@@ -1,0 +1,61 @@
+{
+  "channel": {
+    "total": 4,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "516122",
+        "pos": "명사",
+        "origin": "市界",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=516122&searchKeywordTo=3",
+          "definition": "시와 시, 시와 군 사이의 경계.",
+          "type": "일반어"
+        },
+        "word": "시계"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "199014",
+        "pos": "명사",
+        "origin": "時計",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=199014&searchKeywordTo=3",
+          "definition": "시간을 재거나 시각을 나타내는 기계나 장치를 통틀어 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "시계"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "198994",
+        "pos": "명사",
+        "origin": "視界",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=198994&searchKeywordTo=3",
+          "definition": "시력이 미치는 범위.",
+          "type": "일반어"
+        },
+        "word": "시계"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "450735",
+        "pos": "명사",
+        "origin": "詩契",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=450735&searchKeywordTo=3",
+          "definition": "시나 문장을 지으면서 즐기는 것을 목적으로 하는 계.",
+          "type": "일반어"
+        },
+        "word": "시계"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203735",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

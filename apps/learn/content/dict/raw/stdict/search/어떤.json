@@ -1,0 +1,25 @@
+{
+  "channel": {
+    "total": 1,
+    "item": [
+      {
+        "sup_no": "0",
+        "target_code": "461344",
+        "pos": "관형사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=461344&searchKeywordTo=3",
+          "definition": "사람이나 사물의 특성, 내용, 상태, 성격이 무엇인지 물을 때 쓰는 말.",
+          "type": "일반어"
+        },
+        "word": "어떤"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203249",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

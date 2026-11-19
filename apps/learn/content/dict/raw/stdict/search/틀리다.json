@@ -1,0 +1,37 @@
+{
+  "channel": {
+    "total": 2,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "351665",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=351665&searchKeywordTo=3",
+          "definition": "셈이나 사실 따위가 그르게 되거나 어긋나다.",
+          "type": "일반어"
+        },
+        "word": "틀리다"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "495620",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=495620&searchKeywordTo=3",
+          "definition": "방향이 꼬이게 돌려지다. ‘틀다’의 피동사.",
+          "type": "일반어"
+        },
+        "word": "틀-리다"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203341",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

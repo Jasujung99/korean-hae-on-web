@@ -1,0 +1,143 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202349</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>331565</target_code>
+		<word_info>
+			<word><![CDATA[추천]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				한자어
+				
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[追薦]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[추천]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>331565001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>331565001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>547197</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[죽은 사람의 넋의 괴로움을 덜고 명복을 축원하려고 선근 복덕(善根福德)을 닦아 그 공덕을 회향함. 보통 사십구일까지는 매 7일마다, 그 뒤에는 백일과 기일에 불사를 베푼다.]]></definition>
+						<definition_original><![CDATA[죽은 사람의 넋의 괴로움을 덜고 명복을 축원하려고 선근 복덕(善根福德)을 닦아 그 공덕을 회향함. 보통 사십구일까지는 매 7일마다, 그 뒤에는 백일과 기일에 불사를 베푼다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>불교</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>추선04</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>520779</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=489892&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

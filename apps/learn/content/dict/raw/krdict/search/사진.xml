@@ -1,0 +1,3135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 검색</title>
+	<link>https://krdict.korean.go.kr</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 검색 결과</description>
+	<lastBuildDate>20261119202050</lastBuildDate>
+	<total>23</total>
+	<start>1</start>
+	<num>100</num>
+	
+	
+	
+	<item>
+		
+		
+		<target_code>28030</target_code>
+		<word>사진</word>
+		<sup_no>0</sup_no>
+		
+		<origin>寫眞</origin>
+		
+		
+		<pronunciation>사진</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=28030</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>사물의 모습을 오래 보존할 수 있도록 사진기로 찍어 종이나 컴퓨터 등에 나타낸 영상.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[picture; photo]]></trans_word>
+				<trans_dfn><![CDATA[An image of a certain object recorded by a camera, and then produced in a print format, in a file on the computer, etc. to preserve it for a long period of time. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[фотография]]></trans_word>
+				<trans_dfn><![CDATA[Оптическое изображение, проявленное на бумаге или экране монитора и т.п., запечатлённое фотоаппаратом.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>66655</target_code>
+		<word>사진기</word>
+		<sup_no>0</sup_no>
+		
+		<origin>寫眞機</origin>
+		
+		
+		<pronunciation>사진기</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=66655</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>사진을 찍는 기계.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[camera]]></trans_word>
+				<trans_dfn><![CDATA[A machine for taking photographs.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[фотоаппарат]]></trans_word>
+				<trans_dfn><![CDATA[Устройство, которым делают фотографии.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>61297</target_code>
+		<word>사진 기자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>寫眞記者</origin>
+		
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=61297</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>신문사나 잡지사 등에서 보도 사진을 전문적으로 찍는 기자.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[photo journalist]]></trans_word>
+				<trans_dfn><![CDATA[A reporter working for a newspaper company or magazine company, who takes photos for the media.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[фотокорреспондент; фоторепортёр]]></trans_word>
+				<trans_dfn><![CDATA[Работающий для газеты или журнала репортёр, который профессионально занимается фотографией.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>78109</target_code>
+		<word>사진반</word>
+		<sup_no>0</sup_no>
+		
+		<origin>寫眞班</origin>
+		
+		
+		<pronunciation>사진반</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=78109</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>학교 등에서 사진 촬영을 취미로 하는 동아리나 단체.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[photography club]]></trans_word>
+				<trans_dfn><![CDATA[A club or group that takes photographs as a hobby or an extracurricular activity in a school, etc. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[фотокружок; кружок фотографов]]></trans_word>
+				<trans_dfn><![CDATA[Организация при школе и т.п., где занимаются любители, которые увлекаются фотографией. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>61295</target_code>
+		<word>사진사</word>
+		<sup_no>0</sup_no>
+		
+		<origin>寫眞師</origin>
+		
+		
+		<pronunciation>사진사</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=61295</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>사진을 찍는 일을 직업으로 하는 사람.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[photographer]]></trans_word>
+				<trans_dfn><![CDATA[A person who takes photos as a job.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[фотограф]]></trans_word>
+				<trans_dfn><![CDATA[Человек, профессионально занимающийся фотосъёмкой.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>61298</target_code>
+		<word>사진작가</word>
+		<sup_no>0</sup_no>
+		
+		<origin>寫眞作家</origin>
+		
+		
+		<pronunciation>사진작까</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=61298</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>사진 찍는 일을 전문적으로 하는 예술가.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[photographer]]></trans_word>
+				<trans_dfn><![CDATA[An artist who takes a photograph professionally. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[профессиональный фотограф; фотохудожник]]></trans_word>
+				<trans_dfn><![CDATA[Художник, специализирующийся на съёмке художественных фотографий. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>61294</target_code>
+		<word>사진가</word>
+		<sup_no>0</sup_no>
+		
+		<origin>寫眞家</origin>
+		
+		
+		<pronunciation>사진가</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=61294</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>사진에 관한 전문적인 지식과 기술을 가지고 사진 찍는 일을 직업으로 하는 사람.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[photographer]]></trans_word>
+				<trans_dfn><![CDATA[A person who takes photographs professionally, complete with expertise and skills regarding photography. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[фотограф]]></trans_word>
+				<trans_dfn><![CDATA[Человек, владеющий специализированными знаниями и техникой и профессионально занимающийся фотосъёмкой. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>61296</target_code>
+		<word>사진관</word>
+		<sup_no>0</sup_no>
+		
+		<origin>寫眞館</origin>
+		
+		
+		<pronunciation>사진관</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=61296</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>시설을 갖추어 놓고 사진을 찍어 주는 일을 전문적으로 하는 곳.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[photo studio; photo atelier]]></trans_word>
+				<trans_dfn><![CDATA[A place for taking a photograph professionally, equipped with necessary facilities. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[фотоателье ]]></trans_word>
+				<trans_dfn><![CDATA[Место, которое оснащено специальным оборудованием для профессиональной фотосъёмки. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>61299</target_code>
+		<word>사진첩</word>
+		<sup_no>0</sup_no>
+		
+		<origin>寫眞帖</origin>
+		
+		
+		<pronunciation>사진첩</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=61299</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>사진을 붙이거나 꽂아서 간직할 수 있게 만든 책.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[photo album]]></trans_word>
+				<trans_dfn><![CDATA[A book for preserving a collection of photographs by attaching them to blank pages or inserting them into the pockets on each page. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[фотоальбом]]></trans_word>
+				<trans_dfn><![CDATA[Книга или альбом, куда вставляют или клеят фотографии.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>600132</target_code>
+		<word>사진전</word>
+		<sup_no>0</sup_no>
+		
+		<origin>寫眞展</origin>
+		
+		
+		<pronunciation>사진전</pronunciation>
+		
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=600132</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>사진 작품들을 전시하여 찾아온 사람들에게 보여 주는 모임이나 행사.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[photo exhibition]]></trans_word>
+				<trans_dfn><![CDATA[A meeting or event to display and show photographic works to visitors.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[фотовыставка]]></trans_word>
+				<trans_dfn><![CDATA[Мероприятие или собрание, на котором представлены фотографические произведения для посетителей.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>601296</target_code>
+		<word>가족사진</word>
+		<sup_no>0</sup_no>
+		
+		<origin>家族寫眞</origin>
+		
+		
+		<pronunciation>가족싸진</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=601296</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>가족들이 함께 찍은 사진.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[family photo]]></trans_word>
+				<trans_dfn><![CDATA[A photo taken with my family.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[семейная фотография]]></trans_word>
+				<trans_dfn><![CDATA[Фотография, на которой запечатлены члены семьи вместе.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>30406</target_code>
+		<word>결혼사진</word>
+		<sup_no>0</sup_no>
+		
+		<origin>結婚寫眞</origin>
+		
+		
+		<pronunciation>결혼사진</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=30406</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>결혼한 기념으로 찍는 사진.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[wedding picture]]></trans_word>
+				<trans_dfn><![CDATA[Photographs taken to commemorate a marriage.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[свадебная фотография]]></trans_word>
+				<trans_dfn><![CDATA[Фотография, сделанная на память о дне свадьбы.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>19630</target_code>
+		<word>강사진</word>
+		<sup_no>0</sup_no>
+		
+		<origin>講師陣</origin>
+		
+		
+		<pronunciation>강ː사진</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=19630</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>강의를 하는 사람들.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[group of lecturers]]></trans_word>
+				<trans_dfn><![CDATA[Group of people who give lectures.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[преподавательский состав]]></trans_word>
+				<trans_dfn><![CDATA[Коллектив людей, которые читают лекции, преподают.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>37827</target_code>
+		<word>기념사진</word>
+		<sup_no>0</sup_no>
+		
+		<origin>紀念寫眞</origin>
+		
+		
+		<pronunciation>기념사진</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=37827</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>어떤 일에 대한 기억을 오래도록 잊지 않고 간직하기 위하여 찍는 사진.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[commemorative photograph]]></trans_word>
+				<trans_dfn><![CDATA[A photograph taken in order to retain the memories of an event for a long time.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[памятная фотография; фотография на память]]></trans_word>
+				<trans_dfn><![CDATA[Фотография, сделанная для сохранения памяти о каком-либо событии на долгое время.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>48885</target_code>
+		<word>독사진</word>
+		<sup_no>0</sup_no>
+		
+		<origin>獨寫眞</origin>
+		
+		
+		<pronunciation>독싸진</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=48885</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>혼자 찍은 사진.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[picture taken of one individual alone]]></trans_word>
+				<trans_dfn><![CDATA[A picture of someone alone.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[одиночное фото]]></trans_word>
+				<trans_dfn><![CDATA[Фотография одного человека.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>77534</target_code>
+		<word>증명사진</word>
+		<sup_no>0</sup_no>
+		
+		<origin>證明寫眞</origin>
+		
+		
+		<pronunciation>증명사진</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=77534</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>증명서 등에 붙이는 작은 크기의 얼굴 사진.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[identification picture]]></trans_word>
+				<trans_dfn><![CDATA[A small-sized picture of one's face for putting on a certificate, etc.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[фото для документов]]></trans_word>
+				<trans_dfn><![CDATA[Фото чьего-либо лица, маленького размера, которое прикрепляют на документы и т.п. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>89230</target_code>
+		<word>흑백 사진</word>
+		<sup_no>0</sup_no>
+		
+		<origin>黑白寫眞</origin>
+		
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=89230</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>검은색의 짙고 옅음으로 나타내는 사진.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[black and white photograph; monochrome photograph]]></trans_word>
+				<trans_dfn><![CDATA[A photograph using a combination of brightness and darkness of black.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[чёрно-белая фотография]]></trans_word>
+				<trans_dfn><![CDATA[Фотография, выражаемая яркостью чёрного цвета. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>65525</target_code>
+		<word>수사진</word>
+		<sup_no>0</sup_no>
+		
+		<origin>搜査陣</origin>
+		
+		
+		<pronunciation>수사진</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=65525</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>범죄 사건을 수사하기 위하여 수사관들로 이루어진 조직.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[investigations unit]]></trans_word>
+				<trans_dfn><![CDATA[A unit which consists of investigators to investigate criminal cases.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[следственная группа]]></trans_word>
+				<trans_dfn><![CDATA[Организация, состоящая из группы следователей, созданной для расследования преступления, выявления и ареста подозреваемого или преступника.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>65308</target_code>
+		<word>스냅 사진</word>
+		<sup_no>0</sup_no>
+		
+		<origin>snap寫眞</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=65308</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>움직이고 있는 대상을 재빨리 찍는 사진.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[snap shot; snap]]></trans_word>
+				<trans_dfn><![CDATA[A quick photograph taken of a moving object.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[фотосъёмка в движении]]></trans_word>
+				<trans_dfn><![CDATA[Быстрое фотографирование чего-либо или кого-либо двигающегося.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>69706</target_code>
+		<word>위성 사진</word>
+		<sup_no>0</sup_no>
+		
+		<origin>衛星寫眞</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=69706</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>인공위성에서 지구나 그 밖의 별을 찍은 사진.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[satellite photograph]]></trans_word>
+				<trans_dfn><![CDATA[The photos of the earth or other planets taken by an artificial satellite.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[снимок из космоса]]></trans_word>
+				<trans_dfn><![CDATA[Фотография Земли или других планет, сделанная со спутника.  ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>73774</target_code>
+		<word>장사진</word>
+		<sup_no>0</sup_no>
+		
+		<origin>長蛇陣</origin>
+		
+		
+		<pronunciation>장사진</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=73774</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>많은 사람들이 줄을 지어 길게 늘어선 모양.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[swarm]]></trans_word>
+				<trans_dfn><![CDATA[The state of many people standing in a long line.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[длинная очередь]]></trans_word>
+				<trans_dfn><![CDATA[О виде выстроенных в длинный ряд людей.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>79287</target_code>
+		<word>청사진</word>
+		<sup_no>0</sup_no>
+		
+		<origin>靑寫眞</origin>
+		
+		
+		<pronunciation>청사진</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=79287</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>미래에 대한 희망적인 계획이나 구상.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[blueprint; plan]]></trans_word>
+				<trans_dfn><![CDATA[An affirmative action plan or thought about the future.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[]]></trans_word>
+				<trans_dfn><![CDATA[План, замысел о будущем, наполненный надеждами.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>85325</target_code>
+		<word>항공 사진</word>
+		<sup_no>0</sup_no>
+		
+		<origin>航空寫眞</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=85325</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>지도를 만들거나 지질 조사 등에 이용하기 위해 항공기에서 지상의 모습을 찍은 사진.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[aerial photograph]]></trans_word>
+				<trans_dfn><![CDATA[A photograph of the ground taken from an airplane to be used for the production of maps or a geological survey, etc. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[фотосъёмка с воздуха]]></trans_word>
+				<trans_dfn><![CDATA[Фотографии, снятые высококачественной камерой, установленной на летающем аппарате во время его полёта, с целью изготовления карты, географических исследований и т.п. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	
+	
+</channel>
+
+

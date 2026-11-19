@@ -1,0 +1,97 @@
+{
+  "channel": {
+    "total": 7,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "490066",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=490066&searchKeywordTo=3",
+          "definition": "살이 올라서 뚱뚱해지다.",
+          "type": "일반어"
+        },
+        "word": "찌다"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "320277",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=320277&searchKeywordTo=3",
+          "definition": "흙탕물 따위가 논이나 밭 따위에 넘쳐흐를 정도로 괴다.",
+          "type": "일반어"
+        },
+        "word": "찌다"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "320278",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=320278&searchKeywordTo=3",
+          "definition": "기세가 꺾여 형편없이 되다.",
+          "type": "일반어"
+        },
+        "word": "찌다"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "320279",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=320279&searchKeywordTo=3",
+          "definition": "들어온 밀물이 나가다.",
+          "type": "일반어"
+        },
+        "word": "찌다"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "490067",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=490067&searchKeywordTo=3",
+          "definition": "뜨거운 김을 쐬는 것같이 더워지다.",
+          "type": "일반어"
+        },
+        "word": "찌다"
+      },
+      {
+        "sup_no": "6",
+        "target_code": "320280",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=320280&searchKeywordTo=3",
+          "definition": "나무 따위가 촘촘하게 난 것을 성기게 베어 내다.",
+          "type": "일반어"
+        },
+        "word": "찌다"
+      },
+      {
+        "sup_no": "7",
+        "target_code": "490068",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=490068&searchKeywordTo=3",
+          "definition": "머리카락을 뒤통수 아래에 틀어 올리고 비녀를 꽂다.",
+          "type": "일반어"
+        },
+        "word": "찌다"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202402",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

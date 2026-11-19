@@ -1,0 +1,143 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202127</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>202328</target_code>
+		<word_info>
+			<word><![CDATA[시장]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[시장]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+			
+			<relation_info>
+				<word>시장이 반찬</word>
+				<type>속담</type>
+				<link_target_code>522786</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=522786&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>시장이 팥죽</word>
+				<type>속담</type>
+				<link_target_code>522787</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=522787&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>시장하면 밥그릇을 통째로 삼키나</word>
+				<type>속담</type>
+				<link_target_code>522788</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=522788&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>시장한 사람더러 요기시키란다</word>
+				<type>속담</type>
+				<link_target_code>522789</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=522789&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>202328001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>202328001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>464008</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[배가 고픔.]]></definition>
+						<definition_original><![CDATA[배가 고픔.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

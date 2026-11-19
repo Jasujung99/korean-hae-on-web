@@ -1,0 +1,144 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202114</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>50543</target_code>
+		<word_info>
+			<word><![CDATA[기자]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				한자어
+				
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[祈子]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[기자]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>50543001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>50543001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>105967</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[아들 낳기를 기원함. 또는 그런 풍속. 아들을 원하는 부인이 산천(山川)이나 신에게 빌거나 아들을 낳은 산모의 옷을 얻어 입는 일 따위이다.]]></definition>
+						<definition_original><![CDATA[아들 낳기를 기원함. 또는 그런 풍속. 아들을 원하는 부인이 산천(山川)이나 신에게 빌거나 아들을 낳은 산모의 옷을 얻어 입는 일 따위이다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>민속</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+						
+						<multimedia_info>
+							
+							<lable><![CDATA[기자]]></lable>
+							
+							<type>
+								
+								
+								
+								
+								사진
+								
+								
+							</type>
+							<link><![CDATA[https://dicmedia.korean.go.kr/front/view/mediaView.do?file_no=96469]]></link>
+						</multimedia_info>
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

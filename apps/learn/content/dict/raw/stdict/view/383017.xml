@@ -1,0 +1,261 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202947</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>383017</target_code>
+		<word_info>
+			<word><![CDATA[가리키다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[가리키다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[가리키어]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[가리키어]]></pronunciation>
+					</pronunciation_info>
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[가리키여]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+				<abbreviation_info>
+					<abbreviation><![CDATA[가리켜]]></abbreviation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[가리켜]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</abbreviation_info>
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[가리키니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[가리키니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			<origin><![CDATA[＜가르키다＜르치다＜치다＜석상＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>383017001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>383017001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>404093</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[손가락 따위로 어떤 방향이나 대상을 집어서 보이거나 말하거나 알리다.]]></definition>
+						<definition_original><![CDATA[손가락 따위로 어떤 방향이나 대상을 집어서 보이거나 말하거나 알리다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그는 손가락으로 북쪽을 가리켰다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[시곗바늘이 이미 오후 네 시를 가리키고 있었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나는 형사에게 뒷덜미를 잡힌 채 막사 안을 들여다보며 자고 있는 두 사람을 가리켜 주었다.]]></example>
+							
+							<source><![CDATA[황석영, 어둠의 자식들]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[아랫입술을 비죽이 내민 김 씨가 눈으로 시렁의 돈을 가리켰다.]]></example>
+							
+							<source><![CDATA[한수산, 유민]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>407481</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 대상을 특별히 집어서 두드러지게 나타내다.]]></definition>
+						<definition_original><![CDATA[어떤 대상을 특별히 집어서 두드러지게 나타내다.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[주로 ‘가리켜’ 꼴로 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[모두들 그 아이를 가리켜 신동이 났다고 했다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[사람들은 동에 번쩍, 서에 번쩍 하는 그를 가리켜 현대판 홍길동이라고 했다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

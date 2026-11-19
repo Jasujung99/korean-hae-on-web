@@ -1,0 +1,451 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203810</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>447196</target_code>
+		<word_info>
+			<word><![CDATA[소리]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[소리]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+			
+			<relation_info>
+				<word>소리 소문도 없이</word>
+				<type>관용구</type>
+				<link_target_code>529581</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=529581&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>소리 없는 고양이 쥐 잡듯</word>
+				<type>속담</type>
+				<link_target_code>529577</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=529577&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>소리 없는 벌레가 벽을 뚫는다</word>
+				<type>속담</type>
+				<link_target_code>529578</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=529578&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>소리 없는 총이 있으면 놓겠다</word>
+				<type>속담</type>
+				<link_target_code>529579</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=529579&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[소리＜석상＞/소＜월석＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>447196001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>447196001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>14340</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[물체의 진동에 의하여 생긴 음파가 귀청을 울리어 귀에 들리는 것.]]></definition>
+						<definition_original><![CDATA[물체의 진동에 의하여 생긴 음파가 귀청을 울리어 귀에 들리는 것.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[피리 소리.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[소리를 줄이다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[밖에서 이상한 소리가 난다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[강아지가 배가 고픈지 낑낑거리는 소리를 낸다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[이따금 밥그릇에 숟갈 부딪히는 소리와, 맹렬히 음식을 씹는 소리 외에는 아무 소리도 들리지 않았다.]]></example>
+							
+							<source><![CDATA[최일남, 거룩한 응달]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>음03</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>483345</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=255542&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>46123</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[음성 기호로 생각이나 느낌을 표현하고 전달하는 행위. 또는 그런 결과물.]]></definition>
+						<definition_original><![CDATA[음성 기호로 생각이나 느낌을 표현하고 전달하는 행위. 또는 그런 결과물.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[도대체 무슨 소리를 하는 거야? 알아듣게 얘기해 보자.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그런 답답한 소리 좀 그만하고 해결책을 모색해 보자.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>말01</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>39821</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=419935&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>66014</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[사람의 목소리.]]></definition>
+						<definition_original><![CDATA[사람의 목소리.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[소리를 지르다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[소리를 치다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[소리가 너무 크니 조용히 말해라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나는 어쩌면 노인네가 가는귀가 먹었을지도 모른다고 생각했으므로 크게 소리 질렀다.]]></example>
+							
+							<source><![CDATA[최인호, 돌의 초상]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>70018</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[여론이나 소문.]]></definition>
+						<definition_original><![CDATA[여론이나 소문.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[국민의 소리.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[근거 없는 소리.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[주민들 사이에 이상한 소리가 돌고 있다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[침묵하는 다수의 소리에 귀를 기울여 보라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>71778</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[판소리나 잡가 따위를 통틀어 이르는 말.]]></definition>
+						<definition_original><![CDATA[판소리나 잡가 따위를 통틀어 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>음악</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그는 소리를 잘한다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[소리를 한번 해 보아라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

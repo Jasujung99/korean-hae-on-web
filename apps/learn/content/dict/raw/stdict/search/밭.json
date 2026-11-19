@@ -1,0 +1,37 @@
+{
+  "channel": {
+    "total": 2,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "429816",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=429816&searchKeywordTo=3",
+          "definition": "물을 대지 아니하거나 필요한 때에만 물을 대어서 야채나 곡류를 심어 농사를 짓는 땅.",
+          "type": "일반어"
+        },
+        "word": "밭"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "136885",
+        "pos": "접사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=136885&searchKeywordTo=3",
+          "definition": "‘바깥’의 뜻을 더하는 접두사.",
+          "type": "일반어"
+        },
+        "word": "밭-"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203626",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

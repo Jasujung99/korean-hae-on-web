@@ -1,0 +1,844 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203327</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>417319</target_code>
+		<word_info>
+			<word><![CDATA[듣다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[듣따]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[들어]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[드러]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[들으니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[드르니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[듣는]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[든는]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+			
+			<relation_info>
+				<word>듣다 처음[첫 소리]</word>
+				<type>관용구</type>
+				<link_target_code>527212</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527212&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>듣도 보도 못하다</word>
+				<type>관용구</type>
+				<link_target_code>527214</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527214&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>듣기 좋은 꽃노래도 한두 번이지</word>
+				<type>속담</type>
+				<link_target_code>527203</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527203&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>듣기 좋은 육자배기도 한두 번</word>
+				<type>속담</type>
+				<link_target_code>527204</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527204&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>듣기 좋은 이야기도 늘 들으면 싫다</word>
+				<type>속담</type>
+				<link_target_code>527205</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527205&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>듣는 것이 보는 것만 못하다</word>
+				<type>속담</type>
+				<link_target_code>527206</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527206&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>들으면 병이요 안 들으면 약이다</word>
+				<type>속담</type>
+				<link_target_code>527207</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527207&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>들은 귀는 천 년이요 한 입은 사흘이라</word>
+				<type>속담</type>
+				<link_target_code>527208</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527208&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>들은 말 들은 데 버리고 본 말 본 데 버려라</word>
+				<type>속담</type>
+				<link_target_code>527209</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527209&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>들은 풍월 얻은 문자</word>
+				<type>속담</type>
+				<link_target_code>527210</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527210&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>들을 이 짐작</word>
+				<type>속담</type>
+				<link_target_code>527211</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=527211&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[듣다＜용가＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>417319001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>417319001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>30299</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[사람이나 동물이 소리를 감각 기관을 통해 알아차리다.]]></definition>
+						<definition_original><![CDATA[사람이나 동물이 소리를 감각 기관을 통해 알아차리다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[음악을 듣다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[당신의 목소리를 듣고 싶습니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그의 연주는 듣기에 매우 괴로웠다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[비명 소리를 듣고 밖으로 나갔지만 아무도 없었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[잠결에 빗소리를 들은 것 같다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>61376</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[다른 사람의 말이나 소리에 스스로 귀 기울이다.]]></definition>
+						<definition_original><![CDATA[다른 사람의 말이나 소리에 스스로 귀 기울이다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[라디오를 듣다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[변명 따위는 듣고 싶지 않아.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[정치가는 국민의 소리를 들을 줄 알아야 한다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>1394483</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[수업이나 강의 따위에 참여하여 어떤 내용을 배우다.]]></definition>
+						<definition_original><![CDATA[수업이나 강의 따위에 참여하여 어떤 내용을 배우다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[외국어 수업을 듣다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[인문학 강연을 듣다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나는 이번 학기에 여섯 과목을 들을 계획이다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나는 그때 강의 시간에 들어가 철학과 과목인 예술 철학을 듣고 있었다.]]></example>
+							
+							<source><![CDATA[최인호, 무서운 복수]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[자넨 지금 내게 강의를 들으러 온 게 아니고 인생살이를 들으러 온 거겠지?]]></example>
+							
+							<source><![CDATA[박영한, 인간의 새벽]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>68656</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[다른 사람의 말을 받아들여 그렇게 하다.]]></definition>
+						<definition_original><![CDATA[다른 사람의 말을 받아들여 그렇게 하다.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[‘말’, ‘말씀’ 따위를 목적어로 하여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[아이가 말을 참 잘 듣는다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[왜 그렇게 말을 안 듣니?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[학교에 가면 선생님 말씀을 잘 들어라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>1175509</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[기계, 장치 따위가 정상적으로 움직이다.]]></definition>
+						<definition_original><![CDATA[기계, 장치 따위가 정상적으로 움직이다.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[‘말’ 따위를 목적어로 하여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[운전 중에 브레이크가 말을 듣지 않아 사고가 날 뻔했다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[말 잘 듣던 청소기가 오늘따라 왜 고장인지 모르겠다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>417319001002</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…에서/에게서 …을</pattern>
+					</pattern_info>
+					
+					
+					
+					
+					<grammar_info>
+						<grammar><![CDATA[‘…에서/에게서’ 대신에 ‘…으로부터’나 ‘…에게’가 쓰이기도 한다]]></grammar>
+					</grammar_info>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>31024</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[다른 사람에게서 일정한 내용을 가진 말을 전달받다.]]></definition>
+						<definition_original><![CDATA[다른 사람에게서 일정한 내용을 가진 말을 전달받다.]]></definition_original>
+						
+
+						
+						
+						<sense_pattern_info>
+							<pattern>…에서/에게서 -고</pattern>
+						</sense_pattern_info>
+						
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그렇게 해 가지고도 나한테서 좋은 소리 듣기는 어렵다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그녀로부터 네가 결혼한다는 소식 들었어.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나는 아내에게 그런 말 듣고는 못 참아.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[모임에서 내가 듣기로는 그 사람은 착한 사람이야.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나는 여자 친구한테서 선생님이 어제 미국에 가셨다고 들었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나는 사람들로부터 그녀가 매우 예쁘다고 들었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>61715</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[주로 윗사람에게 꾸지람을 맞거나 칭찬을 듣다.]]></definition>
+						<definition_original><![CDATA[주로 윗사람에게 꾸지람을 맞거나 칭찬을 듣다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[선생님에게서 칭찬을 듣다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[부장에게 꾸중을 들었는데, 기분이 좋겠어.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[자네는 윗사람들에게 좋은 평을 듣고 있어서 별문제 없을 거야.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>417319001003</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을 …으로</pattern>
+					</pattern_info>
+					
+					<pattern_info>
+						<pattern>…을 -게</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>136684</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 것을 무엇으로 이해하거나 받아들이다.]]></definition>
+						<definition_original><![CDATA[어떤 것을 무엇으로 이해하거나 받아들이다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그는 선생님의 말씀을 잔소리쯤으로 듣는 성향이 있다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그녀는 고지식해서 농담까지도 진담으로 듣는다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[내가 하는 말을 너무 고깝게 듣지 말았으면 좋겠다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[선생님은 학생의 주장을 그럴듯하게 들었다고 평하셨다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>417319001004</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…에/에게</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>136685</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[주로 약 따위가 효험을 나타내다.]]></definition>
+						<definition_original><![CDATA[주로 약 따위가 효험을 나타내다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[두통에 잘 듣는 약.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그 약은 다른 약보다 나에게 잘 듣는다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

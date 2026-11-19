@@ -1,0 +1,241 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202922</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>20210</target_code>
+		<word_info>
+			<word><![CDATA[고기]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[고기]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+			
+			<lexical_info>
+				<word>요기01</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>463658</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=463658&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			<lexical_info>
+				<word>조기02</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>479009</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=479009&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			
+
+			
+			<pos_info>
+				<pos_code>20210001</pos_code>
+				<pos>대명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>20210001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>441262</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[듣는 이에게 가까운 곳을 가리키는 지시 대명사. ‘거기’보다 가리키는 범위가 좁은 느낌을 준다.]]></definition>
+						<definition_original><![CDATA[듣는 이에게 가까운 곳을 가리키는 지시 대명사. ‘<sense_no>441071</sense_no>거기’보다 가리키는 범위가 좁은 느낌을 준다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[고기에 잠시만 앉아 있어라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>444571</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[앞에서 이미 이야기한 곳을 가리키는 지시 대명사. ‘거기’보다 가리키는 범위가 좁은 느낌을 준다.]]></definition>
+						<definition_original><![CDATA[앞에서 이미 이야기한 곳을 가리키는 지시 대명사. ‘<sense_no>444389</sense_no>거기’보다 가리키는 범위가 좁은 느낌을 준다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[아까 만나기로 한 장소 알지? 지금 당장 고기로 달려가거라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>447970</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[앞에서 이미 이야기한 대상을 가리키는 지시 대명사. ‘거기’보다 가리키는 범위가 좁은 느낌을 준다.]]></definition>
+						<definition_original><![CDATA[앞에서 이미 이야기한 대상을 가리키는 지시 대명사. ‘<sense_no>447993</sense_no>거기’보다 가리키는 범위가 좁은 느낌을 준다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[오늘은 고기까지만 하고 끝내자.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[고기까지는 이해하겠는데, 나머지는 통 모르겠습니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

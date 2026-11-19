@@ -1,0 +1,73 @@
+{
+  "channel": {
+    "total": 5,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "384790",
+        "pos": "명사",
+        "origin": "丸子",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=384790&searchKeywordTo=3",
+          "definition": "잘게 다진 고기에 달걀, 두부 따위를 섞어 둥글게 빚은 뒤 밀가루를 바르고 다시 달걀을 씌워서 기름에 지진 음식.",
+          "type": "일반어"
+        },
+        "word": "환자"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "384791",
+        "pos": "명사",
+        "origin": "宦者",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=384791&searchKeywordTo=3",
+          "definition": "조선 시대에, 내시부에 속하여 임금의 시중을 들거나 숙직 따위의 일을 맡아보던 남자. 모두 거세된 사람이었다.",
+          "type": "일반어"
+        },
+        "word": "환자"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "384792",
+        "pos": "명사",
+        "origin": "患者",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=384792&searchKeywordTo=3",
+          "definition": "병들거나 다쳐서 치료를 받아야 할 사람.",
+          "type": "일반어"
+        },
+        "word": "환자"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "384793",
+        "pos": "명사",
+        "origin": "換資",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=384793&searchKeywordTo=3",
+          "definition": "나라와 나라 사이에 이루어지는 화폐 교역. 서로 다른 나라의 화폐 자금을 일정한 비율에 따라 교환한다.",
+          "type": "일반어"
+        },
+        "word": "환자"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "384794",
+        "pos": "명사",
+        "origin": "還子",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=384794&searchKeywordTo=3",
+          "definition": "조선 시대에, 곡식을 사창(社倉)에 저장하였다가 백성들에게 봄에 뀌어주고 가을에 이자를 붙여 거두던 일. 또는 그 곡식. 고종 32년(1895)에 사환으로 고쳤다.",
+          "type": "일반어"
+        },
+        "word": "환자"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202216",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

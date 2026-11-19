@@ -1,0 +1,25 @@
+{
+  "channel": {
+    "total": 1,
+    "item": [
+      {
+        "sup_no": "0",
+        "target_code": "487295",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=487295&searchKeywordTo=3",
+          "definition": "현재 주변에 없는 것을 얻거나 사람을 만나려고 여기저기를 뒤지거나 살피다. 또는 그것을 얻거나 그 사람을 만나다.",
+          "type": "일반어"
+        },
+        "word": "찾다"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202519",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

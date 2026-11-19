@@ -1,0 +1,155 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202219</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>384794</target_code>
+		<word_info>
+			<word><![CDATA[환자]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				한자어
+				
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[還子]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[환자]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>384794001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>384794001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>513907</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[조선 시대에, 곡식을 사창(社倉)에 저장하였다가 백성들에게 봄에 뀌어주고 가을에 이자를 붙여 거두던 일. 또는 그 곡식. 고종 32년(1895)에 사환으로 고쳤다.]]></definition>
+						<definition_original><![CDATA[조선 시대에, 곡식을 사창(社倉)에 저장하였다가 백성들에게 봄에 뀌어주고 가을에 이자를 붙여 거두던 일. 또는 그 곡식. 고종 32년(1895)에 사환으로 고쳤다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>역사</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[무너지거나 떠내려간 집은 속히 집을 지어서 머물러 있을 곳을 정해 주고, 가난하고 고독한 집에 대해서는 신구(新舊) 환자를 징수하지 말며….]]></example>
+							
+							<source><![CDATA[번역 정조실록]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>환곡02</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>514186</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=377066&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

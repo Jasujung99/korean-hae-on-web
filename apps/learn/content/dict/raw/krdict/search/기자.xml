@@ -1,0 +1,2112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 검색</title>
+	<link>https://krdict.korean.go.kr</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 검색 결과</description>
+	<lastBuildDate>20261119202111</lastBuildDate>
+	<total>14</total>
+	<start>1</start>
+	<num>100</num>
+	
+	
+	
+	<item>
+		
+		
+		<target_code>61280</target_code>
+		<word>기자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>記者</origin>
+		
+		
+		<pronunciation>기자</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=61280</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>신문, 잡지, 방송 등에 실을 기사를 조사하여 쓰거나 편집하는 사람.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[reporter; journalist]]></trans_word>
+				<trans_dfn><![CDATA[A person whose job it is to do research, write or edit articles for newspapers, magazines, broadcasts, etc.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[репортёр; корреспондент; журналист]]></trans_word>
+				<trans_dfn><![CDATA[Человек, который занимается составлением  или редактированием статей для газет и журналов,  материалов для телевидения и радио.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>38064</target_code>
+		<word>기자단</word>
+		<sup_no>0</sup_no>
+		
+		<origin>記者團</origin>
+		
+		
+		<pronunciation>기자단</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=38064</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>정부 기관 등의 취재를 담당하는 기자들로 이루어진 단체.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[press corps]]></trans_word>
+				<trans_dfn><![CDATA[A group of reporters who cover a government agency, etc.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[группа корреспондентов; группа журналистов]]></trans_word>
+				<trans_dfn><![CDATA[Группа журналистов, которая отвечает за освещение работы и событий какого-либо государственного органа и т.п.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>23790</target_code>
+		<word>기자실</word>
+		<sup_no>0</sup_no>
+		
+		<origin>記者室</origin>
+		
+		
+		<pronunciation>기자실</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=23790</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>정부 기관 등에서 그곳의 취재를 하는 기자들을 위해 마련해 놓은 방.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[pressroom]]></trans_word>
+				<trans_dfn><![CDATA[A room prepared by a government agency, etc., for reporters who cover what is happening in that ministry or institution.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[комната для журналистов; пресс-центр]]></trans_word>
+				<trans_dfn><![CDATA[Комната, созданная для журналистов, отвечающих за подготовку репортажа в государственном учреждении и т.п.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>23793</target_code>
+		<word>기자재</word>
+		<sup_no>0</sup_no>
+		
+		<origin>機資材/器資材</origin>
+		
+		
+		<pronunciation>기자재</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=23793</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>어떤 일을 하는 데 필요한 기계나 도구, 재료.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[equipment]]></trans_word>
+				<trans_dfn><![CDATA[Machines, tools or materials that are required to do something.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[прибор; инструмент; аппарат; аппаратура; оборудование; устройство; материал]]></trans_word>
+				<trans_dfn><![CDATA[Оборудование, инструменты или материалы, необходимые для осуществления какой-либо работы.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>38065</target_code>
+		<word>기자 회견</word>
+		<sup_no>0</sup_no>
+		
+		<origin>記者會見</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=38065</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>기자들을 모아 놓고 어떤 사건에 대하여 공식적으로 발표하거나 해명하는 일.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[press conference]]></trans_word>
+				<trans_dfn><![CDATA[An official announcement or explanation of a certain event to a group of reporters.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[пресс-конференция; интервью]]></trans_word>
+				<trans_dfn><![CDATA[Мероприятие для журналистов, проводимое для представления официальных данных или объяснения какого-либо происшествия.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>61297</target_code>
+		<word>사진 기자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>寫眞記者</origin>
+		
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=61297</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>신문사나 잡지사 등에서 보도 사진을 전문적으로 찍는 기자.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[photo journalist]]></trans_word>
+				<trans_dfn><![CDATA[A reporter working for a newspaper company or magazine company, who takes photos for the media.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[фотокорреспондент; фоторепортёр]]></trans_word>
+				<trans_dfn><![CDATA[Работающий для газеты или журнала репортёр, который профессионально занимается фотографией.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>65799</target_code>
+		<word>신문 기자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>新聞記者</origin>
+		
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=65799</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>신문에 실을 기사를 찾고 만드는 사람.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[reporter; journalist]]></trans_word>
+				<trans_dfn><![CDATA[A person who looks for articles that are worth publishing, and publishes them in the newspaper.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[корреспондент газеты; журналист]]></trans_word>
+				<trans_dfn><![CDATA[Человек, собирающий материалы и редактирующий статьи для размещения в газете.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>70993</target_code>
+		<word>여기자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>女記者</origin>
+		
+		
+		<pronunciation>여기자</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=70993</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>여자 기자.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[woman reporter]]></trans_word>
+				<trans_dfn><![CDATA[A news reporter who is female. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[журналистка; корреспондентка]]></trans_word>
+				<trans_dfn><![CDATA[Женщина-журналист; женщина-корреспондент.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>14010</target_code>
+		<word>연기자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>演技者</origin>
+		
+		
+		<pronunciation>연ː기자</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=14010</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>연기하는 것이 직업인 사람.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[actor; actress]]></trans_word>
+				<trans_dfn><![CDATA[A person who acts professionally. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[исполнитель; артист, актёр]]></trans_word>
+				<trans_dfn><![CDATA[Профессиональный исполнитель ролей в театральных и других представлениях.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>36955</target_code>
+		<word>구기자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>枸杞子</origin>
+		
+		
+		<pronunciation>구기자</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=36955</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>주로 말려서 차와 약으로 쓰이는 빨갛고 길쭉한 열매.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[wolfberry]]></trans_word>
+				<trans_dfn><![CDATA[A red, long fruit that is mainly dried and used as tea and medicine.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[ягоды годжи; ягоды дерезы]]></trans_word>
+				<trans_dfn><![CDATA[Красные продолговатые плоды, которые в основном сушат и используют для чая и лекарств.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>65029</target_code>
+		<word>수습기자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>修習記者</origin>
+		
+		
+		<pronunciation>수습끼자</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=65029</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>실제 업무를 배워 익히는 과정에 있는 기자.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[cub reporter; trainee reporter]]></trans_word>
+				<trans_dfn><![CDATA[A reporter in the process of learning and practicing the actual profession.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[репортёр-практикант; журналист-интерн ]]></trans_word>
+				<trans_dfn><![CDATA[Журналист, который проходит обучение навыкам ведения или передачи репортажа. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>78987</target_code>
+		<word>취재 기자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>取材記者</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=78987</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>신문사나 잡지사 등의 취재부에 속하여 기사의 재료를 찾는 일을 하는 사람.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[assigned reporter; reporter]]></trans_word>
+				<trans_dfn><![CDATA[A person who belongs to the editorial department of a newspaper company or magazine company, etc., and who works to find material for a story.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[репортёр]]></trans_word>
+				<trans_dfn><![CDATA[Лицо из отдела сбора информации, которое ведёт сбор материалов для газетной, журнальной статьи и т.п.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>600089</target_code>
+		<word>대기자</word>
+		<sup_no>0</sup_no>
+		
+		<origin>待機者</origin>
+		
+		
+		<pronunciation>대ː기자</pronunciation>
+		
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=600089</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>때나 기회를 기다리는 사람.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[waiting list]]></trans_word>
+				<trans_dfn><![CDATA[A person who waits for the time or opportunity.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[человек в ожидании]]></trans_word>
+				<trans_dfn><![CDATA[Человек, ожидающий своего времени или шанса.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>69535</target_code>
+		<word>아기자기하다</word>
+		<sup_no>0</sup_no>
+		
+		
+		<pronunciation>아기자기하다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>형용사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=69535</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>크기가 작은 여러 가지가 오밀조밀하게 잘 어울려 예쁘다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[harmonious; picturesque]]></trans_word>
+				<trans_dfn><![CDATA[Small things being in exquisite harmony and looking lovely. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[очаровательный; прелестный]]></trans_word>
+				<trans_dfn><![CDATA[Различные маленькие вещи красиво сочетаются друг с другом.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		<sense>
+			<sense_order>2</sense_order>
+			<definition>작고 소박한 재미가 있고 즐겁다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[interesting; happy; pleasant	]]></trans_word>
+				<trans_dfn><![CDATA[Having pleasure derived from small things.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[интересный; захватывающий]]></trans_word>
+				<trans_dfn><![CDATA[Радостный и имеющий маленький и простой интерес. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	
+	
+</channel>
+
+

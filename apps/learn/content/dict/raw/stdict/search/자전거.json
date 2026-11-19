@@ -1,0 +1,25 @@
+{
+  "channel": {
+    "total": 1,
+    "item": [
+      {
+        "sup_no": "0",
+        "target_code": "472321",
+        "pos": "명사",
+        "origin": "自轉車",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=472321&searchKeywordTo=3",
+          "definition": "사람이 타고 앉아 두 다리로 바퀴를 돌려서 움직이게 하는 탈것. 바퀴는 흔히 두 개이며 한 개짜리나 세 개짜리도 있다.",
+          "type": "일반어"
+        },
+        "word": "자전-거"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202228",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "channel": {
+    "total": 5,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "327116",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=327116&searchKeywordTo=3",
+          "definition": "→ 미나리적.",
+          "type": "일반어"
+        },
+        "word": "초대"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "327118",
+        "pos": "명사",
+        "origin": "初대",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=327118&searchKeywordTo=3",
+          "definition": "어떤 일에 경험이 없이 처음으로 하는 사람. 또는 그 일.",
+          "type": "일반어"
+        },
+        "word": "초대"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "491015",
+        "pos": "명사",
+        "origin": "初代",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=491015&searchKeywordTo=3",
+          "definition": "차례로 이어 나가는 자리나 지위에서 그 첫 번째에 해당하는 차례. 또는 그런 사람.",
+          "type": "일반어"
+        },
+        "word": "초대"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "327119",
+        "pos": "명사",
+        "origin": "初對",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=327119&searchKeywordTo=3",
+          "definition": "처음으로 대면함.",
+          "type": "일반어"
+        },
+        "word": "초대"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "327121",
+        "pos": "명사",
+        "origin": "招待",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=327121&searchKeywordTo=3",
+          "definition": "어떤 모임에 참가해 줄 것을 청함.",
+          "type": "일반어"
+        },
+        "word": "초대"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202509",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "channel": {
+    "total": 2,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "404522",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=404522&searchKeywordTo=3",
+          "definition": "시간, 공간, 사물 따위에서 마지막 한계가 되는 곳.",
+          "type": "일반어"
+        },
+        "word": "끝"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "56628",
+        "pos": "의존 명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=56628&searchKeywordTo=3",
+          "definition": "→ 끗.",
+          "type": "일반어"
+        },
+        "word": "끝"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203637",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

@@ -1,0 +1,213 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203347</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>498790</target_code>
+		<word_info>
+			<word><![CDATA[팀]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				
+				외래어
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[team]]></original_language>
+				<language_type>영어</language_type>
+			</original_language_info>
+			
+			
+
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>498790001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>498790001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>26938</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[같은 일에 종사하는 한동아리의 사람.]]></definition>
+						<definition_original><![CDATA[같은 일에 종사하는 한동아리의 사람.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[국가대표 팀.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[같은 팀에 속하다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[팀을 이루다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[출전한 5개 팀의 우열을 가리기 어렵다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[우리 연구소에서는 팀장 한 명과 팀원 여섯 명이 한 팀을 이룬다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[발돋움을 하고 서서 그들의 작업을 지켜보고 있는 내게로 들것을 어깨 위에 멘 미군 구명조 일 개 팀이 다가왔다.]]></example>
+							
+							<source><![CDATA[조해일, 아메리카]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>58028</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[운동 경기의 단체. 곧 두 조로 나누어 행하는 경기의 한 조를 이른다.]]></definition>
+						<definition_original><![CDATA[운동 경기의 단체. 곧 두 조로 나누어 행하는 경기의 한 조를 이른다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>체육</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[친선 시합이 무려 수십 회나 치러져 나가는 동안 두 팀의 실력은 눈에 띄게 향상되어 나가고 있었다.]]></example>
+							
+							<source><![CDATA[이청준, 당신들의 천국]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

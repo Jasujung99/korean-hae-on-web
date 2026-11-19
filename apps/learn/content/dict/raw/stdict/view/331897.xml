@@ -1,0 +1,143 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202350</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>331897</target_code>
+		<word_info>
+			<word><![CDATA[추천]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				한자어
+				
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[鞦韆]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[추천]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>331897001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>331897001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>294592</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[민속놀이의 하나. 또는 그 놀이기구. 큰 나무의 가지나, 두 기둥 사이로 가로지른 막대에 두 가닥의 줄을 매어 늘이고, 줄의 맨 아래에 밑싣개를 걸쳐 놓고 올라서서 몸을 움직여 앞뒤로 왔다 갔다 하면서 논다.]]></definition>
+						<definition_original><![CDATA[민속놀이의 하나. 또는 그 놀이기구. 큰 나무의 가지나, 두 기둥 사이로 가로지른 막대에 두 가닥의 줄을 매어 늘이고, 줄의 맨 아래에 밑싣개를 걸쳐 놓고 올라서서 몸을 움직여 앞뒤로 왔다 갔다 하면서 논다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>민속</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>그네02</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>102423</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=401617&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

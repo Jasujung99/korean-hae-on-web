@@ -1,0 +1,370 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202807</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>429350</target_code>
+		<word_info>
+			<word><![CDATA[방]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				한자어
+				
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[房]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[방]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+			
+			<relation_info>
+				<word>방(을) 놓다</word>
+				<type>관용구</type>
+				<link_target_code>528281</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528281&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>방 보아 똥 싼다</word>
+				<type>속담</type>
+				<link_target_code>528276</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528276&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>방 안 풍수(風水)</word>
+				<type>속담</type>
+				<link_target_code>528278</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528278&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>방에 가면 더 먹을까 부엌에 가면 더 먹을까</word>
+				<type>속담</type>
+				<link_target_code>528279</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528279&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>방에서는 매부 말이 옳고 부엌에 가면 누이 말이 옳다</word>
+				<type>속담</type>
+				<link_target_code>528280</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528280&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>429350001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>429350001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>10776</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[사람이 살거나 일을 하기 위하여 벽 따위로 막아 만든 칸.]]></definition>
+						<definition_original><![CDATA[사람이 살거나 일을 하기 위하여 벽 따위로 막아 만든 칸.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[방 두 칸짜리 집.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[방이 넓다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[방이 비다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[방이 좁다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[하룻밤 묵을 방을 잡다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[자취할 방을 보러 다니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[방 한 칸을 세주다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[방을 깨끗이 치우다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그녀는 하루 종일 방에 틀어박혀 있다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 이 근처에 방을 하나 얻었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[노익은 곧 몸을 일으켜 열려진 문으로 방을 나간다.]]></example>
+							
+							<source><![CDATA[홍성원, 육이오]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>방실02</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>590540</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=136129&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>41778</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[조선 시대에, 왕실의 일부인 궁실(宮室)과 왕실에서 분가하여 독립한 대원군·왕자군·공주·옹주가 살던 집을 통틀어 이르던 말.]]></definition>
+						<definition_original><![CDATA[조선 시대에, 왕실의 일부인 궁실(宮室)과 왕실에서 분가하여 독립한 대원군·왕자군·공주·옹주가 살던 집을 통틀어 이르던 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>역사</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>궁방02</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>562389</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=402754&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>65349</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[조선 시대에 있던, 시전(市廛)보다 작고 가가(假家)보다 큰 가게.]]></definition>
+						<definition_original><![CDATA[조선 시대에 있던, 시전(市廛)보다 작고 가가(假家)보다 큰 가게.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>역사</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>전18</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>52938</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=282475&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

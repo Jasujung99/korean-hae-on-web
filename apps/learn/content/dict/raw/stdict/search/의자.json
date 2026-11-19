@@ -1,0 +1,133 @@
+{
+  "channel": {
+    "total": 10,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "267674",
+        "pos": "명사",
+        "origin": "衣資",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=267674&searchKeywordTo=3",
+          "definition": "옷을 짓는 데 쓰는 천.",
+          "type": "일반어"
+        },
+        "word": "의자"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "467817",
+        "pos": "명사",
+        "origin": "倚子",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=467817&searchKeywordTo=3",
+          "definition": "앉을 때에, 벽에 세워 놓고 등을 기대는 기구.",
+          "type": "일반어"
+        },
+        "word": "의자"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "267675",
+        "pos": "명사",
+        "origin": "椅子",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=267675&searchKeywordTo=3",
+          "definition": "사람이 걸터앉는 데 쓰는 기구. 보통 뒤에 등받이가 있고 종류가 다양하다.",
+          "type": "일반어"
+        },
+        "word": "의자"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "467818",
+        "pos": "명사",
+        "origin": "意字",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=467818&searchKeywordTo=3",
+          "definition": "하나하나의 글자가 언어의 음과 상관없이 일정한 뜻을 나타내는 문자. 고대의 회화 문자나 상형 문자가 발달한 것으로 한자가 대표적이다.",
+          "type": "일반어"
+        },
+        "word": "의자"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "267676",
+        "pos": "명사",
+        "origin": "義子",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=267676&searchKeywordTo=3",
+          "definition": "아내가 전남편과의 사이에서, 또는 남편이 전처와의 사이에서 낳은 아들.",
+          "type": "일반어"
+        },
+        "word": "의자"
+      },
+      {
+        "sup_no": "6",
+        "target_code": "267677",
+        "pos": "명사",
+        "origin": "義姊",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=267677&searchKeywordTo=3",
+          "definition": "부모가 다른 누이.",
+          "type": "일반어"
+        },
+        "word": "의자"
+      },
+      {
+        "sup_no": "7",
+        "target_code": "467819",
+        "pos": "명사",
+        "origin": "義者",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=467819&searchKeywordTo=3",
+          "definition": "의로운 지사(志士).",
+          "type": "일반어"
+        },
+        "word": "의자"
+      },
+      {
+        "sup_no": "8",
+        "target_code": "267678",
+        "pos": "명사",
+        "origin": "疑字",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=267678&searchKeywordTo=3",
+          "definition": "의심스러운 글자.",
+          "type": "일반어"
+        },
+        "word": "의자"
+      },
+      {
+        "sup_no": "9",
+        "target_code": "467820",
+        "pos": "명사",
+        "origin": "醫子",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=467820&searchKeywordTo=3",
+          "definition": "법화경에서, 중생을 구제하는 여래를 아들을 구한 양의(良醫)에 비유하여 이르는 말. 양의가 독약을 먹은 아들을 좋은 약으로 치료한 것처럼, 사교(邪敎)에 빠진 중생을 여래가 일승(一乘)의 가르침으로 구제한다고 한다.",
+          "type": "일반어"
+        },
+        "word": "의자"
+      },
+      {
+        "sup_no": "10",
+        "target_code": "267679",
+        "pos": "명사",
+        "origin": "醫者",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=267679&searchKeywordTo=3",
+          "definition": "의사와 의생(醫生)을 통틀어 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "의자"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202037",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

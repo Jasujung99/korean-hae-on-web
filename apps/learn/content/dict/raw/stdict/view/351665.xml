@@ -1,0 +1,376 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203342</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>351665</target_code>
+		<word_info>
+			<word><![CDATA[틀리다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[틀리다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[틀리어]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[틀리어]]></pronunciation>
+					</pronunciation_info>
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[틀리여]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+				<abbreviation_info>
+					<abbreviation><![CDATA[틀려]]></abbreviation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[틀려]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</abbreviation_info>
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[틀리니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[틀리니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			<origin><![CDATA[＜틀이다＜월석＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>351665001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>351665001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>2805</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[셈이나 사실 따위가 그르게 되거나 어긋나다.]]></definition>
+						<definition_original><![CDATA[셈이나 사실 따위가 그르게 되거나 어긋나다.]]></definition_original>
+						
+
+						
+						
+						<sense_pattern_info>
+							<pattern>(…을)</pattern>
+						</sense_pattern_info>
+						
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[답이 틀리다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[계산이 틀리다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그 양반의 이야기에 어디 틀린 대목이 있습디까?]]></example>
+							
+							<source><![CDATA[박태순, 어느 사학도의 젊은 시절]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[아무리 좋은 기사가 실린 신문이라도 교정이 틀려 있다면 틀린 신문입니다.]]></example>
+							
+							<source><![CDATA[이병주, 행복어 사전]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[대사를 하나도 안 틀리고 줄줄 외다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[문제까지 알려 줬는데도 답을 틀리다니 이해할 수가 없구나.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>31316</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[바라거나 하려는 일이 순조롭게 되지 못하다.]]></definition>
+						<definition_original><![CDATA[바라거나 하려는 일이 순조롭게 되지 못하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[오늘 이 일을 마치기는 틀린 것 같다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 새벽 5시가 되자 잠자기는 다 틀렸다면서 라디오를 튼다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[우리도 그이 얼굴을 한번 볼까 했더니 틀렸구먼.]]></example>
+							
+							<source><![CDATA[송기숙, 녹두 장군]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>598488</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[마음이나 행동 따위가 올바르지 못하고 비뚤어지다.]]></definition>
+						<definition_original><![CDATA[마음이나 행동 따위가 올바르지 못하고 비뚤어지다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그는 인간이 틀렸어.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그 사람은 외모는 출중한데 성격이 틀렸어.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+			<pos_info>
+				<pos_code>351665002</pos_code>
+				<pos>형용사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>351665002001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>306088</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[→ 다르다.]]></definition>
+						<definition_original><![CDATA[→ <word_no>72210</word_no>다르다_.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

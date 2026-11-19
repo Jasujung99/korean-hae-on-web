@@ -1,0 +1,699 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202845</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>440358</target_code>
+		<word_info>
+			<word><![CDATA[뽑다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[뽑따]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[뽑아]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[뽀바]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[뽑으니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[뽀브니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[뽑는]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[뽐는]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			<origin><![CDATA[＜다＜두시-초＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>440358001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>440358001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…에서 …을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>481083</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[박힌 것을 잡아당기어 빼내다.]]></definition>
+						<definition_original><![CDATA[박힌 것을 잡아당기어 빼내다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[밭에서 풀을 뽑다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어머니는 아버지의 머리에서 흰 머리카락을 뽑으면서, 세월 타령을 하셨다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[치과에 가서 사랑니를 뽑았다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[김범우는 느린 동작으로 담뱃갑을 꺼내 한 개비를 뽑고 나서 염상구에게 내밀었다.]]></example>
+							
+							<source><![CDATA[조정래, 태백산맥]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>484651</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[속에 들어 있는 기체나 액체를 밖으로 나오게 하다.]]></definition>
+						<definition_original><![CDATA[속에 들어 있는 기체나 액체를 밖으로 나오게 하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[혈관에서 피를 뽑다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[공이 너무 딴딴해서 바람을 조금 뽑았다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>485317</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[무엇에 들인 돈이나 밑천 따위를 도로 거두어들이다.]]></definition>
+						<definition_original><![CDATA[무엇에 들인 돈이나 밑천 따위를 도로 거두어들이다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[사업에서 본전을 뽑다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[노름에서 본전을 뽑고 나간 사람을 아직 보지 못하였다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>485637</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[원료나 재료로 길게 생긴 물건을 만들다.]]></definition>
+						<definition_original><![CDATA[원료나 재료로 길게 생긴 물건을 만들다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[누에고치에서 명주실을 뽑다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[떡가래를 뽑다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>485786</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[여럿 가운데에서 골라내다.]]></definition>
+						<definition_original><![CDATA[여럿 가운데에서 골라내다.]]></definition_original>
+						
+
+						
+						
+						<sense_pattern_info>
+							<pattern>…을 …에</pattern>
+						</sense_pattern_info>
+						
+						<sense_pattern_info>
+							<pattern>…을 …으로</pattern>
+						</sense_pattern_info>
+						
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[예선을 거친 네 명 중에서 대표를 뽑기로 했다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[예년에 비해 실력이 너무 떨어져서 참가자들 중에서 장원을 뽑을 수가 없었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[우리는 만장일치로 그를 의장에 뽑았다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[반 아이들은 친구 관계가 좋은 아이를 반장으로 뽑고 싶어 했다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>1393791</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[물질에서 특정 성분을 빼내다.]]></definition>
+						<definition_original><![CDATA[물질에서 특정 성분을 빼내다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[제대혈에서 줄기세포를 뽑다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[천일염에서 염화 나트륨 성분만 뽑아 표백과 코팅을 한 게 정제염이다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>440358001002</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>481170</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[길게 늘이어 솟구다.]]></definition>
+						<definition_original><![CDATA[길게 늘이어 솟구다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[목을 길게 뽑아 창밖을 살피다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나는 무릎을 꿇고 앉아 있으면서도 정말 그 안에 여자아이가 있는지 알아보려고 고개를 쭉 뽑았다.]]></example>
+							
+							<source><![CDATA[김용성, 도둑 일기]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>484725</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[힘이나 기운 따위를 드러내어 쓰다.]]></definition>
+						<definition_original><![CDATA[힘이나 기운 따위를 드러내어 쓰다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[공연히 힘 뽑다가 낭패 볼라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>485423</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[소리를 길게 내다.]]></definition>
+						<definition_original><![CDATA[소리를 길게 내다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[노래를 한 곡조 뽑다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[십여 명의 승객이 배에 오르자, 늙수그레한 사공이 청승맞은 가락을 뽑았다.]]></example>
+							
+							<source><![CDATA[서기원, 조선백자 마리아상]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>485694</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[운동 경기 따위에서 점수를 얻다.]]></definition>
+						<definition_original><![CDATA[운동 경기 따위에서 점수를 얻다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[4번 선수의 우전 안타로 가볍게 선취점을 뽑았다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>485736</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[나쁜 생각이나 버릇을 털어 없애다.]]></definition>
+						<definition_original><![CDATA[나쁜 생각이나 버릇을 털어 없애다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[말 나온 김에 게으른 근성을 뽑아 버려야지.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

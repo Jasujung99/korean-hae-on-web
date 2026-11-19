@@ -1,0 +1,1379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 검색</title>
+	<link>https://krdict.korean.go.kr</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 검색 결과</description>
+	<lastBuildDate>20261119202912</lastBuildDate>
+	<total>10</total>
+	<start>1</start>
+	<num>100</num>
+	
+	
+	
+	<item>
+		
+		
+		<target_code>70792</target_code>
+		<word>입학</word>
+		<sup_no>0</sup_no>
+		
+		<origin>入學</origin>
+		
+		
+		<pronunciation>이팍</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=70792</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>학생이 되어 공부하기 위해 학교에 들어감.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[admission to a school; entrance into a school]]></trans_word>
+				<trans_dfn><![CDATA[Starting to go to a school as a new student.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[поступление в школу (училище; университет)]]></trans_word>
+				<trans_dfn><![CDATA[Поступление в учебное заведение учеником (студентом) с целью получения образования.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>68785</target_code>
+		<word>입학하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>入學하다</origin>
+		
+		
+		<pronunciation>이파카다</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=68785</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>학생이 되어 공부하기 위해 학교에 들어가다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[be enrolled at a school; enter a school]]></trans_word>
+				<trans_dfn><![CDATA[To enter a school to study as a student. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[поступать в учебное заведение; идти в школу]]></trans_word>
+				<trans_dfn><![CDATA[становиться учащимся и начинать учиться.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>73598</target_code>
+		<word>입학금</word>
+		<sup_no>0</sup_no>
+		
+		<origin>入學金</origin>
+		
+		
+		<pronunciation>이팍끔</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=73598</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>학생이 되어 공부하기 위해 학교에 들어갈 때 내는 돈.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[admission fee]]></trans_word>
+				<trans_dfn><![CDATA[The money paid by a student when admitted for the first time by a school. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[плата за поступление в школу или вуз]]></trans_word>
+				<trans_dfn><![CDATA[Денежный взнос, который делают при поступлении в школу или вуз.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>73599</target_code>
+		<word>입학률</word>
+		<sup_no>0</sup_no>
+		
+		<origin>入學率</origin>
+		
+		
+		<pronunciation>이팡뉼</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=73599</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>입학하려고 하는 사람 수에 대한 입학한 사람의 비율.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[admission rate]]></trans_word>
+				<trans_dfn><![CDATA[The ratio between newly-admitted students and the number of applicants. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[уровень поступления в вуз]]></trans_word>
+				<trans_dfn><![CDATA[Соотношение поступивших в вуз в общем количестве абитуриентов, пожелавших поступить в него.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>73600</target_code>
+		<word>입학생</word>
+		<sup_no>0</sup_no>
+		
+		<origin>入學生</origin>
+		
+		
+		<pronunciation>이팍쌩</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=73600</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>학생이 되어 공부하기 위해 학교에 들어가는 사람.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[new student; newly-enrolled student]]></trans_word>
+				<trans_dfn><![CDATA[A student going for the first time to school to study. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[абитуриент; ученик]]></trans_word>
+				<trans_dfn><![CDATA[Человек, который поступает в учебное заведение, чтобы получить образование.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>84734</target_code>
+		<word>입학시키다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>入學시키다</origin>
+		
+		
+		<pronunciation>이팍씨키다</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=84734</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>학생이 되어 공부하기 위해 학교에 들어가게 하다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[enroll]]></trans_word>
+				<trans_dfn><![CDATA[To make someone enter a school to study as a student.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[]]></trans_word>
+				<trans_dfn><![CDATA[Делать так, чтобы поступил в учебное заведение с целью обучения. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>73602</target_code>
+		<word>입학시험</word>
+		<sup_no>0</sup_no>
+		
+		<origin>入學試驗</origin>
+		
+		
+		<pronunciation>이팍씨험</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=73602</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>입학생을 뽑기 위하여 입학을 지원한 사람들에게 치르도록 하는 시험.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[admission test; entrance examination]]></trans_word>
+				<trans_dfn><![CDATA[The examination taken by the applicants of a school to be selected as new students.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[вступительный экзамен]]></trans_word>
+				<trans_dfn><![CDATA[Экзамен, который сдают абитуриенты, чтобы поступить в вуз.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>73603</target_code>
+		<word>입학식</word>
+		<sup_no>0</sup_no>
+		
+		<origin>入學式</origin>
+		
+		
+		<pronunciation>이팍씩</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=73603</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>학교에서 새로 입학하는 학생들을 모아 놓고 하는 의식.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[entrance ceremony]]></trans_word>
+				<trans_dfn><![CDATA[The ceremony for new students who first go to a school.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[церемония поступления ]]></trans_word>
+				<trans_dfn><![CDATA[Церемония поступления в учебное заведение, проводимая для поступающих студентов или учеников. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>74726</target_code>
+		<word>재입학</word>
+		<sup_no>0</sup_no>
+		
+		<origin>再入學</origin>
+		
+		
+		<pronunciation>재ː이팍</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=74726</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>한 번 들어갔던 학교에 다시 들어감.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[re-entering]]></trans_word>
+				<trans_dfn><![CDATA[The act of entering again a school that one entered before.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[повторное поступление в учебное заведение]]></trans_word>
+				<trans_dfn><![CDATA[Поступление учащимся ещё раз в учебное заведение, в которое уже поступал.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>601803</target_code>
+		<word>편입학하다</word>
+		<sup_no>0</sup_no>
+		
+		<origin>編入學하다</origin>
+		
+		
+		<pronunciation>펴니파카다</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>동사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=601803</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>학교의 첫 학년에 입학하지 않고 어떤 학년으로 중간에 들어가거나 다니던 학교를 그만두고 다른 학교에 들어가다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[transfer to school]]></trans_word>
+				<trans_dfn><![CDATA[To enter a school in the middle of a grade without entering the first grade, or to quit the school one is attending and enter another school.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[поступать переводом]]></trans_word>
+				<trans_dfn><![CDATA[Не поступать на первый курс учебного заведения, а поступать в середине учебного года на какой-либо курс или переходить в другую школу.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	
+	
+</channel>
+
+

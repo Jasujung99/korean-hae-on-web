@@ -1,0 +1,85 @@
+{
+  "channel": {
+    "total": 6,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "444906",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=444906&searchKeywordTo=3",
+          "definition": "짠맛이 나는 백색의 결정체. 대표적인 조미료로, 주성분은 염화 나트륨이다. 천연으로는 바닷물에 약 2.8% 들어 있으며, 암염으로도 산출된다. 인체의 혈액이나 세포 안에 약 0.71% 들어 있고, 어른의 하루 소요량은 10~20그램이다. 양념, 식품의 저장, 화학 공업의 원료 따위로 쓴다.",
+          "type": "일반어"
+        },
+        "word": "소금"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "180398",
+        "pos": "명사",
+        "origin": "小金",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=180398&searchKeywordTo=3",
+          "definition": "우리나라의 타악기의 하나. 면의 지름 28cm, 울의 운두 5cm로 징보다 조금 작으며, 붉은 칠을 한 나무망치로 친다.",
+          "type": "일반어"
+        },
+        "word": "소금"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "180399",
+        "pos": "명사",
+        "origin": "小笒",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=180399&searchKeywordTo=3",
+          "definition": "우리나라의 전통적인 목관 악기의 하나. 삼금(三笒) 가운데 가장 작고 일곱 구멍이 있는데, 지금은 전하지 않는다.",
+          "type": "일반어"
+        },
+        "word": "소금"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "180388",
+        "pos": "명사",
+        "origin": "小禽",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=180388&searchKeywordTo=3",
+          "definition": "참새, 제비, 종달새 따위의 작은 새를 통틀어 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "소금"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "180389",
+        "pos": "명사",
+        "origin": "素琴",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=180389&searchKeywordTo=3",
+          "definition": "아무 장식도 없는 수수한 거문고.",
+          "type": "일반어"
+        },
+        "word": "소금"
+      },
+      {
+        "sup_no": "6",
+        "target_code": "180390",
+        "pos": "명사",
+        "origin": "銷金",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=180390&searchKeywordTo=3",
+          "definition": "인물화를 그릴 때, 그 옷에 금으로 무늬를 그림. 또는 그런 일.",
+          "type": "일반어"
+        },
+        "word": "소금"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203817",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

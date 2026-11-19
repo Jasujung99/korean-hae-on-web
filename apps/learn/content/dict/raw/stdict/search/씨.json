@@ -1,0 +1,97 @@
+{
+  "channel": {
+    "total": 7,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "455012",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=455012&searchKeywordTo=3",
+          "definition": "식물의 열매 속에 있는, 장차 싹이 터서 새로운 개체가 될 단단한 물질.",
+          "type": "일반어"
+        },
+        "word": "씨"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "210861",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=210861&searchKeywordTo=3",
+          "definition": "천, 돗자리, 짚신 따위를 짤 때에 가로로 놓는 실, 노끈, 새끼 따위.",
+          "type": "일반어"
+        },
+        "word": "씨"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "210862",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=210862&searchKeywordTo=3",
+          "definition": "단어를 기능, 형태, 의미에 따라 나눈 갈래. 현재 우리나라의 학교 문법에서는 명사, 대명사, 수사, 조사, 동사, 형용사, 관형사, 부사, 감탄사의 아홉 가지로 분류한다.",
+          "type": "일반어"
+        },
+        "word": "씨"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "207992",
+        "pos": "감탄사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=207992&searchKeywordTo=3",
+          "definition": "마음에 차지 않거나 못마땅할 때 내는 소리. ‘시’보다 센 느낌을 준다.",
+          "type": "일반어"
+        },
+        "word": "씨"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "454589",
+        "pos": "명사",
+        "origin": "氏",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=454589&searchKeywordTo=3",
+          "definition": "같은 성(姓)의 계통을 표시하는 말.",
+          "type": "일반어"
+        },
+        "word": "씨"
+      },
+      {
+        "sup_no": "6",
+        "target_code": "208003",
+        "pos": "접사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=208003&searchKeywordTo=3",
+          "definition": "‘태도’ 또는 ‘모양’의 뜻을 더하는 접미사.",
+          "type": "일반어"
+        },
+        "word": "-씨"
+      },
+      {
+        "sup_no": "7",
+        "target_code": "208004",
+        "pos": "접사",
+        "origin": "氏",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=208004&searchKeywordTo=3",
+          "definition": "‘그 성씨 자체’, ‘그 성씨의 가문이나 문중’의 뜻을 더하는 접미사.",
+          "type": "일반어"
+        },
+        "word": "-씨"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203744",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

@@ -1,0 +1,393 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203418</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>497636</target_code>
+		<word_info>
+			<word><![CDATA[타다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[타다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[타]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[타]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[타니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[타니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+			
+			<relation_info>
+				<word>타는 닭이 꼬꼬 하고 그슬린 돝이 달음질한다</word>
+				<type>속담</type>
+				<link_target_code>532763</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=532763&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>타는 불에 부채질한다</word>
+				<type>속담</type>
+				<link_target_code>532764</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=532764&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[＜다＜능엄＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>497636001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>497636001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>443712</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[불씨나 높은 열로 불이 붙어 번지거나 불꽃이 일어나다.]]></definition>
+						<definition_original><![CDATA[불씨나 높은 열로 불이 붙어 번지거나 불꽃이 일어나다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[담배가 타다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[벽난로에서 장작이 활활 타고 있었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[탈 수 있는 것은 죄다 타 버리고 흙벽이나 돌담만 시꺼멓게 그은 채 무슨 형해처럼 남아 있었다.]]></example>
+							
+							<source><![CDATA[하근찬, 야호]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>447279</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[피부가 햇볕을 오래 쬐어 검은색으로 변하다.]]></definition>
+						<definition_original><![CDATA[피부가 햇볕을 오래 쬐어 검은색으로 변하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[땡볕에 얼굴이 새까맣게 탔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[남루하지만 그 얼굴은 햇볕에 타서 검게 구릿빛을 하고 있었다.]]></example>
+							
+							<source><![CDATA[오상원, 백지의 기록]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>448468</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[뜨거운 열을 받아 검은색으로 변할 정도로 지나치게 익다.]]></definition>
+						<definition_original><![CDATA[뜨거운 열을 받아 검은색으로 변할 정도로 지나치게 익다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[고기가 타다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[딴 일을 하는 사이 밥이 타 버렸다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>448801</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[마음이 몹시 달다.]]></definition>
+						<definition_original><![CDATA[마음이 몹시 달다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[속이 타다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[애간장이 타다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[입술이 마르고 심장이 타는 이 속을 그 뉘라 일 분인들 알아주오며….]]></example>
+							
+							<source><![CDATA[최명희, 혼불]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>448971</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[물기가 없어 바싹 마르다.]]></definition>
+						<definition_original><![CDATA[물기가 없어 바싹 마르다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[긴장이 되어 입술이 바짝바짝 탄다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[오랜 가뭄으로 농작물이 다 타 버렸다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

@@ -1,0 +1,296 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203400</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>412339</target_code>
+		<word_info>
+			<word><![CDATA[덜다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[덜ː다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[덜어]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[더러]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[더니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[더ː니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[더오]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[더ː오]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			<origin><![CDATA[덜다＜석상＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>412339001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>412339001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>7568</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[일정한 수량이나 정도에서 얼마를 떼어 줄이거나 적게 하다.]]></definition>
+						<definition_original><![CDATA[일정한 수량이나 정도에서 얼마를 떼어 줄이거나 적게 하다.]]></definition_original>
+						
+
+						
+						
+						<sense_pattern_info>
+							<pattern>…에서 …을</pattern>
+						</sense_pattern_info>
+						
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[다섯에서 둘을 덜다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[짐칸에서 짐을 덜다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어머니는 상자에서 사과 몇 개를 덜어 내고는 남은 사과를 모두 작은집에 보내셨다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어머니는 그릇에서 밥을 덜어 내 밥그릇에 얹어 주셨다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>37794</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[그러한 행위나 상태를 적게 하다.]]></definition>
+						<definition_original><![CDATA[그러한 행위나 상태를 적게 하다.]]></definition_original>
+						
+
+						
+						
+						<sense_pattern_info>
+							<pattern>…을</pattern>
+						</sense_pattern_info>
+						
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[주로 행위나 상태를 나타내는 명사와 함께 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[걱정을 덜다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[고통을 덜다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[근심을 덜다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[수고를 덜다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[대학을 졸업한 아들이 취직하여 한시름 덜었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[우리는 농촌의 바쁜 일손을 덜어 주려고 열심히 일했다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

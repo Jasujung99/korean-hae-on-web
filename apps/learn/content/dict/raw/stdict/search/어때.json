@@ -1,0 +1,25 @@
+{
+  "channel": {
+    "total": 1,
+    "item": [
+      {
+        "sup_no": "0",
+        "target_code": "461167",
+        "pos": "품사 없음",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=461167&searchKeywordTo=3",
+          "definition": "‘어떠해’가 줄어든 말.",
+          "type": "일반어"
+        },
+        "word": "어때"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203251",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

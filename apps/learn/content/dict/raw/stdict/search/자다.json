@@ -1,0 +1,37 @@
+{
+  "channel": {
+    "total": 2,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "472284",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=472284&searchKeywordTo=3",
+          "definition": "생리적인 요구에 따라 눈이 감기면서 한동안 의식 활동이 쉬는 상태가 되다.",
+          "type": "일반어"
+        },
+        "word": "자다"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "274533",
+        "pos": "명사",
+        "origin": "自多",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=274533&searchKeywordTo=3",
+          "definition": "스스로 자기를 현명하다고 여김.",
+          "type": "일반어"
+        },
+        "word": "자다"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202424",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

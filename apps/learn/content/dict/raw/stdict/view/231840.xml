@@ -1,0 +1,402 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202034</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>231840</target_code>
+		<word_info>
+			<word><![CDATA[어제]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[어제]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+			
+			<relation_info>
+				<word>어제(가) 다르고 오늘(이) 다르다</word>
+				<type>관용구</type>
+				<link_target_code>523208</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=523208&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어제가 옛날(이다)</word>
+				<type>관용구</type>
+				<link_target_code>523209</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=523209&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어제 오늘 할 것 없이</word>
+				<type>관용구</type>
+				<link_target_code>523210</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=523210&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어제와 오늘이 다르다</word>
+				<type>관용구</type>
+				<link_target_code>523211</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=523211&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어제 오늘 할 것 없다</word>
+				<type>관용구</type>
+				<link_target_code>523212</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=523212&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>어제 보던 손님</word>
+				<type>속담</type>
+				<link_target_code>523207</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=523207&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<norm_info>
+				
+				<type>표준어</type>
+				
+				
+				
+				<desc><![CDATA[‘어제’와 ‘어저께’는 모두 표준어이다. 이는 한 가지 의미를 나타내는 형태 몇 가지가 널리 쓰이며 표준어 규정에 맞으면, 그 모두를 표준어로 삼는다는 규정(표준어 사정 원칙 제26항)에 따른 것이다.]]></desc>
+				
+			</norm_info>
+			
+			
+			
+			<origin><![CDATA[어제<석상>]]></origin>
+			
+			
+
+			
+			
+			<lexical_info>
+				<word>내일</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>406113</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=406113&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			
+
+			
+			<pos_info>
+				<pos_code>231840001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>231840001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>2723</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[오늘의 바로 하루 전날.]]></definition>
+						<definition_original><![CDATA[오늘의 바로 하루 전날.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[어제는 공휴일이었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[오늘도 어제와 마찬가지로 아침밥을 먹고 나자마자 집을 나섰다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어제가 어머님 생신이었는데 오늘에야 알았다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>어저께</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>223163</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=227275&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>작일</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>395879</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=275839&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>31221</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[지나간 때.]]></definition>
+						<definition_original><![CDATA[지나간 때.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그는 이제 더 이상 어제의 그가 아니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어제의 소년이 오늘에는 백발이 다 되었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[우리는 어제의 매국노가 오늘의 애국자를 자처하는 현실에 분노를 느낍니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+			<pos_info>
+				<pos_code>231840002</pos_code>
+				<pos>부사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>231840002001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>223642</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[오늘의 바로 하루 전에.]]></definition>
+						<definition_original><![CDATA[오늘의 바로 하루 전에.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그 일은 어제 끝냈어야 했다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[몹시 급했던지 그는 옷도 어제 입었던 그대로였다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그녀는 어제 그와 무슨 일이 있었는지 말하려 하지 않았다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[오래전에 읽어 본 이런 글들이 새삼 어제 읽은 것처럼 되살아 오는 것은 웬일인가.]]></example>
+							
+							<source><![CDATA[이호철, 문]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>어저께</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>223164</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=227275&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

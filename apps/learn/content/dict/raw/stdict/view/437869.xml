@@ -1,0 +1,333 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202612</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>437869</target_code>
+		<word_info>
+			<word><![CDATA[빚]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[빋]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[빚이]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[비지]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[빚만]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[빈만]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+			
+			<relation_info>
+				<word>빚(을) 놓다</word>
+				<type>관용구</type>
+				<link_target_code>528916</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528916&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>빚(을) 주다</word>
+				<type>관용구</type>
+				<link_target_code>528917</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528917&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>빚 물어 달라는 자식은 낳지도 말랬다</word>
+				<type>속담</type>
+				<link_target_code>528910</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528910&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>빚 보인하는[보증하는] 자식은 낳지도 말라</word>
+				<type>속담</type>
+				<link_target_code>528912</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528912&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>빚 얻어 굿하니 맏며느리 춤춘다</word>
+				<type>속담</type>
+				<link_target_code>528913</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528913&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>빚 주고 뺨 맞기</word>
+				<type>속담</type>
+				<link_target_code>528914</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528914&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>빚 준 상전이요 빚 쓴 종이라</word>
+				<type>속담</type>
+				<link_target_code>528915</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=528915&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[＜빋＜능엄＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>437869001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>437869001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>12607</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[남에게 갚아야 할 돈. 꾸어 쓴 돈이나 외상값 따위를 이른다.]]></definition>
+						<definition_original><![CDATA[남에게 갚아야 할 돈. 꾸어 쓴 돈이나 외상값 따위를 이른다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[빚을 갚다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[빚을 얻다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[빚에 쪼들리다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[빚이 눈덩이처럼 불어나다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 도박으로 진 빚을 감당하지 못해 전 재산을 날렸다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 동료들에게 빚을 졌다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[은행에서 빚을 내어 집 사는 데 보탰다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 수억 원에 가까운 빚을 안고 사업을 시작했다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[가난에 시달리고 빚에 몰린 그들은 파산하여 고향을 떠났다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>43112</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[갚아야 할 은혜 따위를 비유적으로 이르는 말.]]></definition>
+						<definition_original><![CDATA[갚아야 할 은혜 따위를 비유적으로 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[마음의 빚을 갚다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어쩐지 자네한테 빚을 지고 있는 것만 같아 늘 마음이 무거웠다네.]]></example>
+							
+							<source><![CDATA[문순태, 타오르는 강]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[세상에 너무 진 빚이 커서 그걸 차근차근 갚아 나갈 작정이오.]]></example>
+							
+							<source><![CDATA[홍성원, 육이오]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

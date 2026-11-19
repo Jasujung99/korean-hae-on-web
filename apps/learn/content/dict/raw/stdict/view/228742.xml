@@ -1,0 +1,319 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203317</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>228742</target_code>
+		<word_info>
+			<word><![CDATA[엉뚱-하다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[엉뚱하다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[엉뚱하여]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[엉뚱하여]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+				<abbreviation_info>
+					<abbreviation><![CDATA[엉뚱해]]></abbreviation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[엉뚱해]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</abbreviation_info>
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[엉뚱하니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[엉뚱하니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			<norm_info>
+				
+				<type>한글 맞춤법</type>
+				
+				
+				
+				<desc><![CDATA[‘엉뚱하다’는 한 단어 안에서 뚜렷한 까닭 없이 나는 된소리는 다음 음절의 첫소리를 된소리로 적는다는 규정(한글 맞춤법 제5항)에 따라 ‘<IN>엉둥하다</IN>’로 적지 않고 ‘엉뚱하다’로 적는다.]]></desc>
+				
+			</norm_info>
+			
+			
+			
+			<origin><![CDATA[＜엉다＜첩신-초＞←엉+-]]></origin>
+			
+			
+
+			
+			
+			<lexical_info>
+				<word>앙똥-하다</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>221851</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=221851&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			
+
+			
+			<pos_info>
+				<pos_code>228742001</pos_code>
+				<pos>형용사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>228742001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>17367</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[상식적으로 생각하는 것과 전혀 다르다.]]></definition>
+						<definition_original><![CDATA[상식적으로 생각하는 것과 전혀 다르다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그 사람은 모습과는 다르게 엉뚱한 데가 있다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[찢어진 눈두덩은 무섭게 부어올라 한 눈은 완전히 감겨진 상태였다. 눈두덩뿐만 아니라 볼도 부어서 입술이 엉뚱한 곳에 가 붙어 있는 것 같았다.]]></example>
+							
+							<source><![CDATA[박경리, 토지]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>49220</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[말이나 행동이 분수에 맞지 아니하게 지나치다.]]></definition>
+						<definition_original><![CDATA[말이나 행동이 분수에 맞지 아니하게 지나치다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[엉뚱한 짓을 하다가 들켜서 혼나다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[들몰댁은 얼른 대답할 말이 없었다. 어린것의 물음이 엉뚱하기도 했고, 어린 소견에 제 아버지가 하는 일이 옳다고 생각하는 것이었다.]]></example>
+							
+							<source><![CDATA[조정래, 태백산맥]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>592766</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[사람, 물건, 일 따위가 현재 일과 관계가 없다.]]></definition>
+						<definition_original><![CDATA[사람, 물건, 일 따위가 현재 일과 관계가 없다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[제조에 성공한다고 하더라도 그 폭발로 엉뚱한 사람들이 피해를 입을 것 같아 포기했습니다.]]></example>
+							
+							<source><![CDATA[조세희, 내 그물로 오는 가시고기]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[전화가 몇 번 걸려 오긴 했으나 대부분은 장난 전화였고 나머지는 전혀 엉뚱한 사람이었다.]]></example>
+							
+							<source><![CDATA[홍성원, 무사와 악사]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[머릿속 한복판에서 꼬마전구 하나가 반짝 켜지는가 싶더니만 여태껏 꿈에도 생각지 않았던 엉뚱한 이름이 불현듯 떠오르질 않는가.]]></example>
+							
+							<source><![CDATA[윤흥길, 완장]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

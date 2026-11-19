@@ -1,0 +1,482 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203047</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>495580</target_code>
+		<word_info>
+			<word><![CDATA[키]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				
+				외래어
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[key]]></original_language>
+				<language_type>영어</language_type>
+			</original_language_info>
+			
+			
+
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>495580001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>495580001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>370316</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[자물쇠를 잠그거나 여는 데 사용하는 물건.]]></definition>
+						<definition_original><![CDATA[자물쇠를 잠그거나 여는 데 사용하는 물건.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[자동차 키.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[사무실 키를 잃어버려서 다시 맞추었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 바짝 차 문 옆에 붙어 서서 비상용 키로 차의 문을 따고 있었다.]]></example>
+							
+							<source><![CDATA[최인호, 지구인]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[자물쇠에 키를 끼우는 내 손길이 부르르 떨렸다.]]></example>
+							
+							<source><![CDATA[서영은, 사막을 건너는 법]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>열-쇠</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>18039</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=464427&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>373768</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 문제를 해결할 수 있는 실마리.]]></definition>
+						<definition_original><![CDATA[어떤 문제를 해결할 수 있는 실마리.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그는 문제를 해결할 키를 쥐고 있다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[현만우 씨는 그것을 풀어 줄 키를 갖고 있는 사람, 어쩌면 그보다 더한 사람인지도 모른다고 이장은 몰래 생각하고 있는 것이었습니다.]]></example>
+							
+							<source><![CDATA[장용학, 원형의 전설]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>374865</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[타자기나 컴퓨터의 자판 따위에서, 손가락으로 치는 글자판.]]></definition>
+						<definition_original><![CDATA[타자기나 컴퓨터의 자판 따위에서, 손가락으로 치는 글자판.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[자판의 키.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[키를 잘못 눌러 입력하던 자료가 다 날아갔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[키를 열심히 두들겨 대던 여직원들은 금세 하품을 깨물면서 의자를 한 자쯤 뒤로 빼내고….]]></example>
+							
+							<source><![CDATA[이동하, 도시의 늪]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>375168</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[피아노, 풍금 따위의 건(鍵).]]></definition>
+						<definition_original><![CDATA[피아노, 풍금 따위의 건(鍵).]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[연주자가 키를 누르다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[피아노는 키를 눌러도 괴상하게 식식거리기만 하고, 현악기의 줄은 늘어질 대로 늘어져 흉한 마찰음만 낸다.]]></example>
+							
+							<source><![CDATA[이청준, 조율사]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>375308</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[기계의 회전 부분에서 회전체와 축(軸)을 고정하는 쇠막대 모양의 부품. 회전체와 축 사이에 홈을 파서 끼운다.]]></definition>
+						<definition_original><![CDATA[기계의 회전 부분에서 회전체와 축(軸)을 고정하는 쇠막대 모양의 부품. 회전체와 축 사이에 홈을 파서 끼운다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>기계</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+						
+						<multimedia_info>
+							
+							<lable><![CDATA[키]]></lable>
+							
+							<type>
+								
+								
+								
+								
+								
+								삽화
+								
+							</type>
+							<link><![CDATA[https://dicmedia.korean.go.kr/front/view/mediaView.do?file_no=103269]]></link>
+						</multimedia_info>
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>375363</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[전화 교환 시스템에서 회부에 붙은 손잡이 또는 누름 버튼과 접촉하는 수동 교환 소자.]]></definition>
+						<definition_original><![CDATA[전화 교환 시스템에서 회부에 붙은 손잡이 또는 누름 버튼과 접촉하는 수동 교환 소자.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>전기·전자</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>594851</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[회전기에서 힘을 한쪽에서 다른 한쪽으로 전달하기 위하여 두 개의 인접한 부속 재료에 꽂는 봉.]]></definition>
+						<definition_original><![CDATA[회전기에서 힘을 한쪽에서 다른 한쪽으로 전달하기 위하여 두 개의 인접한 부속 재료에 꽂는 봉.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>전기·전자</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>594852</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[데이터 집합에서 그 집합에 관한 정보를 가지는 하나 이상의 문자.]]></definition>
+						<definition_original><![CDATA[데이터 집합에서 그 집합에 관한 정보를 가지는 하나 이상의 문자.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>전기·전자</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

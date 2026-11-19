@@ -1,0 +1,303 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203014</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>416756</target_code>
+		<word_info>
+			<word><![CDATA[땅-콩]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[땅콩]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			<norm_info>
+				
+				<type>표준어</type>
+				
+				
+				
+				<desc><![CDATA[‘땅콩’과 ‘호콩’은 모두 표준어이다. 이는 한 가지 의미를 나타내는 형태 몇 가지가 널리 쓰이며 표준어 규정에 맞으면, 그 모두를 표준어로 삼는다는 규정(표준어 사정 원칙 제26항)에 따른 것이다.]]></desc>
+				
+			</norm_info>
+			
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>416756001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>416756001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>1966</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[콩과의 한해살이풀. 줄기는 높이가 60cm 정도이고 기는줄기와 땅속줄기의 두 가지가 있으며, 잎은 우상 복엽이다. 7~9월에 나비 모양의 노란 꽃이 잎겨드랑이에서 핀다. 열매는 씨방 밑부분이 길게 자라 땅속으로 들어가 익는 협과(莢果)이다. 브라질이 원산지로 주로 모래땅에서 나는데 북아메리카, 프랑스, 중국을 거쳐 우리나라에 들어와 널리 재배된다.]]></definition>
+						<definition_original><![CDATA[콩과의 한해살이풀. 줄기는 높이가 60cm 정도이고 기는줄기와 땅속줄기의 두 가지가 있으며, 잎은 우상 복엽이다. 7~9월에 나비 모양의 노란 꽃이 잎겨드랑이에서 핀다. 열매는 씨방 밑부분이 길게 자라 땅속으로 들어가 익는 협과(莢果)이다. 브라질이 원산지로 주로 모래땅에서 나는데 북아메리카, 프랑스, 중국을 거쳐 우리나라에 들어와 널리 재배된다.]]></definition_original>
+						
+						<scientific_name><![CDATA[Arachis hypogaea]]></scientific_name>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>식물</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[땅콩 넝쿨.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[땅콩을 키우다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[할머니는 밭 가장자리에 땅콩을 심으셨다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+						
+						<multimedia_info>
+							
+							<lable><![CDATA[땅콩]]></lable>
+							
+							<type>
+								
+								
+								
+								
+								사진
+								
+								
+							</type>
+							<link><![CDATA[https://dicmedia.korean.go.kr/front/view/mediaView.do?file_no=97813]]></link>
+						</multimedia_info>
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>낙화-생</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>599383</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=407594&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>남경-두</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>563623</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=58290&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>향우01</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>549600</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=371183&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>호-콩</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>322031</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=505565&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>39322</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[‘「1」’의 열매. 단백질과 지방질이 있어서 맛이 좋고 기름도 짜낸다.]]></definition>
+						<definition_original><![CDATA[‘「1」’의 열매. 단백질과 지방질이 있어서 맛이 좋고 기름도 짜낸다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[갓 볶은 땅콩에서 구수한 냄새가 풍겼다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 땅콩을 까먹으며 책을 읽었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>낙화-생</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>110654</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=407594&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

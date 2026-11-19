@@ -1,0 +1,753 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202425</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>472284</target_code>
+		<word_info>
+			<word><![CDATA[자다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[자다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[자]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[자]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[자니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[자니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+			
+			<relation_info>
+				<word>자나 깨나</word>
+				<type>관용구</type>
+				<link_target_code>531211</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=531211&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>자는 벌집 건드린다</word>
+				<type>속담</type>
+				<link_target_code>531190</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=531190&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>자는 범[호랑이] 코 찌르기</word>
+				<type>속담</type>
+				<link_target_code>531191</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=531191&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>자는 범[호랑이] 코침 주기</word>
+				<type>속담</type>
+				<link_target_code>531192</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=531192&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>자는 입에 콩가루 떨어 넣기</word>
+				<type>속담</type>
+				<link_target_code>531196</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=531196&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>자는 호랑이 불침 놓기</word>
+				<type>속담</type>
+				<link_target_code>531199</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=531199&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>자다가 벼락을 맞는다</word>
+				<type>속담</type>
+				<link_target_code>531201</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=531201&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>자다가 봉창 두드린다</word>
+				<type>속담</type>
+				<link_target_code>531202</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=531202&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>자다가 생병 얻는[앓는] 것 같다</word>
+				<type>속담</type>
+				<link_target_code>531203</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=531203&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>자다가 얻은 병</word>
+				<type>속담</type>
+				<link_target_code>531204</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=531204&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>자다가 얻은 병이 이각(離却)을 못 한다</word>
+				<type>속담</type>
+				<link_target_code>531205</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=531205&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>자던 아이 가지 따러 갔다</word>
+				<type>속담</type>
+				<link_target_code>531207</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=531207&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>자던 아이 깨겠다</word>
+				<type>속담</type>
+				<link_target_code>531208</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=531208&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>자던 중도 떡 다섯 개</word>
+				<type>속담</type>
+				<link_target_code>531209</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=531209&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>자도 걱정 먹어도 걱정</word>
+				<type>속담</type>
+				<link_target_code>531210</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=531210&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>472284001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>472284001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					
+					
+					
+					<grammar_info>
+						<grammar><![CDATA[‘…을’은 ‘잠을’로 실현될 때가 ‘단잠을, 낮잠을’ 따위의 특정한 성격의 목적어가 올 경우보다 더 잘 생략된다]]></grammar>
+					</grammar_info>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>542891</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[생리적인 요구에 따라 눈이 감기면서 한동안 의식 활동이 쉬는 상태가 되다.]]></definition>
+						<definition_original><![CDATA[생리적인 요구에 따라 눈이 감기면서 한동안 의식 활동이 쉬는 상태가 되다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[단잠을 자다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[늦잠을 자다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[일찍 자다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[피곤할 테니 어서 자라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[내일을 위해 푹 자 두어라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[자는 척하지 말고 어서 나와라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어젯밤 한숨도 못 잤다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[지난밤엔 달게 잘 잤다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[피곤하다면서 잠을 자지 않고 뭐 하니?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[새우잠을 잤더니 더 피곤한 것 같다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[밥까지 얻어먹고, 잠까지 한숨 잘 자고, 길을 떠난 것은 어둠이 깃들 무렵이었다.]]></example>
+							
+							<source><![CDATA[하근찬, 야호]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>깨다01</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>63104</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=403997&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						<lexical_info>
+							<word>주무시다</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>434634</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=483323&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>472284001002</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>517902</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[바람이나 물결 따위가 잠잠해지다.]]></definition>
+						<definition_original><![CDATA[바람이나 물결 따위가 잠잠해지다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[폭풍우가 지나가자 파도가 잔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[파도가 잘 때까지 출항하지 말고 기다려라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어느 틈엔가 바람은 자고, 비는 엊저녁 처음 내릴 때 모양으로 다시 은근하여졌다.]]></example>
+							
+							<source><![CDATA[박태원, 천변 풍경]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>521456</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[기계가 작동하지 아니하다.]]></definition>
+						<definition_original><![CDATA[기계가 작동하지 아니하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[시계가 자서 아침에 늦게 일어났다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[파업으로 공장 기계가 모두 자고 있다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>522185</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[소란하거나 설레던 분위기가 가라앉아 조용해지다.]]></definition>
+						<definition_original><![CDATA[소란하거나 설레던 분위기가 가라앉아 조용해지다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그는 장내 분위기가 자기를 기다렸다가 이야기를 꺼냈다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>522429</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[화투나 카드 따위의 놀이에서, 어떤 한 장이 떼어 놓은 몫의 맨 밑에 깔리다.]]></definition>
+						<definition_original><![CDATA[화투나 카드 따위의 놀이에서, 어떤 한 장이 떼어 놓은 몫의 맨 밑에 깔리다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[광이 밑에서 자는지 좀처럼 나타나지 않는다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>522458</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[부풀었던 것이 무엇에 눌려서 납작한 상태가 되다.]]></definition>
+						<definition_original><![CDATA[부풀었던 것이 무엇에 눌려서 납작한 상태가 되다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[솜이 자도록 눌러 놓았다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[장에 오래 두었더니 이불솜이 모두 잔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[모자에 눌려 머리가 잔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>522466</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[물건이 용도대로 쓰이지 못하고 묻혀 있다.]]></definition>
+						<definition_original><![CDATA[물건이 용도대로 쓰이지 못하고 묻혀 있다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[물건이 팔리지 않고 창고에서 자고 있다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[금고에 자는 돈을 끌어내어 산업에 투자하도록 해야 한다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>472284001003</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>(…과)</pattern>
+					</pattern_info>
+					
+					
+					
+					
+					<grammar_info>
+						<grammar><![CDATA[‘…과’가 나타나지 않을 때는 여럿임을 뜻하는 말이 주어로 온다]]></grammar>
+					</grammar_info>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>542892</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[남녀가 성관계를 가지다.]]></definition>
+						<definition_original><![CDATA[남녀가 성관계를 가지다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그녀는 남편이 다른 여자와 잤다는 사실을 알게 되었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그들은 결혼 전에 이미 같이 잔 적이 있다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

@@ -1,0 +1,543 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203350</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>414830</target_code>
+		<word_info>
+			<word><![CDATA[뛰다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[뛰다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[뛰어]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[뛰어]]></pronunciation>
+					</pronunciation_info>
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[뛰여]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[뛰니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[뛰니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			<origin><![CDATA[＜다＜다＜월석＞]]></origin>
+			
+			
+
+			
+			
+			<lexical_info>
+				<word>튀다</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>492024</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=492024&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			
+
+			
+			<pos_info>
+				<pos_code>414830001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>414830001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>30457</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[있던 자리로부터 몸을 높이 솟구쳐 오르다.]]></definition>
+						<definition_original><![CDATA[있던 자리로부터 몸을 높이 솟구쳐 오르다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[제자리에서 높이 뛰다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>61516</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[맥박이나 심장 따위가 벌떡벌떡 움직이다.]]></definition>
+						<definition_original><![CDATA[맥박이나 심장 따위가 벌떡벌떡 움직이다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[춘향이를 본 이 도령의 가슴이 뛰었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[급하게 뛰어왔더니 심장이 벌떡벌떡 뛴다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[명훈은 그 봉투를 받자 지금까지의 시비는 깨끗이 잊히고 세차게 가슴이 뛰기 시작했다.]]></example>
+							
+							<source><![CDATA[이문열, 변경]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>68708</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[값이나 가치 따위가 갑자기 오르다.]]></definition>
+						<definition_original><![CDATA[값이나 가치 따위가 갑자기 오르다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[1년 만에 물가가 두 배로 뛰었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[전국의 땅값이 엄청나게 뛰었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[날마다 뛰는 물가를 잡을 정책이 필요하다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>70970</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[대단한 기세를 나타내다.]]></definition>
+						<definition_original><![CDATA[대단한 기세를 나타내다.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[주로 ‘펄펄’, ‘팔팔’, ‘펄쩍’, ‘팔짝’ 등과 함께 쓰여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그게 될 법이나 한 얘기냐고 펄쩍 뛰었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그렇게 펄펄 뛰며 화를 낼 것까지는 없잖아!]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[상길이 억울하다는 듯 팔짝팔짝 뛰는 것을 홍이는 덜미를 잡듯 밖으로 떠밀어 내고 문을 닫아 버린다.]]></example>
+							
+							<source><![CDATA[박경리, 토지]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>414830001002</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…으로</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>140773</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[물방울, 흙 따위가 힘을 받아서 세차게 솟아올랐다가 흩어지다.]]></definition>
+						<definition_original><![CDATA[물방울, 흙 따위가 힘을 받아서 세차게 솟아올랐다가 흩어지다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[다이너마이트가 터지자 사방으로 파편이 뛰었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>414830001003</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>31155</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[공중으로 솟아올랐다가 일정한 거리에 가서 내리다.]]></definition>
+						<definition_original><![CDATA[공중으로 솟아올랐다가 일정한 거리에 가서 내리다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[도랑을 뛰어 건넜다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>62506</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[그네를 타고 발을 굴러 공중에서 앞뒤로 왔다 갔다 하다.]]></definition>
+						<definition_original><![CDATA[그네를 타고 발을 굴러 공중에서 앞뒤로 왔다 갔다 하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그네를 뛰다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>69572</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[널에 올라 발을 굴러 공중으로 오르내리다.]]></definition>
+						<definition_original><![CDATA[널에 올라 발을 굴러 공중으로 오르내리다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[널을 뛰다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

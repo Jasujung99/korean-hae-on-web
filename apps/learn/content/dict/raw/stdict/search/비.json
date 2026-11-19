@@ -1,0 +1,385 @@
+{
+  "channel": {
+    "total": 31,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "158924",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=158924&searchKeywordTo=3",
+          "definition": "대기 중의 수증기가 높은 곳에서 찬 공기를 만나 식어서 엉기어 땅 위로 떨어지는 물방울.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "436690",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=436690&searchKeywordTo=3",
+          "definition": "먼지나 쓰레기를 쓸어 내는 기구. 쓰임에 따라 마당비, 방비 따위가 있는데, 짚·띠·싸리와 짐승의 털 따위로 만든다.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "163345",
+        "pos": "명사",
+        "origin": "比",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=163345&searchKeywordTo=3",
+          "definition": "≪시경≫의 육의(六義) 가운데 하나. 어떤 사물이나 정감을 비유를 통하여 표현하는 창작 방법이다.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "163346",
+        "pos": "명사",
+        "origin": "比",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=163346&searchKeywordTo=3",
+          "definition": "표현된 물상의 각 부분 상호 간 또는 전체와 부분 간이 양적으로 일정한 관계가 됨. 또는 그런 관계.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "164128",
+        "pos": "명사",
+        "origin": "比",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=164128&searchKeywordTo=3",
+          "definition": "육십사괘(六十四卦)의 하나. 감괘(坎卦)와 곤괘(坤卦)가 거듭된 것으로 땅 위에 물이 있음을 상징한다.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "6",
+        "target_code": "434591",
+        "pos": "명사",
+        "origin": "丕",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=434591&searchKeywordTo=3",
+          "definition": "우리나라 성(姓)의 하나. 본관은 농서(隴西) 하나뿐이다.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "7",
+        "target_code": "164129",
+        "pos": "명사",
+        "origin": "妃",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=164129&searchKeywordTo=3",
+          "definition": "임금이나 황태자의 아내.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "8",
+        "target_code": "434592",
+        "pos": "명사",
+        "origin": "否",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=434592&searchKeywordTo=3",
+          "definition": "육십사괘(六十四卦)의 하나. 건괘(乾卦)와 곤괘(坤卦)가 거듭된 것으로 하늘과 땅이 서로 사귀지 못함을 상징한다.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "9",
+        "target_code": "164130",
+        "pos": "명사",
+        "origin": "妣",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=164130&searchKeywordTo=3",
+          "definition": "돌아가신 어머니.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "10",
+        "target_code": "164131",
+        "pos": "명사",
+        "origin": "批",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=164131&searchKeywordTo=3",
+          "definition": "임금이 상주문의 말미에 적는 가부의 대답.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "11",
+        "target_code": "434593",
+        "pos": "명사",
+        "origin": "非",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=434593&searchKeywordTo=3",
+          "definition": "잘못되거나 그른 것.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "12",
+        "target_code": "163875",
+        "pos": "명사",
+        "origin": "剕",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=163875&searchKeywordTo=3",
+          "definition": "발뒤꿈치를 베는 형벌.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "13",
+        "target_code": "164404",
+        "pos": "명사",
+        "origin": "祕",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=164404&searchKeywordTo=3",
+          "definition": "남이 알아서는 안 될 일.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "14",
+        "target_code": "164405",
+        "pos": "명사",
+        "origin": "脾",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=164405&searchKeywordTo=3",
+          "definition": "척추동물의 림프 계통 기관. 위(胃)의 왼쪽이나 뒤쪽에 있으며, 오래된 적혈구나 혈소판을 파괴하거나 림프구를 만들어 내는 작용을 한다.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "15",
+        "target_code": "434594",
+        "pos": "명사",
+        "origin": "痱",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=434594&searchKeywordTo=3",
+          "definition": "중풍 후유증으로 통증이 없으면서 한쪽 팔다리를 잘 쓰지 못하는 병.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "16",
+        "target_code": "164406",
+        "pos": "명사",
+        "origin": "賁",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=164406&searchKeywordTo=3",
+          "definition": "육십사괘(六十四卦)의 하나. 간괘(艮卦)와 이괘(離卦)가 거듭된 것으로 산 아래에 불이 있음을 상징한다.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "17",
+        "target_code": "436965",
+        "pos": "명사",
+        "origin": "碑",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=436965&searchKeywordTo=3",
+          "definition": "사적을 기념하기 위하여 돌이나 쇠붙이, 나무 따위에 글을 새기어 세워 놓은 것.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "18",
+        "target_code": "164407",
+        "pos": "명사",
+        "origin": "鼻",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=164407&searchKeywordTo=3",
+          "definition": "‘코’를 한방에서 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "19",
+        "target_code": "164408",
+        "pos": "명사",
+        "origin": "篚",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=164408&searchKeywordTo=3",
+          "definition": "대나무로 만든 광주리.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "20",
+        "target_code": "164409",
+        "pos": "명사",
+        "origin": "轡",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=164409&searchKeywordTo=3",
+          "definition": "말이나 소를 몰거나 부리려고 재갈이나 코뚜레, 굴레에 잡아매는 줄.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "21",
+        "target_code": "164410",
+        "pos": "명사",
+        "origin": "B",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=164410&searchKeywordTo=3",
+          "definition": "학업 성적이나 사물의 단계를 나타내는 기호의 하나. 에이(A)의 다음 순위이다.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "22",
+        "target_code": "436966",
+        "pos": "명사",
+        "origin": "B",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=436966&searchKeywordTo=3",
+          "definition": "가슴둘레를 나타내는 부호. 주로 대문자로 쓰며, ‘바스트’를 나타낸다.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "23",
+        "target_code": "164652",
+        "pos": "명사",
+        "origin": "B",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=164652&searchKeywordTo=3",
+          "definition": "연필심의 검은 정도를 나타내는 기호. B, 2B, 3B 따위로 그 숫자가 클수록 연필심이 무르고 진하게 써진다. B는 ‘블랙(black)’을 나타낸다.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "24",
+        "target_code": "436967",
+        "pos": "명사",
+        "origin": "B",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=436967&searchKeywordTo=3",
+          "definition": "종이 규격을 나타내는 단위. B<sub style='font-size:11px;'>3</sub>, B<sub style='font-size:11px;'>4</sub>, B<sub style='font-size:11px;'>5</sub> 따위로 숫자가 올라갈수록 크기가 작은 것을 이른다.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "25",
+        "target_code": "164653",
+        "pos": "명사",
+        "origin": "B",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=164653&searchKeywordTo=3",
+          "definition": "영어 ‘bomber’의 머리글자 ‘비(B)’로서, 폭격기를 나타내는 기호.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "26",
+        "target_code": "164654",
+        "pos": "명사",
+        "origin": "B / b",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=164654&searchKeywordTo=3",
+          "definition": "영어 알파벳의 두 번째 자모 이름.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "27",
+        "target_code": "437141",
+        "pos": "명사",
+        "origin": "B / b",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=437141&searchKeywordTo=3",
+          "definition": "서양 음악의 칠음 체계에서, 일곱 번째 음이름.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "28",
+        "target_code": "164655",
+        "pos": "명사",
+        "origin": "B",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=164655&searchKeywordTo=3",
+          "definition": "에이비오식(ABO式) 혈액형의 하나. 수혈을 할 때 이 혈액형을 가진 사람은 비형과 오형인 사람에게 피를 받을 수 있고, 비형과 에이비형인 사람에게 피를 나누어 줄 수 있다.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "29",
+        "target_code": "437142",
+        "pos": "명사",
+        "origin": "B",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=437142&searchKeywordTo=3",
+          "definition": "‘붕소’의 원자 기호.",
+          "type": "일반어"
+        },
+        "word": "비"
+      },
+      {
+        "sup_no": "30",
+        "target_code": "164656",
+        "pos": "접사",
+        "origin": "非",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=164656&searchKeywordTo=3",
+          "definition": "‘아님’의 뜻을 더하는 접두사.",
+          "type": "일반어"
+        },
+        "word": "비-"
+      },
+      {
+        "sup_no": "31",
+        "target_code": "437143",
+        "pos": "접사",
+        "origin": "費",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=437143&searchKeywordTo=3",
+          "definition": "‘비용’ 또는 ‘돈’의 뜻을 더하는 접미사.",
+          "type": "일반어"
+        },
+        "word": "-비"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202728",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

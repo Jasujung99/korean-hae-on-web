@@ -1,0 +1,37 @@
+{
+  "channel": {
+    "total": 2,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "469968",
+        "pos": "명사",
+        "origin": "이番",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=469968&searchKeywordTo=3",
+          "definition": "곧 돌아오거나 이제 막 지나간 차례.",
+          "type": "일반어"
+        },
+        "word": "이-번"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "260240",
+        "pos": "명사",
+        "origin": "理煩",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=260240&searchKeywordTo=3",
+          "definition": "소송 심리를 어지럽힘.",
+          "type": "일반어"
+        },
+        "word": "이번"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202626",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

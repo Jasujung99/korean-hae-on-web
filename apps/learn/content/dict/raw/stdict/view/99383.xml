@@ -1,0 +1,513 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203349</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>99383</target_code>
+		<word_info>
+			<word><![CDATA[뛰다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[뛰다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[뛰어]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[뛰어]]></pronunciation>
+					</pronunciation_info>
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[뛰여]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[뛰니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[뛰니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+			
+			<relation_info>
+				<word>뛰지도 걷지도 못하다</word>
+				<type>관용구</type>
+				<link_target_code>521101</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=521101&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>뛰는 놈 위에 나는 놈 있다</word>
+				<type>속담</type>
+				<link_target_code>521095</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=521095&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>뛰는 놈이 있으면 나는 놈이 있다</word>
+				<type>속담</type>
+				<link_target_code>521096</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=521096&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>뛰는 토끼 잡으려다 잡은 토끼 놓친다</word>
+				<type>속담</type>
+				<link_target_code>521097</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=521097&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>뛰면 벼룩이요 날면 파리</word>
+				<type>속담</type>
+				<link_target_code>521098</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=521098&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>뛰어 보았자 부처님 손바닥</word>
+				<type>속담</type>
+				<link_target_code>521099</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=521099&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>뛰어야 벼룩</word>
+				<type>속담</type>
+				<link_target_code>521100</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=521100&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>99383001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>99383001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…으로</pattern>
+					</pattern_info>
+					
+					
+					
+					
+					<grammar_info>
+						<grammar><![CDATA[‘…으로’ 대신에 ‘…을 향하여’가 쓰이기도 한다]]></grammar>
+					</grammar_info>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>30458</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[발을 몹시 재게 움직여 빨리 나아가다.]]></definition>
+						<definition_original><![CDATA[발을 몹시 재게 움직여 빨리 나아가다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그는 차에서 내리자마자 집으로 마구 뛰었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[불이 나자 사람들이 비상구 쪽으로 뛰었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[난민들은 그들 모두가 탈 수 없다는 말을 듣고는 갑자기 미칠 듯한 기세로 앞을 다투어 배를 향해 뛰기 시작했다.]]></example>
+							
+							<source><![CDATA[홍성원, 육이오]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>61517</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 자격으로 일하다.]]></definition>
+						<definition_original><![CDATA[어떤 자격으로 일하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그는 프로 야구 선수로 뛴 첫 해에 유명해졌다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[앞으로 십 년 동안은 현역으로 뛰려고 합니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>99383001002</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>30553</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[‘달아나다’를 속되게 이르는 말.]]></definition>
+						<definition_original><![CDATA[‘<word_no>413503</word_no>달아나다’를 속되게 이르는 말.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[경찰을 본 도둑은 냅다 뛰기 시작했다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>62576</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[적극적으로 활동하다.]]></definition>
+						<definition_original><![CDATA[적극적으로 활동하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[나는 현장에서 발로 뛰는 외근 기자가 되고 싶다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[밝은 미래를 위해 열심히 뛰자.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[내가 너를 위해 얼마나 열심히 뛰었는데 그런 섭섭한 말을 하니?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[한겨울에 모포 한 장 어깨에 둘러메고 내 겨레를 위해 뛰는 사람이 많다는 걸 항상 염두에 두시오.]]></example>
+							
+							<source><![CDATA[박경리, 토지]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>99383001003</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>31156</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 공간을 달려 지나가다.]]></definition>
+						<definition_original><![CDATA[어떤 공간을 달려 지나가다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[100미터를 12초에 뛰었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나는 너무 무서워서 골목길을 마구 뛰었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>62507</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[일터를 바쁘게 돌아다니며 일하다.]]></definition>
+						<definition_original><![CDATA[일터를 바쁘게 돌아다니며 일하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그 가수는 하루에 밤무대를 네 군데를 뛴다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 학비를 벌기 위해 막노동을 뛰었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

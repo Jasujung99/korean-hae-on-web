@@ -1,0 +1,735 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202520</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>487295</target_code>
+		<word_info>
+			<word><![CDATA[찾다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[찯따]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[찾아]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[차자]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[찾으니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[차즈니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[찾는]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[찬는]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			<origin><![CDATA[＜다＜석상＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>487295001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>487295001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					<pattern_info>
+						<pattern>…에서/에게서 …을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>31038</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[현재 주변에 없는 것을 얻거나 사람을 만나려고 여기저기를 뒤지거나 살피다. 또는 그것을 얻거나 그 사람을 만나다.]]></definition>
+						<definition_original><![CDATA[현재 주변에 없는 것을 얻거나 사람을 만나려고 여기저기를 뒤지거나 살피다. 또는 그것을 얻거나 그 사람을 만나다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[길을 잃은 아이가 지금 가족을 찾고 있습니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어머니가 빗자루를 찾는다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[벌써 두 시간째 서점을 찾았다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[요즘에는 일거리를 찾으려고 해도 찾을 수가 없다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[떨어뜨린 반지를 어둠 속에서 부스럭부스럭 찾고 있었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[아이는 대합실에서 어머니를 찾자마자 울음을 터트렸다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그에게서는 옛날의 자취는 찾을 수가 없었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[서점을 한참 동안 뒤진 끝에야 구석에서 필요한 책을 찾을 수 있었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>61921</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[모르는 것을 알아내고 밝혀내려고 애쓰다. 또는 그것을 알아내고 밝혀내다.]]></definition>
+						<definition_original><![CDATA[모르는 것을 알아내고 밝혀내려고 애쓰다. 또는 그것을 알아내고 밝혀내다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[시민 단체들은 민족의 뿌리를 찾는 운동을 전개하고 있다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그 형사는 사건의 실마리를 찾고 있지만, 특별한 단서를 얻지는 못했다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 자기가 하는 일에서 삶의 의미를 찾으려 했다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[우리는 아주 사소한 것에서 문제의 해답을 찾는 경우가 많다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[술에 취한 운전자에게서 사고의 원인을 찾는 것이 합당하다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>594529</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[모르는 것을 알아내기 위하여 책 따위를 뒤지거나 컴퓨터를 검색하다.]]></definition>
+						<definition_original><![CDATA[모르는 것을 알아내기 위하여 책 따위를 뒤지거나 컴퓨터를 검색하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[모르는 단어는 사전을 찾아라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[이 회사에 대한 자세한 정보는 컴퓨터에서 관련 사이트를 찾으면 된다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>487295001002</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…에서/에게서 …을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>288054</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[잃거나 빼앗기거나 맡기거나 빌려주었던 것을 돌려받아 가지게 되다.]]></definition>
+						<definition_original><![CDATA[잃거나 빼앗기거나 맡기거나 빌려주었던 것을 돌려받아 가지게 되다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[은행에서 저금했던 돈을 찾았다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[지하철에 두고 내렸던 가방을 분실물 보관소에서 찾았다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[우리 민족은 해방이 되자 비로소 일제에게 빼앗겼던 주권을 찾을 수 있었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[빚 때문에 다른 사람에게 넘어갔던 회사를 채권자들에게서 다시 찾았다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>487295001003</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>31408</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 사람을 만나거나 어떤 곳을 보러 그와 관련된 장소로 옮겨 가다.]]></definition>
+						<definition_original><![CDATA[어떤 사람을 만나거나 어떤 곳을 보러 그와 관련된 장소로 옮겨 가다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[오랜만에 벗을 찾다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[추석에 고향을 찾다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[주말에 산이나 바다를 찾다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[우리나라를 찾은 관광객에게 친절하게 대합시다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>62672</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 것을 구하다.]]></definition>
+						<definition_original><![CDATA[어떤 것을 구하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[어떤 손님들은 일부러 국산품을 찾는다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 자기 이익과 안일만을 찾는다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[양심이나 의리만 찾다가는 밥 굶기 딱 좋다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[영감은 체면 찾다 만세를 부르지 못하는 게 유감일 따름이었다.]]></example>
+							
+							<source><![CDATA[이문구, 장한몽]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>68974</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 사람이나 기관 따위에 도움을 요청하다.]]></definition>
+						<definition_original><![CDATA[어떤 사람이나 기관 따위에 도움을 요청하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[감기로 병원을 찾는 환자가 부쩍 늘었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[옛날 어떤 고을에 한 소년이 살았는데, 어느 날 아비가 불치의 난병에 걸려 유명한 의원을 찾게 되었더란다.]]></example>
+							
+							<source><![CDATA[윤흥길, 장마]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>71900</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[원상태를 회복하다.]]></definition>
+						<definition_original><![CDATA[원상태를 회복하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[제정신을 찾다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[마음의 평정을 찾다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[시장은 다시 생기를 찾고 눈알이 핑핑 도는 삶의 터전으로 돌아가기 시작했다.]]></example>
+							
+							<source><![CDATA[최일남, 타령]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>72178</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[자신감, 명예, 긍지 따위를 회복하다.]]></definition>
+						<definition_original><![CDATA[자신감, 명예, 긍지 따위를 회복하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[잃어버린 명예를 다시 찾기란 쉽지 않다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 오랜만에 선발 투수로 나와 완투 승을 거두면서 자신감을 찾았다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

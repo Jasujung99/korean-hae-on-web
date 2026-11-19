@@ -1,0 +1,37 @@
+{
+  "channel": {
+    "total": 2,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "492129",
+        "pos": "명사",
+        "origin": "鍼대",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=492129&searchKeywordTo=3",
+          "definition": "침(鍼)의 몸을 이루는 긴 대.",
+          "type": "일반어"
+        },
+        "word": "침-대"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "340000",
+        "pos": "명사",
+        "origin": "寢臺",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=340000&searchKeywordTo=3",
+          "definition": "사람이 누워 잘 수 있도록 만든 가구. 길쭉한 평상에 다리가 달려 있다.",
+          "type": "일반어"
+        },
+        "word": "침대"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203257",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

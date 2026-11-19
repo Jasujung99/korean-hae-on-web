@@ -1,0 +1,188 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202836</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>167440</target_code>
+		<word_info>
+			<word><![CDATA[빵]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[빵]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			<origin><![CDATA[＜<포르투갈어>pão]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>167440001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>167440001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>332106</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[밀가루를 주원료로 하여 소금, 설탕, 버터, 효모 따위를 섞어 반죽하여 발효한 뒤에 불에 굽거나 찐 음식. 서양 사람들의 주 음식이다.]]></definition>
+						<definition_original><![CDATA[밀가루를 주원료로 하여 소금, 설탕, 버터, 효모 따위를 섞어 반죽하여 발효한 뒤에 불에 굽거나 찐 음식. 서양 사람들의 주 음식이다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[빵을 굽다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[빵으로 한 끼를 때우다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[제과점에서 갓 구워 낸 빵을 사 먹었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>335600</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[먹고살 양식.]]></definition>
+						<definition_original><![CDATA[먹고살 양식.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[사람은 빵만으로는 살 수 없다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[난민들에게는 우선 빵 문제가 시급하다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

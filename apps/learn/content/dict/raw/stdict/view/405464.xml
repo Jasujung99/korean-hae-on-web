@@ -1,0 +1,238 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202652</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>405464</target_code>
+		<word_info>
+			<word><![CDATA[기쁘다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[기쁘다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[기뻐]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[기뻐]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[기쁘니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[기쁘니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			<origin><![CDATA[＜깃브다＜석상＞←-+-브-]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>405464001</pos_code>
+				<pos>형용사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>405464001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…이</pattern>
+					</pattern_info>
+					
+					
+					
+					
+					<grammar_info>
+						<grammar><![CDATA[‘…이’ 대신에 ‘-어(서)’ 따위가 쓰이기도 한다]]></grammar>
+					</grammar_info>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>107077</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[욕구가 충족되어 마음이 흐뭇하고 흡족하다.]]></definition>
+						<definition_original><![CDATA[욕구가 충족되어 마음이 흐뭇하고 흡족하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[다시 만나게 되어 정말 기쁘다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[어머니는 아들의 귀환이 너무 기쁜 나머지 버선발로 뛰어나갔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[시험에 합격한 것이 기뻐서 잠이 오지 않는다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 잃어버린 책을 찾아서 매우 기뻤다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[모두들 나를 기쁘게 맞아 주었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그녀는 기쁜 마음으로 아이들을 가르쳤다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[유신 장군은 젊은 청년들이 나랏일에 매우 관심을 가지고 자기를 찾아온 것이 기뻤다.]]></example>
+							
+							<source><![CDATA[홍효민, 신라 통일]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+						
+						<lexical_info>
+							<word>슬프다</word>
+							<unit>
+								
+								
+								
+								
+								의미
+								
+							</unit>
+							<type></type>
+							<link_target_code>208129</link_target_code>
+							<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=448130&searchKeywordTo=3]]></link>
+						</lexical_info>
+						
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

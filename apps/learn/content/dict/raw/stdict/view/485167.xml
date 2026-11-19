@@ -1,0 +1,223 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202329</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>485167</target_code>
+		<word_info>
+			<word><![CDATA[주문]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				한자어
+				
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[注文]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[주ː문]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>485167001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>485167001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>22961</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 상품을 만들거나 파는 사람에게 그 상품의 생산이나 수송, 또는 서비스의 제공을 요구하거나 청구함. 또는 그 요구나 청구.]]></definition>
+						<definition_original><![CDATA[어떤 상품을 만들거나 파는 사람에게 그 상품의 생산이나 수송, 또는 서비스의 제공을 요구하거나 청구함. 또는 그 요구나 청구.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[주문 판매.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[주문이 들어오다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[주문이 쇄도하다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[주문을 받다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[손님의 주문에 따라 점원은 여러 색깔의 손수건을 대여섯 장 진열대 위에 올려놨다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그의 아이디어가 히트를 친 판촉물들은 거의가 다 상품으로도 살아남아 꾸준히 주문이 오고 있었다.]]></example>
+							
+							<source><![CDATA[박완서, 우황청심환]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>55006</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[다른 사람에게 어떤 일을 하도록 요구하거나 부탁함. 또는 그 요구나 부탁.]]></definition>
+						<definition_original><![CDATA[다른 사람에게 어떤 일을 하도록 요구하거나 부탁함. 또는 그 요구나 부탁.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[소영이 가연의 주문대로 베개를 고여 주고 의자에 앉는다.]]></example>
+							
+							<source><![CDATA[홍성원, 육이오]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[주인 부부는 그때까지도 내게 아무런 주문도 해 오지 않았다.]]></example>
+							
+							<source><![CDATA[이동하, 장난감 도시]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

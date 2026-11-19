@@ -1,0 +1,509 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203143</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>403850</target_code>
+		<word_info>
+			<word><![CDATA[깔다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[깔다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[깔아]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[까라]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[까니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[까니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[까오]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[까오]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			<origin><![CDATA[＜다＜석상＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>403850001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>403850001001</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을 …에</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>481135</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[바닥에 펴 놓다.]]></definition>
+						<definition_original><![CDATA[바닥에 펴 놓다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[돗자리를 잔디 위에 깔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[나는 낡은 군용 담요를 바닥에 깔아 주었다.]]></example>
+							
+							<source><![CDATA[김용성, 도둑 일기]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+						
+						<multimedia_info>
+							
+							<lable><![CDATA[깔다]]></lable>
+							
+							<type>
+								
+								동영상
+								
+								
+								
+								
+								
+							</type>
+							<link><![CDATA[https://dicmedia.korean.go.kr/front/view/mediaView.do?file_no=197108]]></link>
+						</multimedia_info>
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>484592</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[돈이나 물건 따위를 여기저기 빌려주거나 팔려고 내놓다.]]></definition>
+						<definition_original><![CDATA[돈이나 물건 따위를 여기저기 빌려주거나 팔려고 내놓다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[물건을 좌판에 깔고 팔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[돈을 여기저기에 깔아 놓았다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>403850001002</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>481159</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[무엇을 밑에 두고 누르다.]]></definition>
+						<definition_original><![CDATA[무엇을 밑에 두고 누르다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[과일 상자를 깔고 앉다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[바닥이 차가우니 방석을 깔고 앉아라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>484642</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[꼼짝 못 하게 남을 억누르다.]]></definition>
+						<definition_original><![CDATA[꼼짝 못 하게 남을 억누르다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[사람을 너무 깔고 뭉개면 안 되는 거야.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>588145</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[낮은 목소리로 엄숙하게 말하다.]]></definition>
+						<definition_original><![CDATA[낮은 목소리로 엄숙하게 말하다.]]></definition_original>
+						
+
+						
+
+						
+						
+						<sense_grammar_info>
+							<grammar><![CDATA[주로 ‘목소리’와 결합하여]]></grammar>
+						</sense_grammar_info>
+						
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[내가 주제넘은 짓을 하긴 했지만 저렇게 목소리를 깔 필요는 없잖아.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+				<comm_pattern_info>
+					<comm_pattern_code>403850001003</comm_pattern_code>
+					
+					
+					<pattern_info>
+						<pattern>…을 …으로</pattern>
+					</pattern_info>
+					
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>481263</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[어떤 생각이나 현상의 바탕이 되게 하다.]]></definition>
+						<definition_original><![CDATA[어떤 생각이나 현상의 바탕이 되게 하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그것은 죽음을 그 바탕으로 깔고 있는 갖가지 형태의 고통에 대한 공포에서 비롯된 것이었다.]]></example>
+							
+							<source><![CDATA[이문열, 영웅시대]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>484675</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[눈을 아래로 내리뜨다.]]></definition>
+						<definition_original><![CDATA[눈을 아래로 내리뜨다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그녀는 눈을 아래로 깔고 다소곳한 모습으로 앉아 있었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[까만 눈썹을 아래로 깔고 입을 쫑긋쫑긋하며 다리만 달달 까불고 있었다.]]></example>
+							
+							<source><![CDATA[김원일, 노을]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

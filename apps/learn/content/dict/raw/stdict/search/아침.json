@@ -1,0 +1,25 @@
+{
+  "channel": {
+    "total": 1,
+    "item": [
+      {
+        "sup_no": "0",
+        "target_code": "458645",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=458645&searchKeywordTo=3",
+          "definition": "날이 새면서 오전 반나절쯤까지의 동안.",
+          "type": "일반어"
+        },
+        "word": "아침"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202100",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

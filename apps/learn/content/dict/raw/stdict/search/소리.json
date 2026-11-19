@@ -1,0 +1,73 @@
+{
+  "channel": {
+    "total": 5,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "447196",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=447196&searchKeywordTo=3",
+          "definition": "물체의 진동에 의하여 생긴 음파가 귀청을 울리어 귀에 들리는 것.",
+          "type": "일반어"
+        },
+        "word": "소리"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "187146",
+        "pos": "명사",
+        "origin": "小吏",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=187146&searchKeywordTo=3",
+          "definition": "조선 시대에, 중앙과 지방의 관아에 속한 구실아치. 중앙 관서의 아전을 경아전(京衙前), 지방 관서의 아전을 외아전(外衙前)이라고 하였다.",
+          "type": "일반어"
+        },
+        "word": "소리"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "187147",
+        "pos": "명사",
+        "origin": "小利",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=187147&searchKeywordTo=3",
+          "definition": "작은 이익.",
+          "type": "일반어"
+        },
+        "word": "소리"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "183361",
+        "pos": "명사",
+        "origin": "疏履",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=183361&searchKeywordTo=3",
+          "definition": "내간(內艱)에 상제가 신는 엄짚신.",
+          "type": "일반어"
+        },
+        "word": "소리"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "183362",
+        "pos": "명사",
+        "origin": "疏籬",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=183362&searchKeywordTo=3",
+          "definition": "엉성한 울타리.",
+          "type": "일반어"
+        },
+        "word": "소리"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203809",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

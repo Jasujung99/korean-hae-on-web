@@ -1,0 +1,37 @@
+{
+  "channel": {
+    "total": 2,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "303271",
+        "pos": "명사",
+        "origin": "彫心",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=303271&searchKeywordTo=3",
+          "definition": "마음에 새김.",
+          "type": "일반어"
+        },
+        "word": "조심"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "482948",
+        "pos": "명사",
+        "origin": "操心",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=482948&searchKeywordTo=3",
+          "definition": "잘못이나 실수가 없도록 말이나 행동에 마음을 씀.",
+          "type": "일반어"
+        },
+        "word": "조심"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202448",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

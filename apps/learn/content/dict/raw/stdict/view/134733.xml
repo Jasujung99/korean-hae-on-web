@@ -1,0 +1,143 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202802</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>134733</target_code>
+		<word_info>
+			<word><![CDATA[바람]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[바람]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			<origin><![CDATA[바람＜번박＞ [←발+-암]/바＜훈몽＞[←발+-]]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>134733001</pos_code>
+				<pos>의존 명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>134733001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>532291</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[길이의 단위. 한 바람은 실이나 새끼 따위 한 발 정도의 길이이다.]]></definition>
+						<definition_original><![CDATA[길이의 단위. 한 바람은 실이나 새끼 따위 한 발 정도의 길이이다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[실 두 바람.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[한 바람의 새끼.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[신목(神木)에는 사오(四五) 바람 되는 허리를 종이 오려 꽂은 금줄로 둘러 있다.]]></example>
+							
+							<source><![CDATA[최남선, 심춘순례]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

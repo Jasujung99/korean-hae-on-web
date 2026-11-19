@@ -1,0 +1,746 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202408</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>488729</target_code>
+		<word_info>
+			<word><![CDATA[쭉]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[쭉]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>488729001</pos_code>
+				<pos>부사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>488729001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>24114</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[줄이나 금 따위를 곧게 내긋는 모양. ‘죽’보다 센 느낌을 준다.]]></definition>
+						<definition_original><![CDATA[줄이나 금 따위를 곧게 내긋는 모양. ‘<sense_no>23419</sense_no>죽’보다 센 느낌을 준다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[붓으로 쭉 긋다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[종이 위에 한 줄을 쭉 그어라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>55981</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[여럿이 고르게 늘어서거나 가지런히 벌여 있는 모양. ‘죽’보다 센 느낌을 준다.]]></definition>
+						<definition_original><![CDATA[여럿이 고르게 늘어서거나 가지런히 벌여 있는 모양. ‘<sense_no>53811</sense_no>죽’보다 센 느낌을 준다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[쭉 고르게 난 이.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[얼굴 전체에는 지저분한 반찬 가시 같은 수염이 쭉 깔렸다.]]></example>
+							
+							<source><![CDATA[김남천, 맥]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[일자로 쭉 걸린 여자 망토와 조바위와 목도리들이 찬란히 마주 비치는 중에도….]]></example>
+							
+							<source><![CDATA[염상섭, 삼대]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>67482</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[한 줄로 끊어지지 않고 이어지는 모양. ‘죽’보다 센 느낌을 준다.]]></definition>
+						<definition_original><![CDATA[한 줄로 끊어지지 않고 이어지는 모양. ‘<sense_no>67640</sense_no>죽’보다 센 느낌을 준다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[아무도 없는 뒷거리, 벽돌담이 쭉 계속된다.]]></example>
+							
+							<source><![CDATA[박경리, 시장과 전장]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[냇둑으로 쭉 가다가 거기서 고개 하나를 넘으면 이냅죠.]]></example>
+							
+							<source><![CDATA[박경수, 동토]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>70571</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[종이나 천 따위를 한 가닥으로 단번에 찢거나 훑는 모양. ‘죽’보다 센 느낌을 준다.]]></definition>
+						<definition_original><![CDATA[종이나 천 따위를 한 가닥으로 단번에 찢거나 훑는 모양. ‘<sense_no>71186</sense_no>죽’보다 센 느낌을 준다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[종이를 쭉 찢다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[벼를 쭉 훑다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[땀 난 손으로 라이터를 억지로 꺼내려다 바지 주머니 폭이 쭉 나가 버렸다.]]></example>
+							
+							<source><![CDATA[송기숙, 자랏골의 비가]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[윤은 형윤이 시키는 대로 배갈을 마시고 파를 깨물었다. 가슴을 쭉 긁어내리며 확 불이 댕기는 듯했다.]]></example>
+							
+							<source><![CDATA[선우휘, 깃발 없는 기수]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>71796</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[물 따위를 단숨에 들이마시는 모양. ‘죽’보다 센 느낌을 준다.]]></definition>
+						<definition_original><![CDATA[물 따위를 단숨에 들이마시는 모양. ‘<sense_no>71738</sense_no>죽’보다 센 느낌을 준다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[물을 쭉 마시다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[막걸리 한 사발을 쭉 들이켰다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>72366</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[입으로 아주 힘차게 빠는 소리. 또는 그 모양. ‘죽’보다 센 느낌을 준다.]]></definition>
+						<definition_original><![CDATA[입으로 아주 힘차게 빠는 소리. 또는 그 모양. ‘<sense_no>72330</sense_no>죽’보다 센 느낌을 준다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[빨대로 우유를 쭉 빨아 마시다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>72049</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[거침없이 내리 읽거나 외거나 말하는 모양. ‘죽’보다 센 느낌을 준다.]]></definition>
+						<definition_original><![CDATA[거침없이 내리 읽거나 외거나 말하는 모양. ‘<sense_no>72045</sense_no>죽’보다 센 느낌을 준다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[자초지종을 쭉 말하다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[구체적인 예를 쭉 열거해 봐라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>72718</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[곧게 펴거나 벌리는 모양. ‘죽’보다 센 느낌을 준다.]]></definition>
+						<definition_original><![CDATA[곧게 펴거나 벌리는 모양. ‘<sense_no>72716</sense_no>죽’보다 센 느낌을 준다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[네 활개를 쭉 펴다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[허리를 쭉 펴다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>73166</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[소름이나 땀이 많이 돋는 모양. ‘죽’보다 센 느낌을 준다.]]></definition>
+						<definition_original><![CDATA[소름이나 땀이 많이 돋는 모양. ‘<sense_no>73165</sense_no>죽’보다 센 느낌을 준다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[등골에 진땀이 쭉 솟다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[소름이 쭉 끼치다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>72872</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[넓은 범위로 눈길을 보내어 한눈에 훑어보는 모양. ‘죽’보다 센 느낌을 준다.]]></definition>
+						<definition_original><![CDATA[넓은 범위로 눈길을 보내어 한눈에 훑어보는 모양. ‘<sense_no>72871</sense_no>죽’보다 센 느낌을 준다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[책을 쭉 훑어보다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[주변을 쭉 둘러보다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>73073</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[같은 상태로 계속되는 모양. ‘죽’보다 센 느낌을 준다.]]></definition>
+						<definition_original><![CDATA[같은 상태로 계속되는 모양. ‘<sense_no>73040</sense_no>죽’보다 센 느낌을 준다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[오늘은 쭉 집에 있었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그는 십 년 동안 약을 쭉 먹어 왔다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>73174</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[물기나 살, 기운 따위가 한꺼번에 많이 빠진 모양.]]></definition>
+						<definition_original><![CDATA[물기나 살, 기운 따위가 한꺼번에 많이 빠진 모양.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[며칠을 심하게 앓았더니 살이 쭉 빠졌다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>594611</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[윤곽이 몹시 매끈하게 이어지는 모양.]]></definition>
+						<definition_original><![CDATA[윤곽이 몹시 매끈하게 이어지는 모양.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[그 여자 몸매가 쭉 빠진 게 참 늘씬하더라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>594612</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[매우 산뜻하게 차려입은 모양.]]></definition>
+						<definition_original><![CDATA[매우 산뜻하게 차려입은 모양.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[이렇게 쭉 빼입고 어디 가는 거야?]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

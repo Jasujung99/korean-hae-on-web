@@ -1,0 +1,85 @@
+{
+  "channel": {
+    "total": 6,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "190174",
+        "pos": "명사",
+        "origin": "小波",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=190174&searchKeywordTo=3",
+          "definition": "자잘하게 이는 물결. 초속 1미터 이상 5미터 이하의 바람이 불 때 주름살같이 생기는 물결이다.",
+          "type": "일반어"
+        },
+        "word": "소파"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "190175",
+        "pos": "명사",
+        "origin": "小波",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=190175&searchKeywordTo=3",
+          "definition": "‘방정환’의 호.",
+          "type": "일반어"
+        },
+        "word": "소파"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "190176",
+        "pos": "명사",
+        "origin": "小派",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=190176&searchKeywordTo=3",
+          "definition": "작은 당파나 갈래.",
+          "type": "일반어"
+        },
+        "word": "소파"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "190177",
+        "pos": "명사",
+        "origin": "小破",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=190177&searchKeywordTo=3",
+          "definition": "조금 부서짐. 또는 조금 부숨.",
+          "type": "일반어"
+        },
+        "word": "소파"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "190191",
+        "pos": "명사",
+        "origin": "搔爬",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=190191&searchKeywordTo=3",
+          "definition": "‘긁어냄’의 전 용어.",
+          "type": "일반어"
+        },
+        "word": "소파"
+      },
+      {
+        "sup_no": "6",
+        "target_code": "448271",
+        "pos": "명사",
+        "origin": "sofa",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=448271&searchKeywordTo=3",
+          "definition": "등받이와 팔걸이가 있는 길고 푹신한 의자.",
+          "type": "일반어"
+        },
+        "word": "소파"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202631",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

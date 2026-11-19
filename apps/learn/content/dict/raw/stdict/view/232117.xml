@@ -1,0 +1,144 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202034</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>232117</target_code>
+		<word_info>
+			<word><![CDATA[어제]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				
+				한자어
+				
+				
+			</word_type>
+
+			
+			
+			<original_language_info>
+				<original_language><![CDATA[魚梯]]></original_language>
+				<language_type>한자</language_type>
+			</original_language_info>
+			
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[어제]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>232117001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>232117001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>539344</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[둑이나 보 때문에 물길이 막혔을 때에, 한쪽에 계단 따위를 만들어 물고기가 지나다닐 수 있게 만든 구조물.]]></definition>
+						<definition_original><![CDATA[둑이나 보 때문에 물길이 막혔을 때에, 한쪽에 계단 따위를 만들어 물고기가 지나다닐 수 있게 만든 구조물.]]></definition_original>
+						
+
+						
+
+						
+
+						
+						
+						<cat_info>
+							<cat>건설</cat>
+						</cat_info>
+						
+						
+
+						
+
+						
+						
+						
+						<multimedia_info>
+							
+							<lable><![CDATA[어제]]></lable>
+							
+							<type>
+								
+								
+								
+								
+								
+								삽화
+								
+							</type>
+							<link><![CDATA[https://dicmedia.korean.go.kr/front/view/mediaView.do?file_no=101136]]></link>
+						</multimedia_info>
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

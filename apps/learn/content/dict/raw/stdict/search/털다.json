@@ -1,0 +1,25 @@
+{
+  "channel": {
+    "total": 1,
+    "item": [
+      {
+        "sup_no": "0",
+        "target_code": "497290",
+        "pos": "동사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=497290&searchKeywordTo=3",
+          "definition": "달려 있는 것, 붙어 있는 것 따위가 떨어지게 흔들거나 치거나 하다.",
+          "type": "일반어"
+        },
+        "word": "털다"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203413",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

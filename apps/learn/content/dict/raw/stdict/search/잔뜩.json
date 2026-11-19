@@ -1,0 +1,25 @@
+{
+  "channel": {
+    "total": 1,
+    "item": [
+      {
+        "sup_no": "0",
+        "target_code": "475466",
+        "pos": "부사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=475466&searchKeywordTo=3",
+          "definition": "한도에 이를 때까지 가득.",
+          "type": "일반어"
+        },
+        "word": "잔뜩"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203313",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

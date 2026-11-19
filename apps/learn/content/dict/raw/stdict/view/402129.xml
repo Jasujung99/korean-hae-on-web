@@ -1,0 +1,198 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119202538</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>402129</target_code>
+		<word_info>
+			<word><![CDATA[굳-이]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[구지]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+
+			
+			
+			<norm_info>
+				
+				<type>한글 맞춤법</type>
+				
+				
+				
+				<desc><![CDATA[‘굳이’는 ‘굳다’에 ‘-이’가 결합한 말이므로 ‘<IN>구지</IN>’로 적지 않고 ‘굳이’로 적는다. 이는 ‘ㄷ, ㅌ’ 받침 뒤에 종속적 관계를 가진 ‘-이(-)’나 ‘-히-’가 올 적에는 그 ‘ㄷ, ㅌ’이 ‘ㅈ, ㅊ’으로 소리 나더라도 ‘ㄷ, ㅌ’으로 적는다는 규정(한글 맞춤법 제6항)에 따른 것이다.]]></desc>
+				
+			</norm_info>
+			
+			
+			
+			<origin><![CDATA[＜구디＜석상＞←굳-+-이]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>402129001</pos_code>
+				<pos>부사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>402129001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>551923</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[단단한 마음으로 굳게.]]></definition>
+						<definition_original><![CDATA[단단한 마음으로 굳게.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[모든 풀, 온갖 나무가 모조리 눈을 굳이 감고 추위에 몸을 떨고 있을 즈음, 어떠한 자도 꽃을 찾을 리 없고….]]></example>
+							
+							<source><![CDATA[김진섭, 인생 예찬]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[평양 성문은 굳이 닫혀 있고, 보통문 문루 위에는 왜적들이 파수를 보고 있었다.]]></example>
+							
+							<source><![CDATA[박종화, 임진왜란]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>555045</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[고집을 부려 구태여.]]></definition>
+						<definition_original><![CDATA[고집을 부려 구태여.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[굳이 따라가겠다면 할 수 없지.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[최 씨가 제법 목소리를 높였으나 굳이 따지려고 드는 것 같지는 않았다.]]></example>
+							
+							<source><![CDATA[이문열, 변경]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

@@ -1,0 +1,152 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203046</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>497829</target_code>
+		<word_info>
+			<word><![CDATA[키]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[키]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+
+			
+			
+			<relation_info>
+				<word>키를 쓰다</word>
+				<type>관용구</type>
+				<link_target_code>532773</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=532773&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			<origin><![CDATA[키＜훈해＞]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>497829001</pos_code>
+				<pos>명사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>497829001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>301800</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[곡식 따위를 까불러 쭉정이나 티끌을 골라내는 도구. 키버들이나 대를 납작하게 쪼개어 앞은 넓고 평평하게, 뒤는 좁고 우긋하게 엮어 만든다.]]></definition>
+						<definition_original><![CDATA[곡식 따위를 까불러 쭉정이나 티끌을 골라내는 도구. 키버들이나 대를 납작하게 쪼개어 앞은 넓고 평평하게, 뒤는 좁고 우긋하게 엮어 만든다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[키로 쌀을 까부르다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+						
+						<multimedia_info>
+							
+							<lable><![CDATA[키]]></lable>
+							
+							<type>
+								
+								
+								
+								
+								사진
+								
+								
+							</type>
+							<link><![CDATA[https://dicmedia.korean.go.kr/front/view/mediaView.do?file_no=103097]]></link>
+						</multimedia_info>
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

@@ -1,0 +1,25 @@
+{
+  "channel": {
+    "total": 1,
+    "item": [
+      {
+        "sup_no": "0",
+        "target_code": "189919",
+        "pos": "명사",
+        "origin": "洗濯機",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=189919&searchKeywordTo=3",
+          "definition": "빨래하는 기계.",
+          "type": "일반어"
+        },
+        "word": "세탁-기"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203241",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

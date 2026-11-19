@@ -1,0 +1,85 @@
+{
+  "channel": {
+    "total": 6,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "332829",
+        "pos": "품사 없음",
+        "origin": "靑少",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=332829&searchKeywordTo=3",
+          "definition": "‘청소하다’의 어근.",
+          "type": "일반어"
+        },
+        "word": "청소"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "332831",
+        "pos": "명사",
+        "origin": "靑素",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=332831&searchKeywordTo=3",
+          "definition": "옥사마이드를 오산화 인으로 탈수하거나 수은, 은, 금 따위의 사이안화물을 열분해할 때에 생기는 무색의 기체. 특이한 냄새와 독성이 있으며, 불을 붙이면 보라색 불꽃을 내며 타는데 이산화 탄소와 질소로 유리된다. 군사용 독가스로 쓴다. 화학식은 (CN)<sub style='font-size:11px;'>2</sub>.",
+          "type": "일반어"
+        },
+        "word": "청소"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "332832",
+        "pos": "품사 없음",
+        "origin": "淸邵",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=332832&searchKeywordTo=3",
+          "definition": "‘청소하다’의 어근.",
+          "type": "일반어"
+        },
+        "word": "청소"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "332834",
+        "pos": "명사",
+        "origin": "淸宵",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=332834&searchKeywordTo=3",
+          "definition": "맑게 갠 밤.",
+          "type": "일반어"
+        },
+        "word": "청소"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "488096",
+        "pos": "명사",
+        "origin": "淸掃",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=488096&searchKeywordTo=3",
+          "definition": "더럽거나 어지러운 것을 쓸고 닦아서 깨끗하게 함.",
+          "type": "일반어"
+        },
+        "word": "청소"
+      },
+      {
+        "sup_no": "6",
+        "target_code": "332836",
+        "pos": "명사",
+        "origin": "聽訴",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=332836&searchKeywordTo=3",
+          "definition": "재판을 하기 위하여 송사(訟事)를 들음.",
+          "type": "일반어"
+        },
+        "word": "청소"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202514",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

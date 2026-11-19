@@ -1,0 +1,25 @@
+{
+  "channel": {
+    "total": 1,
+    "item": [
+      {
+        "sup_no": "0",
+        "target_code": "429591",
+        "pos": "형용사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=429591&searchKeywordTo=3",
+          "definition": "일이 많거나 또는 서둘러서 해야 할 일로 인하여 딴 겨를이 없다.",
+          "type": "일반어"
+        },
+        "word": "바쁘다"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202642",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 검색</title>
+	<link>https://krdict.korean.go.kr</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 검색 결과</description>
+	<lastBuildDate>20261119203421</lastBuildDate>
+	<total>3</total>
+	<start>1</start>
+	<num>100</num>
+	
+	
+	
+	<item>
+		
+		
+		<target_code>71295</target_code>
+		<word>통장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>通帳</origin>
+		
+		
+		<pronunciation>통장</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=71295</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>금융 기관에서, 예금한 사람에게 예금의 입금과 출금 내역을 적어 주는 장부.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[bank book; deposit passbook]]></trans_word>
+				<trans_dfn><![CDATA[In a financial institution, a book given to a person who deposits money, in which deposits and withdrawals are recorded.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[сберегательная книжка]]></trans_word>
+				<trans_dfn><![CDATA[Счётная книжка, используемая в финансовых учреждениях, в которой ведётся запись отчёта о вложении или снятии денег со счёта владельца. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>68589</target_code>
+		<word>예금 통장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>預金通帳</origin>
+		
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=68589</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>은행 등에서 돈을 저축한 사람에게 주는, 돈이 들어오고 나간 것을 적는 장부.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[bank book; deposit passbook]]></trans_word>
+				<trans_dfn><![CDATA[A book that is given to a person who deposits money in a bank, that keeps the deposits and withdrawals of money.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[банковская книжка]]></trans_word>
+				<trans_dfn><![CDATA[Книжка, которая выдаётся вкладчику в банке и т.п. и в которой ведут учёт проводимых банковских операций, таких как вложение и снятие денег с собственного банковского счёта и т.п. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>74075</target_code>
+		<word>저금 통장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>貯金通帳</origin>
+		
+		
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=74075</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>은행 등에서 돈을 저축한 사람에게 주는, 돈이 들어오고 나간 것을 적는 장부.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[passbook]]></trans_word>
+				<trans_dfn><![CDATA[A book issued by a bank to an account holder where deposits and withdrawals are recorded.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[Сберегательная книжка]]></trans_word>
+				<trans_dfn><![CDATA[используемая в финансовых учреждениях приходно-расходная книга учёта денежных средств лица, внёсшего деньги.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	
+	
+</channel>
+
+

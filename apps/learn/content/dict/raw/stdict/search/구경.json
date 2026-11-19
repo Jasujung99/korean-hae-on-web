@@ -1,0 +1,133 @@
+{
+  "channel": {
+    "total": 10,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "393497",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=393497&searchKeywordTo=3",
+          "definition": "흥미나 관심을 가지고 봄.",
+          "type": "일반어"
+        },
+        "word": "구경"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "35012",
+        "pos": "명사",
+        "origin": "九京",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=35012&searchKeywordTo=3",
+          "definition": "→ 구원.",
+          "type": "일반어"
+        },
+        "word": "구경"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "35013",
+        "pos": "명사",
+        "origin": "九卿",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=35013&searchKeywordTo=3",
+          "definition": "조선 시대에, 삼정승에 다음가는 아홉 고관직. 의정부의 좌우참찬(左右參贊), 육조 판서(六曹判書), 한성부 판윤(漢城府判尹)을 이른다.",
+          "type": "일반어"
+        },
+        "word": "구경"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "35014",
+        "pos": "명사",
+        "origin": "九經",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=35014&searchKeywordTo=3",
+          "definition": "중국 고전인 아홉 가지의 경서. ≪주례≫, ≪의례≫, ≪예기≫, ≪좌전≫, ≪공양전≫, ≪곡량전≫, ≪주역≫, ≪시경≫, ≪서경≫을 이르기도 하고, ≪주역≫, ≪시경≫, ≪서경≫, ≪예기≫, ≪춘추≫, ≪효경≫, ≪논어≫, ≪맹자≫, ≪주례≫를 이르기도 한다.",
+          "type": "일반어"
+        },
+        "word": "구경"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "393498",
+        "pos": "명사",
+        "origin": "口徑",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=393498&searchKeywordTo=3",
+          "definition": "원통 모양으로 된 물건의 아가리의 지름.",
+          "type": "일반어"
+        },
+        "word": "구경"
+      },
+      {
+        "sup_no": "6",
+        "target_code": "35015",
+        "pos": "명사",
+        "origin": "口硬",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=35015&searchKeywordTo=3",
+          "definition": "오경(五硬)의 하나. 어린아이의 혀가 뻣뻣하게 굳어져서 입을 잘 놀리지 못하는 증상이다.",
+          "type": "일반어"
+        },
+        "word": "구경"
+      },
+      {
+        "sup_no": "7",
+        "target_code": "34159",
+        "pos": "명사",
+        "origin": "究竟",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=34159&searchKeywordTo=3",
+          "definition": "마지막에 이르는 것.",
+          "type": "일반어"
+        },
+        "word": "구경"
+      },
+      {
+        "sup_no": "8",
+        "target_code": "34160",
+        "pos": "명사",
+        "origin": "具慶",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=34160&searchKeywordTo=3",
+          "definition": "부모가 모두 살아 있음. 또는 그런 기쁨.",
+          "type": "일반어"
+        },
+        "word": "구경"
+      },
+      {
+        "sup_no": "9",
+        "target_code": "396527",
+        "pos": "명사",
+        "origin": "矩鏡",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=396527&searchKeywordTo=3",
+          "definition": "측량에서, 하나의 직선에 대하여 직각의 방향을 정할 때 쓰는 기구.",
+          "type": "일반어"
+        },
+        "word": "구경"
+      },
+      {
+        "sup_no": "10",
+        "target_code": "34161",
+        "pos": "명사",
+        "origin": "球莖",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=34161&searchKeywordTo=3",
+          "definition": "땅속줄기의 하나. 주축을 이루는 줄기의 밑부분이 녹말 따위의 양분을 많이 저장하여 살이 쪄서 둥근 알 모양을 이룬다. 글라디올러스가 이에 속한다.",
+          "type": "일반어"
+        },
+        "word": "구경"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202933",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

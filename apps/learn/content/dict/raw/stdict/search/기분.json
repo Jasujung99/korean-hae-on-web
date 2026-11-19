@@ -1,0 +1,73 @@
+{
+  "channel": {
+    "total": 5,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "403060",
+        "pos": "명사",
+        "origin": "氣分",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=403060&searchKeywordTo=3",
+          "definition": "대상·환경 따위에 따라 마음에 절로 생기며 한동안 지속되는, 유쾌함이나 불쾌함 따위의 감정.",
+          "type": "일반어"
+        },
+        "word": "기분"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "49595",
+        "pos": "명사",
+        "origin": "氣奔",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=49595&searchKeywordTo=3",
+          "definition": "온몸의 살갗이 몹시 가렵고 긁으면 피가 나는 피부병.",
+          "type": "일반어"
+        },
+        "word": "기분"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "49596",
+        "pos": "명사",
+        "origin": "幾分",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=49596&searchKeywordTo=3",
+          "definition": "잘 모르는 수량이나 정도.",
+          "type": "일반어"
+        },
+        "word": "기분"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "49597",
+        "pos": "명사",
+        "origin": "箕畚",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=49597&searchKeywordTo=3",
+          "definition": "키와 삼태기를 아울러 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "기분"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "49598",
+        "pos": "명사",
+        "origin": "機分",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=49598&searchKeywordTo=3",
+          "definition": "사람의 됨됨이.",
+          "type": "일반어"
+        },
+        "word": "기분"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202621",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

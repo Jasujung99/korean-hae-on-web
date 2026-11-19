@@ -1,0 +1,405 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203352</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>98047</target_code>
+		<word_info>
+			<word><![CDATA[뜨겁다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[뜨겁따]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[뜨거워]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[뜨거워]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[뜨거우니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[뜨거우니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+			
+			<relation_info>
+				<word>뜨거운 맛을 보다</word>
+				<type>관용구</type>
+				<link_target_code>521078</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=521078&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>뜨거운 국에 맛 모른다</word>
+				<type>속담</type>
+				<link_target_code>521075</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=521075&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>뜨거운 물에 덴 놈 숭늉 보고도 놀란다</word>
+				<type>속담</type>
+				<link_target_code>521076</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=521076&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			<relation_info>
+				<word>뜨겁기는 박태보(朴泰輔)가 살았을라고</word>
+				<type>속담</type>
+				<link_target_code>521077</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=521077&searchKeywordTo=1]]></link>
+			</relation_info>
+			
+			
+
+			
+			
+			
+
+			
+			
+			<lexical_info>
+				<word>차갑다</word>
+				<unit>
+					
+					어휘
+					
+					
+					
+					
+				</unit>
+				<type></type>
+				<link_target_code>490063</link_target_code>
+				<link><![CDATA[https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=490063&searchKeywordTo=3]]></link>
+			</lexical_info>
+			
+			
+
+			
+			<pos_info>
+				<pos_code>98047001</pos_code>
+				<pos>형용사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>98047001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>2251</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[손이나 몸에 상당한 자극을 느낄 정도로 온도가 높다.]]></definition>
+						<definition_original><![CDATA[손이나 몸에 상당한 자극을 느낄 정도로 온도가 높다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[뜨거운 물.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[뜨거운 햇볕.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[이 다리미는 뜨거우니 조심해라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[뜨거운 국물을 후후 불어 가며 먹었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[날은 뜨겁고 바람 한 점 없었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[한낮의 태양은 뜨거웠다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[태양은 머리 위에서 강렬한 빛으로 부서져 내리고 함상의 철제 시설물들은 복사열 때문에 뜨거워 손을 댈 수 없을 정도였다.]]></example>
+							
+							<source><![CDATA[이원규, 훈장과 굴레]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>38760</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[사람의 몸이 정상보다 열이 높다.]]></definition>
+						<definition_original><![CDATA[사람의 몸이 정상보다 열이 높다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[온몸이 뜨겁다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[열이 올라 몸이 불덩이처럼 뜨겁다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>64313</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[무안하거나 부끄러워 얼굴이 몹시 화끈하다.]]></definition>
+						<definition_original><![CDATA[무안하거나 부끄러워 얼굴이 몹시 화끈하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[얼굴이 뜨거워 고개를 들 수 없었다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>69930</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[(비유적으로) 감정이나 열정 따위가 격렬하다.]]></definition>
+						<definition_original><![CDATA[(비유적으로) 감정이나 열정 따위가 격렬하다.]]></definition_original>
+						
+
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[진심으로 뜨거운 감사를 드립니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[뜨거운 박수를 부탁드립니다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[뜨거운 눈물이 하염없이 쏟아졌다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[그들의 신앙은 너무나 뜨거웠고 간절했고 순결했다.]]></example>
+							
+							<source><![CDATA[한무숙, 만남]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

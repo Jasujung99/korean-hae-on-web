@@ -1,0 +1,271 @@
+
+
+
+
+
+
+
+
+
+
+<channel>
+	<title>표준 국어 대사전 개발 지원(Open API) - 사전  검색</title>
+	<link>https://kdict.korean.go.kr/standard</link>
+	<description>표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과</description>
+	<lastBuildDate>20261119203147</lastBuildDate>
+	<total>1</total>
+	
+	<item>
+		<target_code>54551</target_code>
+		<word_info>
+			<word><![CDATA[꺼-내다]]></word>
+			<word_unit>
+				
+				단어
+				
+				
+				
+				
+			</word_unit>
+			<word_type>
+				
+				
+				고유어
+				
+				
+				
+			</word_type>
+
+			
+
+			
+			
+			<pronunciation_info>
+				<pronunciation><![CDATA[꺼ː내다]]></pronunciation>
+			</pronunciation_info>
+			
+			
+
+			
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[꺼내어]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[꺼ː내어]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+				<abbreviation_info>
+					<abbreviation><![CDATA[꺼내]]></abbreviation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[꺼ː내]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</abbreviation_info>
+				
+			</conju_info>
+			
+			<conju_info>
+				
+				<conjugation_info>
+					<conjugation><![CDATA[꺼내니]]></conjugation>
+					
+					
+					<pronunciation_info>
+						<pronunciation><![CDATA[꺼ː내니]]></pronunciation>
+					</pronunciation_info>
+					
+					
+				</conjugation_info>
+				
+				
+			</conju_info>
+			
+			
+
+			
+
+			
+			
+			<origin><![CDATA[←끗-+-어+나-+-이-]]></origin>
+			
+			
+
+			
+
+			
+			<pos_info>
+				<pos_code>54551001</pos_code>
+				<pos>동사</pos>
+
+				
+
+				
+				<comm_pattern_info>
+					<comm_pattern_code>54551001001</comm_pattern_code>
+					
+					
+
+					
+
+					
+					<sense_info>
+						<sense_code>552059</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[속이나 안에 들어 있는 물건 따위를 손이나 도구를 이용하여 밖으로 나오게 하다.]]></definition>
+						<definition_original><![CDATA[속이나 안에 들어 있는 물건 따위를 손이나 도구를 이용하여 밖으로 나오게 하다.]]></definition_original>
+						
+
+						
+						
+						<sense_pattern_info>
+							<pattern>…에서 …을</pattern>
+						</sense_pattern_info>
+						
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[호주머니에서 동전을 꺼내다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[가방에서 책을 꺼내다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[옷장에서 옷을 꺼내다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[광에서 삽 두 자루만 꺼내 오너라.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+					<sense_info>
+						<sense_code>555145</sense_code>
+						<type>
+							
+							일반어
+							
+							
+							
+							
+						</type>
+						<definition><![CDATA[마음속의 생각 따위를 말로 드러내 놓기 시작하다.]]></definition>
+						<definition_original><![CDATA[마음속의 생각 따위를 말로 드러내 놓기 시작하다.]]></definition_original>
+						
+
+						
+						
+						<sense_pattern_info>
+							<pattern>…을</pattern>
+						</sense_pattern_info>
+						
+						
+
+						
+
+						
+
+						
+
+						
+						
+						<example_info>
+							<example><![CDATA[말을 꺼내다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[이야기를 꺼내다.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[네 생각을 숨김없이 꺼내어 이야기해 보렴.]]></example>
+							
+							
+							
+							
+						</example_info>
+						
+						<example_info>
+							<example><![CDATA[정희가 전에 없이 머뭇거리며 몹시 어려운 얘기를 꺼내듯 입을 떼었다.]]></example>
+							
+							<source><![CDATA[조해일, 왕십리]]></source>
+							
+							
+							
+							
+						</example_info>
+						
+						
+						
+
+						
+
+					</sense_info>
+					
+				</comm_pattern_info>
+				
+			</pos_info>
+			
+		</word_info>
+	</item>
+	
+</channel>
+
+

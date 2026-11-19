@@ -1,0 +1,4532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<channel>
+	<title>한국어 기초사전 개발 지원(Open API) - 사전 검색</title>
+	<link>https://krdict.korean.go.kr</link>
+	<description>한국어 기초사전 개발 지원(Open API) - 사전 검색 결과</description>
+	<lastBuildDate>20261119203221</lastBuildDate>
+	<total>32</total>
+	<start>1</start>
+	<num>100</num>
+	
+	
+	
+	<item>
+		
+		
+		<target_code>73276</target_code>
+		<word>학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>學校</origin>
+		
+		
+		<pronunciation>학꾜</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=73276</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>일정한 목적, 교과 과정, 제도 등에 따라 학생을 교육하는 기관.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[school]]></trans_word>
+				<trans_dfn><![CDATA[An institution that educates students according to a specific purpose, curriculum, system, etc.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[школа]]></trans_word>
+				<trans_dfn><![CDATA[Учебное заведение, где учитель обучает учащихся с определённой целью согласно предметному курсу, системе и т.п.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>84032</target_code>
+		<word>학교생활</word>
+		<sup_no>0</sup_no>
+		
+		<origin>學校生活</origin>
+		
+		
+		<pronunciation>학꾜생활</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=84032</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>학생이 학교에서 학생으로서 활동하며 지내는 생활.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[school life; student life]]></trans_word>
+				<trans_dfn><![CDATA[A student's life in school. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[школьная жизнь]]></trans_word>
+				<trans_dfn><![CDATA[Жизнь и деятельность учащихся в учебном заведении. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>84031</target_code>
+		<word>학교 교육</word>
+		<sup_no>0</sup_no>
+		
+		<origin>學校敎育</origin>
+		
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=84031</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>학교에서 받는 교육.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[school education; schooling]]></trans_word>
+				<trans_dfn><![CDATA[The education received in school. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[школьное образование]]></trans_word>
+				<trans_dfn><![CDATA[Обучение в школе.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>84153</target_code>
+		<word>학교장</word>
+		<sup_no>0</sup_no>
+		
+		<origin>學校長</origin>
+		
+		
+		<pronunciation>학꾜장</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=84153</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>초, 중, 고등학교에서 각 학교의 교육과 행정을 책임지고 학교를 대표하는 직위. 또는 그 직위에 있는 사람.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[principal ]]></trans_word>
+				<trans_dfn><![CDATA[A representative position in elementary school, middle school, or high school, responsible for the education and administration at the school, or the person in such a position. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[директор школы]]></trans_word>
+				<trans_dfn><![CDATA[Человек, занимающий самый высокий административный и академический пост в младшей, средней или старшей школе. А также занимаемая им должность.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>23380</target_code>
+		<word>고등학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>高等學校</origin>
+		
+		
+		<pronunciation>고등학꾜</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=23380</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>중학교를 졸업하거나 중학교를 졸업한 수준의 학력을 갖추면 갈 수 있는 학교.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[high school]]></trans_word>
+				<trans_dfn><![CDATA[A school which a middle school graduate or a person with equivalent qualifications goes to.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[старшая школа]]></trans_word>
+				<trans_dfn><![CDATA[Школа, которую посещает учащийся, закончивший среднюю школу.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>66319</target_code>
+		<word>대학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>大學校</origin>
+		
+		
+		<pronunciation>대ː학꾜</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=66319</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>고등학교를 졸업하고 진학하는 교육 기관. 또는 그런 기관이 들어 있는 건물과 시설.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[university; college]]></trans_word>
+				<trans_dfn><![CDATA[An institution offering the last stage of school education attended by high school graduates, or the building and facilities accommodating this institution.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[высшее учебное заведение]]></trans_word>
+				<trans_dfn><![CDATA[Образовательное учреждение, куда поступают после окончания старшей школы. Или здание и сооружение, где располагается такое учреждение.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>90646</target_code>
+		<word>여자 고등학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>女子高等學校</origin>
+		
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=90646</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>여학생만 다니는 고등학교.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[girls' high school]]></trans_word>
+				<trans_dfn><![CDATA[A high school where only female students attend.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[высшая женская школа]]></trans_word>
+				<trans_dfn><![CDATA[Старшая школа, в которой учатся только девочки.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>90648</target_code>
+		<word>여자 중학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>女子中學校</origin>
+		
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=90648</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>여학생만 다니는 중학교.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[girls' middle school]]></trans_word>
+				<trans_dfn><![CDATA[A middle school where only female students attend.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[средняя женская школа]]></trans_word>
+				<trans_dfn><![CDATA[Средняя школа, в которой учатся только девочки.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>30212</target_code>
+		<word>중학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>中學校</origin>
+		
+		
+		<pronunciation>중학꾜</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=30212</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>초등학교를 졸업하거나 초등학교를 졸업한 수준의 학력을 갖추면 갈 수 있는 학교.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[middle school]]></trans_word>
+				<trans_dfn><![CDATA[A school that can be attended by those who have graduated from elementary school or have the academic qualifications equivalent to an elementary school graduate.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[девятилетняя школа; (досл.) средняя школа]]></trans_word>
+				<trans_dfn><![CDATA[Школа, в которую можно поступить после окончания начальной школы или при наличии соответствующего уровня образования.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>32791</target_code>
+		<word>초등학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>初等學校</origin>
+		
+		
+		<pronunciation>초등학꾜</pronunciation>
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=32791</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>아동들에게 기본적인 교육을 실시하기 위한 학교. 만 여섯 살에 입학하여 육 년 동안 기본 교육을 받는다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[elementary school; primary school]]></trans_word>
+				<trans_dfn><![CDATA[A school for providing basic education to children. Children enter at the age of six and receive basic education for six years.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[начальная школа]]></trans_word>
+				<trans_dfn><![CDATA[Школа для получения детьми начального образования. Поступают в возрасте шести лет и получают базовое образование в течение шести лет.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>84105</target_code>
+		<word>한글 학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>한글學校</origin>
+		
+		
+		
+		<word_grade>초급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=84105</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>광복 후에 글을 모르는 사람에게 한글을 가르치던 교육 기관.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[Hangeul hakgyo]]></trans_word>
+				<trans_dfn><![CDATA[Korean language school: An educational institution that taught the illiterate Hangeul, the Korean language, after the nation's liberation from Japan.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[школа корейского языка]]></trans_word>
+				<trans_dfn><![CDATA[Образовательное учреждение, в котором проводилось обучение безграмотных людей корейской письменности после получения независимости.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		<sense>
+			<sense_order>2</sense_order>
+			<definition>외국인이나 한글을 모르는 한국 사람에게 한글을 가르치는 기관.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[Korean language school; Korean language institute]]></trans_word>
+				<trans_dfn><![CDATA[An institution that teaches Hangeul, the Korean language, to foreigners or Koreans who do not know the language.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[школа корейского языка]]></trans_word>
+				<trans_dfn><![CDATA[Учреждение, обучающее корейскому языку и корейской письменности иностранных людей и корейцев, не владеющих корейским языком.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>19462</target_code>
+		<word>공업 고등학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>工業高等學校</origin>
+		
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=19462</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>공업에 관한 전문 지식을 가르치는 고등학교.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[technical high school]]></trans_word>
+				<trans_dfn><![CDATA[A high school that teaches the specialized knowledge of the manufacturing industry.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[Старшая индустриальная школа ]]></trans_word>
+				<trans_dfn><![CDATA[старшие классы корейской школы, специализирующиеся на таких предметах, которые требуются в промышленности.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>25570</target_code>
+		<word>남학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>男學校</origin>
+		
+		
+		<pronunciation>남학꾜</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=25570</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>남학생만 가르치는 학교.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[boys-only school]]></trans_word>
+				<trans_dfn><![CDATA[A school at which only male students are taught.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[мужская школа]]></trans_word>
+				<trans_dfn><![CDATA[Школа, где обучаются учащиеся только мужского пола.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>70712</target_code>
+		<word>여학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>女學校</origin>
+		
+		
+		<pronunciation>여학꾜</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=70712</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>여학생만 다니는 학교.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[girls-only school]]></trans_word>
+				<trans_dfn><![CDATA[A school that only female students attend. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[женская школа]]></trans_word>
+				<trans_dfn><![CDATA[Школа, которую посещают только девочки.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>601000</target_code>
+		<word>중고등학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>中高等學校</origin>
+		
+		
+		<pronunciation>중고등학꾜</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=601000</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>중학교와 고등학교를 함께 이르는 말.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[middle and high school]]></trans_word>
+				<trans_dfn><![CDATA[A term referring to middle school and high school together.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[средняя и старшая школа]]></trans_word>
+				<trans_dfn><![CDATA[Слово, обозначающее вместе средние и старшие классы школы.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>22606</target_code>
+		<word>공군 사관 학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>空軍士官學校</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=22606</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>공군에서 장교를 양성하기 위하여 설립한 4년제 군사 학교.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[Air Force Academy]]></trans_word>
+				<trans_dfn><![CDATA[A 4-year military school of the air force established to educate commissioned officers.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[Офицерская школа ВВС]]></trans_word>
+				<trans_dfn><![CDATA[военная школа с 4-летним сроком обучения, созданная для подготовки офицеров воздушно-военных сил.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>22875</target_code>
+		<word>공립 학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>公立學校</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=22875</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>지방 자치 단체가 지방비로 설립하여 운영하는 학교.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[public school]]></trans_word>
+				<trans_dfn><![CDATA[A school established and managed by the local government with its own budget.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[муниципальная школа]]></trans_word>
+				<trans_dfn><![CDATA[Школа, учреждённая на средства местного бюджета и управляемая органами местного самоуправления.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>36738</target_code>
+		<word>국민학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>國民學校</origin>
+		
+		
+		<pronunciation>궁민학꾜</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=36738</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>'초등학교'를 전에 이르던 말.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[elementary school]]></trans_word>
+				<trans_dfn><![CDATA[A word used previously to refer to 'chodeunghaggyo' (elementary school).]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[начальная школа; младшие классы]]></trans_word>
+				<trans_dfn><![CDATA[Прежнее название ‘초등학교(начальной школы)’.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>45238</target_code>
+		<word>농업 고등학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>農業高等學校</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=45238</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>농산물을 재배하고 가공하며 가축을 기르는 일 등 농업에 관한 실제 업무 교육을 실시하는 고등학교.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[agriculture high school]]></trans_word>
+				<trans_dfn><![CDATA[A high school in which education on actual agricultural tasks such as cultivation and the process of creating farm produce, raising livestock, etc., is given.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[профильная школа с сельскохозяйственным уклоном]]></trans_word>
+				<trans_dfn><![CDATA[Старшая школа, в учебную программу которой включены предметы по ведению сельского хозяйства.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>91179</target_code>
+		<word>부속 고등학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>附屬高等學校</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=91179</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>사범 대학에 딸리게 하여 설치한 고등학교.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[high school affiliated to a college]]></trans_word>
+				<trans_dfn><![CDATA[A high school established as an attachment to a teacher's college.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[]]></trans_word>
+				<trans_dfn><![CDATA[Старшие классы средней школы при педагогическом университете; гимназия (старшие классы) основанная при педагогическом университете.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>90508</target_code>
+		<word>부속 중학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>附屬中學校</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=90508</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>사범 대학에 딸리게 하여 설치한 중학교.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[middle school affiliated to a college]]></trans_word>
+				<trans_dfn><![CDATA[A middle school established as an attachment to a teacher's college.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[]]></trans_word>
+				<trans_dfn><![CDATA[Школа средних классов, основанная при педагогическом университете.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>62028</target_code>
+		<word>사관 학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>士官學校</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=62028</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>육군, 해군, 공군의 장교를 길러 내기 위한 4년제 군사 학교.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[military academy]]></trans_word>
+				<trans_dfn><![CDATA[A four-year military school, which is built to train the officers of the army, navy, and air force.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[военное училище]]></trans_word>
+				<trans_dfn><![CDATA[Военное училище четырёхлетнего обучения, готовящее офицеров военно-морского или военно-воздушного флота, а также других войск.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>61926</target_code>
+		<word>사립 학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>私立學校</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=61926</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>개인이나 민간 단체가 세우고 운영하는 학교.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[private school]]></trans_word>
+				<trans_dfn><![CDATA[A school established and operated by an individual or private organization.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[частная школа]]></trans_word>
+				<trans_dfn><![CDATA[Учебное заведение, основанное частным лицом или какой-либо организацией, но не государством.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>92079</target_code>
+		<word>상업 고등학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>商業高等學校</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=92079</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>상업에 관한 지식과 기술을 전문적으로 가르치는 고등학교.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[commercial high school]]></trans_word>
+				<trans_dfn><![CDATA[A high school that teaches the knowledge and skills related to commerce in particular.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[Средняя школа торговли]]></trans_word>
+				<trans_dfn><![CDATA[старшие классы школы, в которой обучают ведению торговли, коммерческих дел.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>64075</target_code>
+		<word>소학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>小學校</origin>
+		
+		
+		<pronunciation>소ː학꾜</pronunciation>
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=64075</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>‘초등학교’를 전에 이르던 말.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[primary school; elementary school]]></trans_word>
+				<trans_dfn><![CDATA[A word used before to refer to ‘elementary school.’]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[начальная школа]]></trans_word>
+				<trans_dfn><![CDATA[Прежнее название для '초등학교(начальная школа)'.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>66596</target_code>
+		<word>시범 학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>示範學校</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=66596</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>특정한 정책이나 교육을 시범적으로 실시하여 다른 학교의 본보기나 연구의 대상이 되는 학교.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[model school]]></trans_word>
+				<trans_dfn><![CDATA[A school whose specific policy or method of education is benchmarked or studied by other schools.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[экспериментальное учебное заведение]]></trans_word>
+				<trans_dfn><![CDATA[Учебное заведение, являющееся предметом исследования или же предметом опробования определённой политики или новой системы образования, отличающейся от используемой в других школах.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>91367</target_code>
+		<word>실업 학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>實業學校</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=91367</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>농업, 상업, 공업 등에 관한 실제 직업 교육을 실시하는 고등학교.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[vocational school; trade school]]></trans_word>
+				<trans_dfn><![CDATA[A high school providing practical job education in agriculture, business, industry, etc.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[профшкола]]></trans_word>
+				<trans_dfn><![CDATA[старшие классы школы, где проводится обучение ведению сельского хозяйства, торговле и прочим специальностям.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>90539</target_code>
+		<word>야간 학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>夜間學校</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=90539</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>저녁이나 밤 시간을 이용하여 학습을 하기 위한 시설과 교과 과정을 갖추고 있는 교육 기관.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[night school]]></trans_word>
+				<trans_dfn><![CDATA[An educational institute that has the facilities and curriculum suitable for students who study evenings and nights.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[вечерняя школа]]></trans_word>
+				<trans_dfn><![CDATA[Учебное заведение, в котором имеются помещения и учебная программа для обучения в вечернее или ночное время. ]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>601990</target_code>
+		<word>자립형 사립 고등학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>自立型私立高等學校</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=601990</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>정부의 보조금 지원이나 규제를 받지 않고 교사와 학생을 자체 기준에 따라 뽑으며 교과 과정을 편성하거나 수업료를 정하는 일을 자율적으로 할 수 있는 사립 고등학교.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[independent private high school]]></trans_word>
+				<trans_dfn><![CDATA[A private high school that selects teachers and students according to its own criteria, organizes curriculum, and sets tuition fees without receiving government subsidies or regulation.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[независимая частная средняя школа; автономная частная средняя школа]]></trans_word>
+				<trans_dfn><![CDATA[Частная средняя школа, которая не получает субсидии или регулирования со стороны правительства, самостоятельно выбирает учителей и студентов по собственным критериям, самостоятельно формирует учебные планы и устанавливает плату за обучение.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>90852</target_code>
+		<word>주일 학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>主日學校</origin>
+		
+		
+		
+		<word_grade>고급</word_grade>
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=90852</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>일요일마다 교회에서 사람들에게 성경을 가르치는 모임.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[Sunday school]]></trans_word>
+				<trans_dfn><![CDATA[A gathering that meets at a church every Sunday and teaches people the Bible.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[религиозная воскресная школа]]></trans_word>
+				<trans_dfn><![CDATA[Воскресное собрание в церкви, где людей обучают Библии.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>602018</target_code>
+		<word>외국어 고등학교</word>
+		<sup_no>0</sup_no>
+		
+		<origin>外國語高等學校 </origin>
+		
+		
+		
+		<pos></pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=602018</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition> 특수 목적 고등학교의 하나. 외국어 분야에 뛰어난 능력을 갖춘 인재를 양성하기 위한 중등 교육 기관이다.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[foreign language high school]]></trans_word>
+				<trans_dfn><![CDATA[One of the special purpose high schools; it is a secondary educational institution aimed at nurturing talents with outstanding abilities in the field of foreign languages.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[специализированная школа иностранных языков]]></trans_word>
+				<trans_dfn><![CDATA[Один из видов специализированных средних школ. Среднее учебное заведение для подготовки талантливых кадров в области иностранных языков.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	<item>
+		
+		
+		<target_code>46978</target_code>
+		<word>대학교수</word>
+		<sup_no>0</sup_no>
+		
+		<origin>大學敎授</origin>
+		
+		
+		<pronunciation>대ː학꾜수</pronunciation>
+		
+		
+		<word_grade>중급</word_grade>
+		
+		<pos>명사</pos>
+		<link>https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=46978</link>
+		
+		
+		<sense>
+			<sense_order>1</sense_order>
+			<definition>대학에서 학생들을 가르치고 학문을 연구하는 사람.</definition>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				
+				영어
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[university professor; college professor]]></trans_word>
+				<trans_dfn><![CDATA[A person whose job it is to teach college students and study a special field in depth.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<translation>
+				<trans_lang>
+				
+				
+				
+				
+				
+				러시아어
+				
+				
+				
+				
+				
+				
+				
+				</trans_lang>
+				<trans_word><![CDATA[профессор университета]]></trans_word>
+				<trans_dfn><![CDATA[Лицо, которое занимается исследовательской работой и преподаёт какую-либо науку студентам в университете.]]></trans_dfn>
+			</translation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</sense>
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+	</item>
+	
+	
+	
+</channel>
+
+

@@ -1,0 +1,61 @@
+{
+  "channel": {
+    "total": 4,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "404221",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=404221&searchKeywordTo=3",
+          "definition": "북청 사자놀음에 나오는 양반의 하인. 또는 그 하인이 쓰는 분홍 바탕에 수염이 달린 탈.",
+          "type": "일반어"
+        },
+        "word": "꼭"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "404222",
+        "pos": "부사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=404222&searchKeywordTo=3",
+          "definition": "야무지게 힘을 주어 누르거나 죄는 모양.",
+          "type": "일반어"
+        },
+        "word": "꼭"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "55687",
+        "pos": "부사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=55687&searchKeywordTo=3",
+          "definition": "어떤 일이 있어도 틀림없이.",
+          "type": "일반어"
+        },
+        "word": "꼭"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "55688",
+        "pos": "품사 없음",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=55688&searchKeywordTo=3",
+          "definition": "‘꼭하다’의 어근.",
+          "type": "일반어"
+        },
+        "word": "꼭"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203149",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

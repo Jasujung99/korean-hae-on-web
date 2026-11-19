@@ -1,0 +1,37 @@
+{
+  "channel": {
+    "total": 2,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "407607",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=407607&searchKeywordTo=3",
+          "definition": "일정한 일을 하는 데 걸리는 날의 수.",
+          "type": "일반어"
+        },
+        "word": "날-짜"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "60044",
+        "pos": "명사",
+        "origin": "",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=60044&searchKeywordTo=3",
+          "definition": "말리거나 익히거나 가공하지 아니한 먹을거리.",
+          "type": "일반어"
+        },
+        "word": "날-짜"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202255",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

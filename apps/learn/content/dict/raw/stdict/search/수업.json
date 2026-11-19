@@ -1,0 +1,49 @@
+{
+  "channel": {
+    "total": 3,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "194270",
+        "pos": "명사",
+        "origin": "受業",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=194270&searchKeywordTo=3",
+          "definition": "기술이나 학업의 가르침을 받음. 또는 그런 일.",
+          "type": "일반어"
+        },
+        "word": "수업"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "194272",
+        "pos": "명사",
+        "origin": "修業",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=194272&searchKeywordTo=3",
+          "definition": "기술이나 학업을 익히고 닦음. 또는 그런 일.",
+          "type": "일반어"
+        },
+        "word": "수업"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "194293",
+        "pos": "명사",
+        "origin": "授業",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=194293&searchKeywordTo=3",
+          "definition": "교사가 학생에게 지식이나 기능을 가르쳐 줌. 또는 그런 일.",
+          "type": "일반어"
+        },
+        "word": "수업"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202900",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

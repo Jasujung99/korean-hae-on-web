@@ -1,0 +1,49 @@
+{
+  "channel": {
+    "total": 3,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "308146",
+        "pos": "명사",
+        "origin": "指甲",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=308146&searchKeywordTo=3",
+          "definition": "손톱과 발톱을 통틀어 이르는 말.",
+          "type": "일반어"
+        },
+        "word": "지갑"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "486473",
+        "pos": "명사",
+        "origin": "紙甲",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=486473&searchKeywordTo=3",
+          "definition": "종이를 여러 겹 접어서 만든 미늘을 사슴 가죽으로 얽어 짜서 검은 칠을 한 갑옷.",
+          "type": "일반어"
+        },
+        "word": "지갑"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "486474",
+        "pos": "명사",
+        "origin": "紙匣",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=486474&searchKeywordTo=3",
+          "definition": "돈, 증명서 따위를 넣을 수 있도록 가죽이나 헝겊 따위로 쌈지처럼 만든 자그마한 물건.",
+          "type": "일반어"
+        },
+        "word": "지갑"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202311",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

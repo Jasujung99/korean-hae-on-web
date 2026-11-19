@@ -1,0 +1,85 @@
+{
+  "channel": {
+    "total": 6,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "189154",
+        "pos": "명사",
+        "origin": "世守",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=189154&searchKeywordTo=3",
+          "definition": "대대로 지켜 내려옴.",
+          "type": "일반어"
+        },
+        "word": "세수"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "189155",
+        "pos": "명사",
+        "origin": "世數",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=189155&searchKeywordTo=3",
+          "definition": "조상으로부터 자손으로 이어져 내려오는 대(代)의 수.",
+          "type": "일반어"
+        },
+        "word": "세수"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "189156",
+        "pos": "명사",
+        "origin": "世讐",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=189156&searchKeywordTo=3",
+          "definition": "대대로 이어져 내려오는 원수.",
+          "type": "일반어"
+        },
+        "word": "세수"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "447447",
+        "pos": "명사",
+        "origin": "洗手",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=447447&searchKeywordTo=3",
+          "definition": "손이나 얼굴을 씻음.",
+          "type": "일반어"
+        },
+        "word": "세수"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "188861",
+        "pos": "명사",
+        "origin": "稅收",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=188861&searchKeywordTo=3",
+          "definition": "국민에게서 조세(租稅)를 징수하여 얻는 정부의 수입.",
+          "type": "일반어"
+        },
+        "word": "세수"
+      },
+      {
+        "sup_no": "6",
+        "target_code": "188862",
+        "pos": "명사",
+        "origin": "歲首",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=188862&searchKeywordTo=3",
+          "definition": "한 해의 처음. 또는 한 해의 첫 달.",
+          "type": "일반어"
+        },
+        "word": "세수"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119203655",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}

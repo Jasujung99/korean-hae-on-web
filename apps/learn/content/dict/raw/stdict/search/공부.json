@@ -1,0 +1,121 @@
+{
+  "channel": {
+    "total": 9,
+    "item": [
+      {
+        "sup_no": "1",
+        "target_code": "28990",
+        "pos": "명사",
+        "origin": "工夫",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=28990&searchKeywordTo=3",
+          "definition": "학문이나 기술을 배우고 익힘.",
+          "type": "일반어"
+        },
+        "word": "공부"
+      },
+      {
+        "sup_no": "2",
+        "target_code": "394670",
+        "pos": "명사",
+        "origin": "工部",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=394670&searchKeywordTo=3",
+          "definition": "고려 시대에 둔 공부(工部)의 으뜸 벼슬. 정삼품의 벼슬로, 나중에 공조 판서로 이름을 고쳤다.",
+          "type": "일반어"
+        },
+        "word": "공부"
+      },
+      {
+        "sup_no": "3",
+        "target_code": "28993",
+        "pos": "명사",
+        "origin": "公府",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=28993&searchKeywordTo=3",
+          "definition": "임금이 정사(政事)를 보던 곳.",
+          "type": "일반어"
+        },
+        "word": "공부"
+      },
+      {
+        "sup_no": "4",
+        "target_code": "28994",
+        "pos": "명사",
+        "origin": "公簿",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=28994&searchKeywordTo=3",
+          "definition": "관청이나 관공서에서 법규에 따라 작성·비치하는 장부.",
+          "type": "일반어"
+        },
+        "word": "공부"
+      },
+      {
+        "sup_no": "5",
+        "target_code": "28995",
+        "pos": "명사",
+        "origin": "孔父",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=28995&searchKeywordTo=3",
+          "definition": "‘공자’의 다른 이름.",
+          "type": "일반어"
+        },
+        "word": "공부"
+      },
+      {
+        "sup_no": "6",
+        "target_code": "394671",
+        "pos": "명사",
+        "origin": "孔俯",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=394671&searchKeywordTo=3",
+          "definition": "고려 말기·조선 초기의 문신(?~1416). 자는 백공(伯恭). 호는 어촌(漁村)·수선(修仙). 조선 개국 후 검교 한성 부윤(檢校漢城府尹)을 지냈다. 천추사(千秋使)로 중국 명나라에 갔다가 사망하였다.",
+          "type": "일반어"
+        },
+        "word": "공-부"
+      },
+      {
+        "sup_no": "7",
+        "target_code": "28996",
+        "pos": "명사",
+        "origin": "空簿",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=28996&searchKeywordTo=3",
+          "definition": "거짓으로 꾸민 장부.",
+          "type": "일반어"
+        },
+        "word": "공부"
+      },
+      {
+        "sup_no": "8",
+        "target_code": "28997",
+        "pos": "명사",
+        "origin": "貢賦",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=28997&searchKeywordTo=3",
+          "definition": "나라에 바치던 물건과 세금을 통틀어 이르던 말. 넓게는 조세 일반을 의미하나 좁게는 전세(田稅)와 공물(貢物)을 이른다.",
+          "type": "일반어"
+        },
+        "word": "공부"
+      },
+      {
+        "sup_no": "9",
+        "target_code": "28998",
+        "pos": "명사",
+        "origin": "銎斧",
+        "sense": {
+          "link": "https://kdict.korean.go.kr/standard/search/searchView.do?wordNo=28998&searchKeywordTo=3",
+          "definition": "도끼의 등에 만들어진 투겁 속에 자루를 끼워 쓰는 도끼.",
+          "type": "일반어"
+        },
+        "word": "공부"
+      }
+    ],
+    "num": 100,
+    "link": "https://kdict.korean.go.kr/standard",
+    "start": 1,
+    "description": "표준 국어 대사전 개발 지원(Open API) – 사전 검색 결과",
+    "lastbuilddate": "20261119202658",
+    "title": "표준 국어 대사전 개발 지원(Open API) - 사전  검색"
+  }
+}
