@@ -71,6 +71,13 @@ export async function readJson(c: Context): Promise<Record<string, unknown> | nu
   }
 }
 
+/** ㅈ·ㅊ·ㅉ 연습 문항 가운데 들려줄 음원이 있는 것이 하나라도 있는가 */
+export function practiceAudioReady(audio: PreviewAudio): boolean {
+  return PRACTICE_ITEMS.some((item) =>
+    [item.audioId, ...PRACTICE_VOICES.map((row) => voicedAudioId(item.audioId, row.key))].some((id) => audio.refFor(id)),
+  );
+}
+
 /** 학습자가 고른 연습 목소리로 음원 id를 고른다. 파일이 없으면 예전 초안, 그다음 다른 목소리 순서로 찾는다. */
 export function audioPicker(audio: PreviewAudio, voiceKey: string, exampleReading: string = "spoken") {
   const key: PracticeVoiceKey = isPracticeVoiceKey(voiceKey) ? voiceKey : DEFAULT_PRACTICE_VOICE;
@@ -218,7 +225,8 @@ export function createPracticeRoutes(deps: { audio: PreviewAudio; now?: () => Da
         choices: group.choices,
         category: group.category,
         pseudowords: group.pseudowords,
-        status: group.status,
+        // 연습 문항이 코드에 있고, 그 묶음의 연습 음원이 하나 이상 올라와 있을 때만 연습을 연다.
+        status: group.status === "practice" && practiceAudioReady(audio) ? "practice" : "planned",
         stages: group.stages,
       })),
     };

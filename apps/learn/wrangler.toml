@@ -12,3 +12,8 @@ LEARN_APP_ORIGIN = "https://sori.haeonkorean.com"
 LEARN_INVITE_ORIGIN = "https://sori.haeonkorean.com"
 LEARN_EXTRA_ORIGINS = "https://haeon-sori.pages.dev"
 LEARN_DB_URL = "https://cryirvqcpgcdmaupyllq.supabase.co"
+
+# 음원(m4a)과 목록(manifest.json). 앱 배포와 따로 올린다: npm run audio:upload
+[[r2_buckets]]
+binding = "AUDIO"
+bucket_name = "haeon-sori-audio"

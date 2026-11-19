@@ -42,7 +42,7 @@ export function CourseScreen() {
                       연습하기
                     </Link>
                   ) : (
-                    <Pill tone="future">음원 준비 전</Pill>
+                    <Pill tone="future">준비 중</Pill>
                   )}
                 </div>
                 <p className="course-pseudo">
