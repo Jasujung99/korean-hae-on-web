@@ -381,7 +381,23 @@ export function createSupabaseContentRepo(config: DbConfig, fetcher: typeof fetc
       const body: Row = { status, reviewed_by: reviewedBy, reviewed_at: nowIso() };
       if (status === "approved") body.stale = false;
       const rows = await call("PATCH", `phoneme_audio_assets?id=eq.${id}`, body, "return=representation");
-      return rows[0] ? assetFrom(rows[0]) : null;
+      const updated = rows[0] ? assetFrom(rows[0]) : null;
+      if (!updated) return null;
+      if (status === "approved") {
+        await call(
+          "PATCH",
+          `phoneme_audio_assets?id=neq.${id}&audio_id=eq.${encodeURIComponent(updated.audioId)}&status=eq.approved`,
+          { status: "superseded" },
+        );
+        if (updated.itemId && /^[0-9a-f-]{36}$/i.test(updated.itemId)) {
+          await call(
+            "PATCH",
+            `phoneme_audio_assets?id=neq.${id}&item_id=eq.${updated.itemId}&kind=eq.${encodeURIComponent(updated.kind)}&voice_key=eq.${encodeURIComponent(updated.voiceKey)}&stale=eq.true&status=in.(draft,approved)`,
+            { status: "superseded" },
+          );
+        }
+      }
+      return updated;
     },
     async latestRelease() {
       const rows = await call("GET", "phoneme_content_releases?order=seq.desc&limit=1");

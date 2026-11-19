@@ -304,4 +304,124 @@ describe("teacher navigation and read-only content ops screen", () => {
     fireEvent.click(screen.getByRole("button", { name: "그래도 추가" }));
     expect(calls.some((c) => c.method === "POST" && c.path === "/api/teacher/content/items")).toBe(true);
   });
+
+  it("supports inline single TTS confirmation, quota error display, and draft review approve/reject", async () => {
+    const view = makeContentView("j_ch_jj");
+    view.writable = true;
+    view.ttsReady = true;
+    view.stages[0]!.draftAudios = [
+      {
+        assetId: "d1",
+        audioId: "w2",
+        itemId: "item-1",
+        word: "모자",
+        kind: "word",
+        voiceKey: "sulafat",
+        voiceLabel: "Sulafat",
+        durationMs: 1200,
+        generatedAt: new Date().toISOString(),
+        playUrl: "/api/teacher/content/audio/d1",
+      },
+    ];
+    let returnQuota409 = false;
+    const calls: Array<{ method: string; path: string; body?: unknown }> = [];
+    const onUsageRefresh = vi.fn();
+    window.addEventListener("haeon:tts-usage-refresh", onUsageRefresh);
+
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+        const url = new URL(typeof input === "string" ? input : input.toString(), "http://127.0.0.1:4174");
+        const method = (init?.method ?? "GET").toUpperCase();
+        calls.push({ method, path: url.pathname, body: init?.body ? JSON.parse(String(init.body)) : undefined });
+        if (url.pathname === "/api/me") return new Response(JSON.stringify({ error: "not_connected" }), { status: 401 });
+        if (url.pathname === "/api/teacher/learners") return new Response(JSON.stringify(teacherView), { status: 200 });
+        if (url.pathname === "/api/teacher/content/usage") return new Response(JSON.stringify(usageView), { status: 200 });
+        if (url.pathname === "/api/teacher/content") return new Response(JSON.stringify(view), { status: 200 });
+        if (method === "POST" && url.pathname === "/api/teacher/content/items/item-1/audio") {
+          if (returnQuota409) {
+            return new Response(
+              JSON.stringify({
+                error: "daily_quota_exceeded",
+                message: "오늘 한도를 다 썼어요. 오후 5시에 다시 열려요.",
+              }),
+              { status: 409 },
+            );
+          }
+          return new Response(
+            JSON.stringify({
+              asset: { id: "d2", audioId: "w3", status: "draft", durationMs: 800, playUrl: "/api/teacher/content/audio/d2" },
+              usage: usageView,
+            }),
+            { status: 201 },
+          );
+        }
+        if (method === "POST" && url.pathname === "/api/teacher/content/audio/d1/approve") {
+          return new Response(JSON.stringify({ asset: { id: "d1", status: "approved" } }), { status: 200 });
+        }
+        if (method === "POST" && url.pathname === "/api/teacher/content/audio/d1/reject") {
+          return new Response(JSON.stringify({ asset: { id: "d1", status: "rejected" } }), { status: 200 });
+        }
+        return new Response(JSON.stringify({ error: "not_found" }), { status: 404 });
+      }),
+    );
+
+    try {
+      renderTeacher("/teach/content");
+      const genBtn = await screen.findByRole("button", { name: "Charon 모자 단어 음원, 없음, 생성" });
+      fireEvent.click(genBtn);
+      expect(calls.some((c) => c.path.endsWith("/audio"))).toBe(false);
+      expect(screen.getByText("1건 사용")).toBeInTheDocument();
+
+      fireEvent.click(screen.getByRole("button", { name: "만들기" }));
+      await screen.findByRole("region", { name: "음원 초안 검수" });
+      expect(calls.some((c) => c.method === "POST" && c.path === "/api/teacher/content/items/item-1/audio")).toBe(true);
+      expect(onUsageRefresh).toHaveBeenCalled();
+
+      // 409 한도 초과 메시지 확인
+      returnQuota409 = true;
+      fireEvent.click(await screen.findByRole("button", { name: "Charon 모자 단어 음원, 없음, 생성" }));
+      fireEvent.click(screen.getByRole("button", { name: "만들기" }));
+      expect(await screen.findByText("오늘 한도를 다 썼어요. 오후 5시에 다시 열려요.")).toBeInTheDocument();
+
+      // 초안 검수 줄: 길이·승인·제외
+      const draftRegion = screen.getByRole("region", { name: "음원 초안 검수" });
+      expect(draftRegion).toHaveTextContent("1.2초");
+      expect(draftRegion).toHaveTextContent("Sulafat");
+      fireEvent.click(screen.getByRole("button", { name: "승인" }));
+      await vi.waitFor(() => {
+        expect(calls.some((c) => c.method === "POST" && c.path === "/api/teacher/content/audio/d1/approve")).toBe(true);
+      });
+      await vi.waitFor(() => {
+        expect(screen.getByRole("button", { name: "제외" })).toBeEnabled();
+      });
+
+      fireEvent.click(screen.getByRole("button", { name: "제외" }));
+      await vi.waitFor(() => {
+        expect(calls.some((c) => c.method === "POST" && c.path === "/api/teacher/content/audio/d1/reject")).toBe(true);
+      });
+    } finally {
+      window.removeEventListener("haeon:tts-usage-refresh", onUsageRefresh);
+    }
+  });
+
+  it("disables missing audio cells as not ready when writable is true but ttsReady is false", async () => {
+    const view = makeContentView("j_ch_jj");
+    view.writable = true;
+    view.ttsReady = false;
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (input: RequestInfo | URL) => {
+        const url = new URL(typeof input === "string" ? input : input.toString(), "http://127.0.0.1:4174");
+        if (url.pathname === "/api/me") return new Response(JSON.stringify({ error: "not_connected" }), { status: 401 });
+        if (url.pathname === "/api/teacher/learners") return new Response(JSON.stringify(teacherView), { status: 200 });
+        if (url.pathname === "/api/teacher/content/usage") return new Response(JSON.stringify(usageView), { status: 200 });
+        if (url.pathname === "/api/teacher/content") return new Response(JSON.stringify(view), { status: 200 });
+        return new Response(JSON.stringify({ error: "not_found" }), { status: 404 });
+      }),
+    );
+
+    renderTeacher("/teach/content");
+    expect(await screen.findByRole("button", { name: "Charon 모자 단어 음원, 없음, 생성 준비 안 됨" })).toBeDisabled();
+  });
 });

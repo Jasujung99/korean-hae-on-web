@@ -31,9 +31,10 @@ import type {
 } from "../preview/contract.ts";
 import type { AudioObjectStore } from "./audio-store.ts";
 import { buildReadOnlyContentView, isGroupId } from "./read-only.ts";
-import type { AudioAssetRow, ContentItemRow, ContentReleaseRow, ContentRepo, StageZeroRow } from "./repo.ts";
+import type { AudioAssetRow, ContentItemRow, ContentReleaseRow, ContentRepo, StageZeroRow, TtsUsageSummary } from "./repo.ts";
 import type { SnapshotCache } from "./runtime.ts";
 import { isMissingContentTableError } from "./supabase-repo.ts";
+import { generateSingleTts } from "./tts-single.ts";
 
 const JCJ_STAGE_KEYS = ["Stage 1-A", "Stage 1-B", "Stage 2", "Stage 3", "Stage 4", "Stage 5"] as const;
 const OTHER_STAGE_KEYS = ["Stage 1", "Stage 2", "Stage 3", "Stage 4", "Stage 5"] as const;
@@ -452,6 +453,17 @@ function buildDbContentView(
   };
 }
 
+function toUsageView(quotaDay: string, summary: TtsUsageSummary, ttsReady: boolean): TtsUsageView {
+  return {
+    quotaDay,
+    limit: DAILY_TTS_LIMIT,
+    used: summary.total,
+    remaining: Math.max(0, DAILY_TTS_LIMIT - summary.total),
+    bySource: { ui_single: summary.uiSingle, pc_batch: summary.pcBatch },
+    ttsReady,
+  };
+}
+
 function voiceSuffixesForBase(base: string, includeTurns: boolean): string[] {
   const out = [base];
   for (const voice of PRACTICE_VOICES) {
@@ -743,6 +755,122 @@ export function createContentRoutes(deps: ContentRoutesDeps) {
       { changedFields: ["status"], reason, editedBy: c.get("teacherId") },
     );
     return c.json({ item: updated?.item ?? existing });
+  });
+
+  app.post("/items/:id/audio", async (c) => {
+    if (!deps.contentRepo || !deps.audioStore) return c.json({ error: "db_not_configured" }, 503);
+    const item = await deps.contentRepo.getItem(c.req.param("id"));
+    if (!item || item.status === "hidden") return c.json({ error: "not_found" }, 404);
+    const body = await readBody(c);
+    if (!body) return c.json({ error: "invalid_body" }, 400);
+    const kind = body.kind;
+    if (kind !== "word" && kind !== "sentence") return c.json({ error: "invalid_kind" }, 400);
+    if (!isPracticeVoiceKey(body.voice)) return c.json({ error: "invalid_voice" }, 400);
+    const voice = body.voice;
+
+    const text = (kind === "word" ? item.word : item.example).trim();
+    if (!text) {
+      return c.json(
+        {
+          error: kind === "sentence" ? "example_required" : "empty_text",
+          message: kind === "sentence" ? "예문을 먼저 써 주세요." : "단어를 먼저 써 주세요.",
+        },
+        400,
+      );
+    }
+
+    if (!deps.ttsApiKey) {
+      return c.json({ error: "tts_not_configured", message: "생성 준비 안 됨" }, 503);
+    }
+
+    const quotaDay = ttsQuotaDay(deps.now());
+    const summary = await deps.contentRepo.ttsUsageSummary(quotaDay);
+    if (summary.total >= DAILY_TTS_LIMIT) {
+      return c.json(
+        {
+          error: "daily_quota_exceeded",
+          message: "오늘 한도를 다 썼어요. 오후 5시에 다시 열려요.",
+          usage: toUsageView(quotaDay, summary, ttsReady),
+        },
+        409,
+      );
+    }
+
+    const result = await generateSingleTts({
+      text,
+      kind,
+      voiceKey: voice,
+      apiKey: deps.ttsApiKey,
+      fetcher: deps.ttsFetcher,
+    });
+
+    await deps.contentRepo.recordTtsUsage({
+      at: deps.now().toISOString(),
+      quotaDay,
+      source: "ui_single",
+      voiceKey: voice,
+      kind,
+      itemId: item.id,
+      ok: result.ok,
+      errorCode: result.ok ? null : result.errorCode,
+    });
+
+    const nextSummary = await deps.contentRepo.ttsUsageSummary(quotaDay);
+    const usage = toUsageView(quotaDay, nextSummary, ttsReady);
+
+    if (!result.ok) {
+      return c.json({ error: result.errorCode, message: result.message, usage }, result.status);
+    }
+
+    const base = kind === "word" ? snapshotWordAudioBase(item) : snapshotSentenceAudioBase(item);
+    const audioId = voicedAudioId(base, voice);
+    const draftKeyId = crypto.randomUUID();
+    const stored = await deps.audioStore.putDraft(audioId, draftKeyId, result.bytes);
+
+    await deps.contentRepo.supersedeDrafts(audioId);
+    const asset = await deps.contentRepo.insertAudioAsset({
+      audioId,
+      itemId: item.id,
+      kind,
+      voiceKey: voice,
+      storage: stored.storage,
+      objectKey: stored.objectKey,
+      mime: result.mime,
+      bytes: result.bytes.length,
+      durationMs: result.durationMs,
+      sha256: result.sha256,
+      status: "draft",
+      stale: false,
+      source: "ui_single",
+      model: result.model,
+      stylePrompt: result.stylePrompt,
+      text,
+      generatedAt: deps.now().toISOString(),
+    });
+
+    return c.json(
+      {
+        asset: { ...asset, playUrl: assetPlayUrl(asset) },
+        usage,
+      },
+      201,
+    );
+  });
+
+  app.post("/audio/:assetId/approve", async (c) => {
+    if (!deps.contentRepo) return c.json({ error: "db_not_configured" }, 503);
+    const existing = await deps.contentRepo.getAudioAsset(c.req.param("assetId"));
+    if (!existing) return c.json({ error: "not_found" }, 404);
+    const updated = await deps.contentRepo.reviewAudioAsset(existing.id, "approved", c.get("teacherId"));
+    return c.json({ asset: updated ?? existing });
+  });
+
+  app.post("/audio/:assetId/reject", async (c) => {
+    if (!deps.contentRepo) return c.json({ error: "db_not_configured" }, 503);
+    const existing = await deps.contentRepo.getAudioAsset(c.req.param("assetId"));
+    if (!existing) return c.json({ error: "not_found" }, 404);
+    const updated = await deps.contentRepo.reviewAudioAsset(existing.id, "rejected", c.get("teacherId"));
+    return c.json({ asset: updated ?? existing });
   });
 
   return app;

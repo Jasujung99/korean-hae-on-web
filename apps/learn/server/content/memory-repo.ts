@@ -204,10 +204,28 @@ export function createMemoryContentRepo(options: { now?: () => Date } = {}): Con
     async reviewAudioAsset(id, status, reviewedBy) {
       const asset = assets.find((row) => row.id === id);
       if (!asset) return null;
+      const now = iso();
       asset.status = status;
-      if (status === "approved") asset.stale = false;
+      if (status === "approved") {
+        asset.stale = false;
+        for (const other of assets) {
+          if (other.id === asset.id) continue;
+          if (other.audioId === asset.audioId && other.status === "approved") {
+            other.status = "superseded";
+          } else if (
+            asset.itemId !== null &&
+            other.itemId === asset.itemId &&
+            other.kind === asset.kind &&
+            other.voiceKey === asset.voiceKey &&
+            other.stale &&
+            (other.status === "draft" || other.status === "approved")
+          ) {
+            other.status = "superseded";
+          }
+        }
+      }
       asset.reviewedBy = reviewedBy;
-      asset.reviewedAt = iso();
+      asset.reviewedAt = now;
       return { ...asset };
     },
     async latestRelease() {

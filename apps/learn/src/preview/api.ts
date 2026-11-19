@@ -164,6 +164,15 @@ export const teacherApi = {
     postJson<{ item: ContentItemView }>(`/api/teacher/content/items/${encodeURIComponent(id)}/approve`, {}),
   hideContentItem: (id: string, reason?: string) =>
     postJson<{ item: ContentItemView }>(`/api/teacher/content/items/${encodeURIComponent(id)}/hide`, { reason }),
+  generateContentAudio: (itemId: string, body: { kind: "word" | "sentence"; voice: string }) =>
+    postJson<{
+      asset: { id: string; audioId: string; status: string; durationMs: number | null; playUrl: string };
+      usage: TtsUsageView;
+    }>(`/api/teacher/content/items/${encodeURIComponent(itemId)}/audio`, body),
+  approveContentAudio: (assetId: string) =>
+    postJson<{ asset: { id: string; status: string } }>(`/api/teacher/content/audio/${encodeURIComponent(assetId)}/approve`, {}),
+  rejectContentAudio: (assetId: string) =>
+    postJson<{ asset: { id: string; status: string } }>(`/api/teacher/content/audio/${encodeURIComponent(assetId)}/reject`, {}),
 };
 
 export function audioUrl(ref: string): string {

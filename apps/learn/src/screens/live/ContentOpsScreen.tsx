@@ -9,9 +9,10 @@ import type {
   ContentStageSection,
   ContentStageZeroRow,
   ContentVersionRow,
+  DraftAudioReviewRow,
   TeacherContentView,
 } from "../../../server/preview/contract.ts";
-import { teacherApi } from "../../preview/api";
+import { PreviewApiError, teacherApi } from "../../preview/api";
 import { usePractice } from "../../preview/PracticeContext";
 import { ScreenTitle } from "../../ui";
 import { formatDay } from "./format";
@@ -44,6 +45,32 @@ const FIELD_LABEL: Record<string, string> = {
   status: "상태",
 };
 
+type ConfirmGen = {
+  itemId: string;
+  word: string;
+  kind: "word" | "sentence";
+  voiceKey: string;
+  voiceName: string;
+  stalePlayUrl: string | null;
+  origin: "cell" | "draft";
+  draftAssetId?: string;
+};
+
+function formatDurationSec(ms: number | null): string {
+  if (ms === null || !Number.isFinite(ms)) return "길이 미확인";
+  return `${(ms / 1000).toFixed(1)}초`;
+}
+
+function formatRelativeTime(iso: string): string {
+  const parsed = Date.parse(iso);
+  if (!Number.isFinite(parsed)) return "방금";
+  const diffSec = Math.floor((Date.now() - parsed) / 1000);
+  if (diffSec < 60) return "방금";
+  if (diffSec < 3600) return `${Math.floor(diffSec / 60)}분 전`;
+  if (diffSec < 86400) return `${Math.floor(diffSec / 3600)}시간 전`;
+  return formatDay(iso);
+}
+
 function PlayIcon() {
   return (
     <svg className="co-icon" viewBox="0 0 12 12" aria-hidden="true">
@@ -67,7 +94,10 @@ function AudioCellButton({
   cell,
   busy,
   readOnly,
+  ttsReady,
+  isGenerating,
   onPlay,
+  onRequestGenerate,
 }: {
   voiceShort: string;
   voiceName: string;
@@ -75,31 +105,64 @@ function AudioCellButton({
   cell: ContentAudioCell;
   busy: boolean;
   readOnly: boolean;
+  ttsReady: boolean;
+  isGenerating: boolean;
   onPlay: (url: string, label: string) => void;
+  onRequestGenerate?: () => void;
 }) {
-  const playable = cell.state !== "missing" && Boolean(cell.playUrl);
+  const isMissing = cell.state === "missing";
+  const isStale = cell.state === "stale";
+  const canGenerate = !readOnly && ttsReady && (isMissing || isStale) && Boolean(onRequestGenerate);
+  const playable = !isMissing && Boolean(cell.playUrl);
   const stateText = STATE_LABEL[cell.state];
-  const actionText = playable ? "재생" : readOnly ? "생성 준비 안 됨" : "생성";
+  const actionText = isGenerating
+    ? "만드는 중"
+    : canGenerate
+      ? isStale
+        ? "다시 만들기"
+        : "생성"
+      : playable
+        ? "재생"
+        : "생성 준비 안 됨";
   const label = `${voiceName} ${kindLabel} 음원, ${stateText}, ${actionText}`;
+  const disabled = isGenerating || (!canGenerate && (!playable || busy));
 
   return (
     <button
       type="button"
-      className={`co-cell is-${cell.state}`}
+      className={`co-cell is-${cell.state}${isGenerating ? " is-generating" : ""}`}
       aria-label={label}
-      title={cell.state === "stale" ? "글자가 바뀌어 다시 만들어야 해요" : `${voiceName} · ${stateText}`}
-      disabled={busy || !playable}
+      title={
+        isGenerating
+          ? "만드는 중…"
+          : isMissing && !readOnly && !ttsReady
+            ? "생성 준비 안 됨"
+            : isStale
+              ? "글자가 바뀌어 다시 만들어야 해요"
+              : `${voiceName} · ${stateText}`
+      }
+      disabled={disabled}
       onClick={() => {
-        if (cell.playUrl) onPlay(cell.playUrl, `${voiceName} ${kindLabel}`);
+        if (canGenerate) {
+          onRequestGenerate?.();
+        } else if (cell.playUrl) {
+          onPlay(cell.playUrl, `${voiceName} ${kindLabel}`);
+        }
       }}
     >
-      {playable ? <PlayIcon /> : <GenerateIcon />}
-      <span>{voiceShort}</span>
-      {cell.state === "stale" ? (
-        <span className="co-stale-mark" aria-hidden="true">
-          !
-        </span>
-      ) : null}
+      {isGenerating ? (
+        <span>만드는 중…</span>
+      ) : (
+        <>
+          {playable ? <PlayIcon /> : <GenerateIcon />}
+          <span>{voiceShort}</span>
+          {isStale ? (
+            <span className="co-stale-mark" aria-hidden="true">
+              !
+            </span>
+          ) : null}
+        </>
+      )}
     </button>
   );
 }
@@ -109,13 +172,19 @@ function AudioVoiceRow({
   cells,
   busy,
   readOnly,
+  ttsReady = false,
+  generatingVoice = null,
   onPlay,
+  onRequestGenerate,
 }: {
   kindLabel: string;
   cells: Record<string, ContentAudioCell>;
   busy: boolean;
   readOnly: boolean;
+  ttsReady?: boolean;
+  generatingVoice?: string | null;
   onPlay: (url: string, label: string) => void;
+  onRequestGenerate?: (voiceKey: string, voiceName: string, cell: ContentAudioCell) => void;
 }) {
   return (
     <div className="co-voices" role="group" aria-label={`${kindLabel} 목소리별 음원`}>
@@ -138,7 +207,12 @@ function AudioVoiceRow({
             cell={cell}
             busy={busy}
             readOnly={readOnly}
+            ttsReady={ttsReady}
+            isGenerating={generatingVoice === voice.key}
             onPlay={onPlay}
+            onRequestGenerate={
+              onRequestGenerate ? () => onRequestGenerate(voice.key, voice.voice, cell) : undefined
+            }
           />
         );
       })}
@@ -562,30 +636,53 @@ function ContentRow({
   item,
   busy,
   readOnly,
+  ttsReady,
   editing,
   focusField,
   historyOpen,
   choices,
+  generatingKey,
+  confirmGen,
+  genError,
   onStartEdit,
   onCancelEdit,
   onSaved,
   onToggleHistory,
   onPlay,
+  onRequestGenerate,
+  onConfirmGenerate,
+  onCancelGenerate,
 }: {
   item: ContentItemView;
   busy: boolean;
   readOnly: boolean;
+  ttsReady: boolean;
   editing: boolean;
   focusField: "word" | "example";
   historyOpen: boolean;
   choices: readonly string[];
+  generatingKey: string | null;
+  confirmGen: ConfirmGen | null;
+  genError: { itemId: string; message: string } | null;
   onStartEdit: (focus: "word" | "example") => void;
   onCancelEdit: () => void;
   onSaved: () => void;
   onToggleHistory: () => void;
   onPlay: (url: string, label: string) => void;
+  onRequestGenerate: (confirm: ConfirmGen) => void;
+  onConfirmGenerate: (confirm: ConfirmGen) => void;
+  onCancelGenerate: () => void;
 }) {
   const hasTurns = item.turnsAudio && CONTENT_VOICES.some((voice) => item.turnsAudio?.[voice.key]?.ready);
+  const wordGeneratingVoice =
+    generatingKey && generatingKey.startsWith(`${item.id}:word:`) ? generatingKey.slice(`${item.id}:word:`.length) : null;
+  const sentenceGeneratingVoice =
+    generatingKey && generatingKey.startsWith(`${item.id}:sentence:`)
+      ? generatingKey.slice(`${item.id}:sentence:`.length)
+      : null;
+  const showCellConfirm = confirmGen && confirmGen.origin === "cell" && confirmGen.itemId === item.id;
+  const showItemError = genError && genError.itemId === item.id;
+
   return (
     <>
       <tr>
@@ -637,7 +734,20 @@ function ContentRow({
                     cells={item.exampleAudio}
                     busy={busy}
                     readOnly={readOnly}
+                    ttsReady={ttsReady}
+                    generatingVoice={sentenceGeneratingVoice}
                     onPlay={onPlay}
+                    onRequestGenerate={(voiceKey, voiceName, cell) =>
+                      onRequestGenerate({
+                        itemId: item.id,
+                        word: item.word,
+                        kind: "sentence",
+                        voiceKey,
+                        voiceName,
+                        stalePlayUrl: cell.state === "stale" ? cell.playUrl : null,
+                        origin: "cell",
+                      })
+                    }
                   />
                 ) : null}
                 <span className="co-turns-note">
@@ -686,15 +796,193 @@ function ContentRow({
             cells={item.wordAudio}
             busy={busy}
             readOnly={readOnly}
+            ttsReady={ttsReady}
+            generatingVoice={wordGeneratingVoice}
             onPlay={onPlay}
+            onRequestGenerate={(voiceKey, voiceName, cell) =>
+              onRequestGenerate({
+                itemId: item.id,
+                word: item.word,
+                kind: "word",
+                voiceKey,
+                voiceName,
+                stalePlayUrl: cell.state === "stale" ? cell.playUrl : null,
+                origin: "cell",
+              })
+            }
           />
         </td>
       </tr>
+      {showCellConfirm || showItemError ? (
+        <tr className="co-gen-row">
+          <td colSpan={4}>
+            {showCellConfirm ? (
+              <div className="co-gen-confirm" role="region" aria-label={`${confirmGen.word} ${confirmGen.voiceName} 음성 생성 확인`}>
+                <span>
+                  {confirmGen.voiceName} · {confirmGen.kind === "word" ? "단어" : "예문"} · <strong>1건 사용</strong>
+                </span>
+                <button
+                  type="button"
+                  disabled={Boolean(generatingKey)}
+                  onClick={() => onConfirmGenerate(confirmGen)}
+                >
+                  만들기
+                </button>
+                {confirmGen.stalePlayUrl ? (
+                  <button
+                    type="button"
+                    className="tc-ul"
+                    disabled={busy}
+                    onClick={() => onPlay(confirmGen.stalePlayUrl as string, `${confirmGen.voiceName} 기존 음원`)}
+                  >
+                    기존 듣기
+                  </button>
+                ) : null}
+                <button type="button" className="tc-ul" disabled={Boolean(generatingKey)} onClick={onCancelGenerate}>
+                  취소
+                </button>
+              </div>
+            ) : null}
+            {showItemError ? (
+              <p className="acct-error" role="alert">
+                {genError.message}
+              </p>
+            ) : null}
+          </td>
+        </tr>
+      ) : null}
       {editing ? (
         <InlineEditPanel item={item} choices={choices} focusField={focusField} onSaved={onSaved} onCancel={onCancelEdit} />
       ) : null}
       {historyOpen ? <HistoryPanel item={item} /> : null}
     </>
+  );
+}
+
+function DraftReviewList({
+  drafts,
+  busy,
+  readOnly,
+  ttsReady,
+  reviewBusyId,
+  generatingKey,
+  confirmGen,
+  genError,
+  onPlay,
+  onRequestRegenerate,
+  onConfirmGenerate,
+  onCancelGenerate,
+  onApprove,
+  onReject,
+}: {
+  drafts: DraftAudioReviewRow[];
+  busy: boolean;
+  readOnly: boolean;
+  ttsReady: boolean;
+  reviewBusyId: string | null;
+  generatingKey: string | null;
+  confirmGen: ConfirmGen | null;
+  genError: { itemId: string; message: string } | null;
+  onPlay: (url: string, label: string) => void;
+  onRequestRegenerate: (confirm: ConfirmGen) => void;
+  onConfirmGenerate: (confirm: ConfirmGen) => void;
+  onCancelGenerate: () => void;
+  onApprove: (assetId: string) => void;
+  onReject: (assetId: string) => void;
+}) {
+  if (drafts.length === 0) return null;
+  return (
+    <div className="co-drafts" role="region" aria-label="음원 초안 검수">
+      <p className="co-drafts-title">음원 초안 검수 · {drafts.length}건</p>
+      <ul className="co-draft-list">
+        {drafts.map((row) => {
+          const isRowBusy = reviewBusyId === row.assetId;
+          const isRegenHere =
+            confirmGen?.origin === "draft" && confirmGen.draftAssetId === row.assetId;
+          const isGenerating =
+            Boolean(row.itemId && generatingKey === `${row.itemId}:${row.kind}:${row.voiceKey}`);
+          const kindSuffix = row.kind === "sentence" ? " 예문" : "";
+          const canRegen =
+            !readOnly && ttsReady && Boolean(row.itemId) && (row.kind === "word" || row.kind === "sentence");
+
+          return (
+            <li key={row.assetId} className="co-draft-item">
+              <div className="co-draft-row">
+                <span className="co-draft-meta">
+                  <span className="tc-pill">초안</span>{" "}
+                  <strong>
+                    {row.word}
+                    {kindSuffix}
+                  </strong>{" "}
+                  · {row.voiceLabel} — {formatDurationSec(row.durationMs)} · {formatRelativeTime(row.generatedAt)}
+                </span>
+                <div className="co-draft-actions">
+                  {row.playUrl ? (
+                    <button
+                      type="button"
+                      disabled={busy}
+                      onClick={() => onPlay(row.playUrl as string, `${row.word} ${row.voiceLabel} 초안`)}
+                    >
+                      듣기
+                    </button>
+                  ) : null}
+                  {canRegen ? (
+                    <button
+                      type="button"
+                      disabled={Boolean(generatingKey) || isRowBusy}
+                      onClick={() =>
+                        onRequestRegenerate({
+                          itemId: row.itemId as string,
+                          word: row.word,
+                          kind: row.kind as "word" | "sentence",
+                          voiceKey: row.voiceKey,
+                          voiceName: row.voiceLabel,
+                          stalePlayUrl: null,
+                          origin: "draft",
+                          draftAssetId: row.assetId,
+                        })
+                      }
+                    >
+                      {isGenerating ? "만드는 중…" : "다시"}
+                    </button>
+                  ) : null}
+                  {!readOnly ? (
+                    <>
+                      <button type="button" disabled={isRowBusy} onClick={() => onApprove(row.assetId)}>
+                        {isRowBusy ? "처리 중…" : "승인"}
+                      </button>
+                      <button type="button" className="tc-ul" disabled={isRowBusy} onClick={() => onReject(row.assetId)}>
+                        제외
+                      </button>
+                    </>
+                  ) : null}
+                </div>
+              </div>
+              {isRegenHere ? (
+                <div className="co-gen-confirm" role="region" aria-label={`${row.word} ${row.voiceLabel} 다시 만들기 확인`}>
+                  <span>1건 사용</span>
+                  <button
+                    type="button"
+                    disabled={Boolean(generatingKey)}
+                    onClick={() => onConfirmGenerate(confirmGen)}
+                  >
+                    만들기
+                  </button>
+                  <button type="button" className="tc-ul" disabled={Boolean(generatingKey)} onClick={onCancelGenerate}>
+                    취소
+                  </button>
+                </div>
+              ) : null}
+              {row.itemId && genError?.itemId === row.itemId && isRegenHere ? (
+                <p className="acct-error" role="alert">
+                  {genError.message}
+                </p>
+              ) : null}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 }
 
@@ -706,15 +994,25 @@ function StageAccordion({
   open,
   busy,
   readOnly,
+  ttsReady,
   editingId,
   focusField,
   historyId,
+  generatingKey,
+  confirmGen,
+  genError,
+  reviewBusyId,
   onToggle,
   onStartEdit,
   onCancelEdit,
   onToggleHistory,
   onChanged,
   onPlay,
+  onRequestGenerate,
+  onConfirmGenerate,
+  onCancelGenerate,
+  onApproveDraft,
+  onRejectDraft,
 }: {
   groupId: string;
   choices: readonly string[];
@@ -723,15 +1021,25 @@ function StageAccordion({
   open: boolean;
   busy: boolean;
   readOnly: boolean;
+  ttsReady: boolean;
   editingId: string | null;
   focusField: "word" | "example";
   historyId: string | null;
+  generatingKey: string | null;
+  confirmGen: ConfirmGen | null;
+  genError: { itemId: string; message: string } | null;
+  reviewBusyId: string | null;
   onToggle: () => void;
   onStartEdit: (id: string, focus: "word" | "example") => void;
   onCancelEdit: () => void;
   onToggleHistory: (id: string) => void;
   onChanged: () => void;
   onPlay: (url: string, label: string) => void;
+  onRequestGenerate: (confirm: ConfirmGen) => void;
+  onConfirmGenerate: (confirm: ConfirmGen) => void;
+  onCancelGenerate: () => void;
+  onApproveDraft: (assetId: string) => void;
+  onRejectDraft: (assetId: string) => void;
 }) {
   return (
     <section className="tc-section co-stage" aria-labelledby={`stage-btn-${stage.key}`}>
@@ -770,10 +1078,14 @@ function StageAccordion({
                       item={item}
                       busy={busy}
                       readOnly={readOnly}
+                      ttsReady={ttsReady}
                       editing={editingId === item.id}
                       focusField={focusField}
                       historyOpen={historyId === item.id}
                       choices={choices}
+                      generatingKey={generatingKey}
+                      confirmGen={confirmGen}
+                      genError={genError}
                       onStartEdit={(focus) => onStartEdit(item.id, focus)}
                       onCancelEdit={onCancelEdit}
                       onSaved={() => {
@@ -782,12 +1094,31 @@ function StageAccordion({
                       }}
                       onToggleHistory={() => onToggleHistory(item.id)}
                       onPlay={onPlay}
+                      onRequestGenerate={onRequestGenerate}
+                      onConfirmGenerate={onConfirmGenerate}
+                      onCancelGenerate={onCancelGenerate}
                     />
                   </Fragment>
                 ))}
               </tbody>
             </table>
           </div>
+          <DraftReviewList
+            drafts={stage.draftAudios}
+            busy={busy}
+            readOnly={readOnly}
+            ttsReady={ttsReady}
+            reviewBusyId={reviewBusyId}
+            generatingKey={generatingKey}
+            confirmGen={confirmGen}
+            genError={genError}
+            onPlay={onPlay}
+            onRequestRegenerate={onRequestGenerate}
+            onConfirmGenerate={onConfirmGenerate}
+            onCancelGenerate={onCancelGenerate}
+            onApprove={onApproveDraft}
+            onReject={onRejectDraft}
+          />
           {!readOnly ? (
             <AddWordRow
               groupId={groupId}
@@ -840,6 +1171,10 @@ export function ContentOpsScreen() {
   const [failed, setFailed] = useState(false);
   const [editing, setEditing] = useState<{ id: string; focus: "word" | "example" } | null>(null);
   const [historyId, setHistoryId] = useState<string | null>(null);
+  const [confirmGen, setConfirmGen] = useState<ConfirmGen | null>(null);
+  const [generatingKey, setGeneratingKey] = useState<string | null>(null);
+  const [genError, setGenError] = useState<{ itemId: string; message: string } | null>(null);
+  const [reviewBusyId, setReviewBusyId] = useState<string | null>(null);
 
   const load = useCallback(() => {
     setFailed(false);
@@ -867,6 +1202,8 @@ export function ContentOpsScreen() {
     setView(null);
     setEditing(null);
     setHistoryId(null);
+    setConfirmGen(null);
+    setGenError(null);
     setParams({ group: nextGroup }, { replace: true });
   };
 
@@ -887,6 +1224,48 @@ export function ContentOpsScreen() {
 
   const playUrl = (url: string, label: string) => {
     void practice.playRole(url, "voice", label);
+  };
+
+  const confirmGenerate = async (target: ConfirmGen) => {
+    const key = `${target.itemId}:${target.kind}:${target.voiceKey}`;
+    setGeneratingKey(key);
+    setGenError(null);
+    try {
+      await teacherApi.generateContentAudio(target.itemId, { kind: target.kind, voice: target.voiceKey });
+      setConfirmGen(null);
+      load();
+    } catch (error) {
+      const msg =
+        error instanceof PreviewApiError && error.serverMessage
+          ? error.serverMessage
+          : "음성을 만들지 못했어요. 다시 시도해 주세요.";
+      setGenError({ itemId: target.itemId, message: msg });
+    } finally {
+      setGeneratingKey(null);
+      window.dispatchEvent(new Event("haeon:tts-usage-refresh"));
+    }
+  };
+
+  const approveDraft = async (assetId: string) => {
+    setReviewBusyId(assetId);
+    try {
+      await teacherApi.approveContentAudio(assetId);
+      setConfirmGen(null);
+      load();
+    } finally {
+      setReviewBusyId(null);
+    }
+  };
+
+  const rejectDraft = async (assetId: string) => {
+    setReviewBusyId(assetId);
+    try {
+      await teacherApi.rejectContentAudio(assetId);
+      setConfirmGen(null);
+      load();
+    } finally {
+      setReviewBusyId(null);
+    }
   };
 
   const busy = practice.playing !== null;
@@ -944,15 +1323,31 @@ export function ContentOpsScreen() {
               open={expandedSet.has(stage.key)}
               busy={busy}
               readOnly={!view.writable}
+              ttsReady={view.ttsReady}
               editingId={editing?.id ?? null}
               focusField={editing?.focus ?? "word"}
               historyId={historyId}
+              generatingKey={generatingKey}
+              confirmGen={confirmGen}
+              genError={genError}
+              reviewBusyId={reviewBusyId}
               onToggle={() => toggleStage(stage.key)}
               onStartEdit={(id, focus) => setEditing({ id, focus })}
               onCancelEdit={() => setEditing(null)}
               onToggleHistory={(id) => setHistoryId((prev) => (prev === id ? null : id))}
               onChanged={load}
               onPlay={playUrl}
+              onRequestGenerate={(confirm) => {
+                setGenError(null);
+                setConfirmGen(confirm);
+              }}
+              onConfirmGenerate={(confirm) => void confirmGenerate(confirm)}
+              onCancelGenerate={() => {
+                setConfirmGen(null);
+                setGenError(null);
+              }}
+              onApproveDraft={(assetId) => void approveDraft(assetId)}
+              onRejectDraft={(assetId) => void rejectDraft(assetId)}
             />
           ))}
 
