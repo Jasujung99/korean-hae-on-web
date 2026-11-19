@@ -101,6 +101,7 @@ export type AudioAssetRow = {
   source: AudioAssetSource;
   model: string;
   stylePrompt: string | null;
+  settings: Record<string, unknown>;
   text: string;
   generatedAt: string | null;
   reviewedBy: string | null;
@@ -108,7 +109,8 @@ export type AudioAssetRow = {
   createdAt: string;
 };
 
-export type NewAudioAssetInput = Omit<AudioAssetRow, "id" | "createdAt" | "reviewedBy" | "reviewedAt"> & {
+export type NewAudioAssetInput = Omit<AudioAssetRow, "id" | "createdAt" | "reviewedBy" | "reviewedAt" | "settings"> & {
+  settings?: Record<string, unknown>;
   reviewedBy?: string | null;
   reviewedAt?: string | null;
 };

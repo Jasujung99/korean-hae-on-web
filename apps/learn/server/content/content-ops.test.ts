@@ -1,8 +1,10 @@
 import { describe, expect, it } from "vitest";
 import { snapshotFromReferenceJson, snapshotWordAudioBase } from "../../content/snapshot.ts";
 import { voicedAudioId } from "../../content/practice-voices.ts";
+import { batchPlan } from "../../content/tts/batch-plan.ts";
 import { pcmToWav } from "../../content/tts/pipeline.ts";
 import { buildUploadAssetInputs, summarizeGroupAudio } from "../../scripts/audio-upload.ts";
+import { loadDbActiveAudioIds, makeDoneCheck } from "../../scripts/tts-groups.ts";
 import { createLearnApp } from "../app.ts";
 import { memoryTeacherAuth } from "../accounts/auth.ts";
 import { createMemoryRepo } from "../accounts/memory-repo.ts";
@@ -242,5 +244,113 @@ describe("content operations release lifecycle, audio inventory DB source, and m
     expect(approvedPlan.onConflict).toBe("merge");
     expect(approvedPlan.assets[0]?.status).toBe("approved");
     expect(approvedPlan.assets[0]?.reviewedAt).toBe("2026-11-20T00:00:00.000Z");
+  });
+
+  it("skips DB draft/approved audio IDs in tts:groups by default and regenerates them when --replace is enabled", async () => {
+    const repo = createMemoryContentRepo();
+    await repo.insertAudioAsset({
+      audioId: "word-1871-모자--erinome",
+      itemId: null,
+      kind: "word",
+      voiceKey: "erinome",
+      storage: "r2",
+      objectKey: "a/moja.m4a",
+      mime: "audio/mp4",
+      bytes: 100,
+      durationMs: 600,
+      sha256: "abc",
+      status: "approved",
+      stale: false,
+      source: "pc_batch",
+      model: "m",
+      stylePrompt: "flat",
+      text: "모자",
+      generatedAt: "2026-11-20T00:00:00.000Z",
+    });
+    await repo.insertAudioAsset({
+      audioId: "word-1000-기차--erinome",
+      itemId: null,
+      kind: "word",
+      voiceKey: "erinome",
+      storage: "r2",
+      objectKey: "a/gicha.m4a",
+      mime: "audio/mp4",
+      bytes: 100,
+      durationMs: 600,
+      sha256: "def",
+      status: "draft",
+      stale: false,
+      source: "ui_single",
+      model: "m",
+      stylePrompt: "flat",
+      text: "기차",
+      generatedAt: "2026-11-20T00:00:00.000Z",
+    });
+    await repo.insertAudioAsset({
+      audioId: "word-100-가짜--erinome",
+      itemId: null,
+      kind: "word",
+      voiceKey: "erinome",
+      storage: "r2",
+      objectKey: "a/gajja-stale.m4a",
+      mime: "audio/mp4",
+      bytes: 100,
+      durationMs: 600,
+      sha256: "ghi",
+      status: "approved",
+      stale: true,
+      source: "import",
+      model: "m",
+      stylePrompt: "flat",
+      text: "가짜",
+      generatedAt: "2026-11-20T00:00:00.000Z",
+    });
+    await repo.insertAudioAsset({
+      audioId: "word-200-의자--erinome",
+      itemId: null,
+      kind: "word",
+      voiceKey: "erinome",
+      storage: "r2",
+      objectKey: "a/uija-rej.m4a",
+      mime: "audio/mp4",
+      bytes: 100,
+      durationMs: 600,
+      sha256: "jkl",
+      status: "rejected",
+      stale: false,
+      source: "ui_single",
+      model: "m",
+      stylePrompt: "flat",
+      text: "의자",
+      generatedAt: "2026-11-20T00:00:00.000Z",
+    });
+
+    const dbActive = await loadDbActiveAudioIds(repo);
+    expect(dbActive.has("word-1871-모자--erinome")).toBe(true);
+    expect(dbActive.has("word-1000-기차--erinome")).toBe(true);
+    expect(dbActive.has("word-100-가짜--erinome")).toBe(false);
+    expect(dbActive.has("word-200-의자--erinome")).toBe(false);
+    expect((await loadDbActiveAudioIds(null)).size).toBe(0);
+
+    const plannedIds = (replace: boolean) => {
+      const done = makeDoneCheck({
+        doneLocal: () => false,
+        dbActiveAudioIds: replace ? new Set() : dbActive,
+        replace,
+      });
+      return new Set(batchPlan("erinome", ["words"], done, "j_ch_jj").flatMap((g) => g.items.map((i) => i.id)));
+    };
+
+    const normalIds = plannedIds(false);
+    expect(normalIds.has("word-1871-모자--erinome")).toBe(false);
+    const ref = snapshotFromReferenceJson();
+    const gichaId = voicedAudioId(snapshotWordAudioBase(ref.items.find((i) => i.word === "기차")!), "erinome");
+    dbActive.add(gichaId);
+    const normalAfter = plannedIds(false);
+    expect(normalAfter.has(gichaId)).toBe(false);
+
+    const replaceIds = plannedIds(true);
+    expect(replaceIds.has("word-1871-모자--erinome")).toBe(true);
+    expect(replaceIds.has(gichaId)).toBe(true);
   });
 });

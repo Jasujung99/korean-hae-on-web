@@ -1,5 +1,9 @@
+import { mkdtempSync, readFileSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { pcmToWav } from "../../content/tts/pipeline.ts";
+import { groupContents } from "../../content/tts/batch-plan.ts";
+import { FLASH_TTS_MODEL, FLAT_READING_STYLE, pcmToWav } from "../../content/tts/pipeline.ts";
 import { DAILY_TTS_LIMIT, ttsQuotaDay } from "../../content/tts/quota.ts";
 import { createLearnApp } from "../app.ts";
 import { memoryTeacherAuth } from "../accounts/auth.ts";
@@ -10,8 +14,10 @@ import type { LearnConfig } from "../config.ts";
 import { createFixtureAudio } from "../preview/audio.ts";
 import type { TeacherContentView } from "../preview/contract.ts";
 import { createMemoryAudioStore } from "./audio-store.ts";
+import { createLocalAudioStore } from "./local-audio-store.ts";
 import { createMemoryContentRepo, seedMemoryContentRepo } from "./memory-repo.ts";
 import { createSnapshotCache } from "./runtime.ts";
+import { SINGLE_TTS_METHOD, buildSingleTtsRequestBody } from "./tts-single.ts";
 
 function fakeWavBase64(): { base64: string; bytes: Uint8Array } {
   const pcm = new Uint8Array(4800); // 100ms at 24kHz 16-bit mono
@@ -304,5 +310,125 @@ describe("inline single-item TTS generation, preview, draft review, and quota (s
     expect(((await res.json()) as { error: string }).error).toBe("tts_not_configured");
     expect(fetchCalls).toBe(0);
     expect((await kit.contentRepo.ttsUsageSummary(ttsQuotaDay(kit.now()))).total).toBe(0);
+  });
+
+  it("matches PC batch groupContents() request shape and records settings.method = per_content_single without real calls", async () => {
+    const sample = fakeWavBase64();
+    const sentBodies: unknown[] = [];
+    const kit = await createTtsTestKit({
+      fetcher: async (_url, init) => {
+        sentBodies.push(JSON.parse(String(init?.body)));
+        return interactionWavResponse(sample.base64);
+      },
+    });
+
+    // 순수 함수 vs groupContents() 비교: 단어("<단어>." + FLAT_READING_STYLE, 앞뒤 '네.' 없음)
+    const wordBodyFromSingle = buildSingleTtsRequestBody({ text: "모자", kind: "word", voiceKey: "charon" });
+    const expectedWordBody = {
+      model: FLASH_TTS_MODEL,
+      input: [
+        {
+          type: "user_input",
+          content: groupContents({
+            groupId: "words-check",
+            kind: "words",
+            method: "per_content_group",
+            style: FLAT_READING_STYLE,
+            fillers: false,
+            minGapMs: 300,
+            items: [{ id: "word-1871-모자--charon", text: "모자", unitKind: "word" }],
+          }),
+        },
+      ],
+      response_format: { type: "audio" },
+      generation_config: { speech_config: [{ voice: "Charon" }] },
+    };
+    expect(wordBodyFromSingle).toEqual(expectedWordBody);
+    expect(wordBodyFromSingle.input[0].content).toEqual([
+      {
+        type: "text",
+        text: "모자.",
+        annotations: [{ type: "speech_metadata", style: FLAT_READING_STYLE }],
+      },
+    ]);
+
+    // 순수 함수 vs groupContents() 비교: 예문(문장 그대로, 지시 없음, 앞뒤 '네.' 없음)
+    const sentenceText = "모자를 쓰고 밖에 나갔어요.";
+    const sentenceBodyFromSingle = buildSingleTtsRequestBody({ text: sentenceText, kind: "sentence", voiceKey: "erinome" });
+    const expectedSentenceBody = {
+      model: FLASH_TTS_MODEL,
+      input: [
+        {
+          type: "user_input",
+          content: groupContents({
+            groupId: "turns-check",
+            kind: "turns",
+            method: "per_content_group",
+            style: null,
+            fillers: false,
+            minGapMs: 600,
+            items: [{ id: "sentence-1871-모자--erinome", text: sentenceText, unitKind: "sentence" }],
+          }),
+        },
+      ],
+      response_format: { type: "audio" },
+      generation_config: { speech_config: [{ voice: "Erinome" }] },
+    };
+    expect(sentenceBodyFromSingle).toEqual(expectedSentenceBody);
+    expect(sentenceBodyFromSingle.input[0].content).toEqual([{ type: "text", text: sentenceText }]);
+
+    // 실제 POST /items/:id/audio 엔드포인트가 보내는 JSON과 DB settings.method 확인
+    const listView = (await (await kit.teacher.request("/api/teacher/content?group=j_ch_jj")).json()) as TeacherContentView;
+    const moja = listView.stages[0]!.items.find((row) => row.word === "모자")!;
+
+    const wordRes = await kit.sendJson(kit.teacher, "POST", `/api/teacher/content/items/${moja.id}/audio`, {
+      kind: "word",
+      voice: "charon",
+    });
+    expect(wordRes.status).toBe(201);
+    const wordBody = (await wordRes.json()) as {
+      asset: { id: string; settings: { method: string; stylePrompt: string | null } };
+    };
+    expect(sentBodies[0]).toEqual(expectedWordBody);
+    expect(wordBody.asset.settings.method).toBe(SINGLE_TTS_METHOD);
+    expect(wordBody.asset.settings.stylePrompt).toBe(FLAT_READING_STYLE);
+    expect((await kit.contentRepo.getAudioAsset(wordBody.asset.id))?.settings).toEqual({
+      requestStyle: "interactions",
+      method: "per_content_single",
+      stylePrompt: FLAT_READING_STYLE,
+    });
+
+    const sentRes = await kit.sendJson(kit.teacher, "POST", `/api/teacher/content/items/${moja.id}/audio`, {
+      kind: "sentence",
+      voice: "erinome",
+    });
+    expect(sentRes.status).toBe(201);
+    const sentResBody = (await sentRes.json()) as {
+      asset: { id: string; settings: { method: string; stylePrompt: string | null } };
+    };
+    expect(sentBodies[1]).toEqual(
+      buildSingleTtsRequestBody({ text: moja.example, kind: "sentence", voiceKey: "erinome" }),
+    );
+    expect(sentResBody.asset.settings).toEqual({
+      requestStyle: "interactions",
+      method: "per_content_single",
+      stylePrompt: null,
+    });
+
+    // 로컬 audioStore는 sidecar .meta.json 에도 settings.method 를 남긴다.
+    const tmpDir = mkdtempSync(join(tmpdir(), "haeon-tts-single-meta-"));
+    try {
+      const localStore = createLocalAudioStore(tmpDir);
+      const saved = await localStore.putDraft("word-1871-모자--charon", "12345678-0000-4000-8000-000000000000", sample.bytes, {
+        id: "word-1871-모자--charon",
+        settings: { requestStyle: "interactions", method: SINGLE_TTS_METHOD, stylePrompt: FLAT_READING_STYLE },
+      });
+      const sidecar = JSON.parse(readFileSync(join(tmpDir, saved.objectKey.replace(/\.wav$/, ".meta.json")), "utf8")) as {
+        settings: { method: string };
+      };
+      expect(sidecar.settings.method).toBe("per_content_single");
+    } finally {
+      rmSync(tmpDir, { recursive: true, force: true });
+    }
   });
 });

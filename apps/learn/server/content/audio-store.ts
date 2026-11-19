@@ -7,7 +7,12 @@ export type StoredAudioObject = {
 };
 
 export type AudioObjectStore = {
-  putDraft(audioId: string, assetId: string, bytes: Uint8Array): Promise<{ storage: "r2" | "local"; objectKey: string }>;
+  putDraft(
+    audioId: string,
+    assetId: string,
+    bytes: Uint8Array,
+    meta?: Record<string, unknown>,
+  ): Promise<{ storage: "r2" | "local"; objectKey: string }>;
   get(storage: "r2" | "local", objectKey: string, audioId?: string): Promise<StoredAudioObject | null>;
 };
 

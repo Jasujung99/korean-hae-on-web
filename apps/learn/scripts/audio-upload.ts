@@ -303,7 +303,8 @@ async function main() {
     const listPath = join(cacheDir, ".bulk-list.json");
     writeFileSync(listPath, JSON.stringify([...toUpload].map(([key, file]) => ({ key, file }))), "utf8");
     try {
-      const bulk = wrangler(["r2", "bulk", "put", BUCKET, "--filename", listPath, "--content-type", "audio/mp4", "--remote"], false);
+      // r2 bulk put은 비대화 실행에서도 Basin Catalog 확인 질문을 건너뛰도록 --force가 필요하다(pages deploy와 별개).
+      const bulk = wrangler(["r2", "bulk", "put", BUCKET, "--filename", listPath, "--content-type", "audio/mp4", "--remote", "--force"], false);
       if (bulk.status !== 0) {
         console.error("file upload failed. DB was not changed; run again to continue.");
         process.exit(1);

@@ -20,7 +20,7 @@ function readKeyFile(filename: string): string {
   }
 }
 
-function getUsageRepo(): ContentRepo | null {
+export function resolveContentRepo(): ContentRepo | null {
   if (cachedRepo !== undefined) return cachedRepo;
   const dbUrl = (process.env.LEARN_DB_URL ?? "").trim() || readKeyFile("supabase_url.txt");
   const secretKey = (process.env.LEARN_DB_SECRET_KEY ?? "").trim() || readKeyFile("supabase_secret_key.txt");
@@ -36,7 +36,7 @@ export async function logPcTtsUsage(input: {
   itemId?: string | null;
 }): Promise<void> {
   try {
-    const repo = getUsageRepo();
+    const repo = resolveContentRepo();
     if (!repo) return;
     await repo.recordTtsUsage({
       quotaDay: ttsQuotaDay(new Date()),

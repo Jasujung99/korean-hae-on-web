@@ -13,13 +13,18 @@ function safeJoin(rootDir: string, relativeKey: string): string | null {
 
 export function createLocalAudioStore(rawDir: string): AudioObjectStore {
   return {
-    async putDraft(audioId, assetId, bytes) {
+    async putDraft(audioId, assetId, bytes, meta) {
       mkdirSync(rawDir, { recursive: true });
       const safeId = audioId.replace(/[^A-Za-z0-9가-힣_-]/g, "_");
-      const objectKey = `${safeId}--draft-${assetId.slice(0, 8)}.wav`;
+      const baseKey = `${safeId}--draft-${assetId.slice(0, 8)}`;
+      const objectKey = `${baseKey}.wav`;
       const path = safeJoin(rawDir, objectKey);
       if (!path) throw new Error("invalid draft path");
       writeFileSync(path, bytes);
+      if (meta) {
+        const metaPath = safeJoin(rawDir, `${baseKey}.meta.json`);
+        if (metaPath) writeFileSync(metaPath, `${JSON.stringify(meta, null, 2)}\n`);
+      }
       return { storage: "local", objectKey };
     },
     async get(storage, objectKey, audioId): Promise<StoredAudioObject | null> {

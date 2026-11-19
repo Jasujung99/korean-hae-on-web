@@ -136,6 +136,7 @@ export function createMemoryContentRepo(options: { now?: () => Date } = {}): Con
     async insertAudioAsset(input: NewAudioAssetInput) {
       const row: AudioAssetRow = {
         ...input,
+        settings: input.settings ? { ...input.settings } : {},
         id: crypto.randomUUID(),
         reviewedBy: input.reviewedBy ?? null,
         reviewedAt: input.reviewedAt ?? null,
@@ -156,6 +157,7 @@ export function createMemoryContentRepo(options: { now?: () => Date } = {}): Con
           assets[existingIdx] = {
             ...prev,
             ...input,
+            settings: input.settings ? { ...input.settings } : prev.settings,
             id: prev.id,
             reviewedBy: input.reviewedBy ?? prev.reviewedBy,
             reviewedAt: input.reviewedAt ?? prev.reviewedAt,

@@ -70,6 +70,7 @@ create table public.phoneme_audio_assets (
   source text not null check (source in ('import', 'pc_batch', 'ui_single')),
   model text not null default '',
   style_prompt text,
+  settings jsonb not null default '{}'::jsonb,
   text text not null default '',
   generated_at timestamptz,
   reviewed_by uuid references public.phoneme_teachers (user_id),

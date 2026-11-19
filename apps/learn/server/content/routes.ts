@@ -3,7 +3,14 @@ import { Hono, type Context } from "hono";
 import { syllableAudioBase } from "../../content/core-table.ts";
 import { COURSE_ORDER, GROUP_CHOICES, GROUP_LABELS, type GroupId } from "../../content/course-order.ts";
 import { stageTitle } from "../../content/course.ts";
-import { CONTENT_VOICES, PRACTICE_VOICES, isPracticeVoiceKey, voicedAudioId, type PracticeVoiceKey } from "../../content/practice-voices.ts";
+import {
+  CONTENT_VOICES,
+  PRACTICE_VOICES,
+  isPracticeVoiceKey,
+  practiceVoiceName,
+  voicedAudioId,
+  type PracticeVoiceKey,
+} from "../../content/practice-voices.ts";
 import {
   buildReleaseSnapshot,
   snapshotSentenceAudioBase,
@@ -825,7 +832,19 @@ export function createContentRoutes(deps: ContentRoutesDeps) {
     const base = kind === "word" ? snapshotWordAudioBase(item) : snapshotSentenceAudioBase(item);
     const audioId = voicedAudioId(base, voice);
     const draftKeyId = crypto.randomUUID();
-    const stored = await deps.audioStore.putDraft(audioId, draftKeyId, result.bytes);
+    const generatedAt = deps.now().toISOString();
+    const stored = await deps.audioStore.putDraft(audioId, draftKeyId, result.bytes, {
+      id: audioId,
+      kind,
+      text,
+      voice: practiceVoiceName(voice),
+      model: result.model,
+      settings: result.settings,
+      storedMime: result.mime,
+      sha256: result.sha256,
+      byteLength: result.bytes.length,
+      generatedAt,
+    });
 
     await deps.contentRepo.supersedeDrafts(audioId);
     const asset = await deps.contentRepo.insertAudioAsset({
@@ -844,8 +863,9 @@ export function createContentRoutes(deps: ContentRoutesDeps) {
       source: "ui_single",
       model: result.model,
       stylePrompt: result.stylePrompt,
+      settings: result.settings,
       text,
-      generatedAt: deps.now().toISOString(),
+      generatedAt,
     });
 
     return c.json(

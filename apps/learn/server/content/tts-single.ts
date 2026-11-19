@@ -1,17 +1,57 @@
 // 단건 TTS 생성(Cloudflare·Node 공용). node:* 모듈을 쓰지 않고, 키를 오류 문구에 넣지 않는다.
+// 요청 본문 모양은 PC 묶음 생성(batch-plan.ts groupContents)과 같은 규칙("항목 하나, per_content_group, 앞뒤 '네.' 없음")을 쓴다.
 import { practiceVoiceName, type PracticeVoiceKey } from "../../content/practice-voices.ts";
+import { groupContents, type BatchGroup, type GroupContent } from "../../content/tts/batch-plan.ts";
 import {
   FLASH_TTS_MODEL,
+  FLAT_READING_STYLE,
   authHeaders,
-  buildInteractionBody,
   decodeBase64,
   interactionsEndpoint,
   normalizeToWav,
   parseInteractionAudio,
   sha256Hex,
-  styleForKind,
 } from "../../content/tts/pipeline.ts";
 import { wavDurationMs } from "../../content/tts/wav-info.ts";
+
+export const SINGLE_TTS_METHOD = "per_content_single" as const;
+
+export type SingleTtsSettings = {
+  requestStyle: "interactions";
+  method: typeof SINGLE_TTS_METHOD;
+  stylePrompt: string | null;
+};
+
+export type SingleTtsRequestBody = {
+  model: string;
+  input: [{ type: "user_input"; content: GroupContent[] }];
+  response_format: { type: "audio" };
+  generation_config: { speech_config: [{ voice: string }] };
+};
+
+export function buildSingleTtsRequestBody(input: {
+  text: string;
+  kind: "word" | "sentence";
+  voiceKey: PracticeVoiceKey;
+  model?: string;
+}): SingleTtsRequestBody {
+  const style = input.kind === "word" ? FLAT_READING_STYLE : null;
+  const singleGroup: BatchGroup = {
+    groupId: `single-${input.kind}`,
+    kind: input.kind === "word" ? "words" : "sentences",
+    method: "per_content_group",
+    style,
+    fillers: false,
+    minGapMs: input.kind === "word" ? 300 : 600,
+    items: [{ id: "single", text: input.text, unitKind: input.kind }],
+  };
+  return {
+    model: input.model ?? FLASH_TTS_MODEL,
+    input: [{ type: "user_input", content: groupContents(singleGroup) }],
+    response_format: { type: "audio" },
+    generation_config: { speech_config: [{ voice: practiceVoiceName(input.voiceKey) }] },
+  };
+}
 
 export type SingleTtsResult =
   | {
@@ -22,6 +62,7 @@ export type SingleTtsResult =
       sha256: string;
       model: string;
       stylePrompt: string | null;
+      settings: SingleTtsSettings;
     }
   | {
       ok: false;
@@ -37,8 +78,12 @@ export async function generateSingleTts(input: {
   apiKey: string;
   fetcher?: typeof fetch;
 }): Promise<SingleTtsResult> {
-  const voiceName = practiceVoiceName(input.voiceKey);
-  const stylePrompt = styleForKind(input.kind);
+  const stylePrompt = input.kind === "word" ? FLAT_READING_STYLE : null;
+  const body = buildSingleTtsRequestBody({
+    text: input.text,
+    kind: input.kind,
+    voiceKey: input.voiceKey,
+  });
   const fetcher = input.fetcher ?? fetch;
 
   let response: Response;
@@ -46,7 +91,7 @@ export async function generateSingleTts(input: {
     response = await fetcher(interactionsEndpoint(), {
       method: "POST",
       headers: authHeaders(input.apiKey),
-      body: JSON.stringify(buildInteractionBody(input.text, voiceName, stylePrompt)),
+      body: JSON.stringify(body),
     });
   } catch {
     return {
@@ -130,5 +175,10 @@ export async function generateSingleTts(input: {
     sha256,
     model: FLASH_TTS_MODEL,
     stylePrompt,
+    settings: {
+      requestStyle: "interactions",
+      method: SINGLE_TTS_METHOD,
+      stylePrompt,
+    },
   };
 }
