@@ -25,6 +25,7 @@ export function accountsDeps(appRoot: string, config: LearnConfig): AccountsDeps
     audioStore: createLocalAudioStore(rawDir),
     inviteOrigin: config.inviteOrigin ?? config.origin ?? null,
     secureCookies,
+    dictReview: config.screenPreview,
     ttsApiKey: config.ttsApiKey ?? null,
   };
 }

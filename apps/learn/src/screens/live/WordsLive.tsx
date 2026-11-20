@@ -111,7 +111,7 @@ export function WordsLive() {
             </div>
           </div>
         ) : null}
-        <DictInline word={word.word} wordId={word.id} pos={word.pos} />
+        <DictInline word={word.word} wordId={word.id} pos={word.pos} dict={word.dict} />
         <button
           type="button"
           onClick={() => void practice.playRole(word.wordAudioRef, "word", word.word)}
@@ -151,7 +151,7 @@ export function WordsLive() {
         </button>
         <p className="small">
           뜻·예문은 PR #5 로드맵의 설계용 초안이며, 공개 전 검수가 필요해요. 단어 담기는 이 미리보기 안에서만 유지돼요.
-          사전은 '사전 풀이'를 펼치는 방식으로 자리만 잡았고, 내용은 아직 연결하지 않았어요.
+          '사전 풀이'는 국립국어원 사전에서 받아 사람이 검수한 항목만 학습자에게 보여요.
         </p>
       </section>
     </LearnerFrame>

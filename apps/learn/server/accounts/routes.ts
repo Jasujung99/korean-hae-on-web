@@ -53,6 +53,8 @@ export type AccountsDeps = {
   inviteOrigin: string | null;
   /** https 주소에서만 쿠키에 Secure를 붙인다(로컬·같은 와이파이 HTTP 시험용). */
   secureCookies: boolean;
+  /** 개발 미리보기: 검수 전 사전 풀이도 '검수 전' 표시와 함께 보낸다. 운영에서는 끈다. */
+  dictReview?: boolean;
   /** 단건 TTS 생성 키. 비어 있으면 생성 준비 안 됨 상태 */
   ttsApiKey?: string | null;
   contentRepo?: ContentRepo;
@@ -284,7 +286,7 @@ export function createAccountRoutes(deps: AccountsDeps) {
   // ── 연습 ────────────────────────────────────────────────
   const learn = new Hono<LearnVars>();
   learn.use("*", requireLearner);
-  learn.route("/", createPracticeRoutes({ audio, resolveContent, now }));
+  learn.route("/", createPracticeRoutes({ audio, resolveContent, now, dictReview: deps.dictReview === true }));
   app.route("/learn", learn);
 
   // 음원: 연결된 학습자나 로그인한 교사만.

@@ -805,7 +805,7 @@ b.p3 {
   border-left: 2px solid var(--sage);
 }
 
-.dict-inline-row:nth-child(2) {
+.dict-inline-row.is-lang {
   border-left-color: var(--lavender);
 }
 
@@ -839,7 +839,7 @@ b.p3 {
 }
 
 .dict-inline .dict-inline-langs button {
-  min-height: 36px;
+  min-height: 44px;
   padding: 0 var(--space-3);
   border: 1px solid var(--line);
   border-radius: var(--radius-pill);
@@ -859,6 +859,109 @@ b.p3 {
 .dict-inline-note {
   color: var(--ink-muted);
   font: var(--text-doc-label);
+}
+
+/* 사전 풀이 내용(머리줄 바로가기·기초사전·내 언어·출처) */
+/* 머리줄: 버튼(사전 풀이 … 접기)이 한 줄을 다 쓰고, 넓은 화면에서는 바로가기가 그 위에 '접기' 왼쪽으로 얹힌다. */
+.dict-inline-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+.dict-inline .dict-inline-head .dict-inline-toggle {
+  grid-row: 1;
+  grid-column: 1 / -1;
+}
+
+.dict-inline-head .dict-inline-state {
+  min-width: 3em;
+  text-align: right;
+}
+
+.dict-inline-shortcuts {
+  position: relative;
+  z-index: 1;
+  grid-row: 1;
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(3em + var(--space-1));
+}
+
+.dict-inline-shortcuts .tc-ul {
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .dict-inline-shortcuts {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    justify-self: start;
+    margin: 0 0 0 calc(var(--space-3) * -1);
+  }
+}
+
+.dict-inline-text {
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.dict-inline-example {
+  color: var(--ink-muted);
+  font-family: var(--font-serif);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.dict-inline-trans {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.dict-inline-source:has(.dict-inline-source-link) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.dict-inline .dict-inline-source-link {
+  margin-left: calc(var(--space-3) * -1);
+  font: inherit;
+}
+
+/* 대역어 바로 뒤에 붙는 ↗: 글줄 높이는 그대로 두고 누르는 자리만 44px로 넓힌다. */
+.dict-inline .dict-inline-arrow {
+  justify-content: center;
+  min-width: 44px;
+  margin: -12px 0 -12px -4px;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.dict-inline-review {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--line);
+  background: var(--wash-sage);
+  color: var(--olive);
+  font: var(--text-doc-label);
+}
+
+.dict-inline-credit {
+  color: var(--ink-muted);
+  font: var(--text-doc-label);
+}
+
+.dict-inline-credit .tc-ul {
+  padding: 0 var(--space-1);
+  font: var(--text-doc-label);
+}
+
+.dict-inline a.tc-ul {
+  font-family: var(--font-serif);
+  text-decoration: none;
 }
 
 @keyframes dict-open {

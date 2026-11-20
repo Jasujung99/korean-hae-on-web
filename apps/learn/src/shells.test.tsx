@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import "@testing-library/jest-dom/vitest";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { MemoryRouter } from "react-router";
 import type { LearnerDetail, MeView, SessionView, TeacherView, WordView } from "../server/preview/contract.ts";
@@ -69,6 +69,7 @@ const previewWord: WordView = {
   pairGroupId: null,
   contrastTier: null,
   partners: [],
+  dict: null,
 };
 
 const previewDetail: LearnerDetail = {
@@ -233,7 +234,32 @@ describe("stage 1 shells", () => {
     expect(screen.queryByText(/브라우저 음성/)).not.toBeInTheDocument();
   });
 
-  it("marks dictionary places as empty slots with only Russian and English", async () => {
+  it("keeps the dictionary source and license note at the bottom of learner settings", async () => {
+    const scrolled = vi.fn();
+    Element.prototype.scrollIntoView = scrolled;
+    stubPreviewApi({ "GET /api/me": me });
+    const { container } = renderAt("/settings#dict-license", true);
+    const section = within(await screen.findByRole("region", { name: "사전 자료 출처" }));
+    const box = container.querySelector("#dict-license");
+    expect(box).not.toBeNull();
+    expect(box).toHaveTextContent("사전 풀이는 국립국어원 한국어기초사전과 표준국어대사전에서 옮겼어요.");
+    expect(box).toHaveTextContent("크리에이티브 커먼즈 저작자표시-동일조건변경허락 2.0 대한민국 라이선스(CC BY-SA 2.0 KR)를 따라요.");
+    const links = [
+      ["라이선스 전문 보기", "https://creativecommons.org/licenses/by-sa/2.0/kr/"],
+      ["한국어기초사전", "https://krdict.korean.go.kr/"],
+      ["표준국어대사전", "https://stdict.korean.go.kr/"],
+    ] as const;
+    for (const [name, href] of links) {
+      const link = section.getByRole("link", { name });
+      expect(link).toHaveAttribute("href", href);
+      expect(link).toHaveAttribute("target", "_blank");
+      expect(link).toHaveAttribute("rel", "noopener noreferrer");
+    }
+    expect(box?.parentElement?.lastElementChild).toBe(box);
+    expect(scrolled).toHaveBeenCalled();
+  });
+
+  it("shows a quiet dictionary empty state when the word has no approved entry", async () => {
     stubPreviewApi({ "GET /api/me": me, "GET /api/learn/words": { words: [previewWord] } });
     renderAt("/dictionary", true);
     expect(await screen.findByRole("heading", { level: 2, name: "모자" })).toBeInTheDocument();
@@ -241,10 +267,10 @@ describe("stage 1 shells", () => {
     expect(toggle).toHaveAttribute("aria-expanded", "false");
     fireEvent.click(toggle);
     expect(toggle).toHaveAttribute("aria-expanded", "true");
-    expect(screen.getByText(/한국어기초사전 뜻풀이가 들어올 자리/)).toBeInTheDocument();
-    expect(screen.getByText(/아직 사전을 연결하지 않았어요/)).toBeInTheDocument();
-    expect(screen.queryByRole("link", { name: /krdict|stdict|naver/i })).not.toBeInTheDocument();
-    expect(screen.getByRole("group", { name: "내 언어 고르기" }).textContent).toBe("РусскийEnglish");
+    expect(screen.getByText("이 낱말의 사전 풀이는 아직 준비하고 있어요.")).toBeInTheDocument();
+    const panel = within(toggle.closest("section") as HTMLElement);
+    expect(panel.queryByText(/검수 전/)).not.toBeInTheDocument();
+    expect(panel.getAllByRole("link").map((link) => link.getAttribute("aria-label"))).toEqual(["네이버 사전 새 창으로 열기"]);
   });
 
   it("opens the comparison, finish, and dictionary placeholders", () => {
