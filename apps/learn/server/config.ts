@@ -1,3 +1,5 @@
+import { readApiKey } from "../content/tts/pipeline.ts";
+
 export type LearnConfig = {
   origin: string | null;
   screenPreview: boolean;
@@ -9,6 +11,8 @@ export type LearnConfig = {
   accounts?: AccountsConfig | null;
   /** 초대 링크에 넣을 주소. 비우면 교사가 접속한 주소를 쓴다. */
   inviteOrigin?: string | null;
+  /** 단건 TTS 생성 키. 서버 내부 전용이며 공개 설정 응답에는 넣지 않는다. */
+  ttsApiKey?: string | null;
 };
 
 export type AccountsConfig = {
@@ -102,6 +106,7 @@ export function readLearnConfig(env: NodeJS.ProcessEnv): LearnConfig {
     port: readPort(env.PORT),
     accounts: readAccounts(env),
     inviteOrigin: readOrigin(env.LEARN_INVITE_ORIGIN),
+    ttsApiKey: readApiKey(env),
   };
 }
 

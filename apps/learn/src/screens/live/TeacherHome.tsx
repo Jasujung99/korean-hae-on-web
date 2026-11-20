@@ -1,8 +1,8 @@
 // 교사 화면: 로그인 → 학습자 관리(추가·초대 링크·재발급·폐기·기기 해제) → 학습 관찰 목록.
 // 교사 인증과 담당 학습자 확인은 서버가 한다. 초대 링크 원문은 만들 때 한 번만 보여 준다.
 import { useCallback, useEffect, useState, type FormEvent, type ReactNode } from "react";
-import { Link } from "react-router";
-import type { DictLanguage, InviteIssued, TeacherLearnerRow, TeacherView } from "../../../server/preview/contract.ts";
+import { Link, useLocation } from "react-router";
+import type { DictLanguage, InviteIssued, TeacherLearnerRow, TeacherView, TtsUsageView } from "../../../server/preview/contract.ts";
 import { PreviewApiError, teacherApi } from "../../preview/api";
 import { ScreenTitle } from "../../ui";
 import { formatDay } from "./format";
@@ -394,7 +394,34 @@ export function TeacherHome() {
   );
 }
 
+const TEACHER_TABS = [
+  { to: "/teach", label: "학습자", match: (path: string) => path === "/teach" || path === "/teach/" },
+  { to: "/teach/detail", label: "관찰", match: (path: string) => path.startsWith("/teach/detail") },
+  { to: "/teach/content", label: "콘텐츠", match: (path: string) => path.startsWith("/teach/content") },
+  { to: "/teach/voices", label: "목소리·음원", match: (path: string) => path.startsWith("/teach/voices") },
+] as const;
+
 export function TeacherBar({ name }: { name: string }) {
+  const location = useLocation();
+  const [usage, setUsage] = useState<TtsUsageView | null>(null);
+  const [usageOpen, setUsageOpen] = useState(false);
+
+  const loadUsage = useCallback(() => {
+    teacherApi
+      .ttsUsage()
+      .then(setUsage)
+      .catch(() => {
+        // 목록이 없는 환경이나 404에서는 표시를 비워 둔다.
+      });
+  }, []);
+
+  useEffect(() => {
+    loadUsage();
+    const onRefresh = () => loadUsage();
+    window.addEventListener("haeon:tts-usage-refresh", onRefresh);
+    return () => window.removeEventListener("haeon:tts-usage-refresh", onRefresh);
+  }, [loadUsage]);
+
   const logout = async () => {
     try {
       await teacherApi.logout();
@@ -402,15 +429,51 @@ export function TeacherBar({ name }: { name: string }) {
       window.location.assign("/teach");
     }
   };
+
   return (
     <div className="acct-bar">
-      <span>{name} 선생님</span>
-      <Link className="tc-ul" to="/teach/voices">
-        목소리 표본
-      </Link>
-      <button type="button" onClick={() => void logout()}>
-        로그아웃
-      </button>
+      <nav className="tc-tabs" aria-label="교사 메뉴">
+        {TEACHER_TABS.map((tab) => (
+          <Link key={tab.to} className="tc-tab" to={tab.to} aria-current={tab.match(location.pathname) ? "page" : undefined}>
+            {tab.label}
+          </Link>
+        ))}
+      </nav>
+      <div className="acct-bar-right">
+        <div className="tc-tts-wrap">
+          <button
+            type="button"
+            className="tc-tts-chip"
+            aria-expanded={usageOpen}
+            onClick={() => setUsageOpen((prev) => !prev)}
+            title="오늘 TTS 요청 건수"
+          >
+            <svg className="tc-mic" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M8 1.5a2.5 2.5 0 0 0-2.5 2.5v4a2.5 2.5 0 0 0 5 0V4A2.5 2.5 0 0 0 8 1.5Zm-4 6a.75.75 0 0 0-1.5 0 5.5 5.5 0 0 0 4.75 5.45V14.5H5.5a.75.75 0 0 0 0 1.5h5a.75.75 0 0 0 0-1.5H8.75v-1.55A5.5 5.5 0 0 0 13.5 7.5a.75.75 0 0 0-1.5 0 4 4 0 0 1-8 0Z" />
+            </svg>
+            <span>오늘 TTS {usage ? `${usage.used} / ${usage.limit}` : "- / 100"}</span>
+          </button>
+          {usageOpen ? (
+            <div className="tc-tts-popover" role="region" aria-label="오늘 TTS 사용 내역">
+              {usage ? (
+                <>
+                  <p>
+                    화면 단건 <strong>{usage.bySource.ui_single}건</strong> · PC 묶음{" "}
+                    <strong>{usage.bySource.pc_batch}건</strong>
+                  </p>
+                  <p className="small">기준일 {usage.quotaDay} · 태평양 자정(오후 5시)에 초기화돼요.</p>
+                </>
+              ) : (
+                <p className="small">사용량 정보를 아직 불러오지 못했어요.</p>
+              )}
+            </div>
+          ) : null}
+        </div>
+        <span>{name} 선생님</span>
+        <button type="button" onClick={() => void logout()}>
+          로그아웃
+        </button>
+      </div>
     </div>
   );
 }

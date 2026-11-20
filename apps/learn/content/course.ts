@@ -4,9 +4,15 @@
 // 2026-11-17 사용자 결정으로 아래 COURSE_ORDER를 따른다.
 import { COURSE_ORDER, PRACTICE_READY_GROUPS, type GroupId } from "./course-order.ts";
 import roadmapJson from "./reference/consonant-groups-roadmap.json" with { type: "json" };
-import { stageZeroCells, wordsInStage, type CoreStageKey } from "./core-table.ts";
 import { contrastOf, orderInStage } from "./contrast.ts";
-import { groupStageZero, groupWords, isOtherGroup, type OtherGroupId } from "./group-tables.ts";
+import {
+  snapshotFromReferenceJson,
+  snapshotPseudowords,
+  snapshotStageKey,
+  snapshotStageZero,
+  snapshotWords,
+  type ContentSnapshot,
+} from "./snapshot.ts";
 
 export { COURSE_ORDER, COURSE_ORDER_NOTE, PRACTICE_READY_GROUPS, type GroupId } from "./course-order.ts";
 
@@ -84,11 +90,12 @@ const STAGE_TITLE_OVERRIDES: Record<string, string> = {
   "Stage 1-B": "모음 사이 — ㅊ(긴 바람)과 ㅉ(긴 멈춤) 집중 비교",
 };
 
-const CORE_STAGE_KEYS: CoreStageKey[] = ["Stage 1-A", "Stage 1-B", "Stage 2", "Stage 3", "Stage 4", "Stage 5"];
+const CORE_STAGE_KEYS = ["Stage 1-A", "Stage 1-B", "Stage 2", "Stage 3", "Stage 4", "Stage 5"] as const;
 
 /** ㅈ·ㅊ·ㅉ는 Core 60 배치표(후보 103개)를 쓴다. */
-function coreStages(): CourseStage[] {
-  const zero = stageZeroCells();
+function coreStages(snapshot: ContentSnapshot): CourseStage[] {
+  const zero = snapshotStageZero(snapshot, "j_ch_jj");
+  const all = snapshotWords(snapshot, "j_ch_jj");
   return [
     {
       stage: "Stage 0",
@@ -97,21 +104,25 @@ function coreStages(): CourseStage[] {
       samples: zero.slice(0, 4).map((cell) => (cell.word ? `${cell.stimulus}/${cell.word}` : cell.stimulus)),
     },
     ...CORE_STAGE_KEYS.map((key) => {
-      const words = orderInStage(wordsInStage(key), (word) => contrastOf("j_ch_jj", word.word, word.consonant, word.stage)?.tier ?? null);
+      const words = orderInStage(
+        all.filter((word) => snapshotStageKey(word) === key),
+        (word) => contrastOf("j_ch_jj", word.word, word.consonant, word.stage)?.tier ?? null,
+      );
       return { stage: key, title: stageTitle(key), count: words.length, samples: words.slice(0, 4).map((word) => word.word) };
     }),
   ];
 }
 
 /** 나머지 네 묶음도 PR #5 `08` 문서의 배치표를 쓴다. */
-function groupTableStages(id: OtherGroupId): CourseStage[] {
-  const zero = groupStageZero(id);
+function groupTableStages(id: Exclude<GroupId, "j_ch_jj">, snapshot: ContentSnapshot): CourseStage[] {
+  const zero = snapshotStageZero(snapshot, id);
+  const all = snapshotWords(snapshot, id);
   const stages: CourseStage[] = [
     { stage: "Stage 0", title: stageTitle("Stage 0"), count: zero.length, samples: zero.slice(0, 4).map((cell) => cell.stimulus) },
   ];
   for (const stage of ["Stage 1", "Stage 2", "Stage 3", "Stage 4", "Stage 5"] as const) {
     const words = orderInStage(
-      groupWords(id).filter((word) => word.stage === stage),
+      all.filter((word) => word.stage === stage),
       (word) => contrastOf(id, word.word, word.consonant, word.stage)?.tier ?? null,
     );
     stages.push({ stage, title: stageTitle(stage), count: words.length, samples: words.slice(0, 4).map((word) => word.word) });
@@ -119,24 +130,18 @@ function groupTableStages(id: OtherGroupId): CourseStage[] {
   return stages;
 }
 
-function stageTitle(stage: string): string {
+export function stageTitle(stage: string): string {
   return STAGE_TITLE_OVERRIDES[stage] ?? roadmap.stage_definitions.find((row) => row.stage === stage)?.title ?? stage;
 }
 
-export function courseGroups(): CourseGroup[] {
+export function courseGroups(snapshot: ContentSnapshot = snapshotFromReferenceJson()): CourseGroup[] {
   return COURSE_ORDER.map((id, index) => {
     const macro = roadmap.macro_sequence.find((row) => row.group_id === id);
     const group = roadmap.consonant_groups[id];
     if (!macro || !group) throw new Error(`roadmap has no group ${id}`);
-    const stages = id === "j_ch_jj" ? coreStages() : isOtherGroup(id) ? groupTableStages(id) : Object.entries(group.stages).map(([stage, rows]) => ({
-      stage,
-      title: stageTitle(stage),
-      count: rows.length,
-      samples: rows
-        .map((row) => row.word ?? row.stimulus ?? "")
-        .filter(Boolean)
-        .slice(0, 4),
-    }));
+    const pseudowords = snapshotPseudowords(snapshot, id).map((row) => row.stimulus);
+    const stages =
+      id === "j_ch_jj" ? coreStages(snapshot) : groupTableStages(id, snapshot);
     return {
       id,
       order: index + 1,
@@ -144,7 +149,7 @@ export function courseGroups(): CourseGroup[] {
       choices: macro.choices,
       category: macro.phonetic_category,
       rationale: macro.rationale,
-      pseudowords: group.pseudowords_stage1,
+      pseudowords: pseudowords.length > 0 ? pseudowords : group.pseudowords_stage1,
       stages,
       status: PRACTICE_READY_GROUPS.includes(id) ? "practice" : "planned",
     };

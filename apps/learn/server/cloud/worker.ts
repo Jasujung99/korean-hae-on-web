@@ -7,11 +7,15 @@ import { supabaseTeacherAuth } from "../accounts/auth.ts";
 import { createSupabaseRepo } from "../accounts/supabase-repo.ts";
 import { createLearnApp } from "../app.ts";
 import { readLearnConfig } from "../config.ts";
+import type { ContentRepo } from "../content/repo.ts";
+import { createSnapshotCache, type SnapshotCache } from "../content/runtime.ts";
+import { createSupabaseContentRepo } from "../content/supabase-repo.ts";
 import { previewAudioIds } from "../preview/audio-ids.ts";
 import { createR2AudioSource } from "./packed-audio.ts";
+import { createR2AudioStore, type R2AudioBucket } from "./r2-audio-store.ts";
 
 type AssetFetcher = { fetch(input: Request | string): Promise<Response> };
-type R2Bucket = Parameters<ReturnType<typeof createR2AudioSource>>[0];
+type R2Bucket = Parameters<ReturnType<typeof createR2AudioSource>>[0] & R2AudioBucket;
 
 export type CloudEnv = {
   ASSETS: AssetFetcher;
@@ -25,9 +29,20 @@ export type CloudEnv = {
   LEARN_DB_SECRET_KEY?: string;
   LEARN_DB_PUBLISHABLE_KEY?: string;
   LEARN_SESSION_SECRET?: string;
+  GEMINI_API_KEY?: string;
 };
 
 const audioSource = createR2AudioSource(previewAudioIds());
+const snapshotCaches = new Map<string, SnapshotCache>();
+
+function getWorkerSnapshotCache(dbUrl: string, repo: ContentRepo): SnapshotCache {
+  let cache = snapshotCaches.get(dbUrl);
+  if (!cache) {
+    cache = createSnapshotCache(repo, 60_000);
+    snapshotCaches.set(dbUrl, cache);
+  }
+  return cache;
+}
 
 function documentHeaders(response: Response): Response {
   const headers = new Headers(response.headers);
@@ -53,14 +68,20 @@ async function buildApp(env: CloudEnv) {
   if (!db) return createLearnApp(config);
 
   const audio = await audioSource(env.AUDIO, db.sessionSecret);
+  const contentRepo = createSupabaseContentRepo({ url: db.dbUrl, secretKey: db.secretKey });
+  const snapshotCache = getWorkerSnapshotCache(db.dbUrl, contentRepo);
 
   return createLearnApp(config, {}, {
     repo: createSupabaseRepo({ url: db.dbUrl, secretKey: db.secretKey }),
     auth: supabaseTeacherAuth({ url: db.dbUrl, publishableKey: db.publishableKey }),
     sessionSecret: db.sessionSecret,
     audio,
+    contentRepo,
+    audioStore: createR2AudioStore(env.AUDIO),
+    snapshotCache,
     inviteOrigin: config.inviteOrigin ?? config.origin ?? null,
     secureCookies: (config.origin ?? "").startsWith("https://"),
+    ttsApiKey: config.ttsApiKey ?? null,
   });
 }
 

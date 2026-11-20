@@ -18,6 +18,7 @@ import {
   readApiKey,
 } from "../content/tts/pipeline.ts";
 import { readPcm16Wav } from "../content/tts/split.ts";
+import { logPcTtsUsage } from "./tts-usage-log.ts";
 
 const outDir = fileURLToPath(new URL("../audio/raw/pilot/", import.meta.url));
 const VOICE = process.argv.includes("--voice") ? (process.argv[process.argv.indexOf("--voice") + 1] ?? "Erinome") : "Erinome";
@@ -179,11 +180,13 @@ async function main() {
       }
     }
     if (!response) {
+      await logPcTtsUsage({ voiceKey: VOICE, kind: trial.kind, ok: false, errorCode: "network_error" });
       console.error(`${trial.id}: connection failed`);
       report.push({ id: trial.id, error: "connection" });
       continue;
     }
     if (!response.ok) {
+      await logPcTtsUsage({ voiceKey: VOICE, kind: trial.kind, ok: false, errorCode: `http_${response.status}` });
       const text = (await response.text()).replace(/AIza\S+/g, "[key]");
       console.error(`${trial.id}: ${response.status}`);
       report.push({ id: trial.id, error: response.status, detail: text.slice(0, 300) });
@@ -192,6 +195,7 @@ async function main() {
     }
     const blocks = audioBlocks(await response.json());
     const wavs = blocks.map((block) => normalizeToWav(decodeBase64(block.base64), block.mime)).filter((value) => value !== null);
+    await logPcTtsUsage({ voiceKey: VOICE, kind: trial.kind, ok: wavs.length > 0, errorCode: wavs.length > 0 ? null : "invalid_audio" });
     const count = trial.items.length + (trial.fillers ? 2 : 0);
     const names = trial.fillers ? ["filler-start", ...trial.items, "filler-end"] : trial.items;
     const entry: Record<string, unknown> = {

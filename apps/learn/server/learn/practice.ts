@@ -23,6 +23,7 @@ import { STEP_LABELS } from "../../content/contrast.ts";
 import { VOICE_CANDIDATE } from "../../content/tts/pipeline.ts";
 import { turnsAudioId } from "../../content/tts/batch-plan.ts";
 import { DEFAULT_PRACTICE_VOICE, PRACTICE_VOICES, isPracticeVoiceKey, voicedAudioId, type PracticeVoiceKey } from "../../content/practice-voices.ts";
+import { snapshotFromReferenceJson, type ContentSnapshot } from "../../content/snapshot.ts";
 import type { LearnerStore } from "../accounts/events.ts";
 import type { LearnerRow } from "../accounts/repo.ts";
 import type { PreviewAudio } from "../preview/audio.ts";
@@ -104,7 +105,13 @@ export function audioPicker(audio: PreviewAudio, voiceKey: string, exampleReadin
   return { pick, refOf, exampleRefOf, voice };
 }
 
-function scope(learner: LearnerRow, store: LearnerStore, audio: PreviewAudio, now: () => Date) {
+function scope(
+  learner: LearnerRow,
+  store: LearnerStore,
+  audio: PreviewAudio,
+  snapshot: ContentSnapshot,
+  now: () => Date,
+) {
   const { pick, refOf, exampleRefOf, voice } = audioPicker(audio, learner.practiceVoice, learner.exampleReading);
   const events = () => store.all();
   const plans = () => events().filter((event) => event.type === "session_planned");
@@ -127,11 +134,11 @@ function scope(learner: LearnerRow, store: LearnerStore, audio: PreviewAudio, no
   });
 
   const answerResult = (event: StoredEvent): AnswerResult => {
-    const item = practiceItem(String(event.payload.itemId));
+    const item = practiceItem(String(event.payload.itemId), snapshot);
     const answerKey = String(event.payload.target);
     const chosenKey = String(event.payload.choice);
     const answer = { key: answerKey, text: item?.stimulus ?? answerKey };
-    const pair = item && isConsonant(chosenKey) ? comparePair(item, chosenKey) : null;
+    const pair = item && isConsonant(chosenKey) ? comparePair(item, chosenKey, snapshot) : null;
     return {
       itemId: String(event.payload.itemId),
       choice: chosenKey,
@@ -172,7 +179,7 @@ function scope(learner: LearnerRow, store: LearnerStore, audio: PreviewAudio, no
       ),
     ];
     const items: ItemView[] = itemIds.flatMap((itemId, index) => {
-      const item = practiceItem(itemId);
+      const item = practiceItem(itemId, snapshot);
       if (!item) return [];
       return [
         {
@@ -207,18 +214,33 @@ function scope(learner: LearnerRow, store: LearnerStore, audio: PreviewAudio, no
   return { pick, refOf, exampleRefOf, voice, events, plans, planFor, serverEvent, answerResult, sessionView };
 }
 
-export function createPracticeRoutes(deps: { audio: PreviewAudio; now?: () => Date }) {
+export function createPracticeRoutes(deps: {
+  audio: PreviewAudio;
+  resolveContent?: () => Promise<{ snapshot: ContentSnapshot; audio: PreviewAudio }>;
+  now?: () => Date;
+}) {
   const { audio } = deps;
   const now = deps.now ?? (() => new Date());
+  const resolve =
+    deps.resolveContent ?? (async () => ({ snapshot: snapshotFromReferenceJson(), audio }));
   const app = new Hono<LearnVars>();
-  const use = (c: Context<LearnVars>) => ({ ...scope(c.get("learner"), c.get("store"), audio, now), store: c.get("store") });
+  const use = async (c: Context<LearnVars>) => {
+    const resolved = await resolve();
+    return {
+      ...scope(c.get("learner"), c.get("store"), resolved.audio, resolved.snapshot, now),
+      snapshot: resolved.snapshot,
+      audio: resolved.audio,
+      store: c.get("store"),
+    };
+  };
 
-  app.get("/course", (c) => {
+  app.get("/course", async (c) => {
+    const s = await use(c);
     const view: CourseView = {
       note: COURSE_ORDER_NOTE,
       sourceCommit: COURSE_SOURCE.commit,
       roadmapPriority: roadmapPriority(),
-      groups: courseGroups().map((group) => ({
+      groups: courseGroups(s.snapshot).map((group) => ({
         id: group.id,
         order: group.order,
         label: group.label,
@@ -226,7 +248,7 @@ export function createPracticeRoutes(deps: { audio: PreviewAudio; now?: () => Da
         category: group.category,
         pseudowords: group.pseudowords,
         // 연습 문항이 코드에 있고, 그 묶음의 연습 음원이 하나 이상 올라와 있을 때만 연습을 연다.
-        status: group.status === "practice" && practiceAudioReady(audio) ? "practice" : "planned",
+        status: group.status === "practice" && practiceAudioReady(s.audio) ? "practice" : "planned",
         stages: group.stages,
       })),
     };
@@ -234,12 +256,12 @@ export function createPracticeRoutes(deps: { audio: PreviewAudio; now?: () => Da
   });
 
   app.post("/sessions", async (c) => {
-    const s = use(c);
+    const s = await use(c);
     const body = (await readJson(c)) ?? {};
     const itemKind: ItemKind =
       body.itemKind === "word" || body.itemKind === "pseudo" ? body.itemKind : c.get("learner").itemKind;
     const sessionId = randomUUID();
-    const plan = planPracticeSession(sessionId, itemKind);
+    const plan = planPracticeSession(sessionId, itemKind, s.snapshot);
     const event = s.serverEvent("session_planned", sessionId, {
       groupId: PRACTICE_GROUP_ID,
       itemKind,
@@ -253,14 +275,14 @@ export function createPracticeRoutes(deps: { audio: PreviewAudio; now?: () => Da
     return c.json({ session: s.sessionView(event) }, 201);
   });
 
-  app.get("/sessions/current", (c) => {
-    const s = use(c);
+  app.get("/sessions/current", async (c) => {
+    const s = await use(c);
     const last = s.plans().at(-1);
     return c.json({ session: last ? s.sessionView(last) : null });
   });
 
   app.post("/answers", async (c) => {
-    const s = use(c);
+    const s = await use(c);
     const body = await readJson(c);
     if (!body) return c.json({ error: "invalid_body" }, 400);
     const { eventId, sessionId, itemId, choice, seq, clientTime } = body;
@@ -274,7 +296,7 @@ export function createPracticeRoutes(deps: { audio: PreviewAudio; now?: () => Da
     const plan = s.planFor(sessionId);
     if (!plan) return c.json({ error: "unknown_session" }, 404);
     if (!((plan.payload.itemIds as string[]) ?? []).includes(itemId)) return c.json({ error: "item_not_in_session" }, 400);
-    const item = practiceItem(itemId);
+    const item = practiceItem(itemId, s.snapshot);
     if (!item || !isConsonant(choice)) return c.json({ error: "invalid_choice" }, 400);
     const audioState = body.audioState === "error" ? "error" : "ok";
     const answeredDuringPlayback = body.answeredDuringPlayback === true;
@@ -319,7 +341,7 @@ export function createPracticeRoutes(deps: { audio: PreviewAudio; now?: () => Da
         step: item.step,
         syllableIndex: item.syllableIndex,
         audioId,
-        voice: audio.meta(audioId)?.voice ?? null,
+        voice: s.audio.meta(audioId)?.voice ?? null,
         audioSource: "file",
         style: body.style === "proto" ? "proto" : "canvas",
         policyVersion: plan.payload.policyVersion,
@@ -339,15 +361,15 @@ export function createPracticeRoutes(deps: { audio: PreviewAudio; now?: () => Da
   });
 
   app.post("/abx/trials", async (c) => {
-    const s = use(c);
+    const s = await use(c);
     const body = await readJson(c);
     if (!body) return c.json({ error: "invalid_body" }, 400);
     const { sessionId, itemId, partner } = body;
     if (typeof sessionId !== "string" || typeof itemId !== "string") return c.json({ error: "invalid_body" }, 400);
     const plan = s.planFor(sessionId);
-    const item = practiceItem(itemId);
+    const item = practiceItem(itemId, s.snapshot);
     if (!plan || !item) return c.json({ error: "unknown_item" }, 404);
-    const trial = makeAbxTrial(item, isConsonant(partner) ? partner : null, randomUUID().slice(0, 8));
+    const trial = makeAbxTrial(item, isConsonant(partner) ? partner : null, randomUUID().slice(0, 8), s.snapshot);
     await s.store.append([
       s.serverEvent(
         "abx_trial",
@@ -377,7 +399,7 @@ export function createPracticeRoutes(deps: { audio: PreviewAudio; now?: () => Da
   });
 
   app.post("/abx/answers", async (c) => {
-    const s = use(c);
+    const s = await use(c);
     const body = await readJson(c);
     if (!body) return c.json({ error: "invalid_body" }, 400);
     const { eventId, sessionId, trialId, choice, seq, clientTime } = body;
@@ -426,7 +448,7 @@ export function createPracticeRoutes(deps: { audio: PreviewAudio; now?: () => Da
   });
 
   app.post("/events", async (c) => {
-    const s = use(c);
+    const s = await use(c);
     const body = await readJson(c);
     const list = body?.events;
     if (!Array.isArray(list) || list.length > 200) return c.json({ error: "invalid_body" }, 400);
@@ -461,8 +483,8 @@ export function createPracticeRoutes(deps: { audio: PreviewAudio; now?: () => Da
   });
 
   // 소리 익히기: 점수를 매기지 않는 자유 비교 듣기.
-  app.get("/listen", (c) => {
-    const s = use(c);
+  app.get("/listen", async (c) => {
+    const s = await use(c);
     const leads = [...new Set(PRACTICE_ITEMS.map((item) => item.stimulus.slice(0, 1)))];
     const view: ListenView = {
       frames: leads.map((lead) => ({
@@ -476,9 +498,9 @@ export function createPracticeRoutes(deps: { audio: PreviewAudio; now?: () => Da
     return c.json(view);
   });
 
-  app.get("/words", (c) => {
-    const s = use(c);
-    const cards = practiceWords();
+  app.get("/words", async (c) => {
+    const s = await use(c);
+    const cards = practiceWords(s.snapshot);
     const words: WordView[] = cards.map((word) => ({
       id: word.id,
       word: word.word,
@@ -492,8 +514,8 @@ export function createPracticeRoutes(deps: { audio: PreviewAudio; now?: () => Da
       related: word.related,
       wordAudioRef: s.refOf(word.wordAudioId, word.legacyWordAudioId),
       exampleAudioRef: word.exampleAudioId ? s.exampleRefOf(word.exampleAudioId, word.legacyExampleAudioId) : null,
-      wordVoice: audio.meta(s.pick(word.wordAudioId, word.legacyWordAudioId))?.voice ?? null,
-      exampleVoice: word.exampleAudioId ? (audio.meta(s.pick(word.exampleAudioId, word.legacyExampleAudioId))?.voice ?? null) : null,
+      wordVoice: s.audio.meta(s.pick(word.wordAudioId, word.legacyWordAudioId))?.voice ?? null,
+      exampleVoice: word.exampleAudioId ? (s.audio.meta(s.pick(word.exampleAudioId, word.legacyExampleAudioId))?.voice ?? null) : null,
       step: word.step,
       stepLabel: STEP_LABELS[word.step],
       pairGroupId: word.contrast?.pairGroupId ?? null,

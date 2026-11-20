@@ -8,6 +8,9 @@ import type {
   AnswerRequest,
   AnswerResult,
   ClientEvent,
+  ContentItemView,
+  ContentReleaseStatusView,
+  ContentVersionRow,
   CourseView,
   DictLanguage,
   InviteInspectView,
@@ -18,7 +21,9 @@ import type {
   ListenView,
   MeView,
   SessionView,
+  TeacherContentView,
   TeacherView,
+  TtsUsageView,
   VoicesView,
   WordView,
 } from "../../server/preview/contract.ts";
@@ -27,6 +32,7 @@ export class PreviewApiError extends Error {
   constructor(
     public status: number,
     public code: string | null = null,
+    public serverMessage: string | null = null,
   ) {
     super(`learn api ${status}`);
   }
@@ -34,13 +40,15 @@ export class PreviewApiError extends Error {
 
 async function fail(response: Response): Promise<never> {
   let code: string | null = null;
+  let serverMessage: string | null = null;
   try {
-    const body = (await response.json()) as { error?: unknown; status?: unknown };
+    const body = (await response.json()) as { error?: unknown; status?: unknown; message?: unknown };
     code = typeof body.status === "string" ? body.status : typeof body.error === "string" ? body.error : null;
+    serverMessage = typeof body.message === "string" ? body.message : null;
   } catch {
     // 본문이 없으면 상태 코드만 쓴다.
   }
-  throw new PreviewApiError(response.status, code);
+  throw new PreviewApiError(response.status, code, serverMessage);
 }
 
 async function getJson<T>(path: string): Promise<T> {
@@ -49,9 +57,9 @@ async function getJson<T>(path: string): Promise<T> {
   return (await response.json()) as T;
 }
 
-async function postJson<T>(path: string, body: unknown, keepalive = false): Promise<T> {
+async function sendJson<T>(method: "POST" | "PATCH", path: string, body: unknown, keepalive = false): Promise<T> {
   const response = await fetch(path, {
-    method: "POST",
+    method,
     headers: { "content-type": "application/json", accept: "application/json" },
     body: JSON.stringify(body),
     credentials: "same-origin",
@@ -59,6 +67,14 @@ async function postJson<T>(path: string, body: unknown, keepalive = false): Prom
   });
   if (!response.ok) return fail(response);
   return (await response.json()) as T;
+}
+
+async function postJson<T>(path: string, body: unknown, keepalive = false): Promise<T> {
+  return sendJson<T>("POST", path, body, keepalive);
+}
+
+async function patchJson<T>(path: string, body: unknown): Promise<T> {
+  return sendJson<T>("PATCH", path, body);
 }
 
 export const previewApi = {
@@ -114,9 +130,60 @@ export const teacherApi = {
   voices: () => getJson<VoicesView>("/api/teacher/voices"),
   chooseVoice: (voice: string) => postJson<VoicesView>("/api/teacher/voice-choice", { voice }),
   audioInventory: () => getJson<AudioInventoryView>("/api/teacher/audio-inventory"),
+  content: (group: string) => getJson<TeacherContentView>(`/api/teacher/content?group=${encodeURIComponent(group)}`),
+  ttsUsage: () => getJson<TtsUsageView>("/api/teacher/content/usage"),
+  createContentItem: (input: {
+    groupId: string;
+    stage: string;
+    substage?: string | null;
+    consonant: string;
+    word: string;
+    gloss?: string;
+    example?: string;
+  }) => postJson<{ item: ContentItemView }>("/api/teacher/content/items", input),
+  updateContentItem: (
+    id: string,
+    patch: Partial<{
+      word: string;
+      consonant: string;
+      pos: string;
+      gloss: string;
+      scene: string;
+      example: string;
+      related: string;
+      note: string;
+      reason: string;
+    }>,
+  ) =>
+    patchJson<{ item: ContentItemView; version: ContentVersionRow | null; changedFields: string[]; staleMarked: number }>(
+      `/api/teacher/content/items/${encodeURIComponent(id)}`,
+      patch,
+    ),
+  itemVersions: (id: string) =>
+    getJson<{ versions: ContentVersionRow[] }>(`/api/teacher/content/items/${encodeURIComponent(id)}/versions`),
+  approveContentItem: (id: string) =>
+    postJson<{ item: ContentItemView }>(`/api/teacher/content/items/${encodeURIComponent(id)}/approve`, {}),
+  hideContentItem: (id: string, reason?: string) =>
+    postJson<{ item: ContentItemView }>(`/api/teacher/content/items/${encodeURIComponent(id)}/hide`, { reason }),
+  generateContentAudio: (itemId: string, body: { kind: "word" | "sentence"; voice: string }) =>
+    postJson<{
+      asset: { id: string; audioId: string; status: string; durationMs: number | null; playUrl: string };
+      usage: TtsUsageView;
+    }>(`/api/teacher/content/items/${encodeURIComponent(itemId)}/audio`, body),
+  approveContentAudio: (assetId: string) =>
+    postJson<{ asset: { id: string; status: string } }>(`/api/teacher/content/audio/${encodeURIComponent(assetId)}/approve`, {}),
+  rejectContentAudio: (assetId: string) =>
+    postJson<{ asset: { id: string; status: string } }>(`/api/teacher/content/audio/${encodeURIComponent(assetId)}/reject`, {}),
+  releaseStatus: () => getJson<ContentReleaseStatusView>("/api/teacher/content/release-status"),
+  publishRelease: (note?: string) =>
+    postJson<{
+      release: { seq: number; releasedAt: string; note: string | null; itemCount: number; audioCount: number };
+      status: ContentReleaseStatusView;
+    }>("/api/teacher/content/releases", { note }),
 };
 
 export function audioUrl(ref: string): string {
+  if (ref.startsWith("/api/")) return ref;
   return `/api/sound/${encodeURIComponent(ref)}`;
 }
 

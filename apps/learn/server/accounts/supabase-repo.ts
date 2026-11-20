@@ -8,8 +8,12 @@ export type DbConfig = { url: string; secretKey: string };
 type Row = Record<string, unknown>;
 
 export class DbError extends Error {
-  constructor(public status: number, public code: string) {
+  status: number;
+  code: string;
+  constructor(status: number, code: string) {
     super(`db ${status} ${code}`);
+    this.status = status;
+    this.code = code;
   }
 }
 
