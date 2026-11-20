@@ -559,6 +559,7 @@ export function TeacherDetail() {
   const [failed, setFailed] = useState(false);
 
   const load = useCallback(() => {
+    if (!selected) return;
     setFailed(false);
     setDetail(null);
     teacherApi
@@ -570,6 +571,28 @@ export function TeacherDetail() {
   useEffect(() => {
     load();
   }, [load]);
+
+  if (!selected) {
+    return (
+      <div className="tc-page">
+        <ScreenTitle title="학습 관찰" />
+        <div className="tc-head">
+          <div>
+            <p className="tc-label">선생님 화면 · 읽기 전용</p>
+            <h2 className="tc-title">학습 관찰</h2>
+          </div>
+        </div>
+        <div className="tc-rule" />
+        <section className="panel stack">
+          <p>살펴볼 학습자를 먼저 골라 주세요.</p>
+          <p className="muted">학습자 표에서 ‘기록 보기’ 또는 ‘자세히’를 누르면 이 화면으로 와요.</p>
+          <Link className="tc-ul" to="/teach">
+            학습자 표로 가기
+          </Link>
+        </section>
+      </div>
+    );
+  }
 
   return (
     <div className="tc-page">

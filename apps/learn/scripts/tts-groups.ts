@@ -6,8 +6,8 @@
 // 이미 묶음 방식으로 만든 파일은 건너뛴다. 하나씩 만든 예전 파일은 `<id>--single`로 옮겨 보관한다.
 import { existsSync, readFileSync } from "node:fs";
 import { mkdir, rename, writeFile } from "node:fs/promises";
-import { join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { join, resolve } from "node:path";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import {
   BATCH_KINDS,
   GROUPED_METHODS,
@@ -32,6 +32,8 @@ import {
 import { splitChecked } from "../content/tts/split.ts";
 import { PRACTICE_VOICES, type PracticeVoiceKey } from "../content/practice-voices.ts";
 import { isOtherGroup } from "../content/group-tables.ts";
+import type { ContentRepo } from "../server/content/repo.ts";
+import { logPcTtsUsage, resolveContentRepo } from "./tts-usage-log.ts";
 
 const appRoot = fileURLToPath(new URL("..", import.meta.url));
 const rawDir = process.env.LEARN_AUDIO_DIR?.trim() || join(appRoot, "audio", "raw");
@@ -52,6 +54,32 @@ function doneGrouped(id: string): boolean {
   } catch {
     return false;
   }
+}
+
+/** DB에 이미 draft·approved(stale 아님) 상태로 올라간 audio_id를 모은다. 실패 시 빈 집합을 돌려준다. */
+export async function loadDbActiveAudioIds(repo: ContentRepo | null): Promise<Set<string>> {
+  const out = new Set<string>();
+  if (!repo) return out;
+  try {
+    const assets = await repo.listAudioAssets();
+    for (const asset of assets) {
+      if ((asset.status === "draft" || asset.status === "approved") && !asset.stale) {
+        out.add(asset.audioId);
+      }
+    }
+  } catch {
+    // DB 연결이 없거나 표가 아직 없을 때도 로컬 판정으로 이어간다.
+  }
+  return out;
+}
+
+export function makeDoneCheck(input: {
+  doneLocal: (id: string) => boolean;
+  dbActiveAudioIds: ReadonlySet<string>;
+  replace: boolean;
+}): (id: string) => boolean {
+  if (input.replace) return () => false;
+  return (id) => input.doneLocal(id) || input.dbActiveAudioIds.has(id);
 }
 
 type Outcome = "written" | "split_failed" | "quota" | "failed";
@@ -89,17 +117,23 @@ async function request(group: BatchGroup, voice: string, apiKey: string): Promis
 
 async function runGroup(group: BatchGroup, voiceKey: PracticeVoiceKey, voice: string, apiKey: string): Promise<Outcome> {
   const response = await request(group, voice, apiKey);
-  if (response === "quota") return "quota";
+  if (response === "quota") {
+    await logPcTtsUsage({ voiceKey, kind: group.kind, ok: false, errorCode: "daily_quota" });
+    return "quota";
+  }
   if (!response) {
+    await logPcTtsUsage({ voiceKey, kind: group.kind, ok: false, errorCode: "network_error" });
     console.error(`${group.groupId}: request failed`);
     return "failed";
   }
   if (!response.ok) {
+    await logPcTtsUsage({ voiceKey, kind: group.kind, ok: false, errorCode: `http_${response.status}` });
     console.error(`${group.groupId}: ${response.status}`);
     return "failed";
   }
   const parsed = parseInteractionAudio(await response.json());
   const wav = parsed ? normalizeToWav(decodeBase64(parsed.base64), parsed.mime) : null;
+  await logPcTtsUsage({ voiceKey, kind: group.kind, ok: Boolean(wav), errorCode: wav ? null : "invalid_audio" });
   if (!wav) {
     console.error(`${group.groupId}: no audio`);
     return "failed";
@@ -196,9 +230,18 @@ async function main() {
     console.error("--groups accepts j_ch_jj, s_ss, g_k_kk, b_p_pp, d_t_tt.");
     process.exit(1);
   }
+  const replace = process.argv.includes("--replace");
+  const dbActiveAudioIds = replace ? new Set<string>() : await loadDbActiveAudioIds(resolveContentRepo());
+  if (replace) {
+    console.log("replace: regenerating matching audio (ignoring local/DB skip)");
+  } else if (dbActiveAudioIds.size > 0) {
+    console.log(`db: skipping ${dbActiveAudioIds.size} draft/approved audio ids`);
+  }
+  const done = makeDoneCheck({ doneLocal: doneGrouped, dbActiveAudioIds, replace });
+
   const plans = voices.map((row) => {
     const taken = new Set<string>();
-    return { row, groups: groupIds.flatMap((groupId) => batchPlan(row.key, kinds, doneGrouped, groupId, taken)) };
+    return { row, groups: groupIds.flatMap((groupId) => batchPlan(row.key, kinds, done, groupId, taken)) };
   });
   for (const { row, groups } of plans) {
     const byKind = kinds.map((kind) => {
@@ -234,4 +277,7 @@ async function main() {
   if (tally.failed || tally.split_failed || tally.quota) process.exitCode = 3;
 }
 
-void main();
+const isEntry = process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href;
+if (isEntry) {
+  void main();
+}

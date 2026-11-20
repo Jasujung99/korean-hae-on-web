@@ -30,6 +30,7 @@ import { PRACTICE_ITEMS } from "../content/practice.ts";
 import { PRACTICE_VOICES, voicedAudioId } from "../content/practice-voices.ts";
 import { GROUP_MODES, groupFullId, groupPlans, splitAudioId, type GroupMode } from "../content/tts/groups.ts";
 import { splitWavBySilence } from "../content/tts/split.ts";
+import { logPcTtsUsage } from "./tts-usage-log.ts";
 
 const appRoot = fileURLToPath(new URL("..", import.meta.url));
 const rawDir = join(appRoot, "audio", "raw");
@@ -107,15 +108,21 @@ async function generateOne(input: {
       await new Promise((resolve) => setTimeout(resolve, delay));
     }
   } catch {
+    await logPcTtsUsage({ voiceKey: voice, kind, ok: false, errorCode: "network_error" });
     console.error(`request failed: ${id}`);
     return "failed";
   }
-  if (!response) return "failed";
+  if (!response) {
+    await logPcTtsUsage({ voiceKey: voice, kind, ok: false, errorCode: "network_error" });
+    return "failed";
+  }
   if (response.status === 429) {
+    await logPcTtsUsage({ voiceKey: voice, kind, ok: false, errorCode: "rate_limit" });
     console.error(`quota or rate limit reached at ${id}. Stopping without writing.`);
     return "quota";
   }
   if (!response.ok) {
+    await logPcTtsUsage({ voiceKey: voice, kind, ok: false, errorCode: `http_${response.status}` });
     let reason = "";
     try {
       const body = (await response.json()) as { error?: { status?: string } };
@@ -130,15 +137,18 @@ async function generateOne(input: {
   const payload = await response.json();
   const parsed = style ? parseInteractionAudio(payload) : parseGenerateContentAudio(payload);
   if (!parsed) {
+    await logPcTtsUsage({ voiceKey: voice, kind, ok: false, errorCode: "invalid_audio" });
     console.error(`response had no audio: ${id}`);
     return "failed";
   }
   const sourceBytes = decodeBase64(parsed.base64);
   const normalized = normalizeToWav(sourceBytes, parsed.mime);
   if (!normalized) {
+    await logPcTtsUsage({ voiceKey: voice, kind, ok: false, errorCode: "invalid_audio" });
     console.error(`unknown audio format (${parsed.mime || "no mime"}): ${id}. Not written.`);
     return "failed";
   }
+  await logPcTtsUsage({ voiceKey: voice, kind, ok: true, errorCode: null });
   const digest = await sha256Hex(normalized.bytes);
   await mkdir(rawDir, { recursive: true });
   await writeFile(wavPath, normalized.bytes);

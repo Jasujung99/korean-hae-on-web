@@ -71,3 +71,15 @@ export function sentenceAudioBase(word: Pick<CoreWord, "entryId" | "word">): str
 export function syllableAudioBase(text: string): string {
   return `pw-${text}`;
 }
+
+export const JCJ_PSEUDOWORDS: ReadonlyArray<{ stimulus: string; consonant: CoreConsonant }> = [
+  { stimulus: "아자", consonant: "ㅈ" },
+  { stimulus: "아차", consonant: "ㅊ" },
+  { stimulus: "아짜", consonant: "ㅉ" },
+  { stimulus: "이자", consonant: "ㅈ" },
+  { stimulus: "이차", consonant: "ㅊ" },
+  { stimulus: "이짜", consonant: "ㅉ" },
+  { stimulus: "오자", consonant: "ㅈ" },
+  { stimulus: "오차", consonant: "ㅊ" },
+  { stimulus: "오짜", consonant: "ㅉ" },
+];

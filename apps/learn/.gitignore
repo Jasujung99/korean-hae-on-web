@@ -9,3 +9,5 @@ dist/
 .env.*
 !.env.example
 content/dict/raw/
+audio/packed/
+.wrangler/

@@ -5,7 +5,15 @@
 // 보기는 어느 쪽이든 자음 글자(ㅈ·ㅊ·ㅉ)다.
 // 문항과 음원은 초안이며 Core 60 승인이나 청취 검수를 뜻하지 않는다.
 import { selectPracticeSet, SELECTION_POLICY_VERSION } from "./selection.ts";
-import { coreWords, sentenceAudioBase, wordAudioBase, type CoreWord } from "./core-table.ts";
+import {
+  snapshotFromReferenceJson,
+  snapshotSentenceAudioBase,
+  snapshotWordAudioBase,
+  snapshotWordCardId,
+  snapshotWords,
+  type ContentSnapshot,
+  type SnapshotWord,
+} from "./snapshot.ts";
 import {
   contrastOf,
   fortisFirst,
@@ -93,8 +101,9 @@ export function choiceAudioId(text: string): string {
   return `pw-${text}`;
 }
 
-export function practiceItem(id: string): PracticeItem | undefined {
-  return PRACTICE_ITEMS.find((item) => item.id === id) ?? WORD_ITEMS.find((item) => item.id === id);
+export function practiceItem(id: string, snapshot?: ContentSnapshot): PracticeItem | undefined {
+  const words = snapshot ? wordItemsFrom(snapshot) : WORD_ITEMS;
+  return PRACTICE_ITEMS.find((item) => item.id === id) ?? words.find((item) => item.id === id);
 }
 
 export function isConsonant(value: unknown): value is Consonant {
@@ -129,8 +138,12 @@ export type PlannedSlot = { itemId: string; kind: string; reason: string };
  * 균형 출제(balanced-v1): 자음마다 같은 수가 나오게 고른 뒤, 순서로 정답을 짐작하지 못하게 섞는다.
  * 취약 후보·간격 복습 표본이 없으면 균형 문항으로 채운다(slot reason에 남긴다).
  */
-export function planPracticeSession(seed: string, kind: ItemKind = "pseudo"): { policyVersion: string; slots: PlannedSlot[] } {
-  if (kind === "word") return planWordSession(seed);
+export function planPracticeSession(
+  seed: string,
+  kind: ItemKind = "pseudo",
+  snapshot?: ContentSnapshot,
+): { policyVersion: string; slots: PlannedSlot[] } {
+  if (kind === "word") return planWordSession(seed, snapshot);
   const selection = selectPracticeSet(PRACTICE_ITEMS.map((item) => ({ id: item.id, consonant: item.target })));
   const slots = selection.slots.map((slot) => ({ itemId: slot.itemId, kind: slot.kind, reason: slot.reason }));
   return { policyVersion: selection.policyVersion || SELECTION_POLICY_VERSION, slots: seededShuffle(slots, seed) };
@@ -164,9 +177,14 @@ export type AbxDefinition = {
  * 풀던 문항의 소리와, 고른 소리(틀렸다면) 또는 헷갈리기 쉬운 소리를 짝지어 A·B·X를 만든다.
  * 낱말 문항은 같은 대립쌍 묶음의 상대 낱말을 Tier 1 → 4 순으로 찾고, 없으면 같은 앞 모음의 의사단어로 대신한다.
  */
-export function makeAbxTrial(item: PracticeItem, partner: Consonant | null, seed: string): AbxDefinition {
+export function makeAbxTrial(
+  item: PracticeItem,
+  partner: Consonant | null,
+  seed: string,
+  snapshot?: ContentSnapshot,
+): AbxDefinition {
   const other = partner && partner !== item.target ? partner : DEFAULT_PARTNER[item.target];
-  const pair = comparePair(item, other);
+  const pair = comparePair(item, other, snapshot);
   // 평음–경음(ㅈ–ㅉ)은 경음을 기준음 A로 먼저 들려준다. 그 밖의 짝은 순서를 섞는다.
   const [first, second] = (fortisFirst(PRACTICE_GROUP_ID, item.target, other) ??
     seededShuffle([item.target, other], `${seed}:order`)) as [Consonant, Consonant];
@@ -211,8 +229,8 @@ export type WordCard = {
   /** 목소리별 음원이 없을 때 쓰는 예전(Iapetus) 파일 id */
   legacyWordAudioId: string;
   legacyExampleAudioId: string;
-  sourceEntryId: number;
-  /** 배치표 낱말 id(예: jcj-1871). 사전 풀이 자료(content/dict/entries.json)의 키 */
+  sourceEntryId: number | null;
+  /** 배치표 낱말 id(예: jcj-1871). 사전 풀이 자료(content/dict/entries.json)의 키. 화면에서 새로 쓴 단어는 DB id */
   tableId: string;
   /** Stage 안 출제 순서: 1 기준점 잡기, 2 음절 틀 넓히기, 3 실전 어휘 일반화 */
   step: InStageStep;
@@ -224,33 +242,34 @@ export type WordCard = {
  * 뜻·예문은 PR #5 초안이며 검수 전이다. 예문이 없는 단어는 비워 둔다.
  * 음원 id는 목소리 접미사가 없는 기본 id다. 서버가 고른 목소리 파일로 바꾼다.
  */
-function toCard(word: CoreWord): WordCard {
-  const contrast = contrastOf(PRACTICE_GROUP_ID, word.word, word.consonant, word.stage);
+function toCard(word: SnapshotWord): WordCard {
+  const consonant = (isConsonant(word.consonant) ? word.consonant : "ㅈ") as Consonant;
+  const contrast = contrastOf(PRACTICE_GROUP_ID, word.word, consonant, word.stage);
   return {
-    id: `w-${word.entryId}`,
+    id: snapshotWordCardId(word),
     word: word.word,
     pos: word.pos,
-    consonant: word.consonant,
+    consonant,
     substage: word.substage ?? "",
     positionLabel: word.stage === "Stage 1" ? "모음 사이" : word.stage,
     gloss: word.gloss,
     scene: word.scene,
     example: word.example,
     related: word.related,
-    wordAudioId: wordAudioBase(word),
-    exampleAudioId: word.example ? sentenceAudioBase(word) : "",
-    legacyWordAudioId: `word-Stage1-${word.entryId}-${word.word}`,
-    legacyExampleAudioId: word.example ? `sentence-Stage1-${word.entryId}-${word.word}` : "",
+    wordAudioId: snapshotWordAudioBase(word),
+    exampleAudioId: word.example ? snapshotSentenceAudioBase(word) : "",
+    legacyWordAudioId: word.entryId !== null ? `word-Stage1-${word.entryId}-${word.word}` : "",
+    legacyExampleAudioId: word.example && word.entryId !== null ? `sentence-Stage1-${word.entryId}-${word.word}` : "",
     sourceEntryId: word.entryId,
-    tableId: word.id,
+    tableId: word.legacyId ?? word.id,
     step: inStageStep(contrast?.tier ?? null),
     contrast,
   };
 }
 
 /** 한 Stage의 낱말을 Step 1 → 2 → 3 순으로 세운다(1-A, 1-B는 각각 따로). */
-export function stageWordPlan(stage: CoreWord["stage"]): WordCard[] {
-  const cards = coreWords()
+export function stageWordPlan(stage: SnapshotWord["stage"], snapshot: ContentSnapshot = snapshotFromReferenceJson()): WordCard[] {
+  const cards = snapshotWords(snapshot, PRACTICE_GROUP_ID)
     .filter((word) => word.stage === stage)
     .map(toCard);
   const blocks = [...new Set(cards.map((card) => card.substage))];
@@ -262,8 +281,8 @@ export function stageWordPlan(stage: CoreWord["stage"]): WordCard[] {
   );
 }
 
-export function practiceWords(): WordCard[] {
-  return stageWordPlan("Stage 1");
+export function practiceWords(snapshot?: ContentSnapshot): WordCard[] {
+  return stageWordPlan("Stage 1", snapshot);
 }
 
 // ---- 낱말 대립쌍 문항 ----
@@ -295,7 +314,7 @@ function wordItem(card: WordCard): PracticeItem | null {
   const before = splitSyllable(syllables[hit.index - 1] ?? "");
   if (!before || before.hasCoda) return null;
   return {
-    id: `jcj-w-${card.sourceEntryId}`,
+    id: card.sourceEntryId !== null ? `jcj-w-${card.sourceEntryId}` : `jcj-${card.id}`,
     kind: "word",
     groupId: PRACTICE_GROUP_ID,
     task: "consonant_identification",
@@ -318,9 +337,13 @@ function wordItem(card: WordCard): PracticeItem | null {
   };
 }
 
-export const WORD_ITEMS: PracticeItem[] = practiceWords()
-  .map(wordItem)
-  .filter((item): item is PracticeItem => item !== null);
+export function wordItemsFrom(snapshot?: ContentSnapshot): PracticeItem[] {
+  return practiceWords(snapshot)
+    .map(wordItem)
+    .filter((item): item is PracticeItem => item !== null);
+}
+
+export const WORD_ITEMS: PracticeItem[] = wordItemsFrom();
 
 export const WORD_POLICY_VERSION = "contrast-step-v1";
 
@@ -346,10 +369,11 @@ function combinations<T>(items: readonly T[], size: number): T[][] {
  * Step 1(Tier 1·2) → Step 2(Tier 3) → Step 3(Tier 4·맥락 확장) 순서를 지키고, 자음마다 같은 수가 되게 고른다.
  * 같은 Step 안에서만 순서를 섞는다.
  */
-export function planWordSession(seed: string): { policyVersion: string; slots: PlannedSlot[] } {
+export function planWordSession(seed: string, snapshot?: ContentSnapshot): { policyVersion: string; slots: PlannedSlot[] } {
+  const items = snapshot ? wordItemsFrom(snapshot) : WORD_ITEMS;
   const steps: InStageStep[] = [1, 2, 3];
   const choices = steps.map((step) => {
-    const pool = WORD_ITEMS.filter((item) => item.step === step);
+    const pool = items.filter((item) => item.step === step);
     return combinations(pool, Math.min(STEP_QUOTA[step], pool.length));
   });
   const total = steps.reduce((sum, step, index) => sum + Math.min(STEP_QUOTA[step], choices[index]?.[0]?.length ?? 0), 0);
@@ -404,7 +428,11 @@ function pseudoSide(lead: string, key: Consonant): CompareSide {
  * 오답 직후 [정답 소리] vs [내 선택]과 ABX에 쓸 두 소리.
  * 낱말 문항: 같은 대립쌍 묶음의 상대 낱말(Tier 1 → 4)이 배치표에 있으면 그 낱말, 없으면 같은 앞 모음의 의사단어 두 개.
  */
-export function comparePair(item: PracticeItem, other: Consonant): ComparePair {
+export function comparePair(
+  item: PracticeItem,
+  other: Consonant,
+  snapshot: ContentSnapshot = snapshotFromReferenceJson(),
+): ComparePair {
   if (item.kind === "pseudo") {
     const lead = item.stimulus.slice(0, 1);
     return { kind: "pseudo", tier: null, pairGroupId: null, answer: pseudoSide(lead, item.target), chosen: pseudoSide(lead, other) };
@@ -414,7 +442,9 @@ export function comparePair(item: PracticeItem, other: Consonant): ComparePair {
     return { kind: "word", tier: item.contrastTier, pairGroupId: item.pairGroupId, answer: self, chosen: self };
   }
   const partner = resolvePartner({ groupId: PRACTICE_GROUP_ID, word: item.stimulus, target: item.target, other, stage: item.stage });
-  const card = partner ? coreWords().find((word) => word.word === partner.word && word.consonant === other) : undefined;
+  const card = partner
+    ? snapshotWords(snapshot, PRACTICE_GROUP_ID).find((word) => word.word === partner.word && word.consonant === other)
+    : undefined;
   if (partner && card) {
     return {
       kind: "word",
@@ -424,8 +454,8 @@ export function comparePair(item: PracticeItem, other: Consonant): ComparePair {
       chosen: {
         key: other,
         text: card.word,
-        audioId: wordAudioBase(card),
-        legacyAudioId: `word-Stage1-${card.entryId}-${card.word}`,
+        audioId: snapshotWordAudioBase(card),
+        legacyAudioId: card.entryId !== null ? `word-Stage1-${card.entryId}-${card.word}` : "",
       },
     };
   }

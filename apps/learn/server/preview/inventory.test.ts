@@ -71,7 +71,7 @@ describe("audio inventory", () => {
     const inventoryRef = audio.inventoryRef("pw-아자--erinome");
     expect(inventoryRef).not.toBeNull();
     expect(inventoryRef).not.toBe(audio.refFor("pw-아자--erinome"));
-    expect(audio.read(inventoryRef ?? "")?.length).toBe(wav(900).length);
+    expect((await audio.read(inventoryRef ?? ""))?.bytes.length).toBe(wav(900).length);
     expect(audio.inventoryRef("../secret")).toBeNull();
     const cell = buildInventory(audio).units.find((unit) => unit.base === "pw-아자")?.cells.erinome;
     expect(cell).toMatchObject({ voice: "Erinome", style: "flat", durationMs: 900 });

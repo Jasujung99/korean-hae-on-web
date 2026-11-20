@@ -15,6 +15,7 @@ import { FinishScreen } from "./screens/FinishScreen";
 import { QuizScreen } from "./screens/QuizScreen";
 import { TeacherLockedScreen } from "./screens/TeacherScreens";
 import { CompareLive } from "./screens/live/CompareLive";
+import { ContentOpsScreen } from "./screens/live/ContentOpsScreen";
 import { CourseScreen } from "./screens/live/CourseScreen";
 import { FinishLive } from "./screens/live/FinishLive";
 import { JoinLive, NotConnected } from "./screens/live/JoinLive";
@@ -100,6 +101,7 @@ function LiveRoutes() {
         <Route path="/settings" element={<Learner><SettingsScreen /></Learner>} />
         <Route path="/teach" element={<TeacherHome />} />
         <Route path="/teach/detail" element={<TeacherOnly><TeacherDetail /></TeacherOnly>} />
+        <Route path="/teach/content" element={<TeacherOnly><ContentOpsScreen /></TeacherOnly>} />
         <Route path="/teach/voices" element={<TeacherOnly><VoicesScreen /></TeacherOnly>} />
         <Route path="*" element={<MissingScreen />} />
       </Routes>
@@ -119,6 +121,8 @@ export function LearnRoutes({ live }: { live: boolean }) {
       <Route path="/dictionary" element={<DictionaryScreen />} />
       <Route path="/teach" element={<TeacherLockedScreen />} />
       <Route path="/teach/detail" element={<TeacherLockedScreen />} />
+      <Route path="/teach/content" element={<TeacherLockedScreen />} />
+      <Route path="/teach/voices" element={<TeacherLockedScreen />} />
       <Route path="*" element={<MissingScreen />} />
     </Routes>
   );
