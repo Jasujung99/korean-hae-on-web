@@ -29,7 +29,9 @@
     "build:cloud": "npm run build && node --experimental-strip-types scripts/build-cloud.ts",
     "deploy:cloud": "wrangler pages deploy --branch main",
     "audio:upload": "node --experimental-strip-types scripts/audio-upload.ts",
-    "content:seed": "node --experimental-strip-types scripts/content-seed.ts"
+    "content:seed": "node --experimental-strip-types scripts/content-seed.ts",
+    "content:fill:export": "node --experimental-strip-types scripts/content-fill-export.ts",
+    "content:fill:check": "node --experimental-strip-types scripts/content-fill-check.ts"
   },
   "dependencies": {
     "@hono/node-server": "^2.1.8",
