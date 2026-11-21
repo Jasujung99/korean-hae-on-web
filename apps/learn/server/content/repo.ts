@@ -144,6 +144,39 @@ export type TtsUsageSummary = {
   pcBatch: number;
 };
 
+export type ContentProposalKind = "fill" | "cleanup";
+export type ContentProposalStatus = "pending" | "applied" | "dismissed";
+export type ContentProposalFields = Partial<
+  Pick<ContentItemRow, "pos" | "gloss" | "scene" | "example" | "related" | "note">
+>;
+
+export type ContentProposalRow = {
+  id: string;
+  itemId: string;
+  kind: ContentProposalKind;
+  fields: ContentProposalFields;
+  sense: string;
+  flags: string[];
+  source: "ai_draft";
+  model: string;
+  promptVersion: string;
+  status: ContentProposalStatus;
+  createdAt: string;
+  decidedBy: string | null;
+  decidedAt: string | null;
+};
+
+export type NewContentProposalInput = {
+  itemId: string;
+  kind: ContentProposalKind;
+  fields: ContentProposalFields;
+  sense: string;
+  flags: string[];
+  source?: "ai_draft";
+  model: string;
+  promptVersion: string;
+};
+
 export type ContentRepo = {
   kind: "memory" | "supabase";
 
@@ -186,6 +219,15 @@ export type ContentRepo = {
 
   seedItems(items: NewContentItemInput[]): Promise<number>;
   seedStageZero(rows: NewStageZeroInput[]): Promise<number>;
+
+  listProposals(filter?: { status?: ContentProposalStatus; itemId?: string }): Promise<ContentProposalRow[]>;
+  getProposal(id: string): Promise<ContentProposalRow | null>;
+  insertProposals(inputs: NewContentProposalInput[]): Promise<{ inserted: number; skipped: number }>;
+  decideProposal(
+    id: string,
+    status: "applied" | "dismissed",
+    decidedBy: string | null,
+  ): Promise<ContentProposalRow | null>;
 };
 
 export function itemSnapshotRecord(item: ContentItemRow): Record<string, unknown> {
@@ -208,4 +250,16 @@ export function itemSnapshotRecord(item: ContentItemRow): Record<string, unknown
     source: item.source,
     status: item.status,
   };
+}
+
+export function normalizeProposalFields(raw: unknown): ContentProposalFields {
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return {};
+  const obj = raw as Record<string, unknown>;
+  const out: ContentProposalFields = {};
+  for (const key of ["pos", "gloss", "scene", "example", "related", "note"] as const) {
+    const val = obj[key];
+    if (typeof val === "string") out[key] = val;
+    else if (key === "related" && Array.isArray(val)) out.related = val.map(String).join(", ");
+  }
+  return out;
 }

@@ -9,6 +9,7 @@ import type {
   AnswerResult,
   ClientEvent,
   ContentItemView,
+  ContentProposalView,
   ContentReleaseStatusView,
   ContentVersionRow,
   CourseView,
@@ -165,6 +166,32 @@ export const teacherApi = {
     postJson<{ item: ContentItemView }>(`/api/teacher/content/items/${encodeURIComponent(id)}/approve`, {}),
   hideContentItem: (id: string, reason?: string) =>
     postJson<{ item: ContentItemView }>(`/api/teacher/content/items/${encodeURIComponent(id)}/hide`, { reason }),
+  applyContentProposal: (
+    id: string,
+    patch?: Partial<{
+      word: string;
+      consonant: string;
+      pos: string;
+      gloss: string;
+      scene: string;
+      example: string;
+      related: string;
+      note: string;
+      reason: string;
+    }>,
+  ) =>
+    postJson<{
+      item: ContentItemView;
+      version: ContentVersionRow | null;
+      changedFields: string[];
+      staleMarked: number;
+      proposal: ContentProposalView | null;
+    }>(`/api/teacher/content/proposals/${encodeURIComponent(id)}/apply`, patch ?? {}),
+  dismissContentProposal: (id: string) =>
+    postJson<{ proposal: ContentProposalView | null }>(
+      `/api/teacher/content/proposals/${encodeURIComponent(id)}/dismiss`,
+      {},
+    ),
   generateContentAudio: (itemId: string, body: { kind: "word" | "sentence"; voice: string }) =>
     postJson<{
       asset: { id: string; audioId: string; status: string; durationMs: number | null; playUrl: string };

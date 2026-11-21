@@ -478,4 +478,101 @@ describe("teacher navigation and read-only content ops screen", () => {
     expect(await screen.findByText("제2판으로 내보냈어요.")).toBeInTheDocument();
     expect(releasePosts).toEqual([{ note: "1차 반영" }]);
   });
+
+  it("displays AI proposals, filters by proposal-only toggle, pre-fills edit form, and supports apply and dismiss", async () => {
+    const view = makeContentView("j_ch_jj");
+    view.writable = true;
+    view.groups[0]!.proposalCount = 1;
+    view.totalProposalCount = 1;
+    const targetItem = view.stages[1]!.items[0]!;
+    targetItem.gloss = "";
+    targetItem.scene = "";
+    targetItem.example = "";
+    targetItem.proposal = {
+      id: "prop-1",
+      itemId: targetItem.id,
+      kind: "fill",
+      fields: {
+        gloss: "맑은 공기를 마시며 천천히 걷는 일.",
+        scene: "주말에 공원에서 걸을 때",
+        example: "주말 오후에 공원에서 가볍게 산책해요.",
+        related: "공원을 산책하다, 가벼운 산책",
+      },
+      sense: "산책(散策): 거닐며 걷는 일 — 기초사전 1",
+      flags: ["동음이의어 확인"],
+      source: "ai_draft",
+      model: "model-test",
+      promptVersion: "fill-v1",
+      status: "pending",
+      createdAt: "2026-11-21T00:00:00.000Z",
+    };
+
+    const calls: Array<{ method: string; path: string; body?: unknown }> = [];
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+        const url = new URL(typeof input === "string" ? input : input.toString(), "http://127.0.0.1:4174");
+        const method = (init?.method ?? "GET").toUpperCase();
+        calls.push({ method, path: url.pathname, body: init?.body ? JSON.parse(String(init.body)) : undefined });
+        if (url.pathname === "/api/me") return new Response(JSON.stringify({ error: "not_connected" }), { status: 401 });
+        if (url.pathname === "/api/teacher/learners") return new Response(JSON.stringify(teacherView), { status: 200 });
+        if (url.pathname === "/api/teacher/content/usage") return new Response(JSON.stringify(usageView), { status: 200 });
+        if (url.pathname === "/api/teacher/content") return new Response(JSON.stringify(view), { status: 200 });
+        if (method === "POST" && url.pathname === "/api/teacher/content/proposals/prop-1/apply") {
+          return new Response(
+            JSON.stringify({
+              item: targetItem,
+              version: null,
+              changedFields: ["gloss", "example"],
+              staleMarked: 0,
+              proposal: { ...targetItem.proposal, status: "applied" },
+            }),
+            { status: 200 },
+          );
+        }
+        if (method === "POST" && url.pathname === "/api/teacher/content/proposals/prop-1/dismiss") {
+          return new Response(
+            JSON.stringify({
+              proposal: { ...targetItem.proposal, status: "dismissed" },
+            }),
+            { status: 200 },
+          );
+        }
+        return new Response(JSON.stringify({ error: "not_found" }), { status: 404 });
+      }),
+    );
+
+    renderTeacher("/teach/content");
+    expect(await screen.findByText("AI 제안 1")).toBeInTheDocument();
+    expect(screen.getByText("제안 1")).toBeInTheDocument();
+
+    const filterBtn = screen.getByRole("button", { name: "제안만 보기" });
+    fireEvent.click(filterBtn);
+    expect(filterBtn).toHaveAttribute("aria-pressed", "true");
+    // 제안만 보기 켜면 제안이 있는 Stage 2 항목이 바로 보이고, 제안 없는 모자는 숨겨진다.
+    expect(screen.getByText("산책")).toBeInTheDocument();
+    expect(screen.queryByText("모자")).not.toBeInTheDocument();
+    expect(screen.getByText("맑은 공기를 마시며 천천히 걷는 일.")).toBeInTheDocument();
+    expect(screen.getByText("주말 오후에 공원에서 가볍게 산책해요.")).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: "검토·적용" }));
+    const guide = screen.getByRole("note", { name: "AI 제안 안내" });
+    expect(guide).toHaveTextContent("산책(散策): 거닐며 걷는 일 — 기초사전 1");
+    expect(guide).toHaveTextContent("확인 필요: 동음이의어 확인");
+    expect(screen.getByLabelText("쉬운 뜻")).toHaveValue("맑은 공기를 마시며 천천히 걷는 일.");
+
+    fireEvent.change(screen.getByLabelText("쉬운 뜻"), { target: { value: "다듬은 산책 뜻." } });
+    fireEvent.click(screen.getByRole("button", { name: "적용" }));
+    await vi.waitFor(() => {
+      const applyCall = calls.find((c) => c.path === "/api/teacher/content/proposals/prop-1/apply");
+      expect(applyCall?.body).toMatchObject({ gloss: "다듬은 산책 뜻." });
+    });
+
+    // 다시 편집 폼을 열어 버리기 확인
+    fireEvent.click(await screen.findByRole("button", { name: "산책" }));
+    fireEvent.click(screen.getByRole("button", { name: "버리기" }));
+    await vi.waitFor(() => {
+      expect(calls.some((c) => c.method === "POST" && c.path === "/api/teacher/content/proposals/prop-1/dismiss")).toBe(true);
+    });
+  });
 });

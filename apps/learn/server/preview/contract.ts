@@ -428,6 +428,26 @@ export type ContentTurnsCell = {
   durationMs: number | null;
 };
 
+export type ContentProposalKind = "fill" | "cleanup";
+export type ContentProposalStatus = "pending" | "applied" | "dismissed";
+export type ContentProposalFields = Partial<
+  Pick<ContentItemView, "pos" | "gloss" | "scene" | "example" | "related" | "note">
+>;
+
+export type ContentProposalView = {
+  id: string;
+  itemId: string;
+  kind: ContentProposalKind;
+  fields: ContentProposalFields;
+  sense: string;
+  flags: string[];
+  source: string;
+  model: string;
+  promptVersion: string;
+  status: ContentProposalStatus;
+  createdAt: string;
+};
+
 export type ContentItemView = {
   id: string;
   legacyId: string | null;
@@ -449,6 +469,7 @@ export type ContentItemView = {
   wordAudio: Record<string, ContentAudioCell>;
   exampleAudio: Record<string, ContentAudioCell> | null;
   turnsAudio: Record<string, ContentTurnsCell> | null;
+  proposal?: ContentProposalView | null;
 };
 
 export type ContentStageZeroRow = {
@@ -517,7 +538,8 @@ export type ContentVersionRow = {
 };
 
 export type TeacherContentView = {
-  groups: Array<{ id: string; label: string; choices: string[]; count: number }>;
+  groups: Array<{ id: string; label: string; choices: string[]; count: number; proposalCount?: number }>;
+  totalProposalCount?: number;
   group: { id: string; label: string; choices: string[] };
   stage0: ContentStageZeroRow[];
   stages: ContentStageSection[];

@@ -31,7 +31,8 @@
     "audio:upload": "node --experimental-strip-types scripts/audio-upload.ts",
     "content:seed": "node --experimental-strip-types scripts/content-seed.ts",
     "content:fill:export": "node --experimental-strip-types scripts/content-fill-export.ts",
-    "content:fill:check": "node --experimental-strip-types scripts/content-fill-check.ts"
+    "content:fill:check": "node --experimental-strip-types scripts/content-fill-check.ts",
+    "content:fill:import": "node --experimental-strip-types scripts/content-fill-import.ts"
   },
   "dependencies": {
     "@hono/node-server": "^2.1.8",

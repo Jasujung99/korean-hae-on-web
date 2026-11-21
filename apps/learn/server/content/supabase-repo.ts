@@ -5,6 +5,7 @@ import type { ContentSnapshot, ContentStage, ContentSubstage, StageZeroContext }
 import { DbError, type DbConfig } from "../accounts/supabase-repo.ts";
 import {
   itemSnapshotRecord,
+  normalizeProposalFields,
   type AudioAssetKind,
   type AudioAssetRow,
   type AudioAssetSource,
@@ -12,6 +13,9 @@ import {
   type ContentItemRow,
   type ContentItemStatus,
   type ContentItemVersionRow,
+  type ContentProposalKind,
+  type ContentProposalRow,
+  type ContentProposalStatus,
   type ContentReleaseRow,
   type ContentRepo,
   type NewAudioAssetInput,
@@ -113,6 +117,24 @@ function releaseFrom(row: Row): ContentReleaseRow {
     itemCount: Number(row.item_count ?? 0),
     audioCount: Number(row.audio_count ?? 0),
     snapshot: row.snapshot as ContentSnapshot,
+  };
+}
+
+function proposalFrom(row: Row): ContentProposalRow {
+  return {
+    id: String(row.id),
+    itemId: String(row.item_id),
+    kind: row.kind === "cleanup" ? ("cleanup" satisfies ContentProposalKind) : "fill",
+    fields: normalizeProposalFields(row.fields),
+    sense: String(row.sense ?? ""),
+    flags: Array.isArray(row.flags) ? row.flags.map(String) : [],
+    source: "ai_draft",
+    model: String(row.model ?? ""),
+    promptVersion: String(row.prompt_version ?? ""),
+    status: String(row.status) as ContentProposalStatus,
+    createdAt: String(row.created_at),
+    decidedBy: (row.decided_by as string | null) ?? null,
+    decidedAt: (row.decided_at as string | null) ?? null,
   };
 }
 
@@ -513,6 +535,69 @@ export function createSupabaseContentRepo(config: DbConfig, fetcher: typeof fetc
         "resolution=ignore-duplicates,return=representation",
       );
       return insertedRows.length;
+    },
+    async listProposals(filter) {
+      const clauses = ["order=created_at.asc"];
+      if (filter?.status) clauses.push(`status=eq.${encodeURIComponent(filter.status)}`);
+      if (filter?.itemId) {
+        if (!/^[0-9a-f-]{36}$/i.test(filter.itemId)) return [];
+        clauses.push(`item_id=eq.${filter.itemId}`);
+      }
+      const rows = await selectAll(`phoneme_content_proposals?${clauses.join("&")}`);
+      return rows.map(proposalFrom);
+    },
+    async getProposal(id) {
+      if (!/^[0-9a-f-]{36}$/i.test(id)) return null;
+      const rows = await call("GET", `phoneme_content_proposals?id=eq.${id}`);
+      return rows[0] ? proposalFrom(rows[0]) : null;
+    },
+    async insertProposals(inputs) {
+      if (inputs.length === 0) return { inserted: 0, skipped: 0 };
+      const existingPending = await this.listProposals({ status: "pending" });
+      const pendingKeys = new Set(existingPending.map((row) => `${row.itemId}:${row.promptVersion}`));
+      const toInsert: Row[] = [];
+      let skipped = 0;
+      for (const input of inputs) {
+        const key = `${input.itemId}:${input.promptVersion}`;
+        if (pendingKeys.has(key)) {
+          skipped += 1;
+          continue;
+        }
+        pendingKeys.add(key);
+        toInsert.push({
+          item_id: input.itemId,
+          kind: input.kind,
+          fields: normalizeProposalFields(input.fields),
+          sense: input.sense ?? "",
+          flags: [...(input.flags ?? [])],
+          source: input.source ?? "ai_draft",
+          model: input.model,
+          prompt_version: input.promptVersion,
+          status: "pending",
+        });
+      }
+      let inserted = 0;
+      const chunkSize = 100;
+      for (let i = 0; i < toInsert.length; i += chunkSize) {
+        const rows = await call(
+          "POST",
+          "phoneme_content_proposals",
+          toInsert.slice(i, i + chunkSize),
+          "return=representation",
+        );
+        inserted += rows.length;
+      }
+      return { inserted, skipped };
+    },
+    async decideProposal(id, status, decidedBy) {
+      if (!/^[0-9a-f-]{36}$/i.test(id)) return null;
+      const rows = await call(
+        "PATCH",
+        `phoneme_content_proposals?id=eq.${id}`,
+        { status, decided_by: decidedBy, decided_at: nowIso() },
+        "return=representation",
+      );
+      return rows[0] ? proposalFrom(rows[0]) : null;
     },
   };
 }
