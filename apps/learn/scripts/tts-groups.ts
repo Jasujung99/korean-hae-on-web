@@ -239,9 +239,15 @@ async function main() {
   }
   const done = makeDoneCheck({ doneLocal: doneGrouped, dbActiveAudioIds, replace });
 
+  // --words-per-group 10 --sentences-per-group 5: 점검에 걸린 묶음을 작게 나눠 다시 만들 때
+  const sizeArg = (flag: string) => {
+    const value = Number(argValue(flag));
+    return Number.isInteger(value) && value > 0 ? value : undefined;
+  };
+  const sizes = { words: sizeArg("--words-per-group"), sentences: sizeArg("--sentences-per-group") };
   const plans = voices.map((row) => {
     const taken = new Set<string>();
-    return { row, groups: groupIds.flatMap((groupId) => batchPlan(row.key, kinds, done, groupId, taken)) };
+    return { row, groups: groupIds.flatMap((groupId) => batchPlan(row.key, kinds, done, groupId, taken, sizes)) };
   });
   for (const { row, groups } of plans) {
     const byKind = kinds.map((kind) => {

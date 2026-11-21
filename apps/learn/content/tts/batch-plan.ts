@@ -106,6 +106,8 @@ export function batchPlan(
   done: (id: string) => boolean,
   groupId = "j_ch_jj",
   taken: Set<string> = new Set(),
+  /** 묶음 크기를 바꿀 때(예: 점검에 걸린 묶음을 작게 다시 만들 때) */
+  sizes: { words?: number; sentences?: number } = {},
   snapshot: ContentSnapshot = snapshotFromReferenceJson(),
 ): BatchGroup[] {
   const groups: BatchGroup[] = [];
@@ -140,7 +142,7 @@ export function batchPlan(
     for (const word of source.words) add(word);
     // 첫 듣기 점검(Stage 0)의 낱말이 단계 목록에 없으면 함께 만든다.
     for (const text of source.stage0Words) add(source.words.find((word) => word.word === text) ?? { id: "0", entryId: 0, word: text });
-    chunk(seededShuffle(items, seed("words")), WORDS_PER_GROUP).forEach((part, index) =>
+    chunk(seededShuffle(items, seed("words")), sizes.words ?? WORDS_PER_GROUP).forEach((part, index) =>
       groups.push({ groupId: `words-${tag}-${index + 1}`, kind: "words", method: "per_content_group", style: FLAT_READING_STYLE, fillers: false, minGapMs: 300, items: take(part) }),
     );
   }
@@ -154,7 +156,7 @@ export function batchPlan(
       if (skip(id) || items.some((item) => item.id === id)) continue;
       items.push({ id, text: word.example, unitKind: "sentence" });
     }
-    chunk(seededShuffle(items, seed(kind)), SENTENCES_PER_GROUP).forEach((part, index) =>
+    chunk(seededShuffle(items, seed(kind)), sizes.sentences ?? SENTENCES_PER_GROUP).forEach((part, index) =>
       groups.push({
         groupId: `${kind}-${tag}-${index + 1}`,
         kind,
