@@ -428,3 +428,73 @@
   min-height: 40px;
   font-size: 14px;
 }
+
+/* 좁은 화면: 학습자 한 사람을 카드 한 장으로 쌓는다(칸 이름 · 값). 종료한 학습자 표도 같다. */
+@media (max-width: 640px) {
+  .acct-table,
+  .acct-table tbody,
+  .acct-table tr,
+  .acct-table th,
+  .acct-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .acct-table thead {
+    display: none;
+  }
+
+  .acct-table tbody tr {
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .acct-table tbody th,
+  .acct-table tbody td {
+    padding: var(--space-1) 0;
+    border-bottom: 0;
+    overflow-wrap: normal;
+    word-break: keep-all;
+  }
+
+  .acct-table tbody th {
+    padding-bottom: var(--space-2);
+    font-weight: 600;
+  }
+
+  .acct-table td[data-label] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 var(--space-2);
+    text-align: left;
+  }
+
+  .acct-table td[data-label]::before {
+    content: attr(data-label);
+    flex: 0 0 6.5em;
+    color: var(--ink-muted);
+    font: var(--text-doc-label);
+  }
+
+  .acct-table td.num {
+    text-align: left;
+  }
+
+  .acct-table td[data-label] select {
+    flex: 1 1 0;
+  }
+
+  .acct-table td .acct-sub {
+    display: inline;
+  }
+
+  .acct-table td.acct-actions-cell {
+    padding-top: var(--space-2);
+  }
+
+  .acct-table .acct-actions {
+    justify-content: space-between;
+    margin-right: 0;
+  }
+}
