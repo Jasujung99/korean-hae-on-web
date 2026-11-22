@@ -146,7 +146,11 @@ export function createAccountRoutes(deps: AccountsDeps) {
     const session = await repo.deviceSession(hash("device", token));
     if (!session || !isLive(session, now())) return null;
     const learner = await repo.learner(session.ownerId);
-    if (!learner || learner.status !== "active") return null;
+    if (!learner || learner.status !== "active") {
+      // 종료했거나 지운 학습자의 기기: 로그인 안 된 것과 같게 보고 쿠키도 지운다.
+      deleteCookie(c, DEVICE_COOKIE, { path: "/", secure: deps.secureCookies });
+      return null;
+    }
     return { learner, sessionId: session.id };
   }
 
@@ -173,10 +177,10 @@ export function createAccountRoutes(deps: AccountsDeps) {
     await next();
   };
 
-  /** 이 교사에게 배정된 학습자만 찾는다. */
+  /** 이 교사에게 배정된 학습자만 찾는다. 종료한 학습자도 찾는다(기록 보기·다시 열기·삭제). */
   async function ownLearner(teacherId: string, id: string): Promise<LearnerRow | null> {
     const learner = await repo.learner(id);
-    return learner && learner.teacherId === teacherId && learner.status === "active" ? learner : null;
+    return learner && learner.teacherId === teacherId ? learner : null;
   }
 
   const practiceVoicesView = (resolvedAudio: PreviewAudio): PracticeVoiceView[] =>
@@ -239,7 +243,11 @@ export function createAccountRoutes(deps: AccountsDeps) {
       return c.json({ error: "invite_unavailable", status: result.status }, 410);
     }
     let learner = await repo.learner(result.learnerId);
-    if (!learner) return c.json({ error: "invite_unavailable", status: "invalid" }, 410);
+    if (!learner || learner.status !== "active") {
+      // 종료와 거의 같은 때에 들어온 연결: 방금 만든 기기 세션도 끊는다.
+      if (learner) await repo.revokeLearnerDevices(learner.id);
+      return c.json({ error: "invite_unavailable", status: "invalid" }, 410);
+    }
     if (body?.dictLanguage === "ru" || body?.dictLanguage === "en") {
       learner = (await repo.updateLearner(learner.id, { dictLanguage: body.dictLanguage })) ?? learner;
     }
@@ -346,6 +354,7 @@ export function createAccountRoutes(deps: AccountsDeps) {
         homeLanguage: learner.homeLanguage,
         dictLanguage: learner.dictLanguage,
         isTest: learner.isTest,
+        status: learner.status,
         invite: {
           status: inviteStatus(latest, now()),
           expiresAt: latest?.expiresAt ?? null,
@@ -410,6 +419,7 @@ export function createAccountRoutes(deps: AccountsDeps) {
   teacher.post("/learners/:id/invitations", async (c) => {
     const learner = await ownLearner(c.get("teacherId"), c.req.param("id"));
     if (!learner) return c.json({ error: "not_found" }, 404);
+    if (learner.status !== "active") return c.json({ error: "learner_archived" }, 409);
     const token = randomToken();
     const expiresAt = new Date(now().getTime() + INVITE_TTL_MS).toISOString();
     await repo.createInvitation(learner.id, c.get("teacherId"), hash("invite", token), expiresAt);
@@ -427,6 +437,36 @@ export function createAccountRoutes(deps: AccountsDeps) {
     const learner = await ownLearner(c.get("teacherId"), c.req.param("id"));
     if (!learner) return c.json({ error: "not_found" }, 404);
     return c.json({ revoked: await repo.revokeLearnerDevices(learner.id) });
+  });
+
+  // 종료: 상태를 바꾸고, 쓰지 않은 초대를 폐기하고, 기기 세션을 모두 끊는다. 학습 기록은 남긴다.
+  teacher.post("/learners/:id/archive", async (c) => {
+    const learner = await ownLearner(c.get("teacherId"), c.req.param("id"));
+    if (!learner) return c.json({ error: "not_found" }, 404);
+    await repo.setLearnerStatus(learner.id, "archived");
+    const [invitations, devices] = await Promise.all([
+      repo.revokeOpenInvitations(learner.id),
+      repo.revokeLearnerDevices(learner.id),
+    ]);
+    return c.json({ status: "archived", revokedInvitations: invitations, revokedDevices: devices });
+  });
+
+  // 다시 열기: 상태만 되돌린다. 링크는 교사가 '링크 새로 만들기'로 따로 만든다.
+  teacher.post("/learners/:id/reopen", async (c) => {
+    const learner = await ownLearner(c.get("teacherId"), c.req.param("id"));
+    if (!learner) return c.json({ error: "not_found" }, 404);
+    await repo.setLearnerStatus(learner.id, "active");
+    return c.json({ status: "active" });
+  });
+
+  // 삭제: 종료한 학습자나 시험 학습자만. 초대·기기·학습 기록도 함께 지워진다.
+  teacher.delete("/learners/:id", async (c) => {
+    const learner = await ownLearner(c.get("teacherId"), c.req.param("id"));
+    if (!learner) return c.json({ error: "not_found" }, 404);
+    if (learner.status !== "archived" && !learner.isTest) return c.json({ error: "archive_first" }, 409);
+    await repo.deleteLearner(learner.id);
+    cache.forget(learner.id);
+    return c.json({ deleted: true });
   });
 
   const voicesView = async (): Promise<VoicesView> => {

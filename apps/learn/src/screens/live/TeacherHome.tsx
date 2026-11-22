@@ -1,6 +1,6 @@
-// 교사 화면: 로그인 → 학습자 관리(추가·초대 링크·재발급·폐기·기기 해제) → 학습 관찰 목록.
+// 교사 화면: 로그인 → 학습자 관리(추가·초대 링크·재발급·폐기·기기 해제·종료·다시 열기·삭제) → 학습 관찰 목록.
 // 교사 인증과 담당 학습자 확인은 서버가 한다. 초대 링크 원문은 만들 때 한 번만 보여 준다.
-import { useCallback, useEffect, useState, type FormEvent, type ReactNode } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, type FormEvent, type KeyboardEvent, type ReactNode } from "react";
 import { Link, useLocation } from "react-router";
 import type { DictLanguage, InviteIssued, TeacherLearnerRow, TeacherView, TtsUsageView } from "../../../server/preview/contract.ts";
 import { PreviewApiError, teacherApi } from "../../preview/api";
@@ -225,6 +225,172 @@ function AddLearner({ onAdded }: { onAdded: () => void }) {
   );
 }
 
+const isArchived = (row: TeacherLearnerRow) => row.status === "archived";
+
+type MenuAction = { key: string; label: string; onSelect: () => void; danger?: boolean };
+
+/**
+ * 행 끝 '⋯' 관리 메뉴. 안전한 일 위, 되돌리기 어려운 일(종료·삭제)은 칸막이 아래.
+ * 표 상자(가로 스크롤)에 잘리지 않도록 메뉴는 화면 기준(fixed)으로 띄우고, 화면 안에 들어오게 자리를 잡는다.
+ */
+function ManageMenu({
+  label,
+  menuId,
+  disabled,
+  safe,
+  risky,
+}: {
+  label: string;
+  menuId: string;
+  disabled: boolean;
+  safe: MenuAction[];
+  risky: MenuAction[];
+}) {
+  const [open, setOpen] = useState(false);
+  const [place, setPlace] = useState<{ top: number; left: number } | null>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLUListElement>(null);
+
+  const close = useCallback((returnFocus: boolean) => {
+    setOpen(false);
+    setPlace(null);
+    if (returnFocus) buttonRef.current?.focus();
+  }, []);
+
+  const items = () => [...(menuRef.current?.querySelectorAll<HTMLButtonElement>('[role="menuitem"]') ?? [])];
+
+  useLayoutEffect(() => {
+    if (!open) return;
+    const button = buttonRef.current;
+    const menu = menuRef.current;
+    if (!button || !menu) return;
+    const gap = 4;
+    const edge = 8;
+    const at = button.getBoundingClientRect();
+    const width = menu.offsetWidth;
+    const height = menu.offsetHeight;
+    const viewW = document.documentElement.clientWidth || window.innerWidth;
+    const viewH = window.innerHeight;
+    // 버튼 오른쪽 끝에 맞추되 화면 밖으로 나가지 않게 한다. 아래 자리가 모자라면 위로 연다.
+    const left = Math.max(edge, Math.min(at.right - width, viewW - width - edge));
+    const below = at.bottom + gap;
+    const top = below + height > viewH - edge && at.top - gap - height >= edge ? at.top - gap - height : below;
+    setPlace({ top, left });
+  }, [open]);
+
+  // 자리를 잡고 보이게 된 뒤에 첫 항목으로 초점을 옮긴다(숨긴 채로는 초점이 가지 않는다).
+  useEffect(() => {
+    if (open && place) items()[0]?.focus({ preventScroll: true });
+  }, [open, place]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onPointer = (event: PointerEvent | MouseEvent) => {
+      const target = event.target as Node;
+      if (menuRef.current?.contains(target) || buttonRef.current?.contains(target)) return;
+      close(false);
+    };
+    const onMove = () => close(false);
+    document.addEventListener("mousedown", onPointer);
+    window.addEventListener("resize", onMove);
+    window.addEventListener("scroll", onMove, true);
+    return () => {
+      document.removeEventListener("mousedown", onPointer);
+      window.removeEventListener("resize", onMove);
+      window.removeEventListener("scroll", onMove, true);
+    };
+  }, [open, close]);
+
+  const onKeyDown = (event: KeyboardEvent<HTMLUListElement>) => {
+    const list = items();
+    const index = list.indexOf(document.activeElement as HTMLButtonElement);
+    if (event.key === "Escape") {
+      event.preventDefault();
+      close(true);
+    } else if (event.key === "ArrowDown") {
+      event.preventDefault();
+      list[(index + 1) % list.length]?.focus({ preventScroll: true });
+    } else if (event.key === "ArrowUp") {
+      event.preventDefault();
+      list[(index - 1 + list.length) % list.length]?.focus({ preventScroll: true });
+    } else if (event.key === "Home") {
+      event.preventDefault();
+      list[0]?.focus({ preventScroll: true });
+    } else if (event.key === "End") {
+      event.preventDefault();
+      list[list.length - 1]?.focus({ preventScroll: true });
+    } else if (event.key === "Tab") {
+      close(false);
+    }
+  };
+
+  const item = (action: MenuAction) => (
+    <li role="none" key={action.key}>
+      <button
+        type="button"
+        role="menuitem"
+        className={action.danger ? "acct-menu-item danger" : "acct-menu-item"}
+        disabled={disabled}
+        onClick={() => {
+          close(true);
+          action.onSelect();
+        }}
+      >
+        {action.label}
+      </button>
+    </li>
+  );
+
+  return (
+    <span className="acct-more-wrap">
+      <button
+        ref={buttonRef}
+        type="button"
+        className="acct-more"
+        aria-label={label}
+        aria-haspopup="menu"
+        aria-expanded={open}
+        aria-controls={open ? menuId : undefined}
+        onClick={() => (open ? close(false) : setOpen(true))}
+        onKeyDown={(event) => {
+          if (!open && (event.key === "ArrowDown" || event.key === "ArrowUp")) {
+            event.preventDefault();
+            setOpen(true);
+          }
+        }}
+      >
+        <svg viewBox="0 0 20 20" aria-hidden="true">
+          <circle cx="4" cy="10" r="1.7" />
+          <circle cx="10" cy="10" r="1.7" />
+          <circle cx="16" cy="10" r="1.7" />
+        </svg>
+      </button>
+      {open ? (
+        <ul
+          ref={menuRef}
+          id={menuId}
+          className="acct-menu"
+          role="menu"
+          aria-label={label}
+          onKeyDown={onKeyDown}
+          style={place ? { top: place.top, left: place.left } : { visibility: "hidden", top: 0, left: 0 }}
+        >
+          {safe.map(item)}
+          {risky.length > 0 ? (
+            <>
+              <li role="separator" className="acct-menu-divider" />
+              <li role="presentation" className="acct-menu-caption">
+                되돌리기 어려운 일
+              </li>
+              {risky.map(item)}
+            </>
+          ) : null}
+        </ul>
+      ) : null}
+    </span>
+  );
+}
+
 function RosterRow({
   row,
   onChanged,
@@ -235,10 +401,21 @@ function RosterRow({
   onIssued: (issued: InviteIssued, nickname: string) => void;
 }) {
   const [busy, setBusy] = useState(false);
+  const [message, setMessage] = useState<string | null>(null);
+  const archived = isArchived(row);
   const run = async (work: () => Promise<unknown>) => {
     setBusy(true);
+    setMessage(null);
     try {
       await work();
+    } catch (error) {
+      setMessage(
+        error instanceof PreviewApiError && error.code === "learner_archived"
+          ? "다시 연 뒤에 링크를 만들 수 있어요."
+          : error instanceof PreviewApiError && error.code === "archive_first"
+            ? "진행 중인 학습자는 먼저 종료해야 지울 수 있어요."
+            : "처리하지 못했어요. 다시 시도해 주세요.",
+      );
     } finally {
       setBusy(false);
       onChanged();
@@ -249,12 +426,53 @@ function RosterRow({
       const issued = await teacherApi.invite(row.id);
       onIssued(issued, row.nickname);
     });
+  const archive = () => {
+    if (
+      !window.confirm(
+        `${row.nickname} 님의 학습을 종료할까요? 링크와 기기 연결이 모두 끊기고, 기록은 남아요. 나중에 다시 열 수 있어요.`,
+      )
+    ) {
+      return;
+    }
+    void run(() => teacherApi.archiveLearner(row.id));
+  };
+  const remove = () => {
+    const typed = window.prompt(
+      `${row.nickname} 님과 모든 학습 기록을 지워요. 되돌릴 수 없어요. 지우려면 별칭을 그대로 입력해 주세요.`,
+    );
+    if (typed === null) return;
+    if (typed.trim() !== row.nickname) {
+      setMessage("별칭이 맞지 않아 지우지 않았어요.");
+      return;
+    }
+    void run(() => teacherApi.deleteLearner(row.id));
+  };
   const status = row.invite.status;
   // 표 안의 고르기 칸은 바꾸는 즉시 저장되므로, 잘못 건드린 경우를 막으려고 한 번 묻는다.
   const confirmChange = (field: string, label: string, save: () => Promise<unknown>) => {
     if (!window.confirm(`${row.nickname} 님의 ${field}을(를) ${label}(으)로 바꿀까요?`)) return;
     void run(save);
   };
+  const revokeDevices = () => {
+    if (!window.confirm(`${row.nickname} 님의 기기 연결 ${row.devices}대를 모두 끊을까요? 학습 기록은 남아요.`)) return;
+    void run(() => teacherApi.revokeDevices(row.id));
+  };
+  // 위험도 순서: 안전한 일 → (칸막이) → 종료 → 삭제
+  const safeActions: MenuAction[] = archived
+    ? [{ key: "reopen", label: "다시 열기", onSelect: () => void run(() => teacherApi.reopenLearner(row.id)) }]
+    : [
+        { key: "invite", label: status === "none" ? "초대 링크 만들기" : "링크 새로 만들기", onSelect: () => void invite() },
+        ...(status === "open"
+          ? [{ key: "revoke", label: "링크 폐기", onSelect: () => void run(() => teacherApi.revokeInvites(row.id)) }]
+          : []),
+        ...(row.devices > 0 ? [{ key: "devices", label: "기기 연결 끊기", onSelect: revokeDevices }] : []),
+      ];
+  const riskyActions: MenuAction[] = archived
+    ? [{ key: "delete", label: "삭제", onSelect: remove, danger: true }]
+    : [
+        { key: "archive", label: "종료", onSelect: archive },
+        ...(row.isTest ? [{ key: "delete", label: "삭제", onSelect: remove, danger: true }] : []),
+      ];
 
   return (
     <tr>
@@ -267,7 +485,7 @@ function RosterRow({
         <select
           aria-label={`${row.nickname} 모어`}
           value={row.homeLanguage ?? ""}
-          disabled={busy}
+          disabled={busy || archived}
           onChange={(event) => {
             const homeLanguage = event.target.value === "ru" ? "ru" : null;
             confirmChange("모어", homeLanguage ? "러시아어" : "기록 안 함", () => teacherApi.updateLearner(row.id, { homeLanguage }));
@@ -281,7 +499,7 @@ function RosterRow({
         <select
           aria-label={`${row.nickname} 사전 언어`}
           value={row.dictLanguage}
-          disabled={busy}
+          disabled={busy || archived}
           onChange={(event) => {
             const dictLanguage: DictLanguage = event.target.value === "en" ? "en" : "ru";
             confirmChange("사전 언어", dictLanguage === "en" ? "English" : "Русский", () =>
@@ -294,8 +512,10 @@ function RosterRow({
         </select>
       </td>
       <td data-label="초대">
-        {INVITE_LABEL[status]}
-        {status === "open" && row.invite.expiresAt ? <small className="acct-sub">{formatDay(row.invite.expiresAt)}까지</small> : null}
+        {archived ? "종료함" : INVITE_LABEL[status]}
+        {!archived && status === "open" && row.invite.expiresAt ? (
+          <small className="acct-sub">{formatDay(row.invite.expiresAt)}까지</small>
+        ) : null}
       </td>
       <td data-label="연결된 기기" className="num">
         {row.devices}대
@@ -303,38 +523,72 @@ function RosterRow({
       <td data-label="마지막 학습">{row.summary.lastActive ? formatDay(row.summary.lastActive) : "기록 없음"}</td>
       <td className="acct-actions-cell">
         <div className="acct-actions">
-          <button type="button" className="tc-ul" disabled={busy} onClick={() => void invite()}>
-            {status === "none" ? "초대 링크 만들기" : "링크 새로 만들기"}
-          </button>
-          {status === "open" ? (
-            <button type="button" className="tc-ul" disabled={busy} onClick={() => void run(() => teacherApi.revokeInvites(row.id))}>
-              링크 폐기
-            </button>
-          ) : null}
-          {row.devices > 0 ? (
-            <button
-              type="button"
-              className="tc-ul"
-              disabled={busy}
-              onClick={() => {
-                if (!window.confirm(`${row.nickname} 님의 기기 연결 ${row.devices}대를 모두 끊을까요? 학습 기록은 남아요.`)) return;
-                void run(() => teacherApi.revokeDevices(row.id));
-              }}
-            >
-              기기 연결 끊기
-            </button>
-          ) : null}
           <Link className="tc-ul" to={`/teach/detail?learner=${encodeURIComponent(row.id)}`}>
             기록 보기
           </Link>
+          <ManageMenu
+            label={`${row.nickname} 관리`}
+            menuId={`acct-menu-${row.id}`}
+            disabled={busy}
+            safe={safeActions}
+            risky={riskyActions}
+          />
         </div>
+        {message ? (
+          <p className="acct-error" role="alert">
+            {message}
+          </p>
+        ) : null}
       </td>
     </tr>
   );
 }
 
+function RosterTable({
+  caption,
+  rows,
+  onChanged,
+  onIssued,
+}: {
+  caption: string;
+  rows: TeacherLearnerRow[];
+  onChanged: () => void;
+  onIssued: (issued: InviteIssued, nickname: string) => void;
+}) {
+  return (
+    <div className="tc-table-wrap">
+      <table className="tc-table acct-table">
+        <caption className="visually-hidden">{caption}</caption>
+        <thead>
+          <tr>
+            <th scope="col">학습자</th>
+            <th scope="col">모어</th>
+            <th scope="col">사전 언어</th>
+            <th scope="col">초대</th>
+            <th scope="col" className="num">
+              연결된 기기
+            </th>
+            <th scope="col">마지막 학습</th>
+            <th scope="col">
+              <span className="visually-hidden">할 일</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <RosterRow key={row.id} row={row} onChanged={onChanged} onIssued={onIssued} />
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 function Roster({ view, reload }: { view: TeacherView; reload: () => void }) {
   const [issued, setIssued] = useState<{ issued: InviteIssued; nickname: string } | null>(null);
+  const active = view.learners.filter((row) => !isArchived(row));
+  const archived = view.learners.filter(isArchived);
+  const onIssued = (next: InviteIssued, nickname: string) => setIssued({ issued: next, nickname });
   return (
     <section className="acct-roster" aria-labelledby="roster-title">
       <h3 id="roster-title">학습자 관리</h3>
@@ -342,33 +596,17 @@ function Roster({ view, reload }: { view: TeacherView; reload: () => void }) {
       {issued ? <IssuedLink issued={issued.issued} nickname={issued.nickname} onClose={() => setIssued(null)} /> : null}
       {view.learners.length === 0 ? (
         <p className="muted">아직 학습자가 없어요. 위에서 별칭을 넣고 추가한 뒤 초대 링크를 만들어 주세요.</p>
+      ) : active.length === 0 ? (
+        <p className="muted">진행 중인 학습자가 없어요. 종료한 학습자는 아래에서 다시 열 수 있어요.</p>
       ) : (
-        <div className="tc-table-wrap">
-          <table className="tc-table acct-table">
-            <caption className="visually-hidden">담당 학습자와 초대 상태</caption>
-            <thead>
-              <tr>
-                <th scope="col">학습자</th>
-                <th scope="col">모어</th>
-                <th scope="col">사전 언어</th>
-                <th scope="col">초대</th>
-                <th scope="col" className="num">
-                  연결된 기기
-                </th>
-                <th scope="col">마지막 학습</th>
-                <th scope="col">
-                  <span className="visually-hidden">할 일</span>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {view.learners.map((row) => (
-                <RosterRow key={row.id} row={row} onChanged={reload} onIssued={(next, nickname) => setIssued({ issued: next, nickname })} />
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <RosterTable caption="담당 학습자와 초대 상태" rows={active} onChanged={reload} onIssued={onIssued} />
       )}
+      {archived.length > 0 ? (
+        <details className="acct-archived">
+          <summary>종료한 학습자 {archived.length}명</summary>
+          <RosterTable caption="종료한 학습자" rows={archived} onChanged={reload} onIssued={onIssued} />
+        </details>
+      ) : null}
       <p className="small">
         초대 링크는 72시간 동안 한 번만 쓸 수 있어요. 새로 만들면 쓰지 않은 이전 링크는 바로 막혀요. 링크를 받은 사람이 실제 학습자인지는
         전달 과정에 달려 있어요. 초대 주소: {view.inviteOrigin}
@@ -386,7 +624,7 @@ export function TeacherHome() {
             <ScreenTitle title="교사 화면" />
             <TeacherBar name={view.teacher.displayName} />
             <Roster view={view} reload={reload} />
-            <ListView learners={view.learners.map((row) => row.summary)} />
+            <ListView learners={view.learners.filter((row) => !isArchived(row)).map((row) => row.summary)} />
           </>
         )}
       </TeacherGate>

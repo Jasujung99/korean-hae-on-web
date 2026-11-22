@@ -58,7 +58,7 @@ async function getJson<T>(path: string): Promise<T> {
   return (await response.json()) as T;
 }
 
-async function sendJson<T>(method: "POST" | "PATCH", path: string, body: unknown, keepalive = false): Promise<T> {
+async function sendJson<T>(method: "POST" | "PATCH" | "DELETE", path: string, body: unknown, keepalive = false): Promise<T> {
   const response = await fetch(path, {
     method,
     headers: { "content-type": "application/json", accept: "application/json" },
@@ -128,6 +128,13 @@ export const teacherApi = {
     postJson<{ revoked: number }>(`/api/teacher/learners/${encodeURIComponent(id)}/invitations/revoke`, {}),
   revokeDevices: (id: string) =>
     postJson<{ revoked: number }>(`/api/teacher/learners/${encodeURIComponent(id)}/devices/revoke`, {}),
+  archiveLearner: (id: string) =>
+    postJson<{ status: "archived"; revokedInvitations: number; revokedDevices: number }>(
+      `/api/teacher/learners/${encodeURIComponent(id)}/archive`,
+      {},
+    ),
+  reopenLearner: (id: string) => postJson<{ status: "active" }>(`/api/teacher/learners/${encodeURIComponent(id)}/reopen`, {}),
+  deleteLearner: (id: string) => sendJson<{ deleted: boolean }>("DELETE", `/api/teacher/learners/${encodeURIComponent(id)}`, {}),
   voices: () => getJson<VoicesView>("/api/teacher/voices"),
   chooseVoice: (voice: string) => postJson<VoicesView>("/api/teacher/voice-choice", { voice }),
   audioInventory: () => getJson<AudioInventoryView>("/api/teacher/audio-inventory"),

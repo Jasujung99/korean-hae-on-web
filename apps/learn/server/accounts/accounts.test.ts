@@ -3,7 +3,7 @@ import { PRACTICE_ITEMS } from "../../content/practice.ts";
 import { createFixtureAudio } from "../preview/audio.ts";
 import type { SessionView } from "../preview/contract.ts";
 import { DEVICE_COOKIE } from "./routes.ts";
-import { cookieFrom, createTestAccounts, type TestApp } from "./test-kit.ts";
+import { cookieFrom, createTestAccounts, TEST_ORIGIN, type TestApp } from "./test-kit.ts";
 
 const wav = new Uint8Array([0x52, 0x49, 0x46, 0x46, 1, 2, 3, 4]);
 const audio = () => createFixtureAudio(Object.fromEntries(PRACTICE_ITEMS.map((item) => [item.audioId, wav])));
@@ -204,5 +204,133 @@ describe("teacher access", () => {
     const k = await kit();
     expect((await k.postJson(k.teacher, "/api/teacher/logout", {})).status).toBe(200);
     expect((await k.teacher.request("/api/teacher/learners")).status).toBe(401);
+  });
+});
+
+describe("learner lifecycle", () => {
+  const remove = (app: TestApp, id: string) =>
+    app.request(`/api/teacher/learners/${id}`, {
+      method: "DELETE",
+      headers: { origin: TEST_ORIGIN, "content-type": "application/json" },
+      body: "{}",
+    });
+  type Row = { id: string; status: string; invite: { status: string }; devices: number };
+  const rows = async (k: Awaited<ReturnType<typeof kit>>) =>
+    (await json<{ learners: Row[] }>(k.teacher.request("/api/teacher/learners"))).learners;
+
+  it("archives a learner: open links stop working, connected devices are blocked, and records stay", async () => {
+    const k = await kit();
+    const a = await k.addConnectedLearner("종료");
+    await k.postJson(a.app, "/api/learn/sessions", { itemKind: "pseudo" });
+    expect((await k.repo.events(a.id)).length).toBe(1);
+    const pending = await k.invite(a.id);
+
+    const archived = await k.postJson(k.teacher, `/api/teacher/learners/${a.id}/archive`, {});
+    expect(archived.status).toBe(200);
+    expect(await archived.json()).toMatchObject({ status: "archived", revokedInvitations: 1, revokedDevices: 1 });
+
+    const me = await a.app.request("/api/me");
+    expect(me.status).toBe(401);
+    expect(me.headers.get("set-cookie") ?? "").not.toMatch(new RegExp(`${DEVICE_COOKIE}=[A-Za-z0-9_-]{20,}`));
+    expect((await a.app.request("/api/learn/sessions/current")).status).toBe(401);
+    expect((await k.postJson(a.app, "/api/learn/sessions", { itemKind: "pseudo" })).status).toBe(401);
+
+    const late = await k.claim(pending);
+    expect(late.response.status).toBe(410);
+    expect(late.cookie).toBeNull();
+    expect(await json(k.postJson(k.client(null), "/api/invitations/inspect", { token: pending }))).toMatchObject({ status: "revoked" });
+
+    expect((await k.repo.events(a.id)).length).toBe(1);
+    const row = (await rows(k)).find((item) => item.id === a.id);
+    expect(row).toMatchObject({ status: "archived", invite: { status: "revoked" }, devices: 0 });
+    // 종료한 학습자의 기록 보기는 계속 열린다.
+    expect((await k.teacher.request(`/api/teacher/learners/${a.id}`)).status).toBe(200);
+  });
+
+  it("clears the device cookie when an archived learner's device comes back", async () => {
+    const k = await kit();
+    const a = await k.addConnectedLearner("쿠키");
+    // 기기 세션은 살아 있지만 학습자만 종료된 경우(종료와 같은 때 들어온 요청)도 막는다.
+    await k.repo.setLearnerStatus(a.id, "archived");
+    const me = await a.app.request("/api/me");
+    expect(me.status).toBe(401);
+    expect(me.headers.get("set-cookie")).toMatch(new RegExp(`${DEVICE_COOKIE}=;`));
+    expect((await a.app.request("/api/learn/words")).status).toBe(401);
+  });
+
+  it("refuses a new link while archived, and reconnects to the same learner after reopening", async () => {
+    const k = await kit();
+    const a = await k.addConnectedLearner("다시");
+    const started = await json<{ session: SessionView }>(k.postJson(a.app, "/api/learn/sessions", { itemKind: "pseudo" }));
+    await k.postJson(k.teacher, `/api/teacher/learners/${a.id}/archive`, {});
+
+    const refused = await k.postJson(k.teacher, `/api/teacher/learners/${a.id}/invitations`, {});
+    expect(refused.status).toBe(409);
+    expect(await refused.json()).toMatchObject({ error: "learner_archived" });
+
+    const reopened = await k.postJson(k.teacher, `/api/teacher/learners/${a.id}/reopen`, {});
+    expect(reopened.status).toBe(200);
+    expect((await rows(k)).find((item) => item.id === a.id)).toMatchObject({ status: "active", devices: 0 });
+    // 다시 열어도 예전 기기는 그대로 끊긴 상태다. 링크는 따로 만든다.
+    expect((await a.app.request("/api/me")).status).toBe(401);
+
+    const fresh = await k.claim(await k.invite(a.id));
+    expect(fresh.response.status).toBe(200);
+    expect(await json(fresh.app.request("/api/me"))).toMatchObject({ learner: { id: a.id, nickname: "다시" } });
+    const current = await json<{ session: SessionView | null }>(fresh.app.request("/api/learn/sessions/current"));
+    expect(current.session?.sessionId).toBe(started.session.sessionId);
+  });
+
+  it("deletes only archived or test learners, together with their records", async () => {
+    const k = await kit();
+    const a = await k.addConnectedLearner("지우기");
+    await k.postJson(a.app, "/api/learn/sessions", { itemKind: "pseudo" });
+
+    const refused = await remove(k.teacher, a.id);
+    expect(refused.status).toBe(409);
+    expect(await refused.json()).toMatchObject({ error: "archive_first" });
+    expect(await k.repo.learner(a.id)).not.toBeNull();
+
+    await k.postJson(k.teacher, `/api/teacher/learners/${a.id}/archive`, {});
+    const deleted = await remove(k.teacher, a.id);
+    expect(deleted.status).toBe(200);
+    expect(await k.repo.learner(a.id)).toBeNull();
+    expect(await k.repo.events(a.id)).toEqual([]);
+    expect(await k.repo.invitations([a.id])).toEqual([]);
+    expect((await rows(k)).some((item) => item.id === a.id)).toBe(false);
+    expect((await k.teacher.request(`/api/teacher/learners/${a.id}`)).status).toBe(404);
+    expect((await a.app.request("/api/me")).status).toBe(401);
+    expect((await remove(k.teacher, a.id)).status).toBe(404);
+
+    // 시험 학습자는 진행 중이어도 바로 지울 수 있다.
+    const testId = await k.addLearner("시험 지우기", { isTest: true });
+    await k.invite(testId);
+    expect((await remove(k.teacher, testId)).status).toBe(200);
+    expect(await k.repo.learner(testId)).toBeNull();
+    expect(await k.repo.invitations([testId])).toEqual([]);
+  });
+
+  it("blocks archive, reopen, and delete for another teacher's learner", async () => {
+    const k = await kit();
+    const a = await k.addConnectedLearner("남의 학생");
+    const testId = await k.addLearner("남의 시험", { isTest: true });
+    const other = await k.otherTeacher();
+    expect((await k.postJson(other, `/api/teacher/learners/${a.id}/archive`, {})).status).toBe(404);
+    expect((await k.repo.learner(a.id))?.status).toBe("active");
+    expect((await a.app.request("/api/me")).status).toBe(200);
+
+    await k.postJson(k.teacher, `/api/teacher/learners/${a.id}/archive`, {});
+    expect((await k.postJson(other, `/api/teacher/learners/${a.id}/reopen`, {})).status).toBe(404);
+    expect((await k.repo.learner(a.id))?.status).toBe("archived");
+    expect((await remove(other, a.id)).status).toBe(404);
+    expect((await remove(other, testId)).status).toBe(404);
+    expect(await k.repo.learner(a.id)).not.toBeNull();
+    expect(await k.repo.learner(testId)).not.toBeNull();
+    expect((await k.postJson(other, `/api/teacher/learners/${a.id}/invitations`, {})).status).toBe(404);
+    expect((await other.request(`/api/teacher/learners/${a.id}`)).status).toBe(404);
+    // 학습자 기기로는 교사 동작을 부를 수 없다.
+    const b = await k.addConnectedLearner("기기");
+    expect((await k.postJson(b.app, `/api/teacher/learners/${b.id}/archive`, {})).status).toBe(401);
+    expect((await remove(b.app, b.id)).status).toBe(401);
   });
 });

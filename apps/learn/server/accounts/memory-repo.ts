@@ -57,6 +57,25 @@ export function createMemoryRepo(options: { now?: () => Date; teachers?: Array<{
       learners.set(id, next);
       return next;
     },
+    async setLearnerStatus(id, status) {
+      const row = learners.get(id);
+      if (!row) return null;
+      const next = { ...row, status };
+      learners.set(id, next);
+      return next;
+    },
+    async deleteLearner(id) {
+      if (!learners.delete(id)) return false;
+      // Supabase의 on delete cascade와 같은 결과가 되도록 묶인 자료를 함께 지운다.
+      for (let index = invitations.length - 1; index >= 0; index -= 1) {
+        if (invitations[index]?.learnerId === id) invitations.splice(index, 1);
+      }
+      for (let index = devices.length - 1; index >= 0; index -= 1) {
+        if (devices[index]?.ownerId === id) devices.splice(index, 1);
+      }
+      events.delete(id);
+      return true;
+    },
     async createInvitation(learnerId, _teacherId, tokenHash, expiresAt) {
       await repo.revokeOpenInvitations(learnerId);
       const row: Invitation = {

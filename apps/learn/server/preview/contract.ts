@@ -313,6 +313,8 @@ export type TeacherLearnerRow = {
   homeLanguage: "ru" | null;
   dictLanguage: DictLanguage;
   isTest: boolean;
+  /** active = 진행 중, archived = 종료함(링크·기기 연결이 끊기고 기록은 남음) */
+  status: "active" | "archived";
   invite: { status: InviteStatus; expiresAt: string | null; createdAt: string | null };
   devices: number;
   summary: LearnerSummary;

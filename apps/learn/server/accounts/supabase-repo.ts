@@ -126,7 +126,7 @@ export function createSupabaseRepo(config: DbConfig, fetcher: typeof fetch = fet
     async learners(teacherId) {
       const rows = await call(
         "GET",
-        `phoneme_learners?teacher_id=eq.${encodeURIComponent(teacherId)}&status=eq.active&order=created_at.asc`,
+        `phoneme_learners?teacher_id=eq.${encodeURIComponent(teacherId)}&order=created_at.asc`,
       );
       return rows.map(learnerFrom);
     },
@@ -158,6 +158,17 @@ export function createSupabaseRepo(config: DbConfig, fetcher: typeof fetch = fet
       }
       const rows = await call("PATCH", `phoneme_learners?id=eq.${id}`, body, "return=representation");
       return rows[0] ? learnerFrom(rows[0]) : null;
+    },
+    async setLearnerStatus(id, status) {
+      if (!/^[0-9a-f-]{36}$/i.test(id)) return null;
+      const rows = await call("PATCH", `phoneme_learners?id=eq.${id}`, { status, updated_at: nowIso() }, "return=representation");
+      return rows[0] ? learnerFrom(rows[0]) : null;
+    },
+    async deleteLearner(id) {
+      if (!/^[0-9a-f-]{36}$/i.test(id)) return false;
+      // 초대·기기 세션·학습 기록은 외래 키의 on delete cascade로 함께 지워진다.
+      const rows = await call("DELETE", `phoneme_learners?id=eq.${id}`, undefined, "return=representation");
+      return rows.length > 0;
     },
     async createInvitation(learnerId, teacherId, tokenHash, expiresAt) {
       await this.revokeOpenInvitations(learnerId);
