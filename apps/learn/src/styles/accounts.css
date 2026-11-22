@@ -271,6 +271,24 @@
   cursor: default;
 }
 
+/* '관리' 펼침: 행 동작을 한 줄 아래에 위험도 순서로 늘어놓는다. */
+.acct-manage {
+  display: flex;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  border-top: 1px solid var(--line);
+}
+
+.acct-actions-cell .acct-error {
+  margin: 0;
+  font-size: 13px;
+}
+
+.acct-archived .tc-table-wrap {
+  margin-top: var(--space-3);
+}
+
 .acct-table td,
 .acct-table th {
   vertical-align: middle;
