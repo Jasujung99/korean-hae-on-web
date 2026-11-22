@@ -77,14 +77,7 @@ export function DictInline({ word, wordId, pos, dict }: { word: string; wordId: 
     <section className={open ? "dict-inline is-open" : "dict-inline"}>
       <div className="dict-inline-head">
         <button type="button" className="dict-inline-toggle" aria-expanded={open} aria-controls={panelId} onClick={toggle}>
-          <span>
-            사전 풀이
-            {reviewing ? (
-              <span className="dict-inline-pill" title="검수 전 · 개발 미리보기와 시험 학습자에게만 보여요. 승인되면 학습자에게 보여요.">
-                검수 전
-              </span>
-            ) : null}
-          </span>
+          <span>사전 풀이</span>
           <span className="dict-inline-state">{open ? "접기" : "펼치기"}</span>
         </button>
         {open ? (
@@ -106,6 +99,11 @@ export function DictInline({ word, wordId, pos, dict }: { word: string; wordId: 
       </div>
       {open ? (
         <div id={panelId} className="dict-inline-panel">
+          {reviewing ? (
+            <p className="dict-inline-review" role="note">
+              검수 전 · 개발 미리보기에서만 보여요. 승인되면 학습자에게 보여요.
+            </p>
+          ) : null}
           {dict === null ? (
             <p className="dict-inline-empty">이 낱말의 사전 풀이는 아직 준비하고 있어요.</p>
           ) : (

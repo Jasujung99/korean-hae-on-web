@@ -765,18 +765,8 @@ b.p3 {
 
 /* 사전 방식 A: 카드 안에서 펼치기 (두 스타일이 함께 쓴다) */
 .dict-inline {
-  margin-top: var(--space-2);
-}
-
-.dict-inline-pill {
-  margin-left: var(--space-2);
-  padding: 1px var(--space-2);
-  border-radius: 999px;
-  background: var(--wash-lavender);
-  color: var(--lavender-ink);
-  font: var(--text-doc-label);
-  font-weight: 400;
-  vertical-align: middle;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .dict-inline .dict-inline-toggle {
@@ -811,13 +801,12 @@ b.p3 {
 .dict-inline-row {
   display: grid;
   gap: var(--space-2);
-  padding: var(--space-3) var(--space-4);
-  border-radius: var(--radius-sm);
-  background: var(--paper);
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--sage);
 }
 
 .dict-inline-row.is-lang {
-  background: var(--wash-lavender);
+  border-left-color: var(--lavender);
 }
 
 .dict-inline p {
@@ -1038,44 +1027,12 @@ b.p3 {
 .c-example {
   display: grid;
   gap: var(--space-2);
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--lavender);
 }
 
-.c-example-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-4);
-}
-
-.c-page .c-more-toggle {
-  min-height: 44px;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: var(--ink-muted);
-  font: var(--text-doc-label);
-  cursor: pointer;
-}
-
-.c-more-examples {
-  display: grid;
-  gap: var(--space-3);
-}
-
-.c-more-example {
-  display: grid;
-  gap: var(--space-1);
-  padding: var(--space-3) var(--space-4);
-  border-radius: var(--radius-sm);
-  background: var(--paper);
-}
-
-.c-more-example .c-link {
+.c-example .c-link {
   justify-self: start;
-}
-
-.c-page .c-gloss {
-  font-size: 17px;
 }
 
 .c-page .c-keep {
@@ -1126,27 +1083,6 @@ b.p3 {
   font-family: var(--font-serif);
   font-size: 15px;
   cursor: pointer;
-}
-
-.pair-row .pair-words button {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-
-.pair-row .pair-words button.is-current {
-  border-color: var(--olive);
-  background: var(--olive);
-  color: var(--paper);
-}
-
-.pair-row .pair-words button.is-current b {
-  color: var(--paper);
-}
-
-.pair-play {
-  font-size: 11px;
-  opacity: 0.8;
 }
 
 .pair-row .pair-words button:disabled {
