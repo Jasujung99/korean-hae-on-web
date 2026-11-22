@@ -2,7 +2,7 @@
 import {
   buildReleaseSnapshot,
   snapshotFromReferenceJson,
-  snapshotSentenceAudioBase,
+  exampleSlots,
   snapshotWordAudioBase,
   type ReleaseCandidateAsset,
   type ReleaseCandidateItem,
@@ -67,6 +67,7 @@ export function createMemoryContentRepo(options: { now?: () => Date } = {}): Con
         gloss: input.gloss ?? "",
         scene: input.scene ?? "",
         example: input.example ?? "",
+        extraExamples: input.extraExamples ?? [],
         related: input.related ?? "",
         note: input.note ?? "",
         sortOrder: input.sortOrder ?? maxOrder + 1,
@@ -394,7 +395,7 @@ export async function seedMemoryContentRepo(
   };
   for (const item of dbItems) {
     linkBase(snapshotWordAudioBase(item), item.id);
-    if (item.example) linkBase(snapshotSentenceAudioBase(item), item.id);
+    for (const slot of exampleSlots(item)) linkBase(slot.audioBase, item.id);
   }
 
   const assetsToSeed: NewAudioAssetInput[] = audioIds.map((audioId) => {

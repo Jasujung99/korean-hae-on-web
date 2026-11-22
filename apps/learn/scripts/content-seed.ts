@@ -10,7 +10,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import {
   buildReleaseSnapshot,
   snapshotFromReferenceJson,
-  snapshotSentenceAudioBase,
+  exampleSlots,
   snapshotWordAudioBase,
   type ReleaseCandidateAsset,
   type ReleaseCandidateItem,
@@ -139,7 +139,7 @@ export async function runContentSeed(
   };
   for (const item of dbItems) {
     linkBase(snapshotWordAudioBase(item), item.id);
-    if (item.example) linkBase(snapshotSentenceAudioBase(item), item.id);
+    for (const slot of exampleSlots(item)) linkBase(slot.audioBase, item.id);
   }
 
   const audioInputs: NewAudioAssetInput[] = assetEntries.map(({ audioId, entry, parsed }) => {

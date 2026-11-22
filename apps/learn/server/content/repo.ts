@@ -19,6 +19,8 @@ export type ContentItemRow = {
   gloss: string;
   scene: string;
   example: string;
+  /** 예문 2~5번(최대 4개). 1번은 example */
+  extraExamples: string[];
   related: string;
   note: string;
   sortOrder: number;
@@ -41,6 +43,7 @@ export type NewContentItemInput = {
   gloss?: string;
   scene?: string;
   example?: string;
+  extraExamples?: string[];
   related?: string;
   note?: string;
   sortOrder?: number;
@@ -52,7 +55,7 @@ export type NewContentItemInput = {
 export type ContentItemPatch = Partial<
   Pick<
     ContentItemRow,
-    "stage" | "substage" | "consonant" | "word" | "pos" | "gloss" | "scene" | "example" | "related" | "note" | "sortOrder" | "status"
+    "stage" | "substage" | "consonant" | "word" | "pos" | "gloss" | "scene" | "example" | "extraExamples" | "related" | "note" | "sortOrder" | "status"
   >
 >;
 
@@ -244,6 +247,7 @@ export function itemSnapshotRecord(item: ContentItemRow): Record<string, unknown
     gloss: item.gloss,
     scene: item.scene,
     example: item.example,
+    extraExamples: item.extraExamples ?? [],
     related: item.related,
     note: item.note,
     sortOrder: item.sortOrder,

@@ -29,6 +29,7 @@ import { syllableAudioBase } from "../content/core-table.ts";
 import {
   snapshotPseudowords,
   snapshotSentenceAudioBase,
+  exampleSlots,
   snapshotStageZero,
   snapshotWordAudioBase,
   snapshotWords,
@@ -352,7 +353,7 @@ async function main() {
       if (!stages.includes(word.stage.replace("Stage ", ""))) continue;
       add(words, { base: snapshotWordAudioBase(word), kind: "word", text: word.word });
       // 예문은 주어진 것만 쓴다. 없으면 만들지 않는다.
-      if (word.example) add(sentences, { base: snapshotSentenceAudioBase(word), kind: "sentence", text: word.example });
+      for (const slot of exampleSlots(word)) add(sentences, { base: slot.audioBase, kind: "sentence", text: slot.text });
     }
     // 할당량에 걸려도 쓸 수 있게: 의사단어 → 단어 → 예문 순서로, 각 묶음 안에서 목소리를 번갈아 만든다.
     const jobs = [syllables, words, sentences].flatMap((list) =>

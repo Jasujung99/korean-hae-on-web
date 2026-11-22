@@ -13,7 +13,7 @@ import { syllableAudioBase } from "../content/core-table.ts";
 import { COURSE_ORDER, type GroupId } from "../content/course-order.ts";
 import { PRACTICE_VOICES, voicedAudioId } from "../content/practice-voices.ts";
 import {
-  snapshotSentenceAudioBase,
+  exampleSlots,
   snapshotWordAudioBase,
   type SnapshotStageZero,
   type SnapshotWord,
@@ -47,7 +47,7 @@ export type UploadCandidateEntry = {
 
 function groupAudioIds(
   groupId: GroupId,
-  words: readonly Pick<SnapshotWord, "id" | "entryId" | "word" | "example" | "groupId" | "stage">[],
+  words: readonly Pick<SnapshotWord, "id" | "entryId" | "word" | "example" | "extraExamples" | "groupId" | "stage">[],
   stage0: readonly Pick<SnapshotStageZero, "groupId" | "stimulus" | "word" | "kind">[],
 ): string[] {
   const groupWords = words.filter((w) => w.groupId === groupId);
@@ -65,7 +65,7 @@ function groupAudioIds(
   }
   for (const word of groupWords) {
     bases.add(snapshotWordAudioBase(word));
-    if (word.example) bases.add(snapshotSentenceAudioBase(word));
+    for (const slot of exampleSlots(word)) bases.add(slot.audioBase);
     if (groupId === "j_ch_jj" && word.stage === "Stage 1" && word.entryId !== null) {
       ids.add(`word-Stage1-${word.entryId}-${word.word}`);
       if (word.example) ids.add(`sentence-Stage1-${word.entryId}-${word.word}`);
@@ -82,7 +82,7 @@ function groupAudioIds(
 }
 
 export function summarizeGroupAudio(
-  words: readonly Pick<SnapshotWord, "id" | "entryId" | "word" | "example" | "groupId" | "stage">[],
+  words: readonly Pick<SnapshotWord, "id" | "entryId" | "word" | "example" | "extraExamples" | "groupId" | "stage">[],
   stage0: readonly Pick<SnapshotStageZero, "groupId" | "stimulus" | "word" | "kind">[],
   presentIds: ReadonlySet<string> | readonly string[],
 ): GroupAudioSummary[] {
@@ -98,7 +98,7 @@ export function summarizeGroupAudio(
 }
 
 export function buildUploadAssetInputs(input: {
-  items: readonly Pick<ContentItemRow, "id" | "entryId" | "word" | "example" | "groupId">[];
+  items: ReadonlyArray<Pick<ContentItemRow, "id" | "entryId" | "word" | "example" | "groupId"> & { extraExamples?: string[] }>;
   entries: readonly UploadCandidateEntry[];
   approve: boolean;
   nowIso: string;
@@ -111,7 +111,7 @@ export function buildUploadAssetInputs(input: {
   };
   for (const item of input.items) {
     linkBase(snapshotWordAudioBase(item), item.id);
-    if (item.example) linkBase(snapshotSentenceAudioBase(item), item.id);
+    for (const slot of exampleSlots(item)) linkBase(slot.audioBase, item.id);
   }
 
   const assets: NewAudioAssetInput[] = input.entries.map(({ audioId, objectKey, bytes, durationMs, meta }) => {

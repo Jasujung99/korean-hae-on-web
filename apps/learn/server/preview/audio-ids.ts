@@ -4,7 +4,7 @@ import { PRACTICE_ITEMS, practiceWords } from "../../content/practice.ts";
 import { PRACTICE_VOICES, voicedAudioId } from "../../content/practice-voices.ts";
 import {
   snapshotFromReferenceJson,
-  snapshotSentenceAudioBase,
+  exampleSlots,
   snapshotStageZero,
   snapshotWordAudioBase,
   snapshotWords,
@@ -29,7 +29,7 @@ export function previewAudioIds(snapshot: ContentSnapshot = snapshotFromReferenc
     if (word.legacyExampleAudioId) ids.add(word.legacyExampleAudioId);
   }
   for (const word of snapshotWords(snapshot, "j_ch_jj")) {
-    if (word.example) bases.add(snapshotSentenceAudioBase(word));
+    for (const slot of exampleSlots(word)) bases.add(slot.audioBase);
   }
   for (const base of bases) {
     ids.add(base);
@@ -48,7 +48,7 @@ export function previewAudioIds(snapshot: ContentSnapshot = snapshotFromReferenc
 
 /** 다섯 묶음 전체(ㅈ·ㅊ·ㅉ + ㅅ·ㅆ + ㄱ·ㅋ·ㄲ + ㅂ·ㅍ·ㅃ + ㄷ·ㅌ·ㄸ)에서 만들거나 올릴 음원 id */
 export function allContentAudioIds(
-  words: readonly Pick<SnapshotWord, "id" | "entryId" | "word" | "example" | "groupId" | "stage">[],
+  words: readonly Pick<SnapshotWord, "id" | "entryId" | "word" | "example" | "extraExamples" | "groupId" | "stage">[],
   stage0: readonly Pick<SnapshotStageZero, "groupId" | "stimulus" | "word" | "kind">[],
 ): string[] {
   const ids = new Set<string>();
@@ -67,7 +67,7 @@ export function allContentAudioIds(
   }
   for (const word of words) {
     bases.add(snapshotWordAudioBase(word));
-    if (word.example) bases.add(snapshotSentenceAudioBase(word));
+    for (const slot of exampleSlots(word)) bases.add(slot.audioBase);
     if (word.groupId === "j_ch_jj" && word.stage === "Stage 1" && word.entryId !== null) {
       ids.add(`word-Stage1-${word.entryId}-${word.word}`);
       if (word.example) ids.add(`sentence-Stage1-${word.entryId}-${word.word}`);

@@ -471,6 +471,8 @@ export type ContentItemView = {
   wordAudio: Record<string, ContentAudioCell>;
   exampleAudio: Record<string, ContentAudioCell> | null;
   turnsAudio: Record<string, ContentTurnsCell> | null;
+  /** 예문 2~5번과 그 음원(1번은 example·exampleAudio·turnsAudio) */
+  extraExamples?: ContentExampleView[];
   proposal?: ContentProposalView | null;
 };
 
@@ -485,12 +487,22 @@ export type ContentStageZeroRow = {
   audio: Record<string, ContentAudioCell>;
 };
 
+export type ContentExampleView = {
+  /** 2~5 */
+  index: number;
+  text: string;
+  audio: Record<string, ContentAudioCell>;
+  turnsAudio: Record<string, ContentTurnsCell>;
+};
+
 export type DraftAudioReviewRow = {
   assetId: string;
   audioId: string;
   itemId: string | null;
   word: string;
   kind: "word" | "sentence" | "pseudo" | "syllable";
+  /** 예문 음원이면 몇 번 예문인지(1~5) */
+  exampleIndex?: number;
   voiceKey: string;
   voiceLabel: string;
   durationMs: number | null;

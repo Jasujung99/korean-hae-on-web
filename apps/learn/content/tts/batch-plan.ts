@@ -10,7 +10,7 @@ import { voicedAudioId, type PracticeVoiceKey } from "../practice-voices.ts";
 import {
   snapshotFromReferenceJson,
   snapshotPseudowords,
-  snapshotSentenceAudioBase,
+  exampleSlots,
   snapshotStageZero,
   snapshotWordAudioBase,
   snapshotWords,
@@ -85,7 +85,7 @@ export function makeDoneCheck(input: {
 }
 
 /** 묶음 계획에 쓰는 낱말(묶음과 상관없이 같은 모양) */
-type PlanWord = { id: string; entryId: number | null; word: string; example: string; groupId: GroupId };
+type PlanWord = { id: string; entryId: number | null; word: string; example: string; extraExamples?: string[]; groupId: GroupId };
 
 function sourceFor(
   groupId: string,
@@ -166,11 +166,13 @@ export function batchPlan(
     if (!kinds.includes(kind)) continue;
     const items: BatchItem[] = [];
     for (const word of source.words) {
-      if (!word.example) continue;
-      const voiced = voicedAudioId(snapshotSentenceAudioBase(word), voiceKey);
-      const id = kind === "turns" ? turnsAudioId(voiced) : voiced;
-      if (skip(id, word.example) || items.some((item) => item.id === id)) continue;
-      items.push({ id, text: word.example, unitKind: "sentence" });
+      // 예문 1~5번 모두(2~5번은 글자 해시 id)
+      for (const slot of exampleSlots(word)) {
+        const voiced = voicedAudioId(slot.audioBase, voiceKey);
+        const id = kind === "turns" ? turnsAudioId(voiced) : voiced;
+        if (skip(id, slot.text) || items.some((item) => item.id === id)) continue;
+        items.push({ id, text: slot.text, unitKind: "sentence" });
+      }
     }
     chunk(seededShuffle(items, seed(kind)), sizes.sentences ?? SENTENCES_PER_GROUP).forEach((part, index) =>
       groups.push({

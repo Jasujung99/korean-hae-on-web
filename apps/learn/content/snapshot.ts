@@ -21,6 +21,8 @@ export type SnapshotWord = {
   gloss: string;
   scene: string;
   example: string;
+  /** 예문 2~5번. 예전 게시본에는 없을 수 있다. */
+  extraExamples?: string[];
   related: string;
   note: string;
   sortOrder: number;
@@ -106,6 +108,43 @@ export function snapshotWordAudioBase(word: Pick<SnapshotWord, "id" | "entryId" 
 export function snapshotSentenceAudioBase(word: Pick<SnapshotWord, "id" | "entryId" | "word" | "groupId">): string {
   const base = `sentence-${wordIdPrefix(word)}-${word.word}`;
   return word.groupId === "j_ch_jj" ? base : `${base}-${word.groupId}`;
+}
+
+/** 단어 하나에 쓸 수 있는 예문 수(1번 대표 예문 + 추가 4개) */
+export const MAX_EXAMPLES = 5;
+
+/** 예문 글자로 만드는 짧은 해시(FNV-1a 32비트, 36진수 6자리). 브라우저·워커·Node 어디서나 같은 값이 나온다. */
+export function exampleTextHash(text: string): string {
+  let hash = 0x811c9dc5;
+  for (const char of text.trim()) {
+    hash ^= char.codePointAt(0) ?? 0;
+    hash = Math.imul(hash, 0x01000193) >>> 0;
+  }
+  return hash.toString(36).padStart(6, "0").slice(-6);
+}
+
+export type ExampleSlot = { index: number; text: string; audioBase: string };
+
+/**
+ * 단어의 예문 목록(최대 5개)과 음원 기본 id.
+ * - 1번: 지금까지 쓰던 id 그대로(snapshotSentenceAudioBase). 글자가 바뀌면 stale로 표시한다.
+ * - 2~5번: 1번 id 뒤에 `-x<글자 해시>`. 순서를 바꾸거나 하나를 빼도 다른 예문의 음원이 어긋나지 않고,
+ *   글자를 고치면 새 id가 되어 자연히 새로 만들 대상이 된다.
+ */
+export function exampleSlots(word: Pick<SnapshotWord, "id" | "entryId" | "word" | "groupId" | "example" | "extraExamples">): ExampleSlot[] {
+  const base = snapshotSentenceAudioBase(word);
+  const slots: ExampleSlot[] = [];
+  if (word.example.trim()) slots.push({ index: 1, text: word.example, audioBase: base });
+  for (const text of word.extraExamples ?? []) {
+    if (!text.trim() || slots.length >= MAX_EXAMPLES) continue;
+    slots.push({ index: slots.length + 1, text, audioBase: `${base}-x${exampleTextHash(text)}` });
+  }
+  return slots;
+}
+
+/** 2~5번 예문의 음원 id인지(1번과 구분해야 하는 곳에서 쓴다) */
+export function isExtraExampleAudioId(audioId: string): boolean {
+  return /-x[0-9a-z]{6}(--|$)/.test(audioId);
 }
 
 export function snapshotWordCardId(word: Pick<SnapshotWord, "id" | "entryId">): string {

@@ -14,6 +14,9 @@ import {
 import {
   buildReleaseSnapshot,
   snapshotSentenceAudioBase,
+  exampleSlots,
+  isExtraExampleAudioId,
+  MAX_EXAMPLES,
   snapshotStageKey,
   snapshotWordAudioBase,
   voiceLabelFromKey,
@@ -142,7 +145,10 @@ function toAudioCell(
     };
   }
   if (fallbackByItemVoice && itemId && kind && voiceKey) {
-    const byItem = pickWinningAsset(fallbackByItemVoice.get(`${itemId}:${kind}:${voiceKey}`) ?? []);
+    // 예문 2~5번 음원은 1번 예문의 '다시 만들어야 함' 자리로 쓰지 않는다.
+    const byItem = pickWinningAsset(
+      (fallbackByItemVoice.get(`${itemId}:${kind}:${voiceKey}`) ?? []).filter((asset) => !isExtraExampleAudioId(asset.audioId)),
+    );
     if (byItem) {
       return {
         state: "stale",
@@ -362,8 +368,6 @@ function buildDbContentView(
 
     const itemViews: ContentItemView[] = itemsInStage.map((item) => {
       const wordBase = snapshotWordAudioBase(item);
-      const sentenceBase = snapshotSentenceAudioBase(item);
-      const hasExample = item.example.trim().length > 0;
 
       const wordAudio: Record<string, ContentAudioCell> = {};
       for (const voice of CONTENT_VOICES) {
@@ -389,21 +393,21 @@ function buildDbContentView(
         }
       }
 
-      let exampleAudio: Record<string, ContentAudioCell> | null = null;
-      let turnsAudio: Record<string, ContentTurnsCell> | null = null;
-      if (hasExample) {
-        exampleAudio = {};
-        turnsAudio = {};
+      // 예문 1~5번. 1번은 예전 id라 글자가 바뀐 옛 음원을 '다시 만들어야 함'으로 보여 줄 수 있고(fallback),
+      // 2~5번은 글자 해시 id라 그럴 필요가 없다.
+      const exampleViews = exampleSlots(item).map((slot) => {
+        const audio: Record<string, ContentAudioCell> = {};
+        const turns: Record<string, ContentTurnsCell> = {};
         for (const voice of CONTENT_VOICES) {
           const cell = toAudioCell(
-            voicedAudioId(sentenceBase, voice.key),
+            voicedAudioId(slot.audioBase, voice.key),
             byAudioId,
-            byItemVoice,
+            slot.index === 1 ? byItemVoice : undefined,
             item.id,
             "sentence",
             voice.key,
           );
-          exampleAudio[voice.key] = cell;
+          audio[voice.key] = cell;
           if (cell.assetId) {
             const asset = allAssets.find((a) => a.id === cell.assetId);
             if (asset?.status === "draft" && !seenDraftAssets.has(asset.id)) {
@@ -414,6 +418,7 @@ function buildDbContentView(
                 itemId: item.id,
                 word: item.word,
                 kind: "sentence",
+                exampleIndex: slot.index,
                 voiceKey: voice.key,
                 voiceLabel: voiceLabelFromKey(voice.key),
                 durationMs: asset.durationMs,
@@ -422,19 +427,16 @@ function buildDbContentView(
               });
             }
           }
-
-          const turnsId = turnsAudioId(voicedAudioId(sentenceBase, voice.key));
-          const turnsAsset = pickWinningAsset(byAudioId.get(turnsId) ?? []);
-          turnsAudio[voice.key] = turnsAsset
-            ? {
-                ready: true,
-                playUrl: assetPlayUrl(turnsAsset),
-                assetId: turnsAsset.id,
-                durationMs: turnsAsset.durationMs,
-              }
+          const turnsAsset = pickWinningAsset(byAudioId.get(turnsAudioId(voicedAudioId(slot.audioBase, voice.key))) ?? []);
+          turns[voice.key] = turnsAsset
+            ? { ready: true, playUrl: assetPlayUrl(turnsAsset), assetId: turnsAsset.id, durationMs: turnsAsset.durationMs }
             : { ready: false, playUrl: null, assetId: null, durationMs: null };
         }
-      }
+        return { index: slot.index, text: slot.text, audio, turnsAudio: turns };
+      });
+      const firstExample = exampleViews.find((row) => row.index === 1) ?? null;
+      const exampleAudio = firstExample?.audio ?? null;
+      const turnsAudio = firstExample?.turnsAudio ?? null;
 
       const proposalRow = proposalByItemId.get(item.id);
       return {
@@ -450,6 +452,7 @@ function buildDbContentView(
         gloss: item.gloss,
         scene: item.scene,
         example: item.example,
+        extraExamples: exampleViews.filter((row) => row.index > 1),
         related: item.related,
         note: item.note,
         sortOrder: item.sortOrder,
@@ -529,7 +532,7 @@ const EDITABLE_TEXT_LIMITS = [
 
 type EditablePatchResult =
   | { ok: true; patch: Record<string, unknown>; changedFields: string[] }
-  | { ok: false; error: "word_required" | "invalid_consonant" | "invalid_stage" };
+  | { ok: false; error: "word_required" | "invalid_consonant" | "invalid_stage" | "example_required" | "duplicate_example" | "invalid_extra_examples" | "too_many_examples" };
 
 function parseEditablePatch(existing: ContentItemRow, body: Record<string, unknown>): EditablePatchResult {
   const patch: Record<string, unknown> = {};
@@ -578,7 +581,29 @@ function parseEditablePatch(existing: ContentItemRow, body: Record<string, unkno
     }
   }
 
+  if ("extraExamples" in body) {
+    const parsed = parseExtraExamples(body.extraExamples);
+    if (!parsed.ok) return { ok: false, error: parsed.error };
+    const nextExample = "example" in patch ? String(patch.example) : existing.example;
+    if (parsed.values.length > 0 && !nextExample.trim()) return { ok: false, error: "example_required" };
+    if (parsed.values.includes(nextExample.trim())) return { ok: false, error: "duplicate_example" };
+    const before = existing.extraExamples ?? [];
+    if (parsed.values.length !== before.length || parsed.values.some((value, index) => value !== before[index])) {
+      patch.extraExamples = parsed.values;
+      changedFields.push("extraExamples");
+    }
+  }
+
   return { ok: true, patch, changedFields };
+}
+
+/** 예문 2~5번: 문자열 배열, 빈 칸은 빼고, 최대 4개, 같은 문장 반복 금지 */
+function parseExtraExamples(raw: unknown): { ok: true; values: string[] } | { ok: false; error: "invalid_extra_examples" | "too_many_examples" | "duplicate_example" } {
+  if (!Array.isArray(raw)) return { ok: false, error: "invalid_extra_examples" };
+  const values = raw.map((value) => cleanText(value, 400)).filter(Boolean);
+  if (values.length > MAX_EXAMPLES - 1) return { ok: false, error: "too_many_examples" };
+  if (new Set(values).size !== values.length) return { ok: false, error: "duplicate_example" };
+  return { ok: true, values };
 }
 
 async function applyItemPatchAndMarkStale(
@@ -826,6 +851,10 @@ export function createContentRoutes(deps: ContentRoutesDeps) {
       gloss: cleanText(body.gloss, 400),
       scene: cleanText(body.scene, 200),
       example: cleanText(body.example, 400),
+      extraExamples: (() => {
+        const parsed = parseExtraExamples(body.extraExamples ?? []);
+        return parsed.ok && cleanText(body.example, 400) ? parsed.values : [];
+      })(),
       related: cleanText(body.related, 200),
       note: cleanText(body.note, 200),
       source: "teacher",
@@ -934,7 +963,10 @@ export function createContentRoutes(deps: ContentRoutesDeps) {
     if (!isPracticeVoiceKey(body.voice)) return c.json({ error: "invalid_voice" }, 400);
     const voice = body.voice;
 
-    const text = (kind === "word" ? item.word : item.example).trim();
+    // 예문은 몇 번 예문인지(1~5, 기본 1)를 받는다.
+    const exampleIndex = kind === "sentence" ? Number(body.exampleIndex ?? 1) : 1;
+    const slot = kind === "sentence" ? (exampleSlots(item).find((row) => row.index === exampleIndex) ?? null) : null;
+    const text = (kind === "word" ? item.word : (slot?.text ?? "")).trim();
     if (!text) {
       return c.json(
         {
@@ -988,7 +1020,7 @@ export function createContentRoutes(deps: ContentRoutesDeps) {
       return c.json({ error: result.errorCode, message: result.message, usage }, result.status);
     }
 
-    const base = kind === "word" ? snapshotWordAudioBase(item) : snapshotSentenceAudioBase(item);
+    const base = kind === "word" || !slot ? snapshotWordAudioBase(item) : slot.audioBase;
     const audioId = voicedAudioId(base, voice);
     const draftKeyId = crypto.randomUUID();
     const generatedAt = deps.now().toISOString();

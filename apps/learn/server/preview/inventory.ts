@@ -7,7 +7,7 @@ import { PRACTICE_GROUP_ID, PRACTICE_ITEMS } from "../../content/practice.ts";
 import { PRACTICE_VOICES, voicedAudioId, type PracticeVoiceKey } from "../../content/practice-voices.ts";
 import {
   snapshotFromReferenceJson,
-  snapshotSentenceAudioBase,
+  exampleSlots,
   snapshotStageZero,
   snapshotWordAudioBase,
   snapshotWords,
@@ -73,14 +73,15 @@ function expectedUnits(snapshot: ContentSnapshot): { units: Unit[]; groups: Arra
     });
   }
   for (const word of jcjWords) {
-    if (!word.example) continue;
-    add({
-      base: snapshotSentenceAudioBase(word),
-      legacy: word.stage === "Stage 1" && word.entryId !== null ? `sentence-Stage1-${word.entryId}-${word.word}` : null,
-      groupId: `sentence-${stageKey(word.stage)}`,
-      kind: "sentence",
-      text: word.example,
-    });
+    for (const slot of exampleSlots(word)) {
+      add({
+        base: slot.audioBase,
+        legacy: slot.index === 1 && word.stage === "Stage 1" && word.entryId !== null ? `sentence-Stage1-${word.entryId}-${word.word}` : null,
+        groupId: `sentence-${stageKey(word.stage)}`,
+        kind: "sentence",
+        text: slot.text,
+      });
+    }
   }
   const groups: Array<Omit<AudioGroupView, "total" | "ready">> = [
     { id: "pseudo-s1", label: "의사단어 · Stage 1", kind: "pseudoword" },
