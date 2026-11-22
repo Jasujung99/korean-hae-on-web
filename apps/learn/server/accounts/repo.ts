@@ -67,10 +67,15 @@ export type AccountsRepo = {
   kind: "memory" | "supabase";
   teacher(userId: string): Promise<{ userId: string; displayName: string } | null>;
 
+  /** 진행 중·종료한 학습자를 모두 돌려준다. 나누는 것은 화면이 한다. */
   learners(teacherId: string): Promise<LearnerRow[]>;
   learner(id: string): Promise<LearnerRow | null>;
   createLearner(input: NewLearner): Promise<LearnerRow>;
   updateLearner(id: string, patch: LearnerPatch): Promise<LearnerRow | null>;
+  /** 종료(archived)·다시 열기(active). 초대·기기 정리는 라우트가 따로 부른다. */
+  setLearnerStatus(id: string, status: LearnerRow["status"]): Promise<LearnerRow | null>;
+  /** 학습자 한 줄을 지운다. 초대·기기 세션·학습 기록도 함께 사라진다(DB는 on delete cascade). */
+  deleteLearner(id: string): Promise<boolean>;
 
   /** 같은 학습자의 쓰지 않은 이전 초대를 폐기하고 새 초대를 만든다. */
   createInvitation(learnerId: string, teacherId: string, tokenHash: string, expiresAt: string): Promise<InvitationRow>;
