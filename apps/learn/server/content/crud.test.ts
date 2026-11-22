@@ -211,4 +211,30 @@ describe("content CRUD, versioning, hiding, and stale tracking (stage 3)", () =>
     expect((await kit.sendJson(kit.anon, "POST", "/api/teacher/content/items", { groupId: "j_ch_jj", stage: "Stage 1", consonant: "ㅈ", word: "가" })).status).toBe(401);
     expect((await kit.sendJson(kit.learner, "POST", "/api/teacher/content/items", { groupId: "j_ch_jj", stage: "Stage 1", consonant: "ㅈ", word: "가" })).status).toBe(401);
   });
+
+  it("keeps up to five examples per word, each with its own audio cells, and rejects a sixth or duplicates", async () => {
+    const kit = await createContentTestKit();
+    const view = (await (await kit.teacher.request("/api/teacher/content?group=j_ch_jj")).json()) as TeacherContentView;
+    const moja = view.stages.flatMap((s) => s.items).find((item) => item.word === "모자")!;
+    const path = `/api/teacher/content/items/${moja.id}`;
+
+    const tooMany = await kit.sendJson(kit.teacher, "PATCH", path, { extraExamples: ["가", "나", "다", "라", "마"] });
+    expect(tooMany.status).toBe(400);
+    const duplicate = await kit.sendJson(kit.teacher, "PATCH", path, { extraExamples: [moja.example] });
+    expect(duplicate.status).toBe(400);
+
+    const ok = await kit.sendJson(kit.teacher, "PATCH", path, { extraExamples: ["모자를 벗고 들어갔어요.", "", "새 모자를 샀어요."] });
+    expect(ok.status).toBe(200);
+    const after = (await (await kit.teacher.request("/api/teacher/content?group=j_ch_jj")).json()) as TeacherContentView;
+    const item = after.stages.flatMap((s) => s.items).find((row) => row.id === moja.id)!;
+    expect(item.extraExamples?.map((row) => [row.index, row.text])).toEqual([
+      [2, "모자를 벗고 들어갔어요."],
+      [3, "새 모자를 샀어요."],
+    ]);
+    // 2~5번 음원은 아직 없고, 1번 예문의 음원을 '다시 만들어야 함'으로 빌려 쓰지 않는다.
+    expect(item.extraExamples?.[0]?.audio.erinome?.state).toBe("missing");
+    expect(item.exampleAudio?.erinome?.state).toBe("approved");
+    const versions = (await (await kit.teacher.request(`${path}/versions`)).json()) as { versions: Array<{ changedFields: string[] }> };
+    expect(versions.versions.some((row) => row.changedFields.includes("extraExamples"))).toBe(true);
+  });
 });

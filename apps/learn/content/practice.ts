@@ -8,6 +8,7 @@ import { selectPracticeSet, SELECTION_POLICY_VERSION } from "./selection.ts";
 import {
   snapshotFromReferenceJson,
   snapshotSentenceAudioBase,
+  exampleSlots,
   snapshotWordAudioBase,
   snapshotWordCardId,
   snapshotWords,
@@ -236,6 +237,8 @@ export type WordCard = {
   /** Stage 안 출제 순서: 1 기준점 잡기, 2 음절 틀 넓히기, 3 실전 어휘 일반화 */
   step: InStageStep;
   contrast: Contrast | null;
+  /** 이 단어의 예문 2~5번 */
+  extraExamples: Array<{ index: number; text: string; audioId: string }>;
   /** 같은 단어가 다른 자음 묶음에도 있을 때 그 묶음의 예문(묶음마다 예문 음원이 따로 있다) */
   moreExamples: MoreExample[];
 };
@@ -245,13 +248,15 @@ export type MoreExample = { groupId: SnapshotWord["groupId"]; text: string; audi
 /** 다른 묶음에 있는 같은 단어(사전 번호·글자가 같음)의 예문. 이 카드의 예문과 글자가 같은 것은 뺀다. */
 export function moreExamplesFor(word: SnapshotWord, snapshot: ContentSnapshot): MoreExample[] {
   const key = `${wordIdPrefix(word)}|${word.word}`;
-  const seen = new Set([word.example.trim()]);
+  const seen = new Set(exampleSlots(word).map((slot) => slot.text.trim()));
   const out: MoreExample[] = [];
   for (const other of snapshot.items) {
-    if (other.groupId === word.groupId || !other.example.trim()) continue;
-    if (`${wordIdPrefix(other)}|${other.word}` !== key || seen.has(other.example.trim())) continue;
-    seen.add(other.example.trim());
-    out.push({ groupId: other.groupId, text: other.example, audioId: snapshotSentenceAudioBase(other) });
+    if (other.groupId === word.groupId || `${wordIdPrefix(other)}|${other.word}` !== key) continue;
+    for (const slot of exampleSlots(other)) {
+      if (seen.has(slot.text.trim())) continue;
+      seen.add(slot.text.trim());
+      out.push({ groupId: other.groupId, text: slot.text, audioId: slot.audioBase });
+    }
   }
   return out;
 }
@@ -283,6 +288,9 @@ function toCard(word: SnapshotWord, snapshot: ContentSnapshot): WordCard {
     tableId: word.legacyId ?? word.id,
     step: inStageStep(contrast?.tier ?? null),
     contrast,
+    extraExamples: exampleSlots(word)
+      .filter((slot) => slot.index > 1)
+      .map((slot) => ({ index: slot.index, text: slot.text, audioId: slot.audioBase })),
     moreExamples: moreExamplesFor(word, snapshot),
   };
 }

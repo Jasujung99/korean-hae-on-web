@@ -135,20 +135,28 @@ export function CanvasWords() {
       ) : (
         <p className="c-body">예문이 아직 없는 단어예요.</p>
       )}
-      {word.moreExamples.map((more, index) => (
-        <div key={`${more.groupLabel}-${index}`} className="c-example">
-          <p className="c-label">다른 예문 · {more.groupLabel} 연습</p>
-          <p className="c-key">{more.text}</p>
-          <button
-            type="button"
-            className="c-link"
-            onClick={() => void practice.playRole(more.audioRef, "example_more", more.text)}
-            disabled={busy || !more.audioRef}
-          >
-            {more.audioRef ? "이 예문 듣기" : "예문 음원 준비 중"}
-          </button>
-        </div>
-      ))}
+      {word.extraExamples.length + word.moreExamples.length > 0 ? (
+        <details className="c-more-examples">
+          <summary className="c-link">예문 더 보기 ({word.extraExamples.length + word.moreExamples.length})</summary>
+          {[
+            ...word.extraExamples.map((extra) => ({ key: `e${extra.index}`, label: `예문 ${extra.index}`, text: extra.text, audioRef: extra.audioRef })),
+            ...word.moreExamples.map((more, index) => ({ key: `m${index}`, label: `${more.groupLabel} 연습 예문`, text: more.text, audioRef: more.audioRef })),
+          ].map((row) => (
+            <div key={row.key} className="c-example">
+              <p className="c-label">{row.label}</p>
+              <p className="c-key">{row.text}</p>
+              <button
+                type="button"
+                className="c-link"
+                onClick={() => void practice.playRole(row.audioRef, "example_more", row.text)}
+                disabled={busy || !row.audioRef}
+              >
+                {row.audioRef ? "이 예문 듣기" : "예문 음원 준비 중"}
+              </button>
+            </div>
+          ))}
+        </details>
+      ) : null}
       {word.related ? (
         <p className="c-body">
           <span className="c-label">함께 쓰는 표현 </span>

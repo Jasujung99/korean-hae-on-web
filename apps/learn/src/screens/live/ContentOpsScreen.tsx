@@ -50,6 +50,8 @@ type ConfirmGen = {
   itemId: string;
   word: string;
   kind: "word" | "sentence";
+  /** 예문이면 몇 번 예문인지(1~5) */
+  exampleIndex?: number;
   voiceKey: string;
   voiceName: string;
   stalePlayUrl: string | null;
@@ -289,6 +291,11 @@ function InlineEditPanel({
   const [gloss, setGloss] = useState(item.gloss);
   const [scene, setScene] = useState(item.scene);
   const [example, setExample] = useState(item.example);
+  // 예문 2~5번 입력칸(빈 칸은 저장할 때 빠진다)
+  const [extras, setExtras] = useState<string[]>(() => {
+    const list = (item.extraExamples ?? []).map((row) => row.text);
+    return [...list, "", "", "", ""].slice(0, 4);
+  });
   const [related, setRelated] = useState(item.related);
   const [note, setNote] = useState(item.note);
   const [reason, setReason] = useState("");
@@ -301,6 +308,15 @@ function InlineEditPanel({
       setError("단어를 비울 수 없어요.");
       return;
     }
+    const extraList = extras.map((text) => text.trim()).filter(Boolean);
+    if (extraList.length > 0 && !example.trim()) {
+      setError("예문 1을 먼저 써 주세요.");
+      return;
+    }
+    if (new Set([example.trim(), ...extraList]).size !== extraList.length + 1) {
+      setError("같은 예문이 두 번 들어 있어요.");
+      return;
+    }
     setBusy(true);
     setError(null);
     try {
@@ -311,6 +327,7 @@ function InlineEditPanel({
         gloss: gloss.trim(),
         scene: scene.trim(),
         example: example.trim(),
+        extraExamples: extraList,
         related: related.trim(),
         note: note.trim(),
         reason: reason.trim(),
@@ -386,7 +403,7 @@ function InlineEditPanel({
               <input value={scene} onChange={(event) => setScene(event.target.value)} />
             </label>
             <label className="acct-field co-span-3">
-              <span>예문 (직접 작성)</span>
+              <span>예문 1 (대표, 직접 작성)</span>
               <textarea
                 rows={2}
                 value={example}
@@ -394,6 +411,18 @@ function InlineEditPanel({
                 onChange={(event) => setExample(event.target.value)}
               />
             </label>
+            {extras.map((text, index) => (
+              <label key={index} className="acct-field co-span-3">
+                <span>예문 {index + 2}</span>
+                <textarea
+                  rows={1}
+                  value={text}
+                  onChange={(event) =>
+                    setExtras((prev) => prev.map((value, i) => (i === index ? event.target.value : value)))
+                  }
+                />
+              </label>
+            ))}
             <label className="acct-field">
               <span>함께 쓰는 말</span>
               <input value={related} onChange={(event) => setRelated(event.target.value)} />
@@ -674,13 +703,13 @@ function ContentRow({
   onConfirmGenerate: (confirm: ConfirmGen) => void;
   onCancelGenerate: () => void;
 }) {
-  const hasTurns = item.turnsAudio && CONTENT_VOICES.some((voice) => item.turnsAudio?.[voice.key]?.ready);
   const wordGeneratingVoice =
     generatingKey && generatingKey.startsWith(`${item.id}:word:`) ? generatingKey.slice(`${item.id}:word:`.length) : null;
-  const sentenceGeneratingVoice =
-    generatingKey && generatingKey.startsWith(`${item.id}:sentence:`)
-      ? generatingKey.slice(`${item.id}:sentence:`.length)
-      : null;
+  const generatingVoiceFor = (exampleIndex: number) => {
+    const prefix = exampleIndex > 1 ? `${item.id}:sentence${exampleIndex}:` : `${item.id}:sentence:`;
+    return generatingKey && generatingKey.startsWith(prefix) ? generatingKey.slice(prefix.length) : null;
+  };
+  const exampleCount = (item.example ? 1 : 0) + (item.extraExamples?.length ?? 0);
   const showCellConfirm = confirmGen && confirmGen.origin === "cell" && confirmGen.itemId === item.id;
   const showItemError = genError && genError.itemId === item.id;
 
@@ -732,52 +761,71 @@ function ContentRow({
         <td data-label="예문" className="co-example-cell">
           {item.example ? (
             <div className="co-example-wrap">
-              <p>{item.example}</p>
-              <div className="co-example-audio">
-                <span className="co-sub">예문</span>
-                {item.exampleAudio ? (
-                  <AudioVoiceRow
-                    kindLabel={`${item.word} 예문`}
-                    cells={item.exampleAudio}
-                    busy={busy}
-                    readOnly={readOnly}
-                    ttsReady={ttsReady}
-                    generatingVoice={sentenceGeneratingVoice}
-                    onPlay={onPlay}
-                    onRequestGenerate={(voiceKey, voiceName, cell) =>
-                      onRequestGenerate({
-                        itemId: item.id,
-                        word: item.word,
-                        kind: "sentence",
-                        voiceKey,
-                        voiceName,
-                        stalePlayUrl: cell.state === "stale" ? cell.playUrl : null,
-                        origin: "cell",
-                      })
-                    }
-                  />
-                ) : null}
-                <span className="co-turns-note">
-                  또박또박:{" "}
-                  {hasTurns
-                    ? CONTENT_VOICES.filter((voice) => item.turnsAudio?.[voice.key]?.ready).map((voice) => {
-                        const turns = item.turnsAudio?.[voice.key];
-                        return turns?.playUrl ? (
-                          <button
-                            key={voice.key}
-                            type="button"
-                            className="co-turns-play"
-                            disabled={busy}
-                            aria-label={`${voice.voice} ${item.word} 예문 또박또박 재생`}
-                            onClick={() => onPlay(turns.playUrl as string, `${voice.voice} 또박또박`)}
-                          >
-                            {voice.short}
-                          </button>
-                        ) : null;
-                      })
-                    : "PC에서 생성"}
-                </span>
-              </div>
+              {[
+                { index: 1, text: item.example, audio: item.exampleAudio, turnsAudio: item.turnsAudio },
+                ...(item.extraExamples ?? []),
+              ].map((row) => {
+                const ready = row.turnsAudio && CONTENT_VOICES.some((voice) => row.turnsAudio?.[voice.key]?.ready);
+                return (
+                  <div key={row.index} className="co-example-item">
+                    <p>
+                      {(item.extraExamples?.length ?? 0) > 0 ? <span className="co-example-num">{row.index}</span> : null}
+                      {row.text}
+                    </p>
+                    <div className="co-example-audio">
+                      <span className="co-sub">예문{row.index > 1 ? ` ${row.index}` : ""}</span>
+                      {row.audio ? (
+                        <AudioVoiceRow
+                          kindLabel={`${item.word} 예문${row.index > 1 ? ` ${row.index}` : ""}`}
+                          cells={row.audio}
+                          busy={busy}
+                          readOnly={readOnly}
+                          ttsReady={ttsReady}
+                          generatingVoice={generatingVoiceFor(row.index)}
+                          onPlay={onPlay}
+                          onRequestGenerate={(voiceKey, voiceName, cell) =>
+                            onRequestGenerate({
+                              itemId: item.id,
+                              word: item.word,
+                              kind: "sentence",
+                              exampleIndex: row.index,
+                              voiceKey,
+                              voiceName,
+                              stalePlayUrl: cell.state === "stale" ? cell.playUrl : null,
+                              origin: "cell",
+                            })
+                          }
+                        />
+                      ) : null}
+                      <span className="co-turns-note">
+                        또박또박:{" "}
+                        {ready
+                          ? CONTENT_VOICES.filter((voice) => row.turnsAudio?.[voice.key]?.ready).map((voice) => {
+                              const turns = row.turnsAudio?.[voice.key];
+                              return turns?.playUrl ? (
+                                <button
+                                  key={voice.key}
+                                  type="button"
+                                  className="co-turns-play"
+                                  disabled={busy}
+                                  aria-label={`${voice.voice} ${item.word} 예문 ${row.index} 또박또박 재생`}
+                                  onClick={() => onPlay(turns.playUrl as string, `${voice.voice} 또박또박`)}
+                                >
+                                  {voice.short}
+                                </button>
+                              ) : null;
+                            })
+                          : "PC에서 생성"}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+              {!readOnly && exampleCount < 5 ? (
+                <button type="button" className="tc-ul co-inline-link" onClick={() => onStartEdit("example")}>
+                  예문 추가 ({exampleCount}/5)
+                </button>
+              ) : null}
             </div>
           ) : (
             <p className="tc-none">
@@ -1234,11 +1282,18 @@ export function ContentOpsScreen() {
   };
 
   const confirmGenerate = async (target: ConfirmGen) => {
-    const key = `${target.itemId}:${target.kind}:${target.voiceKey}`;
+    const key =
+      target.kind === "sentence" && (target.exampleIndex ?? 1) > 1
+        ? `${target.itemId}:sentence${target.exampleIndex}:${target.voiceKey}`
+        : `${target.itemId}:${target.kind}:${target.voiceKey}`;
     setGeneratingKey(key);
     setGenError(null);
     try {
-      await teacherApi.generateContentAudio(target.itemId, { kind: target.kind, voice: target.voiceKey });
+      await teacherApi.generateContentAudio(target.itemId, {
+        kind: target.kind,
+        voice: target.voiceKey,
+        ...(target.kind === "sentence" ? { exampleIndex: target.exampleIndex ?? 1 } : {}),
+      });
       setConfirmGen(null);
       load();
     } catch (error) {

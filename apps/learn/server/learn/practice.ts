@@ -531,6 +531,11 @@ export function createPracticeRoutes(deps: {
         return { ...partner, audioRef: card ? s.refOf(card.wordAudioId, card.legacyWordAudioId) : null };
       }),
       dict: wordDictView(word.tableId, dictReview),
+      extraExamples: word.extraExamples.map((extra) => ({
+        index: extra.index,
+        text: extra.text,
+        audioRef: s.exampleRefOf(extra.audioId),
+      })),
       moreExamples: word.moreExamples.map((more) => ({
         groupLabel: GROUP_LABELS[more.groupId],
         text: more.text,

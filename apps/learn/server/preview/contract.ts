@@ -144,6 +144,8 @@ export type WordView = {
   partners: Array<{ consonant: string; word: string; audioRef: string | null }>;
   /** 사전 풀이(국립국어원 사전에서 미리 받아 검수한 정적 자료). 학습자에게는 승인 항목만, 개발 미리보기에서는 검수 전 항목도 온다. */
   dict: WordDictView | null;
+  /** 이 단어의 예문 2~5번 */
+  extraExamples: Array<{ index: number; text: string; audioRef: string | null }>;
   /** 같은 단어가 다른 자음 묶음에도 있을 때 그 묶음의 예문. 묶음마다 예문 음원이 따로 있다. */
   moreExamples: Array<{ groupLabel: string; text: string; audioRef: string | null }>;
 };

@@ -140,21 +140,29 @@ export function WordsLive() {
         ) : (
           <p className="notice">주어진 예문이 아직 없는 단어예요. 예문은 검수된 자료가 들어오면 붙여요.</p>
         )}
-        {word.moreExamples.map((more, index) => (
-          <div key={`${more.groupLabel}-${index}`} className="stack">
-            <div className="example">
-              <span className="small">다른 예문 · {more.groupLabel} 연습</span>
-              <p>{more.text}</p>
-            </div>
-            <button
-              type="button"
-              onClick={() => void practice.playRole(more.audioRef, "example_more", more.text)}
-              disabled={busy || !more.audioRef}
-            >
-              {more.audioRef ? "이 예문 듣기" : "이 예문 듣기 · 음원 준비 중"}
-            </button>
-          </div>
-        ))}
+        {word.extraExamples.length + word.moreExamples.length > 0 ? (
+          <details className="more-examples">
+            <summary>예문 더 보기 ({word.extraExamples.length + word.moreExamples.length})</summary>
+            {[
+              ...word.extraExamples.map((extra) => ({ key: `e${extra.index}`, label: `예문 ${extra.index}`, text: extra.text, audioRef: extra.audioRef })),
+              ...word.moreExamples.map((more, index) => ({ key: `m${index}`, label: `${more.groupLabel} 연습 예문`, text: more.text, audioRef: more.audioRef })),
+            ].map((row) => (
+              <div key={row.key} className="stack">
+                <div className="example">
+                  <span className="small">{row.label}</span>
+                  <p>{row.text}</p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => void practice.playRole(row.audioRef, "example_more", row.text)}
+                  disabled={busy || !row.audioRef}
+                >
+                  {row.audioRef ? "이 예문 듣기" : "이 예문 듣기 · 음원 준비 중"}
+                </button>
+              </div>
+            ))}
+          </details>
+        ) : null}
         {word.related ? (
           <div>
             <h3>함께 쓰는 표현</h3>

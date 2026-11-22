@@ -582,6 +582,20 @@
   gap: var(--space-3);
 }
 
+.co-example-item + .co-example-item {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line, rgba(0, 0, 0, 0.12));
+}
+
+.co-example-num {
+  display: inline-block;
+  min-width: 1.4em;
+  margin-right: 6px;
+  color: var(--olive, #5f6b3a);
+  font-variant-numeric: tabular-nums;
+}
+
 @media (max-width: 899px) {
   .co-edit-grid,
   .co-add-row {
