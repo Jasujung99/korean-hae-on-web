@@ -765,8 +765,9 @@ b.p3 {
 
 /* 사전 방식 A: 카드 안에서 펼치기 (두 스타일이 함께 쓴다) */
 .dict-inline {
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  /* 위아래 회색 선은 보이지 않게 하고, 선 두께(1px)는 남겨 여백을 그대로 둔다. */
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
 }
 
 .dict-inline .dict-inline-toggle {
