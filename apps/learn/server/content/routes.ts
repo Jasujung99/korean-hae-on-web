@@ -656,6 +656,57 @@ async function applyItemPatchAndMarkStale(
   };
 }
 
+/**
+ * 제안 하나를 적용한다. 화면 API와 일괄 적용 스크립트(scripts/content-proposals-apply.ts)가 같이 쓴다.
+ * overrides에 든 칸은 제안 값 대신 쓴다(교사가 고친 값). 판 기록 이유는 `ai_draft · 모델 · 지시문 판[ · 추가 이유]`.
+ */
+export async function applyContentProposal(
+  repo: ContentRepo,
+  proposalId: string,
+  overrides: Record<string, unknown>,
+  decidedBy: string,
+): Promise<
+  | { ok: false; status: 400 | 404 | 409; error: string }
+  | {
+      ok: true;
+      item: ContentItemRow;
+      version: ContentItemVersionRow | null;
+      changedFields: string[];
+      staleMarked: number;
+      proposal: ContentProposalRow | null;
+    }
+> {
+  const proposal = await repo.getProposal(proposalId);
+  if (!proposal) return { ok: false, status: 404, error: "not_found" };
+  if (proposal.status !== "pending") return { ok: false, status: 409, error: "proposal_not_pending" };
+  const existing = await repo.getItem(proposal.itemId);
+  if (!existing || existing.status === "hidden") return { ok: false, status: 404, error: "not_found" };
+
+  const mergedFields: Record<string, unknown> = { ...proposal.fields };
+  for (const field of ["word", "consonant", "stage", "substage", "pos", "gloss", "scene", "example", "related", "note"] as const) {
+    if (field in overrides) mergedFields[field] = overrides[field];
+  }
+  const parsed = parseEditablePatch(existing, mergedFields);
+  if (!parsed.ok) return { ok: false, status: 400, error: parsed.error };
+
+  const baseReason = `${proposal.source} · ${proposal.model} · ${proposal.promptVersion}`;
+  const extraReason = cleanText(overrides.reason, 120);
+  const reason = extraReason ? `${baseReason} · ${extraReason}` : baseReason;
+
+  let item = existing;
+  let version: ContentItemVersionRow | null = null;
+  let staleMarked = 0;
+  if (parsed.changedFields.length > 0) {
+    const applied = await applyItemPatchAndMarkStale(repo, existing, parsed.patch, parsed.changedFields, reason, decidedBy);
+    if (!applied) return { ok: false, status: 404, error: "not_found" };
+    item = applied.item;
+    version = applied.version;
+    staleMarked = applied.staleMarked;
+  }
+  const decided = await repo.decideProposal(proposal.id, "applied", decidedBy);
+  return { ok: true, item, version, changedFields: parsed.changedFields, staleMarked, proposal: decided };
+}
+
 export function createContentRoutes(deps: ContentRoutesDeps) {
   const app = new Hono<ContentTeacherVars>();
   const ttsReady = Boolean(deps.ttsApiKey);
@@ -814,51 +865,15 @@ export function createContentRoutes(deps: ContentRoutesDeps) {
 
   app.post("/proposals/:id/apply", async (c) => {
     if (!deps.contentRepo) return c.json({ error: "db_not_configured" }, 503);
-    const proposal = await deps.contentRepo.getProposal(c.req.param("id"));
-    if (!proposal) return c.json({ error: "not_found" }, 404);
-    if (proposal.status !== "pending") return c.json({ error: "proposal_not_pending" }, 409);
-
-    const existing = await deps.contentRepo.getItem(proposal.itemId);
-    if (!existing || existing.status === "hidden") return c.json({ error: "not_found" }, 404);
-
     const body = (await readBody(c)) ?? {};
-    const mergedFields: Record<string, unknown> = { ...proposal.fields };
-    for (const field of ["word", "consonant", "stage", "substage", "pos", "gloss", "scene", "example", "related", "note"] as const) {
-      if (field in body) mergedFields[field] = body[field];
-    }
-
-    const parsed = parseEditablePatch(existing, mergedFields);
-    if (!parsed.ok) return c.json({ error: parsed.error }, 400);
-
-    const baseReason = `${proposal.source} · ${proposal.model} · ${proposal.promptVersion}`;
-    const extraReason = cleanText(body.reason, 120);
-    const reason = extraReason ? `${baseReason} · ${extraReason}` : baseReason;
-
-    let item = existing;
-    let version: ContentItemVersionRow | null = null;
-    let staleMarked = 0;
-    if (parsed.changedFields.length > 0) {
-      const applied = await applyItemPatchAndMarkStale(
-        deps.contentRepo,
-        existing,
-        parsed.patch,
-        parsed.changedFields,
-        reason,
-        c.get("teacherId"),
-      );
-      if (!applied) return c.json({ error: "not_found" }, 404);
-      item = applied.item;
-      version = applied.version;
-      staleMarked = applied.staleMarked;
-    }
-
-    const decided = await deps.contentRepo.decideProposal(proposal.id, "applied", c.get("teacherId"));
+    const result = await applyContentProposal(deps.contentRepo, c.req.param("id"), body, c.get("teacherId"));
+    if (!result.ok) return c.json({ error: result.error }, result.status);
     return c.json({
-      item,
-      version,
-      changedFields: parsed.changedFields,
-      staleMarked,
-      proposal: decided ? toProposalView(decided) : null,
+      item: result.item,
+      version: result.version,
+      changedFields: result.changedFields,
+      staleMarked: result.staleMarked,
+      proposal: result.proposal ? toProposalView(result.proposal) : null,
     });
   });
 

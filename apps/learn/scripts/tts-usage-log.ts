@@ -10,7 +10,7 @@ import { createSupabaseContentRepo } from "../server/content/supabase-repo.ts";
 const KEYS_DIR = "I:/내 드라이브/_keys";
 let cachedRepo: ContentRepo | null | undefined;
 
-function readKeyFile(filename: string): string {
+export function readKeyFile(filename: string): string {
   try {
     const path = join(KEYS_DIR, filename);
     if (!existsSync(path)) return "";
