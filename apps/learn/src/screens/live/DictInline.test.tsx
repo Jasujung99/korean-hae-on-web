@@ -85,10 +85,13 @@ describe("DictInline", () => {
 
   it("marks draft and needs_review entries as not yet reviewed", () => {
     openPanel({ ...approved, status: "draft" });
-    expect(screen.getByRole("note")).toHaveTextContent("검수 전");
+    expect(screen.getByTitle(/개발 미리보기와 시험 학습자에게만/)).toHaveTextContent("검수 전");
     cleanup();
     openPanel({ ...approved, status: "needs_review" });
-    expect(screen.getByRole("note")).toHaveTextContent("개발 미리보기에서만");
+    expect(screen.getByTitle(/개발 미리보기와 시험 학습자에게만/)).toHaveTextContent("검수 전");
+    cleanup();
+    openPanel(approved);
+    expect(screen.queryByText("검수 전")).not.toBeInTheDocument();
   });
 
   it("switches the translation between Russian and English", () => {

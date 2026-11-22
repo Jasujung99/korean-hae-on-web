@@ -15,6 +15,7 @@ export function CanvasWords() {
   const [params, setParams] = useSearchParams();
   const [words, setWords] = useState<WordView[] | null>(null);
   const [failed, setFailed] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
 
   useEffect(() => {
     previewApi
@@ -27,6 +28,7 @@ export function CanvasWords() {
 
   useEffect(() => {
     if (word) track("word_viewed", { wordId: word.id });
+    setMoreOpen(false);
   }, [word]);
 
   if (failed || (words && words.length === 0)) {
@@ -57,7 +59,9 @@ export function CanvasWords() {
         <p className="c-label">
           <span className="c-num sm">03</span> 새 단어
         </p>
-        <p className="c-count">뜻·예문은 검수 전 초안</p>
+        <p className="c-count">
+          {words.indexOf(word) + 1} / {words.length}
+        </p>
       </div>
 
       <div className="c-words" role="group" aria-label="살펴볼 단어">
@@ -87,18 +91,20 @@ export function CanvasWords() {
             {practice.playing === "word" ? "듣는 중" : word.wordAudioRef ? "듣기" : "준비 중"}
           </button>
         </div>
-        <div className="c-line" />
-        <div>
-          <p className="c-label">뜻</p>
-          <p className="c-body">{word.gloss || "아직 뜻 초안이 없어요."}</p>
-        </div>
         {word.partners.length > 0 ? (
           <div className="pair-row">
-            <p className="pair-label">
-              비교해 들을 말 · {word.stepLabel}
-              {word.pairGroupId ? ` · ${word.pairGroupId}` : ""}
-            </p>
-            <div className="pair-words" role="group" aria-label={`${word.word}와 비교해 들을 말`}>
+            <p className="pair-label">소리만 다른 말 · 번갈아 들어 보세요</p>
+            <div className="pair-words" role="group" aria-label={`${word.word}와 소리만 다른 말`}>
+              <button
+                type="button"
+                className="is-current"
+                aria-current="true"
+                disabled={busy || !word.wordAudioRef}
+                onClick={() => void practice.playRole(word.wordAudioRef, "word", word.word)}
+              >
+                <b>{word.consonant}</b> {word.word}
+                <span className="pair-play" aria-hidden="true">▶</span>
+              </button>
               {word.partners.map((partner) => (
                 <button
                   key={`${partner.consonant}-${partner.word}`}
@@ -107,56 +113,63 @@ export function CanvasWords() {
                   onClick={() => void practice.playRole(partner.audioRef, "word", partner.word)}
                 >
                   <b>{partner.consonant}</b> {partner.word}
-                  {partner.audioRef ? "" : " · 음원 준비 중"}
+                  <span className="pair-play" aria-hidden="true">{partner.audioRef ? "▶" : "준비 중"}</span>
                 </button>
               ))}
             </div>
           </div>
         ) : null}
-        <DictInline word={word.word} wordId={word.id} pos={word.pos} dict={word.dict} />
-      </article>
-
-      {word.example ? (
-        <div className="c-example">
-          <p className="c-label">예문 · {word.scene}</p>
-          <p className="c-key">{word.example}</p>
-          {word.exampleVoice && word.wordVoice && word.exampleVoice !== word.wordVoice ? (
-            <p className="c-label">예문 음원은 아직 {word.exampleVoice} 목소리(예전 초안)만 있어서 낱말과 목소리가 달라요.</p>
-          ) : null}
-          <button
-            type="button"
-            className="c-link"
-            onClick={() => void practice.playRole(word.exampleAudioRef, "example", word.example)}
-            disabled={busy || !word.exampleAudioRef}
-          >
-            {practice.playing === "example" ? "예문 듣는 중" : word.exampleAudioRef ? "예문 듣기" : "예문 음원 준비 중"}
-          </button>
-        </div>
-      ) : (
-        <p className="c-body">예문이 아직 없는 단어예요.</p>
-      )}
-      {word.extraExamples.length + word.moreExamples.length > 0 ? (
-        <details className="c-more-examples">
-          <summary className="c-link">예문 더 보기 ({word.extraExamples.length + word.moreExamples.length})</summary>
-          {[
-            ...word.extraExamples.map((extra) => ({ key: `e${extra.index}`, label: `예문 ${extra.index}`, text: extra.text, audioRef: extra.audioRef })),
-            ...word.moreExamples.map((more, index) => ({ key: `m${index}`, label: `${more.groupLabel} 연습 예문`, text: more.text, audioRef: more.audioRef })),
-          ].map((row) => (
-            <div key={row.key} className="c-example">
-              <p className="c-label">{row.label}</p>
-              <p className="c-key">{row.text}</p>
+        {word.gloss ? (
+          <div>
+            <p className="c-label">뜻</p>
+            <p className="c-body c-gloss">{word.gloss}</p>
+          </div>
+        ) : null}
+        {word.example ? (
+          <div className="c-example">
+            <p className="c-label">예문{word.scene ? ` · ${word.scene}` : ""}</p>
+            <p className="c-key">{word.example}</p>
+            <div className="c-example-actions">
               <button
                 type="button"
                 className="c-link"
-                onClick={() => void practice.playRole(row.audioRef, "example_more", row.text)}
-                disabled={busy || !row.audioRef}
+                onClick={() => void practice.playRole(word.exampleAudioRef, "example", word.example)}
+                disabled={busy || !word.exampleAudioRef}
               >
-                {row.audioRef ? "이 예문 듣기" : "예문 음원 준비 중"}
+                {practice.playing === "example" ? "예문 듣는 중" : word.exampleAudioRef ? "예문 듣기" : "예문 음원 준비 중"}
               </button>
+              {word.extraExamples.length + word.moreExamples.length > 0 ? (
+                <button type="button" className="c-more-toggle" aria-expanded={moreOpen} onClick={() => setMoreOpen((value) => !value)}>
+                  {moreOpen ? "예문 접기" : `예문 더 보기 (${word.extraExamples.length + word.moreExamples.length})`}
+                </button>
+              ) : null}
             </div>
-          ))}
-        </details>
-      ) : null}
+            {moreOpen ? (
+              <div className="c-more-examples">
+                {[
+                  ...word.extraExamples.map((extra) => ({ key: `e${extra.index}`, label: `예문 ${extra.index}`, text: extra.text, audioRef: extra.audioRef })),
+                  ...word.moreExamples.map((more, index) => ({ key: `m${index}`, label: `${more.groupLabel} 연습 예문`, text: more.text, audioRef: more.audioRef })),
+                ].map((row) => (
+                  <div key={row.key} className="c-more-example">
+                    <p className="c-label">{row.label}</p>
+                    <p className="c-key">{row.text}</p>
+                    <button
+                      type="button"
+                      className="c-link"
+                      onClick={() => void practice.playRole(row.audioRef, "example_more", row.text)}
+                      disabled={busy || !row.audioRef}
+                    >
+                      {row.audioRef ? "이 예문 듣기" : "예문 음원 준비 중"}
+                    </button>
+                  </div>
+                ))}
+              </div>
+            ) : null}
+          </div>
+        ) : null}
+        <DictInline word={word.word} wordId={word.id} pos={word.pos} dict={word.dict} />
+      </article>
+
       {word.related ? (
         <p className="c-body">
           <span className="c-label">함께 쓰는 표현 </span>
