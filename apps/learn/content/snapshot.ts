@@ -297,3 +297,21 @@ export function buildReleaseSnapshot(
     audioCount: Object.keys(audio).length,
   };
 }
+
+/**
+ * TTS 생성·업로드 대상으로 쓰는 작업 표 스냅샷. 숨김을 뺀 draft·approved 단어와 첫소리 표를 그대로 담는다.
+ * 게시본(buildReleaseSnapshot)과 달리 draft 단어도 넣어서, 게시 전에 음원을 먼저 만들 수 있게 한다.
+ */
+export function workingSnapshot(
+  items: readonly ReleaseCandidateItem[],
+  stage0: readonly SnapshotStageZero[],
+): ContentSnapshot {
+  const words: SnapshotWord[] = items
+    .filter((item) => item.status === "draft" || item.status === "approved")
+    .map(({ status: _status, ...rest }) => rest)
+    .sort((a, b) => COURSE_ORDER.indexOf(a.groupId) - COURSE_ORDER.indexOf(b.groupId) || a.sortOrder - b.sortOrder);
+  const rows = [...stage0].sort(
+    (a, b) => COURSE_ORDER.indexOf(a.groupId) - COURSE_ORDER.indexOf(b.groupId) || a.sortOrder - b.sortOrder,
+  );
+  return { seq: 0, releasedAt: "", items: words, stage0: rows, audio: {} };
+}

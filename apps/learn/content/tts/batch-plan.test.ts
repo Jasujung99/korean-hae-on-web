@@ -1,7 +1,19 @@
 import { describe, expect, it } from "vitest";
 import { createFixtureAudio } from "../../server/preview/audio.ts";
 import { audioPicker } from "../../server/learn/practice.ts";
-import { batchPlan, groupContents, groupPartCount, turnsAudioId } from "./batch-plan.ts";
+import { batchPlan, groupContents, groupPartCount, makeDoneCheck, turnsAudioId } from "./batch-plan.ts";
+import { activeAssetTexts } from "../../scripts/tts-source.ts";
+import { allContentAudioIds } from "../../server/preview/audio-ids.ts";
+import type { AudioAssetRow } from "../../server/content/repo.ts";
+import { voicedAudioId } from "../practice-voices.ts";
+import {
+  snapshotFromReferenceJson,
+  snapshotSentenceAudioBase,
+  snapshotWordAudioBase,
+  workingSnapshot,
+  type ReleaseCandidateItem,
+  type SnapshotWord,
+} from "../snapshot.ts";
 import { FLAT_READING_STYLE, pcmToWav } from "./pipeline.ts";
 import { splitChecked } from "./split.ts";
 
@@ -103,5 +115,69 @@ describe("other consonant groups", () => {
     expect(first[0]?.groupId.startsWith("words-charon-b_p_pp-")).toBe(true);
     const pseudo = batchPlan("charon", ["pseudo"], () => false, "s_ss");
     expect(pseudo[0]?.items).toHaveLength(6);
+  });
+});
+
+describe("content DB as the TTS source", () => {
+  const asItem = (word: SnapshotWord, status: "draft" | "approved" | "hidden" = "approved"): ReleaseCandidateItem => ({ ...word, status });
+  const ids = (groups: ReturnType<typeof batchPlan>) => new Set(groups.flatMap((group) => group.items.map((item) => item.id)));
+
+  it("plans examples newly filled in the DB in both example versions", () => {
+    const ref = snapshotFromReferenceJson();
+    const blank = ref.items.find((word) => !word.example);
+    expect(blank).toBeDefined();
+    if (!blank) return;
+    const filled = { ...blank, example: "새로 채운 예문이에요." };
+    const db = workingSnapshot(
+      ref.items.map((word) => asItem(word.id === blank.id ? filled : word)),
+      ref.stage0,
+    );
+    const voiced = voicedAudioId(snapshotSentenceAudioBase(blank), "erinome");
+    const fromJson = ids(batchPlan("erinome", ["sentences", "turns"], () => false, blank.groupId, new Set(), {}, ref));
+    const fromDb = batchPlan("erinome", ["sentences", "turns"], () => false, blank.groupId, new Set(), {}, db);
+    expect(fromJson.has(voiced)).toBe(false);
+    expect(ids(fromDb).has(voiced)).toBe(true);
+    expect(ids(fromDb).has(turnsAudioId(voiced))).toBe(true);
+    const item = fromDb.flatMap((group) => group.items).find((row) => row.id === voiced);
+    expect(item?.text).toBe("새로 채운 예문이에요.");
+  });
+
+  it("keeps draft words, drops hidden ones, and names a teacher-added word like the app does", () => {
+    const ref = snapshotFromReferenceJson();
+    const base = ref.items.find((word) => word.groupId === "s_ss");
+    if (!base) throw new Error("no s_ss word");
+    const added: SnapshotWord = { ...base, id: "3f2a9c1e-7b6d-4c1a-9e2f-000000000000", legacyId: null, entryId: null, word: "새말", example: "새말 예문이에요.", sortOrder: 999 };
+    const hidden: SnapshotWord = { ...base, id: "hidden-1", entryId: 999999, word: "숨김말", sortOrder: 1000 };
+    const db = workingSnapshot([...ref.items.map((word) => asItem(word)), asItem(added, "draft"), asItem(hidden, "hidden")], ref.stage0);
+    const planned = ids(batchPlan("charon", ["words", "sentences", "turns"], () => false, "s_ss", new Set(), {}, db));
+    const wordId = voicedAudioId(snapshotWordAudioBase(added), "charon");
+    expect(wordId).toBe("word-c3f2a9c1e-새말--charon");
+    expect(planned.has(wordId)).toBe(true);
+    expect(planned.has(turnsAudioId(voicedAudioId(snapshotSentenceAudioBase(added), "charon")))).toBe(true);
+    expect([...planned].some((id) => id.includes("숨김말"))).toBe(false);
+    // 앱이 찾는 음원 id 목록에도 같은 id가 있다.
+    const appIds = new Set(allContentAudioIds(db.items, db.stage0));
+    for (const id of planned) expect(appIds.has(id)).toBe(true);
+  });
+
+  it("makes a sound again when its text changed or its DB asset went stale", () => {
+    const ref = snapshotFromReferenceJson();
+    const word = ref.items.find((row) => row.example && row.groupId === "j_ch_jj");
+    if (!word) throw new Error("no example");
+    const id = voicedAudioId(snapshotSentenceAudioBase(word), "sulafat");
+    const planIds = (done: ReturnType<typeof makeDoneCheck>) => ids(batchPlan("sulafat", ["sentences"], done, "j_ch_jj", new Set(), {}, ref));
+
+    // 로컬 meta 글자가 지금 표와 같으면 건너뛰고, 다르면 다시 만든다.
+    const localSame = makeDoneCheck({ doneLocal: (key, text) => key === id && text === word.example, dbActive: new Map(), replace: false });
+    expect(planIds(localSame).has(id)).toBe(false);
+    const localOld = makeDoneCheck({ doneLocal: (key, text) => key === id && text === "예전 예문.", dbActive: new Map(), replace: false });
+    expect(planIds(localOld).has(id)).toBe(true);
+
+    // DB 자산: 글자가 같고 stale이 아니면 건너뛴다. stale이거나 글자가 다르면 다시 만든다.
+    const asset = (text: string, stale: boolean) => ({ audioId: id, text, stale, status: "approved" }) as AudioAssetRow;
+    const dbCheck = (rows: AudioAssetRow[]) => makeDoneCheck({ doneLocal: () => false, dbActive: activeAssetTexts(rows), replace: false });
+    expect(planIds(dbCheck([asset(word.example, false)])).has(id)).toBe(false);
+    expect(planIds(dbCheck([asset(word.example, true)])).has(id)).toBe(true);
+    expect(planIds(dbCheck([asset("예전 예문.", false)])).has(id)).toBe(true);
   });
 });

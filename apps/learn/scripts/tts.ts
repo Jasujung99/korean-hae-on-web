@@ -25,8 +25,15 @@ import {
   type TtsUnit,
 } from "../content/tts/pipeline.ts";
 import { AUDITION_TEXT, AUDITION_VOICES, auditionAudioId, flatAuditionAudioId } from "../content/voices.ts";
-import { coreWords, sentenceAudioBase, stageZeroCells, syllableAudioBase, wordAudioBase } from "../content/core-table.ts";
-import { PRACTICE_ITEMS } from "../content/practice.ts";
+import { syllableAudioBase } from "../content/core-table.ts";
+import {
+  snapshotPseudowords,
+  snapshotSentenceAudioBase,
+  snapshotStageZero,
+  snapshotWordAudioBase,
+  snapshotWords,
+} from "../content/snapshot.ts";
+import { TtsSourceError, loadTtsSource, sourceKindFromArgs } from "./tts-source.ts";
 import { PRACTICE_VOICES, voicedAudioId } from "../content/practice-voices.ts";
 import { GROUP_MODES, groupFullId, groupPlans, splitAudioId, type GroupMode } from "../content/tts/groups.ts";
 import { splitWavBySilence } from "../content/tts/split.ts";
@@ -300,7 +307,16 @@ async function main() {
   }
 
   if (command === "practice") {
-    // Core 60 배치표의 단계별 연습 음원을 목소리 3가지로 만든다. 예) --stages 0,1
+    // ㅈ·ㅊ·ㅉ 단계별 연습 음원을 목소리 3가지로 만든다. 예) --stages 0,1
+    // 단어·예문은 운영 DB 작업 표에서 읽는다(예전 JSON 표는 --source json). DB를 못 읽으면 멈춘다.
+    let source;
+    try {
+      source = await loadTtsSource(sourceKindFromArgs(process.argv));
+    } catch (error) {
+      if (error instanceof TtsSourceError) fail(error.message);
+      throw error;
+    }
+    const tableWords = snapshotWords(source.snapshot, "j_ch_jj");
     const stages = (argValue("--stages") ?? "0,1").split(",").map((item) => item.trim());
     const keys = (argValue("--voices") ?? PRACTICE_VOICES.map((row) => row.key).join(","))
       .split(",")
@@ -318,23 +334,25 @@ async function main() {
       list.push(unit);
     };
     if (stages.includes("1")) {
-      for (const item of PRACTICE_ITEMS) add(syllables, { base: item.audioId, kind: "pseudoword", text: item.stimulus });
+      for (const row of snapshotPseudowords(source.snapshot, "j_ch_jj")) {
+        add(syllables, { base: syllableAudioBase(row.stimulus), kind: "pseudoword", text: row.stimulus });
+      }
     }
     if (stages.includes("0")) {
-      for (const cell of stageZeroCells()) {
+      for (const cell of snapshotStageZero(source.snapshot, "j_ch_jj")) {
         add(syllables, { base: syllableAudioBase(cell.stimulus), kind: "pseudoword", text: cell.stimulus });
         if (cell.word) {
-          const entry = coreWords().find((word) => word.word === cell.word);
-          const base = entry ? wordAudioBase(entry) : `word-0-${cell.word}`;
+          const entry = tableWords.find((word) => word.word === cell.word);
+          const base = entry ? snapshotWordAudioBase(entry) : `word-0-${cell.word}`;
           add(words, { base, kind: "word", text: cell.word });
         }
       }
     }
-    for (const word of coreWords()) {
+    for (const word of tableWords) {
       if (!stages.includes(word.stage.replace("Stage ", ""))) continue;
-      add(words, { base: wordAudioBase(word), kind: "word", text: word.word });
+      add(words, { base: snapshotWordAudioBase(word), kind: "word", text: word.word });
       // 예문은 주어진 것만 쓴다. 없으면 만들지 않는다.
-      if (word.example) add(sentences, { base: sentenceAudioBase(word), kind: "sentence", text: word.example });
+      if (word.example) add(sentences, { base: snapshotSentenceAudioBase(word), kind: "sentence", text: word.example });
     }
     // 할당량에 걸려도 쓸 수 있게: 의사단어 → 단어 → 예문 순서로, 각 묶음 안에서 목소리를 번갈아 만든다.
     const jobs = [syllables, words, sentences].flatMap((list) =>

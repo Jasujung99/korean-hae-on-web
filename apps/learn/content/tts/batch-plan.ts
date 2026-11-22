@@ -68,6 +68,22 @@ function chunk<T>(list: T[], size: number): T[][] {
   return out;
 }
 
+/** 이미 만든 음원이면 참. 글자(text)가 지금 표와 다르면 다시 만들도록 거짓을 돌려준다. */
+export type DoneCheck = (id: string, text: string) => boolean;
+
+/**
+ * 건너뛸 음원 판정. 로컬 묶음 파일(meta 글자 일치) 또는 DB의 draft·approved·stale 아님 자산(글자 일치)이 있으면 건너뛴다.
+ * replace면 아무것도 건너뛰지 않는다.
+ */
+export function makeDoneCheck(input: {
+  doneLocal: DoneCheck;
+  dbActive: ReadonlyMap<string, ReadonlySet<string>>;
+  replace: boolean;
+}): DoneCheck {
+  if (input.replace) return () => false;
+  return (id, text) => input.doneLocal(id, text) || Boolean(input.dbActive.get(id)?.has(text.trim()));
+}
+
 /** 묶음 계획에 쓰는 낱말(묶음과 상관없이 같은 모양) */
 type PlanWord = { id: string; entryId: number | null; word: string; example: string };
 
@@ -96,14 +112,14 @@ function sourceFor(
 }
 
 /**
- * 목소리 하나, 자음 묶음 하나의 묶음 계획. done(id)이 참인 음원(이미 묶음 방식으로 만든 것)은 빼고 묶는다.
+ * 목소리 하나, 자음 묶음 하나의 묶음 계획. done(id, text)이 참인 음원(이미 묶음 방식으로 만든 것)은 빼고 묶는다.
  * taken에 든 id도 뺀다(같은 단어가 두 자음 묶음에 나올 때 한 번만 만들려고). 계획에 넣은 id는 taken에 더한다.
  * 의사단어·첫소리는 하나라도 없으면 묶음 전체를 다시 만든다(한 묶음 안의 소리 조건을 맞추려고).
  */
 export function batchPlan(
   voiceKey: PracticeVoiceKey,
   kinds: BatchKind[],
-  done: (id: string) => boolean,
+  done: DoneCheck,
   groupId = "j_ch_jj",
   taken: Set<string> = new Set(),
   /** 묶음 크기를 바꿀 때(예: 점검에 걸린 묶음을 작게 다시 만들 때) */
@@ -114,7 +130,7 @@ export function batchPlan(
   const source = sourceFor(groupId, snapshot);
   const tag = groupId === "j_ch_jj" ? voiceKey : `${voiceKey}-${groupId}`;
   const seed = (name: string) => `${tag}:${name}`;
-  const skip = (id: string) => done(id) || taken.has(id);
+  const skip = (id: string, text: string) => done(id, text) || taken.has(id);
   const take = (items: BatchItem[]) => {
     for (const item of items) taken.add(item.id);
     return items;
@@ -122,13 +138,13 @@ export function batchPlan(
 
   if (kinds.includes("pseudo")) {
     const items: BatchItem[] = source.pseudo.map((text) => ({ id: voicedAudioId(syllableAudioBase(text), voiceKey), text, unitKind: "pseudoword" }));
-    if (items.some((item) => !skip(item.id))) {
+    if (items.some((item) => !skip(item.id, item.text))) {
       groups.push({ groupId: `pseudo-${tag}`, kind: "pseudo", method: "pause_group", style: FLAT_READING_STYLE, fillers: true, minGapMs: 300, items: take(seededShuffle(items, seed("pseudo"))) });
     }
   }
   if (kinds.includes("stage0") && source.stage0Syllables.length > 0) {
     const items: BatchItem[] = source.stage0Syllables.map((text) => ({ id: voicedAudioId(syllableAudioBase(text), voiceKey), text, unitKind: "pseudoword" }));
-    if (items.some((item) => !skip(item.id))) {
+    if (items.some((item) => !skip(item.id, item.text))) {
       groups.push({ groupId: `stage0-${tag}`, kind: "stage0", method: "pause_group", style: FLAT_READING_STYLE, fillers: true, minGapMs: 300, items: take(seededShuffle(items, seed("stage0"))) });
     }
   }
@@ -136,7 +152,7 @@ export function batchPlan(
     const items: BatchItem[] = [];
     const add = (word: { id: string; entryId: number | null; word: string }) => {
       const id = voicedAudioId(snapshotWordAudioBase(word), voiceKey);
-      if (skip(id) || items.some((item) => item.id === id)) return;
+      if (skip(id, word.word) || items.some((item) => item.id === id)) return;
       items.push({ id, text: word.word, unitKind: "word" });
     };
     for (const word of source.words) add(word);
@@ -153,7 +169,7 @@ export function batchPlan(
       if (!word.example) continue;
       const voiced = voicedAudioId(snapshotSentenceAudioBase(word), voiceKey);
       const id = kind === "turns" ? turnsAudioId(voiced) : voiced;
-      if (skip(id) || items.some((item) => item.id === id)) continue;
+      if (skip(id, word.example) || items.some((item) => item.id === id)) continue;
       items.push({ id, text: word.example, unitKind: "sentence" });
     }
     chunk(seededShuffle(items, seed(kind)), sizes.sentences ?? SENTENCES_PER_GROUP).forEach((part, index) =>

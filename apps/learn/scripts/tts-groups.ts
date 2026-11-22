@@ -3,7 +3,10 @@
 //     npm run tts:groups -- --groups s_ss,g_k_kk --voices erinome,sulafat,charon --dry-run
 //     npm run tts:groups -- --voices erinome --kinds pseudo,stage0,words,sentences,turns
 // 키는 GEMINI_API_KEY 환경 변수에서만 읽는다. 결과는 audio/raw/ 에만 쓰고 검수 상태는 draft로 둔다.
-// 이미 묶음 방식으로 만든 파일은 건너뛴다. 하나씩 만든 예전 파일은 `<id>--single`로 옮겨 보관한다.
+// 생성 대상은 운영 DB 작업 표(숨김 제외, draft·approved)에서 읽는다. 예전 JSON 표는 `--source json`.
+// DB를 못 읽으면 JSON으로 넘어가지 않고 멈춘다.
+// 이미 묶음 방식으로 만든 파일은 건너뛴다. 단 meta의 글자가 지금 표와 다르면(또는 DB 자산이 stale이면) 다시 만든다.
+// 하나씩 만든 예전 파일은 `<id>--single`로, 다시 만들며 밀려난 묶음 파일은 `<id>--prev-<시각>`으로 옮겨 보관한다.
 import { existsSync, readFileSync } from "node:fs";
 import { mkdir, rename, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
@@ -13,6 +16,7 @@ import {
   GROUPED_METHODS,
   batchPlan,
   groupContents,
+  makeDoneCheck,
   groupPartCount,
   type BatchGroup,
   type BatchKind,
@@ -34,6 +38,9 @@ import { PRACTICE_VOICES, type PracticeVoiceKey } from "../content/practice-voic
 import { isOtherGroup } from "../content/group-tables.ts";
 import type { ContentRepo } from "../server/content/repo.ts";
 import { logPcTtsUsage, resolveContentRepo } from "./tts-usage-log.ts";
+import { TtsSourceError, activeAssetTexts, loadTtsSource, sourceKindFromArgs } from "./tts-source.ts";
+
+export { makeDoneCheck };
 
 const appRoot = fileURLToPath(new URL("..", import.meta.url));
 const rawDir = process.env.LEARN_AUDIO_DIR?.trim() || join(appRoot, "audio", "raw");
@@ -44,42 +51,38 @@ function argValue(flag: string): string | null {
   return index < 0 ? null : (process.argv[index + 1] ?? null);
 }
 
-/** 묶음 방식으로 만든 파일이면 참 */
-function doneGrouped(id: string): boolean {
+/** 로컬 meta를 읽는다(없거나 깨졌으면 null). */
+function localMeta(id: string): { method: string; text: string } | null {
   const meta = join(rawDir, `${id}.meta.json`);
-  if (!existsSync(join(rawDir, `${id}.wav`)) || !existsSync(meta)) return false;
+  if (!existsSync(join(rawDir, `${id}.wav`)) || !existsSync(meta)) return null;
   try {
-    const parsed = JSON.parse(readFileSync(meta, "utf8")) as { settings?: { method?: string } };
-    return GROUPED_METHODS.includes(parsed.settings?.method ?? "");
+    const parsed = JSON.parse(readFileSync(meta, "utf8")) as { text?: string; settings?: { method?: string } };
+    return { method: parsed.settings?.method ?? "", text: (parsed.text ?? "").trim() };
   } catch {
-    return false;
+    return null;
   }
 }
 
-/** DB에 이미 draft·approved(stale 아님) 상태로 올라간 audio_id를 모은다. 실패 시 빈 집합을 돌려준다. */
-export async function loadDbActiveAudioIds(repo: ContentRepo | null): Promise<Set<string>> {
-  const out = new Set<string>();
-  if (!repo) return out;
-  try {
-    const assets = await repo.listAudioAssets();
-    for (const asset of assets) {
-      if ((asset.status === "draft" || asset.status === "approved") && !asset.stale) {
-        out.add(asset.audioId);
-      }
-    }
-  } catch {
-    // DB 연결이 없거나 표가 아직 없을 때도 로컬 판정으로 이어간다.
-  }
-  return out;
+/** 묶음 방식으로 만든 파일이면 참 */
+function isGroupedFile(id: string): boolean {
+  return GROUPED_METHODS.includes(localMeta(id)?.method ?? "");
 }
 
-export function makeDoneCheck(input: {
-  doneLocal: (id: string) => boolean;
-  dbActiveAudioIds: ReadonlySet<string>;
-  replace: boolean;
-}): (id: string) => boolean {
-  if (input.replace) return () => false;
-  return (id) => input.doneLocal(id) || input.dbActiveAudioIds.has(id);
+/** 묶음 방식으로 지금 글자 그대로 만든 파일이면 참 */
+function doneGrouped(id: string, text: string): boolean {
+  const meta = localMeta(id);
+  return Boolean(meta && GROUPED_METHODS.includes(meta.method) && meta.text === text.trim());
+}
+
+/** DB에 이미 draft·approved(stale 아님) 상태로 올라간 audio_id → 글자들. 실패 시 빈 표를 돌려준다(`--source json`일 때만 쓴다). */
+export async function loadDbActiveAudioIds(repo: ContentRepo | null): Promise<Map<string, Set<string>>> {
+  if (!repo) return new Map();
+  try {
+    return activeAssetTexts(await repo.listAudioAssets());
+  } catch {
+    // 예전 JSON 방식: DB 연결이 없어도 로컬 판정으로 이어간다.
+    return new Map();
+  }
 }
 
 type Outcome = "written" | "split_failed" | "quota" | "failed";
@@ -171,10 +174,14 @@ async function runGroup(group: BatchGroup, voiceKey: PracticeVoiceKey, voice: st
     if (!part) continue;
     const wavPath = join(rawDir, `${item.id}.wav`);
     const metaPath = join(rawDir, `${item.id}.meta.json`);
-    // 하나씩 만든 예전 파일은 지우지 않고 옮겨 둔다.
-    if (existsSync(wavPath) && !doneGrouped(item.id) && !existsSync(join(rawDir, `${item.id}--single.wav`))) {
-      await rename(wavPath, join(rawDir, `${item.id}--single.wav`));
-      if (existsSync(metaPath)) await rename(metaPath, join(rawDir, `${item.id}--single.meta.json`));
+    // 하나씩 만든 예전 파일은 `--single`로, 묶음으로 만든 이전 판은 `--prev-<시각>`으로 옮겨 둔다(덮어쓰지 않는다).
+    if (existsSync(wavPath)) {
+      const grouped = isGroupedFile(item.id);
+      const keep = grouped ? `${item.id}--prev-${generatedAt.replace(/[:.]/g, "")}` : `${item.id}--single`;
+      if (grouped || !existsSync(join(rawDir, `${keep}.wav`))) {
+        await rename(wavPath, join(rawDir, `${keep}.wav`));
+        if (existsSync(metaPath)) await rename(metaPath, join(rawDir, `${keep}.meta.json`));
+      }
     }
     await writeFile(wavPath, part.bytes);
     const meta = {
@@ -230,14 +237,31 @@ async function main() {
     console.error("--groups accepts j_ch_jj, s_ss, g_k_kk, b_p_pp, d_t_tt.");
     process.exit(1);
   }
+  let source;
+  try {
+    source = await loadTtsSource(sourceKindFromArgs(process.argv));
+  } catch (error) {
+    if (!(error instanceof TtsSourceError)) throw error;
+    console.error(error.message);
+    process.exit(1);
+  }
+  console.log(
+    source.kind === "db"
+      ? `source: content DB (${source.snapshot.items.length} words, ${source.snapshot.items.filter((word) => word.example).length} with examples)`
+      : "source: reference JSON (--source json)",
+  );
   const replace = process.argv.includes("--replace");
-  const dbActiveAudioIds = replace ? new Set<string>() : await loadDbActiveAudioIds(resolveContentRepo());
+  const dbActive = replace
+    ? new Map<string, Set<string>>()
+    : source.kind === "db"
+      ? activeAssetTexts(source.assets)
+      : await loadDbActiveAudioIds(resolveContentRepo());
   if (replace) {
     console.log("replace: regenerating matching audio (ignoring local/DB skip)");
-  } else if (dbActiveAudioIds.size > 0) {
-    console.log(`db: skipping ${dbActiveAudioIds.size} draft/approved audio ids`);
+  } else if (dbActive.size > 0) {
+    console.log(`db: skipping ${dbActive.size} draft/approved audio ids whose text still matches`);
   }
-  const done = makeDoneCheck({ doneLocal: doneGrouped, dbActiveAudioIds, replace });
+  const done = makeDoneCheck({ doneLocal: doneGrouped, dbActive, replace });
 
   // --words-per-group 10 --sentences-per-group 5: 점검에 걸린 묶음을 작게 나눠 다시 만들 때
   const sizeArg = (flag: string) => {
@@ -247,7 +271,7 @@ async function main() {
   const sizes = { words: sizeArg("--words-per-group"), sentences: sizeArg("--sentences-per-group") };
   const plans = voices.map((row) => {
     const taken = new Set<string>();
-    return { row, groups: groupIds.flatMap((groupId) => batchPlan(row.key, kinds, done, groupId, taken, sizes)) };
+    return { row, groups: groupIds.flatMap((groupId) => batchPlan(row.key, kinds, done, groupId, taken, sizes, source.snapshot)) };
   });
   for (const { row, groups } of plans) {
     const byKind = kinds.map((kind) => {

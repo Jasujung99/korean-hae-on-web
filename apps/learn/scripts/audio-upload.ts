@@ -2,6 +2,8 @@
 //   npm run audio:upload                 (초안으로 등록, 이미 있는 동일 해시 승인 상태는 유지)
 //   npm run audio:upload -- --approve    (올린 음원을 approved로 표시)
 //   npm run audio:upload -- --dry-run    (인코딩·업로드·DB 쓰기 없이 묶음별 현황만 확인)
+//   npm run audio:upload -- --dry-run --source json  (예전 기준 JSON 표로 현황만 확인)
+// 대상 id는 운영 DB 작업 표(숨김 제외)에서 정하고, DB를 못 읽으면 멈춘다.
 import { createHash } from "node:crypto";
 import { spawnSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
@@ -11,7 +13,6 @@ import { syllableAudioBase } from "../content/core-table.ts";
 import { COURSE_ORDER, type GroupId } from "../content/course-order.ts";
 import { PRACTICE_VOICES, voicedAudioId } from "../content/practice-voices.ts";
 import {
-  snapshotFromReferenceJson,
   snapshotSentenceAudioBase,
   snapshotWordAudioBase,
   type SnapshotStageZero,
@@ -19,7 +20,8 @@ import {
 } from "../content/snapshot.ts";
 import { turnsAudioId } from "../content/tts/batch-plan.ts";
 import type { ContentItemRow, ContentRepo, NewAudioAssetInput } from "../server/content/repo.ts";
-import { createSupabaseContentRepo, isMissingContentTableError } from "../server/content/supabase-repo.ts";
+import { createSupabaseContentRepo } from "../server/content/supabase-repo.ts";
+import { TtsSourceError, loadTtsSource, sourceKindFromArgs } from "./tts-source.ts";
 import { createRawAudio, type AudioMeta } from "../server/preview/audio.ts";
 import { allContentAudioIds } from "../server/preview/audio-ids.ts";
 import { parseR2AudioMeta } from "./content-seed.ts";
@@ -187,48 +189,30 @@ async function main() {
   const cacheDir = join(appRoot, "audio", "packed");
   mkdirSync(cacheDir, { recursive: true });
 
-  let repo = resolveRepo();
-  let dbItems: ContentItemRow[] = [];
-  let words: SnapshotWord[] = [];
-  let stage0: SnapshotStageZero[] = [];
+  // 업로드 대상 id는 운영 DB 작업 표(숨김 제외, draft·approved)로 정한다. DB를 못 읽으면 JSON으로 넘어가지 않고 멈춘다.
+  // 예전 JSON 표로 현황만 보려면 --dry-run --source json.
+  let source;
+  try {
+    const kind = sourceKindFromArgs(process.argv);
+    source = await loadTtsSource(kind, kind === "db" ? resolveRepo() : null);
+  } catch (error) {
+    if (!(error instanceof TtsSourceError)) throw error;
+    console.error(error.message);
+    process.exit(1);
+  }
+  if (source.kind === "json" && !dryRun) {
+    console.error("--source json is for dry runs only. Live upload needs the content DB.");
+    process.exit(1);
+  }
+  const repo = source.repo;
+  const dbItems: ContentItemRow[] = source.items;
+  const words: SnapshotWord[] = source.snapshot.items;
+  const stage0: SnapshotStageZero[] = source.snapshot.stage0;
   const existingR2Keys = new Set<string>();
-
-  if (repo) {
-    try {
-      const [items, s0, assets] = await Promise.all([
-        repo.listItems({ includeHidden: false }),
-        repo.listStageZero(),
-        repo.listAudioAssets(),
-      ]);
-      if (items.length > 0 || s0.length > 0) {
-        dbItems = items;
-        words = items;
-        stage0 = s0;
-        for (const asset of assets) {
-          if (asset.storage === "r2" && asset.objectKey) existingR2Keys.add(asset.objectKey);
-        }
-      }
-    } catch (error) {
-      if (!dryRun) throw error;
-      console.log(
-        isMissingContentTableError(error)
-          ? "DB: phoneme content tables not present yet; using reference JSON for dry run"
-          : "DB: unavailable in dry run; falling back to reference JSON",
-      );
-      repo = null;
-    }
+  for (const asset of source.assets) {
+    if (asset.storage === "r2" && asset.objectKey) existingR2Keys.add(asset.objectKey);
   }
-
-  if (words.length === 0) {
-    const ref = snapshotFromReferenceJson();
-    words = ref.items;
-    stage0 = ref.stage0;
-    if (!dryRun) {
-      console.error("DB phoneme_content_items is empty. Run npm run content:seed before live audio upload.");
-      process.exit(1);
-    }
-    if (repo) console.log("DB: 0 items found; dry run fell back to reference JSON");
-  }
+  console.log(source.kind === "db" ? `source: content DB (${words.length} words)` : "source: reference JSON (--source json)");
 
   const ids = allContentAudioIds(words, stage0);
   const raw = createRawAudio(rawDir, ids, "upload");

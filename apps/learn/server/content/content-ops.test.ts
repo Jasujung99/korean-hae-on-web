@@ -335,7 +335,7 @@ describe("content operations release lifecycle, audio inventory DB source, and m
     const plannedIds = (replace: boolean) => {
       const done = makeDoneCheck({
         doneLocal: () => false,
-        dbActiveAudioIds: replace ? new Set() : dbActive,
+        dbActive: replace ? new Map() : dbActive,
         replace,
       });
       return new Set(batchPlan("erinome", ["words"], done, "j_ch_jj").flatMap((g) => g.items.map((i) => i.id)));
@@ -345,7 +345,7 @@ describe("content operations release lifecycle, audio inventory DB source, and m
     expect(normalIds.has("word-1871-모자--erinome")).toBe(false);
     const ref = snapshotFromReferenceJson();
     const gichaId = voicedAudioId(snapshotWordAudioBase(ref.items.find((i) => i.word === "기차")!), "erinome");
-    dbActive.add(gichaId);
+    dbActive.set(gichaId, new Set(["기차"]));
     const normalAfter = plannedIds(false);
     expect(normalAfter.has(gichaId)).toBe(false);
 
