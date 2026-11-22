@@ -28,6 +28,7 @@ import type { PreviewAudio } from "../preview/audio.ts";
 import type {
   ContentAudioCell,
   ContentItemView,
+  ContentProposalView,
   ContentReleaseStatusView,
   ContentStageSection,
   ContentStageZeroRow,
@@ -38,7 +39,16 @@ import type {
 } from "../preview/contract.ts";
 import type { AudioObjectStore } from "./audio-store.ts";
 import { buildReadOnlyContentView, isGroupId } from "./read-only.ts";
-import type { AudioAssetRow, ContentItemRow, ContentReleaseRow, ContentRepo, StageZeroRow, TtsUsageSummary } from "./repo.ts";
+import type {
+  AudioAssetRow,
+  ContentItemRow,
+  ContentItemVersionRow,
+  ContentProposalRow,
+  ContentReleaseRow,
+  ContentRepo,
+  StageZeroRow,
+  TtsUsageSummary,
+} from "./repo.ts";
 import type { SnapshotCache } from "./runtime.ts";
 import { isMissingContentTableError } from "./supabase-repo.ts";
 import { generateSingleTts } from "./tts-single.ts";
@@ -250,6 +260,22 @@ export function computeReleaseStatus(
   };
 }
 
+function toProposalView(row: ContentProposalRow): ContentProposalView {
+  return {
+    id: row.id,
+    itemId: row.itemId,
+    kind: row.kind,
+    fields: { ...row.fields },
+    sense: row.sense,
+    flags: [...row.flags],
+    source: row.source,
+    model: row.model,
+    promptVersion: row.promptVersion,
+    status: row.status,
+    createdAt: row.createdAt,
+  };
+}
+
 function buildDbContentView(
   groupId: GroupId,
   allItems: readonly ContentItemRow[],
@@ -258,8 +284,13 @@ function buildDbContentView(
   latestRelease: ContentReleaseRow | null,
   ttsReady: boolean,
   nowIso: string,
+  pendingProposals: readonly ContentProposalRow[] = [],
 ): TeacherContentView {
   const visibleItems = allItems.filter((item) => item.status !== "hidden");
+  const proposalByItemId = new Map<string, ContentProposalRow>();
+  for (const proposal of pendingProposals) {
+    if (proposal.status === "pending") proposalByItemId.set(proposal.itemId, proposal);
+  }
 
   const byAudioId = new Map<string, AudioAssetRow[]>();
   const byItemVoice = new Map<string, AudioAssetRow[]>();
@@ -405,6 +436,7 @@ function buildDbContentView(
         }
       }
 
+      const proposalRow = proposalByItemId.get(item.id);
       return {
         id: item.id,
         legacyId: item.legacyId,
@@ -426,6 +458,7 @@ function buildDbContentView(
         wordAudio,
         exampleAudio,
         turnsAudio,
+        proposal: proposalRow ? toProposalView(proposalRow) : null,
       };
     });
 
@@ -440,13 +473,17 @@ function buildDbContentView(
     };
   });
 
+  const totalProposalCount = visibleItems.filter((item) => proposalByItemId.has(item.id)).length;
+
   return {
     groups: COURSE_ORDER.map((id) => ({
       id,
       label: GROUP_LABELS[id],
       choices: [...GROUP_CHOICES[id]],
       count: visibleItems.filter((item) => item.groupId === id).length,
+      proposalCount: visibleItems.filter((item) => item.groupId === id && proposalByItemId.has(item.id)).length,
     })),
+    totalProposalCount,
     group: {
       id: groupId,
       label: GROUP_LABELS[groupId],
@@ -481,6 +518,144 @@ function voiceSuffixesForBase(base: string, includeTurns: boolean): string[] {
   return out;
 }
 
+const EDITABLE_TEXT_LIMITS = [
+  ["pos", 40],
+  ["gloss", 400],
+  ["scene", 200],
+  ["example", 400],
+  ["related", 200],
+  ["note", 200],
+] as const;
+
+type EditablePatchResult =
+  | { ok: true; patch: Record<string, unknown>; changedFields: string[] }
+  | { ok: false; error: "word_required" | "invalid_consonant" | "invalid_stage" };
+
+function parseEditablePatch(existing: ContentItemRow, body: Record<string, unknown>): EditablePatchResult {
+  const patch: Record<string, unknown> = {};
+  const changedFields: string[] = [];
+
+  if ("word" in body) {
+    const nextWord = cleanText(body.word, 80);
+    if (!nextWord) return { ok: false, error: "word_required" };
+    if (nextWord !== existing.word) {
+      patch.word = nextWord;
+      changedFields.push("word");
+    }
+  }
+  if ("consonant" in body) {
+    const nextConsonant = cleanText(body.consonant, 8);
+    if (!GROUP_CHOICES[existing.groupId].includes(nextConsonant)) return { ok: false, error: "invalid_consonant" };
+    if (nextConsonant !== existing.consonant) {
+      patch.consonant = nextConsonant;
+      changedFields.push("consonant");
+    }
+  }
+  if ("stage" in body || "substage" in body) {
+    const nextStageInfo = parseStageAndSubstage(
+      existing.groupId,
+      "stage" in body ? body.stage : existing.stage,
+      "substage" in body ? body.substage : existing.substage,
+    );
+    if (!nextStageInfo) return { ok: false, error: "invalid_stage" };
+    if (nextStageInfo.stage !== existing.stage) {
+      patch.stage = nextStageInfo.stage;
+      changedFields.push("stage");
+    }
+    if (nextStageInfo.substage !== existing.substage) {
+      patch.substage = nextStageInfo.substage;
+      changedFields.push("substage");
+    }
+  }
+
+  for (const [field, limit] of EDITABLE_TEXT_LIMITS) {
+    if (!(field in body)) continue;
+    const raw = field === "related" && Array.isArray(body[field]) ? body[field].map(String).join(", ") : body[field];
+    const val = cleanText(raw, limit);
+    if (val !== existing[field]) {
+      patch[field] = val;
+      changedFields.push(field);
+    }
+  }
+
+  return { ok: true, patch, changedFields };
+}
+
+async function applyItemPatchAndMarkStale(
+  repo: ContentRepo,
+  existing: ContentItemRow,
+  patch: Record<string, unknown>,
+  changedFields: string[],
+  reason: string | null,
+  editedBy: string | null,
+) {
+  const updated = await repo.updateItem(existing.id, patch, {
+    changedFields,
+    reason,
+    editedBy,
+  });
+  if (!updated) return null;
+
+  let staleMarked = 0;
+  const wordChanged = changedFields.includes("word");
+  const exampleChanged = changedFields.includes("example");
+  if (wordChanged || exampleChanged) {
+    const allActiveItems = await repo.listItems({ includeHidden: false });
+    const others = allActiveItems.filter((row) => row.id !== existing.id);
+
+    if (wordChanged) {
+      const oldWordBase = snapshotWordAudioBase(existing);
+      const sharedWordExists = others.some(
+        (other) => snapshotWordAudioBase(other) === oldWordBase && other.word === existing.word,
+      );
+      staleMarked += await repo.markAudioStale({
+        itemIds: [existing.id],
+        kinds: ["word"],
+        ...(sharedWordExists
+          ? {}
+          : {
+              audioIds: [
+                ...voiceSuffixesForBase(oldWordBase, false),
+                ...(existing.entryId !== null && existing.stage === "Stage 1"
+                  ? [`word-Stage1-${existing.entryId}-${existing.word}`]
+                  : []),
+              ],
+              attachItemId: existing.id,
+            }),
+      });
+    }
+
+    if (exampleChanged && existing.example.trim().length > 0) {
+      const oldSentenceBase = snapshotSentenceAudioBase(existing);
+      const sharedSentenceExists = others.some(
+        (other) => snapshotSentenceAudioBase(other) === oldSentenceBase && other.example === existing.example,
+      );
+      staleMarked += await repo.markAudioStale({
+        itemIds: [existing.id],
+        kinds: ["sentence", "sentence_turns"],
+        ...(sharedSentenceExists
+          ? {}
+          : {
+              audioIds: [
+                ...voiceSuffixesForBase(oldSentenceBase, true),
+                ...(existing.entryId !== null && existing.stage === "Stage 1"
+                  ? [`sentence-Stage1-${existing.entryId}-${existing.word}`]
+                  : []),
+              ],
+              attachItemId: existing.id,
+            }),
+      });
+    }
+  }
+
+  return {
+    item: updated.item,
+    version: updated.version,
+    changedFields,
+    staleMarked,
+  };
+}
+
 export function createContentRoutes(deps: ContentRoutesDeps) {
   const app = new Hono<ContentTeacherVars>();
   const ttsReady = Boolean(deps.ttsApiKey);
@@ -492,17 +667,29 @@ export function createContentRoutes(deps: ContentRoutesDeps) {
       return c.json(buildReadOnlyContentView(rawGroup, deps.fallbackAudio, ttsReady));
     }
     try {
-      const [allItems, allStage0, allAssets, latestRelease] = await Promise.all([
+      const [allItems, allStage0, allAssets, latestRelease, pendingProposals] = await Promise.all([
         deps.contentRepo.listItems({ includeHidden: true }),
         deps.contentRepo.listStageZero(),
         deps.contentRepo.listAudioAssets(),
         deps.contentRepo.latestRelease(),
+        deps.contentRepo
+          .listProposals({ status: "pending" })
+          .catch((err) => (isMissingContentTableError(err) ? [] : Promise.reject(err))),
       ]);
       if (allItems.length === 0 && allStage0.length === 0 && !latestRelease) {
         return c.json(buildReadOnlyContentView(rawGroup, deps.fallbackAudio, ttsReady));
       }
       return c.json(
-        buildDbContentView(rawGroup, allItems, allStage0, allAssets, latestRelease, ttsReady, deps.now().toISOString()),
+        buildDbContentView(
+          rawGroup,
+          allItems,
+          allStage0,
+          allAssets,
+          latestRelease,
+          ttsReady,
+          deps.now().toISOString(),
+          pendingProposals,
+        ),
       );
     } catch (error) {
       if (isMissingContentTableError(error)) {
@@ -604,128 +791,85 @@ export function createContentRoutes(deps: ContentRoutesDeps) {
     const body = await readBody(c);
     if (!body) return c.json({ error: "invalid_body" }, 400);
 
-    const patch: Record<string, unknown> = {};
-    const changedFields: string[] = [];
+    const parsed = parseEditablePatch(existing, body);
+    if (!parsed.ok) return c.json({ error: parsed.error }, 400);
 
-    if ("word" in body) {
-      const nextWord = cleanText(body.word, 80);
-      if (!nextWord) return c.json({ error: "word_required" }, 400);
-      if (nextWord !== existing.word) {
-        patch.word = nextWord;
-        changedFields.push("word");
-      }
-    }
-    if ("consonant" in body) {
-      const nextConsonant = cleanText(body.consonant, 8);
-      if (!GROUP_CHOICES[existing.groupId].includes(nextConsonant)) return c.json({ error: "invalid_consonant" }, 400);
-      if (nextConsonant !== existing.consonant) {
-        patch.consonant = nextConsonant;
-        changedFields.push("consonant");
-      }
-    }
-    if ("stage" in body || "substage" in body) {
-      const nextStageInfo = parseStageAndSubstage(
-        existing.groupId,
-        "stage" in body ? body.stage : existing.stage,
-        "substage" in body ? body.substage : existing.substage,
-      );
-      if (!nextStageInfo) return c.json({ error: "invalid_stage" }, 400);
-      if (nextStageInfo.stage !== existing.stage) {
-        patch.stage = nextStageInfo.stage;
-        changedFields.push("stage");
-      }
-      if (nextStageInfo.substage !== existing.substage) {
-        patch.substage = nextStageInfo.substage;
-        changedFields.push("substage");
-      }
-    }
-
-    for (const [field, limit] of [
-      ["pos", 40],
-      ["gloss", 400],
-      ["scene", 200],
-      ["example", 400],
-      ["related", 200],
-      ["note", 200],
-    ] as const) {
-      if (!(field in body)) continue;
-      const val = cleanText(body[field], limit);
-      if (val !== existing[field]) {
-        patch[field] = val;
-        changedFields.push(field);
-      }
-    }
-
-    if (changedFields.length === 0) {
+    if (parsed.changedFields.length === 0) {
       return c.json({ item: existing, version: null, changedFields: [], staleMarked: 0 });
     }
 
     const reason = cleanText(body.reason, 200) || null;
-    const updated = await deps.contentRepo.updateItem(existing.id, patch, {
-      changedFields,
+    const result = await applyItemPatchAndMarkStale(
+      deps.contentRepo,
+      existing,
+      parsed.patch,
+      parsed.changedFields,
       reason,
-      editedBy: c.get("teacherId"),
-    });
-    if (!updated) return c.json({ error: "not_found" }, 404);
+      c.get("teacherId"),
+    );
+    if (!result) return c.json({ error: "not_found" }, 404);
 
-    let staleMarked = 0;
-    const wordChanged = changedFields.includes("word");
-    const exampleChanged = changedFields.includes("example");
-    if (wordChanged || exampleChanged) {
-      const allActiveItems = await deps.contentRepo.listItems({ includeHidden: false });
-      const others = allActiveItems.filter((row) => row.id !== existing.id);
+    return c.json(result);
+  });
 
-      if (wordChanged) {
-        const oldWordBase = snapshotWordAudioBase(existing);
-        const sharedWordExists = others.some(
-          (other) => snapshotWordAudioBase(other) === oldWordBase && other.word === existing.word,
-        );
-        staleMarked += await deps.contentRepo.markAudioStale({
-          itemIds: [existing.id],
-          kinds: ["word"],
-          ...(sharedWordExists
-            ? {}
-            : {
-                audioIds: [
-                  ...voiceSuffixesForBase(oldWordBase, false),
-                  ...(existing.entryId !== null && existing.stage === "Stage 1"
-                    ? [`word-Stage1-${existing.entryId}-${existing.word}`]
-                    : []),
-                ],
-                attachItemId: existing.id,
-              }),
-        });
-      }
+  app.post("/proposals/:id/apply", async (c) => {
+    if (!deps.contentRepo) return c.json({ error: "db_not_configured" }, 503);
+    const proposal = await deps.contentRepo.getProposal(c.req.param("id"));
+    if (!proposal) return c.json({ error: "not_found" }, 404);
+    if (proposal.status !== "pending") return c.json({ error: "proposal_not_pending" }, 409);
 
-      if (exampleChanged && existing.example.trim().length > 0) {
-        const oldSentenceBase = snapshotSentenceAudioBase(existing);
-        const sharedSentenceExists = others.some(
-          (other) => snapshotSentenceAudioBase(other) === oldSentenceBase && other.example === existing.example,
-        );
-        staleMarked += await deps.contentRepo.markAudioStale({
-          itemIds: [existing.id],
-          kinds: ["sentence", "sentence_turns"],
-          ...(sharedSentenceExists
-            ? {}
-            : {
-                audioIds: [
-                  ...voiceSuffixesForBase(oldSentenceBase, true),
-                  ...(existing.entryId !== null && existing.stage === "Stage 1"
-                    ? [`sentence-Stage1-${existing.entryId}-${existing.word}`]
-                    : []),
-                ],
-                attachItemId: existing.id,
-              }),
-        });
-      }
+    const existing = await deps.contentRepo.getItem(proposal.itemId);
+    if (!existing || existing.status === "hidden") return c.json({ error: "not_found" }, 404);
+
+    const body = (await readBody(c)) ?? {};
+    const mergedFields: Record<string, unknown> = { ...proposal.fields };
+    for (const field of ["word", "consonant", "stage", "substage", "pos", "gloss", "scene", "example", "related", "note"] as const) {
+      if (field in body) mergedFields[field] = body[field];
     }
 
+    const parsed = parseEditablePatch(existing, mergedFields);
+    if (!parsed.ok) return c.json({ error: parsed.error }, 400);
+
+    const baseReason = `${proposal.source} · ${proposal.model} · ${proposal.promptVersion}`;
+    const extraReason = cleanText(body.reason, 120);
+    const reason = extraReason ? `${baseReason} · ${extraReason}` : baseReason;
+
+    let item = existing;
+    let version: ContentItemVersionRow | null = null;
+    let staleMarked = 0;
+    if (parsed.changedFields.length > 0) {
+      const applied = await applyItemPatchAndMarkStale(
+        deps.contentRepo,
+        existing,
+        parsed.patch,
+        parsed.changedFields,
+        reason,
+        c.get("teacherId"),
+      );
+      if (!applied) return c.json({ error: "not_found" }, 404);
+      item = applied.item;
+      version = applied.version;
+      staleMarked = applied.staleMarked;
+    }
+
+    const decided = await deps.contentRepo.decideProposal(proposal.id, "applied", c.get("teacherId"));
     return c.json({
-      item: updated.item,
-      version: updated.version,
-      changedFields,
+      item,
+      version,
+      changedFields: parsed.changedFields,
       staleMarked,
+      proposal: decided ? toProposalView(decided) : null,
     });
+  });
+
+  app.post("/proposals/:id/dismiss", async (c) => {
+    if (!deps.contentRepo) return c.json({ error: "db_not_configured" }, 503);
+    const proposal = await deps.contentRepo.getProposal(c.req.param("id"));
+    if (!proposal) return c.json({ error: "not_found" }, 404);
+    if (proposal.status !== "pending") return c.json({ error: "proposal_not_pending" }, 409);
+
+    const decided = await deps.contentRepo.decideProposal(proposal.id, "dismissed", c.get("teacherId"));
+    return c.json({ proposal: decided ? toProposalView(decided) : null });
   });
 
   app.get("/items/:id/versions", async (c) => {

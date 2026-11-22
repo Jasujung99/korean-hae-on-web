@@ -11,13 +11,16 @@ import { PRACTICE_VOICES, voicedAudioId } from "../../content/practice-voices.ts
 import { turnsAudioId } from "../../content/tts/batch-plan.ts";
 import {
   itemSnapshotRecord,
+  normalizeProposalFields,
   type AudioAssetRow,
   type ContentItemRow,
   type ContentItemVersionRow,
+  type ContentProposalRow,
   type ContentReleaseRow,
   type ContentRepo,
   type NewAudioAssetInput,
   type NewContentItemInput,
+  type NewContentProposalInput,
   type NewStageZeroInput,
   type StageZeroRow,
   type TtsUsageRow,
@@ -32,6 +35,7 @@ export function createMemoryContentRepo(options: { now?: () => Date } = {}): Con
   const assets: AudioAssetRow[] = [];
   const releases: ContentReleaseRow[] = [];
   const usage: TtsUsageRow[] = [];
+  const proposals: ContentProposalRow[] = [];
 
   return {
     kind: "memory",
@@ -293,6 +297,60 @@ export function createMemoryContentRepo(options: { now?: () => Date } = {}): Con
         inserted += 1;
       }
       return inserted;
+    },
+    async listProposals(filter) {
+      return proposals
+        .filter(
+          (row) =>
+            (!filter?.status || row.status === filter.status) &&
+            (!filter?.itemId || row.itemId === filter.itemId),
+        )
+        .sort((a, b) => a.createdAt.localeCompare(b.createdAt))
+        .map((row) => ({ ...row, fields: { ...row.fields }, flags: [...row.flags] }));
+    },
+    async getProposal(id) {
+      const row = proposals.find((p) => p.id === id);
+      return row ? { ...row, fields: { ...row.fields }, flags: [...row.flags] } : null;
+    },
+    async insertProposals(inputs: NewContentProposalInput[]) {
+      let inserted = 0;
+      let skipped = 0;
+      const pendingKeys = new Set(
+        proposals.filter((p) => p.status === "pending").map((p) => `${p.itemId}:${p.promptVersion}`),
+      );
+      for (const input of inputs) {
+        const key = `${input.itemId}:${input.promptVersion}`;
+        if (pendingKeys.has(key)) {
+          skipped += 1;
+          continue;
+        }
+        pendingKeys.add(key);
+        proposals.push({
+          id: crypto.randomUUID(),
+          itemId: input.itemId,
+          kind: input.kind,
+          fields: normalizeProposalFields(input.fields),
+          sense: input.sense ?? "",
+          flags: [...(input.flags ?? [])],
+          source: input.source ?? "ai_draft",
+          model: input.model,
+          promptVersion: input.promptVersion,
+          status: "pending",
+          createdAt: iso(),
+          decidedBy: null,
+          decidedAt: null,
+        });
+        inserted += 1;
+      }
+      return { inserted, skipped };
+    },
+    async decideProposal(id, status, decidedBy) {
+      const row = proposals.find((p) => p.id === id);
+      if (!row) return null;
+      row.status = status;
+      row.decidedBy = decidedBy;
+      row.decidedAt = iso();
+      return { ...row, fields: { ...row.fields }, flags: [...row.flags] };
     },
   };
 }
