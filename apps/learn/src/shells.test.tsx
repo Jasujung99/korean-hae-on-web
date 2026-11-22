@@ -357,32 +357,56 @@ describe("stage 1 shells", () => {
     expect(screen.getByRole("form", { name: "학습자 추가" })).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "링크 새로 만들기" })).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "알렉세이 관리" }));
-    expect(screen.getByRole("button", { name: "링크 새로 만들기" })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "기기 연결 끊기" })).toBeInTheDocument();
+    expect(screen.getByRole("menuitem", { name: "링크 새로 만들기" })).toBeInTheDocument();
+    expect(screen.getByRole("menuitem", { name: "기기 연결 끊기" })).toBeInTheDocument();
     expect(screen.getByRole("table", { name: "담당 학습자와 초대 상태" })).toHaveTextContent("연결됨");
     expect(screen.queryByText(/종료한 학습자/)).not.toBeInTheDocument();
   });
 
-  it("groups row actions under one manage toggle, in order of risk and by learner status", async () => {
+  it("groups row actions under one ⋯ manage menu, in order of risk and by learner status", async () => {
     stubPreviewApi({ "GET /api/me": unauthorized, "GET /api/teacher/learners": lifecycleView });
     renderAt("/teach", true);
     expect(await screen.findByRole("heading", { level: 3, name: "학습자 관리" })).toBeInTheDocument();
-    const names = (group: HTMLElement) => within(group).getAllByRole("button").map((button) => button.textContent);
+    const names = (menu: HTMLElement) => within(menu).getAllByRole("menuitem").map((item) => item.textContent);
 
     const toggle = screen.getByRole("button", { name: "알렉세이 관리" });
     expect(toggle).toHaveAttribute("aria-expanded", "false");
+    expect(toggle).toHaveAttribute("aria-haspopup", "menu");
     // '기록 보기'는 펼침 밖에 그대로 있다.
     const active = screen.getByRole("table", { name: "담당 학습자와 초대 상태" });
     expect(within(active).getAllByRole("link", { name: "기록 보기" })).toHaveLength(2);
     fireEvent.click(toggle);
     expect(toggle).toHaveAttribute("aria-expanded", "true");
-    expect(names(screen.getByRole("group", { name: "알렉세이 관리" }))).toEqual(["링크 새로 만들기", "기기 연결 끊기", "종료"]);
+    const menu = screen.getByRole("menu", { name: "알렉세이 관리" });
+    expect(names(menu)).toEqual(["링크 새로 만들기", "기기 연결 끊기", "종료"]);
+    // 되돌리기 어려운 일은 칸막이 아래에 묶인다.
+    expect(within(menu).getByRole("separator")).toBeInTheDocument();
+    expect(within(menu).getByText("되돌리기 어려운 일")).toBeInTheDocument();
+    expect(within(menu).getAllByRole("menuitem")[0]).toHaveFocus();
+
+    fireEvent.mouseDown(document.body);
+    expect(screen.queryByRole("menu", { name: "알렉세이 관리" })).not.toBeInTheDocument();
+    expect(toggle).toHaveAttribute("aria-expanded", "false");
 
     fireEvent.click(screen.getByRole("button", { name: "시험 마리아 관리" }));
-    expect(names(screen.getByRole("group", { name: "시험 마리아 관리" }))).toEqual(["링크 새로 만들기", "링크 폐기", "종료", "삭제"]);
+    const busiest = screen.getByRole("menu", { name: "시험 마리아 관리" });
+    expect(names(busiest)).toEqual(["링크 새로 만들기", "링크 폐기", "종료", "삭제"]);
+    expect(within(busiest).getByRole("menuitem", { name: "삭제" })).toHaveClass("danger");
+    fireEvent.keyDown(busiest, { key: "Escape" });
+    expect(screen.queryByRole("menu", { name: "시험 마리아 관리" })).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "시험 마리아 관리" })).toHaveFocus();
 
     fireEvent.click(screen.getByRole("button", { name: "보리스 관리" }));
-    expect(names(screen.getByRole("group", { name: "보리스 관리" }))).toEqual(["다시 열기", "삭제"]);
+    expect(names(screen.getByRole("menu", { name: "보리스 관리" }))).toEqual(["다시 열기", "삭제"]);
+    const archivedMenu = screen.getByRole("menu", { name: "보리스 관리" });
+    const [reopen, remove] = within(archivedMenu).getAllByRole("menuitem");
+    expect(reopen).toHaveFocus();
+    fireEvent.keyDown(archivedMenu, { key: "ArrowDown" });
+    expect(remove).toHaveFocus();
+    fireEvent.keyDown(archivedMenu, { key: "ArrowDown" });
+    expect(reopen).toHaveFocus();
+    fireEvent.keyDown(archivedMenu, { key: "ArrowUp" });
+    expect(remove).toHaveFocus();
   });
 
   it("shows archived learners in a separate fold and keeps them out of the observation list", async () => {
@@ -427,14 +451,14 @@ describe("stage 1 shells", () => {
     expect(await screen.findByRole("heading", { level: 3, name: "학습자 관리" })).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: "알렉세이 관리" }));
-    fireEvent.click(within(screen.getByRole("group", { name: "알렉세이 관리" })).getByRole("button", { name: "종료" }));
+    fireEvent.click(within(screen.getByRole("menu", { name: "알렉세이 관리" })).getByRole("menuitem", { name: "종료" }));
     expect(confirm).toHaveBeenCalledWith(
       "알렉세이 님의 학습을 종료할까요? 링크와 기기 연결이 모두 끊기고, 기록은 남아요. 나중에 다시 열 수 있어요.",
     );
     await vi.waitFor(() => expect(calls).toContain("POST /api/teacher/learners/learner-1/archive"));
 
     fireEvent.click(screen.getByRole("button", { name: "시험 마리아 관리" }));
-    fireEvent.click(within(screen.getByRole("group", { name: "시험 마리아 관리" })).getByRole("button", { name: "삭제" }));
+    fireEvent.click(within(screen.getByRole("menu", { name: "시험 마리아 관리" })).getByRole("menuitem", { name: "삭제" }));
     expect(prompt).toHaveBeenCalledWith(
       "시험 마리아 님과 모든 학습 기록을 지워요. 되돌릴 수 없어요. 지우려면 별칭을 그대로 입력해 주세요.",
     );
@@ -442,7 +466,8 @@ describe("stage 1 shells", () => {
     expect(calls.some((call) => call.startsWith("DELETE"))).toBe(false);
 
     prompt.mockReturnValue("시험 마리아");
-    fireEvent.click(within(screen.getByRole("group", { name: "시험 마리아 관리" })).getByRole("button", { name: "삭제" }));
+    fireEvent.click(screen.getByRole("button", { name: "시험 마리아 관리" }));
+    fireEvent.click(within(screen.getByRole("menu", { name: "시험 마리아 관리" })).getByRole("menuitem", { name: "삭제" }));
     await vi.waitFor(() => expect(calls).toContain("DELETE /api/teacher/learners/learner-2"));
   });
 
@@ -454,7 +479,7 @@ describe("stage 1 shells", () => {
     });
     renderAt("/teach", true);
     fireEvent.click(await screen.findByRole("button", { name: "알렉세이 관리" }));
-    fireEvent.click(screen.getByRole("button", { name: "링크 새로 만들기" }));
+    fireEvent.click(screen.getByRole("menuitem", { name: "링크 새로 만들기" }));
     expect(await screen.findByText("다시 연 뒤에 링크를 만들 수 있어요.")).toBeInTheDocument();
   });
 });

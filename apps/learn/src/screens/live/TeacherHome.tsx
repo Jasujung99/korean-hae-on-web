@@ -1,6 +1,6 @@
 // 교사 화면: 로그인 → 학습자 관리(추가·초대 링크·재발급·폐기·기기 해제·종료·다시 열기·삭제) → 학습 관찰 목록.
 // 교사 인증과 담당 학습자 확인은 서버가 한다. 초대 링크 원문은 만들 때 한 번만 보여 준다.
-import { useCallback, useEffect, useState, type FormEvent, type ReactNode } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, type FormEvent, type KeyboardEvent, type ReactNode } from "react";
 import { Link, useLocation } from "react-router";
 import type { DictLanguage, InviteIssued, TeacherLearnerRow, TeacherView, TtsUsageView } from "../../../server/preview/contract.ts";
 import { PreviewApiError, teacherApi } from "../../preview/api";
@@ -227,6 +227,170 @@ function AddLearner({ onAdded }: { onAdded: () => void }) {
 
 const isArchived = (row: TeacherLearnerRow) => row.status === "archived";
 
+type MenuAction = { key: string; label: string; onSelect: () => void; danger?: boolean };
+
+/**
+ * 행 끝 '⋯' 관리 메뉴. 안전한 일 위, 되돌리기 어려운 일(종료·삭제)은 칸막이 아래.
+ * 표 상자(가로 스크롤)에 잘리지 않도록 메뉴는 화면 기준(fixed)으로 띄우고, 화면 안에 들어오게 자리를 잡는다.
+ */
+function ManageMenu({
+  label,
+  menuId,
+  disabled,
+  safe,
+  risky,
+}: {
+  label: string;
+  menuId: string;
+  disabled: boolean;
+  safe: MenuAction[];
+  risky: MenuAction[];
+}) {
+  const [open, setOpen] = useState(false);
+  const [place, setPlace] = useState<{ top: number; left: number } | null>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLUListElement>(null);
+
+  const close = useCallback((returnFocus: boolean) => {
+    setOpen(false);
+    setPlace(null);
+    if (returnFocus) buttonRef.current?.focus();
+  }, []);
+
+  const items = () => [...(menuRef.current?.querySelectorAll<HTMLButtonElement>('[role="menuitem"]') ?? [])];
+
+  useLayoutEffect(() => {
+    if (!open) return;
+    const button = buttonRef.current;
+    const menu = menuRef.current;
+    if (!button || !menu) return;
+    const gap = 4;
+    const edge = 8;
+    const at = button.getBoundingClientRect();
+    const width = menu.offsetWidth;
+    const height = menu.offsetHeight;
+    const viewW = document.documentElement.clientWidth || window.innerWidth;
+    const viewH = window.innerHeight;
+    // 버튼 오른쪽 끝에 맞추되 화면 밖으로 나가지 않게 한다. 아래 자리가 모자라면 위로 연다.
+    const left = Math.max(edge, Math.min(at.right - width, viewW - width - edge));
+    const below = at.bottom + gap;
+    const top = below + height > viewH - edge && at.top - gap - height >= edge ? at.top - gap - height : below;
+    setPlace({ top, left });
+  }, [open]);
+
+  // 자리를 잡고 보이게 된 뒤에 첫 항목으로 초점을 옮긴다(숨긴 채로는 초점이 가지 않는다).
+  useEffect(() => {
+    if (open && place) items()[0]?.focus({ preventScroll: true });
+  }, [open, place]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onPointer = (event: PointerEvent | MouseEvent) => {
+      const target = event.target as Node;
+      if (menuRef.current?.contains(target) || buttonRef.current?.contains(target)) return;
+      close(false);
+    };
+    const onMove = () => close(false);
+    document.addEventListener("mousedown", onPointer);
+    window.addEventListener("resize", onMove);
+    window.addEventListener("scroll", onMove, true);
+    return () => {
+      document.removeEventListener("mousedown", onPointer);
+      window.removeEventListener("resize", onMove);
+      window.removeEventListener("scroll", onMove, true);
+    };
+  }, [open, close]);
+
+  const onKeyDown = (event: KeyboardEvent<HTMLUListElement>) => {
+    const list = items();
+    const index = list.indexOf(document.activeElement as HTMLButtonElement);
+    if (event.key === "Escape") {
+      event.preventDefault();
+      close(true);
+    } else if (event.key === "ArrowDown") {
+      event.preventDefault();
+      list[(index + 1) % list.length]?.focus({ preventScroll: true });
+    } else if (event.key === "ArrowUp") {
+      event.preventDefault();
+      list[(index - 1 + list.length) % list.length]?.focus({ preventScroll: true });
+    } else if (event.key === "Home") {
+      event.preventDefault();
+      list[0]?.focus({ preventScroll: true });
+    } else if (event.key === "End") {
+      event.preventDefault();
+      list[list.length - 1]?.focus({ preventScroll: true });
+    } else if (event.key === "Tab") {
+      close(false);
+    }
+  };
+
+  const item = (action: MenuAction) => (
+    <li role="none" key={action.key}>
+      <button
+        type="button"
+        role="menuitem"
+        className={action.danger ? "acct-menu-item danger" : "acct-menu-item"}
+        disabled={disabled}
+        onClick={() => {
+          close(true);
+          action.onSelect();
+        }}
+      >
+        {action.label}
+      </button>
+    </li>
+  );
+
+  return (
+    <span className="acct-more-wrap">
+      <button
+        ref={buttonRef}
+        type="button"
+        className="acct-more"
+        aria-label={label}
+        aria-haspopup="menu"
+        aria-expanded={open}
+        aria-controls={open ? menuId : undefined}
+        onClick={() => (open ? close(false) : setOpen(true))}
+        onKeyDown={(event) => {
+          if (!open && (event.key === "ArrowDown" || event.key === "ArrowUp")) {
+            event.preventDefault();
+            setOpen(true);
+          }
+        }}
+      >
+        <svg viewBox="0 0 20 20" aria-hidden="true">
+          <circle cx="4" cy="10" r="1.7" />
+          <circle cx="10" cy="10" r="1.7" />
+          <circle cx="16" cy="10" r="1.7" />
+        </svg>
+      </button>
+      {open ? (
+        <ul
+          ref={menuRef}
+          id={menuId}
+          className="acct-menu"
+          role="menu"
+          aria-label={label}
+          onKeyDown={onKeyDown}
+          style={place ? { top: place.top, left: place.left } : { visibility: "hidden", top: 0, left: 0 }}
+        >
+          {safe.map(item)}
+          {risky.length > 0 ? (
+            <>
+              <li role="separator" className="acct-menu-divider" />
+              <li role="presentation" className="acct-menu-caption">
+                되돌리기 어려운 일
+              </li>
+              {risky.map(item)}
+            </>
+          ) : null}
+        </ul>
+      ) : null}
+    </span>
+  );
+}
+
 function RosterRow({
   row,
   onChanged,
@@ -237,10 +401,8 @@ function RosterRow({
   onIssued: (issued: InviteIssued, nickname: string) => void;
 }) {
   const [busy, setBusy] = useState(false);
-  const [open, setOpen] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const archived = isArchived(row);
-  const panelId = `acct-manage-${row.id}`;
   const run = async (work: () => Promise<unknown>) => {
     setBusy(true);
     setMessage(null);
@@ -291,6 +453,26 @@ function RosterRow({
     if (!window.confirm(`${row.nickname} 님의 ${field}을(를) ${label}(으)로 바꿀까요?`)) return;
     void run(save);
   };
+  const revokeDevices = () => {
+    if (!window.confirm(`${row.nickname} 님의 기기 연결 ${row.devices}대를 모두 끊을까요? 학습 기록은 남아요.`)) return;
+    void run(() => teacherApi.revokeDevices(row.id));
+  };
+  // 위험도 순서: 안전한 일 → (칸막이) → 종료 → 삭제
+  const safeActions: MenuAction[] = archived
+    ? [{ key: "reopen", label: "다시 열기", onSelect: () => void run(() => teacherApi.reopenLearner(row.id)) }]
+    : [
+        { key: "invite", label: status === "none" ? "초대 링크 만들기" : "링크 새로 만들기", onSelect: () => void invite() },
+        ...(status === "open"
+          ? [{ key: "revoke", label: "링크 폐기", onSelect: () => void run(() => teacherApi.revokeInvites(row.id)) }]
+          : []),
+        ...(row.devices > 0 ? [{ key: "devices", label: "기기 연결 끊기", onSelect: revokeDevices }] : []),
+      ];
+  const riskyActions: MenuAction[] = archived
+    ? [{ key: "delete", label: "삭제", onSelect: remove, danger: true }]
+    : [
+        { key: "archive", label: "종료", onSelect: archive },
+        ...(row.isTest ? [{ key: "delete", label: "삭제", onSelect: remove, danger: true }] : []),
+      ];
 
   return (
     <tr>
@@ -341,75 +523,16 @@ function RosterRow({
       <td data-label="마지막 학습">{row.summary.lastActive ? formatDay(row.summary.lastActive) : "기록 없음"}</td>
       <td className="acct-actions-cell">
         <div className="acct-actions">
-          <button
-            type="button"
-            className="tc-ul"
-            aria-expanded={open}
-            aria-controls={panelId}
-            aria-label={`${row.nickname} 관리`}
-            onClick={() => setOpen((prev) => !prev)}
-          >
-            관리
-          </button>
           <Link className="tc-ul" to={`/teach/detail?learner=${encodeURIComponent(row.id)}`}>
             기록 보기
           </Link>
-          {open ? (
-            <div className="acct-manage" id={panelId} role="group" aria-label={`${row.nickname} 관리`}>
-              {archived ? (
-                <>
-                  <button
-                    type="button"
-                    className="tc-ul"
-                    disabled={busy}
-                    onClick={() => void run(() => teacherApi.reopenLearner(row.id))}
-                  >
-                    다시 열기
-                  </button>
-                  <button type="button" className="tc-ul" disabled={busy} onClick={remove}>
-                    삭제
-                  </button>
-                </>
-              ) : (
-                <>
-                  <button type="button" className="tc-ul" disabled={busy} onClick={() => void invite()}>
-                    {status === "none" ? "초대 링크 만들기" : "링크 새로 만들기"}
-                  </button>
-                  {status === "open" ? (
-                    <button
-                      type="button"
-                      className="tc-ul"
-                      disabled={busy}
-                      onClick={() => void run(() => teacherApi.revokeInvites(row.id))}
-                    >
-                      링크 폐기
-                    </button>
-                  ) : null}
-                  {row.devices > 0 ? (
-                    <button
-                      type="button"
-                      className="tc-ul"
-                      disabled={busy}
-                      onClick={() => {
-                        if (!window.confirm(`${row.nickname} 님의 기기 연결 ${row.devices}대를 모두 끊을까요? 학습 기록은 남아요.`)) return;
-                        void run(() => teacherApi.revokeDevices(row.id));
-                      }}
-                    >
-                      기기 연결 끊기
-                    </button>
-                  ) : null}
-                  <button type="button" className="tc-ul" disabled={busy} onClick={archive}>
-                    종료
-                  </button>
-                  {row.isTest ? (
-                    <button type="button" className="tc-ul" disabled={busy} onClick={remove}>
-                      삭제
-                    </button>
-                  ) : null}
-                </>
-              )}
-            </div>
-          ) : null}
+          <ManageMenu
+            label={`${row.nickname} 관리`}
+            menuId={`acct-menu-${row.id}`}
+            disabled={busy}
+            safe={safeActions}
+            risky={riskyActions}
+          />
         </div>
         {message ? (
           <p className="acct-error" role="alert">
