@@ -11,6 +11,7 @@ import {
   snapshotWordAudioBase,
   snapshotWordCardId,
   snapshotWords,
+  wordIdPrefix,
   type ContentSnapshot,
   type SnapshotWord,
 } from "./snapshot.ts";
@@ -235,14 +236,32 @@ export type WordCard = {
   /** Stage 안 출제 순서: 1 기준점 잡기, 2 음절 틀 넓히기, 3 실전 어휘 일반화 */
   step: InStageStep;
   contrast: Contrast | null;
+  /** 같은 단어가 다른 자음 묶음에도 있을 때 그 묶음의 예문(묶음마다 예문 음원이 따로 있다) */
+  moreExamples: MoreExample[];
 };
+
+export type MoreExample = { groupId: SnapshotWord["groupId"]; text: string; audioId: string };
+
+/** 다른 묶음에 있는 같은 단어(사전 번호·글자가 같음)의 예문. 이 카드의 예문과 글자가 같은 것은 뺀다. */
+export function moreExamplesFor(word: SnapshotWord, snapshot: ContentSnapshot): MoreExample[] {
+  const key = `${wordIdPrefix(word)}|${word.word}`;
+  const seen = new Set([word.example.trim()]);
+  const out: MoreExample[] = [];
+  for (const other of snapshot.items) {
+    if (other.groupId === word.groupId || !other.example.trim()) continue;
+    if (`${wordIdPrefix(other)}|${other.word}` !== key || seen.has(other.example.trim())) continue;
+    seen.add(other.example.trim());
+    out.push({ groupId: other.groupId, text: other.example, audioId: snapshotSentenceAudioBase(other) });
+  }
+  return out;
+}
 
 /**
  * 사전·예문 화면의 Stage 1 생활 어휘(Core 60 배치표의 1-A 11개 + 1-B 11개).
  * 뜻·예문은 PR #5 초안이며 검수 전이다. 예문이 없는 단어는 비워 둔다.
  * 음원 id는 목소리 접미사가 없는 기본 id다. 서버가 고른 목소리 파일로 바꾼다.
  */
-function toCard(word: SnapshotWord): WordCard {
+function toCard(word: SnapshotWord, snapshot: ContentSnapshot): WordCard {
   const consonant = (isConsonant(word.consonant) ? word.consonant : "ㅈ") as Consonant;
   const contrast = contrastOf(PRACTICE_GROUP_ID, word.word, consonant, word.stage);
   return {
@@ -264,6 +283,7 @@ function toCard(word: SnapshotWord): WordCard {
     tableId: word.legacyId ?? word.id,
     step: inStageStep(contrast?.tier ?? null),
     contrast,
+    moreExamples: moreExamplesFor(word, snapshot),
   };
 }
 
@@ -271,7 +291,7 @@ function toCard(word: SnapshotWord): WordCard {
 export function stageWordPlan(stage: SnapshotWord["stage"], snapshot: ContentSnapshot = snapshotFromReferenceJson()): WordCard[] {
   const cards = snapshotWords(snapshot, PRACTICE_GROUP_ID)
     .filter((word) => word.stage === stage)
-    .map(toCard);
+    .map((word) => toCard(word, snapshot));
   const blocks = [...new Set(cards.map((card) => card.substage))];
   return blocks.flatMap((block) =>
     orderInStage(

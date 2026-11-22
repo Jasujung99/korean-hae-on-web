@@ -135,6 +135,20 @@ export function CanvasWords() {
       ) : (
         <p className="c-body">예문이 아직 없는 단어예요.</p>
       )}
+      {word.moreExamples.map((more, index) => (
+        <div key={`${more.groupLabel}-${index}`} className="c-example">
+          <p className="c-label">다른 예문 · {more.groupLabel} 연습</p>
+          <p className="c-key">{more.text}</p>
+          <button
+            type="button"
+            className="c-link"
+            onClick={() => void practice.playRole(more.audioRef, "example_more", more.text)}
+            disabled={busy || !more.audioRef}
+          >
+            {more.audioRef ? "이 예문 듣기" : "예문 음원 준비 중"}
+          </button>
+        </div>
+      ))}
       {word.related ? (
         <p className="c-body">
           <span className="c-label">함께 쓰는 표현 </span>

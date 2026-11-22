@@ -3,6 +3,7 @@
 import { randomUUID } from "node:crypto";
 import { Hono, type Context } from "hono";
 import { COURSE_ORDER_NOTE, COURSE_SOURCE, courseGroups, roadmapPriority } from "../../content/course.ts";
+import { GROUP_LABELS } from "../../content/course-order.ts";
 import {
   CONSONANTS,
   PRACTICE_GROUP_ID,
@@ -530,6 +531,11 @@ export function createPracticeRoutes(deps: {
         return { ...partner, audioRef: card ? s.refOf(card.wordAudioId, card.legacyWordAudioId) : null };
       }),
       dict: wordDictView(word.tableId, dictReview),
+      moreExamples: word.moreExamples.map((more) => ({
+        groupLabel: GROUP_LABELS[more.groupId],
+        text: more.text,
+        audioRef: s.exampleRefOf(more.audioId),
+      })),
     }));
     return c.json({ words });
   });

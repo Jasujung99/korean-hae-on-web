@@ -85,7 +85,7 @@ export function makeDoneCheck(input: {
 }
 
 /** 묶음 계획에 쓰는 낱말(묶음과 상관없이 같은 모양) */
-type PlanWord = { id: string; entryId: number | null; word: string; example: string };
+type PlanWord = { id: string; entryId: number | null; word: string; example: string; groupId: GroupId };
 
 function sourceFor(
   groupId: string,

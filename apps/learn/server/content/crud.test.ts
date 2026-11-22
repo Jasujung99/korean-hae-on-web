@@ -197,7 +197,7 @@ describe("content CRUD, versioning, hiding, and stale tracking (stage 3)", () =>
     const gkkGajok = gkkView.stages.flatMap((s) => s.items).find((item) => item.word === "가족");
     expect(gkkGajok?.wordAudio.erinome?.state).toBe("approved");
     expect(snapshotWordAudioBase(gkkGajok!)).toBe("word-65-가족");
-    expect(snapshotSentenceAudioBase(gkkGajok!)).toBe("sentence-65-가족");
+    expect(snapshotSentenceAudioBase({ ...gkkGajok!, groupId: "g_k_kk" })).toBe("sentence-65-가족-g_k_kk");
 
     // 숨기기는 영구 삭제가 아니라 status='hidden' 처리한다.
     const hideRes = await kit.sendJson(kit.teacher, "POST", `/api/teacher/content/items/${moja!.id}/hide`, { reason: "보류" });

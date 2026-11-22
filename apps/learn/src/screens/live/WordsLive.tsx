@@ -140,6 +140,21 @@ export function WordsLive() {
         ) : (
           <p className="notice">주어진 예문이 아직 없는 단어예요. 예문은 검수된 자료가 들어오면 붙여요.</p>
         )}
+        {word.moreExamples.map((more, index) => (
+          <div key={`${more.groupLabel}-${index}`} className="stack">
+            <div className="example">
+              <span className="small">다른 예문 · {more.groupLabel} 연습</span>
+              <p>{more.text}</p>
+            </div>
+            <button
+              type="button"
+              onClick={() => void practice.playRole(more.audioRef, "example_more", more.text)}
+              disabled={busy || !more.audioRef}
+            >
+              {more.audioRef ? "이 예문 듣기" : "이 예문 듣기 · 음원 준비 중"}
+            </button>
+          </div>
+        ))}
         {word.related ? (
           <div>
             <h3>함께 쓰는 표현</h3>

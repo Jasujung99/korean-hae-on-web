@@ -70,6 +70,7 @@ const previewWord: WordView = {
   contrastTier: null,
   partners: [],
   dict: null,
+  moreExamples: [],
 };
 
 const previewDetail: LearnerDetail = {

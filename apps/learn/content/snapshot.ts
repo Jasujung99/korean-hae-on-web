@@ -98,8 +98,14 @@ export function snapshotWordAudioBase(word: Pick<SnapshotWord, "id" | "entryId" 
   return `word-${wordIdPrefix(word)}-${word.word}`;
 }
 
-export function snapshotSentenceAudioBase(word: Pick<SnapshotWord, "id" | "entryId" | "word">): string {
-  return `sentence-${wordIdPrefix(word)}-${word.word}`;
+/**
+ * 예문 음원 id. 같은 단어가 두 묶음에 들어 있으면 묶음마다 예문이 다르므로(예: 사진 — ㅈ·ㅊ·ㅉ와 ㅅ·ㅆ),
+ * 예문 음원은 묶음별로 따로 둔다. ㅈ·ㅊ·ㅉ는 이미 R2·DB에 올라간 id를 그대로 쓰고,
+ * 나머지 묶음은 끝에 묶음 id를 붙인다(예: sentence-2615-사진-s_ss). 단어 음원은 글자가 같으므로 함께 쓴다.
+ */
+export function snapshotSentenceAudioBase(word: Pick<SnapshotWord, "id" | "entryId" | "word" | "groupId">): string {
+  const base = `sentence-${wordIdPrefix(word)}-${word.word}`;
+  return word.groupId === "j_ch_jj" ? base : `${base}-${word.groupId}`;
 }
 
 export function snapshotWordCardId(word: Pick<SnapshotWord, "id" | "entryId">): string {

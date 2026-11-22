@@ -98,7 +98,7 @@ export function summarizeGroupAudio(
 }
 
 export function buildUploadAssetInputs(input: {
-  items: readonly Pick<ContentItemRow, "id" | "entryId" | "word" | "example">[];
+  items: readonly Pick<ContentItemRow, "id" | "entryId" | "word" | "example" | "groupId">[];
   entries: readonly UploadCandidateEntry[];
   approve: boolean;
   nowIso: string;

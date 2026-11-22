@@ -3,7 +3,7 @@
 import { audioUrl } from "./api";
 import { track } from "./telemetry";
 
-export type PlayRole = "listen" | "stimulus" | "answer" | "chosen" | "abx_a" | "abx_b" | "abx_x" | "word" | "example" | "voice";
+export type PlayRole = "listen" | "stimulus" | "answer" | "chosen" | "abx_a" | "abx_b" | "abx_x" | "word" | "example" | "example_more" | "voice";
 
 export type PlayOutcome = { ok: boolean; completed: boolean; playedMs: number; reason: string | null };
 
