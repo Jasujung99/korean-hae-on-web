@@ -283,16 +283,14 @@ function InlineEditPanel({
   onSaved: () => void;
   onCancel: () => void;
 }) {
-  const proposal = item.proposal ?? null;
-  const pf = proposal?.fields;
   const [word, setWord] = useState(item.word);
   const [consonant, setConsonant] = useState(item.consonant);
-  const [pos, setPos] = useState(pf?.pos !== undefined ? pf.pos : item.pos);
-  const [gloss, setGloss] = useState(pf?.gloss !== undefined ? pf.gloss : item.gloss);
-  const [scene, setScene] = useState(pf?.scene !== undefined ? pf.scene : item.scene);
-  const [example, setExample] = useState(pf?.example !== undefined ? pf.example : item.example);
-  const [related, setRelated] = useState(pf?.related !== undefined ? pf.related : item.related);
-  const [note, setNote] = useState(pf?.note !== undefined ? pf.note : item.note);
+  const [pos, setPos] = useState(item.pos);
+  const [gloss, setGloss] = useState(item.gloss);
+  const [scene, setScene] = useState(item.scene);
+  const [example, setExample] = useState(item.example);
+  const [related, setRelated] = useState(item.related);
+  const [note, setNote] = useState(item.note);
   const [reason, setReason] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
@@ -320,48 +318,6 @@ function InlineEditPanel({
       onSaved();
     } catch {
       setError("저장하지 못했어요. 다시 시도해 주세요.");
-    } finally {
-      setBusy(false);
-    }
-  };
-
-  const applyProposal = async () => {
-    if (!proposal) return;
-    if (!word.trim()) {
-      setError("단어를 비울 수 없어요.");
-      return;
-    }
-    setBusy(true);
-    setError(null);
-    try {
-      await teacherApi.applyContentProposal(proposal.id, {
-        ...(word.trim() !== item.word ? { word: word.trim() } : {}),
-        ...(consonant !== item.consonant ? { consonant } : {}),
-        pos: pos.trim(),
-        gloss: gloss.trim(),
-        scene: scene.trim(),
-        example: example.trim(),
-        related: related.trim(),
-        note: note.trim(),
-        ...(reason.trim() ? { reason: reason.trim() } : {}),
-      });
-      onSaved();
-    } catch {
-      setError("제안을 적용하지 못했어요. 다시 시도해 주세요.");
-    } finally {
-      setBusy(false);
-    }
-  };
-
-  const dismissProposal = async () => {
-    if (!proposal) return;
-    setBusy(true);
-    setError(null);
-    try {
-      await teacherApi.dismissContentProposal(proposal.id);
-      onSaved();
-    } catch {
-      setError("제안을 버리지 못했어요. 다시 시도해 주세요.");
     } finally {
       setBusy(false);
     }
@@ -398,23 +354,6 @@ function InlineEditPanel({
     <tr className="co-edit-row">
       <td colSpan={4}>
         <form className="co-edit-form" onSubmit={(event) => void submit(event)} noValidate aria-label={`${item.word} 편집`}>
-          {proposal ? (
-            <div className="co-proposal-guide" role="note" aria-label="AI 제안 안내">
-              <div className="co-proposal-guide-head">
-                <span className="tc-pill co-ai-pill">
-                  {proposal.kind === "cleanup" ? "AI 제안 · 출제 위치 정리" : "AI 제안"}
-                </span>
-                {proposal.sense ? <span>{proposal.sense}</span> : null}
-              </div>
-              {proposal.flags.length > 0 ? (
-                <ul className="co-proposal-flags">
-                  {proposal.flags.map((flag, idx) => (
-                    <li key={idx}>확인 필요: {flag}</li>
-                  ))}
-                </ul>
-              ) : null}
-            </div>
-          ) : null}
           <div className="co-edit-grid">
             <label className="acct-field">
               <span>단어</span>
@@ -474,16 +413,6 @@ function InlineEditPanel({
             </p>
           ) : null}
           <div className="co-edit-actions">
-            {proposal ? (
-              <>
-                <button type="button" className="co-apply-btn" disabled={busy} onClick={() => void applyProposal()}>
-                  {busy ? "적용하는 중…" : "적용"}
-                </button>
-                <button type="button" className="tc-ul" disabled={busy} onClick={() => void dismissProposal()}>
-                  버리기
-                </button>
-              </>
-            ) : null}
             <button type="submit" disabled={busy}>
               {busy ? "저장하는 중…" : "저장"}
             </button>
@@ -776,7 +705,6 @@ function ContentRow({
               <span>{item.consonant}</span>
               {item.pos ? <span>· {item.pos}</span> : null}
               {item.status === "draft" ? <span className="tc-pill">초안</span> : null}
-              {item.proposal ? <span className="tc-pill co-ai-pill">AI 제안</span> : null}
               {!readOnly ? (
                 <button
                   type="button"
@@ -794,23 +722,11 @@ function ContentRow({
         <td data-label="뜻" className="co-gloss-cell">
           {item.gloss ? (
             <p>{item.gloss}</p>
-          ) : item.proposal?.fields.gloss ? (
-            <p className="co-proposal-preview">
-              <span className="tc-pill co-ai-pill">AI 제안</span> {item.proposal.fields.gloss}
-            </p>
           ) : (
             <p className="tc-none">뜻 없음</p>
           )}
-          {item.proposal?.kind === "cleanup" && item.proposal.fields.gloss ? (
-            <p className="co-proposal-preview">
-              <span className="tc-pill co-ai-pill">정리 제안</span> {item.proposal.fields.gloss}
-              {item.proposal.fields.note ? ` · 메모: ${item.proposal.fields.note}` : ""}
-            </p>
-          ) : null}
           {item.scene ? (
             <small className="co-sub">{item.scene}</small>
-          ) : item.proposal?.fields.scene ? (
-            <small className="co-sub co-proposal-sub">{item.proposal.fields.scene}</small>
           ) : null}
         </td>
         <td data-label="예문" className="co-example-cell">
@@ -862,21 +778,6 @@ function ContentRow({
                     : "PC에서 생성"}
                 </span>
               </div>
-            </div>
-          ) : item.proposal?.fields.example ? (
-            <div className="co-proposal-example">
-              <p className="co-proposal-preview">
-                <span className="tc-pill co-ai-pill">AI 제안</span> {item.proposal.fields.example}
-              </p>
-              {!readOnly ? (
-                <button
-                  type="button"
-                  className="tc-ul co-inline-link"
-                  onClick={() => onStartEdit("example")}
-                >
-                  검토·적용
-                </button>
-              ) : null}
             </div>
           ) : (
             <p className="tc-none">
@@ -1281,7 +1182,6 @@ export function ContentOpsScreen() {
   const [generatingKey, setGeneratingKey] = useState<string | null>(null);
   const [genError, setGenError] = useState<{ itemId: string; message: string } | null>(null);
   const [reviewBusyId, setReviewBusyId] = useState<string | null>(null);
-  const [proposalOnly, setProposalOnly] = useState(false);
 
   const load = useCallback(() => {
     setFailed(false);
@@ -1377,26 +1277,7 @@ export function ContentOpsScreen() {
 
   const busy = practice.playing !== null;
   const existingWords = new Set(view?.stages.flatMap((s) => s.items.map((item) => item.word)) ?? []);
-  const currentGroupProposalCount =
-    view?.stages.reduce((sum, s) => sum + s.items.filter((item) => Boolean(item.proposal)).length, 0) ?? 0;
-  const totalProposals = view?.totalProposalCount ?? currentGroupProposalCount;
-  const displayedStages = (() => {
-    if (!view) return [];
-    if (!proposalOnly) return view.stages;
-    return view.stages
-      .map((s) => {
-        const filtered = s.items.filter((item) => Boolean(item.proposal));
-        return {
-          ...s,
-          items: filtered,
-          totalCount: filtered.length,
-          approvedCount: filtered.filter((item) => item.status === "approved").length,
-          draftCount: filtered.filter((item) => item.status === "draft").length,
-        };
-      })
-      .filter((s) => s.items.length > 0);
-  })();
-
+  const displayedStages = view?.stages ?? [];
   return (
     <div className="tc-page co-page">
       <ScreenTitle title="콘텐츠 운영" />
@@ -1434,34 +1315,12 @@ export function ContentOpsScreen() {
                 >
                   <span>{row.label}</span>{" "}
                   <strong>{row.count}</strong>
-                  {(row.proposalCount ?? 0) > 0 ? (
-                    <span className="tc-pill co-ai-pill">제안 {row.proposalCount}</span>
-                  ) : null}
                 </button>
               ))}
             </div>
-            {totalProposals > 0 || proposalOnly ? (
-              <div className="co-proposal-toolbar">
-                <span className="co-proposal-count">AI 제안 {totalProposals}</span>
-                <button
-                  type="button"
-                  className="co-filter-toggle"
-                  aria-pressed={proposalOnly}
-                  onClick={() => setProposalOnly((prev) => !prev)}
-                >
-                  제안만 보기
-                </button>
-              </div>
-            ) : null}
           </div>
 
-          {!proposalOnly ? <StageZeroTable rows={view.stage0} busy={busy} onPlay={playUrl} /> : null}
-
-          {proposalOnly && displayedStages.length === 0 ? (
-            <section className="panel stack">
-              <p>이 묶음에는 대기 중인 AI 제안이 없어요.</p>
-            </section>
-          ) : null}
+          <StageZeroTable rows={view.stage0} busy={busy} onPlay={playUrl} />
 
           {displayedStages.map((stage) => (
             <StageAccordion
@@ -1470,7 +1329,7 @@ export function ContentOpsScreen() {
               choices={view.group.choices}
               existingWords={existingWords}
               stage={stage}
-              open={proposalOnly || expandedSet.has(stage.key)}
+              open={expandedSet.has(stage.key)}
               busy={busy}
               readOnly={!view.writable}
               ttsReady={view.ttsReady}
