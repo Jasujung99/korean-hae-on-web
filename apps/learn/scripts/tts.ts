@@ -237,8 +237,8 @@ async function runAll(
 
 async function main() {
   const command = process.argv[2];
-  if (!["audition", "auditions", "generate", "batch", "practice", "pseudo-groups"].includes(command ?? "")) {
-    fail("Use audition, auditions, generate, batch, practice, or pseudo-groups.");
+  if (!["audition", "auditions", "generate", "batch", "practice", "pseudo-groups", "single"].includes(command ?? "")) {
+    fail("Use audition, auditions, generate, batch, practice, pseudo-groups, or single.");
   }
   if (command === "pseudo-groups" && process.argv.includes("--dry-run")) {
     // 키 없이도 무엇을 만들지 보여 준다.
@@ -251,6 +251,30 @@ async function main() {
   // 의사단어·단어는 평평한 낭독, 예문은 지시 없이 자연스럽게. --no-style이면 모두 지시 없이 만든다.
   const unitStyle = (kind: string) => (process.argv.includes("--no-style") ? null : styleForKind(kind));
   const skipExisting = !process.argv.includes("--force");
+
+  if (command === "single") {
+    // 비교용: 소리 하나를 한 요청으로 따로 만든다(평평 낭독). 앱이 쓰는 파일은 바꾸지 않고 `<id>--single-<시각>`으로만 남긴다.
+    // 예) npm run tts:single -- --texts 주,추 --voices erinome,sulafat,charon
+    const texts = (argValue("--texts") ?? "").split(",").map((item) => item.trim()).filter(Boolean);
+    if (texts.length === 0) fail("single requires --texts 주,추");
+    const keys = (argValue("--voices") ?? PRACTICE_VOICES.map((row) => row.key).join(",")).split(",").map((item) => item.trim().toLowerCase());
+    const voices = keys.flatMap((key) => PRACTICE_VOICES.filter((row) => row.key === key));
+    if (voices.length === 0) fail("single --voices accepts charon, erinome, sulafat.");
+    const stamp = new Date().toISOString().replace(/[:.]/g, "").slice(0, 15);
+    const jobs = texts.flatMap((text) =>
+      voices.map((row) => ({
+        id: `${voicedAudioId(syllableAudioBase(text), row.key)}--single-${stamp}`,
+        kind: "pseudoword",
+        text,
+        voice: row.voice,
+        style: unitStyle("pseudoword"),
+      })),
+    );
+    console.log(`single: ${jobs.length} requests`);
+    if (process.argv.includes("--dry-run")) return;
+    await runAll(jobs, apiKey, false);
+    return;
+  }
 
   if (command === "audition") {
     const text = argValue("--text") ?? AUDITION_TEXT;
