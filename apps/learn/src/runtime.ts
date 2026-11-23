@@ -71,12 +71,3 @@ export function useLearnRuntime(): LearnRuntime {
 
   return runtime;
 }
-
-export function originStatus(runtime: LearnRuntime): string {
-  if (!runtime.ready || runtime.api === "pending") return "앱 주소 설정을 확인하는 중입니다.";
-  if (runtime.api === "unavailable") {
-    return "상태 API에 닿지 못했습니다. 화면은 그대로 둘 수 있고, DNS와 배포는 바꾸지 않습니다.";
-  }
-  if (!runtime.origin) return "앱 주소 설정 없음. DNS와 배포는 바꾸지 않습니다.";
-  return `설정된 주소 ${runtime.origin}. 이 값은 DNS와 배포를 바꾸지 않습니다.`;
-}

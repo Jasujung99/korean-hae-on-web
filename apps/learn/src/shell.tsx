@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { Link, useLocation } from "react-router";
 import { BrandMark } from "./brand";
 import { useLearner } from "./preview/settings";
-import { originStatus, type LearnRuntime } from "./runtime";
+import type { LearnRuntime } from "./runtime";
 
 function LearnerNav({ place, live }: { place: "head" | "bottom"; live: boolean }) {
   const location = useLocation();
@@ -87,7 +87,6 @@ export function Shell({ runtime, children }: { runtime: LearnRuntime; children: 
         <footer className="app-footer">
           <span lang="en">At ease. As yourself.</span>
           <span lang="en">haeon · Your voice, in Korean.</span>
-          <p className="origin-line">{originStatus(runtime)}</p>
         </footer>
       </div>
     </div>
