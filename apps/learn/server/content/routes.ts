@@ -453,8 +453,30 @@ function buildDbContentView(
           }
           const turnsAsset = pickWinningAsset(byAudioId.get(turnsAudioId(voicedAudioId(slot.audioBase, voice.key))) ?? []);
           turns[voice.key] = turnsAsset
-            ? { ready: true, playUrl: assetPlayUrl(turnsAsset), assetId: turnsAsset.id, durationMs: turnsAsset.durationMs }
+            ? {
+                ready: true,
+                state: turnsAsset.stale ? "stale" : turnsAsset.status === "draft" ? "draft" : "approved",
+                playUrl: assetPlayUrl(turnsAsset),
+                assetId: turnsAsset.id,
+                durationMs: turnsAsset.durationMs,
+              }
             : { ready: false, playUrl: null, assetId: null, durationMs: null };
+          if (turnsAsset?.status === "draft" && !seenDraftAssets.has(turnsAsset.id)) {
+            seenDraftAssets.add(turnsAsset.id);
+            draftAudios.push({
+              assetId: turnsAsset.id,
+              audioId: turnsAsset.audioId,
+              itemId: item.id,
+              word: item.word,
+              kind: "sentence_turns",
+              exampleIndex: slot.index,
+              voiceKey: voice.key,
+              voiceLabel: voiceLabelFromKey(voice.key),
+              durationMs: turnsAsset.durationMs,
+              generatedAt: turnsAsset.generatedAt ?? turnsAsset.createdAt,
+              playUrl: assetPlayUrl(turnsAsset),
+            });
+          }
         }
         return { index: slot.index, text: slot.text, audio, turnsAudio: turns };
       });
@@ -984,19 +1006,21 @@ export function createContentRoutes(deps: ContentRoutesDeps) {
     const body = await readBody(c);
     if (!body) return c.json({ error: "invalid_body" }, 400);
     const kind = body.kind;
-    if (kind !== "word" && kind !== "sentence") return c.json({ error: "invalid_kind" }, 400);
+    if (kind !== "word" && kind !== "sentence" && kind !== "sentence_turns") return c.json({ error: "invalid_kind" }, 400);
     if (!isPracticeVoiceKey(body.voice)) return c.json({ error: "invalid_voice" }, 400);
     const voice = body.voice;
 
     // 예문은 몇 번 예문인지(1~5, 기본 1)를 받는다.
-    const exampleIndex = kind === "sentence" ? Number(body.exampleIndex ?? 1) : 1;
-    const slot = kind === "sentence" ? (exampleSlots(item).find((row) => row.index === exampleIndex) ?? null) : null;
+    // 또박또박(sentence_turns)도 예문 칸 하나를 읽는다.
+    const isExample = kind !== "word";
+    const exampleIndex = isExample ? Number(body.exampleIndex ?? 1) : 1;
+    const slot = isExample ? (exampleSlots(item).find((row) => row.index === exampleIndex) ?? null) : null;
     const text = (kind === "word" ? item.word : (slot?.text ?? "")).trim();
     if (!text) {
       return c.json(
         {
-          error: kind === "sentence" ? "example_required" : "empty_text",
-          message: kind === "sentence" ? "예문을 먼저 써 주세요." : "단어를 먼저 써 주세요.",
+          error: isExample ? "example_required" : "empty_text",
+          message: isExample ? "예문을 먼저 써 주세요." : "단어를 먼저 써 주세요.",
         },
         400,
       );
@@ -1046,7 +1070,7 @@ export function createContentRoutes(deps: ContentRoutesDeps) {
     }
 
     const base = kind === "word" || !slot ? snapshotWordAudioBase(item) : slot.audioBase;
-    const audioId = voicedAudioId(base, voice);
+    const audioId = kind === "sentence_turns" ? turnsAudioId(voicedAudioId(base, voice)) : voicedAudioId(base, voice);
     const draftKeyId = crypto.randomUUID();
     const generatedAt = deps.now().toISOString();
     const stored = await deps.audioStore.putDraft(audioId, draftKeyId, result.bytes, {

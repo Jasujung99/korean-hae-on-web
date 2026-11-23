@@ -65,6 +65,8 @@ export function buildGenerateContentBody(text: string, voice = VOICE_CANDIDATE):
  * 문서 권고대로 짧고 늘 같은 문자열을 쓰며, 음색을 고정하라는 지시는 넣지 않는다.
  */
 export const FLAT_READING_STYLE = "neutral, monotone and flat, read aloud slowly and clearly";
+/** 예문 '또박또박' 판을 화면에서 한 문장씩 만들 때 붙이는 지시(2026-11-23 사용자 선택, 비교 시험의 지시 A). */
+export const TURNS_READING_STYLE = "clear and deliberate, at a steady measured pace, each phrase cleanly separated, natural intonation";
 
 /**
  * 음원 종류별 톤 지시(2026-11-17 사용자 결정).

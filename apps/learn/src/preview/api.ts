@@ -200,7 +200,10 @@ export const teacherApi = {
       `/api/teacher/content/proposals/${encodeURIComponent(id)}/dismiss`,
       {},
     ),
-  generateContentAudio: (itemId: string, body: { kind: "word" | "sentence"; voice: string; exampleIndex?: number }) =>
+  generateContentAudio: (
+    itemId: string,
+    body: { kind: "word" | "sentence" | "sentence_turns"; voice: string; exampleIndex?: number },
+  ) =>
     postJson<{
       asset: { id: string; audioId: string; status: string; durationMs: number | null; playUrl: string };
       usage: TtsUsageView;

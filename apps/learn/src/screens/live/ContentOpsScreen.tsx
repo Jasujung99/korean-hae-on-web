@@ -49,7 +49,7 @@ const FIELD_LABEL: Record<string, string> = {
 type ConfirmGen = {
   itemId: string;
   word: string;
-  kind: "word" | "sentence";
+  kind: "word" | "sentence" | "sentence_turns";
   /** 예문이면 몇 번 예문인지(1~5) */
   exampleIndex?: number;
   voiceKey: string;
@@ -732,6 +732,10 @@ function ContentRow({
 }) {
   const wordGeneratingVoice =
     generatingKey && generatingKey.startsWith(`${item.id}:word:`) ? generatingKey.slice(`${item.id}:word:`.length) : null;
+  const generatingTurnsVoice = (exampleIndex: number) => {
+    const prefix = `${item.id}:turns${exampleIndex}:`;
+    return generatingKey && generatingKey.startsWith(prefix) ? generatingKey.slice(prefix.length) : null;
+  };
   const generatingVoiceFor = (exampleIndex: number) => {
     const prefix = exampleIndex > 1 ? `${item.id}:sentence${exampleIndex}:` : `${item.id}:sentence:`;
     return generatingKey && generatingKey.startsWith(prefix) ? generatingKey.slice(prefix.length) : null;
@@ -826,23 +830,51 @@ function ContentRow({
                       ) : null}
                       <span className="co-turns-note">
                         또박또박:{" "}
-                        {ready
-                          ? CONTENT_VOICES.filter((voice) => row.turnsAudio?.[voice.key]?.ready).map((voice) => {
+                        {!ready && (readOnly || !ttsReady)
+                          ? "아직 없음"
+                          : CONTENT_VOICES.map((voice) => {
                               const turns = row.turnsAudio?.[voice.key];
-                              return turns?.playUrl ? (
+                              const playable = Boolean(turns?.ready && turns.playUrl && turns.state !== "stale");
+                              if (playable) {
+                                return (
+                                  <button
+                                    key={voice.key}
+                                    type="button"
+                                    className={`co-turns-play${turns?.state === "draft" ? " is-draft" : ""}`}
+                                    disabled={busy}
+                                    aria-label={`${voice.voice} ${item.word} 예문 ${row.index} 또박또박${turns?.state === "draft" ? " 초안" : ""} 재생`}
+                                    onClick={() => onPlay(turns?.playUrl as string, `${voice.voice} 또박또박`)}
+                                  >
+                                    {voice.short}
+                                  </button>
+                                );
+                              }
+                              if (readOnly || !ttsReady) return null;
+                              const making = generatingTurnsVoice(row.index) === voice.key;
+                              return (
                                 <button
                                   key={voice.key}
                                   type="button"
-                                  className="co-turns-play"
-                                  disabled={busy}
-                                  aria-label={`${voice.voice} ${item.word} 예문 ${row.index} 또박또박 재생`}
-                                  onClick={() => onPlay(turns.playUrl as string, `${voice.voice} 또박또박`)}
+                                  className="co-turns-play is-missing"
+                                  disabled={Boolean(generatingKey)}
+                                  aria-label={`${voice.voice} ${item.word} 예문 ${row.index} 또박또박 만들기`}
+                                  onClick={() =>
+                                    onRequestGenerate({
+                                      itemId: item.id,
+                                      word: item.word,
+                                      kind: "sentence_turns",
+                                      exampleIndex: row.index,
+                                      voiceKey: voice.key,
+                                      voiceName: voice.voice,
+                                      stalePlayUrl: turns?.state === "stale" ? turns.playUrl : null,
+                                      origin: "cell",
+                                    })
+                                  }
                                 >
-                                  {voice.short}
+                                  {making ? "…" : `${voice.short}+`}
                                 </button>
-                              ) : null;
-                            })
-                          : "PC에서 생성"}
+                              );
+                            })}
                       </span>
                     </div>
                   </div>
@@ -901,7 +933,8 @@ function ContentRow({
             {showCellConfirm ? (
               <div className="co-gen-confirm" role="region" aria-label={`${confirmGen.word} ${confirmGen.voiceName} 음성 생성 확인`}>
                 <span>
-                  {confirmGen.voiceName} · {confirmGen.kind === "word" ? "단어" : "예문"} · <strong>1건 사용</strong>
+                  {confirmGen.voiceName} · {confirmGen.kind === "word" ? "단어" : confirmGen.kind === "sentence_turns" ? "예문 또박또박" : "예문"} ·{" "}
+                  <strong>1건 사용</strong>
                 </span>
                 <button
                   type="button"
@@ -983,9 +1016,12 @@ function DraftReviewList({
             confirmGen?.origin === "draft" && confirmGen.draftAssetId === row.assetId;
           const isGenerating =
             Boolean(row.itemId && generatingKey === `${row.itemId}:${row.kind}:${row.voiceKey}`);
-          const kindSuffix = row.kind === "sentence" ? " 예문" : "";
+          const kindSuffix = row.kind === "sentence" ? " 예문" : row.kind === "sentence_turns" ? " 예문 또박또박" : "";
           const canRegen =
-            !readOnly && ttsReady && Boolean(row.itemId) && (row.kind === "word" || row.kind === "sentence");
+            !readOnly &&
+            ttsReady &&
+            Boolean(row.itemId) &&
+            (row.kind === "word" || row.kind === "sentence" || row.kind === "sentence_turns");
 
           return (
             <li key={row.assetId} className="co-draft-item">
@@ -1016,7 +1052,8 @@ function DraftReviewList({
                         onRequestRegenerate({
                           itemId: row.itemId as string,
                           word: row.word,
-                          kind: row.kind as "word" | "sentence",
+                          kind: row.kind as "word" | "sentence" | "sentence_turns",
+                          ...(row.exampleIndex ? { exampleIndex: row.exampleIndex } : {}),
                           voiceKey: row.voiceKey,
                           voiceName: row.voiceLabel,
                           stalePlayUrl: null,
@@ -1310,16 +1347,18 @@ export function ContentOpsScreen() {
 
   const confirmGenerate = async (target: ConfirmGen) => {
     const key =
-      target.kind === "sentence" && (target.exampleIndex ?? 1) > 1
-        ? `${target.itemId}:sentence${target.exampleIndex}:${target.voiceKey}`
-        : `${target.itemId}:${target.kind}:${target.voiceKey}`;
+      target.kind === "sentence_turns"
+        ? `${target.itemId}:turns${target.exampleIndex ?? 1}:${target.voiceKey}`
+        : target.kind === "sentence" && (target.exampleIndex ?? 1) > 1
+          ? `${target.itemId}:sentence${target.exampleIndex}:${target.voiceKey}`
+          : `${target.itemId}:${target.kind}:${target.voiceKey}`;
     setGeneratingKey(key);
     setGenError(null);
     try {
       await teacherApi.generateContentAudio(target.itemId, {
         kind: target.kind,
         voice: target.voiceKey,
-        ...(target.kind === "sentence" ? { exampleIndex: target.exampleIndex ?? 1 } : {}),
+        ...(target.kind !== "word" ? { exampleIndex: target.exampleIndex ?? 1 } : {}),
       });
       setConfirmGen(null);
       load();

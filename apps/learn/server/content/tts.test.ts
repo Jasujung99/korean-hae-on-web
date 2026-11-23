@@ -3,7 +3,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { groupContents } from "../../content/tts/batch-plan.ts";
-import { FLASH_TTS_MODEL, FLAT_READING_STYLE, pcmToWav } from "../../content/tts/pipeline.ts";
+import { FLASH_TTS_MODEL, FLAT_READING_STYLE, TURNS_READING_STYLE, pcmToWav } from "../../content/tts/pipeline.ts";
 import { DAILY_TTS_LIMIT, ttsQuotaDay } from "../../content/tts/quota.ts";
 import { createLearnApp } from "../app.ts";
 import { memoryTeacherAuth } from "../accounts/auth.ts";
@@ -225,6 +225,42 @@ describe("inline single-item TTS generation, preview, draft review, and quota (s
 
     const finalView = (await (await kit.teacher.request("/api/teacher/content?group=j_ch_jj")).json()) as TeacherContentView;
     expect(finalView.release.staleAudioCount).toBe(0);
+  });
+
+  it("makes the turns (또박또박) example one sentence at a time with the chosen style and lists it for review", async () => {
+    const sample = fakeWavBase64();
+    const bodies: unknown[] = [];
+    const kit = await createTtsTestKit({
+      fetcher: async (_url, init) => {
+        bodies.push(JSON.parse(String(init?.body)));
+        return interactionWavResponse(sample.base64);
+      },
+    });
+    const view = (await (await kit.teacher.request("/api/teacher/content?group=j_ch_jj")).json()) as TeacherContentView;
+    const moja = view.stages[0]!.items.find((row) => row.word === "모자")!;
+
+    const res = await kit.sendJson(kit.teacher, "POST", `/api/teacher/content/items/${moja.id}/audio`, {
+      kind: "sentence_turns",
+      voice: "erinome",
+      exampleIndex: 1,
+    });
+    expect(res.status).toBe(201);
+    const body = (await res.json()) as { asset: { id: string; audioId: string } };
+    expect(body.asset.audioId).toBe("sentence-1871-모자--erinome--turns");
+    expect(bodies[0]).toEqual(buildSingleTtsRequestBody({ text: moja.example, kind: "sentence_turns", voiceKey: "erinome" }));
+    const stored = await kit.contentRepo.getAudioAsset(body.asset.id);
+    expect(stored?.kind).toBe("sentence_turns");
+    expect(stored?.stylePrompt).toBe(TURNS_READING_STYLE);
+
+    const after = (await (await kit.teacher.request("/api/teacher/content?group=j_ch_jj")).json()) as TeacherContentView;
+    const draft = after.stages[0]!.draftAudios.find((row) => row.assetId === body.asset.id);
+    expect(draft?.kind).toBe("sentence_turns");
+    expect(draft?.exampleIndex).toBe(1);
+    expect(after.stages[0]!.items.find((row) => row.id === moja.id)!.turnsAudio?.erinome?.state).toBe("draft");
+
+    await kit.sendJson(kit.teacher, "POST", `/api/teacher/content/audio/${body.asset.id}/approve`, {});
+    const approved = (await (await kit.teacher.request("/api/teacher/content?group=j_ch_jj")).json()) as TeacherContentView;
+    expect(approved.stages[0]!.items.find((row) => row.id === moja.id)!.turnsAudio?.erinome?.state).toBe("approved");
   });
 
   it("enforces the 100/day quota before calling fetch and records failed attempts without leaking keys", async () => {

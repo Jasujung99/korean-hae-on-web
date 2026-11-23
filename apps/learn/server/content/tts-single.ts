@@ -5,6 +5,7 @@ import { groupContents, type BatchGroup, type GroupContent } from "../../content
 import {
   FLASH_TTS_MODEL,
   FLAT_READING_STYLE,
+  TURNS_READING_STYLE,
   authHeaders,
   decodeBase64,
   interactionsEndpoint,
@@ -29,21 +30,30 @@ export type SingleTtsRequestBody = {
   generation_config: { speech_config: [{ voice: string }] };
 };
 
+export type SingleTtsKind = "word" | "sentence" | "sentence_turns";
+
+/** 단어는 평평 낭독, 예문(말하듯이)은 지시 없음, 예문 또박또박은 TURNS_READING_STYLE */
+export function singleTtsStyle(kind: SingleTtsKind): string | null {
+  if (kind === "word") return FLAT_READING_STYLE;
+  if (kind === "sentence_turns") return TURNS_READING_STYLE;
+  return null;
+}
+
 export function buildSingleTtsRequestBody(input: {
   text: string;
-  kind: "word" | "sentence";
+  kind: SingleTtsKind;
   voiceKey: PracticeVoiceKey;
   model?: string;
 }): SingleTtsRequestBody {
-  const style = input.kind === "word" ? FLAT_READING_STYLE : null;
+  const style = singleTtsStyle(input.kind);
   const singleGroup: BatchGroup = {
     groupId: `single-${input.kind}`,
-    kind: input.kind === "word" ? "words" : "sentences",
+    kind: input.kind === "word" ? "words" : input.kind === "sentence_turns" ? "turns" : "sentences",
     method: "per_content_group",
     style,
     fillers: false,
     minGapMs: input.kind === "word" ? 300 : 600,
-    items: [{ id: "single", text: input.text, unitKind: input.kind }],
+    items: [{ id: "single", text: input.text, unitKind: input.kind === "word" ? "word" : "sentence" }],
   };
   return {
     model: input.model ?? FLASH_TTS_MODEL,
@@ -73,12 +83,12 @@ export type SingleTtsResult =
 
 export async function generateSingleTts(input: {
   text: string;
-  kind: "word" | "sentence";
+  kind: SingleTtsKind;
   voiceKey: PracticeVoiceKey;
   apiKey: string;
   fetcher?: typeof fetch;
 }): Promise<SingleTtsResult> {
-  const stylePrompt = input.kind === "word" ? FLAT_READING_STYLE : null;
+  const stylePrompt = singleTtsStyle(input.kind);
   const body = buildSingleTtsRequestBody({
     text: input.text,
     kind: input.kind,

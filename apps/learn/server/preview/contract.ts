@@ -132,6 +132,8 @@ export type WordView = {
   related: string;
   wordAudioRef: string | null;
   exampleAudioRef: string | null;
+  /** 사전 화면의 목소리별 듣기(남성 · 여성(1) · 여성(2)). 그 목소리 파일이 없으면 ref가 null이다. */
+  voices: Array<{ key: string; label: string; wordRef: string | null; exampleRef: string | null }>;
   /** 실제로 들려줄 파일의 목소리. 예문은 아직 예전 초안(Iapetus)만 있는 경우가 있다. */
   wordVoice: string | null;
   exampleVoice: string | null;
@@ -429,6 +431,8 @@ export type ContentAudioCell = {
 
 export type ContentTurnsCell = {
   ready: boolean;
+  /** 초안·승인·다시 만들어야 함(예전 응답에는 없을 수 있다) */
+  state?: "draft" | "approved" | "stale";
   playUrl: string | null;
   assetId: string | null;
   durationMs: number | null;
@@ -504,7 +508,7 @@ export type DraftAudioReviewRow = {
   audioId: string;
   itemId: string | null;
   word: string;
-  kind: "word" | "sentence" | "pseudo" | "syllable";
+  kind: "word" | "sentence" | "sentence_turns" | "pseudo" | "syllable";
   /** 예문 음원이면 몇 번 예문인지(1~5) */
   exampleIndex?: number;
   voiceKey: string;
