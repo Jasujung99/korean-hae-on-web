@@ -231,7 +231,7 @@ export function createSupabaseContentRepo(config: DbConfig, fetcher: typeof fetc
   return {
     kind: "supabase",
     async listItems(filter) {
-      const clauses = ["order=sort_order.asc,created_at.asc"];
+      const clauses = ["order=sort_order.asc,created_at.asc,id.asc"];
       if (filter?.groupId) clauses.push(`group_id=eq.${encodeURIComponent(filter.groupId)}`);
       if (!filter?.includeHidden) clauses.push("status=neq.hidden");
       const rows = await selectAll(`phoneme_content_items?${clauses.join("&")}`);
@@ -324,13 +324,13 @@ export function createSupabaseContentRepo(config: DbConfig, fetcher: typeof fetc
     },
     async listStageZero(groupId) {
       const query = groupId
-        ? `phoneme_content_stage0?group_id=eq.${encodeURIComponent(groupId)}&order=sort_order.asc`
-        : "phoneme_content_stage0?order=sort_order.asc";
+        ? `phoneme_content_stage0?group_id=eq.${encodeURIComponent(groupId)}&order=sort_order.asc,id.asc`
+        : "phoneme_content_stage0?order=sort_order.asc,id.asc";
       const rows = await selectAll(query);
       return rows.map(stageZeroFrom);
     },
     async listAudioAssets(filter) {
-      const clauses = ["order=created_at.desc"];
+      const clauses = ["order=created_at.desc,id.asc"]; // 같은 시각 행이 많아 id로 순서를 고정해야 페이지가 겹치거나 빠지지 않는다.
       if (filter?.audioId) clauses.push(`audio_id=eq.${encodeURIComponent(filter.audioId)}`);
       if (filter?.status) clauses.push(`status=eq.${encodeURIComponent(filter.status)}`);
       const rows = await selectAll(`phoneme_audio_assets?${clauses.join("&")}`);
@@ -352,12 +352,21 @@ export function createSupabaseContentRepo(config: DbConfig, fetcher: typeof fetc
       const resolution = onConflict === "ignore" ? "ignore-duplicates" : "merge-duplicates";
       for (let i = 0; i < inputs.length; i += chunkSize) {
         const chunk = inputs.slice(i, i + chunkSize).map(toAssetDbRow);
-        const rows = await call(
-          "POST",
-          "phoneme_audio_assets?on_conflict=audio_id,storage,object_key",
-          chunk,
-          `resolution=${resolution},return=representation`,
-        );
+        // 긴 R2 업로드 뒤에는 쉬던 연결이 끊겨 있을 수 있다. upsert는 다시 보내도 결과가 같으므로 네트워크 오류만 다시 시도한다.
+        let rows: Row[] | null = null;
+        for (let attempt = 0; rows === null; attempt += 1) {
+          try {
+            rows = await call(
+              "POST",
+              "phoneme_audio_assets?on_conflict=audio_id,storage,object_key",
+              chunk,
+              `resolution=${resolution},return=representation`,
+            );
+          } catch (error) {
+            if (!(error instanceof TypeError) || attempt >= 3) throw error;
+            await new Promise((resolve) => setTimeout(resolve, 2000 * (attempt + 1)));
+          }
+        }
         total += rows.length;
       }
       return total;
@@ -541,7 +550,7 @@ export function createSupabaseContentRepo(config: DbConfig, fetcher: typeof fetc
       return insertedRows.length;
     },
     async listProposals(filter) {
-      const clauses = ["order=created_at.asc"];
+      const clauses = ["order=created_at.asc,id.asc"];
       if (filter?.status) clauses.push(`status=eq.${encodeURIComponent(filter.status)}`);
       if (filter?.itemId) {
         if (!/^[0-9a-f-]{36}$/i.test(filter.itemId)) return [];
