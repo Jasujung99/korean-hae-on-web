@@ -1216,6 +1216,11 @@ b.p3 {
   font-size: 13px;
 }
 
+/* .tc-ul은 inline-flex라 ↗ 앞 공백이 사라진다. 시안처럼 3px 띄운다. */
+.dict-tabs-links .tc-ul span[aria-hidden="true"] {
+  margin-left: 3px;
+}
+
 /* 비교해보세요. 와 상대 낱말 칩을 한 줄에 */
 .pair-row.is-inline {
   display: flex;
