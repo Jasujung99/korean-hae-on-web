@@ -248,13 +248,39 @@ describe("stage 1 shells", () => {
       "POST /api/invitations/inspect": { status: "ok", nickname: "알렉세이", dictLanguage: "en" },
     });
     renderAt("/join", true);
-    expect(await screen.findByRole("heading", { level: 2, name: "알렉세이 님의 연습이에요." })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { level: 2, name: "알렉세이 님" })).toBeInTheDocument();
+    expect(screen.getByText("이름이 다르면 시작하지 말고 선생님에게 알려 주세요.")).toBeInTheDocument();
     expect(document.body.textContent).not.toContain("invite-token-value");
     expect(window.location.hash).toBe("");
-    expect(screen.getByRole("button", { name: "English" })).toHaveAttribute("aria-pressed", "true");
+    // 사전 언어 고르기는 초대 화면에 두지 않는다.
+    expect(screen.queryByRole("group", { name: "사전에서 볼 언어" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "English" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Русский" })).not.toBeInTheDocument();
+    const notes = screen.getAllByRole("listitem").map((item) => item.textContent);
+    expect(notes).toEqual([
+      "앞으로 계속 쓸 브라우저(Chrome, Safari 등)에서 열어 주세요.",
+      "메신저 안에서 열렸다면, 브라우저로 옮겨서 열어 주세요.",
+      "이 링크는 한 번만 쓸 수 있어요.",
+    ]);
+    expect(document.querySelectorAll(".join-notes svg[aria-hidden='true']")).toHaveLength(3);
     const calls = (globalThis.fetch as unknown as { mock: { calls: unknown[][] } }).mock.calls.map((call) => String(call[0]));
     expect(calls.some((url) => url.includes("/api/invitations/claim"))).toBe(false);
     expect(screen.getByRole("button", { name: "이 기기에서 시작하기" })).toBeEnabled();
+  });
+
+  it("connects with the teacher's dictionary language when the picker is hidden", async () => {
+    window.history.replaceState(null, "", "/join#token=invite-token-value-0123456789");
+    stubPreviewApi({
+      "GET /api/me": unauthorized,
+      "POST /api/invitations/inspect": { status: "ok", nickname: "알렉세이", dictLanguage: "en" },
+      "POST /api/invitations/claim": me,
+    });
+    renderAt("/join", true);
+    fireEvent.click(await screen.findByRole("button", { name: "이 기기에서 시작하기" }));
+    const fetchMock = globalThis.fetch as unknown as { mock: { calls: Array<[unknown, RequestInit | undefined]> } };
+    await vi.waitFor(() => expect(fetchMock.mock.calls.some(([url]) => String(url).includes("/api/invitations/claim"))).toBe(true));
+    const claim = fetchMock.mock.calls.find(([url]) => String(url).includes("/api/invitations/claim"))!;
+    expect(JSON.parse(String(claim[1]?.body))).toMatchObject({ dictLanguage: "en" });
   });
 
   it("lets the learner pick the screen style and dictionary language in settings", async () => {

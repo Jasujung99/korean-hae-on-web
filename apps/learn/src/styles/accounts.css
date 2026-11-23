@@ -77,6 +77,51 @@
   color: var(--ink);
 }
 
+/* 개인 초대: 시작하기 전 안내 */
+.join-notes {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--wash-sage);
+}
+
+.join-notes-title {
+  margin: 0;
+  color: var(--olive);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.join-notes ul {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.join-notes li {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: var(--space-3);
+  align-items: start;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.join-notes-icon {
+  margin-top: 1px;
+  fill: none;
+  stroke: var(--olive);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .acct-settings .practice-voice-list {
   margin-top: var(--space-3);
 }
