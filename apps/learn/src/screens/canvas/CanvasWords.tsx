@@ -77,6 +77,17 @@ export function CanvasWords() {
               {word.positionLabel} {word.consonant}
             </p>
           </div>
+          <button
+            type="button"
+            className="c-round sm"
+            onClick={() => {
+              setActive(null);
+              void practice.playRole(word.wordAudioRef, "word", word.word);
+            }}
+            disabled={busy || !word.wordAudioRef}
+          >
+            {practice.playing === "word" && active === null ? "듣는 중" : word.wordAudioRef ? "듣기" : "준비 중"}
+          </button>
         </div>
         <div className="c-line" />
         <div>
