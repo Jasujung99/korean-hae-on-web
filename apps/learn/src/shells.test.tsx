@@ -293,6 +293,44 @@ describe("stage 1 shells", () => {
     expect(scrolled).toHaveBeenCalled();
   });
 
+  it("shows the canvas word card with the compare line and dictionary tabs", async () => {
+    const gicha: WordView = {
+      ...previewWord,
+      id: "jcj-807",
+      word: "기차",
+      consonant: "ㅊ",
+      pos: "명",
+      gloss: "철길 위를 달리며 사람이나 짐을 실어 나르는 탈것.",
+      stepLabel: "기준점 잡기",
+      pairGroupId: "P-029",
+      partners: [{ consonant: "ㅈ", word: "기자", audioRef: null }],
+      dict: {
+        status: "draft",
+        krdict: {
+          targetCode: 60632,
+          pos: "명사",
+          grade: "초급",
+          definition: "사람이나 물건을 싣고 연료의 힘으로 철도 위를 달리는, 길이가 긴 차.",
+          example: null,
+          translations: { ru: { word: "поезд", definition: "" }, en: { word: "train", definition: "" } },
+        },
+        stdict: null,
+      },
+    };
+    stubPreviewApi({ "GET /api/me": { ...me, settings: { ...me.settings, style: "canvas" } }, "GET /api/learn/words": { words: [gicha] } });
+    renderAt("/dictionary", true);
+    const heading = await screen.findByRole("heading", { level: 2, name: "기차" });
+    const card = within(heading.closest("article") as HTMLElement);
+    expect(heading.nextElementSibling).toHaveTextContent(/^모음 사이 ㅊ$/);
+    expect(card.getByText("비교해보세요.")).toBeInTheDocument();
+    expect(card.queryByText(/비교해 들을 말|기준점 잡기|P-029/)).not.toBeInTheDocument();
+    expect(card.getByRole("group", { name: "기차와 비교해 들을 말" })).toHaveTextContent("ㅈ 기자");
+    fireEvent.click(card.getByRole("button", { name: /사전 풀이/ }));
+    expect(card.getAllByRole("tab").map((tab) => tab.textContent)).toEqual(["한국어기초사전", "Русский", "English"]);
+    expect(card.getByText("명사")).toHaveClass("dict-tabs-pos");
+    expect(card.queryByText(/검수 전/)).not.toBeInTheDocument();
+  });
+
   it("shows a quiet dictionary empty state when the word has no approved entry", async () => {
     stubPreviewApi({ "GET /api/me": me, "GET /api/learn/words": { words: [previewWord] } });
     renderAt("/dictionary", true);

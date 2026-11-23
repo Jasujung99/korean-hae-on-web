@@ -11,7 +11,7 @@ import { track } from "../../preview/telemetry";
 
 // 사전 대역어 언어는 러시아어·영어 두 가지. 학습자 설정을 기본으로 펼치고, 바꾸면 설정에 저장한다.
 // nation·nationCode는 한국어기초사전 다국어 화면이 스스로 쓰는 값이다(rus=5, eng=6. API의 trans_lang 번호와는 다르다).
-const LANGUAGES: Array<{ key: DictLanguage; label: string; name: string; nation: string; nationCode: number }> = [
+export const LANGUAGES: Array<{ key: DictLanguage; label: string; name: string; nation: string; nationCode: number }> = [
   { key: "ru", label: "Русский", name: "러시아어", nation: "rus", nationCode: 5 },
   { key: "en", label: "English", name: "영어", nation: "eng", nationCode: 6 },
 ];
@@ -47,7 +47,7 @@ export function dictShortcuts(word: string, dict: WordDictView | null): Array<{ 
   return links;
 }
 
-function OutLink({ href, className, label, children, onOpen }: { href: string; className: string; label: string; children: ReactNode; onOpen: () => void }) {
+export function OutLink({ href, className, label, children, onOpen }: { href: string; className: string; label: string; children: ReactNode; onOpen: () => void }) {
   return (
     <a className={className} href={href} target="_blank" rel="noopener" aria-label={label} onClick={onOpen}>
       {children}
