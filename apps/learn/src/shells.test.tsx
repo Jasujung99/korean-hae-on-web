@@ -61,6 +61,11 @@ const previewWord: WordView = {
   example: "햇빛이 강해서 모자를 썼어요.",
   related: "모자를 쓰다",
   wordAudioRef: "ref-w",
+  voices: [
+    { key: "charon", label: "남성", wordRef: "ref-w", exampleRef: "ref-e" },
+    { key: "erinome", label: "여성(1)", wordRef: "ref-w2", exampleRef: null },
+    { key: "sulafat", label: "여성(2)", wordRef: null, exampleRef: null },
+  ],
   exampleAudioRef: "ref-s",
   wordVoice: null,
   exampleVoice: null,

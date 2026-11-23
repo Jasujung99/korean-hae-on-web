@@ -132,6 +132,8 @@ export type WordView = {
   related: string;
   wordAudioRef: string | null;
   exampleAudioRef: string | null;
+  /** 사전 화면의 목소리별 듣기(남성 · 여성(1) · 여성(2)). 그 목소리 파일이 없으면 ref가 null이다. */
+  voices: Array<{ key: string; label: string; wordRef: string | null; exampleRef: string | null }>;
   /** 실제로 들려줄 파일의 목소리. 예문은 아직 예전 초안(Iapetus)만 있는 경우가 있다. */
   wordVoice: string | null;
   exampleVoice: string | null;

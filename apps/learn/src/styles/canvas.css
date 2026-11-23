@@ -1247,3 +1247,73 @@ b.p3 {
     transition: none;
   }
 }
+
+/* 03 새 단어: 서로 다른 목소리로(단어·예문 × 남성 · 여성(1) · 여성(2)) */
+.c-voices {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.c-page .c-voices-title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.c-voices-grid {
+  display: grid;
+  grid-template-columns: 2.5em repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+  align-items: center;
+  margin-top: var(--space-2);
+}
+
+.c-voices-row {
+  display: contents;
+}
+
+.c-voices-head {
+  color: var(--ink-muted);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  text-align: center;
+}
+
+.c-voices-rowlabel {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.c-page .c-voice-btn {
+  min-height: 44px;
+  padding: 0 var(--space-1);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.c-page .c-voice-btn.is-example {
+  border-color: var(--lavender);
+  background: var(--wash-lavender);
+  color: var(--lavender-ink);
+}
+
+.c-page .c-voice-btn.is-on {
+  border-color: var(--olive);
+  background: var(--olive);
+  color: var(--paper);
+}
+
+.c-page .c-voice-btn:disabled:not(.is-on) {
+  color: var(--ink-muted);
+  cursor: default;
+}

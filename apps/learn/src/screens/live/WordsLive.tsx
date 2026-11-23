@@ -12,6 +12,8 @@ export function WordsLive() {
   const [params, setParams] = useSearchParams();
   const [words, setWords] = useState<WordView[] | null>(null);
   const [failed, setFailed] = useState(false);
+  // 목소리 칸 가운데 지금 재생 중인 칸("word:charon" 꼴)
+  const [active, setActive] = useState<string | null>(null);
 
   useEffect(() => {
     previewApi
@@ -112,30 +114,14 @@ export function WordsLive() {
           </div>
         ) : null}
         <DictInline word={word.word} wordId={word.id} pos={word.pos} dict={word.dict} />
-        <button
-          type="button"
-          onClick={() => void practice.playRole(word.wordAudioRef, "word", word.word)}
-          disabled={busy || !word.wordAudioRef}
-        >
-          {practice.playing === "word" ? "단어 듣는 중…" : word.wordAudioRef ? "단어 듣기" : "단어 듣기 · 음원 준비 중"}
-        </button>
+        <VoiceRow title="단어 듣기" kind="word" text={word.word} word={word} active={active} setActive={setActive} />
         {word.example ? (
           <>
             <div className="example">
               <span className="small">예문 · {word.scene}</span>
               <p>{word.example}</p>
             </div>
-            {word.exampleVoice && word.wordVoice && word.exampleVoice !== word.wordVoice ? (
-            <p className="small">예문 음원은 아직 {word.exampleVoice} 목소리(예전 초안)만 있어서 낱말과 목소리가 달라요.</p>
-          ) : null}
-
-            <button
-              type="button"
-              onClick={() => void practice.playRole(word.exampleAudioRef, "example", word.example)}
-              disabled={busy || !word.exampleAudioRef}
-            >
-              {practice.playing === "example" ? "예문 듣는 중…" : word.exampleAudioRef ? "예문 듣기" : "예문 듣기 · 음원 준비 중"}
-            </button>
+            <VoiceRow title="예문 듣기" kind="example" text={word.example} word={word} active={active} setActive={setActive} />
           </>
         ) : (
           <p className="notice">주어진 예문이 아직 없는 단어예요. 예문은 검수된 자료가 들어오면 붙여요.</p>
@@ -172,11 +158,63 @@ export function WordsLive() {
         <button type="button" className={saved ? undefined : "primary"} onClick={() => practice.toggleWord(word.id)}>
           {saved ? "✓ 내 단어에 담았어요" : "내 단어에 담기"}
         </button>
-        <p className="small">
-          뜻·예문은 PR #5 로드맵의 설계용 초안이며, 공개 전 검수가 필요해요. 단어 담기는 이 미리보기 안에서만 유지돼요.
-          '사전 풀이'는 국립국어원 사전에서 받아 사람이 검수한 항목만 학습자에게 보여요.
-        </p>
       </section>
     </LearnerFrame>
+  );
+}
+
+/** 목소리 세 칸(남성 · 여성(1) · 여성(2)). 재생 중인 칸은 ▶ 대신 점 세 개가 움직인다. */
+function VoiceRow({
+  title,
+  kind,
+  text,
+  word,
+  active,
+  setActive,
+}: {
+  title: string;
+  kind: "word" | "example";
+  text: string;
+  word: WordView;
+  active: string | null;
+  setActive: (key: string) => void;
+}) {
+  const practice = usePractice();
+  const busy = practice.playing !== null;
+  return (
+    <div className="voice-row">
+      <p className="voice-row-title">{title}</p>
+      <div className={`voice-seg is-${kind}`} role="group" aria-label={title}>
+        {word.voices.map((voice) => {
+          const ref = kind === "word" ? voice.wordRef : voice.exampleRef;
+          const key = `${kind}:${voice.key}`;
+          const on = practice.playing === kind && active === key;
+          return (
+            <button
+              key={voice.key}
+              type="button"
+              className={on ? "is-on" : undefined}
+              aria-label={`${voice.label} ${title}${on ? " · 듣는 중" : ref ? "" : " · 준비 중"}`}
+              disabled={busy || !ref}
+              onClick={() => {
+                setActive(key);
+                void practice.playRole(ref, kind, text);
+              }}
+            >
+              {on ? (
+                <span className="voice-dots" aria-hidden="true">
+                  <i />
+                  <i />
+                  <i />
+                </span>
+              ) : (
+                <span aria-hidden="true">{ref ? "▶" : "–"}</span>
+              )}
+              <span>{voice.label}</span>
+            </button>
+          );
+        })}
+      </div>
+    </div>
   );
 }

@@ -104,8 +104,32 @@ export function audioPicker(audio: PreviewAudio, voiceKey: string, exampleReadin
     return refOf(baseId, legacyId);
   };
   const voice = () => audio.meta(pick(PRACTICE_ITEMS[0]?.audioId ?? ""))?.voice || VOICE_CANDIDATE;
-  return { pick, refOf, exampleRefOf, voice };
+  /**
+   * 사전 화면의 목소리별 듣기. 다른 목소리로 대신하지 않는다(그 칸은 '준비 중').
+   * 예전 초안(legacy) 파일은 그 파일의 목소리 칸에만 쓴다. 예문은 '또박또박'이면 --turns 파일을 먼저 찾는다.
+   */
+  const voiceRefs = (baseId: string, legacyId?: string, example = false): Array<{ key: PracticeVoiceKey; ref: string | null }> =>
+    PRACTICE_VOICES.map((row) => {
+      if (!baseId) return { key: row.key, ref: null };
+      const voiced = voicedAudioId(baseId, row.key);
+      const turns = example && exampleReading === "turns" ? audio.refFor(turnsAudioId(voiced)) : null;
+      const own = turns ?? audio.refFor(voiced);
+      if (own) return { key: row.key, ref: own };
+      const legacy = legacyId ?? baseId;
+      return { key: row.key, ref: audio.meta(legacy)?.voice === row.voice ? audio.refFor(legacy) : null };
+    });
+  return { pick, refOf, exampleRefOf, voiceRefs, voice };
 }
+
+/** 사전 화면 목소리 칸 이름. 같은 이름이 둘 이상이면 번호를 붙인다(남성 · 여성(1) · 여성(2)). */
+export const VOICE_LABELS: Record<PracticeVoiceKey, string> = (() => {
+  const out = {} as Record<PracticeVoiceKey, string>;
+  for (const row of PRACTICE_VOICES) {
+    const same = PRACTICE_VOICES.filter((other) => other.label === row.label);
+    out[row.key] = same.length > 1 ? `${row.label}(${same.indexOf(row) + 1})` : row.label;
+  }
+  return out;
+})();
 
 function scope(
   learner: LearnerRow,
@@ -114,7 +138,7 @@ function scope(
   snapshot: ContentSnapshot,
   now: () => Date,
 ) {
-  const { pick, refOf, exampleRefOf, voice } = audioPicker(audio, learner.practiceVoice, learner.exampleReading);
+  const { pick, refOf, exampleRefOf, voiceRefs, voice } = audioPicker(audio, learner.practiceVoice, learner.exampleReading);
   const events = () => store.all();
   const plans = () => events().filter((event) => event.type === "session_planned");
   const planFor = (sessionId: string) => plans().find((event) => event.sessionId === sessionId);
@@ -213,7 +237,7 @@ function scope(
     };
   };
 
-  return { pick, refOf, exampleRefOf, voice, events, plans, planFor, serverEvent, answerResult, sessionView };
+  return { pick, refOf, exampleRefOf, voiceRefs, voice, events, plans, planFor, serverEvent, answerResult, sessionView };
 }
 
 /** dictReview: 개발 미리보기 서버. 검수 전 사전 풀이도 '검수 전' 표시와 함께 보낸다. */
@@ -520,6 +544,16 @@ export function createPracticeRoutes(deps: {
       related: word.related,
       wordAudioRef: s.refOf(word.wordAudioId, word.legacyWordAudioId),
       exampleAudioRef: word.exampleAudioId ? s.exampleRefOf(word.exampleAudioId, word.legacyExampleAudioId) : null,
+      voices: (() => {
+        const wordRefs = s.voiceRefs(word.wordAudioId, word.legacyWordAudioId);
+        const exampleRefs = word.exampleAudioId ? s.voiceRefs(word.exampleAudioId, word.legacyExampleAudioId, true) : [];
+        return wordRefs.map((row) => ({
+          key: row.key,
+          label: VOICE_LABELS[row.key],
+          wordRef: row.ref,
+          exampleRef: exampleRefs.find((other) => other.key === row.key)?.ref ?? null,
+        }));
+      })(),
       wordVoice: s.audio.meta(s.pick(word.wordAudioId, word.legacyWordAudioId))?.voice ?? null,
       exampleVoice: word.exampleAudioId ? (s.audio.meta(s.pick(word.exampleAudioId, word.legacyExampleAudioId))?.voice ?? null) : null,
       step: word.step,
