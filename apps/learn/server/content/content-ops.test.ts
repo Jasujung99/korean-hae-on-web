@@ -67,7 +67,8 @@ describe("content operations release lifecycle, audio inventory DB source, and m
             }),
             { status: 200, headers: { "content-type": "application/json" } },
           ),
-        now: () => new Date("2026-11-20T03:00:00.000Z"),
+        // 초대 만료(72시간)는 저장소가 실제 시계로 확인한다. 고정 날짜를 쓰면 며칠 뒤 이 시험이 깨진다.
+        now: () => new Date(),
         inviteOrigin: TEST_ORIGIN,
         secureCookies: false,
       },
