@@ -5,7 +5,7 @@ import { previewApi } from "../../preview/api";
 import { usePractice } from "../../preview/PracticeContext";
 import { track } from "../../preview/telemetry";
 import { ScreenTitle } from "../../ui";
-import { DictInline } from "../live/DictInline";
+import { DictTabs } from "./DictTabs";
 import { Blade, StripLink } from "./parts";
 
 // 03 새 단어. 사전은 방식 A(카드 안에서 펼치기)로 둔다.
@@ -75,7 +75,6 @@ export function CanvasWords() {
             <h2 className="c-word">{word.word}</h2>
             <p className="c-label">
               {word.positionLabel} {word.consonant}
-              {word.pos ? ` · ${word.pos}` : ""}
             </p>
           </div>
           <button
@@ -93,11 +92,8 @@ export function CanvasWords() {
           <p className="c-body">{word.gloss || "아직 뜻 초안이 없어요."}</p>
         </div>
         {word.partners.length > 0 ? (
-          <div className="pair-row">
-            <p className="pair-label">
-              비교해 들을 말 · {word.stepLabel}
-              {word.pairGroupId ? ` · ${word.pairGroupId}` : ""}
-            </p>
+          <div className="pair-row is-inline">
+            <p className="pair-label">비교해보세요.</p>
             <div className="pair-words" role="group" aria-label={`${word.word}와 비교해 들을 말`}>
               {word.partners.map((partner) => (
                 <button
@@ -113,7 +109,7 @@ export function CanvasWords() {
             </div>
           </div>
         ) : null}
-        <DictInline word={word.word} wordId={word.id} pos={word.pos} dict={word.dict} />
+        <DictTabs word={word.word} wordId={word.id} pos={word.pos} dict={word.dict} />
       </article>
 
       {word.example ? (
