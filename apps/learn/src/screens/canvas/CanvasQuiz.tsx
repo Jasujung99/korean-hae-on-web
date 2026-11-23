@@ -46,7 +46,7 @@ export function CanvasQuiz() {
       <div className="c-page">
         <ScreenTitle title="듣고 고르기" />
         <p className="c-label">01 듣고 고르기</p>
-        <h2 className="c-title">아홉 문항을 마쳤어요.</h2>
+        <h2 className="c-title">{session.items.length}문항을 마쳤어요.</h2>
         <div className="c-rule" />
         <p className="c-body">이제 헷갈린 소리를 천천히 들어 봐요.</p>
         <StripLink onClick={() => navigate("/listen")}>소리 익히기</StripLink>
@@ -80,7 +80,7 @@ export function CanvasQuiz() {
   };
 
   let caption = "먼저 소리를 들어요.";
-  if (failed && !heard) caption = "소리를 불러오지 못했어요. 이 문항은 성적에 넣지 않아요.";
+  if (failed && !heard) caption = "소리를 불러오지 못했어요. 이 문항은 점수에 넣지 않아요.";
   else if (plays > 0) caption = `${plays}번 들었어요 · 누르면 다시 들려줘요`;
 
   return (
@@ -152,7 +152,7 @@ export function CanvasQuiz() {
                     : word
                       ? `짝이 되는 낱말이 없어 ${result.answerText}·${chosenText}로 비교해요.`
                       : `고른 소리는 ${withCopula(chosenText)} 두 소리를 이어서 들어 보세요.`}
-                {result.countsAsScore ? "" : " 이 문항은 성적에 넣지 않아요."}
+                {result.countsAsScore ? "" : " 이 문항은 점수에 넣지 않아요."}
               </p>
             </div>
             <Sticker delay>{result.correct ? "잘 들었어요." : "괜찮아 ♡"}</Sticker>
@@ -209,8 +209,7 @@ export function CanvasQuiz() {
         </button>
       ) : null}
       <p className="c-foot">
-        <Link to="/compare">두 소리 비교 열기</Link> · 고르면 바로 첫 응답으로 기록돼요 ·{" "}
-        음원은 검수 전 초안
+        <Link to="/compare">두 소리 비교 열기</Link> · 처음 고른 답이 기록돼요
       </p>
     </div>
   );

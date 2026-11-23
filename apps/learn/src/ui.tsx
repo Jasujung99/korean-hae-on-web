@@ -22,7 +22,7 @@ function CourseMini() {
           <li key={id} className={PRACTICE_READY_GROUPS.includes(id) ? "is-now" : undefined}>
             <span>{String(index + 1).padStart(2, "0")}</span>
             {GROUP_LABELS[id]}
-            <small>{PRACTICE_READY_GROUPS.includes(id) ? "지금" : "준비 전"}</small>
+            <small>{PRACTICE_READY_GROUPS.includes(id) ? "지금" : "준비 중"}</small>
           </li>
         ))}
       </ol>
@@ -48,7 +48,7 @@ export function LearnerFrame({
       <aside className="rail">
         <div className="rail-block">
           <p className="eyebrow">작은 연습, 한 묶음씩</p>
-          <h3>오늘은 ㅈ · ㅊ · ㅉ</h3>
+          <h3>오늘은 {PRACTICE_READY_GROUPS[0] ? GROUP_LABELS[PRACTICE_READY_GROUPS[0]] : "소리 연습"}</h3>
           <ol>
             <li>
               <span>01</span> 듣고 하나 고르기
@@ -65,7 +65,7 @@ export function LearnerFrame({
           <h3>필요할 때 비교해요</h3>
           <p>
             {preview
-              ? "글자보다 소리로 비교하고 싶다면 A · B · X를 들어 봐요."
+              ? "글자 없이 소리만으로 비교하고 싶을 때 들어 봐요."
               : "글자보다 소리로 비교하고 싶다면 A · B · X를 들어 볼 자리입니다. 음원은 아직 없습니다."}
           </p>
           <Link className="rail-link" to="/compare">
@@ -75,7 +75,6 @@ export function LearnerFrame({
         {preview ? <CourseMini /> : null}
         {railExtra}
         <div>
-          <Pill tone="future">다음 확장</Pill>
           <h3>소리가 단어로 이어져요</h3>
           <p>{preview ? "뜻을 찾고, 생활 속 예문으로 쓰임을 확인해요." : "뜻과 예문은 승인 전에 보여 주지 않습니다."}</p>
           <Link className="rail-link" to="/dictionary">

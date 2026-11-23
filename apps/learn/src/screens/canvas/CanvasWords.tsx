@@ -34,7 +34,7 @@ export function CanvasWords() {
       <div className="c-page">
         <ScreenTitle title="새 단어" />
         <h2 className="c-title">단어를 불러오지 못했어요.</h2>
-        <p className="c-body">미리보기 서버에 닿지 못했어요. 잠시 뒤 다시 열어 주세요.</p>
+        <p className="c-body">인터넷 연결을 확인하고 잠시 뒤 다시 열어 주세요.</p>
       </div>
     );
   }
@@ -47,7 +47,6 @@ export function CanvasWords() {
     );
   }
 
-  const saved = practice.saved.includes(word.id);
   const busy = practice.playing !== null;
 
   return (
@@ -57,7 +56,6 @@ export function CanvasWords() {
         <p className="c-label">
           <span className="c-num sm">03</span> 새 단어
         </p>
-        <p className="c-count">뜻·예문은 검수 전 초안</p>
       </div>
 
       <div className="c-words" role="group" aria-label="살펴볼 단어">
@@ -89,11 +87,11 @@ export function CanvasWords() {
         <div className="c-line" />
         <div>
           <p className="c-label">뜻</p>
-          <p className="c-body">{word.gloss || "아직 뜻 초안이 없어요."}</p>
+          <p className="c-body">{word.gloss || "뜻을 준비하고 있어요."}</p>
         </div>
         {word.partners.length > 0 ? (
           <div className="pair-row is-inline">
-            <p className="pair-label">비교해보세요.</p>
+            <p className="pair-label">비교해 보세요.</p>
             <div className="pair-words" role="group" aria-label={`${word.word}와 비교해 들을 말`}>
               {word.partners.map((partner) => (
                 <button
@@ -116,9 +114,6 @@ export function CanvasWords() {
         <div className="c-example">
           <p className="c-label">예문 · {word.scene}</p>
           <p className="c-key">{word.example}</p>
-          {word.exampleVoice && word.wordVoice && word.exampleVoice !== word.wordVoice ? (
-            <p className="c-label">예문 음원은 아직 {word.exampleVoice} 목소리(예전 초안)만 있어서 낱말과 목소리가 달라요.</p>
-          ) : null}
           <button
             type="button"
             className="c-link"
@@ -160,12 +155,10 @@ export function CanvasWords() {
         </p>
       ) : null}
 
-      <button type="button" className="c-keep" aria-pressed={saved} onClick={() => practice.toggleWord(word.id)}>
-        {saved ? "내 말에 담았어요" : "내 말에 담기"}
-      </button>
+      {/* '내 말에 담기'는 아직 서버에 저장되지 않아 새로고침하면 사라진다. 저장을 만들 때까지 숨긴다. */}
       <StripLink onClick={() => navigate("/finish")}>학습 리포트 보기</StripLink>
       <p className="c-foot">
-        <Link to="/listen">소리 익히기로 돌아가기</Link> · 담은 단어는 이 미리보기 안에서만 남아요
+        <Link to="/listen">소리 익히기로 돌아가기</Link>
       </p>
     </div>
   );

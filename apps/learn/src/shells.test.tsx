@@ -283,12 +283,12 @@ describe("stage 1 shells", () => {
     expect(JSON.parse(String(claim[1]?.body))).toMatchObject({ dictLanguage: "en" });
   });
 
-  it("lets the learner pick the screen style and dictionary language in settings", async () => {
+  it("lets the learner pick the dictionary language in settings, without the old screen style switch", async () => {
     stubPreviewApi({ "GET /api/me": me });
     renderAt("/settings", true);
     expect(await screen.findByRole("heading", { level: 2, name: "설정" })).toBeInTheDocument();
-    expect(screen.getByRole("group", { name: "화면 넘기기" })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "한눈에" })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.queryByRole("group", { name: "화면 넘기기" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "한눈에" })).not.toBeInTheDocument();
     expect(screen.getByRole("group", { name: "사전 풀이 언어" })).toHaveTextContent("Русский");
     expect(screen.getByRole("button", { name: "이 기기에서 나가기" })).toBeInTheDocument();
     expect(screen.queryByText(/브라우저 음성/)).not.toBeInTheDocument();
@@ -348,7 +348,7 @@ describe("stage 1 shells", () => {
     const heading = await screen.findByRole("heading", { level: 2, name: "기차" });
     const card = within(heading.closest("article") as HTMLElement);
     expect(heading.nextElementSibling).toHaveTextContent(/^모음 사이 ㅊ$/);
-    expect(card.getByText("비교해보세요.")).toBeInTheDocument();
+    expect(card.getByText("비교해 보세요.")).toBeInTheDocument();
     expect(card.queryByText(/비교해 들을 말|기준점 잡기|P-029/)).not.toBeInTheDocument();
     expect(card.getByRole("group", { name: "기차와 비교해 들을 말" })).toHaveTextContent("ㅈ 기자");
     fireEvent.click(card.getByRole("button", { name: /사전 풀이/ }));

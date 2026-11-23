@@ -102,18 +102,7 @@ export function SettingsScreen() {
               </button>
             </div>
           </fieldset>
-          <fieldset className="acct-choice set-row">
-            <legend>화면 넘기기</legend>
-            <div className="mode-nav set-seg">
-              <button type="button" aria-pressed={learner.style === "canvas"} onClick={() => void learner.change({ style: "canvas" })}>
-                한 장씩
-              </button>
-              <button type="button" aria-pressed={learner.style === "proto"} onClick={() => void learner.change({ style: "proto" })}>
-                한눈에
-              </button>
-            </div>
-            <p className="small">한 장씩은 공책처럼 넘기고, 한눈에는 단계를 차례로 보여 줘요.</p>
-          </fieldset>
+          {/* '화면 넘기기(한눈에)'는 예전 화면이라 개발용 문구가 남아 있어 학습자 설정에서 뺐다. 그 화면은 코드에 남겨 둔다. */}
         </div>
       </section>
 

@@ -10,9 +10,9 @@ function LearnerNav({ place, live }: { place: "head" | "bottom"; live: boolean }
   if (live && status !== "connected") return null;
   if (live && style === "canvas") {
     const tabs = [
-      { to: "/dictionary", label: "내 말" },
-      { to: "/listen", label: "다시" },
-      { to: "/course", label: "발견" },
+      { to: "/dictionary", label: "단어" },
+      { to: "/listen", label: "소리" },
+      { to: "/course", label: "순서" },
       { to: "/settings", label: "설정" },
     ];
     return (

@@ -3,12 +3,14 @@ import { Link, useNavigate } from "react-router";
 import type { WordView } from "../../../server/preview/contract.ts";
 import { previewApi } from "../../preview/api";
 import { usePractice } from "../../preview/PracticeContext";
+import { useLearner } from "../../preview/settings";
 import { ScreenTitle } from "../../ui";
 import { StripLink } from "./parts";
 import { byConsonant, reportLines } from "./summary";
 
 export function CanvasFinish() {
   const practice = usePractice();
+  const learner = useLearner();
   const navigate = useNavigate();
   const [words, setWords] = useState<WordView[]>([]);
 
@@ -29,21 +31,31 @@ export function CanvasFinish() {
   const excluded = answers.length - scored.length + practice.skipped.length;
   const lines = reportLines(answers);
   const today = new Date();
+  const nickname = learner.me?.learner.nickname ?? "";
+  const groupLabel = practice.session?.groupLabel ?? "";
+  const order = practice.session?.items[0]?.choices.map((row) => row.key) ?? [];
 
   return (
     <div className="c-page c-report">
       <ScreenTitle title="학습 리포트" />
-      <p className="c-label right">미리보기 · 검수 전 음원</p>
       <h2 className="c-title">학습 리포트</h2>
       <div className="c-rule" />
       <p className="c-meta">
-        <span>미리보기 학습자</span>
-        <i>/</i>
+        {nickname ? (
+          <>
+            <span>{nickname} 님</span>
+            <i>/</i>
+          </>
+        ) : null}
         <span>
           {today.getMonth() + 1}월 {today.getDate()}일
         </span>
-        <i>/</i>
-        <span>ㅈ · ㅊ · ㅉ</span>
+        {groupLabel ? (
+          <>
+            <i>/</i>
+            <span>{groupLabel}</span>
+          </>
+        ) : null}
       </p>
 
       {scored.length === 0 ? (
@@ -62,14 +74,14 @@ export function CanvasFinish() {
             <div className="c-score-head">
               <div>
                 <h3>소리 — 듣고 고르기</h3>
-                <p className="c-label">첫 응답만 세요{excluded > 0 ? ` · 성적에서 뺀 문항 ${excluded}개` : ""}</p>
+                <p className="c-label">처음 고른 답만 세요{excluded > 0 ? ` · 점수에서 뺀 문항 ${excluded}개` : ""}</p>
               </div>
               <p className="c-big">
                 <strong>{correct}</strong> / {scored.length}
               </p>
             </div>
             <ul className="c-rows">
-              {byConsonant(answers).map((row) => (
+              {byConsonant(answers, order).map((row) => (
                 <li key={row.consonant}>
                   <b>{row.consonant}</b>
                   <span>들려준 소리 {row.consonant}</span>
@@ -86,7 +98,7 @@ export function CanvasFinish() {
             </ul>
             {practice.abx.done > 0 ? (
               <p className="c-label">
-                두 소리 비교 {practice.abx.done}번 · 같은 소리 {practice.abx.correct}번 (따로 세요)
+                두 소리 비교를 {practice.abx.done}번 했고, {practice.abx.correct}번 맞혔어요. 위 점수와 따로 세요.
               </p>
             ) : null}
           </section>
@@ -102,27 +114,9 @@ export function CanvasFinish() {
             </div>
           </section>
           <div className="c-line" />
+          {/* '학습 여정'은 실제 진도를 계산할 때까지 빼 둔다(전에는 늘 같은 자리에 점이 찍혔다). */}
           <section>
-            <h3>학습 여정</h3>
-            <div className="c-journey">
-              <div>
-                <i className="on" />
-                <span>모음 사이 소리</span>
-              </div>
-              <div>
-                <small>다음 연습</small>
-                <i />
-                <span>모음 사이 단어</span>
-              </div>
-              <div>
-                <i />
-                <span>단어 첫머리</span>
-              </div>
-            </div>
-          </section>
-          <div className="c-line" />
-          <section>
-            <h3>오늘의 말</h3>
+            <h3>이 묶음의 단어</h3>
             <p className="c-chunks">
               {words.slice(0, 6).map((word) => (
                 <Link key={word.id} to={`/dictionary?word=${encodeURIComponent(word.id)}`}>

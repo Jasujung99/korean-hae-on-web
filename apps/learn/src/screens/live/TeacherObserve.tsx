@@ -333,7 +333,7 @@ function DetailView({ detail }: { detail: LearnerDetail }) {
         </h2>
         <p className="tc-label">
           {detail.isExample ? <span className="tc-pill">예시</span> : null}
-          {detail.isExample ? "예시 수치, 실제 학습 기록이 아니에요" : "학습 기록 · 음원은 검수 전 초안"}
+          {detail.isExample ? "예시 수치, 실제 학습 기록이 아니에요" : "학습 기록"}
         </p>
       </div>
       <div className="tc-rule" />

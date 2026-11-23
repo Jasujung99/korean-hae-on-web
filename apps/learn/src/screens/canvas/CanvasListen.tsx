@@ -80,8 +80,7 @@ export function CanvasListen() {
         })}
       </div>
       <p className="c-caption center" aria-live="polite">
-        {last ? `지금 들은 소리 — ${last}` : "카드를 눌러 보세요."} ·{" "}
-        고정 음원(검수 전 초안)
+        {last ? `지금 들은 소리 — ${last}` : "카드를 눌러 보세요."}
       </p>
 
       <StripLink onClick={() => navigate("/dictionary")}>새 단어 보기</StripLink>

@@ -1,18 +1,13 @@
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router";
 import { usePractice } from "../../preview/PracticeContext";
+import { useLearner } from "../../preview/settings";
 import { ScreenTitle } from "../../ui";
 import { Sticker, StripLink } from "./parts";
 
-const steps = [
-  { num: "01", title: "듣고 고르기", note: "아홉 문항", to: "/practice" },
-  { num: "02", title: "소리 익히기", note: "아자 · 아차 · 아짜", to: "/listen" },
-  { num: "03", title: "새 단어", note: "모자 · 기차 · 이쪽", to: "/dictionary" },
-  { num: "04", title: "학습 리포트", note: "오늘의 변화", to: "/finish" },
-];
-
 export function CanvasHome() {
   const practice = usePractice();
+  const learner = useLearner();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,8 +15,18 @@ export function CanvasHome() {
   }, [practice]);
 
   const answered = Object.keys(practice.results).length + practice.skipped.length;
-  const total = practice.session?.items.length ?? 9;
+  const total = practice.session?.items.length ?? null;
   const started = answered > 0 && !practice.session?.finished;
+  const nickname = learner.me?.learner.nickname ?? "";
+  const groupLabel = practice.session?.groupLabel ?? "";
+  // 머리 글자는 이번 연습 묶음의 자음에서 가져온다. 아직 못 불러왔으면 첫 묶음(ㅈ·ㅊ·ㅉ)으로 둔다.
+  const heroKeys = practice.session?.items[0]?.choices.map((row) => row.key).slice(0, 3) ?? ["ㅈ", "ㅊ", "ㅉ"];
+  const steps = [
+    { num: "01", title: "듣고 고르기", note: total ? `${total}문항` : "", to: "/practice" },
+    { num: "02", title: "소리 익히기", note: "헷갈린 소리 다시 듣기", to: "/listen" },
+    { num: "03", title: "새 단어", note: "뜻과 예문", to: "/dictionary" },
+    { num: "04", title: "학습 리포트", note: "오늘의 변화", to: "/finish" },
+  ];
 
   return (
     <div className="c-page">
@@ -30,25 +35,17 @@ export function CanvasHome() {
       <h2 className="c-title">오늘의 연습</h2>
       <div className="c-rule" />
       <p className="c-meta">
-        <span>미리보기 학습자</span>
-        <i>/</i>
-        <span>ㅈ · ㅊ · ㅉ</span>
-        <i>/</i>
-        <span>약 7분</span>
+        {nickname ? <span>{nickname} 님</span> : null}
+        {nickname && groupLabel ? <i>/</i> : null}
+        {groupLabel ? <span>{groupLabel}</span> : null}
       </p>
-      <div className="c-hero" role="img" aria-label="자, 차, 짜">
-        <span className="c-syll t1">
-          <b>ㅈ</b>
-          <em>ㅏ</em>
-        </span>
-        <span className="c-syll t2">
-          <b>ㅊ</b>
-          <em>ㅏ</em>
-        </span>
-        <span className="c-syll t3">
-          <b>ㅉ</b>
-          <em>ㅏ</em>
-        </span>
+      <div className="c-hero" role="img" aria-label={heroKeys.join(", ")}>
+        {heroKeys.map((key, position) => (
+          <span key={key} className={`c-syll t${position + 1}`}>
+            <b>{key}</b>
+            <em>ㅏ</em>
+          </span>
+        ))}
       </div>
       <ol className="c-steps">
         {steps.map((step) => (

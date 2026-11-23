@@ -1,6 +1,11 @@
 import type { AnswerResult } from "../../../server/preview/contract.ts";
 
-const CONSONANTS = ["ㅈ", "ㅊ", "ㅉ"];
+/** 답에 나온 자음을 보기 순서대로 모은다. 묶음마다 자음이 다르므로 고정 목록을 쓰지 않는다. */
+function consonantsOf(answers: AnswerResult[], order: string[] = []): string[] {
+  const seen = [...order];
+  for (const answer of answers) if (!seen.includes(answer.answer.key)) seen.push(answer.answer.key);
+  return seen;
+}
 
 export function topConfusion(answers: AnswerResult[]): { from: string; to: string; count: number } | null {
   const counts = new Map<string, number>();
@@ -15,9 +20,9 @@ export function topConfusion(answers: AnswerResult[]): { from: string; to: strin
   return { from: from ?? "", to: to ?? "", count: top[1] };
 }
 
-export function byConsonant(answers: AnswerResult[]) {
+export function byConsonant(answers: AnswerResult[], order: string[] = []) {
   const scored = answers.filter((answer) => answer.countsAsScore);
-  return CONSONANTS.map((consonant) => {
+  return consonantsOf(scored, order).map((consonant) => {
     const rows = scored.filter((answer) => answer.answer.key === consonant);
     return { consonant, total: rows.length, correct: rows.filter((answer) => answer.correct).length };
   });
@@ -33,7 +38,7 @@ export function reportLines(answers: AnswerResult[]): { change: string; good: st
       ? `${best.consonant}을 ${best.total}번 모두 맞게 골랐어요.`
       : `${best.consonant}을 ${best.total}번 가운데 ${best.correct}번 맞게 골랐어요.`
     : "끝까지 들어 보았어요.";
-  const next = confusion ? `${confusion.from}과 ${confusion.to}을 이어서 들어 보세요.` : "다음에는 단어 첫머리 소리를 만나요.";
-  const change = best ? `모음 사이에서 ${best.consonant} 소리를 가장 또렷하게 가려 들었어요.` : "모음 사이의 세 소리를 처음 만났어요.";
+  const next = confusion ? `${confusion.from}과 ${confusion.to}을 이어서 들어 보세요.` : "다음에도 끝까지 듣고 골라 보세요.";
+  const change = best ? `${best.consonant} 소리를 가장 또렷하게 가려 들었어요.` : "오늘 처음 소리를 골라 보았어요.";
   return { change, good, next };
 }
