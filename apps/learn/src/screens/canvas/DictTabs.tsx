@@ -2,7 +2,6 @@
 // 자료·링크·출처 규칙은 DictInline과 같다. 사전 사이트는 새 창 링크(↗)로만 열고, 브라우저는 사전 API를 부르지 않는다.
 // 표준국어대사전·네이버 사전은 풀이 판 아래 바로가기로만 둔다. 검수 상태 안내 문구는 이 카드에 두지 않는다.
 import { useId, useRef, useState, type KeyboardEvent } from "react";
-import { Link } from "react-router";
 import type { DictLanguage, WordDictView } from "../../../server/preview/contract.ts";
 import { useLearner } from "../../preview/settings";
 import { track } from "../../preview/telemetry";
@@ -151,12 +150,9 @@ export function DictTabs({ word, wordId, pos, dict }: { word: string; wordId: st
             ))}
           </div>
           {dict !== null ? (
-            /* CC BY-SA는 자료 가까이에 출처와 라이선스 표시를 요구한다. 긴 설명은 설정에 둔다. */
+            /* CC BY-SA는 자료 가까이에 출처와 라이선스 표시를 요구한다. 여기엔 글자만 두고, 전문 링크와 긴 설명은 설정의 '사전 자료 출처'에 둔다. */
             <p className="dict-inline-credit">
-              출처 국립국어원 한국어기초사전 · 표준국어대사전 ·{" "}
-              <Link className="tc-ul" to={DICT_LICENSE.settingsHref}>
-                {DICT_LICENSE.short}
-              </Link>
+              출처 국립국어원 한국어기초사전 · 표준국어대사전 · {DICT_LICENSE.short}
             </p>
           ) : null}
         </div>

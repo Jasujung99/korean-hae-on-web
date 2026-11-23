@@ -1075,6 +1075,8 @@ b.p3 {
 }
 
 .pair-row .pair-words button {
+  /* 버튼은 flex라 'ㅈ'과 낱말 사이의 공백 글자가 사라진다. 간격은 gap으로 준다. */
+  gap: var(--space-2);
   min-height: 44px;
   padding: 0 var(--space-4);
   border: 1px solid var(--line);

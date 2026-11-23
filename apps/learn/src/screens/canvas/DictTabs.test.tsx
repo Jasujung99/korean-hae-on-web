@@ -144,7 +144,7 @@ describe("DictTabs", () => {
     expect(links[0]).toHaveAttribute("href", "https://krdict.korean.go.kr/kor/dicSearch/SearchView?ParaWordNo=60632");
     expect(links[1]).toHaveAttribute("href", "https://stdict.korean.go.kr/search/searchView.do?word_no=402860&searchKeywordTo=3");
     expect(screen.getByText(/출처 국립국어원 한국어기초사전 · 표준국어대사전 ·/)).toHaveTextContent("CC BY-SA 2.0 KR");
-    expect(screen.getByRole("link", { name: "CC BY-SA 2.0 KR" })).toHaveAttribute("href", "/settings#dict-license");
+    expect(screen.queryByRole("link", { name: "CC BY-SA 2.0 KR" })).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("tab", { name: "Русский" }));
     const ru = screen.getByRole("link", { name: "한국어기초사전 러시아어 화면 새 창으로 열기" });
