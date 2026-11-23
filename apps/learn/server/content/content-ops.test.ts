@@ -107,6 +107,35 @@ describe("content operations release lifecycle, audio inventory DB source, and m
     });
     const learner = client(`${DEVICE_COOKIE}=${cookieFrom(claimRes, DEVICE_COOKIE)}`);
 
+    // 0. Stage 0 음원 초안도 화면에서 승인할 수 있다
+    const pwDraft = await contentRepo.insertAudioAsset({
+      audioId: "pw-아자--sulafat",
+      itemId: null,
+      kind: "pseudo",
+      voiceKey: "sulafat",
+      storage: "r2",
+      objectKey: "a/aja-sulafat.m4a",
+      mime: "audio/mp4",
+      bytes: 100,
+      durationMs: 500,
+      sha256: "pw1",
+      status: "draft",
+      stale: false,
+      source: "pc_batch",
+      model: "m",
+      stylePrompt: "flat",
+      text: "아자",
+      generatedAt: "2026-11-23T00:00:00.000Z",
+    });
+    const stage0View = (await (await teacher.request("/api/teacher/content?group=j_ch_jj")).json()) as TeacherContentView;
+    expect(stage0View.stage0DraftAudios?.map((row) => [row.assetId, row.word, row.kind, row.voiceKey])).toEqual([
+      [pwDraft.id, "아자", "pseudo", "sulafat"],
+    ]);
+    // 뒤 단계의 게시 개수가 바뀌지 않게 여기서는 제외로 검수를 마친다(승인과 같은 검수 경로).
+    await sendJson(teacher, "POST", `/api/teacher/content/audio/${pwDraft.id}/reject`, {});
+    const stage0After = (await (await teacher.request("/api/teacher/content?group=j_ch_jj")).json()) as TeacherContentView;
+    expect(stage0After.stage0DraftAudios).toEqual([]);
+
     // 1. 새 단어 추가 + 단어 TTS 생성 -> 아직 학습자에게 보이지 않음
     const createRes = await sendJson(teacher, "POST", "/api/teacher/content/items", {
       groupId: "j_ch_jj",

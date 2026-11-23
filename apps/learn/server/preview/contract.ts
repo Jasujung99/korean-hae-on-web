@@ -560,6 +560,8 @@ export type TeacherContentView = {
   totalProposalCount?: number;
   group: { id: string; label: string; choices: string[] };
   stage0: ContentStageZeroRow[];
+  /** Stage 0(의사단어·첫 듣기) 음원 중 초안인 것. 화면에서 승인·제외한다. */
+  stage0DraftAudios?: DraftAudioReviewRow[];
   stages: ContentStageSection[];
   release: ContentReleaseStatusView;
   ttsReady: boolean;

@@ -360,6 +360,30 @@ function buildDbContentView(
       }),
   ];
 
+  // Stage 0 음원 초안 검수 목록(같은 음원이 두 칸에 나와도 한 번만)
+  const stage0DraftAudios: DraftAudioReviewRow[] = [];
+  const seenStage0Drafts = new Set<string>();
+  for (const row of stage0Rows) {
+    for (const voice of CONTENT_VOICES) {
+      const cell = row.audio[voice.key];
+      if (!cell?.assetId || cell.state !== "draft" || seenStage0Drafts.has(cell.assetId)) continue;
+      seenStage0Drafts.add(cell.assetId);
+      const asset = allAssets.find((a) => a.id === cell.assetId);
+      stage0DraftAudios.push({
+        assetId: cell.assetId,
+        audioId: cell.audioId,
+        itemId: asset?.itemId ?? null,
+        word: row.stimulus,
+        kind: row.kind === "pseudoword" ? "pseudo" : "syllable",
+        voiceKey: voice.key,
+        voiceLabel: voiceLabelFromKey(voice.key),
+        durationMs: cell.durationMs,
+        generatedAt: cell.generatedAt ?? asset?.createdAt ?? "",
+        playUrl: cell.playUrl,
+      });
+    }
+  }
+
   const stageKeys = groupId === "j_ch_jj" ? JCJ_STAGE_KEYS : OTHER_STAGE_KEYS;
   const stages: ContentStageSection[] = stageKeys.map((key) => {
     const itemsInStage = groupItems.filter((item) => snapshotStageKey(item) === key);
@@ -493,6 +517,7 @@ function buildDbContentView(
       choices: [...GROUP_CHOICES[groupId]],
     },
     stage0: stage0Rows,
+    stage0DraftAudios,
     stages,
     release: computeReleaseStatus(allItems, allStage0, allAssets, latestRelease, nowIso),
     ttsReady,

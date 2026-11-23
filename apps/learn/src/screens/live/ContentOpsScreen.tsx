@@ -225,19 +225,29 @@ function AudioVoiceRow({
 
 function StageZeroTable({
   rows,
+  drafts,
   busy,
+  readOnly,
+  reviewBusyId,
   onPlay,
+  onApprove,
+  onReject,
 }: {
   rows: ContentStageZeroRow[];
+  drafts: DraftAudioReviewRow[];
   busy: boolean;
+  readOnly: boolean;
+  reviewBusyId: string | null;
   onPlay: (url: string, label: string) => void;
+  onApprove: (assetId: string) => void;
+  onReject: (assetId: string) => void;
 }) {
   return (
     <section className="tc-section co-stage0" aria-labelledby="stage0-title">
       <h3 id="stage0-title">
         <span className="tc-num">00</span>
         <span>Stage 0 · 의사단어와 첫 듣기 칸</span>
-        <small>읽기 전용 · {rows.length}개</small>
+        <small>{rows.length}개{drafts.length > 0 ? ` · 음원 초안 ${drafts.length}` : ""}</small>
       </h3>
       <div className="tc-table-wrap">
         <table className="tc-table co-stage0-table">
@@ -268,6 +278,23 @@ function StageZeroTable({
           </tbody>
         </table>
       </div>
+      {/* 소리 목록은 고치지 않고, 음원 초안만 승인·제외한다(다시 만들기는 PC 일괄 생성으로). */}
+      <DraftReviewList
+        drafts={drafts}
+        busy={busy}
+        readOnly={readOnly}
+        ttsReady={false}
+        reviewBusyId={reviewBusyId}
+        generatingKey={null}
+        confirmGen={null}
+        genError={null}
+        onPlay={onPlay}
+        onRequestRegenerate={() => undefined}
+        onConfirmGenerate={() => undefined}
+        onCancelGenerate={() => undefined}
+        onApprove={onApprove}
+        onReject={onReject}
+      />
     </section>
   );
 }
@@ -1375,7 +1402,16 @@ export function ContentOpsScreen() {
             </div>
           </div>
 
-          <StageZeroTable rows={view.stage0} busy={busy} onPlay={playUrl} />
+          <StageZeroTable
+            rows={view.stage0}
+            drafts={view.stage0DraftAudios ?? []}
+            busy={busy}
+            readOnly={!view.writable}
+            reviewBusyId={reviewBusyId}
+            onPlay={playUrl}
+            onApprove={(assetId) => void approveDraft(assetId)}
+            onReject={(assetId) => void rejectDraft(assetId)}
+          />
 
           {displayedStages.map((stage) => (
             <StageAccordion
