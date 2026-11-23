@@ -369,11 +369,9 @@ describe("teacher navigation and read-only content ops screen", () => {
     try {
       renderTeacher("/teach/content");
       const genBtn = await screen.findByRole("button", { name: "Charon 모자 단어 음원, 없음, 생성" });
+      // 없는 칸은 확인 줄 없이 한 번에 만든다.
       fireEvent.click(genBtn);
-      expect(calls.some((c) => c.path.endsWith("/audio"))).toBe(false);
-      expect(screen.getByText("1건 사용")).toBeInTheDocument();
-
-      fireEvent.click(screen.getByRole("button", { name: "만들기" }));
+      expect(screen.queryByText("1건 사용")).not.toBeInTheDocument();
       await screen.findByRole("region", { name: "음원 초안 검수" });
       expect(calls.some((c) => c.method === "POST" && c.path === "/api/teacher/content/items/item-1/audio")).toBe(true);
       expect(onUsageRefresh).toHaveBeenCalled();
@@ -381,7 +379,6 @@ describe("teacher navigation and read-only content ops screen", () => {
       // 409 한도 초과 메시지 확인
       returnQuota409 = true;
       fireEvent.click(await screen.findByRole("button", { name: "Charon 모자 단어 음원, 없음, 생성" }));
-      fireEvent.click(screen.getByRole("button", { name: "만들기" }));
       expect(await screen.findByText("오늘 한도를 다 썼어요. 오후 5시에 다시 열려요.")).toBeInTheDocument();
 
       // 초안 검수 줄: 길이·승인·제외

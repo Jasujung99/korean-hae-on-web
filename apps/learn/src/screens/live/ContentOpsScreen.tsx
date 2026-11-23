@@ -1478,7 +1478,9 @@ export function ContentOpsScreen() {
               onPlay={playUrl}
               onRequestGenerate={(confirm) => {
                 setGenError(null);
-                setConfirmGen(confirm);
+                // 없는 칸과 초안 [다시]는 한 번에 만든다. 글자가 바뀐 예전 음원(stale)만 [기존 듣기]가 있는 확인 줄을 거친다.
+                if (confirm.stalePlayUrl) setConfirmGen(confirm);
+                else void confirmGenerate(confirm);
               }}
               onConfirmGenerate={(confirm) => void confirmGenerate(confirm)}
               onCancelGenerate={() => {
