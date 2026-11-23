@@ -287,9 +287,9 @@ describe("stage 1 shells", () => {
     stubPreviewApi({ "GET /api/me": me });
     renderAt("/settings", true);
     expect(await screen.findByRole("heading", { level: 2, name: "설정" })).toBeInTheDocument();
-    expect(screen.getByRole("group", { name: "화면 모양" })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "시안" })).toHaveAttribute("aria-pressed", "true");
-    expect(screen.getByRole("group", { name: "사전에서 볼 언어" })).toHaveTextContent("Русский");
+    expect(screen.getByRole("group", { name: "화면 넘기기" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "한눈에" })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("group", { name: "사전 풀이 언어" })).toHaveTextContent("Русский");
     expect(screen.getByRole("button", { name: "이 기기에서 나가기" })).toBeInTheDocument();
     expect(screen.queryByText(/브라우저 음성/)).not.toBeInTheDocument();
   });
