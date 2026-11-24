@@ -409,3 +409,12 @@ a:focus-visible {
   outline: 2px solid var(--olive);
   outline-offset: 3px;
 }
+
+/* 목소리 버튼의 재생 표시(속이 빈 선 삼각형). 색은 버튼마다 color로 준다. */
+.play-icon {
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+}

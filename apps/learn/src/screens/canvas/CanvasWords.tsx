@@ -6,6 +6,7 @@ import { usePractice } from "../../preview/PracticeContext";
 import { track } from "../../preview/telemetry";
 import { ScreenTitle } from "../../ui";
 import { DictTabs } from "./DictTabs";
+import { PlayIcon } from "../PlayIcon";
 import { Blade, StripLink } from "./parts";
 
 // 03 새 단어. 사전은 방식 A(카드 안에서 펼치기)로 둔다.
@@ -157,7 +158,7 @@ export function CanvasWords() {
                       void practice.playRole(ref, row.kind, row.text);
                     }}
                   >
-                    {on ? "듣는 중" : ref ? <span aria-hidden="true">▶</span> : "준비 중"}
+                    {on ? "듣는 중" : ref ? <PlayIcon /> : "준비 중"}
                   </button>
                 );
               })}

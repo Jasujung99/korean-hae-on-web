@@ -1253,7 +1253,7 @@ b.p3 {
   display: grid;
   gap: var(--space-2);
   padding: var(--space-5);
-  border: 1px solid var(--line);
+  border: 1px solid color-mix(in srgb, var(--line) 50%, var(--paper));
   border-radius: var(--radius-md);
 }
 
@@ -1292,7 +1292,7 @@ b.p3 {
 .c-page .c-voice-btn {
   min-height: 44px;
   padding: 0 var(--space-1);
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--line);
   border-radius: var(--radius-md);
   background: var(--paper);
   color: var(--ink);
@@ -1302,7 +1302,7 @@ b.p3 {
 }
 
 .c-page .c-voice-btn.is-example {
-  border-color: var(--lavender);
+  border-color: color-mix(in srgb, var(--lavender) 55%, var(--paper));
   background: var(--wash-lavender);
   color: var(--lavender-ink);
 }
@@ -1316,4 +1316,12 @@ b.p3 {
 .c-page .c-voice-btn:disabled:not(.is-on) {
   color: var(--ink-muted);
   cursor: default;
+}
+
+.c-voice-btn .play-icon {
+  color: var(--ink-muted);
+}
+
+.c-voice-btn.is-example .play-icon {
+  color: color-mix(in srgb, var(--lavender-ink) 75%, var(--paper));
 }

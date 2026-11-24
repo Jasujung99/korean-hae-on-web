@@ -6,6 +6,7 @@ import { usePractice } from "../../preview/PracticeContext";
 import { track } from "../../preview/telemetry";
 import { LearnerFrame, Pill, ScreenTitle } from "../../ui";
 import { DictInline } from "./DictInline";
+import { PlayIcon } from "../PlayIcon";
 
 export function WordsLive() {
   const practice = usePractice();
@@ -163,7 +164,7 @@ export function WordsLive() {
   );
 }
 
-/** 목소리 세 칸(남성 · 여성(1) · 여성(2)). 재생 중인 칸은 ▶ 대신 점 세 개가 움직인다. */
+/** 목소리 세 칸(남성 · 여성(1) · 여성(2)). 재생 중인 칸은 재생 표시 대신 점 세 개가 움직인다. */
 function VoiceRow({
   title,
   kind,
@@ -207,8 +208,10 @@ function VoiceRow({
                   <i />
                   <i />
                 </span>
+              ) : ref ? (
+                <PlayIcon />
               ) : (
-                <span aria-hidden="true">{ref ? "▶" : "–"}</span>
+                <span aria-hidden="true">–</span>
               )}
               <span>{voice.label}</span>
             </button>
