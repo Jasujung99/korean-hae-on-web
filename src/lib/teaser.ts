@@ -73,19 +73,55 @@ export const teaserItems: readonly TeaserItem[] = [
 export const audioUrl = (id: string, kind: "word" | "sentence", voice: TeaserVoice["key"]) =>
   `/sori-teaser/${id}-${kind}-${voice}.m4a`;
 
-export interface TeaserVideo {
+export interface TeaserEpisode {
   id: string;
-  series: string;
   title: string;
+  /** 화면에 보이는 길이 (분:초) */
+  duration: string;
   poster: string;
+}
+
+export interface TeaserSeries {
+  name: string;
+  /** 모든 편 길이의 합 (분:초) */
+  total: string;
+  episodes: readonly TeaserEpisode[];
 }
 
 export const tiktokProfile = "https://www.tiktok.com/@haeonkorean";
 
-export const teaserVideos: readonly TeaserVideo[] = [
-  { id: "7707203921374219527", series: "터미널 1/2", title: "터미널 ≠ 종점", poster: "/videos/terminal-1.jpg" },
-  { id: "7707206258381638930", series: "잡다 1/3", title: "쥐는 게 전부가 아니에요", poster: "/videos/japda-1.jpg" },
-  { id: "7707207624613203207", series: "그러니까·말야 1/4", title: "그러니까는 So만 알면 반쪽", poster: "/videos/geureonikka-1.jpg" },
+/**
+ * 틱톡 @haeonkorean에 올린 9편을 시리즈로 묶었다. 편 제목과 길이는 영상/05_틱톡업로드/manifest.md,
+ * 표지는 같은 폴더의 covers를 540×960으로 줄인 것이다.
+ */
+export const videoSeries: readonly TeaserSeries[] = [
+  {
+    name: "터미널",
+    total: "2:35",
+    episodes: [
+      { id: "7707203921374219527", title: "터미널 vs 종점", duration: "1:05", poster: "/videos/terminal-1.jpg" },
+      { id: "7707205899898719495", title: "정차·경유·정류장·정거장", duration: "1:30", poster: "/videos/terminal-2.jpg" },
+    ],
+  },
+  {
+    name: "잡다",
+    total: "4:44",
+    episodes: [
+      { id: "7707206258381638930", title: "쥐는 게 전부가 아니에요", duration: "1:30", poster: "/videos/japda-1.jpg" },
+      { id: "7707207155501305096", title: "자리 잡다, 뜻이 두 개", duration: "1:30", poster: "/videos/japda-2.jpg" },
+      { id: "7707207426793098503", title: "감 잡았어?", duration: "1:44", poster: "/videos/japda-3.jpg" },
+    ],
+  },
+  {
+    name: "그러니까 짜임새",
+    total: "7:12",
+    episodes: [
+      { id: "7707207624613203207", title: "그러니까 = So만 알면 반쪽", duration: "1:42", poster: "/videos/geureonikka-1.jpg" },
+      { id: "7707207847981075730", title: "비 온다고 했잖아", duration: "1:45", poster: "/videos/geureonikka-2.jpg" },
+      { id: "7707208047805893896", title: "그게 말야 vs 그건 말야", duration: "1:55", poster: "/videos/geureonikka-3.jpg" },
+      { id: "7707208231352945928", title: "셋 중 뭘 고를까", duration: "1:51", poster: "/videos/geureonikka-4.jpg" },
+    ],
+  },
 ];
 
 /** 누른 뒤에만 불러오는 틱톡 Embed Player 주소. 키가 필요 없다. */

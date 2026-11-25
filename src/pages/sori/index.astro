@@ -1,9 +1,8 @@
 ---
 import SoundTeaser from "../../components/SoundTeaser.astro";
-import VideoShelf from "../../components/VideoShelf.astro";
+import VideoSeries from "../../components/VideoSeries.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { site } from "../../lib/site";
-import { tiktokProfile } from "../../lib/teaser";
 
 const title = "듣고 고르기 · 해온 소리 연습 맛보기";
 const description = "ㅈ·ㅊ·ㅉ 세 소리를 듣고 빈칸에 들어갈 첫소리를 골라 보세요. 해온 소리 연습에서 옮겨 온 세 문항이에요. Listen, then choose.";
@@ -32,9 +31,7 @@ const { letters } = site.links;
 
     <section class="videos" aria-labelledby="videos-title">
       <h2 class="videos-title" id="videos-title">짧은 영상도 있어요</h2>
-      <p class="videos-body">영상을 누르면 그 자리에서 틱톡 플레이어를 불러와요.</p>
-      <VideoShelf />
-      <p class="videos-link" lang="en"><a class="underline-link" href={tiktokProfile}>@haeonkorean ↗</a></p>
+      <VideoSeries heading={false} />
     </section>
   </div>
 </BaseLayout>
@@ -122,15 +119,4 @@ const { letters } = site.links;
     margin-top: 56px;
   }
 
-  .videos-body {
-    margin: 6px 0 20px;
-    color: var(--ink-muted);
-    font: 400 15px/24px var(--font-serif);
-  }
-
-  .videos-link {
-    margin: 16px 0 0;
-    text-align: center;
-    font: 400 18px/26px var(--font-latin);
-  }
 </style>

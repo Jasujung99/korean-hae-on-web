@@ -1,0 +1,635 @@
+---
+import { playerUrl, tiktokProfile, videoSeries } from "../lib/teaser";
+
+interface Props {
+  /** `02 짧은 영상` 머리를 보일지. 이미 제목이 있는 자리(/sori/)에서는 끈다. */
+  heading?: boolean;
+}
+
+const { heading = true } = Astro.props;
+const first = videoSeries[0];
+const firstEpisode = first.episodes[0];
+const data = JSON.stringify(
+  videoSeries.map((series) => ({
+    name: series.name,
+    total: series.total,
+    episodes: series.episodes.map((episode) => ({ ...episode, src: playerUrl(episode.id) })),
+  })),
+);
+const metaOf = (index: number) =>
+  `시리즈 ${index + 1} / ${videoSeries.length} · ${videoSeries[index].episodes.length}편 · ${videoSeries[index].total}`;
+---
+
+<div class="series" data-series={data}>
+  {
+    heading && (
+      <div class="head">
+        <div class="head-top">
+          <p class="kicker">
+            <span class="numeral" lang="en">02</span>짧은 영상
+          </p>
+          <p class="latin" lang="en">Short videos on TikTok.</p>
+        </div>
+        <h2 class="head-title">헷갈리는 말, 1분 남짓한 영상으로.</h2>
+      </div>
+    )
+  }
+
+  <div class="switcher">
+    <button class="round" type="button" data-prev aria-label={`이전 시리즈 ${videoSeries[videoSeries.length - 1].name} 보기`}>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 6l-6 6 6 6"></path></svg>
+    </button>
+    <div class="now" aria-live="polite">
+      <p class="now-name" data-name>{first.name}</p>
+      <p class="now-meta" data-meta>{metaOf(0)}</p>
+    </div>
+    <button class="round" type="button" data-next aria-label={`다음 시리즈 ${videoSeries[1].name} 보기`}>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"></path></svg>
+    </button>
+  </div>
+
+  <div class="stage">
+    <img class="poster" data-poster src={firstEpisode.poster} alt="" width="540" height="960" loading="lazy" decoding="async" />
+    <iframe
+      data-frame
+      title="틱톡 영상"
+      allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+      allowfullscreen
+      referrerpolicy="strict-origin-when-cross-origin"
+      hidden></iframe>
+    <button class="play" type="button" data-play aria-label={`${firstEpisode.title} 재생`}>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.5v13l10.5-6.5z"></path></svg>
+    </button>
+    <div class="done" data-done hidden>
+      <p class="done-title" data-done-title></p>
+      <p class="done-body" data-done-body></p>
+      <button class="primary" type="button" data-continue>이어 보기</button>
+      <button class="text-button" type="button" data-replay>처음부터 다시</button>
+    </div>
+  </div>
+
+  <div class="strip-wrap">
+    {
+      videoSeries.map((series, seriesIndex) => (
+        <ol class="strip" data-strip aria-label={`${series.name} 편 목록`} hidden={seriesIndex !== 0}>
+          {series.episodes.map((episode, index) => (
+            <li>
+              <button
+                class="card"
+                type="button"
+                data-card
+                aria-label={`${series.name} ${index + 1}편 ${episode.title} 보기`}
+                aria-current={seriesIndex === 0 && index === 0 ? "true" : undefined}
+              >
+                <span class="cover">
+                  <img src={episode.poster} alt="" width="540" height="960" loading="lazy" decoding="async" />
+                </span>
+                <span class="card-meta" data-card-meta>
+                  {index + 1}편 · {episode.duration}
+                </span>
+                <span class="card-title">{episode.title}</span>
+              </button>
+            </li>
+          ))}
+        </ol>
+      ))
+    }
+    <button class="round edge edge--prev" type="button" data-scroll="-1" aria-label="앞 카드 보기" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 6l-6 6 6 6"></path></svg>
+    </button>
+    <button class="round edge edge--next" type="button" data-scroll="1" aria-label="다음 카드 보기" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"></path></svg>
+    </button>
+  </div>
+
+  <p class="more"><a class="more-link" href={tiktokProfile}>틱톡에서 더 보기 ↗</a></p>
+</div>
+
+<script>
+  interface Episode {
+    id: string;
+    title: string;
+    duration: string;
+    poster: string;
+    src: string;
+  }
+  interface Series {
+    name: string;
+    total: string;
+    episodes: Episode[];
+  }
+  type Phase = "poster" | "playing" | "ended";
+
+  // 받침이 있으면 ‘을’, 없으면 ‘를’.
+  const objectParticle = (word: string) => {
+    const code = word.charCodeAt(word.length - 1) - 0xac00;
+    return code >= 0 && code % 28 !== 0 ? "을" : "를";
+  };
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  for (const root of document.querySelectorAll<HTMLElement>("[data-series]")) {
+    const series = JSON.parse(root.dataset.series ?? "[]") as Series[];
+    const $ = <T extends HTMLElement>(selector: string) => root.querySelector<T>(selector)!;
+    const frame = $<HTMLIFrameElement>("[data-frame]");
+    const poster = $<HTMLImageElement>("[data-poster]");
+    const play = $<HTMLButtonElement>("[data-play]");
+    const done = $("[data-done]");
+    const prev = $<HTMLButtonElement>("[data-prev]");
+    const next = $<HTMLButtonElement>("[data-next]");
+    const strips = [...root.querySelectorAll<HTMLOListElement>("[data-strip]")];
+    const edgePrev = $<HTMLButtonElement>('[data-scroll="-1"]');
+    const edgeNext = $<HTMLButtonElement>('[data-scroll="1"]');
+
+    let s = 0;
+    let e = 0;
+    let phase: Phase = "poster";
+    let wantsSound = false;
+
+    const nextIndex = () => (s + 1) % series.length;
+    const prevIndex = () => (s + series.length - 1) % series.length;
+    const activeStrip = () => strips[s];
+
+    function updateEdges() {
+      const strip = activeStrip();
+      edgePrev.hidden = strip.scrollLeft <= 2;
+      edgeNext.hidden = strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 2;
+    }
+
+    function render(scrollToCurrent = true) {
+      const current = series[s];
+      const episode = current.episodes[e];
+      const upcoming = series[nextIndex()];
+
+      $("[data-name]").textContent = current.name;
+      $("[data-meta]").textContent =
+        `시리즈 ${s + 1} / ${series.length} · ${current.episodes.length}편 · ${current.total}`;
+      prev.setAttribute("aria-label", `이전 시리즈 ${series[prevIndex()].name} 보기`);
+      next.setAttribute("aria-label", `다음 시리즈 ${upcoming.name} 보기`);
+      next.classList.toggle("is-filled", phase === "ended");
+
+      strips.forEach((strip, index) => {
+        strip.hidden = index !== s;
+      });
+      activeStrip()
+        .querySelectorAll<HTMLButtonElement>("[data-card]")
+        .forEach((card, index) => {
+          const isCurrent = index === e;
+          if (isCurrent) card.setAttribute("aria-current", "true");
+          else card.removeAttribute("aria-current");
+          card.querySelector("[data-card-meta]")!.textContent =
+            isCurrent && phase === "playing"
+              ? "재생 중"
+              : isCurrent && phase === "ended"
+                ? "다 봤어요"
+                : `${index + 1}편 · ${current.episodes[index].duration}`;
+        });
+
+      if (poster.getAttribute("src") !== episode.poster) poster.src = episode.poster;
+      play.hidden = phase !== "poster";
+      play.setAttribute("aria-label", `${episode.title} 재생`);
+
+      done.hidden = phase !== "ended";
+      $("[data-done-title]").textContent = `${current.name}${objectParticle(current.name)} 다 봤어요.`;
+      $("[data-done-body]").textContent = `다음 시리즈 · ${upcoming.name} ${upcoming.episodes.length}편`;
+
+      // 누르기 전에는 틱톡을 부르지 않는다. 다른 편으로 바뀔 때만 주소를 바꾼다.
+      if (phase === "playing") {
+        if (frame.dataset.id !== episode.id) {
+          frame.src = episode.src;
+          frame.dataset.id = episode.id;
+          frame.title = `틱톡 영상: ${current.name} ${e + 1}편 ${episode.title}`;
+        }
+        frame.hidden = false;
+      } else {
+        frame.removeAttribute("src");
+        delete frame.dataset.id;
+        frame.hidden = true;
+      }
+
+      if (scrollToCurrent) {
+        const card = activeStrip().querySelectorAll("[data-card]")[e];
+        card?.scrollIntoView({ block: "nearest", inline: "nearest", behavior: reduceMotion.matches ? "auto" : "smooth" });
+      }
+      updateEdges();
+    }
+
+    const showSeries = (index: number, nextPhase: Phase) => {
+      s = index;
+      e = 0;
+      phase = nextPhase;
+      activeStrip().scrollLeft = 0;
+      render();
+    };
+
+    play.addEventListener("click", () => {
+      phase = "playing";
+      render();
+    });
+    prev.addEventListener("click", () => showSeries(prevIndex(), "poster"));
+    next.addEventListener("click", () => showSeries(nextIndex(), phase === "ended" ? "playing" : "poster"));
+    $("[data-continue]").addEventListener("click", () => showSeries(nextIndex(), "playing"));
+    $("[data-replay]").addEventListener("click", () => {
+      e = 0;
+      phase = "playing";
+      render();
+    });
+
+    strips.forEach((strip, seriesIndex) => {
+      strip.querySelectorAll<HTMLButtonElement>("[data-card]").forEach((card, index) => {
+        card.addEventListener("click", () => {
+          s = seriesIndex;
+          e = index;
+          phase = "playing";
+          render(false);
+        });
+      });
+      strip.addEventListener("scroll", updateEdges, { passive: true });
+    });
+
+    for (const edge of [edgePrev, edgeNext]) {
+      edge.addEventListener("click", () => {
+        const step = Number(edge.dataset.scroll) * 248;
+        activeStrip().scrollBy({ left: step, behavior: reduceMotion.matches ? "auto" : "smooth" });
+      });
+    }
+
+    // 플레이어가 보내는 소식(JSON 문자열). 이 섹션의 플레이어가 보낸 것만 본다.
+    window.addEventListener("message", (event) => {
+      if (event.source !== frame.contentWindow || phase !== "playing") return;
+      let message: { type?: string; value?: unknown; "x-tiktok-player"?: boolean };
+      try {
+        message = typeof event.data === "string" ? JSON.parse(event.data) : event.data;
+      } catch {
+        return;
+      }
+      if (!message || message["x-tiktok-player"] !== true) return;
+
+      if (message.type === "onPlayerReady") {
+        // autoplay=1만으로는 다음 편이 멈춘 채 뜨는 경우가 있어, 준비되면 재생을 한 번 더 청한다.
+        // 앞 편에서 소리를 켰다면 다음 편도 소리를 켠 채 이어 간다.
+        if (wantsSound) frame.contentWindow?.postMessage({ type: "unMute", "x-tiktok-player": true }, "*");
+        frame.contentWindow?.postMessage({ type: "play", "x-tiktok-player": true }, "*");
+      } else if (message.type === "onMute") {
+        wantsSound = message.value === false;
+      } else if (message.type === "onStateChange" && message.value === 0) {
+        // 한 편이 끝나면 다음 편, 시리즈 마지막 편이면 끝 화면.
+        if (e < series[s].episodes.length - 1) {
+          e += 1;
+        } else {
+          phase = "ended";
+        }
+        render();
+      } else if (message.type === "onPlayerError") {
+        const code = (message.value as { errorCode?: number } | undefined)?.errorCode;
+        if (code === 3002) {
+          // 브라우저가 자동 재생을 막았으면 재생 단추로 돌아가 한 번 누르게 한다.
+          phase = "poster";
+          render(false);
+        }
+      }
+    });
+
+    // 휴대폰 탭이나 PC 카드가 숨겨지면(탭 전환, 화면 너비 변화) 재생을 멈춘다.
+    new ResizeObserver(() => {
+      if (root.offsetParent === null) {
+        if (phase === "playing") {
+          phase = "poster";
+          render(false);
+        }
+      } else {
+        updateEdges();
+      }
+    }).observe(root);
+
+    render(false);
+  }
+</script>
+
+<style>
+  .series [hidden] {
+    display: none !important;
+  }
+
+  .series {
+    width: 100%;
+    color: var(--ink);
+    text-align: left;
+  }
+
+  .head {
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .head-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 4px 12px;
+  }
+
+  .kicker {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 0;
+    font: 600 16px/24px var(--font-serif);
+  }
+
+  .numeral {
+    color: var(--olive);
+    font: 500 20px/1 var(--font-latin);
+  }
+
+  .latin {
+    margin: 0;
+    color: var(--ink-muted);
+    font: 400 14px/20px var(--font-latin);
+  }
+
+  .head-title {
+    margin: 8px 0 0;
+    font: 600 20px/28px var(--font-serif);
+  }
+
+  .switcher {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .now {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .now-name {
+    margin: 0;
+    font: 600 16px/24px var(--font-serif);
+  }
+
+  .now-meta {
+    margin: 0;
+    color: var(--ink-muted);
+    font: 400 12px/18px var(--font-serif);
+  }
+
+  .round {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1.5px solid var(--olive);
+    border-radius: var(--radius-pill);
+    background: var(--paper);
+    color: var(--olive);
+    cursor: pointer;
+  }
+
+  .round svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .round:hover,
+  .round.is-filled {
+    background: var(--olive);
+    color: var(--paper);
+  }
+
+  .round:focus-visible,
+  .play:focus-visible,
+  .primary:focus-visible,
+  .text-button:focus-visible,
+  .card:focus-visible {
+    outline: 2px solid var(--olive);
+    outline-offset: 3px;
+  }
+
+  .stage {
+    position: relative;
+    width: min(100%, 248px);
+    aspect-ratio: 9 / 16;
+    margin: 16px auto 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: var(--ink);
+  }
+
+  .poster,
+  .stage iframe {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .poster {
+    object-fit: cover;
+  }
+
+  .play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    margin: -32px 0 0 -32px;
+    padding: 0;
+    border: 1.5px solid var(--olive);
+    border-radius: var(--radius-pill);
+    background: var(--paper);
+    color: var(--olive);
+    cursor: pointer;
+  }
+
+  .play svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+  }
+
+  .done {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 24px;
+    background: var(--paper);
+    text-align: center;
+  }
+
+  .done-title {
+    margin: 0;
+    font: 600 16px/24px var(--font-serif);
+  }
+
+  .done-body {
+    margin: 0;
+    color: var(--ink-muted);
+    font: 400 14px/20px var(--font-serif);
+  }
+
+  .primary {
+    min-height: 44px;
+    margin-top: 4px;
+    padding: 0 24px;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: var(--olive);
+    color: var(--paper);
+    font: 500 14px/1 var(--font-serif);
+    cursor: pointer;
+  }
+
+  .text-button {
+    min-height: 44px;
+    padding: 0 8px;
+    border: 0;
+    background: none;
+    color: var(--ink);
+    font: 400 14px/1 var(--font-serif);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+  }
+
+  /* 카드 줄의 자연 너비가 페이지를 넓히지 않도록, 너비는 바깥에서만 정해지게 한다. */
+  .strip-wrap {
+    position: relative;
+    margin-top: 20px;
+    contain: inline-size;
+  }
+
+  .strip {
+    display: flex;
+    gap: 12px;
+    margin: 0 -4px;
+    padding: 4px 4px 8px;
+    overflow-x: auto;
+    list-style: none;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 4px;
+    scrollbar-width: thin;
+  }
+
+  .strip li {
+    flex: 0 0 112px;
+    scroll-snap-align: start;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 112px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--ink);
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .cover {
+    display: block;
+    width: 112px;
+    height: 199px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    background: var(--paper);
+  }
+
+  .cover img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card[aria-current="true"] .cover {
+    outline-color: var(--olive);
+  }
+
+  .card-meta {
+    color: var(--ink-muted);
+    font: 400 12px/18px var(--font-serif);
+  }
+
+  .card[aria-current="true"] .card-meta {
+    color: var(--olive);
+    font-weight: 600;
+  }
+
+  .card-title {
+    display: -webkit-box;
+    margin-top: -6px;
+    overflow: hidden;
+    font: 500 14px/20px var(--font-serif);
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .edge {
+    position: absolute;
+    top: 82px;
+  }
+
+  .edge--prev {
+    left: -10px;
+  }
+
+  .edge--next {
+    right: -10px;
+  }
+
+  .more {
+    margin: 12px 0 0;
+  }
+
+  .more-link {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    min-height: 44px;
+    font: 400 14px/20px var(--font-serif);
+  }
+
+  .more-link::after {
+    content: "";
+    width: 18px;
+    height: 1.5px;
+    background: var(--olive);
+    transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .more-link:hover::after,
+  .more-link:focus-visible::after {
+    width: 100%;
+  }
+</style>

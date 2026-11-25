@@ -1,7 +1,7 @@
 ---
 import JamoHeadline from "../components/JamoHeadline.astro";
 import SoundTeaser from "../components/SoundTeaser.astro";
-import VideoShelf from "../components/VideoShelf.astro";
+import VideoSeries from "../components/VideoSeries.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { site } from "../lib/site";
 import { tiktokProfile } from "../lib/teaser";
@@ -41,10 +41,7 @@ const { threads, letters } = site.links;
         <SoundTeaser />
       </div>
       <div class="panel" role="tabpanel" id="panel-video" aria-labelledby="tab-video" hidden>
-        <h2 class="panel-title">헷갈리는 말,<br />1분 남짓한 영상으로.</h2>
-        <p class="panel-body">영상을 누르면 그 자리에서 틱톡 플레이어를 불러와요.</p>
-        <VideoShelf />
-        <p class="panel-link" lang="en"><a class="underline-link" href={tiktokProfile}>@haeonkorean ↗</a></p>
+        <VideoSeries />
       </div>
       <div class="panel" role="tabpanel" id="panel-letters" aria-labelledby="tab-letters" hidden>
         <h2 class="panel-title">해온의 소식은<br />편지와 스레드에서 이어져요.</h2>
@@ -68,11 +65,7 @@ const { threads, letters } = site.links;
         <span class="door-go">맛보기 해 보기 →</span>
       </a>
       <div class="door door--video">
-        <p class="door-kicker"><span class="numeral" lang="en">02</span> 짧은 영상</p>
-        <h2 class="door-title">헷갈리는 말, 1분 남짓한 영상으로.</h2>
-        <p class="door-latin" lang="en">Short videos on TikTok.</p>
-        <VideoShelf variant="compact" />
-        <a class="door-go" href={tiktokProfile}>틱톡에서 더 보기 ↗</a>
+        <VideoSeries />
       </div>
     </div>
     <ul class="links" lang="en">
@@ -185,7 +178,7 @@ const { threads, letters } = site.links;
   .doors {
     display: flex;
     gap: 24px;
-    align-items: stretch;
+    align-items: flex-start;
   }
 
   .door {
@@ -199,7 +192,10 @@ const { threads, letters } = site.links;
     color: var(--ink);
   }
 
+  /* 영상 카드가 길어져도 들어 보기 카드는 화면 안에 머문다. */
   .door--listen {
+    position: sticky;
+    top: 24px;
     background: var(--wash-sage);
     transition: background 0.4s ease;
   }
@@ -245,18 +241,10 @@ const { threads, letters } = site.links;
     font: 600 24px/34px var(--font-serif);
   }
 
-  .door--video .door-title {
-    margin-top: 16px;
-  }
-
   .door-latin {
     margin: 4px 0 0;
     color: var(--ink-muted);
     font: 400 17px/24px var(--font-latin);
-  }
-
-  .door--video :global(.shelf) {
-    margin-top: 24px;
   }
 
   .door-go {
@@ -282,11 +270,6 @@ const { threads, letters } = site.links;
   .door-go:hover::after,
   .door-go:focus-visible::after {
     width: 100%;
-  }
-
-  .door--video .door-go {
-    margin-top: auto;
-    padding-top: 24px;
   }
 
   /* ---- 휴대폰: 색인표 한 상자 ---- */
@@ -377,12 +360,6 @@ const { threads, letters } = site.links;
     margin: 10px 0 24px;
     color: var(--ink-muted);
     font: 400 15px/24px var(--font-serif);
-  }
-
-  .panel-link {
-    margin: 16px 0 0;
-    text-align: center;
-    font: 400 18px/26px var(--font-latin);
   }
 
   .links--stack {
