@@ -49,6 +49,7 @@ import type {
   ContentProposalRow,
   ContentReleaseRow,
   ContentRepo,
+  ReplaceMarkTarget,
   StageZeroRow,
   TtsUsageSummary,
 } from "./repo.ts";
@@ -118,6 +119,12 @@ function pickWinningAsset(candidates: readonly AudioAssetRow[]): AudioAssetRow |
   if (drafts[0]) return drafts[0];
   const approved = candidates.filter((row) => row.status === "approved").sort((a, b) => assetTimestamp(b) - assetTimestamp(a));
   return approved[0] ?? null;
+}
+
+/** 같은 audio_id의 가장 최근 승인본 재생 주소(초안과 비교해 듣기용). 없으면 null */
+function previousApprovedPlayUrl(candidates: readonly AudioAssetRow[]): string | null {
+  const approved = candidates.filter((row) => row.status === "approved").sort((a, b) => assetTimestamp(b) - assetTimestamp(a));
+  return approved[0] ? assetPlayUrl(approved[0]) : null;
 }
 
 function assetPlayUrl(asset: AudioAssetRow): string {
@@ -380,6 +387,7 @@ function buildDbContentView(
         durationMs: cell.durationMs,
         generatedAt: cell.generatedAt ?? asset?.createdAt ?? "",
         playUrl: cell.playUrl,
+        previousPlayUrl: previousApprovedPlayUrl(byAudioId.get(cell.audioId) ?? []),
       });
     }
   }
@@ -412,6 +420,7 @@ function buildDbContentView(
               durationMs: asset.durationMs,
               generatedAt: asset.generatedAt ?? asset.createdAt,
               playUrl: cell.playUrl,
+              previousPlayUrl: previousApprovedPlayUrl(byAudioId.get(asset.audioId) ?? []),
             });
           }
         }
@@ -448,6 +457,7 @@ function buildDbContentView(
                 durationMs: asset.durationMs,
                 generatedAt: asset.generatedAt ?? asset.createdAt,
                 playUrl: cell.playUrl,
+                previousPlayUrl: previousApprovedPlayUrl(byAudioId.get(asset.audioId) ?? []),
               });
             }
           }
@@ -475,6 +485,7 @@ function buildDbContentView(
               durationMs: turnsAsset.durationMs,
               generatedAt: turnsAsset.generatedAt ?? turnsAsset.createdAt,
               playUrl: assetPlayUrl(turnsAsset),
+              previousPlayUrl: previousApprovedPlayUrl(byAudioId.get(turnsAsset.audioId) ?? []),
             });
           }
         }
@@ -1087,6 +1098,17 @@ export function createContentRoutes(deps: ContentRoutesDeps) {
     });
 
     await deps.contentRepo.supersedeDrafts(audioId);
+    // 이 칸에 교체 예정 표시가 있었다면 새 초안을 만들었으니 지운다. 표시 표가 없어도 생성은 막지 않는다.
+    try {
+      await deps.contentRepo.removeReplaceMark({
+        itemId: item.id,
+        kind,
+        exampleIndex: kind === "word" ? 1 : exampleIndex,
+        voiceKey: voice,
+      });
+    } catch {
+      // 표시 지우기 실패는 화면에서 다시 불러올 때 남은 표시로 보인다.
+    }
     const asset = await deps.contentRepo.insertAudioAsset({
       audioId,
       itemId: item.id,
@@ -1123,6 +1145,60 @@ export function createContentRoutes(deps: ContentRoutesDeps) {
     if (!existing) return c.json({ error: "not_found" }, 404);
     const updated = await deps.contentRepo.reviewAudioAsset(existing.id, "approved", c.get("teacherId"));
     return c.json({ asset: updated ?? existing });
+  });
+
+  // 교체 예정 표시(⟳). 칸은 단어·판·몇 번 예문·목소리로 정한다.
+  const readMarkTarget = (body: Record<string, unknown> | null): ReplaceMarkTarget | null => {
+    if (!body) return null;
+    const kind = body.kind;
+    if (kind !== "word" && kind !== "sentence" && kind !== "sentence_turns") return null;
+    if (typeof body.itemId !== "string" || !isPracticeVoiceKey(body.voiceKey)) return null;
+    const exampleIndex = kind === "word" ? 1 : Number(body.exampleIndex ?? 1);
+    if (!Number.isInteger(exampleIndex) || exampleIndex < 1 || exampleIndex > 5) return null;
+    return { itemId: body.itemId, kind, exampleIndex, voiceKey: body.voiceKey };
+  };
+
+  app.get("/replace-marks", async (c) => {
+    if (!deps.contentRepo) return c.json({ marks: [] });
+    const [marks, items] = await Promise.all([
+      deps.contentRepo.listReplaceMarks(),
+      deps.contentRepo.listItems({ includeHidden: false }),
+    ]);
+    const byId = new Map(items.map((item) => [item.id, item]));
+    return c.json({
+      marks: marks
+        .filter((mark) => byId.has(mark.itemId))
+        .map((mark) => ({
+          itemId: mark.itemId,
+          word: byId.get(mark.itemId)?.word ?? "",
+          kind: mark.kind,
+          exampleIndex: mark.exampleIndex,
+          voiceKey: mark.voiceKey,
+          voiceName: isPracticeVoiceKey(mark.voiceKey) ? practiceVoiceName(mark.voiceKey) : mark.voiceKey,
+        })),
+    });
+  });
+
+  app.post("/replace-marks", async (c) => {
+    if (!deps.contentRepo) return c.json({ error: "db_not_configured" }, 503);
+    const target = readMarkTarget(await readBody(c));
+    if (!target) return c.json({ error: "invalid_body" }, 400);
+    const item = await deps.contentRepo.getItem(target.itemId);
+    if (!item || item.status === "hidden") return c.json({ error: "not_found" }, 404);
+    await deps.contentRepo.addReplaceMark(target, c.get("teacherId"));
+    return c.json({ ok: true });
+  });
+
+  app.post("/replace-marks/remove", async (c) => {
+    if (!deps.contentRepo) return c.json({ error: "db_not_configured" }, 503);
+    const target = readMarkTarget(await readBody(c));
+    if (!target) return c.json({ error: "invalid_body" }, 400);
+    return c.json({ removed: await deps.contentRepo.removeReplaceMark(target) });
+  });
+
+  app.post("/replace-marks/clear", async (c) => {
+    if (!deps.contentRepo) return c.json({ error: "db_not_configured" }, 503);
+    return c.json({ removed: await deps.contentRepo.clearReplaceMarks() });
   });
 
   app.post("/audio/:assetId/reject", async (c) => {

@@ -305,6 +305,80 @@ describe("teacher navigation and read-only content ops screen", () => {
     expect(calls.some((c) => c.method === "POST" && c.path === "/api/teacher/content/items")).toBe(true);
   });
 
+  it("marks an approved sound for replacement, makes all marked ones, and compares the draft with the old sound", async () => {
+    const view = makeContentView("j_ch_jj");
+    view.writable = true;
+    view.ttsReady = true;
+    view.stages[0]!.draftAudios = [
+      {
+        assetId: "d9",
+        audioId: "w9",
+        itemId: "item-1",
+        word: "모자",
+        kind: "word",
+        voiceKey: "charon",
+        voiceLabel: "Charon",
+        durationMs: 900,
+        generatedAt: new Date().toISOString(),
+        playUrl: "/api/teacher/content/audio/d9",
+        previousPlayUrl: "/api/teacher/content/audio/old9",
+      },
+    ];
+    let marks: Array<Record<string, unknown>> = [];
+    const calls: Array<{ method: string; path: string; body?: unknown }> = [];
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+        const url = new URL(typeof input === "string" ? input : input.toString(), "http://127.0.0.1:4174");
+        const method = (init?.method ?? "GET").toUpperCase();
+        const body = init?.body ? (JSON.parse(String(init.body)) as Record<string, unknown>) : undefined;
+        calls.push({ method, path: url.pathname, body });
+        if (url.pathname === "/api/me") return new Response(JSON.stringify({ error: "not_connected" }), { status: 401 });
+        if (url.pathname === "/api/teacher/learners") return new Response(JSON.stringify(teacherView), { status: 200 });
+        if (url.pathname === "/api/teacher/content/usage") return new Response(JSON.stringify(usageView), { status: 200 });
+        if (url.pathname === "/api/teacher/content") return new Response(JSON.stringify(view), { status: 200 });
+        if (url.pathname === "/api/teacher/content/replace-marks" && method === "GET") {
+          return new Response(JSON.stringify({ marks }), { status: 200 });
+        }
+        if (url.pathname === "/api/teacher/content/replace-marks" && method === "POST") {
+          marks = [{ ...body, word: "모자", voiceName: "Erinome" }];
+          return new Response(JSON.stringify({ ok: true }), { status: 200 });
+        }
+        if (method === "POST" && url.pathname === "/api/teacher/content/items/item-1/audio") {
+          marks = [];
+          return new Response(
+            JSON.stringify({
+              asset: { id: "d10", audioId: "w1", status: "draft", durationMs: 800, playUrl: "/api/teacher/content/audio/d10" },
+              usage: usageView,
+            }),
+            { status: 201 },
+          );
+        }
+        return new Response(JSON.stringify({ error: "not_found" }), { status: 404 });
+      }),
+    );
+
+    renderTeacher("/teach/content");
+    // 승인 칸의 ⟳은 바로 만들지 않고 표시만 한다(한도를 쓰지 않음).
+    fireEvent.click(await screen.findByRole("button", { name: "Erinome 모자 단어 교체 표시" }));
+    expect(calls.some((c) => c.method === "POST" && c.path === "/api/teacher/content/replace-marks")).toBe(true);
+    expect(calls.some((c) => c.path.endsWith("/audio"))).toBe(false);
+    const bar = await screen.findByRole("region", { name: "교체 예정 음성" });
+    expect(bar).toHaveTextContent("교체 예정 1개");
+    expect(screen.getByRole("button", { name: "Erinome 모자 단어 지금 다시 만들기" })).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: "모두 만들기 (1건)" }));
+    await vi.waitFor(() => {
+      const made = calls.find((c) => c.method === "POST" && c.path === "/api/teacher/content/items/item-1/audio");
+      expect(made?.body).toEqual({ kind: "word", voice: "erinome" });
+    });
+    await vi.waitFor(() => expect(screen.queryByRole("region", { name: "교체 예정 음성" })).not.toBeInTheDocument());
+
+    // 초안 줄에서 기존 승인본과 새 초안을 나란히 듣는다.
+    expect(screen.getByRole("button", { name: "모자 Charon 기존 승인본 듣기" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "▶ 새 초안" })).toBeInTheDocument();
+  });
+
   it("supports inline single TTS confirmation, quota error display, and draft review approve/reject", async () => {
     const view = makeContentView("j_ch_jj");
     view.writable = true;

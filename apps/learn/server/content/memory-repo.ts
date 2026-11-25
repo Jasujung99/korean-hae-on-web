@@ -22,6 +22,8 @@ import {
   type NewContentItemInput,
   type NewContentProposalInput,
   type NewStageZeroInput,
+  type ReplaceMarkRow,
+  type ReplaceMarkTarget,
   type StageZeroRow,
   type TtsUsageRow,
 } from "./repo.ts";
@@ -36,6 +38,12 @@ export function createMemoryContentRepo(options: { now?: () => Date } = {}): Con
   const releases: ContentReleaseRow[] = [];
   const usage: TtsUsageRow[] = [];
   const proposals: ContentProposalRow[] = [];
+  const replaceMarks: ReplaceMarkRow[] = [];
+  const sameMark = (row: ReplaceMarkTarget, target: ReplaceMarkTarget) =>
+    row.itemId === target.itemId &&
+    row.kind === target.kind &&
+    row.exampleIndex === target.exampleIndex &&
+    row.voiceKey === target.voiceKey;
 
   return {
     kind: "memory",
@@ -352,6 +360,25 @@ export function createMemoryContentRepo(options: { now?: () => Date } = {}): Con
       row.decidedBy = decidedBy;
       row.decidedAt = iso();
       return { ...row, fields: { ...row.fields }, flags: [...row.flags] };
+    },
+    async listReplaceMarks() {
+      return replaceMarks.map((row) => ({ ...row }));
+    },
+    async addReplaceMark(target, markedBy) {
+      if (replaceMarks.some((row) => sameMark(row, target))) return;
+      replaceMarks.push({ ...target, id: crypto.randomUUID(), markedBy, createdAt: iso() });
+    },
+    async removeReplaceMark(target) {
+      const before = replaceMarks.length;
+      for (let index = replaceMarks.length - 1; index >= 0; index -= 1) {
+        if (sameMark(replaceMarks[index]!, target)) replaceMarks.splice(index, 1);
+      }
+      return before - replaceMarks.length;
+    },
+    async clearReplaceMarks() {
+      const count = replaceMarks.length;
+      replaceMarks.length = 0;
+      return count;
     },
   };
 }

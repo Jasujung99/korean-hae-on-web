@@ -644,3 +644,73 @@
     font-size: 12px;
   }
 }
+
+/* 승인된 음성 다시 만들기: ⟳ 교체 표시, 표시한 칸은 coral 테두리 + [지금 만들기]·✕ */
+.co-cell-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.co-cell-wrap.is-marked {
+  padding: 1px 3px;
+  border: 1px solid var(--coral);
+  border-radius: var(--radius-sm);
+}
+
+.co-replace-tag {
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.co-replace-btn {
+  min-width: 24px;
+  min-height: 28px;
+  padding: 0 4px;
+  border: 0;
+  background: transparent;
+  color: var(--ink-muted);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.co-replace-btn:hover,
+.co-replace-btn:focus-visible {
+  color: var(--ink);
+}
+
+.co-replace-btn.is-now {
+  border: 1px solid var(--coral);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.co-replace-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin: var(--space-3) 0;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--coral);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+}
+
+.co-replace-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.co-replace-actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}

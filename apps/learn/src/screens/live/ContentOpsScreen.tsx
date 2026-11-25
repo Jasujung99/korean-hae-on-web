@@ -1,6 +1,6 @@
 // 콘텐츠 운영 화면(/teach/content).
 // 단어·예문 추가·수정·숨기기·판 기록과 목소리별 음원 상태·미리듣기를 한 화면에서 다룬다.
-import { Fragment, useCallback, useEffect, useState, type FormEvent } from "react";
+import { createContext, Fragment, useCallback, useContext, useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { useSearchParams } from "react-router";
 import { CONTENT_VOICES } from "../../../content/practice-voices.ts";
 import type {
@@ -58,6 +58,92 @@ type ConfirmGen = {
   origin: "cell" | "draft";
   draftAssetId?: string;
 };
+
+/** 교체 표시의 열쇠: 단어·목소리·판·몇 번 예문 */
+function replaceKey(target: ConfirmGen): string {
+  return `${target.itemId}:${target.kind}:${target.exampleIndex ?? 1}:${target.voiceKey}`;
+}
+
+/** 서버에 보내는 표시 칸 */
+function markBody(target: ConfirmGen) {
+  return {
+    itemId: target.itemId,
+    kind: target.kind,
+    exampleIndex: target.kind === "word" ? 1 : (target.exampleIndex ?? 1),
+    voiceKey: target.voiceKey,
+  };
+}
+
+/** 승인된 음성 다시 만들기: ⟳은 교체 표시, 표시한 칸에 [지금 만들기]·✕ */
+type ReplaceApi = {
+  enabled: boolean;
+  isMarked: (target: ConfirmGen) => boolean;
+  toggle: (target: ConfirmGen) => void;
+  makeNow: (target: ConfirmGen) => void;
+  making: boolean;
+};
+
+const ReplaceContext = createContext<ReplaceApi>({
+  enabled: false,
+  isMarked: () => false,
+  toggle: () => undefined,
+  makeNow: () => undefined,
+  making: false,
+});
+
+function ReplaceControls({ target, label }: { target: ConfirmGen; label: string }) {
+  const replace = useContext(ReplaceContext);
+  if (!replace.enabled) return null;
+  if (replace.isMarked(target)) {
+    return (
+      <>
+        <button
+          type="button"
+          className="co-replace-btn is-now"
+          disabled={replace.making}
+          aria-label={`${label} 지금 다시 만들기`}
+          onClick={() => replace.makeNow(target)}
+        >
+          지금 만들기
+        </button>
+        <button
+          type="button"
+          className="co-replace-btn"
+          aria-label={`${label} 교체 표시 지우기`}
+          title="교체 표시 지우기"
+          onClick={() => replace.toggle(target)}
+        >
+          ✕
+        </button>
+      </>
+    );
+  }
+  return (
+    <button
+      type="button"
+      className="co-replace-btn"
+      aria-label={`${label} 교체 표시`}
+      title="다시 만들 음성으로 표시"
+      onClick={() => replace.toggle(target)}
+    >
+      ⟳
+    </button>
+  );
+}
+
+/** 승인 칸을 교체 표시 단추와 함께 감싼다 */
+function ReplaceWrap({ target, label, children }: { target: ConfirmGen | null; label: string; children: ReactNode }) {
+  const replace = useContext(ReplaceContext);
+  if (!target || !replace.enabled) return <>{children}</>;
+  const marked = replace.isMarked(target);
+  return (
+    <span className={`co-cell-wrap${marked ? " is-marked" : ""}`}>
+      {children}
+      {marked ? <span className="co-replace-tag">교체 예정</span> : null}
+      <ReplaceControls target={target} label={label} />
+    </span>
+  );
+}
 
 function formatDurationSec(ms: number | null): string {
   if (ms === null || !Number.isFinite(ms)) return "길이 미확인";
@@ -179,6 +265,7 @@ function AudioVoiceRow({
   generatingVoice = null,
   onPlay,
   onRequestGenerate,
+  replaceTarget,
 }: {
   kindLabel: string;
   cells: Record<string, ContentAudioCell>;
@@ -188,6 +275,8 @@ function AudioVoiceRow({
   generatingVoice?: string | null;
   onPlay: (url: string, label: string) => void;
   onRequestGenerate?: (voiceKey: string, voiceName: string, cell: ContentAudioCell) => void;
+  /** 승인된 칸을 다시 만들 때의 대상(교체 표시용) */
+  replaceTarget?: (voiceKey: string, voiceName: string) => ConfirmGen;
 }) {
   return (
     <div className="co-voices" role="group" aria-label={`${kindLabel} 목소리별 음원`}>
@@ -202,8 +291,12 @@ function AudioVoiceRow({
           source: null,
         };
         return (
-          <AudioCellButton
+          <ReplaceWrap
             key={voice.key}
+            target={cell.state === "approved" && replaceTarget ? replaceTarget(voice.key, voice.voice) : null}
+            label={`${voice.voice} ${kindLabel}`}
+          >
+          <AudioCellButton
             voiceShort={voice.short}
             voiceName={voice.voice}
             kindLabel={kindLabel}
@@ -217,6 +310,7 @@ function AudioVoiceRow({
               onRequestGenerate ? () => onRequestGenerate(voice.key, voice.voice, cell) : undefined
             }
           />
+          </ReplaceWrap>
         );
       })}
     </div>
@@ -826,6 +920,16 @@ function ContentRow({
                               origin: "cell",
                             })
                           }
+                          replaceTarget={(voiceKey, voiceName) => ({
+                            itemId: item.id,
+                            word: item.word,
+                            kind: "sentence",
+                            exampleIndex: row.index,
+                            voiceKey,
+                            voiceName,
+                            stalePlayUrl: null,
+                            origin: "cell",
+                          })}
                         />
                       ) : null}
                       <span className="co-turns-note">
@@ -836,17 +940,36 @@ function ContentRow({
                               const turns = row.turnsAudio?.[voice.key];
                               const playable = Boolean(turns?.ready && turns.playUrl && turns.state !== "stale");
                               if (playable) {
+                                const approvedTurns = turns?.state !== "draft";
                                 return (
-                                  <button
+                                  <ReplaceWrap
                                     key={voice.key}
-                                    type="button"
-                                    className={`co-turns-play${turns?.state === "draft" ? " is-draft" : ""}`}
-                                    disabled={busy}
-                                    aria-label={`${voice.voice} ${item.word} 예문 ${row.index} 또박또박${turns?.state === "draft" ? " 초안" : ""} 재생`}
-                                    onClick={() => onPlay(turns?.playUrl as string, `${voice.voice} 또박또박`)}
+                                    target={
+                                      approvedTurns
+                                        ? {
+                                            itemId: item.id,
+                                            word: item.word,
+                                            kind: "sentence_turns",
+                                            exampleIndex: row.index,
+                                            voiceKey: voice.key,
+                                            voiceName: voice.voice,
+                                            stalePlayUrl: null,
+                                            origin: "cell",
+                                          }
+                                        : null
+                                    }
+                                    label={`${voice.voice} ${item.word} 예문 ${row.index} 또박또박`}
                                   >
-                                    {voice.short}
-                                  </button>
+                                    <button
+                                      type="button"
+                                      className={`co-turns-play${turns?.state === "draft" ? " is-draft" : ""}`}
+                                      disabled={busy}
+                                      aria-label={`${voice.voice} ${item.word} 예문 ${row.index} 또박또박${turns?.state === "draft" ? " 초안" : ""} 재생`}
+                                      onClick={() => onPlay(turns?.playUrl as string, `${voice.voice} 또박또박`)}
+                                    >
+                                      {voice.short}
+                                    </button>
+                                  </ReplaceWrap>
                                 );
                               }
                               if (readOnly || !ttsReady) return null;
@@ -913,6 +1036,15 @@ function ContentRow({
             ttsReady={ttsReady}
             generatingVoice={wordGeneratingVoice}
             onPlay={onPlay}
+            replaceTarget={(voiceKey, voiceName) => ({
+              itemId: item.id,
+              word: item.word,
+              kind: "word",
+              voiceKey,
+              voiceName,
+              stalePlayUrl: null,
+              origin: "cell",
+            })}
             onRequestGenerate={(voiceKey, voiceName, cell) =>
               onRequestGenerate({
                 itemId: item.id,
@@ -1035,13 +1167,23 @@ function DraftReviewList({
                   · {row.voiceLabel} — {formatDurationSec(row.durationMs)} · {formatRelativeTime(row.generatedAt)}
                 </span>
                 <div className="co-draft-actions">
+                  {row.previousPlayUrl ? (
+                    <button
+                      type="button"
+                      disabled={busy}
+                      aria-label={`${row.word}${kindSuffix} ${row.voiceLabel} 기존 승인본 듣기`}
+                      onClick={() => onPlay(row.previousPlayUrl as string, `${row.word} ${row.voiceLabel} 기존`)}
+                    >
+                      ▶ 기존
+                    </button>
+                  ) : null}
                   {row.playUrl ? (
                     <button
                       type="button"
                       disabled={busy}
                       onClick={() => onPlay(row.playUrl as string, `${row.word} ${row.voiceLabel} 초안`)}
                     >
-                      듣기
+                      {row.previousPlayUrl ? "▶ 새 초안" : "듣기"}
                     </button>
                   ) : null}
                   {canRegen ? (
@@ -1294,6 +1436,60 @@ export function ContentOpsScreen() {
   const [generatingKey, setGeneratingKey] = useState<string | null>(null);
   const [genError, setGenError] = useState<{ itemId: string; message: string } | null>(null);
   const [reviewBusyId, setReviewBusyId] = useState<string | null>(null);
+  // 교체 예정 표시는 서버(DB)에 둔다. 다른 기기에서 열어도 이어서 볼 수 있다.
+  const [replaceMarks, setReplaceMarks] = useState<ConfirmGen[]>([]);
+  const [replaceProgress, setReplaceProgress] = useState<{ done: number; total: number } | null>(null);
+  const [replaceError, setReplaceError] = useState<string | null>(null);
+  const [remaining, setRemaining] = useState<number | null>(null);
+
+  const loadMarks = useCallback(() => {
+    teacherApi
+      .replaceMarks()
+      .then(({ marks }) =>
+        setReplaceMarks(
+          marks.map((mark) => ({
+            itemId: mark.itemId,
+            word: mark.word,
+            kind: mark.kind,
+            exampleIndex: mark.exampleIndex,
+            voiceKey: mark.voiceKey,
+            voiceName: mark.voiceName,
+            stalePlayUrl: null,
+            origin: "cell" as const,
+          })),
+        ),
+      )
+      .catch(() => undefined);
+  }, []);
+
+  useEffect(() => {
+    loadMarks();
+  }, [loadMarks]);
+
+  // 새 초안을 만들면 서버가 그 칸의 표시를 지우므로, 화면에서도 바로 뺀다.
+  const unmark = (target: ConfirmGen) => {
+    setReplaceMarks((prev) => prev.filter((row) => replaceKey(row) !== replaceKey(target)));
+  };
+
+  const clearMarks = () => {
+    setReplaceMarks([]);
+    teacherApi.clearReplaceMarks().catch(() => {
+      setReplaceError("표시를 지우지 못했어요. 다시 시도해 주세요.");
+      loadMarks();
+    });
+  };
+
+  useEffect(() => {
+    const refresh = () => {
+      teacherApi
+        .ttsUsage()
+        .then((usage) => setRemaining(usage.remaining))
+        .catch(() => setRemaining(null));
+    };
+    refresh();
+    window.addEventListener("haeon:tts-usage-refresh", refresh);
+    return () => window.removeEventListener("haeon:tts-usage-refresh", refresh);
+  }, []);
 
   const load = useCallback(() => {
     setFailed(false);
@@ -1345,7 +1541,8 @@ export function ContentOpsScreen() {
     void practice.playRole(url, "voice", label);
   };
 
-  const confirmGenerate = async (target: ConfirmGen) => {
+  /** 만들면 null, 못 만들면 오류 문구를 돌려준다. */
+  const confirmGenerate = async (target: ConfirmGen, reload = true): Promise<string | null> => {
     const key =
       target.kind === "sentence_turns"
         ? `${target.itemId}:turns${target.exampleIndex ?? 1}:${target.voiceKey}`
@@ -1361,13 +1558,15 @@ export function ContentOpsScreen() {
         ...(target.kind !== "word" ? { exampleIndex: target.exampleIndex ?? 1 } : {}),
       });
       setConfirmGen(null);
-      load();
+      if (reload) load();
+      return null;
     } catch (error) {
       const msg =
         error instanceof PreviewApiError && error.serverMessage
           ? error.serverMessage
           : "음성을 만들지 못했어요. 다시 시도해 주세요.";
       setGenError({ itemId: target.itemId, message: msg });
+      return msg;
     } finally {
       setGeneratingKey(null);
       window.dispatchEvent(new Event("haeon:tts-usage-refresh"));
@@ -1396,10 +1595,55 @@ export function ContentOpsScreen() {
     }
   };
 
+  const makeReplacement = async (target: ConfirmGen, reload = true) => {
+    const error = await confirmGenerate({ ...target, stalePlayUrl: null, origin: "cell" }, reload);
+    if (error) {
+      setReplaceError(`${target.word} ${target.voiceName}: ${error}`);
+      return false;
+    }
+    unmark(target);
+    return true;
+  };
+
+  const makeAllReplacements = async () => {
+    const queue = [...replaceMarks];
+    setReplaceError(null);
+    setReplaceProgress({ done: 0, total: queue.length });
+    for (const [index, target] of queue.entries()) {
+      const ok = await makeReplacement(target, false);
+      if (!ok) break;
+      setReplaceProgress({ done: index + 1, total: queue.length });
+    }
+    setReplaceProgress(null);
+    load();
+  };
+
+  const replaceApi: ReplaceApi = {
+    enabled: Boolean(view?.writable && view.ttsReady),
+    isMarked: (target) => replaceMarks.some((row) => replaceKey(row) === replaceKey(target)),
+    toggle: (target) => {
+      const key = replaceKey(target);
+      const marked = replaceMarks.some((row) => replaceKey(row) === key);
+      setReplaceError(null);
+      setReplaceMarks(marked ? replaceMarks.filter((row) => replaceKey(row) !== key) : [...replaceMarks, target]);
+      const request = marked ? teacherApi.removeReplaceMark(markBody(target)) : teacherApi.addReplaceMark(markBody(target));
+      request.catch(() => {
+        setReplaceError("표시를 저장하지 못했어요. 다시 시도해 주세요.");
+        loadMarks();
+      });
+    },
+    makeNow: (target) => {
+      setReplaceError(null);
+      void makeReplacement(target);
+    },
+    making: Boolean(generatingKey) || replaceProgress !== null,
+  };
+
   const busy = practice.playing !== null;
   const existingWords = new Set(view?.stages.flatMap((s) => s.items.map((item) => item.word)) ?? []);
   const displayedStages = view?.stages ?? [];
   return (
+    <ReplaceContext.Provider value={replaceApi}>
     <div className="tc-page co-page">
       <ScreenTitle title="콘텐츠 운영" />
       <div className="tc-head">
@@ -1440,6 +1684,51 @@ export function ContentOpsScreen() {
               ))}
             </div>
           </div>
+
+          {replaceApi.enabled && (replaceMarks.length > 0 || replaceError) ? (
+            <div className="co-replace-bar" role="region" aria-label="교체 예정 음성">
+              <div className="co-replace-summary">
+                <span>
+                  교체 예정 <strong>{replaceMarks.length}개</strong>
+                  {remaining !== null ? ` · 남은 한도 ${remaining}건` : ""}
+                </span>
+                <small className="co-sub">
+                  {replaceMarks
+                    .map(
+                      (row) =>
+                        `${row.word}${row.kind === "sentence" ? " 예문" : row.kind === "sentence_turns" ? " 또박또박" : ""} ${row.voiceName.slice(0, 1)}`,
+                    )
+                    .join(" · ")}
+                </small>
+              </div>
+              {replaceProgress ? (
+                <span className="co-sub">
+                  만드는 중 {replaceProgress.done}/{replaceProgress.total}…
+                </span>
+              ) : replaceMarks.length > 0 ? (
+                <span className="co-replace-actions">
+                  <button
+                    type="button"
+                    disabled={Boolean(generatingKey) || (remaining !== null && remaining < 1)}
+                    onClick={() => void makeAllReplacements()}
+                  >
+                    모두 만들기 ({replaceMarks.length}건)
+                  </button>
+                  <button type="button" className="tc-ul" onClick={clearMarks}>
+                    표시 모두 지우기
+                  </button>
+                </span>
+              ) : null}
+              {replaceError ? (
+                <p className="acct-error" role="alert">
+                  {replaceError}
+                </p>
+              ) : null}
+              {remaining !== null && replaceMarks.length > remaining ? (
+                <p className="co-sub">남은 한도보다 많아요. 한도가 끝나면 거기서 멈추고, 남은 표시는 그대로 둬요.</p>
+              ) : null}
+            </div>
+          ) : null}
 
           <StageZeroTable
             rows={view.stage0}
@@ -1512,6 +1801,7 @@ export function ContentOpsScreen() {
         </>
       ) : null}
     </div>
+    </ReplaceContext.Provider>
   );
 }
 

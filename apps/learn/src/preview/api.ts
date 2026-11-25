@@ -24,6 +24,7 @@ import type {
   SessionView,
   TeacherContentView,
   TeacherView,
+  ReplaceMarkView,
   TtsUsageView,
   VoicesView,
   WordView,
@@ -140,6 +141,12 @@ export const teacherApi = {
   audioInventory: () => getJson<AudioInventoryView>("/api/teacher/audio-inventory"),
   content: (group: string) => getJson<TeacherContentView>(`/api/teacher/content?group=${encodeURIComponent(group)}`),
   ttsUsage: () => getJson<TtsUsageView>("/api/teacher/content/usage"),
+  replaceMarks: () => getJson<{ marks: ReplaceMarkView[] }>("/api/teacher/content/replace-marks"),
+  addReplaceMark: (body: { itemId: string; kind: ReplaceMarkView["kind"]; exampleIndex: number; voiceKey: string }) =>
+    postJson<{ ok: true }>("/api/teacher/content/replace-marks", body),
+  removeReplaceMark: (body: { itemId: string; kind: ReplaceMarkView["kind"]; exampleIndex: number; voiceKey: string }) =>
+    postJson<{ removed: number }>("/api/teacher/content/replace-marks/remove", body),
+  clearReplaceMarks: () => postJson<{ removed: number }>("/api/teacher/content/replace-marks/clear", {}),
   createContentItem: (input: {
     groupId: string;
     stage: string;

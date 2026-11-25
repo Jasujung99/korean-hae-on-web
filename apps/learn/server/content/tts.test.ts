@@ -263,6 +263,45 @@ describe("inline single-item TTS generation, preview, draft review, and quota (s
     expect(approved.stages[0]!.items.find((row) => row.id === moja.id)!.turnsAudio?.erinome?.state).toBe("approved");
   });
 
+  it("keeps replace marks on the server, clears one when its draft is made, and lets the draft be compared with the approved sound", async () => {
+    const sample = fakeWavBase64();
+    const kit = await createTtsTestKit({ fetcher: async () => interactionWavResponse(sample.base64) });
+    const view = (await (await kit.teacher.request("/api/teacher/content?group=j_ch_jj")).json()) as TeacherContentView;
+    const moja = view.stages[0]!.items.find((row) => row.word === "모자")!;
+    expect(moja.wordAudio.erinome?.state).toBe("approved");
+    const target = { itemId: moja.id, kind: "word", exampleIndex: 1, voiceKey: "erinome" };
+    const listMarks = async () =>
+      ((await (await kit.teacher.request("/api/teacher/content/replace-marks")).json()) as {
+        marks: Array<{ itemId: string; word: string; kind: string; voiceName: string }>;
+      }).marks;
+
+    expect((await kit.sendJson(kit.teacher, "POST", "/api/teacher/content/replace-marks", target)).status).toBe(200);
+    // 같은 칸을 두 번 표시해도 하나만 남는다.
+    await kit.sendJson(kit.teacher, "POST", "/api/teacher/content/replace-marks", target);
+    expect(await listMarks()).toEqual([{ ...target, word: "모자", voiceName: "Erinome" }]);
+    expect((await kit.sendJson(kit.teacher, "POST", "/api/teacher/content/replace-marks", { ...target, voiceKey: "nobody" })).status).toBe(400);
+    expect((await kit.anon.request("/api/teacher/content/replace-marks")).status).toBe(401);
+
+    // 그 칸의 새 초안을 만들면 표시가 지워지고, 초안 줄에서 기존 승인본을 함께 들을 수 있다.
+    const gen = await kit.sendJson(kit.teacher, "POST", `/api/teacher/content/items/${moja.id}/audio`, { kind: "word", voice: "erinome" });
+    expect(gen.status).toBe(201);
+    expect(await listMarks()).toEqual([]);
+    const after = (await (await kit.teacher.request("/api/teacher/content?group=j_ch_jj")).json()) as TeacherContentView;
+    const draft = after.stages[0]!.draftAudios.find((row) => row.audioId === "word-1871-모자--erinome");
+    expect(draft?.previousPlayUrl).toBeTruthy();
+    expect(draft?.previousPlayUrl).not.toBe(draft?.playUrl);
+
+    // 하나 지우기, 모두 지우기
+    const sentence = { itemId: moja.id, kind: "sentence_turns", exampleIndex: 1, voiceKey: "charon" };
+    await kit.sendJson(kit.teacher, "POST", "/api/teacher/content/replace-marks", sentence);
+    await kit.sendJson(kit.teacher, "POST", "/api/teacher/content/replace-marks/remove", sentence);
+    expect(await listMarks()).toEqual([]);
+    await kit.sendJson(kit.teacher, "POST", "/api/teacher/content/replace-marks", sentence);
+    await kit.sendJson(kit.teacher, "POST", "/api/teacher/content/replace-marks", target);
+    await kit.sendJson(kit.teacher, "POST", "/api/teacher/content/replace-marks/clear", {});
+    expect(await listMarks()).toEqual([]);
+  });
+
   it("enforces the 100/day quota before calling fetch and records failed attempts without leaking keys", async () => {
     let fetchCalls = 0;
     const kit = await createTtsTestKit({

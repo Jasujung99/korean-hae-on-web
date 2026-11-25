@@ -19,6 +19,7 @@ import {
   type ContentReleaseRow,
   type ContentRepo,
   type NewAudioAssetInput,
+  type ReplaceMarkRow,
   type StageZeroRow,
 } from "./repo.ts";
 
@@ -611,6 +612,49 @@ export function createSupabaseContentRepo(config: DbConfig, fetcher: typeof fetc
         "return=representation",
       );
       return rows[0] ? proposalFrom(rows[0]) : null;
+    },
+    async listReplaceMarks() {
+      const rows = await selectAll("phoneme_audio_replace_marks?order=created_at.asc,id.asc");
+      return rows.map((row) => ({
+        id: String(row.id),
+        itemId: String(row.item_id),
+        kind: row.kind as ReplaceMarkRow["kind"],
+        exampleIndex: Number(row.example_index ?? 1),
+        voiceKey: String(row.voice_key),
+        markedBy: (row.marked_by as string | null) ?? null,
+        createdAt: String(row.created_at),
+      }));
+    },
+    async addReplaceMark(target, markedBy) {
+      if (!/^[0-9a-f-]{36}$/i.test(target.itemId)) return;
+      await call(
+        "POST",
+        "phoneme_audio_replace_marks?on_conflict=item_id,kind,example_index,voice_key",
+        [
+          {
+            item_id: target.itemId,
+            kind: target.kind,
+            example_index: target.exampleIndex,
+            voice_key: target.voiceKey,
+            marked_by: markedBy,
+          },
+        ],
+        "resolution=ignore-duplicates,return=minimal",
+      );
+    },
+    async removeReplaceMark(target) {
+      if (!/^[0-9a-f-]{36}$/i.test(target.itemId)) return 0;
+      const rows = await call(
+        "DELETE",
+        `phoneme_audio_replace_marks?item_id=eq.${target.itemId}&kind=eq.${encodeURIComponent(target.kind)}&example_index=eq.${target.exampleIndex}&voice_key=eq.${encodeURIComponent(target.voiceKey)}`,
+        undefined,
+        "return=representation",
+      );
+      return rows.length;
+    },
+    async clearReplaceMarks() {
+      const rows = await call("DELETE", "phoneme_audio_replace_marks?id=not.is.null", undefined, "return=representation");
+      return rows.length;
     },
   };
 }

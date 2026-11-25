@@ -147,6 +147,21 @@ export type TtsUsageSummary = {
   pcBatch: number;
 };
 
+/** 승인된 음성을 다시 만들 칸 표시(콘텐츠 운영 화면의 ⟳). 다시 만들면 지운다. */
+export type ReplaceMarkKind = "word" | "sentence" | "sentence_turns";
+
+export type ReplaceMarkRow = {
+  id: string;
+  itemId: string;
+  kind: ReplaceMarkKind;
+  exampleIndex: number;
+  voiceKey: string;
+  markedBy: string | null;
+  createdAt: string;
+};
+
+export type ReplaceMarkTarget = Pick<ReplaceMarkRow, "itemId" | "kind" | "exampleIndex" | "voiceKey">;
+
 export type ContentProposalKind = "fill" | "cleanup";
 export type ContentProposalStatus = "pending" | "applied" | "dismissed";
 export type ContentProposalFields = Partial<
@@ -231,6 +246,12 @@ export type ContentRepo = {
     status: "applied" | "dismissed",
     decidedBy: string | null,
   ): Promise<ContentProposalRow | null>;
+
+  listReplaceMarks(): Promise<ReplaceMarkRow[]>;
+  /** 같은 칸이 이미 있으면 그대로 둔다 */
+  addReplaceMark(target: ReplaceMarkTarget, markedBy: string | null): Promise<void>;
+  removeReplaceMark(target: ReplaceMarkTarget): Promise<number>;
+  clearReplaceMarks(): Promise<number>;
 };
 
 export function itemSnapshotRecord(item: ContentItemRow): Record<string, unknown> {

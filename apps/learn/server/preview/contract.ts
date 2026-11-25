@@ -516,6 +516,8 @@ export type DraftAudioReviewRow = {
   durationMs: number | null;
   generatedAt: string;
   playUrl: string | null;
+  /** 같은 음원의 지금 승인본(다시 만든 초안과 비교해 듣기용). 없으면 null */
+  previousPlayUrl?: string | null;
 };
 
 export type ContentStageSection = {
@@ -539,6 +541,16 @@ export type ContentReleaseStatusView = {
   unpublishedApprovedCount: number;
   nextItemCount: number;
   nextAudioCount: number;
+};
+
+/** 교체 예정 표시(⟳) 한 칸 */
+export type ReplaceMarkView = {
+  itemId: string;
+  word: string;
+  kind: "word" | "sentence" | "sentence_turns";
+  exampleIndex: number;
+  voiceKey: string;
+  voiceName: string;
 };
 
 export type TtsUsageView = {
