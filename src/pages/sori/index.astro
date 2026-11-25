@@ -1,6 +1,5 @@
 ---
 import SoundTeaser from "../../components/SoundTeaser.astro";
-import VideoSeries from "../../components/VideoSeries.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { site } from "../../lib/site";
 
@@ -11,8 +10,6 @@ const { letters } = site.links;
 
 <BaseLayout title={title} description={description}>
   <div class="sori">
-    <a class="back" href="/">← 첫 화면</a>
-
     <header class="intro">
       <p class="label">해온 소리 연습 · 맛보기</p>
       <h1 class="title">듣고 고르기</h1>
@@ -29,10 +26,7 @@ const { letters } = site.links;
       <p lang="en"><a class="underline-link" href={letters}>Get our letters</a></p>
     </aside>
 
-    <section class="videos" aria-labelledby="videos-title">
-      <h2 class="videos-title" id="videos-title">짧은 영상도 있어요</h2>
-      <VideoSeries heading={false} />
-    </section>
+    <a class="back" href="/">← 첫 화면</a>
   </div>
 </BaseLayout>
 
@@ -45,12 +39,13 @@ const { letters } = site.links;
     display: inline-flex;
     align-items: center;
     min-height: 44px;
+    margin-top: 32px;
     color: var(--ink-muted);
     font: 400 15px/1 var(--font-serif);
   }
 
   .intro {
-    margin: 24px 0 36px;
+    margin: 0 0 36px;
   }
 
   .label {
@@ -95,8 +90,7 @@ const { letters } = site.links;
     background: var(--wash-lavender);
   }
 
-  .more-title,
-  .videos-title {
+  .more-title {
     margin: 0;
     font: 600 19px/28px var(--font-serif);
   }
@@ -113,10 +107,6 @@ const { letters } = site.links;
 
   .more .underline-link::after {
     left: 0;
-  }
-
-  .videos {
-    margin-top: 56px;
   }
 
 </style>

@@ -4,9 +4,11 @@ import { playerUrl, tiktokProfile, videoSeries } from "../lib/teaser";
 interface Props {
   /** `02 짧은 영상` 머리를 보일지. 이미 제목이 있는 자리(/sori/)에서는 끈다. */
   heading?: boolean;
+  /** 처음 화면(시리즈마다 1편 표지 한 장씩)을 먼저 보일지. 끄면 바로 플레이어 화면이 뜬다. */
+  start?: boolean;
 }
 
-const { heading = true } = Astro.props;
+const { heading = true, start = true } = Astro.props;
 const first = videoSeries[0];
 const firstEpisode = first.episodes[0];
 const data = JSON.stringify(
@@ -35,6 +37,26 @@ const metaOf = (index: number) =>
     )
   }
 
+  <ul class="starts" data-view-start hidden={!start}>
+    {
+      videoSeries.map((series, index) => (
+        <li>
+          <button class="start-card" type="button" data-start-pick={index} aria-label={`${series.name} 시리즈 보기`}>
+            <span class="start-cover">
+              <img src={series.episodes[0].poster} alt="" width="540" height="960" loading="lazy" decoding="async" />
+              <span class="start-play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false"><path d="M8 5.5v13l10.5-6.5z"></path></svg>
+              </span>
+            </span>
+            <span class="start-series">{series.name} 1/{series.episodes.length}</span>
+            <span class="start-title">{series.episodes[0].title}</span>
+          </button>
+        </li>
+      ))
+    }
+  </ul>
+
+  <div data-view-watch hidden={start}>
   <div class="switcher">
     <button class="round" type="button" data-prev aria-label={`이전 시리즈 ${videoSeries[videoSeries.length - 1].name} 보기`}>
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 6l-6 6 6 6"></path></svg>
@@ -102,7 +124,12 @@ const metaOf = (index: number) =>
     </button>
   </div>
 
-  <p class="more"><a class="more-link" href={tiktokProfile}>틱톡에서 더 보기 ↗</a></p>
+  </div>
+
+  <p class="more">
+    <button class="more-link" type="button" data-back hidden>← 처음으로</button>
+    <a class="more-link" href={tiktokProfile}>틱톡에서 더 보기 ↗</a>
+  </p>
 </div>
 
 <script>
@@ -118,7 +145,7 @@ const metaOf = (index: number) =>
     total: string;
     episodes: Episode[];
   }
-  type Phase = "poster" | "playing" | "ended";
+  type Phase = "start" | "poster" | "playing" | "ended";
 
   // 받침이 있으면 ‘을’, 없으면 ‘를’.
   const objectParticle = (word: string) => {
@@ -143,7 +170,11 @@ const metaOf = (index: number) =>
 
     let s = 0;
     let e = 0;
-    let phase: Phase = "poster";
+    const startView = $("[data-view-start]");
+    const watchView = $("[data-view-watch]");
+    const back = $<HTMLButtonElement>("[data-back]");
+    const hasStart = !startView.hidden;
+    let phase: Phase = hasStart ? "start" : "poster";
     let wantsSound = false;
 
     const nextIndex = () => (s + 1) % series.length;
@@ -157,6 +188,9 @@ const metaOf = (index: number) =>
     }
 
     function render(scrollToCurrent = true) {
+      startView.hidden = phase !== "start";
+      watchView.hidden = phase === "start";
+      back.hidden = !hasStart || phase === "start";
       const current = series[s];
       const episode = current.episodes[e];
       const upcoming = series[nextIndex()];
@@ -207,7 +241,7 @@ const metaOf = (index: number) =>
         frame.hidden = true;
       }
 
-      if (scrollToCurrent) {
+      if (scrollToCurrent && phase !== "start") {
         const card = activeStrip().querySelectorAll("[data-card]")[e];
         card?.scrollIntoView({ block: "nearest", inline: "nearest", behavior: reduceMotion.matches ? "auto" : "smooth" });
       }
@@ -221,6 +255,18 @@ const metaOf = (index: number) =>
       activeStrip().scrollLeft = 0;
       render();
     };
+
+    root.querySelectorAll<HTMLButtonElement>("[data-start-pick]").forEach((pick) => {
+      pick.addEventListener("click", () => {
+        showSeries(Number(pick.dataset.startPick), "playing");
+        prev.focus({ preventScroll: true });
+      });
+    });
+    back.addEventListener("click", () => {
+      phase = "start";
+      render(false);
+      root.querySelectorAll<HTMLButtonElement>("[data-start-pick]")[s]?.focus();
+    });
 
     play.addEventListener("click", () => {
       phase = "playing";
@@ -352,6 +398,83 @@ const metaOf = (index: number) =>
   .head-title {
     margin: 8px 0 0;
     font: 600 20px/28px var(--font-serif);
+  }
+
+  .starts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .start-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--ink);
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .start-cover {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+
+  .start-cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+  }
+
+  .start-card:focus-visible {
+    outline: none;
+  }
+
+  .start-card:focus-visible .start-cover {
+    outline-color: var(--olive);
+  }
+
+  .start-play {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1.5px solid var(--olive);
+    border-radius: var(--radius-pill);
+    background: var(--paper);
+    color: var(--olive);
+  }
+
+  .start-play svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+
+  .start-series {
+    margin-top: 8px;
+    color: var(--ink-muted);
+    font: 400 12px/18px var(--font-serif);
+  }
+
+  .start-title {
+    margin-top: 2px;
+    font: 500 14px/20px var(--font-serif);
   }
 
   .switcher {
@@ -608,10 +731,18 @@ const metaOf = (index: number) =>
   }
 
   .more {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 24px;
     margin: 12px 0 0;
   }
 
   .more-link {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--ink);
+    cursor: pointer;
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
@@ -631,5 +762,10 @@ const metaOf = (index: number) =>
   .more-link:hover::after,
   .more-link:focus-visible::after {
     width: 100%;
+  }
+
+  .more-link:focus-visible {
+    outline: 2px solid var(--olive);
+    outline-offset: 3px;
   }
 </style>
