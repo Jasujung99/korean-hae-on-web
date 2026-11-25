@@ -1,0 +1,906 @@
+---
+import { playerUrl, tiktokProfile, videoSeriesList } from "../lib/videoSeries";
+import VideoPosterThumb from "./VideoPosterThumb.astro";
+import VideoSectionHeader from "./VideoSectionHeader.astro";
+
+interface Props {
+  variant?: "door" | "tabs";
+}
+
+const { variant = "door" } = Astro.props;
+const serialized = JSON.stringify(
+  videoSeriesList.map((s) => ({
+    slug: s.slug,
+    title: s.title,
+    tone: s.tone,
+    episodes: s.episodes.map((e) => ({
+      key: e.key,
+      id: e.id,
+      title: e.title,
+      duration: e.duration,
+      durationSec: e.durationSec,
+      poster: e.poster,
+      src: playerUrl(e.id),
+    })),
+  })),
+);
+---
+
+<div class={`vmock vmock--a vmock--${variant}`} data-vmock-a data-series-json={serialized}>
+  <VideoSectionHeader subtitle="헷갈리는 말, 시리즈로 이어 보기." />
+
+  <!-- 초기 상태: 시리즈 대표 카드 3개 -->
+  <div class="a-overview" data-a-overview>
+    <p class="a-guide">시리즈를 고르면 위에서 첫 편부터 바로 재생돼요.</p>
+    <ul class="a-series-grid">
+      {
+        videoSeriesList.map((series, sIdx) => {
+          const first = series.episodes[0];
+          return (
+            <li>
+              <button
+                type="button"
+                class={`a-series-card a-series-card--${series.tone}`}
+                data-a-select-series={sIdx}
+                aria-label={`${series.title} 시리즈 ${series.episodes.length}편 보기`}
+              >
+                <span class="a-card-cover">
+                  <VideoPosterThumb
+                    poster={first.poster}
+                    title={first.title}
+                    seriesTitle={series.title}
+                    tone={series.tone}
+                    badge={`${series.episodes.length}편`}
+                    compact={variant === "door"}
+                  />
+                  <span class="a-circle-play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M8 5.5v13l10.5-6.5z" />
+                    </svg>
+                  </span>
+                </span>
+                <span class="a-card-series">{series.title}</span>
+                <span class="a-card-title">{first.title}</span>
+                <span class="a-card-meta">총 {series.episodes.length}편 · 첫 편 {first.duration}</span>
+              </button>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+
+  <!-- 선택 후: 상단 단일 플레이어 + 해당 시리즈 편 카드 줄 + 이전/다음 CTA -->
+  <div class="a-stage" data-a-stage hidden>
+    <div class="a-topbar">
+      <button type="button" class="a-back-btn" data-a-back aria-label="전체 시리즈로 돌아가기">
+        <span class="a-circle-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+        <span>전체 시리즈</span>
+      </button>
+      <p class="a-pos" data-a-pos aria-live="polite"></p>
+    </div>
+
+    <div class="a-player-wrap">
+      <div class="a-frame-box">
+        <iframe
+          data-a-frame
+          title="틱톡 영상 플레이어"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+          allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+        <div class="a-autoplay-block" data-a-autoplay-block hidden>
+          <p>브라우저가 자동 재생을 막았어요.</p>
+          <button type="button" class="a-watch-now" data-a-watch-now aria-label="지금 보기">지금 보기</button>
+        </div>
+      </div>
+
+      <div class="a-player-meta">
+        <p class="a-now-title" data-a-now-title></p>
+        <p class="a-status" data-a-status aria-live="polite">영상을 불러오고 있어요.</p>
+        <button type="button" class="a-skip-end" data-a-skip-end aria-label="끝 근처로 건너뛰기">
+          끝 근처로 건너뛰기
+        </button>
+      </div>
+    </div>
+
+    <div class="a-next-banner" data-a-next-banner hidden>
+      <div class="a-next-banner-text">
+        <span class="a-next-kicker" data-a-next-kicker>시리즈를 다 보셨어요</span>
+        <strong class="a-next-name" data-a-next-name></strong>
+      </div>
+      <button type="button" class="a-next-cta" data-a-next-cta aria-label="다음 시리즈 보기">
+        <span data-a-next-cta-label>다음 시리즈 보기</span>
+        <span class="a-circle-arrow a-circle-arrow--sm" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+      </button>
+    </div>
+
+    <div class="a-episodes-head">
+      <p class="a-episodes-label" data-a-episodes-label>이 시리즈의 다른 편</p>
+      <span class="a-episodes-hint">누르면 바로 바뀌어요</span>
+    </div>
+
+    <div class="a-ep-strip" data-a-ep-strip role="list"></div>
+  </div>
+
+  <div class="a-footer">
+    <a class="a-profile-link" href={tiktokProfile}>틱톡 @haeonkorean에서 모두 보기 ↗</a>
+  </div>
+</div>
+
+<script>
+  import {
+    bindPosterFallbacks,
+    extractCurrentTime,
+    extractErrorCode,
+    parseTikTokMessage,
+    sendPlayerCommand,
+    STATE_LABELS,
+  } from "../lib/tiktokPlayer";
+  import { formatTime } from "../lib/videoSeries";
+
+  interface EpisodeData {
+    key: string;
+    id: string;
+    title: string;
+    duration: string;
+    durationSec: number;
+    poster: string;
+    src: string;
+  }
+
+  interface SeriesData {
+    slug: string;
+    title: string;
+    tone: "sage" | "lavender" | "leaf";
+    episodes: EpisodeData[];
+  }
+
+  for (const root of document.querySelectorAll<HTMLElement>("[data-vmock-a]")) {
+    const seriesList: SeriesData[] = JSON.parse(root.dataset.seriesJson ?? "[]");
+    const overview = root.querySelector<HTMLElement>("[data-a-overview]")!;
+    const stage = root.querySelector<HTMLElement>("[data-a-stage]")!;
+    const frame = root.querySelector<HTMLIFrameElement>("[data-a-frame]")!;
+    const posEl = root.querySelector<HTMLElement>("[data-a-pos]")!;
+    const nowTitleEl = root.querySelector<HTMLElement>("[data-a-now-title]")!;
+    const statusEl = root.querySelector<HTMLElement>("[data-a-status]")!;
+    const epStrip = root.querySelector<HTMLElement>("[data-a-ep-strip]")!;
+    const epLabel = root.querySelector<HTMLElement>("[data-a-episodes-label]")!;
+    const autoplayBlock = root.querySelector<HTMLElement>("[data-a-autoplay-block]")!;
+    const watchNowBtn = root.querySelector<HTMLButtonElement>("[data-a-watch-now]")!;
+    const skipEndBtn = root.querySelector<HTMLButtonElement>("[data-a-skip-end]")!;
+    const backBtn = root.querySelector<HTMLButtonElement>("[data-a-back]")!;
+    const nextBanner = root.querySelector<HTMLElement>("[data-a-next-banner]")!;
+    const nextKicker = root.querySelector<HTMLElement>("[data-a-next-kicker]")!;
+    const nextName = root.querySelector<HTMLElement>("[data-a-next-name]")!;
+    const nextCta = root.querySelector<HTMLButtonElement>("[data-a-next-cta]")!;
+    const nextCtaLabel = root.querySelector<HTMLElement>("[data-a-next-cta-label]")!;
+
+    let currentSeriesIdx = 0;
+    let currentEpIdx = 0;
+    let latestDuration = 0;
+
+    bindPosterFallbacks(root);
+    const mqPhone = window.matchMedia("(max-width: 899px)");
+    const isInstanceVisible = () => {
+      const isDoors = root.closest(".entry--doors") !== null;
+      const isTabs = root.closest(".entry--tabs") !== null;
+      const panel = root.closest<HTMLElement>("[role='tabpanel']");
+      if (isDoors) return !mqPhone.matches;
+      if (isTabs) return mqPhone.matches && !panel?.hidden;
+      return true;
+    };
+
+    const getNextSeriesIdx = () => (currentSeriesIdx + 1) % seriesList.length;
+
+    const renderEpisodeStrip = () => {
+      const series = seriesList[currentSeriesIdx];
+      const nextIdx = getNextSeriesIdx();
+      const nextSeries = seriesList[nextIdx];
+      const isLastSeries = currentSeriesIdx === seriesList.length - 1;
+
+      epLabel.textContent = `${series.title} · ${series.episodes.length}편`;
+      epStrip.innerHTML = "";
+
+      series.episodes.forEach((ep, idx) => {
+        const item = document.createElement("div");
+        item.setAttribute("role", "listitem");
+
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = `a-ep-card a-ep-card--${series.tone}`;
+        btn.setAttribute("aria-label", `${series.title} ${idx + 1}편 ${ep.title} 보기`);
+        if (idx === currentEpIdx) {
+          btn.setAttribute("aria-current", "true");
+        }
+
+        const thumb = document.createElement("span");
+        thumb.className = "a-ep-thumb";
+
+        const fallback = document.createElement("span");
+        fallback.className = "a-ep-fallback";
+        fallback.setAttribute("aria-hidden", "true");
+        fallback.innerHTML = `<span class="a-ep-num">${idx + 1}편</span><span class="a-ep-ftitle"></span>`;
+        fallback.querySelector(".a-ep-ftitle")!.textContent = ep.title;
+
+        const img = document.createElement("img");
+        img.src = ep.poster;
+        img.alt = "";
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.setAttribute("data-poster-img", "");
+
+        const dur = document.createElement("span");
+        dur.className = "a-ep-dur";
+        dur.textContent = ep.duration;
+
+        thumb.append(fallback, img, dur);
+
+        const caption = document.createElement("span");
+        caption.className = "a-ep-title";
+        caption.textContent = `${idx + 1}. ${ep.title}`;
+
+        btn.append(thumb, caption);
+        btn.addEventListener("click", () => loadEpisode(currentSeriesIdx, idx));
+        item.append(btn);
+        epStrip.append(item);
+      });
+
+      // 줄 끝에 다음 시리즈 안내 카드 배치
+      const nextItem = document.createElement("div");
+      nextItem.setAttribute("role", "listitem");
+      const nextCardBtn = document.createElement("button");
+      nextCardBtn.type = "button";
+      nextCardBtn.className = `a-ep-card a-ep-card--next a-ep-card--${nextSeries.tone}`;
+      nextCardBtn.setAttribute("data-a-strip-next", "");
+      nextCardBtn.setAttribute(
+        "aria-label",
+        `${isLastSeries ? "첫 시리즈" : "다음 시리즈"} ${nextSeries.title} 보기`,
+      );
+      nextCardBtn.innerHTML = `
+        <span class="a-next-card-box">
+          <span class="a-next-card-tag">${isLastSeries ? "처음으로" : "다음 시리즈"}</span>
+          <span class="a-next-card-title"></span>
+          <span class="a-next-card-count">${nextSeries.episodes.length}편 이어 보기 →</span>
+        </span>
+      `;
+      nextCardBtn.querySelector(".a-next-card-title")!.textContent = nextSeries.title;
+      nextCardBtn.addEventListener("click", () => loadEpisode(nextIdx, 0));
+      nextItem.append(nextCardBtn);
+      epStrip.append(nextItem);
+
+      bindPosterFallbacks(epStrip);
+    };
+
+    const updateNextBanner = (endedLast: boolean) => {
+      const series = seriesList[currentSeriesIdx];
+      const isLastEp = currentEpIdx === series.episodes.length - 1;
+      const nextIdx = getNextSeriesIdx();
+      const nextSeries = seriesList[nextIdx];
+      const isLastSeries = currentSeriesIdx === seriesList.length - 1;
+
+      if (!isLastEp && !endedLast) {
+        nextBanner.hidden = true;
+        return;
+      }
+
+      nextBanner.hidden = false;
+      nextBanner.classList.toggle("is-ended", endedLast);
+      nextKicker.textContent = endedLast
+        ? `${series.title} 시리즈를 다 보셨어요`
+        : `${series.title}의 마지막 편이에요`;
+      nextName.textContent = isLastSeries
+        ? `처음 시리즈 ‘${nextSeries.title}’ (${nextSeries.episodes.length}편)`
+        : `다음 시리즈 ‘${nextSeries.title}’ (${nextSeries.episodes.length}편)`;
+      nextCtaLabel.textContent = isLastSeries ? "첫 시리즈 보기" : "다음 시리즈 보기";
+    };
+
+    const loadEpisode = (sIdx: number, epIdx: number) => {
+      currentSeriesIdx = sIdx;
+      currentEpIdx = epIdx;
+      latestDuration = 0;
+
+      const series = seriesList[sIdx];
+      const ep = series.episodes[epIdx];
+
+      overview.hidden = true;
+      stage.hidden = false;
+      autoplayBlock.hidden = true;
+
+      frame.src = ep.src;
+      frame.title = `틱톡 영상: ${series.title} - ${ep.title}`;
+      posEl.textContent = `${series.title} · ${epIdx + 1} / ${series.episodes.length}편`;
+      nowTitleEl.textContent = `${epIdx + 1}편. ${ep.title}`;
+      statusEl.textContent = `영상을 불러오고 있어요 · ${ep.duration}`;
+
+      renderEpisodeStrip();
+      updateNextBanner(false);
+    };
+
+    const closeStage = () => {
+      frame.removeAttribute("src");
+      stage.hidden = true;
+      overview.hidden = false;
+      autoplayBlock.hidden = true;
+      nextBanner.hidden = true;
+    };
+
+    for (const btn of root.querySelectorAll<HTMLButtonElement>("[data-a-select-series]")) {
+      btn.addEventListener("click", () => {
+        const sIdx = Number(btn.dataset.aSelectSeries ?? 0);
+        loadEpisode(sIdx, 0);
+      });
+    }
+
+    backBtn.addEventListener("click", () => {
+      closeStage();
+      root.querySelector<HTMLButtonElement>(`[data-a-select-series="${currentSeriesIdx}"]`)?.focus();
+    });
+
+    nextCta.addEventListener("click", () => {
+      loadEpisode(getNextSeriesIdx(), 0);
+    });
+
+    watchNowBtn.addEventListener("click", () => {
+      autoplayBlock.hidden = true;
+      sendPlayerCommand(frame, "play");
+      statusEl.textContent = "재생을 요청했어요.";
+    });
+
+    skipEndBtn.addEventListener("click", () => {
+      const ep = seriesList[currentSeriesIdx].episodes[currentEpIdx];
+      const dur = latestDuration > 3 ? latestDuration : ep.durationSec;
+      const target = Math.max(0, Math.floor(dur - 3));
+      sendPlayerCommand(frame, "seekTo", target);
+      statusEl.textContent = `${formatTime(target)} 지점으로 건너뛰었어요.`;
+    });
+
+    window.addEventListener("message", (event) => {
+      if (stage.hidden || !isInstanceVisible()) return;
+      const msg = parseTikTokMessage(event.data);
+      if (!msg) return;
+
+      if (msg.type === "onPlayerReady") {
+        statusEl.textContent = "재생할 준비가 됐어요.";
+      } else if (msg.type === "onCurrentTime") {
+        const time = extractCurrentTime(msg);
+        if (time) {
+          latestDuration = time.duration;
+          statusEl.textContent = `${formatTime(time.currentTime)} / ${formatTime(time.duration)}`;
+        }
+      } else if (msg.type === "onPlayerError") {
+        const code = extractErrorCode(msg);
+        if (code === 3002) {
+          autoplayBlock.hidden = false;
+          statusEl.textContent = "브라우저가 자동 재생을 막았어요.";
+        }
+      } else if (msg.type === "onStateChange") {
+        const state = Number(msg.value);
+        if (state === 1) {
+          autoplayBlock.hidden = true;
+        }
+        if (state in STATE_LABELS) {
+          statusEl.textContent = STATE_LABELS[state];
+        }
+        if (state === 0) {
+          const series = seriesList[currentSeriesIdx];
+          if (currentEpIdx + 1 < series.episodes.length) {
+            loadEpisode(currentSeriesIdx, currentEpIdx + 1);
+          } else {
+            updateNextBanner(true);
+            statusEl.textContent = "시리즈의 마지막 편이 끝났어요.";
+          }
+        }
+      }
+    });
+
+    let mqTimer: number | null = null;
+    mqPhone.addEventListener("change", () => {
+      if (mqTimer !== null) window.clearTimeout(mqTimer);
+      mqTimer = window.setTimeout(() => {
+        if (!isInstanceVisible() && !stage.hidden) closeStage();
+      }, 250);
+    });
+  }
+</script>
+
+<style>
+  .vmock--a {
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  .a-guide {
+    margin: 14px 0 12px;
+    color: var(--ink-muted);
+    font: 400 14px/22px var(--font-serif);
+  }
+
+  .a-series-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .vmock--door .a-series-grid {
+    gap: 10px;
+  }
+
+  .a-series-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--ink);
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .a-series-card:focus-visible {
+    outline: 2px solid var(--olive);
+    outline-offset: 4px;
+    border-radius: var(--radius-md);
+  }
+
+  .a-card-cover {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+
+  .a-circle-play {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid var(--olive);
+    border-radius: var(--radius-pill);
+    background: var(--paper);
+    color: var(--olive);
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .a-series-card:hover .a-circle-play {
+    background: var(--olive);
+    color: var(--paper);
+  }
+
+  .a-circle-play svg {
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+  }
+
+  .a-card-series {
+    margin-top: 8px;
+    color: var(--olive);
+    font: 600 13px/18px var(--font-serif);
+  }
+
+  .a-card-title {
+    margin-top: 2px;
+    color: var(--ink);
+    font: 500 13.5px/19px var(--font-serif);
+  }
+
+  .a-card-meta {
+    margin-top: 2px;
+    color: var(--ink-muted);
+    font: 400 11.5px/16px var(--font-serif);
+  }
+
+  /* 선택 후 화면 */
+  .a-stage {
+    margin-top: 14px;
+  }
+
+  .a-topbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .a-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 38px;
+    padding: 0 12px 0 4px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-pill);
+    background: var(--paper);
+    color: var(--ink);
+    font: 500 13px/1 var(--font-serif);
+    cursor: pointer;
+  }
+
+  .a-back-btn:hover {
+    border-color: var(--olive);
+    color: var(--olive);
+  }
+
+  .a-back-btn:focus-visible {
+    outline: 2px solid var(--olive);
+    outline-offset: 2px;
+  }
+
+  .a-circle-arrow {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid var(--olive);
+    border-radius: var(--radius-pill);
+    color: var(--olive);
+    background: var(--paper);
+  }
+
+  .a-circle-arrow--sm {
+    width: 24px;
+    height: 24px;
+  }
+
+  .a-circle-arrow svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .a-pos {
+    margin: 0;
+    color: var(--olive);
+    font: 500 13px/20px var(--font-serif);
+  }
+
+  .a-player-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .a-frame-box {
+    position: relative;
+    width: min(100%, 248px);
+    aspect-ratio: 9 / 16;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--ink);
+  }
+
+  .a-frame-box iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .a-autoplay-block {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+    background: rgba(254, 252, 243, 0.94);
+    color: var(--ink);
+    text-align: center;
+  }
+
+  .a-autoplay-block[hidden] {
+    display: none;
+  }
+
+  .a-autoplay-block p {
+    margin: 0;
+    font: 500 14px/22px var(--font-serif);
+  }
+
+  .a-watch-now {
+    min-height: 42px;
+    padding: 0 22px;
+    border: 1.5px solid var(--olive);
+    border-radius: var(--radius-pill);
+    background: var(--olive);
+    color: var(--paper);
+    font: 500 14px/1 var(--font-serif);
+    cursor: pointer;
+  }
+
+  .a-player-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .a-now-title {
+    margin: 0;
+    font: 600 15px/22px var(--font-serif);
+    color: var(--ink);
+  }
+
+  .a-status {
+    margin: 0;
+    color: var(--ink-muted);
+    font: 400 12.5px/18px var(--font-serif);
+  }
+
+  .a-skip-end {
+    min-height: 32px;
+    padding: 0 12px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-pill);
+    background: var(--paper);
+    color: var(--ink-muted);
+    font: 400 12px/1 var(--font-serif);
+    cursor: pointer;
+  }
+
+  .a-skip-end:hover {
+    border-color: var(--olive);
+    color: var(--olive);
+  }
+
+  .a-skip-end:focus-visible,
+  .a-watch-now:focus-visible,
+  .a-next-cta:focus-visible {
+    outline: 2px solid var(--olive);
+    outline-offset: 2px;
+  }
+
+  /* 다음 시리즈 CTA 배너 */
+  .a-next-banner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 14px;
+    padding: 12px 14px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-md);
+    background: var(--paper);
+  }
+
+  .a-next-banner.is-ended {
+    border-color: var(--olive);
+    background: var(--wash-sage);
+  }
+
+  .a-next-banner-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .a-next-kicker {
+    color: var(--ink-muted);
+    font: 400 12px/18px var(--font-serif);
+  }
+
+  .a-next-name {
+    color: var(--ink);
+    font: 600 14px/20px var(--font-serif);
+  }
+
+  .a-next-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 38px;
+    padding: 0 6px 0 14px;
+    border: 1.5px solid var(--olive);
+    border-radius: var(--radius-pill);
+    background: var(--olive);
+    color: var(--paper);
+    font: 500 13px/1 var(--font-serif);
+    cursor: pointer;
+  }
+
+  .a-episodes-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+
+  .a-episodes-label {
+    margin: 0;
+    font: 600 14px/20px var(--font-serif);
+    color: var(--ink);
+  }
+
+  .a-episodes-hint {
+    color: var(--ink-muted);
+    font: 400 12px/18px var(--font-serif);
+  }
+
+  .a-ep-strip {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(104px, 118px);
+    gap: 10px;
+    margin-top: 10px;
+    padding-bottom: 6px;
+    overflow-x: auto;
+  }
+
+  .a-ep-strip :global(.a-ep-card) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--ink);
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .a-ep-strip :global(.a-ep-card:focus-visible) {
+    outline: 2px solid var(--olive);
+    outline-offset: 3px;
+    border-radius: var(--radius-md);
+  }
+
+  .a-ep-strip :global(.a-ep-thumb) {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    border: 1.5px solid var(--line);
+    border-radius: var(--radius-md);
+    background: var(--wash-sage);
+  }
+
+  .a-ep-strip :global(.a-ep-card--lavender .a-ep-thumb) {
+    background: var(--wash-lavender);
+    border-color: var(--lavender);
+  }
+
+  .a-ep-strip :global(.a-ep-card--leaf .a-ep-thumb) {
+    background: #f1f0e1;
+    border-color: var(--leaf);
+  }
+
+  .a-ep-strip :global(.a-ep-card[aria-current="true"] .a-ep-thumb) {
+    border: 2.5px solid var(--olive);
+  }
+
+  .a-ep-strip :global(.a-ep-fallback) {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    padding: 8px;
+  }
+
+  .a-ep-strip :global(.a-ep-num) {
+    color: var(--olive);
+    font: 600 11px/14px var(--font-serif);
+  }
+
+  .a-ep-strip :global(.a-ep-ftitle) {
+    color: var(--ink);
+    font: 600 12px/17px var(--font-serif);
+  }
+
+  .a-ep-strip :global(.a-ep-thumb img) {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .a-ep-strip :global(.a-ep-dur) {
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    z-index: 2;
+    padding: 1px 6px;
+    border-radius: var(--radius-sm);
+    background: rgba(254, 252, 243, 0.92);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    font: 500 10.5px/15px var(--font-latin);
+  }
+
+  .a-ep-strip :global(.a-ep-title) {
+    margin-top: 6px;
+    color: var(--ink);
+    font: 500 12px/17px var(--font-serif);
+  }
+
+  .a-ep-strip :global(.a-ep-card[aria-current="true"] .a-ep-title) {
+    color: var(--olive);
+    font-weight: 600;
+  }
+
+  .a-ep-strip :global(.a-next-card-box) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    padding: 10px;
+    border: 1.5px dashed var(--olive);
+    border-radius: var(--radius-md);
+    background: var(--paper);
+  }
+
+  .a-ep-strip :global(.a-next-card-tag) {
+    color: var(--olive);
+    font: 500 11px/16px var(--font-serif);
+  }
+
+  .a-ep-strip :global(.a-next-card-title) {
+    color: var(--ink);
+    font: 600 14px/20px var(--font-serif);
+  }
+
+  .a-ep-strip :global(.a-next-card-count) {
+    color: var(--ink-muted);
+    font: 400 11.5px/16px var(--font-serif);
+  }
+
+  .a-footer {
+    margin-top: 18px;
+  }
+
+  .a-profile-link {
+    position: relative;
+    display: inline-flex;
+    padding-bottom: 5px;
+    color: var(--olive);
+    font: 500 15px/22px var(--font-serif);
+  }
+
+  .a-profile-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 18px;
+    height: 1.5px;
+    background: var(--olive);
+    transition: width 0.4s ease;
+  }
+
+  .a-profile-link:hover::after,
+  .a-profile-link:focus-visible::after {
+    width: 100%;
+  }
+</style>

@@ -1,0 +1,540 @@
+---
+import JamoHeadline from "./JamoHeadline.astro";
+import SoundTeaser from "./SoundTeaser.astro";
+import VideoMockA from "./VideoMockA.astro";
+import VideoMockB from "./VideoMockB.astro";
+import VideoMockC from "./VideoMockC.astro";
+import VideoMockD from "./VideoMockD.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../lib/site";
+import { tiktokProfile } from "../lib/teaser";
+
+interface Props {
+  option: "a" | "b" | "c" | "d";
+  optionLabel: string;
+  optionSummary: string;
+}
+
+const { option, optionLabel, optionSummary } = Astro.props;
+const title = `해온 시안 ${optionLabel} · 짧은 영상 섹션`;
+const description = `해온 메인 페이지 02 짧은 영상 섹션 시안 ${optionLabel}: ${optionSummary}`;
+const { threads, letters } = site.links;
+
+const navItems = [
+  { key: "index", href: "/mock/", label: "목차" },
+  { key: "a", href: "/mock/a/", label: "A안" },
+  { key: "b", href: "/mock/b/", label: "B안" },
+  { key: "c", href: "/mock/c/", label: "C안" },
+  { key: "d", href: "/mock/d/", label: "D안" },
+] as const;
+---
+
+<BaseLayout title={title} description={description} noindex={true}>
+  <nav class="mock-switcher" aria-label="시안 전환">
+    <span class="mock-switcher-tag">시안 {optionLabel}</span>
+    <span class="mock-switcher-sep" aria-hidden="true">·</span>
+    <ul class="mock-switcher-list">
+      {
+        navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="mock-switcher-link"
+              aria-current={item.key === option ? "page" : undefined}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+
+  <div class="opening is-instant">
+    <JamoHeadline label="나, 말, 온" />
+    <div class="details">
+      <p class="slogan">한국어로, 나답게 말하다.</p>
+      <p class="tagline">흩어진 말들이 모여, 나의 이야기가 됩니다.</p>
+    </div>
+  </div>
+
+  <!-- 휴대폰: 색인표 한 상자 (들어 보기 · 영상 · 편지) — 시안에서는 '영상' 탭이 먼저 열린다 -->
+  <section class="entry entry--tabs is-instant" aria-label="해온 둘러보기">
+    <div class="tabs" role="tablist" aria-label="해온 둘러보기">
+      <button
+        class="tab tab--listen"
+        type="button"
+        role="tab"
+        id="tab-listen"
+        aria-controls="panel-listen"
+        aria-selected="false"
+        tabindex="-1"
+      >
+        들어 보기
+      </button>
+      <button
+        class="tab tab--video"
+        type="button"
+        role="tab"
+        id="tab-video"
+        aria-controls="panel-video"
+        aria-selected="true"
+      >
+        영상
+      </button>
+      <button
+        class="tab tab--letters"
+        type="button"
+        role="tab"
+        id="tab-letters"
+        aria-controls="panel-letters"
+        aria-selected="false"
+        tabindex="-1"
+      >
+        편지
+      </button>
+    </div>
+    <div class="panels">
+      <div class="panel" role="tabpanel" id="panel-listen" aria-labelledby="tab-listen" hidden>
+        <h2 class="panel-title">ㅈ · ㅊ · ㅉ,<br />세 소리가 들리나요?</h2>
+        <p class="panel-body">해온 소리 연습의 ‘듣고 고르기’에서 세 문항을 옮겨 왔어요. 점수와 기록은 남지 않아요.</p>
+        <SoundTeaser />
+      </div>
+      <div class="panel panel--video" role="tabpanel" id="panel-video" aria-labelledby="tab-video">
+        {option === "a" && <VideoMockA variant="tabs" />}
+        {option === "b" && <VideoMockB variant="tabs" />}
+        {option === "c" && <VideoMockC variant="tabs" />}
+        {option === "d" && <VideoMockD variant="tabs" />}
+      </div>
+      <div class="panel" role="tabpanel" id="panel-letters" aria-labelledby="tab-letters" hidden>
+        <h2 class="panel-title">해온의 소식은<br />편지와 스레드에서 이어져요.</h2>
+        <ul class="links links--stack" lang="en">
+          <li><a class="underline-link" href={letters}>Get our letters</a></li>
+          {threads && <li><a class="underline-link" href={threads}>Meet us on Threads</a></li>}
+          <li><a class="underline-link" href={tiktokProfile}>Follow us on TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PC: 입구 두 개 -->
+  <section class="entry entry--doors is-instant" aria-label="해온 둘러보기">
+    <div class="doors">
+      <a class="door door--listen" href="/sori/">
+        <p class="door-kicker"><span class="numeral" lang="en">01</span> 들어 보기</p>
+        <p class="door-jamo" aria-hidden="true"><span>ㅈ</span><span>ㅊ</span><span>ㅉ</span></p>
+        <h2 class="door-title">세 소리, 들리나요?</h2>
+        <p class="door-latin" lang="en">Can you hear the difference?</p>
+        <span class="door-go">맛보기 해 보기 →</span>
+      </a>
+      <div class="door door--video">
+        {option === "a" && <VideoMockA variant="door" />}
+        {option === "b" && <VideoMockB variant="door" />}
+        {option === "c" && <VideoMockC variant="door" />}
+        {option === "d" && <VideoMockD variant="door" />}
+      </div>
+    </div>
+    <ul class="links" lang="en">
+      <li><a class="underline-link" href={letters}>Get our letters</a></li>
+      {threads && <li class="separator" aria-hidden="true">/</li>}
+      {threads && <li><a class="underline-link" href={threads}>Meet us on Threads</a></li>}
+    </ul>
+  </section>
+</BaseLayout>
+
+<script>
+  const tabs = [...document.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
+  const select = (tab: HTMLButtonElement, focus = false) => {
+    for (const other of tabs) {
+      const selected = other === tab;
+      other.setAttribute("aria-selected", String(selected));
+      other.tabIndex = selected ? 0 : -1;
+      const panel = document.getElementById(other.getAttribute("aria-controls") ?? "");
+      if (panel) panel.hidden = !selected;
+    }
+    if (focus) tab.focus();
+  };
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => select(tab));
+    tab.addEventListener("keydown", (event) => {
+      const step = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0;
+      if (event.key === "Home") select(tabs[0], true);
+      else if (event.key === "End") select(tabs[tabs.length - 1], true);
+      else if (step) select(tabs[(index + step + tabs.length) % tabs.length], true);
+      else return;
+      event.preventDefault();
+    });
+  });
+</script>
+
+<style>
+  :global([hidden]) {
+    display: none !important;
+  }
+
+  .mock-switcher {
+    align-self: flex-end;
+    margin: -24px 0 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 10px 5px 12px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-pill);
+    background: var(--paper);
+    font: 500 12.5px/1 var(--font-serif);
+  }
+
+  .mock-switcher-tag {
+    color: var(--olive);
+    font-weight: 600;
+  }
+
+  .mock-switcher-sep {
+    color: var(--line-strong);
+  }
+
+  .mock-switcher-list {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .mock-switcher-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 28px;
+    padding: 0 9px;
+    border-radius: var(--radius-pill);
+    color: var(--ink-muted);
+    font: 500 12px/1 var(--font-serif);
+  }
+
+  .mock-switcher-link:hover {
+    color: var(--olive);
+    background: var(--wash-sage);
+  }
+
+  .mock-switcher-link[aria-current="page"] {
+    background: var(--olive);
+    color: var(--paper);
+  }
+
+  .opening {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    width: min(100%, 1240px);
+  }
+
+  /* 시안 페이지에서는 첫 화면 대기 없이 바로 볼 수 있게 인트로 지연을 끈다 */
+  .opening.is-instant :global(.wind),
+  .opening.is-instant :global(.fly) {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .entry {
+    width: min(100%, 1040px);
+    margin-top: 72px;
+  }
+
+  .slogan {
+    margin: 0;
+    color: var(--ink);
+    font: 500 34px/1.4 var(--font-serif);
+    letter-spacing: -0.01em;
+  }
+
+  .tagline {
+    margin: 14px 0 0;
+    color: var(--ink);
+    font: 400 17px/28px var(--font-serif);
+  }
+
+  .numeral {
+    margin-right: 6px;
+    color: var(--olive);
+    font: 500 18px/1 var(--font-latin);
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 56px 0 0;
+    padding: 0;
+    list-style: none;
+    font: 400 19px/26px var(--font-latin);
+  }
+
+  .separator {
+    color: var(--line-strong);
+  }
+
+  .entry--tabs {
+    display: none;
+  }
+
+  .doors {
+    display: flex;
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  .door {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 420px;
+    padding: 32px;
+    border-radius: var(--radius-md);
+    color: var(--ink);
+  }
+
+  .door--listen {
+    background: var(--wash-sage);
+    transition: background 0.4s ease;
+  }
+
+  .door--listen:hover {
+    color: var(--ink);
+    background: #e6e8d1;
+  }
+
+  .door--video {
+    background: var(--wash-lavender);
+  }
+
+  .door-kicker {
+    margin: 0;
+    font: 500 16px/24px var(--font-serif);
+  }
+
+  .door-jamo {
+    display: flex;
+    gap: 18px;
+    margin: auto 0 0;
+    padding-top: 40px;
+    color: var(--olive);
+    font: 700 96px/1 var(--font-serif);
+  }
+
+  .door-jamo span:nth-child(1) {
+    transform: rotate(-6deg) translateY(4px);
+  }
+
+  .door-jamo span:nth-child(2) {
+    color: #9a84b3;
+    transform: rotate(4deg) translateY(-6px);
+  }
+
+  .door-jamo span:nth-child(3) {
+    transform: rotate(-2deg) translateY(8px);
+  }
+
+  .door-title {
+    margin: 28px 0 0;
+    font: 600 24px/34px var(--font-serif);
+  }
+
+  .door-latin {
+    margin: 4px 0 0;
+    color: var(--ink-muted);
+    font: 400 17px/24px var(--font-latin);
+  }
+
+  .door-go {
+    position: relative;
+    margin-top: 24px;
+    padding-bottom: 6px;
+    color: var(--olive);
+    font: 500 16px/24px var(--font-serif);
+  }
+
+  .door-go::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 18px;
+    height: 1.5px;
+    background: var(--olive);
+    transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .door--listen:hover .door-go::after,
+  .door-go:hover::after,
+  .door-go:focus-visible::after {
+    width: 100%;
+  }
+
+  /* ---- 휴대폰: 색인표 한 상자 ---- */
+
+  .tabs {
+    display: flex;
+    gap: 6px;
+    padding: 0 12px;
+  }
+
+  .tab {
+    position: relative;
+    flex: 1;
+    min-height: 48px;
+    margin-top: 8px;
+    padding: 4px 8px 0;
+    border: 1px solid var(--line);
+    border-bottom: 0;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    color: var(--ink);
+    font: 400 22px/1 "Appa Letter Tabs", var(--font-hand);
+    cursor: pointer;
+    transition: margin-top 0.3s ease;
+  }
+
+  @font-face {
+    font-family: "Appa Letter Tabs";
+    src: url("/fonts/appa-letter-tabs.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  .tab::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: transparent;
+  }
+
+  .tab[aria-selected="true"] {
+    margin-top: 0;
+  }
+
+  .tab[aria-selected="true"]::after {
+    background: var(--olive);
+  }
+
+  .tab:focus-visible {
+    outline: 2px solid var(--olive);
+    outline-offset: 2px;
+  }
+
+  .tab--listen {
+    background: var(--sage);
+  }
+
+  .tab--video {
+    background: var(--lavender);
+  }
+
+  .tab--letters {
+    background: var(--paper);
+  }
+
+  .panels {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+  }
+
+  .panel {
+    padding: 28px 20px 32px;
+  }
+
+  .panel--video {
+    padding: 22px 18px 28px;
+  }
+
+  .panel-title {
+    margin: 0;
+    font: 600 22px/32px var(--font-serif);
+  }
+
+  .panel-body {
+    margin: 10px 0 24px;
+    color: var(--ink-muted);
+    font: 400 15px/24px var(--font-serif);
+  }
+
+  .links--stack {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+
+  .links--stack .underline-link {
+    padding-left: 0;
+  }
+
+  .links--stack .underline-link::after {
+    left: 0;
+  }
+
+  @media (max-width: 1100px) {
+    .door {
+      padding: 28px;
+    }
+  }
+
+  @media (max-width: 899px) {
+    .entry--doors {
+      display: none;
+    }
+
+    .entry--tabs {
+      display: block;
+      width: min(100%, 600px);
+    }
+
+    .mock-switcher {
+      align-self: center;
+      margin: -12px 0 18px;
+      padding: 4px 8px 4px 10px;
+    }
+
+    .mock-switcher-tag,
+    .mock-switcher-sep {
+      display: none;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .opening {
+      gap: 44px;
+    }
+
+    .slogan {
+      font-size: 24px;
+    }
+
+    .tagline {
+      margin-top: 10px;
+      font-size: 15px;
+      line-height: 24px;
+    }
+
+    .entry {
+      margin-top: 48px;
+    }
+  }
+</style>

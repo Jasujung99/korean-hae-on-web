@@ -1,0 +1,70 @@
+---
+interface Props {
+  subtitle?: string;
+}
+
+const { subtitle = "헷갈리는 말, 1분 남짓한 영상으로." } = Astro.props;
+---
+
+<div class="vsec-head">
+  <div class="vsec-top">
+    <p class="vsec-kicker">
+      <span class="vsec-num" lang="en">02</span>
+      <span class="vsec-name">짧은 영상</span>
+    </p>
+    <p class="vsec-latin" lang="en">Short videos on TikTok.</p>
+  </div>
+  <h2 class="vsec-title">{subtitle}</h2>
+</div>
+
+<style>
+  .vsec-head {
+    width: 100%;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .vsec-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 4px 12px;
+  }
+
+  .vsec-kicker {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 0;
+  }
+
+  .vsec-num {
+    color: var(--olive);
+    font: 500 22px/1 var(--font-latin);
+  }
+
+  .vsec-name {
+    color: var(--ink);
+    font: 600 17px/24px var(--font-serif);
+  }
+
+  .vsec-latin {
+    margin: 0;
+    color: var(--ink-muted);
+    font: 400 15px/22px var(--font-latin);
+  }
+
+  .vsec-title {
+    margin: 8px 0 0;
+    color: var(--ink);
+    font: 600 21px/30px var(--font-serif);
+  }
+
+  @media (max-width: 720px) {
+    .vsec-title {
+      font-size: 19px;
+      line-height: 28px;
+    }
+  }
+</style>

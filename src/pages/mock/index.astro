@@ -1,0 +1,243 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "해온 짧은 영상 섹션 시안 모음";
+const description = "02 짧은 영상 섹션의 틱톡 플레이어와 시리즈 카드 상호작용 시안 A, B, C, D안을 비교합니다.";
+
+const options = [
+  {
+    key: "A",
+    href: "/mock/a/",
+    name: "자리 바꿈형",
+    tone: "sage",
+    summary: "시리즈를 누르면 3장 카드 자리가 위 단일 플레이어와 아래 해당 편 가로 줄로 바뀌고, 줄 끝과 배너에서 다음 시리즈로 넘어가요.",
+  },
+  {
+    key: "B",
+    href: "/mock/b/",
+    name: "상단 칩 고정 + 번호 목록",
+    tone: "lavender",
+    summary: "플레이어 위에 세 시리즈 칩이 항상 남아 언제든 전환하고, 아래 번호 목록에 본 편 표시와 마지막 편 뒤 4초 자동 넘김을 둬요.",
+  },
+  {
+    key: "C",
+    href: "/mock/c/",
+    name: "PC 2단 무대 · 휴대폰 하단 서랍",
+    tone: "leaf",
+    summary: "PC에서는 플레이어와 편 목록을 좌우로 나란히 두고, 휴대폰에서는 플레이어 아래 접고 펼 수 있는 서랍과 다음 시리즈 대기열을 붙여요.",
+  },
+  {
+    key: "D",
+    href: "/mock/d/",
+    name: "상단 플레이어 + 3시리즈 아코디언 선반",
+    tone: "sage",
+    summary: "플레이어 좌우 원형 화살표로 편을 오가고, 아래에는 세 시리즈가 접힌 선반으로 남아 활성 시리즈만 펼쳐 보여요.",
+  },
+] as const;
+---
+
+<BaseLayout title={title} description={description} noindex={true}>
+  <div class="mock-index">
+    <div class="mock-head">
+      <p class="mock-kicker"><span class="numeral" lang="en">02</span> 짧은 영상 시안 모음</p>
+      <h1 class="mock-title">틱톡 시리즈 탐색 · 재생 상호작용 시안</h1>
+      <p class="mock-sub">
+        나머지 메인 화면(나말온, 01 들어 보기, 탭/입구 구조)은 그대로 두고 <strong>02 짧은 영상</strong> 섹션만 네 가지 방식으로 비교했어요.
+      </p>
+    </div>
+
+    <ul class="mock-cards">
+      {
+        options.map((opt) => (
+          <li class={`mock-card mock-card--${opt.tone}`}>
+            <div class="mock-card-top">
+              <span class="mock-badge">{opt.key}안</span>
+              <h2 class="mock-card-name">{opt.name}</h2>
+            </div>
+            <p class="mock-card-desc">{opt.summary}</p>
+            <a class="mock-open" href={opt.href}>
+              <span>{opt.key}안 열어 보기</span>
+              <span class="mock-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="mock-notes">
+      <p class="mock-notes-title">공통 반영 사항</p>
+      <ul>
+        <li>상단 단일 틱톡 플레이어 유지, 아래 카드는 이미지 미리보기(미등록 표지는 시리즈 색 + 제목 자리표시)</li>
+        <li>재생 중 ‘끝 근처로 건너뛰기’ 버튼으로 종료(<code>onStateChange: 0</code>) 시 다음 편 자동 넘김 시험 가능</li>
+        <li>자동 재생 차단(<code>errorCode: 3002</code>) 시 플레이어 위에 <code>[지금 보기]</code> 안내 표시</li>
+      </ul>
+      <p class="mock-baseline">
+        <a class="underline-link" href="/">기존 메인 화면(시안 적용 전) 보기</a>
+      </p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .mock-index {
+    width: min(100%, 880px);
+  }
+
+  .mock-head {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mock-kicker {
+    margin: 0;
+    color: var(--ink);
+    font: 500 16px/24px var(--font-serif);
+  }
+
+  .numeral {
+    margin-right: 6px;
+    color: var(--olive);
+    font: 500 22px/1 var(--font-latin);
+  }
+
+  .mock-title {
+    margin: 10px 0 0;
+    color: var(--ink);
+    font: 600 28px/38px var(--font-serif);
+  }
+
+  .mock-sub {
+    margin: 10px 0 0;
+    color: var(--ink-muted);
+    font: 400 15.5px/25px var(--font-serif);
+  }
+
+  .mock-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .mock-card {
+    display: flex;
+    flex-direction: column;
+    padding: 22px 24px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-md);
+    background: var(--paper);
+  }
+
+  .mock-card--sage {
+    background: var(--wash-sage);
+  }
+
+  .mock-card--lavender {
+    background: var(--wash-lavender);
+  }
+
+  .mock-card--leaf {
+    background: #f4f2e6;
+  }
+
+  .mock-card-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mock-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    padding: 0 11px;
+    border: 1.5px solid var(--olive);
+    border-radius: var(--radius-pill);
+    background: var(--paper);
+    color: var(--olive);
+    font: 600 13px/1 var(--font-serif);
+  }
+
+  .mock-card-name {
+    margin: 0;
+    font: 600 18px/26px var(--font-serif);
+    color: var(--ink);
+  }
+
+  .mock-card-desc {
+    margin: 12px 0 0;
+    color: var(--ink);
+    font: 400 14.5px/23px var(--font-serif);
+    flex: 1;
+  }
+
+  .mock-open {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    min-height: 38px;
+    margin-top: 18px;
+    padding: 0 16px;
+    border: 1.5px solid var(--olive);
+    border-radius: var(--radius-pill);
+    background: var(--olive);
+    color: var(--paper);
+    font: 500 13.5px/1 var(--font-serif);
+  }
+
+  .mock-open:hover {
+    background: var(--paper);
+    color: var(--olive);
+  }
+
+  .mock-notes {
+    margin-top: 28px;
+    padding: 20px 22px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: var(--paper);
+  }
+
+  .mock-notes-title {
+    margin: 0;
+    color: var(--olive);
+    font: 600 14px/20px var(--font-serif);
+  }
+
+  .mock-notes ul {
+    margin: 10px 0 0;
+    padding-left: 18px;
+    color: var(--ink-muted);
+    font: 400 13.5px/22px var(--font-serif);
+  }
+
+  .mock-notes li + li {
+    margin-top: 4px;
+  }
+
+  .mock-notes code {
+    padding: 1px 5px;
+    border-radius: var(--radius-sm);
+    background: var(--wash-sage);
+    color: var(--ink);
+    font-size: 12.5px;
+  }
+
+  .mock-baseline {
+    margin: 14px 0 0;
+  }
+
+  @media (max-width: 720px) {
+    .mock-title {
+      font-size: 22px;
+      line-height: 32px;
+    }
+
+    .mock-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

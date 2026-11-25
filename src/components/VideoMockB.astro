@@ -1,0 +1,936 @@
+---
+import { playerUrl, tiktokProfile, videoSeriesList } from "../lib/videoSeries";
+import VideoPosterThumb from "./VideoPosterThumb.astro";
+import VideoSectionHeader from "./VideoSectionHeader.astro";
+
+interface Props {
+  variant?: "door" | "tabs";
+}
+
+const { variant = "door" } = Astro.props;
+const serialized = JSON.stringify(
+  videoSeriesList.map((s) => ({
+    slug: s.slug,
+    title: s.title,
+    subtitle: s.subtitle,
+    tone: s.tone,
+    episodes: s.episodes.map((e) => ({
+      key: e.key,
+      id: e.id,
+      title: e.title,
+      duration: e.duration,
+      durationSec: e.durationSec,
+      poster: e.poster,
+      src: playerUrl(e.id),
+    })),
+  })),
+);
+---
+
+<div class={`vmock vmock--b vmock--${variant}`} data-vmock-b data-series-json={serialized}>
+  <VideoSectionHeader subtitle="시리즈를 오가며 차근차근 이어 보기." />
+
+  <!-- 상단 시리즈 칩 (초기에는 선택 진입점, 재생 중에는 항상 고정 전환기) -->
+  <div class="b-chips-bar" role="navigation" aria-label="영상 시리즈 선택">
+    <button
+      type="button"
+      class="b-chip b-chip--all"
+      data-b-overview-btn
+      aria-pressed="true"
+      aria-label="전체 시리즈 카드 보기"
+    >
+      전체
+    </button>
+    {
+      videoSeriesList.map((series, sIdx) => (
+        <button
+          type="button"
+          class={`b-chip b-chip--${series.tone}`}
+          data-b-chip={sIdx}
+          aria-pressed="false"
+          aria-label={`${series.title} 시리즈 ${series.episodes.length}편 보기`}
+        >
+          <span>{series.title}</span>
+          <span class="b-chip-count">{series.episodes.length}</span>
+        </button>
+      ))
+    }
+  </div>
+
+  <!-- 초기 상태: 3개 시리즈 카드 -->
+  <div class="b-overview" data-b-overview>
+    <p class="b-guide">원하는 시리즈를 고르시면 첫 편부터 차례로 이어서 보여 드려요.</p>
+    <ul class="b-series-grid">
+      {
+        videoSeriesList.map((series, sIdx) => {
+          const first = series.episodes[0];
+          return (
+            <li>
+              <button
+                type="button"
+                class={`b-series-card b-series-card--${series.tone}`}
+                data-b-select-series={sIdx}
+                aria-label={`${series.title} 시리즈 ${series.episodes.length}편 재생하기`}
+              >
+                <span class="b-card-cover">
+                  <VideoPosterThumb
+                    poster={first.poster}
+                    title={first.title}
+                    seriesTitle={series.title}
+                    tone={series.tone}
+                    badge={`${series.episodes.length}편`}
+                    compact={variant === "door"}
+                  />
+                  <span class="b-circle-play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M8 5.5v13l10.5-6.5z" />
+                    </svg>
+                  </span>
+                </span>
+                <span class="b-card-series">{series.title}</span>
+                <span class="b-card-sub">{series.subtitle}</span>
+              </button>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+
+  <!-- 선택 후: 상단 단일 플레이어 + 카운트다운 + 번호 매긴 편 목록 -->
+  <div class="b-stage" data-b-stage hidden>
+    <div class="b-player-wrap">
+      <div class="b-frame-box">
+        <iframe
+          data-b-frame
+          title="틱톡 영상 플레이어"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+          allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+        <div class="b-autoplay-block" data-b-autoplay-block hidden>
+          <p>브라우저가 자동 재생을 막았어요.</p>
+          <button type="button" class="b-watch-now" data-b-watch-now aria-label="지금 보기">지금 보기</button>
+        </div>
+      </div>
+
+      <div class="b-player-meta">
+        <p class="b-now-title" data-b-now-title></p>
+        <p class="b-status" data-b-status aria-live="polite">영상을 불러오고 있어요.</p>
+        <button type="button" class="b-skip-end" data-b-skip-end aria-label="끝 근처로 건너뛰기">
+          끝 근처로 건너뛰기
+        </button>
+      </div>
+    </div>
+
+    <!-- 마지막 편 종료 시 다음 시리즈 카운트다운 배너 -->
+    <div class="b-countdown" data-b-countdown hidden aria-live="polite">
+      <p class="b-countdown-text" data-b-countdown-text></p>
+      <div class="b-countdown-actions">
+        <button type="button" class="b-countdown-go" data-b-countdown-go>바로 보기</button>
+        <button type="button" class="b-countdown-cancel" data-b-countdown-cancel>취소</button>
+      </div>
+    </div>
+
+    <div class="b-list-head">
+      <p class="b-list-title" data-b-list-title></p>
+      <span class="b-watched-summary" data-b-watched-summary></span>
+    </div>
+
+    <ol class="b-ep-list" data-b-ep-list></ol>
+
+    <div class="b-next-row">
+      <button type="button" class="b-next-link" data-b-next-series>
+        <span data-b-next-series-label>다음 시리즈 보기</span>
+        <span class="b-circle-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div class="b-footer">
+    <a class="b-profile-link" href={tiktokProfile}>틱톡 @haeonkorean에서 모두 보기 ↗</a>
+  </div>
+</div>
+
+<script>
+  import {
+    bindPosterFallbacks,
+    extractCurrentTime,
+    extractErrorCode,
+    parseTikTokMessage,
+    sendPlayerCommand,
+    STATE_LABELS,
+  } from "../lib/tiktokPlayer";
+  import { formatTime } from "../lib/videoSeries";
+
+  interface EpisodeData {
+    key: string;
+    id: string;
+    title: string;
+    duration: string;
+    durationSec: number;
+    poster: string;
+    src: string;
+  }
+
+  interface SeriesData {
+    slug: string;
+    title: string;
+    subtitle: string;
+    tone: "sage" | "lavender" | "leaf";
+    episodes: EpisodeData[];
+  }
+
+  for (const root of document.querySelectorAll<HTMLElement>("[data-vmock-b]")) {
+    const seriesList: SeriesData[] = JSON.parse(root.dataset.seriesJson ?? "[]");
+    const overviewBtn = root.querySelector<HTMLButtonElement>("[data-b-overview-btn]")!;
+    const chipBtns = [...root.querySelectorAll<HTMLButtonElement>("[data-b-chip]")];
+    const overview = root.querySelector<HTMLElement>("[data-b-overview]")!;
+    const stage = root.querySelector<HTMLElement>("[data-b-stage]")!;
+    const frame = root.querySelector<HTMLIFrameElement>("[data-b-frame]")!;
+    const nowTitleEl = root.querySelector<HTMLElement>("[data-b-now-title]")!;
+    const statusEl = root.querySelector<HTMLElement>("[data-b-status]")!;
+    const autoplayBlock = root.querySelector<HTMLElement>("[data-b-autoplay-block]")!;
+    const watchNowBtn = root.querySelector<HTMLButtonElement>("[data-b-watch-now]")!;
+    const skipEndBtn = root.querySelector<HTMLButtonElement>("[data-b-skip-end]")!;
+    const countdownBox = root.querySelector<HTMLElement>("[data-b-countdown]")!;
+    const countdownText = root.querySelector<HTMLElement>("[data-b-countdown-text]")!;
+    const countdownGo = root.querySelector<HTMLButtonElement>("[data-b-countdown-go]")!;
+    const countdownCancel = root.querySelector<HTMLButtonElement>("[data-b-countdown-cancel]")!;
+    const listTitle = root.querySelector<HTMLElement>("[data-b-list-title]")!;
+    const watchedSummary = root.querySelector<HTMLElement>("[data-b-watched-summary]")!;
+    const epListEl = root.querySelector<HTMLOListElement>("[data-b-ep-list]")!;
+    const nextSeriesBtn = root.querySelector<HTMLButtonElement>("[data-b-next-series]")!;
+    const nextSeriesLabel = root.querySelector<HTMLElement>("[data-b-next-series-label]")!;
+
+    let currentSeriesIdx = 0;
+    let currentEpIdx = 0;
+    let latestDuration = 0;
+    let countdownTimer: number | null = null;
+    const watchedKeys = new Set<string>();
+
+    bindPosterFallbacks(root);
+    const mqPhone = window.matchMedia("(max-width: 899px)");
+    const isInstanceVisible = () => {
+      const isDoors = root.closest(".entry--doors") !== null;
+      const isTabs = root.closest(".entry--tabs") !== null;
+      const panel = root.closest<HTMLElement>("[role='tabpanel']");
+      if (isDoors) return !mqPhone.matches;
+      if (isTabs) return mqPhone.matches && !panel?.hidden;
+      return true;
+    };
+
+    const clearCountdown = () => {
+      if (countdownTimer !== null) {
+        window.clearInterval(countdownTimer);
+        countdownTimer = null;
+      }
+      countdownBox.hidden = true;
+    };
+
+    const getNextSeriesIdx = () => (currentSeriesIdx + 1) % seriesList.length;
+
+    const syncChips = (inOverview: boolean) => {
+      overviewBtn.setAttribute("aria-pressed", String(inOverview));
+      chipBtns.forEach((chip, idx) => {
+        chip.setAttribute("aria-pressed", String(!inOverview && idx === currentSeriesIdx));
+      });
+    };
+
+    const renderList = () => {
+      const series = seriesList[currentSeriesIdx];
+      const nextIdx = getNextSeriesIdx();
+      const nextSeries = seriesList[nextIdx];
+      const isLastSeries = currentSeriesIdx === seriesList.length - 1;
+
+      listTitle.textContent = `${series.title} · 편 목록`;
+      const watchedCount = series.episodes.filter((ep) => watchedKeys.has(ep.key)).length;
+      watchedSummary.textContent = `${watchedCount} / ${series.episodes.length}편 시청`;
+      nextSeriesLabel.textContent = isLastSeries
+        ? `처음 시리즈 ‘${nextSeries.title}’ (${nextSeries.episodes.length}편)`
+        : `다음 시리즈 ‘${nextSeries.title}’ (${nextSeries.episodes.length}편)`;
+
+      epListEl.innerHTML = "";
+      series.episodes.forEach((ep, idx) => {
+        const li = document.createElement("li");
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = `b-ep-row b-ep-row--${series.tone}`;
+        const isCurrent = idx === currentEpIdx;
+        const isWatched = watchedKeys.has(ep.key);
+        if (isCurrent) btn.setAttribute("aria-current", "true");
+        btn.setAttribute("aria-label", `${series.title} ${idx + 1}편 ${ep.title} 보기`);
+
+        const num = document.createElement("span");
+        num.className = "b-row-num";
+        num.textContent = String(idx + 1).padStart(2, "0");
+
+        const thumb = document.createElement("span");
+        thumb.className = "b-row-thumb";
+        const fallback = document.createElement("span");
+        fallback.className = "b-row-fallback";
+        fallback.setAttribute("aria-hidden", "true");
+        fallback.textContent = ep.title;
+        const img = document.createElement("img");
+        img.src = ep.poster;
+        img.alt = "";
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.setAttribute("data-poster-img", "");
+        thumb.append(fallback, img);
+
+        const body = document.createElement("span");
+        body.className = "b-row-body";
+        const titleSpan = document.createElement("span");
+        titleSpan.className = "b-row-title";
+        titleSpan.textContent = ep.title;
+        const metaSpan = document.createElement("span");
+        metaSpan.className = "b-row-meta";
+        metaSpan.textContent = isCurrent ? `${ep.duration} · 지금 보는 중` : ep.duration;
+        body.append(titleSpan, metaSpan);
+
+        const tick = document.createElement("span");
+        tick.className = `b-row-tick ${isWatched ? "is-watched" : ""}`;
+        tick.setAttribute("aria-label", isWatched ? "시청함" : "아직 보지 않음");
+        tick.innerHTML = isWatched
+          ? `<svg viewBox="0 0 20 20" focusable="false"><path d="M5 10.5l3.5 3.5L15 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+          : `<svg viewBox="0 0 20 20" focusable="false"><path d="M8 6.5v7l6-3.5z" fill="currentColor"/></svg>`;
+
+        btn.append(num, thumb, body, tick);
+        btn.addEventListener("click", () => loadEpisode(currentSeriesIdx, idx));
+        li.append(btn);
+        epListEl.append(li);
+      });
+
+      bindPosterFallbacks(epListEl);
+    };
+
+    const loadEpisode = (sIdx: number, epIdx: number) => {
+      clearCountdown();
+      currentSeriesIdx = sIdx;
+      currentEpIdx = epIdx;
+      latestDuration = 0;
+
+      const series = seriesList[sIdx];
+      const ep = series.episodes[epIdx];
+
+      overview.hidden = true;
+      stage.hidden = false;
+      autoplayBlock.hidden = true;
+      syncChips(false);
+
+      frame.src = ep.src;
+      frame.title = `틱톡 영상: ${series.title} - ${ep.title}`;
+      nowTitleEl.textContent = `${series.title} ${String(epIdx + 1).padStart(2, "0")} · ${ep.title}`;
+      statusEl.textContent = `영상을 불러오고 있어요 · ${ep.duration}`;
+      renderList();
+    };
+
+    const showOverview = () => {
+      clearCountdown();
+      frame.removeAttribute("src");
+      stage.hidden = true;
+      overview.hidden = false;
+      autoplayBlock.hidden = true;
+      syncChips(true);
+    };
+
+    const startNextSeriesCountdown = () => {
+      clearCountdown();
+      const nextIdx = getNextSeriesIdx();
+      const nextSeries = seriesList[nextIdx];
+      let remain = 4;
+      countdownBox.hidden = false;
+      const updateText = () => {
+        countdownText.textContent = `${remain}초 뒤 다음 시리즈 ‘${nextSeries.title}’ 첫 편을 재생해요.`;
+      };
+      updateText();
+      countdownTimer = window.setInterval(() => {
+        remain -= 1;
+        if (remain <= 0) {
+          clearCountdown();
+          loadEpisode(nextIdx, 0);
+        } else {
+          updateText();
+        }
+      }, 1000);
+    };
+
+    overviewBtn.addEventListener("click", showOverview);
+    chipBtns.forEach((chip, idx) => {
+      chip.addEventListener("click", () => loadEpisode(idx, 0));
+    });
+    for (const cardBtn of root.querySelectorAll<HTMLButtonElement>("[data-b-select-series]")) {
+      cardBtn.addEventListener("click", () => {
+        loadEpisode(Number(cardBtn.dataset.bSelectSeries ?? 0), 0);
+      });
+    }
+    nextSeriesBtn.addEventListener("click", () => loadEpisode(getNextSeriesIdx(), 0));
+    countdownGo.addEventListener("click", () => loadEpisode(getNextSeriesIdx(), 0));
+    countdownCancel.addEventListener("click", () => {
+      clearCountdown();
+      statusEl.textContent = "자동 넘김을 멈췄어요.";
+    });
+
+    watchNowBtn.addEventListener("click", () => {
+      autoplayBlock.hidden = true;
+      sendPlayerCommand(frame, "play");
+      statusEl.textContent = "재생을 요청했어요.";
+    });
+
+    skipEndBtn.addEventListener("click", () => {
+      const ep = seriesList[currentSeriesIdx].episodes[currentEpIdx];
+      const dur = latestDuration > 3 ? latestDuration : ep.durationSec;
+      const target = Math.max(0, Math.floor(dur - 3));
+      sendPlayerCommand(frame, "seekTo", target);
+      statusEl.textContent = `${formatTime(target)} 지점으로 건너뛰었어요.`;
+    });
+
+    window.addEventListener("message", (event) => {
+      if (stage.hidden || !isInstanceVisible()) return;
+      const msg = parseTikTokMessage(event.data);
+      if (!msg) return;
+
+      if (msg.type === "onPlayerReady") {
+        statusEl.textContent = "재생할 준비가 됐어요.";
+      } else if (msg.type === "onCurrentTime") {
+        const time = extractCurrentTime(msg);
+        if (time) {
+          latestDuration = time.duration;
+          statusEl.textContent = `${formatTime(time.currentTime)} / ${formatTime(time.duration)}`;
+        }
+      } else if (msg.type === "onPlayerError") {
+        const code = extractErrorCode(msg);
+        if (code === 3002) {
+          autoplayBlock.hidden = false;
+          statusEl.textContent = "브라우저가 자동 재생을 막았어요.";
+        }
+      } else if (msg.type === "onStateChange") {
+        const state = Number(msg.value);
+        if (state === 1) autoplayBlock.hidden = true;
+        if (state in STATE_LABELS) statusEl.textContent = STATE_LABELS[state];
+        if (state === 0) {
+          const series = seriesList[currentSeriesIdx];
+          watchedKeys.add(series.episodes[currentEpIdx].key);
+          renderList();
+          if (currentEpIdx + 1 < series.episodes.length) {
+            loadEpisode(currentSeriesIdx, currentEpIdx + 1);
+          } else {
+            statusEl.textContent = "시리즈의 마지막 편이 끝났어요.";
+            startNextSeriesCountdown();
+          }
+        }
+      }
+    });
+
+    let mqTimer: number | null = null;
+    mqPhone.addEventListener("change", () => {
+      if (mqTimer !== null) window.clearTimeout(mqTimer);
+      mqTimer = window.setTimeout(() => {
+        if (!isInstanceVisible() && !stage.hidden) showOverview();
+      }, 250);
+    });
+  }
+</script>
+
+<style>
+  .vmock--b {
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  .b-chips-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+  }
+
+  .b-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 34px;
+    padding: 0 12px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-pill);
+    background: var(--paper);
+    color: var(--ink);
+    font: 500 12.5px/1 var(--font-serif);
+    cursor: pointer;
+  }
+
+  .b-chip:hover {
+    border-color: var(--olive);
+  }
+
+  .b-chip:focus-visible {
+    outline: 2px solid var(--olive);
+    outline-offset: 2px;
+  }
+
+  .b-chip[aria-pressed="true"] {
+    border-color: var(--olive);
+    background: var(--olive);
+    color: var(--paper);
+  }
+
+  .b-chip-count {
+    display: inline-grid;
+    place-items: center;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: var(--radius-pill);
+    background: rgba(76, 79, 44, 0.12);
+    font: 500 11px/1 var(--font-latin);
+  }
+
+  .b-chip[aria-pressed="true"] .b-chip-count {
+    background: rgba(254, 252, 243, 0.24);
+    color: var(--paper);
+  }
+
+  .b-guide {
+    margin: 12px 0;
+    color: var(--ink-muted);
+    font: 400 13.5px/21px var(--font-serif);
+  }
+
+  .b-series-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .vmock--door .b-series-grid {
+    gap: 10px;
+  }
+
+  .b-series-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--ink);
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .b-series-card:focus-visible {
+    outline: 2px solid var(--olive);
+    outline-offset: 4px;
+    border-radius: var(--radius-md);
+  }
+
+  .b-card-cover {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+
+  .b-circle-play {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid var(--olive);
+    border-radius: var(--radius-pill);
+    background: var(--paper);
+    color: var(--olive);
+  }
+
+  .b-series-card:hover .b-circle-play {
+    background: var(--olive);
+    color: var(--paper);
+  }
+
+  .b-circle-play svg {
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+  }
+
+  .b-card-series {
+    margin-top: 8px;
+    color: var(--ink);
+    font: 600 14px/20px var(--font-serif);
+  }
+
+  .b-card-sub {
+    margin-top: 2px;
+    color: var(--ink-muted);
+    font: 400 11.5px/16px var(--font-serif);
+  }
+
+  /* 선택 후 */
+  .b-stage {
+    margin-top: 14px;
+  }
+
+  .b-player-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .b-frame-box {
+    position: relative;
+    width: min(100%, 240px);
+    aspect-ratio: 9 / 16;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--ink);
+  }
+
+  .b-frame-box iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .b-autoplay-block {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+    background: rgba(254, 252, 243, 0.94);
+    text-align: center;
+  }
+
+  .b-autoplay-block[hidden] {
+    display: none;
+  }
+
+  .b-autoplay-block p {
+    margin: 0;
+    font: 500 14px/22px var(--font-serif);
+  }
+
+  .b-watch-now {
+    min-height: 42px;
+    padding: 0 22px;
+    border: 1.5px solid var(--olive);
+    border-radius: var(--radius-pill);
+    background: var(--olive);
+    color: var(--paper);
+    font: 500 14px/1 var(--font-serif);
+    cursor: pointer;
+  }
+
+  .b-player-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .b-now-title {
+    margin: 0;
+    color: var(--ink);
+    font: 600 14.5px/21px var(--font-serif);
+  }
+
+  .b-status {
+    margin: 0;
+    color: var(--ink-muted);
+    font: 400 12.5px/18px var(--font-serif);
+  }
+
+  .b-skip-end {
+    min-height: 32px;
+    padding: 0 12px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-pill);
+    background: var(--paper);
+    color: var(--ink-muted);
+    font: 400 12px/1 var(--font-serif);
+    cursor: pointer;
+  }
+
+  .b-skip-end:hover {
+    border-color: var(--olive);
+    color: var(--olive);
+  }
+
+  .b-countdown {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 12px;
+    padding: 12px 14px;
+    border: 1.5px solid var(--olive);
+    border-radius: var(--radius-md);
+    background: var(--wash-sage);
+  }
+
+  .b-countdown[hidden] {
+    display: none;
+  }
+
+  .b-countdown-text {
+    margin: 0;
+    color: var(--ink);
+    font: 500 13px/20px var(--font-serif);
+  }
+
+  .b-countdown-actions {
+    display: flex;
+    gap: 6px;
+  }
+
+  .b-countdown-go,
+  .b-countdown-cancel {
+    min-height: 32px;
+    padding: 0 12px;
+    border-radius: var(--radius-pill);
+    font: 500 12.5px/1 var(--font-serif);
+    cursor: pointer;
+  }
+
+  .b-countdown-go {
+    border: 1.5px solid var(--olive);
+    background: var(--olive);
+    color: var(--paper);
+  }
+
+  .b-countdown-cancel {
+    border: 1px solid var(--line-strong);
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  .b-list-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+
+  .b-list-title {
+    margin: 0;
+    color: var(--ink);
+    font: 600 14px/20px var(--font-serif);
+  }
+
+  .b-watched-summary {
+    color: var(--ink-muted);
+    font: 400 12px/18px var(--font-serif);
+  }
+
+  .b-ep-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .b-ep-list :global(.b-ep-row) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: var(--paper);
+    color: var(--ink);
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .b-ep-list :global(.b-ep-row:hover) {
+    border-color: var(--olive);
+  }
+
+  .b-ep-list :global(.b-ep-row:focus-visible) {
+    outline: 2px solid var(--olive);
+    outline-offset: 2px;
+  }
+
+  .b-ep-list :global(.b-ep-row[aria-current="true"]) {
+    border: 1.5px solid var(--olive);
+    background: var(--wash-sage);
+  }
+
+  .b-ep-list :global(.b-row-num) {
+    color: var(--olive);
+    font: 500 15px/1 var(--font-latin);
+    min-width: 20px;
+  }
+
+  .b-ep-list :global(.b-row-thumb) {
+    position: relative;
+    flex: 0 0 38px;
+    width: 38px;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--line);
+    background: var(--wash-lavender);
+  }
+
+  .b-ep-list :global(.b-ep-row--sage .b-row-thumb) {
+    background: var(--wash-sage);
+  }
+
+  .b-ep-list :global(.b-ep-row--leaf .b-row-thumb) {
+    background: #f1f0e1;
+  }
+
+  .b-ep-list :global(.b-row-fallback) {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    color: var(--ink-muted);
+    font: 500 8.5px/11px var(--font-serif);
+    text-align: center;
+  }
+
+  .b-ep-list :global(.b-row-thumb img) {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .b-ep-list :global(.b-row-body) {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  .b-ep-list :global(.b-row-title) {
+    font: 500 13.5px/19px var(--font-serif);
+    color: var(--ink);
+  }
+
+  .b-ep-list :global(.b-row-meta) {
+    font: 400 11.5px/16px var(--font-serif);
+    color: var(--ink-muted);
+  }
+
+  .b-ep-list :global(.b-row-tick) {
+    display: grid;
+    place-items: center;
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid var(--olive);
+    border-radius: var(--radius-pill);
+    background: var(--paper);
+    color: var(--olive);
+  }
+
+  .b-ep-list :global(.b-row-tick.is-watched) {
+    background: var(--olive);
+    color: var(--paper);
+  }
+
+  .b-ep-list :global(.b-row-tick svg) {
+    width: 14px;
+    height: 14px;
+  }
+
+  .b-next-row {
+    margin-top: 12px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .b-next-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 36px;
+    padding: 0 4px 0 12px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-pill);
+    background: var(--paper);
+    color: var(--ink);
+    font: 500 12.5px/1 var(--font-serif);
+    cursor: pointer;
+  }
+
+  .b-next-link:hover {
+    border-color: var(--olive);
+    color: var(--olive);
+  }
+
+  .b-circle-arrow {
+    display: grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border: 1.5px solid var(--olive);
+    border-radius: var(--radius-pill);
+    color: var(--olive);
+  }
+
+  .b-circle-arrow svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .b-footer {
+    margin-top: 16px;
+  }
+
+  .b-profile-link {
+    position: relative;
+    display: inline-flex;
+    padding-bottom: 5px;
+    color: var(--olive);
+    font: 500 15px/22px var(--font-serif);
+  }
+
+  .b-profile-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 18px;
+    height: 1.5px;
+    background: var(--olive);
+    transition: width 0.4s ease;
+  }
+
+  .b-profile-link:hover::after,
+  .b-profile-link:focus-visible::after {
+    width: 100%;
+  }
+</style>
