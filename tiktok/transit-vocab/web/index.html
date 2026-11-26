@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>해온 · transit words</title>
+    <link rel="stylesheet" href="video.css" />
+  </head>
+  <body>
+    <div id="stage">
+      <div id="wash" aria-hidden="true"></div>
+      <svg class="wind" id="wind" viewBox="0 0 1080 1920" aria-hidden="true">
+        <path class="a" d="M-30 1560 C 160 1510, 340 1620, 540 1572 S 860 1496, 1120 1554" />
+        <path class="b" d="M-40 1710 C 220 1660, 460 1788, 720 1724 S 980 1650, 1140 1702" />
+      </svg>
+      <div class="grain" aria-hidden="true"></div>
+
+      <header>
+        <div class="logo">
+          <svg class="mark" viewBox="0 -1 241 180" aria-hidden="true">
+            <path id="mark-path" d=""></path>
+          </svg>
+          <svg class="name" viewBox="12 201 190 142" aria-hidden="true">
+            <path id="name-ko-path" d=""></path>
+            <path id="name-en-path" d=""></path>
+          </svg>
+        </div>
+        <p id="section-label">Mix-up</p>
+        <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+      </header>
+
+      <main class="safe">
+        <section id="scene-hook" class="scene center">
+          <p class="ko hero" data-at="0.08" lang="ko">터미널</p>
+          <svg class="neq" data-pop-at="0.40" viewBox="0 0 120 78" aria-label="is not">
+            <path d="M8 18 H112 M8 58 H112 M28 8 L92 70" />
+          </svg>
+          <p class="ko hero" data-at="0.68" lang="ko">종점</p>
+          <p class="lede" data-at="0.92">Not the same word.</p>
+          <p class="soft" data-at="1.22">A building. Or the last stop.</p>
+        </section>
+
+        <section id="scene-title" class="scene center">
+          <p class="kicker" data-at="0.06">On a Korean bus or subway</p>
+          <h1 class="display" data-at="0.14">Six words<br />that get mixed up</h1>
+          <ul class="pills" lang="ko">
+            <li data-at="0.48">터미널</li>
+            <li data-at="0.60">종점</li>
+            <li data-at="0.72">정차</li>
+            <li data-at="0.84">경유</li>
+            <li data-at="0.96">정류장</li>
+            <li data-at="1.08">정거장</li>
+          </ul>
+        </section>
+
+        <section id="scene-place" class="scene">
+          <p class="kicker" data-at="0.06">Building, or end of the line</p>
+          <div class="stack">
+            <article class="block sage" data-at="0.12">
+              <h2 class="ko" lang="ko">터미널</h2>
+              <p class="rom">teo-mi-neol</p>
+              <i class="rule" data-rule-at="0.32"></i>
+              <p class="en">A large transit building.<br />Ticket booths, waiting lounges, shops, and platforms.</p>
+            </article>
+            <article class="block lavender" data-at="0.95">
+              <h2 class="ko" lang="ko">종점</h2>
+              <p class="rom">jong-jeom</p>
+              <i class="rule" data-rule-at="1.45"></i>
+              <p class="en">The end of the line.<br />Where a bus or subway route finishes.</p>
+            </article>
+          </div>
+          <p class="hand" data-at="2.55" lang="ko">우리말샘에서는 같이 쓰일 수 있어요.</p>
+          <p class="soft tight" data-at="2.75">The dictionary allows both. On the street, Koreans keep them apart.</p>
+        </section>
+
+        <section id="scene-quizSubway" class="scene">
+          <p class="kicker" data-at="0.04">Quick check</p>
+          <h2 class="place-name" data-at="0.08" lang="ko">지하철 1호선</h2>
+          <div class="ox-list">
+            <div class="ox ok" data-at="0.22">
+              <span class="badge" data-pop-at="0.28">O</span>
+              <span class="ox-word" lang="ko">종점</span>
+              <span class="ox-gloss">the last station</span>
+            </div>
+            <div class="ox no" data-at="0.40">
+              <span class="badge" data-pop-at="0.46">X</span>
+              <span class="ox-word" lang="ko">터미널</span>
+              <span class="ox-gloss">not for a subway line</span>
+            </div>
+          </div>
+          <p class="en gap" data-at="0.62">The final station on a subway line is a <span lang="ko">종점</span>.</p>
+        </section>
+
+        <section id="scene-quizBus" class="scene">
+          <p class="kicker" data-at="0.04">Quick check</p>
+          <h2 class="place-name" data-at="0.08" lang="ko">마을버스</h2>
+          <div class="ox-list">
+            <div class="ox ok" data-at="0.20">
+              <span class="badge" data-pop-at="0.26">O</span>
+              <span class="ox-word" lang="ko">종점</span>
+              <span class="ox-gloss">even a roadside sign</span>
+            </div>
+            <div class="ox no" data-at="0.38">
+              <span class="badge" data-pop-at="0.44">X</span>
+              <span class="ox-word" lang="ko">터미널</span>
+              <span class="ox-gloss">no large building</span>
+            </div>
+          </div>
+          <p class="en gap" data-at="0.60">If the route ends there, it is still a <span lang="ko">종점</span>.<br />Without a big building, it is not a <span lang="ko">터미널</span>.</p>
+        </section>
+
+        <section id="scene-quizAir" class="scene">
+          <p class="kicker" data-at="0.04">Quick check</p>
+          <h2 class="place-name" data-at="0.08" lang="ko">인천공항</h2>
+          <div class="ox-list">
+            <div class="ox ok" data-at="0.20">
+              <span class="badge" data-pop-at="0.26">O</span>
+              <span class="ox-word" lang="ko">터미널</span>
+              <span class="ox-gloss">a building for planes</span>
+            </div>
+            <div class="ox no" data-at="0.38">
+              <span class="badge" data-pop-at="0.44">X</span>
+              <span class="ox-word" lang="ko">종점</span>
+              <span class="ox-gloss">not the end of a route</span>
+            </div>
+          </div>
+          <p class="en gap" data-at="0.60">You board or change planes in a <span lang="ko">터미널</span>.<br />The route does not end there, so it is not a <span lang="ko">종점</span>.</p>
+        </section>
+
+        <section id="scene-move" class="scene">
+          <p class="kicker" data-at="0.05">Does it stop, or pass through?</p>
+          <div class="stack">
+            <article class="block lavender" data-at="0.12">
+              <h2 class="ko" lang="ko">정차 <small lang="ko">停車</small></h2>
+              <p class="rom">jeong-cha</p>
+              <i class="rule" data-rule-at="0.38"></i>
+              <p class="en">The vehicle comes to a stop.<br />Briefly, on the road or at a station.</p>
+            </article>
+            <article class="block sage" data-at="1.05">
+              <h2 class="ko" lang="ko">경유 <small lang="ko">經由</small></h2>
+              <p class="rom">gyeong-yu</p>
+              <i class="rule" data-rule-at="1.55"></i>
+              <p class="en">Going via a place.<br />An intermediate point on the way.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="scene-stopEx" class="scene">
+          <p class="kicker" data-at="0.04" lang="ko">정차</p>
+          <p class="sentence" data-at="0.10" lang="ko">버스가 완전히 정차한 뒤에<br />자리에서 일어나 주세요.</p>
+          <i class="rule" data-rule-at="0.28"></i>
+          <p class="en" data-at="0.32">Please stand up only after the bus<br />has come to a complete stop.</p>
+          <p class="chip" data-at="0.70"><span lang="ko">무정차 통과</span> · it passes without stopping</p>
+          <p class="sentence minor" data-at="1.15" lang="ko">이 급행열차는 이번 역에<br />정차하지 않고 통과합니다.</p>
+          <p class="soft tight" data-at="1.35">This express passes the station without stopping.</p>
+        </section>
+
+        <section id="scene-viaEx" class="scene">
+          <p class="kicker" data-at="0.04" lang="ko">경유</p>
+          <div class="route" data-at="0.12" aria-hidden="true">
+            <div class="node">
+              <b lang="ko">여기</b>
+              <span>you</span>
+            </div>
+            <span class="join" data-rule-at="0.28"></span>
+            <div class="node via">
+              <b lang="ko">시청</b>
+              <span>via</span>
+            </div>
+            <span class="join" data-rule-at="0.48"></span>
+            <div class="node">
+              <b lang="ko">서울역</b>
+              <span>Seoul Station</span>
+            </div>
+          </div>
+          <p class="sentence" data-at="0.70" lang="ko">이 버스는 시청을 경유해서<br />서울역으로 가요.</p>
+          <p class="en" data-at="0.95">This bus goes to Seoul Station via City Hall.</p>
+          <p class="chip" data-at="1.45"><span lang="ko">도쿄 경유</span> · a layover in Tokyo</p>
+        </section>
+
+        <section id="scene-stops" class="scene">
+          <p class="kicker" data-at="0.05">The place, and how you count</p>
+          <div class="stack">
+            <article class="block sage" data-at="0.12">
+              <h2 class="ko" lang="ko">정류장 <small lang="ko">停留場</small></h2>
+              <p class="rom">jeong-ryu-jang</p>
+              <i class="rule" data-rule-at="0.32"></i>
+              <p class="en">A small roadside stop.<br />Usually a sign or a bench. Bus or taxi.</p>
+            </article>
+            <article class="block lavender" data-at="1.05">
+              <h2 class="ko" lang="ko">정거장 <small lang="ko">停車場</small></h2>
+              <p class="rom">jeong-geo-jang</p>
+              <i class="rule" data-rule-at="1.50"></i>
+              <p class="en">A station, or any stop.<br />Also how people count the stops left.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="scene-busStop" class="scene">
+          <p class="kicker" data-at="0.04" lang="ko">정류장</p>
+          <div class="sign" data-at="0.12">
+            <span class="kicker" lang="ko">버스 정류장</span>
+            <strong>143</strong>
+          </div>
+          <p class="sentence" data-at="0.40" lang="ko">집 앞 버스 정류장에서<br />143번 버스를 타면 돼요.</p>
+          <p class="en" data-at="0.62">You can catch bus 143 at the stop<br />in front of the house.</p>
+          <p class="soft tight" data-at="1.15">A taxi stand is usually <span lang="ko">택시 승강장</span>.</p>
+        </section>
+
+        <section id="scene-count" class="scene">
+          <p class="kicker" data-at="0.04" lang="ko">정거장</p>
+          <div class="stations" data-at="0.12" aria-hidden="true">
+            <span class="dot" data-on-at="0.20">1</span>
+            <span class="join" data-rule-at="0.35"></span>
+            <span class="dot" data-on-at="0.50">2</span>
+            <span class="join" data-rule-at="0.65"></span>
+            <span class="dot" data-on-at="0.85">3</span>
+          </div>
+          <p class="sentence" data-at="1.05" lang="ko">여기서 시청역까지는<br />세 정거장만 더 가면 돼요.</p>
+          <p class="en" data-at="1.30">From here to City Hall Station,<br />three more stops by subway.</p>
+          <p class="soft tight" data-at="1.85"><span lang="ko">버스 정거장</span> is also said. In everyday talk, <span lang="ko">정거장</span> counts the stops.</p>
+        </section>
+
+        <section id="scene-recall" class="scene">
+          <p class="kicker" data-at="0.04">Keep these</p>
+          <h2 class="display small" data-at="0.10">One line each.</h2>
+          <ul class="recall">
+            <li data-at="0.45"><b lang="ko">정차</b><span>it stops</span></li>
+            <li data-at="1.15"><b lang="ko">경유</b><span>via</span></li>
+            <li data-at="1.85"><b lang="ko">정류장</b><span>the roadside stop</span></li>
+            <li data-at="2.55"><b lang="ko">정거장</b><span>count the stops</span></li>
+            <li data-at="3.25"><b lang="ko">터미널</b><span>the building</span></li>
+            <li data-at="3.95"><b lang="ko">종점</b><span>the last stop</span></li>
+          </ul>
+        </section>
+
+        <section id="scene-end" class="scene center end">
+          <img class="end-logo" data-at="0.12" alt="해온 haeon" src="../../../src/design-system/logos/logo-olive.svg" />
+          <i class="rule site" data-rule-at="0.45"></i>
+          <p class="tagline" data-at="0.55">Your voice, in Korean.</p>
+          <p class="ease" data-at="0.85">At ease. As yourself.</p>
+          <p class="cta" data-at="1.20">Save this for the ride.</p>
+          <p class="url" data-at="1.55">haeonkorean.com</p>
+        </section>
+      </main>
+    </div>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
