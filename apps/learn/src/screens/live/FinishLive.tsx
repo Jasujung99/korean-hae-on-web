@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router";
 import type { WordView } from "../../../server/preview/contract.ts";
 import { previewApi } from "../../preview/api";
 import { usePractice } from "../../preview/PracticeContext";
-import { LearnerFrame, Pill, ScreenTitle } from "../../ui";
+import { LearnerFrame, ScreenTitle } from "../../ui";
 
 const CONSONANTS = ["ㅈ", "ㅊ", "ㅉ"];
 
@@ -114,7 +114,6 @@ export function FinishLive() {
         <div className="divider-block">
           <div className="row">
             <h3>이 소리, 단어에서는?</h3>
-            <Pill tone="future">확장 시안</Pill>
           </div>
           <p className="muted">생활 속 단어와 예문으로 연결해요.</p>
           <div className="word-list">

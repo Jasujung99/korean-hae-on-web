@@ -4,7 +4,7 @@ import type { WordView } from "../../../server/preview/contract.ts";
 import { previewApi } from "../../preview/api";
 import { usePractice } from "../../preview/PracticeContext";
 import { track } from "../../preview/telemetry";
-import { LearnerFrame, Pill, ScreenTitle } from "../../ui";
+import { LearnerFrame, ScreenTitle } from "../../ui";
 import { DictInline } from "./DictInline";
 import { PlayIcon } from "../PlayIcon";
 
@@ -37,7 +37,7 @@ export function WordsLive() {
         <ScreenTitle title="사전·예문" />
         <section className="panel stack">
           <h2>단어를 불러오지 못했어요.</h2>
-          <p className="notice">미리보기 서버에 닿지 못했어요. 잠시 뒤 다시 열어 주세요.</p>
+          <p className="notice">인터넷 연결을 확인하고 잠시 뒤 다시 열어 주세요.</p>
         </section>
       </LearnerFrame>
     );
@@ -65,7 +65,6 @@ export function WordsLive() {
           <Link className="text-link" to="/practice">
             ← 듣기 퀴즈
           </Link>
-          <Pill tone="future">사전·예문 확장 시안</Pill>
         </div>
         <div className="library-links" role="group" aria-label="살펴볼 단어">
           {words.map((row) => (
@@ -90,8 +89,8 @@ export function WordsLive() {
           </h2>
         </div>
         <div className="definition">
-          <p className="small">뜻 · 학습용 초안, 검수 전</p>
-          <p>{word.gloss || "아직 뜻 초안이 없어요."}</p>
+          <p className="small">뜻</p>
+          <p>{word.gloss || "뜻을 준비하고 있어요."}</p>
         </div>
         {word.partners.length > 0 ? (
           <div className="pair-row">
@@ -125,7 +124,7 @@ export function WordsLive() {
             <VoiceRow title="예문 듣기" kind="example" text={word.example} word={word} active={active} setActive={setActive} />
           </>
         ) : (
-          <p className="notice">주어진 예문이 아직 없는 단어예요. 예문은 검수된 자료가 들어오면 붙여요.</p>
+          <p className="notice">예문이 아직 없는 단어예요.</p>
         )}
         {word.extraExamples.length + word.moreExamples.length > 0 ? (
           <details className="more-examples">

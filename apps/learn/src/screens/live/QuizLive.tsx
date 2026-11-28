@@ -30,7 +30,7 @@ export function QuizLive() {
         <section className="panel stack">
           <h2>연습을 불러오지 못했어요.</h2>
           <p className="notice" role="status">
-            미리보기 서버에 닿지 못했어요. 서버가 켜져 있는지 확인한 뒤 다시 시도해 주세요.
+            인터넷 연결을 확인한 뒤 다시 시도해 주세요.
           </p>
           <button type="button" className="primary" onClick={() => void practice.startNew()}>
             다시 시도
@@ -91,7 +91,7 @@ export function QuizLive() {
 
   let audioLine = "소리를 먼저 들어야 고른 답을 확인할 수 있어요.";
   if (failed && !heard) audioLine = "소리를 불러오지 못했어요. 이 문항은 성적에 넣지 않아요.";
-  else if (plays > 0) audioLine = `${plays}번 들었어요 · 음원 ${session.voice} · 검수 전 초안`;
+  else if (plays > 0) audioLine = `${plays}번 들었어요`;
 
   return (
     <LearnerFrame preview>
@@ -243,9 +243,6 @@ export function QuizLive() {
           <span aria-hidden="true">↳</span> 비교 도움을 보고 돌아와도 풀던 문제는 그대로예요.
         </p>
       </section>
-      <p className="flow-note">
-        미리보기 · 음원은 검수 전 초안이에요. 기록은 이 컴퓨터의 미리보기 저장소에만 남아요. 출제 {session.policyVersion}.
-      </p>
     </LearnerFrame>
   );
 }
