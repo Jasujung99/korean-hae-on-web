@@ -32,7 +32,9 @@ describe("package boundary", () => {
     expect(workflow).toContain("npm run build");
     expect(workflow).toContain("publish_dir: ./dist");
     expect(workflow).toContain("publish_branch: deploy");
-    expect(workflow).not.toContain("apps/learn");
+    // 홈페이지 빌드·배포 단계는 앱을 모른다. 앱만 바뀐 push를 건너뛰는 paths-ignore에만 앱 경로가 있다.
+    expect(workflow.slice(workflow.indexOf("jobs:"))).not.toContain("apps/learn");
+    expect(workflow).toMatch(/paths-ignore:\s*\n\s*- "apps\/learn\/\*\*"/);
   });
 
   it("does not hard-code a live learning host or hidden client storage in the app code", () => {
