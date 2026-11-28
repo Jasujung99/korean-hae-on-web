@@ -3,6 +3,11 @@ name: Build static site for Hostinger
 on:
   push:
     branches: [main]
+    # 소리 앱(apps/learn)과 그 문서만 바뀐 push에는 홈페이지를 다시 만들지 않는다. 앱은 sori-deploy.yml이 올린다.
+    paths-ignore:
+      - "apps/learn/**"
+      - "docs/adult-phoneme-app/**"
+      - ".github/workflows/sori-deploy.yml"
   workflow_dispatch:
 
 permissions:

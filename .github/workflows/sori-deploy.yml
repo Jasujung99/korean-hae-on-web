@@ -1,0 +1,82 @@
+name: Deploy sori learning app
+
+# 소리 앱(apps/learn)을 Cloudflare Pages 프로젝트 haeon-sori(sori.haeonkorean.com)에 올린다.
+# main에 apps/learn 변경이 push되면 시험·빌드 뒤 배포한다. 손으로 wrangler 배포하지 않는다.
+# 필요한 GitHub 비밀값: CLOUDFLARE_API_TOKEN(Pages 편집 권한), CLOUDFLARE_ACCOUNT_ID.
+# 토큰이 아직 없으면 시험·빌드까지만 하고 배포는 건너뛴다.
+# DB 마이그레이션과 음원 업로드(npm run audio:upload)는 여기서 하지 않는다.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/learn/**"
+      - ".github/workflows/sori-deploy.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sori-deploy
+  cancel-in-progress: false
+
+jobs:
+  test-build-deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/learn
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: apps/learn/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Test
+        run: npm test
+
+      - name: Build for Cloudflare Pages
+        run: npm run build:cloud
+
+      - name: Check deploy token
+        id: token
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::warning::CLOUDFLARE_API_TOKEN is not set, so this run only tested and built the app."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Deploy to Cloudflare Pages
+        if: steps.token.outputs.ready == 'true'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx wrangler pages deploy --branch main --commit-hash "$GITHUB_SHA"
+
+      - name: Check the live app
+        if: steps.token.outputs.ready == 'true'
+        run: |
+          for i in 1 2 3 4 5 6; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" https://sori.haeonkorean.com/api/health || true)
+            if [ "$code" = "200" ]; then echo "health 200"; exit 0; fi
+            sleep 10
+          done
+          echo "::error::https://sori.haeonkorean.com/api/health did not return 200"
+          exit 1
