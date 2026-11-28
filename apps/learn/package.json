@@ -1,0 +1,60 @@
+{
+  "name": "@haeon/learn",
+  "private": true,
+  "version": "0.1.0",
+  "description": "성인 한국어 소리 학습 앱. 개발 1단계는 화면 껍데기와 같은 origin API 자리만 둡니다.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4174 --strictPort",
+    "build": "tsc -p tsconfig.json --noEmit && vite build && node scripts/bundle-server.mjs",
+    "start": "node dist/server/index.js",
+    "preview": "vite preview --host 127.0.0.1 --port 4174 --strictPort",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "validate:content": "node --experimental-strip-types scripts/validate-content.ts",
+    "dict:fetch": "node --experimental-strip-types scripts/dict-fetch.ts",
+    "test:smoke": "node scripts/smoke.mjs",
+    "tts:audition": "node --experimental-strip-types scripts/tts.ts audition",
+    "tts:generate": "node --experimental-strip-types scripts/tts.ts generate",
+    "tts:auditions": "node --experimental-strip-types scripts/tts.ts auditions",
+    "tts:batch": "node --experimental-strip-types scripts/tts.ts batch",
+    "tts:practice": "node --experimental-strip-types scripts/tts.ts practice",
+    "tts:single": "node --experimental-strip-types scripts/tts.ts single",
+    "tts:groups": "node --experimental-strip-types scripts/tts-groups.ts",
+    "tts:pseudo-groups": "node --experimental-strip-types scripts/tts.ts pseudo-groups",
+    "verify:clean": "node scripts/verify-clean.mjs",
+    "dev:lan": "node scripts/dev-lan.mjs",
+    "build:cloud": "npm run build && node --experimental-strip-types scripts/build-cloud.ts",
+    "deploy:cloud": "wrangler pages deploy --branch main",
+    "audio:upload": "node --experimental-strip-types scripts/audio-upload.ts",
+    "content:seed": "node --experimental-strip-types scripts/content-seed.ts",
+    "content:fill:export": "node --experimental-strip-types scripts/content-fill-export.ts",
+    "content:fill:check": "node --experimental-strip-types scripts/content-fill-check.ts",
+    "content:fill:import": "node --experimental-strip-types scripts/content-fill-import.ts",
+    "content:proposals:apply": "node --experimental-strip-types scripts/content-proposals-apply.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.8",
+    "hono": "^4.13.18",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router": "^8.5.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "esbuild": "^0.28.2",
+    "jsdom": "^31.0.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.0",
+    "wrangler": "^4.164.0"
+  }
+}

@@ -1,0 +1,13 @@
+audio/raw/*
+audio/dist/*
+!audio/raw/.gitkeep
+!audio/dist/.gitkeep
+node_modules/
+dist/
+.preview-data/
+.env
+.env.*
+!.env.example
+content/dict/raw/
+audio/packed/
+.wrangler/
