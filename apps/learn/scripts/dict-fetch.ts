@@ -4,6 +4,9 @@
 //   KRDICT_API_KEY, STDICT_API_KEY 환경 변수로만 키를 받는다. 키는 출력하지 않고, 로그·오류의 key= 값은 가린다.
 //   이미 받은 원본(content/dict/raw)은 다시 받지 않는다. 몇 번을 다시 돌려도 안전하다.
 //   --offline: 네트워크 없이 받아 둔 원본만으로 다시 정리한다.
+//   낱말·품사·뜻은 운영 DB(phoneme_content_items, 숨김 제외)에서 읽는다(scripts/dict-db-targets.ts, 읽기만).
+//     항목 키는 legacy_id. legacy_id가 없는 DB 낱말은 넣지 않고 목록만 알린다. DB를 못 읽으면 멈춘다.
+//   --source json: 옛 방식대로 content/reference/*.json 단어표(dictTargets())에서 읽는다.
 //
 // 뜻이나 예문을 새로 만들지 않는다. 사전에 없으면 비워 두고 needs_review로 둔다.
 // status를 approved로 바꾸지 않는다. 이미 approved인 항목(검수자가 바꾼 것)은 그대로 둔다.
@@ -12,6 +15,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { DICT_ATTRIBUTION, dictTargets, type DictEntry, type DictFile, type DictTarget } from "../content/dict.ts";
+import { DictDbError, dictTargetsFromDb, type DbSkippedWord } from "./dict-db-targets.ts";
 import {
   parseKrdictSearch,
   parseKrdictView,
@@ -37,6 +41,16 @@ const reviewPath = join(dictDir, "review.md");
 const picksPath = join(dictDir, "picks.json");
 
 const offline = process.argv.includes("--offline");
+type TargetSource = "db" | "json";
+function readSource(argv: string[]): TargetSource {
+  const at = argv.findIndex((arg) => arg === "--source" || arg.startsWith("--source="));
+  if (at < 0) return "db";
+  const value = argv[at].includes("=") ? argv[at].slice("--source=".length) : (argv[at + 1] ?? "");
+  if (value === "db" || value === "json") return value;
+  console.error(`--source는 db 또는 json이어야 해요(받은 값: ${value || "(없음)"}).`);
+  process.exit(1);
+}
+const source = readSource(process.argv.slice(2));
 const krKey = process.env.KRDICT_API_KEY?.trim() ?? "";
 const stKey = process.env.STDICT_API_KEY?.trim() ?? "";
 const secrets = [krKey, stKey];
@@ -278,7 +292,7 @@ async function build(target: DictTarget, picks: Picks, previous: DictFile | null
 const short = (text: string, length = 70) => (text.length > length ? `${text.slice(0, length)}…` : text);
 const cell = (text: string) => text.replace(/\|/g, "\\|").replace(/\n/g, " ");
 
-function reviewMarkdown(rows: Built[], generatedAt: string): string {
+function reviewMarkdown(rows: Built[], generatedAt: string, skipped: DbSkippedWord[]): string {
   const count = (status: string) => rows.filter((row) => row.entry.status === status).length;
   const missingKr = rows.filter((row) => !row.kept && !row.entry.krdict).map((row) => `${row.target.word}(${row.target.id})`);
   const missingSt = rows.filter((row) => !row.kept && !row.entry.stdict).map((row) => `${row.target.word}(${row.target.id})`);
@@ -290,6 +304,8 @@ function reviewMarkdown(rows: Built[], generatedAt: string): string {
   out.push("이 표를 보고 맞는 항목만 `entries.json`의 `status`를 `approved`로 바꿔 주세요. 승인은 검수자만 해요.");
   out.push("뜻을 잘못 고른 낱말은 `content/dict/picks.json`에 `{ \"낱말 id\": { \"krdict\": 번호, \"stdict\": 번호 } }`로 적고 `npm run dict:fetch -- --offline`을 다시 돌리면 그 번호로 다시 정리해요.");
   out.push("");
+  out.push(`- 낱말·뜻 출처: ${source === "db" ? "운영 DB phoneme_content_items(숨김 제외, 키는 legacy_id)" : "옛 단어표 content/reference/*.json"}`);
+  if (source === "db") out.push(`- legacy_id가 없어 넣지 않은 DB 낱말 ${skipped.length}개: ${skipped.map((row) => `${row.word}(${row.id})`).join(", ") || "없음"}`);
   out.push(`- 전체 ${rows.length}개 · draft ${count("draft")} · needs_review ${count("needs_review")} · approved ${count("approved")}`);
   out.push(`- 기초사전에 없던 낱말 ${missingKr.length}개: ${missingKr.join(", ") || "없음"}`);
   out.push(`- 표준국어대사전에 없던 낱말 ${missingSt.length}개: ${missingSt.join(", ") || "없음"}`);
@@ -349,10 +365,31 @@ function reviewMarkdown(rows: Built[], generatedAt: string): string {
 }
 
 async function main() {
-  const targets = dictTargets();
+  let targets: DictTarget[];
+  let skipped: DbSkippedWord[] = [];
+  if (source === "json") {
+    targets = dictTargets();
+  } else {
+    try {
+      const loaded = await dictTargetsFromDb();
+      targets = loaded.targets;
+      skipped = loaded.skipped;
+      log(`DB에서 낱말을 읽었어요: 사전 대상 ${targets.length}개 · 숨김이라 뺀 낱말 ${loaded.hidden}개 · legacy_id가 없어 뺀 낱말 ${skipped.length}개`);
+      for (const row of skipped) log(`legacy_id 없음(넣지 않음): ${row.word} · ${row.group} · ${row.stage} · ${row.id}`);
+    } catch (error) {
+      if (!(error instanceof DictDbError)) throw error;
+      console.error(redact(error.message, secrets));
+      console.error("멈췄어요. 옛 단어표(JSON)로 넘어가지 않았어요. entries.json은 바꾸지 않았어요.");
+      process.exit(1);
+    }
+  }
   const previous = readJsonFile<DictFile>(entriesPath);
   const picks = readJsonFile<Picks>(picksPath) ?? {};
-  log(`대상 낱말 ${targets.length}개(서로 다른 표기 ${new Set(targets.map((row) => row.word)).size}개)${offline ? " · 네트워크 없이" : ""}`);
+  // 차례는 지난 entries.json을 따른다(검토할 때 diff가 뜻 바뀐 곳만 보이게). 새 낱말은 읽은 차례대로 뒤에 붙인다.
+  const previousOrder = new Map(Object.keys(previous?.entries ?? {}).map((id, index) => [id, index] as const));
+  const orderOf = (id: string) => previousOrder.get(id) ?? Number.MAX_SAFE_INTEGER;
+  targets = targets.map((row, index) => ({ row, index })).sort((x, y) => orderOf(x.row.id) - orderOf(y.row.id) || x.index - y.index).map(({ row }) => row);
+  log(`[${source}] 대상 낱말 ${targets.length}개(서로 다른 표기 ${new Set(targets.map((row) => row.word)).size}개)${offline ? " · 네트워크 없이" : ""}`);
   const rows: Built[] = [];
   let fatal: string | null = null;
   for (const target of targets) {
@@ -394,7 +431,7 @@ async function main() {
   };
   mkdirSync(dictDir, { recursive: true });
   writeFileSync(entriesPath, `${JSON.stringify(file, null, 2)}\n`);
-  writeFileSync(reviewPath, reviewMarkdown(rows, generatedAt));
+  writeFileSync(reviewPath, reviewMarkdown(rows, generatedAt, skipped));
   const count = (status: string) => rows.filter((row) => row.entry.status === status).length;
   const failures = rows.filter((row) => row.failure);
   log(`정리함 ${rows.length}개 · draft ${count("draft")} · needs_review ${count("needs_review")} · approved ${count("approved")} · 이번 호출 ${calls}번 · 새로 받은 원본 ${fetched}개`);
