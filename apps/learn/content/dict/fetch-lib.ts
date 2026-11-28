@@ -318,11 +318,19 @@ export type KrPick = {
 
 export type DefinitionHint = { definition: string; origin: string };
 
+/** 검수자가 정한 사전 번호. sense는 1부터(그 항목의 몇 번째 뜻). 없으면 그 번호 안에서 점수로 고른다. */
+export type DictPin = { code: number; sense?: number } | null;
+
+function asPin(pinned: DictPin | number): DictPin {
+  if (pinned == null) return null;
+  return typeof pinned === "number" ? { code: pinned } : pinned;
+}
+
 /**
  * 기초사전 후보에서 우리 뜻에 맞는 표제어·뜻 하나를 고른다. 확신이 없으면 confident=false.
  * hint: 표준국어대사전에서 고른 뜻풀이·원어. 우리 뜻은 풀어 쓴 글이라 글자 겹침이 낮아서, 두 사전끼리의 겹침과 원어 일치도 함께 본다.
  */
-export function pickKrdict(input: PickInput, items: KrItem[], pinned: number | null = null, hint: DefinitionHint | null = null): KrPick {
+export function pickKrdict(input: PickInput, items: KrItem[], pinned: DictPin | number = null, hint: DefinitionHint | null = null): KrPick {
   if (items.length === 0) return { chosen: null, others: [], confident: false, reason: "기초사전에 같은 표기의 표제어가 없어요." };
   const wantPos = POS_NAMES[input.pos] ?? "";
   const scored = items.map((item) => {
@@ -349,9 +357,29 @@ export function pickKrdict(input: PickInput, items: KrItem[], pinned: number | n
     for (let i = 0; i < a.length; i += 1) if (a[i] !== b[i]) return (a[i] as number) - (b[i] as number);
     return 0;
   });
-  if (pinned !== null) {
-    const hit = sorted.find((row) => row.item.target_code === pinned);
-    if (hit) return { chosen: hit, others: sorted.filter((row) => row !== hit), confident: true, reason: `검수자가 정한 기초사전 번호(${pinned})를 썼어요.` };
+  const pin = asPin(pinned);
+  if (pin) {
+    const hit = sorted.find((row) => row.item.target_code === pin.code);
+    if (hit) {
+      if (pin.sense != null) {
+        const senseIndex = pin.sense - 1;
+        if (senseIndex < 0 || senseIndex >= hit.item.senses.length) {
+          return {
+            chosen: null,
+            others: sorted,
+            confident: false,
+            reason: `검수자가 정한 기초사전 번호(${pin.code})의 ${pin.sense}번째 뜻이 없어요(뜻 ${hit.item.senses.length}개).`,
+          };
+        }
+        return {
+          chosen: { item: hit.item, senseIndex, score: hit.score },
+          others: sorted.filter((row) => row !== hit),
+          confident: true,
+          reason: `검수자가 정한 기초사전 번호(${pin.code})의 ${pin.sense}번째 뜻을 썼어요.`,
+        };
+      }
+      return { chosen: hit, others: sorted.filter((row) => row !== hit), confident: true, reason: `검수자가 정한 기초사전 번호(${pin.code})를 썼어요.` };
+    }
   }
   const chosen = sorted[0] as Scored<KrItem>;
   const others = sorted.slice(1);
@@ -393,7 +421,7 @@ export function pickStdict(
   input: PickInput,
   candidates: StCandidate[],
   kr: { definition: string; origin: string; pos: string } | null,
-  pinned: number | null = null,
+  pinned: DictPin | number = null,
 ): StPick {
   if (candidates.length === 0) return { chosen: null, others: [], confident: false, reason: "표준국어대사전에 같은 표기의 표제어가 없어요." };
   const wantPos = POS_NAMES[input.pos] ?? kr?.pos ?? "";
@@ -411,9 +439,30 @@ export function pickStdict(
     return best;
   });
   const sorted = [...scored].sort((x, y) => y.score - x.score || x.candidate.item.sup_no - y.candidate.item.sup_no);
-  if (pinned !== null) {
-    const hit = sorted.find((row) => row.candidate.item.target_code === pinned);
-    if (hit) return { chosen: hit, others: sorted.filter((row) => row !== hit), confident: true, reason: `검수자가 정한 표준국어대사전 번호(${pinned})를 썼어요.` };
+  const pin = asPin(pinned);
+  if (pin) {
+    const hit = sorted.find((row) => row.candidate.item.target_code === pin.code);
+    if (hit) {
+      const senses = hit.candidate.view?.senses.length ? hit.candidate.view.senses : [{ pos: hit.candidate.item.pos, definition: hit.candidate.item.definition, examples: [] }];
+      if (pin.sense != null) {
+        const senseIndex = pin.sense - 1;
+        if (senseIndex < 0 || senseIndex >= senses.length) {
+          return {
+            chosen: null,
+            others: sorted,
+            confident: false,
+            reason: `검수자가 정한 표준국어대사전 번호(${pin.code})의 ${pin.sense}번째 뜻이 없어요(뜻 ${senses.length}개).`,
+          };
+        }
+        return {
+          chosen: { candidate: hit.candidate, senseIndex, score: hit.score },
+          others: sorted.filter((row) => row !== hit),
+          confident: true,
+          reason: `검수자가 정한 표준국어대사전 번호(${pin.code})의 ${pin.sense}번째 뜻을 썼어요.`,
+        };
+      }
+      return { chosen: hit, others: sorted.filter((row) => row !== hit), confident: true, reason: `검수자가 정한 표준국어대사전 번호(${pin.code})를 썼어요.` };
+    }
   }
   const chosen = sorted[0] as StPick["others"][number];
   const others = sorted.slice(1);
