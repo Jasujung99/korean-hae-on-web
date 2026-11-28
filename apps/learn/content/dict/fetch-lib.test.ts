@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { parseKrdictSearch, parseStdictSearch, parseStdictView, pickKrdict, redact, similarity } from "./fetch-lib.ts";
+import { parseKrdictSearch, parseStdictSearch, parseStdictView, pickKrdict, pickStdict, redact, similarity, type KrItem, type StCandidate } from "./fetch-lib.ts";
 
 // 실제 응답 모양을 줄인 것(한국어기초사전 /api/search, 표준국어대사전 /standard/api/view.do).
 const krSearch = `<?xml version="1.0" encoding="UTF-8"?>
@@ -72,5 +72,70 @@ describe("dictionary fetch helpers", () => {
   it("hides key values in log lines", () => {
     const secret = "0123456789abcdef0123456789abcdef";
     expect(redact(`GET https://x/api?key=${secret}&q=1 failed (${secret})`, [secret])).toBe("GET https://x/api?key=[redacted]&q=1 failed ([redacted])");
+  });
+
+  const saltItem = (): KrItem => ({
+    target_code: 61167,
+    word: "소금",
+    sup_no: 0,
+    origin: "",
+    pronunciation: "소금",
+    grade: "초급",
+    pos: "명사",
+    senses: [
+      { order: 1, definition: "짠맛을 내는 하얀 가루.", translations: { ru: null, en: null } },
+      { order: 2, definition: "(비유적으로) 꼭 필요한 사람.", translations: { ru: null, en: null } },
+    ],
+  });
+
+  const saltStdict = (): StCandidate => ({
+    item: { target_code: 444906, word: "소금", sup_no: 1, pos: "명사", origin: "", definition: "짠맛이 나는 백색의 결정체." },
+    view: {
+      target_code: 444906,
+      word: "소금",
+      origin: "",
+      pronunciation: "소금",
+      senses: [
+        { pos: "명사", definition: "짠맛이 나는 백색의 결정체. 대표적인 조미료로, 주성분은 염화 나트륨이다.", examples: [] },
+        { pos: "명사", definition: "물건이 썩는 것을 막고 음식의 맛을 나게 한다는 점에서 사회도덕을 순화·향상시키는 참신자의 사명을 비유적으로 이르는 말.", examples: [] },
+      ],
+    },
+  });
+
+  it("uses a reviewer-pinned sense even when another sense of the same entry scores higher", () => {
+    const item = saltItem();
+    const auto = pickKrdict({ word: "소금", pos: "명", gloss: "바닷물 등에서 얻으며 음식의 짠맛을 맞추는 데 쓰는 하얀 가루." }, [item]);
+    expect(auto.chosen?.senseIndex).toBe(0);
+    const pinned = pickKrdict({ word: "소금", pos: "명", gloss: "바닷물 등에서 얻으며 음식의 짠맛을 맞추는 데 쓰는 하얀 가루." }, [item], { code: 61167, sense: 2 });
+    expect(pinned.confident).toBe(true);
+    expect(pinned.chosen?.item.target_code).toBe(61167);
+    expect(pinned.chosen?.senseIndex).toBe(1);
+    expect(pinned.reason).toContain("2번째 뜻");
+    const byCodeOnly = pickKrdict({ word: "소금", pos: "명", gloss: "바닷물 등에서 얻으며 음식의 짠맛을 맞추는 데 쓰는 하얀 가루." }, [item], 61167);
+    expect(byCodeOnly.confident).toBe(true);
+    expect(byCodeOnly.chosen?.senseIndex).toBe(0);
+    expect(byCodeOnly.reason).toContain("번호(61167)를 썼어요");
+  });
+
+  it("does not stay confident when the pinned sense number is out of range", () => {
+    const pick = pickKrdict({ word: "소금", pos: "명", gloss: "짠맛을 내는 하얀 가루." }, [saltItem()], { code: 61167, sense: 9 });
+    expect(pick.confident).toBe(false);
+    expect(pick.chosen).toBeNull();
+    expect(pick.reason).toContain("9번째 뜻이 없어요");
+  });
+
+  it("uses a reviewer-pinned stdict sense of the same entry", () => {
+    const input = { word: "소금", pos: "명", gloss: "바닷물 등에서 얻으며 음식의 짠맛을 맞추는 데 쓰는 하얀 가루." };
+    const auto = pickStdict(input, [saltStdict()], null);
+    expect(auto.chosen?.senseIndex).toBe(1);
+    const pinned = pickStdict(input, [saltStdict()], null, { code: 444906, sense: 1 });
+    expect(pinned.confident).toBe(true);
+    expect(pinned.chosen?.candidate.item.target_code).toBe(444906);
+    expect(pinned.chosen?.senseIndex).toBe(0);
+    expect(pinned.reason).toContain("1번째 뜻");
+    const missing = pickStdict(input, [saltStdict()], null, { code: 444906, sense: 5 });
+    expect(missing.confident).toBe(false);
+    expect(missing.chosen).toBeNull();
+    expect(missing.reason).toContain("5번째 뜻이 없어요");
   });
 });

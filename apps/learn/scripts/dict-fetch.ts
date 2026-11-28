@@ -166,7 +166,9 @@ async function stView(code: number) {
   return body === null ? null : parseStdictView(body).view;
 }
 
-type Picks = Record<string, { krdict?: number; stdict?: number }>;
+type Picks = Record<string, { krdict?: number; krdictSense?: number; stdict?: number; stdictSense?: number }>;
+const pinOf = (code: number | undefined, sense: number | undefined): { code: number; sense?: number } | null =>
+  code == null ? null : sense != null ? { code, sense } : { code };
 
 function readJsonFile<T>(path: string): T | null {
   if (!existsSync(path)) return null;
@@ -236,7 +238,7 @@ async function build(target: DictTarget, picks: Picks, previous: DictFile | null
     if (krItems === null) {
       notes.push("기초사전 원본이 없어요(--offline).");
     } else {
-      kr = pickKrdict(input, krItems, pin.krdict ?? null);
+      kr = pickKrdict(input, krItems, pinOf(pin.krdict, pin.krdictSense));
       const view = kr.chosen ? await krView(kr.chosen.item.target_code) : null;
       krdict = krEntry(kr, view);
       notes.push(`기초사전: ${kr.reason}`);
@@ -253,12 +255,12 @@ async function build(target: DictTarget, picks: Picks, previous: DictFile | null
       }
       const candidates: StCandidate[] = [];
       for (const item of wanted) candidates.push({ item, view: await stView(item.target_code) });
-      st = pickStdict(input, candidates, krHint, pin.stdict ?? null);
+      st = pickStdict(input, candidates, krHint, pinOf(pin.stdict, pin.stdictSense));
       stdict = stEntry(st);
       notes.push(`표준국어대사전: ${st.reason}`);
       // 표준국어대사전에서 고른 뜻풀이·원어를 실마리로 기초사전을 한 번 더 고른다(우리 뜻이 풀어 쓴 글이라 겹침이 낮을 때가 많다).
       if (krItems && stdict) {
-        const again = pickKrdict(input, krItems, pin.krdict ?? null, { definition: stdict.definition, origin: stdict.origin });
+        const again = pickKrdict(input, krItems, pinOf(pin.krdict, pin.krdictSense), { definition: stdict.definition, origin: stdict.origin });
         if (again.chosen) {
           const view = await krView(again.chosen.item.target_code);
           kr = again;
@@ -302,7 +304,7 @@ function reviewMarkdown(rows: Built[], generatedAt: string, skipped: DbSkippedWo
   out.push(`만든 때: ${generatedAt} · 만든 명령: \`npm run dict:fetch\` (apps/learn)`);
   out.push("");
   out.push("이 표를 보고 맞는 항목만 `entries.json`의 `status`를 `approved`로 바꿔 주세요. 승인은 검수자만 해요.");
-  out.push("뜻을 잘못 고른 낱말은 `content/dict/picks.json`에 `{ \"낱말 id\": { \"krdict\": 번호, \"stdict\": 번호 } }`로 적고 `npm run dict:fetch -- --offline`을 다시 돌리면 그 번호로 다시 정리해요.");
+  out.push("뜻을 잘못 고른 낱말은 `content/dict/picks.json`에 `{ \"낱말 id\": { \"krdict\": 번호, \"krdictSense\": 몇 번째 뜻, \"stdict\": 번호, \"stdictSense\": 몇 번째 뜻 } }`로 적고 `npm run dict:fetch -- --offline`을 다시 돌리면 그 번호·뜻으로 다시 정리해요. 뜻 번호는 1부터이고, 없어도 됩니다(없으면 그 번호 안에서 점수로 고릅니다).");
   out.push("");
   out.push(`- 낱말·뜻 출처: ${source === "db" ? "운영 DB phoneme_content_items(숨김 제외, 키는 legacy_id)" : "옛 단어표 content/reference/*.json"}`);
   if (source === "db") out.push(`- legacy_id가 없어 넣지 않은 DB 낱말 ${skipped.length}개: ${skipped.map((row) => `${row.word}(${row.id})`).join(", ") || "없음"}`);
