@@ -1,0 +1,112 @@
+---
+import SoundTeaser from "../../components/SoundTeaser.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { site } from "../../lib/site";
+
+const title = "듣고 고르기 · 해온 소리 연습 맛보기";
+const description = "ㅈ·ㅊ·ㅉ 세 소리를 듣고 빈칸에 들어갈 첫소리를 골라 보세요. 해온 소리 연습에서 옮겨 온 세 문항이에요. Listen, then choose.";
+const { letters } = site.links;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="sori">
+    <header class="intro">
+      <p class="label">해온 소리 연습 · 맛보기</p>
+      <h1 class="title">듣고 고르기</h1>
+      <span class="line" aria-hidden="true"></span>
+      <p class="meta">ㅈ · ㅊ · ㅉ <span aria-hidden="true">/</span> 세 문항 <span aria-hidden="true">/</span> 기록 없음</p>
+      <p class="latin" lang="en">Listen, then choose.</p>
+    </header>
+
+    <SoundTeaser />
+
+    <aside class="more">
+      <h2 class="more-title">더 연습하려면</h2>
+      <p>소리 연습은 해온 선생님이 초대하면 이어서 할 수 있어요. 소식은 편지로 먼저 전해요.</p>
+      <p lang="en"><a class="underline-link" href={letters}>Get our letters</a></p>
+    </aside>
+
+    <a class="back" href="/">← 첫 화면</a>
+  </div>
+</BaseLayout>
+
+<style>
+  .sori {
+    width: min(100%, 560px);
+  }
+
+  .back {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: 32px;
+    color: var(--ink-muted);
+    font: 400 15px/1 var(--font-serif);
+  }
+
+  .intro {
+    margin: 0 0 36px;
+  }
+
+  .label {
+    margin: 0;
+    color: var(--ink-muted);
+    font: 400 14px/22px var(--font-serif);
+  }
+
+  .title {
+    margin: 6px 0 0;
+    color: var(--olive);
+    font: 600 34px/44px var(--font-serif);
+  }
+
+  .line {
+    display: block;
+    height: 1px;
+    margin: 18px 0 14px;
+    background: var(--line-strong);
+  }
+
+  .meta {
+    margin: 0;
+    font: 400 15px/24px var(--font-serif);
+  }
+
+  .meta span {
+    margin: 0 6px;
+    color: var(--line-strong);
+  }
+
+  .latin {
+    margin: 4px 0 0;
+    color: var(--ink-muted);
+    font: 400 17px/24px var(--font-latin);
+  }
+
+  .more {
+    margin-top: 48px;
+    padding: 24px;
+    border-radius: var(--radius-sm);
+    background: var(--wash-lavender);
+  }
+
+  .more-title {
+    margin: 0;
+    font: 600 19px/28px var(--font-serif);
+  }
+
+  .more p {
+    margin: 8px 0 0;
+    font: 400 15px/24px var(--font-serif);
+  }
+
+  .more .underline-link {
+    padding-left: 0;
+    font: 400 18px/26px var(--font-latin);
+  }
+
+  .more .underline-link::after {
+    left: 0;
+  }
+
+</style>

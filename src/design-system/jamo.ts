@@ -184,6 +184,29 @@ export const GLYPHS: Record<string, Glyph> = {
       { piece: "dotWide", x: 105, y: 60 },
     ],
   },
+  /** ‘나·말·온’의 ‘말’ — 조각 넷을 원래 크기 그대로 쓴다. */
+  말: {
+    width: 142,
+    height: 200,
+    pieces: [
+      { piece: "mieum", x: 2, y: 12 },
+      { piece: "iMid", x: 92, y: 0 },
+      { piece: "dotSmall", x: 98, y: 46 },
+      { piece: "rieul", x: 12, y: 116 },
+    ],
+  },
+  /** ‘나·말·온’의 ‘온’ — 조각 넷을 원래 크기 그대로 쓴다. */
+  온: {
+    width: 152,
+    height: 200,
+    pieces: [
+      { piece: "ieung", x: 34, y: 0 },
+      // ㅗ의 짧은 획은 ㅡ에 조금 겹쳐 붙인다(떨어져 보이지 않게).
+      { piece: "dotShort", x: 60, y: 75 },
+      { piece: "eu", x: 0, y: 88 },
+      { piece: "nieunFinal", x: 26, y: 128 },
+    ],
+  },
   요: {
     width: 152,
     height: 150,

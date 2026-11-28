@@ -9,6 +9,7 @@ const distDir = resolve(rootDir, "dist");
 const expectedHtmlRoutes = [
   ["/", "index.html"],
   ["404.astro", "404.html"],
+  ["/sori/", "sori/index.html"],
 ];
 
 const expectedPublicFiles = [
@@ -22,6 +23,33 @@ const expectedPublicFiles = [
   "share/experience-and-preferences.pptx",
   "share/thoughts-and-reasons.pptx",
   "share/.htaccess",
+  "videos/terminal-1.jpg",
+  "videos/japda-1.jpg",
+  "videos/geureonikka-1.jpg",
+  "videos/terminal-2.jpg",
+  "videos/japda-2.jpg",
+  "videos/japda-3.jpg",
+  "videos/geureonikka-2.jpg",
+  "videos/geureonikka-3.jpg",
+  "videos/geureonikka-4.jpg",
+  "sori-teaser/q1-word-charon.m4a",
+  "sori-teaser/q1-word-erinome.m4a",
+  "sori-teaser/q1-word-sulafat.m4a",
+  "sori-teaser/q1-sentence-charon.m4a",
+  "sori-teaser/q1-sentence-erinome.m4a",
+  "sori-teaser/q1-sentence-sulafat.m4a",
+  "sori-teaser/q2-word-charon.m4a",
+  "sori-teaser/q2-word-erinome.m4a",
+  "sori-teaser/q2-word-sulafat.m4a",
+  "sori-teaser/q2-sentence-charon.m4a",
+  "sori-teaser/q2-sentence-erinome.m4a",
+  "sori-teaser/q2-sentence-sulafat.m4a",
+  "sori-teaser/q3-word-charon.m4a",
+  "sori-teaser/q3-word-erinome.m4a",
+  "sori-teaser/q3-word-sulafat.m4a",
+  "sori-teaser/q3-sentence-charon.m4a",
+  "sori-teaser/q3-sentence-erinome.m4a",
+  "sori-teaser/q3-sentence-sulafat.m4a",
 ];
 
 function toPosixPath(value) {

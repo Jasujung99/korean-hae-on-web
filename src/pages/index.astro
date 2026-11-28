@@ -1,43 +1,113 @@
 ---
 import JamoHeadline from "../components/JamoHeadline.astro";
+import SoundTeaser from "../components/SoundTeaser.astro";
+import VideoSeries from "../components/VideoSeries.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { site } from "../lib/site";
+import { tiktokProfile } from "../lib/teaser";
 
-const title = "해온 haeon · 11월 20일에 만나요";
-const description = "한국어를 나답게 말하도록 돕는 해온이 2026년 11월 20일에 문을 열어요. Your voice, in Korean.";
+const title = "해온 haeon · 한국어로, 나답게 말하다.";
+const description =
+  "흩어진 말들이 모여, 나의 이야기가 됩니다. ㅈ·ㅊ·ㅉ 소리를 직접 들어 보고, 헷갈리는 말을 짧은 영상으로 만나 보세요. Your voice, in Korean.";
 const { threads, letters } = site.links;
 ---
 
 <BaseLayout title={title} description={description}>
   <div class="opening">
-    <JamoHeadline label="11월 20일에 만나요" />
+    <JamoHeadline label="나, 말, 온" />
     <div class="details">
-      <span class="rule" aria-hidden="true"></span>
-      <p class="tagline" lang="en">{site.tagline}</p>
-      <p class="date" lang="en">Opening <time datetime={site.opening.date}>{site.opening.label}</time></p>
-      <ul class="links" lang="en">
-        {
-          threads && (
-            <li>
-              <a class="underline-link" href={threads}>
-                Meet us on Threads
-              </a>
-            </li>
-          )
-        }
-        {threads && <li class="separator" aria-hidden="true">/</li>}
-        <li><a class="underline-link" href={letters}>Get our letters</a></li>
-      </ul>
+      <p class="slogan">한국어로, 나답게 말하다.</p>
+      <p class="tagline">흩어진 말들이 모여, 나의 이야기가 됩니다.</p>
     </div>
   </div>
+
+  <!-- 휴대폰: 색인표 한 상자 (들어 보기 · 영상 · 편지) -->
+  <section class="entry entry--tabs" aria-label="해온 둘러보기">
+    <div class="tabs" role="tablist" aria-label="해온 둘러보기">
+      <button class="tab tab--listen" type="button" role="tab" id="tab-listen" aria-controls="panel-listen" aria-selected="true">
+        들어 보기
+      </button>
+      <button class="tab tab--video" type="button" role="tab" id="tab-video" aria-controls="panel-video" aria-selected="false" tabindex="-1">
+        영상
+      </button>
+      <button class="tab tab--letters" type="button" role="tab" id="tab-letters" aria-controls="panel-letters" aria-selected="false" tabindex="-1">
+        편지
+      </button>
+    </div>
+    <div class="panels">
+      <div class="panel" role="tabpanel" id="panel-listen" aria-labelledby="tab-listen">
+        <h2 class="panel-title">ㅈ · ㅊ · ㅉ,<br />세 소리가 들리나요?</h2>
+        <p class="panel-body">해온 소리 연습의 ‘듣고 고르기’에서 세 문항을 옮겨 왔어요. 점수와 기록은 남지 않아요.</p>
+        <SoundTeaser />
+      </div>
+      <div class="panel" role="tabpanel" id="panel-video" aria-labelledby="tab-video" hidden>
+        <VideoSeries />
+      </div>
+      <div class="panel" role="tabpanel" id="panel-letters" aria-labelledby="tab-letters" hidden>
+        <h2 class="panel-title">해온의 소식은<br />편지와 스레드에서 이어져요.</h2>
+        <ul class="links links--stack" lang="en">
+          <li><a class="underline-link" href={letters}>Get our letters</a></li>
+          {threads && <li><a class="underline-link" href={threads}>Meet us on Threads</a></li>}
+          <li><a class="underline-link" href={tiktokProfile}>Follow us on TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PC: 입구 두 개 -->
+  <section class="entry entry--doors" aria-label="해온 둘러보기">
+    <div class="doors">
+      <a class="door door--listen" href="/sori/">
+        <p class="door-kicker"><span class="numeral" lang="en">01</span> 들어 보기</p>
+        <p class="door-jamo" aria-hidden="true"><span>ㅈ</span><span>ㅊ</span><span>ㅉ</span></p>
+        <h2 class="door-title">세 소리, 들리나요?</h2>
+        <p class="door-latin" lang="en">Can you hear the difference?</p>
+        <span class="door-go">맛보기 해 보기 →</span>
+      </a>
+      <div class="door door--video">
+        <VideoSeries />
+      </div>
+    </div>
+    <ul class="links" lang="en">
+      <li><a class="underline-link" href={letters}>Get our letters</a></li>
+      {threads && <li class="separator" aria-hidden="true">/</li>}
+      {threads && <li><a class="underline-link" href={threads}>Meet us on Threads</a></li>}
+    </ul>
+  </section>
 </BaseLayout>
+
+<script>
+  // 휴대폰 탭: 누르거나 화살표로 옮긴다.
+  const tabs = [...document.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
+  const select = (tab: HTMLButtonElement, focus = false) => {
+    for (const other of tabs) {
+      const selected = other === tab;
+      other.setAttribute("aria-selected", String(selected));
+      other.tabIndex = selected ? 0 : -1;
+      const panel = document.getElementById(other.getAttribute("aria-controls") ?? "");
+      if (panel) panel.hidden = !selected;
+    }
+    if (focus) tab.focus();
+  };
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => select(tab));
+    tab.addEventListener("keydown", (event) => {
+      const step = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0;
+      if (event.key === "Home") select(tabs[0], true);
+      else if (event.key === "End") select(tabs[tabs.length - 1], true);
+      else if (step) select(tabs[(index + step + tabs.length) % tabs.length], true);
+      else return;
+      event.preventDefault();
+    });
+  });
+</script>
 
 <style>
   .opening {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 64px;
+    gap: 36px;
     width: min(100%, 1240px);
   }
 
@@ -50,7 +120,7 @@ const { threads, letters } = site.links;
 
   /*
    * Once the jamo pieces have settled (about 4.75s, see JamoHeadline), the block scrolls up
-   * from below while it clears, very slowly, from a faint blur.
+   * from below while it clears, very slowly, from a faint blur. The doors follow a little later.
    */
   .details {
     animation:
@@ -58,25 +128,29 @@ const { threads, letters } = site.links;
       details-clear 5.5s cubic-bezier(0.4, 0, 0.3, 1) 4.6s both;
   }
 
-  .rule {
-    width: 24px;
-    height: 1px;
-    margin-bottom: 32px;
-    background: var(--line-strong);
+  .entry {
+    width: min(100%, 1040px);
+    margin-top: 112px;
+    animation: entry-in 1.6s cubic-bezier(0.22, 0.61, 0.36, 1) 5.4s both;
+  }
+
+  .slogan {
+    margin: 0;
+    color: var(--ink);
+    font: 500 34px/1.4 var(--font-serif);
+    letter-spacing: -0.01em;
   }
 
   .tagline {
-    margin: 0;
-    color: var(--ink-muted);
-    font: 400 18px/28px var(--font-latin);
-    letter-spacing: 0.02em;
+    margin: 14px 0 0;
+    color: var(--ink);
+    font: 400 17px/28px var(--font-serif);
   }
 
-  .date {
-    margin: 14px 0 0;
+  .numeral {
+    margin-right: 6px;
     color: var(--olive);
-    font: 500 34px/44px var(--font-latin);
-    letter-spacing: 0.04em;
+    font: 500 18px/1 var(--font-latin);
   }
 
   .links {
@@ -85,7 +159,7 @@ const { threads, letters } = site.links;
     justify-content: center;
     align-items: center;
     gap: 12px;
-    margin: 52px 0 0;
+    margin: 56px 0 0;
     padding: 0;
     list-style: none;
     font: 400 19px/26px var(--font-latin);
@@ -93,6 +167,215 @@ const { threads, letters } = site.links;
 
   .separator {
     color: var(--line-strong);
+  }
+
+  /* ---- PC: 입구 두 개 ---- */
+
+  .entry--tabs {
+    display: none;
+  }
+
+  .doors {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .door {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 420px;
+    padding: 32px;
+    border-radius: var(--radius-md);
+    color: var(--ink);
+  }
+
+  /* 영상 카드가 길어져도 들어 보기 카드는 화면 안에 머문다. */
+  .door--listen {
+    position: sticky;
+    top: 24px;
+    background: var(--wash-sage);
+    transition: background 0.4s ease;
+  }
+
+  .door--listen:hover {
+    color: var(--ink);
+    background: #e6e8d1;
+  }
+
+  .door--video {
+    background: var(--wash-lavender);
+  }
+
+  .door-kicker {
+    margin: 0;
+    font: 500 16px/24px var(--font-serif);
+  }
+
+  .door-jamo {
+    display: flex;
+    gap: 18px;
+    margin: auto 0 0;
+    padding-top: 40px;
+    color: var(--olive);
+    font: 700 96px/1 var(--font-serif);
+  }
+
+  .door-jamo span:nth-child(1) {
+    transform: rotate(-6deg) translateY(4px);
+  }
+
+  .door-jamo span:nth-child(2) {
+    color: #9a84b3;
+    transform: rotate(4deg) translateY(-6px);
+  }
+
+  .door-jamo span:nth-child(3) {
+    transform: rotate(-2deg) translateY(8px);
+  }
+
+  .door-title {
+    margin: 28px 0 0;
+    font: 600 24px/34px var(--font-serif);
+  }
+
+  .door-latin {
+    margin: 4px 0 0;
+    color: var(--ink-muted);
+    font: 400 17px/24px var(--font-latin);
+  }
+
+  .door-go {
+    position: relative;
+    margin-top: 24px;
+    padding-bottom: 6px;
+    color: var(--olive);
+    font: 500 16px/24px var(--font-serif);
+  }
+
+  .door-go::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 18px;
+    height: 1.5px;
+    background: var(--olive);
+    transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .door--listen:hover .door-go::after,
+  .door-go:hover::after,
+  .door-go:focus-visible::after {
+    width: 100%;
+  }
+
+  /* ---- 휴대폰: 색인표 한 상자 ---- */
+
+  .tabs {
+    display: flex;
+    gap: 6px;
+    padding: 0 12px;
+  }
+
+  .tab {
+    position: relative;
+    flex: 1;
+    min-height: 48px;
+    margin-top: 8px;
+    padding: 4px 8px 0;
+    border: 1px solid var(--line);
+    border-bottom: 0;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    color: var(--ink);
+    font: 400 22px/1 "Appa Letter Tabs", var(--font-hand);
+    cursor: pointer;
+    transition: margin-top 0.3s ease;
+  }
+
+  /*
+   * 아빠편지체2 (개발 중, 0.204 초안). 탭 세 단어에 쓰는 글자만 잘라 넣었다
+   * (들어 보기 영상 편지). 탭 글자를 바꾸면 서체 파일도 다시 잘라야 한다.
+   */
+  @font-face {
+    font-family: "Appa Letter Tabs";
+    src: url("/fonts/appa-letter-tabs.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  .tab::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: transparent;
+  }
+
+  .tab[aria-selected="true"] {
+    margin-top: 0;
+  }
+
+  .tab[aria-selected="true"]::after {
+    background: var(--olive);
+  }
+
+  .tab:focus-visible {
+    outline: 2px solid var(--olive);
+    outline-offset: 2px;
+  }
+
+  .tab--listen {
+    background: var(--sage);
+  }
+
+  .tab--video {
+    background: var(--lavender);
+  }
+
+  .tab--letters {
+    background: var(--paper);
+  }
+
+  .panels {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+  }
+
+  .panel {
+    padding: 28px 20px 32px;
+  }
+
+  .panel-title {
+    margin: 0;
+    font: 600 22px/32px var(--font-serif);
+  }
+
+  .panel-body {
+    margin: 10px 0 24px;
+    color: var(--ink-muted);
+    font: 400 15px/24px var(--font-serif);
+  }
+
+  .links--stack {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+
+  .links--stack .underline-link {
+    padding-left: 0;
+  }
+
+  .links--stack .underline-link::after {
+    left: 0;
   }
 
   @keyframes details-rise {
@@ -119,30 +402,52 @@ const { threads, letters } = site.links;
     }
   }
 
+  @keyframes entry-in {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .door {
+      padding: 28px;
+    }
+  }
+
+  /* 900px 아래(휴대폰·세로 태블릿)는 탭 상자, 위(PC·가로 태블릿)는 입구 두 개. */
+  @media (max-width: 899px) {
+    .entry--doors {
+      display: none;
+    }
+
+    .entry--tabs {
+      display: block;
+      width: min(100%, 600px);
+    }
+  }
+
   @media (max-width: 720px) {
     .opening {
       gap: 44px;
     }
 
-    .rule {
-      margin-bottom: 26px;
+    .slogan {
+      font-size: 24px;
     }
 
     .tagline {
-      font-size: 16px;
+      margin-top: 10px;
+      font-size: 15px;
       line-height: 24px;
     }
 
-    .date {
-      margin-top: 10px;
-      font-size: 26px;
-      line-height: 34px;
-    }
-
-    .links {
-      gap: 4px;
-      margin-top: 40px;
-      font-size: 17px;
+    .entry {
+      margin-top: 72px;
     }
   }
 </style>
